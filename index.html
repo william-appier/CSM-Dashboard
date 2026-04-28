@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jira Team Dashboard</title>
+<!-- Security: restrict resource loading to known trusted origins -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com https://auth.atlassian.com https://api.atlassian.com; connect-src https://auth.atlassian.com https://api.atlassian.com;">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:#0d0f14;--surface:#151820;--surface2:#1c2030;--border:#252a38;
+    --accent:#4f8ef7;--accent2:#7c5cfa;--green:#34d399;--yellow:#fbbf24;
+    --red:#f87171;--purple:#a78bfa;--text:#e2e8f0;--muted:#64748b;--muted2:#94a3b8;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--text);font-family:'Syne',sans-serif;min-height:100vh;}
+  body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(79,142,247,.03)1px,transparent 1px),linear-gradient(90deg,rgba(79,142,247,.03)1px,transparent 1px);background-size:40px 40px;pointer-events:none;z-index:0;}
+
+  /* ── FULLSCREEN CARD SCREENS (setup / login) ── */
+  .fullscreen{position:fixed;inset:0;z-index:500;display:flex;align-items:center;justify-content:center;padding:24px;}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:44px 48px;width:100%;max-width:480px;box-shadow:0 32px 80px rgba(0,0,0,.6);position:relative;z-index:1;}
+  .card-logo{font-size:28px;margin-bottom:4px;}
+  .card h2{font-size:22px;font-weight:800;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:6px;}
+  .card .sub{font-family:'DM Mono',monospace;font-size:12px;color:var(--muted);line-height:1.6;margin-bottom:30px;}
+  .btn-primary{width:100%;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;border:none;padding:13px;border-radius:10px;font-family:'Syne',sans-serif;font-size:15px;font-weight:700;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 4px 20px rgba(79,142,247,.3);}
+  .btn-primary:hover{transform:translateY(-1px);box-shadow:0 6px 24px rgba(79,142,247,.4);}
+  .btn-primary:disabled{opacity:.5;cursor:not-allowed;pointer-events:none;transform:none;}
+  .btn-secondary{width:100%;background:transparent;color:var(--muted2);border:1px solid var(--border);padding:11px;border-radius:10px;font-family:'Syne',sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:all .15s;margin-top:10px;}
+  .btn-secondary:hover{border-color:var(--accent);color:var(--accent);}
+  .scope-list{background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:14px 16px;margin-bottom:24px;}
+  .scope-list p{font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;margin-bottom:8px;}
+  .scope-item{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted2);padding:3px 0;}
+  .scope-item .tick{color:var(--green);font-size:14px;}
+  .security-note{font-size:11px;color:var(--muted);line-height:1.6;margin-top:20px;padding-top:16px;border-top:1px solid var(--border);}
+  .security-note .lock{color:var(--green);}
+  .err-box{background:rgba(248,113,113,.08);border:1px solid rgba(248,113,113,.25);border-radius:8px;padding:12px 14px;color:var(--red);font-size:12px;margin-bottom:16px;display:none;line-height:1.5;}
+
+  /* Setup guide */
+  .setup-step{display:flex;gap:14px;margin-bottom:20px;}
+  .step-num{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
+  .step-body{font-size:13px;color:var(--muted2);line-height:1.7;}
+  .step-body strong{color:var(--text);}
+  .step-body code{font-family:'DM Mono',monospace;font-size:12px;background:var(--surface2);padding:1px 6px;border-radius:3px;border:1px solid var(--border);}
+  .step-body a{color:var(--accent);text-decoration:none;}
+  .copy-row{display:flex;align-items:center;gap:8px;margin-top:6px;}
+  .copy-val{font-family:'DM Mono',monospace;font-size:12px;background:var(--surface2);border:1px solid var(--border);padding:6px 10px;border-radius:6px;color:var(--cyan);flex:1;word-break:break-all;}
+  .copy-btn{background:var(--surface2);border:1px solid var(--border);color:var(--muted2);padding:6px 10px;border-radius:6px;font-family:'DM Mono',monospace;font-size:11px;cursor:pointer;white-space:nowrap;transition:all .15s;}
+  .copy-btn:hover{border-color:var(--accent);color:var(--accent);}
+  .ifield{margin-bottom:14px;}
+  .ifield label{display:block;font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;margin-bottom:5px;}
+  .ifield input{width:100%;background:var(--surface2);border:1px solid var(--border);color:var(--text);padding:9px 12px;border-radius:7px;font-family:'DM Mono',monospace;font-size:13px;outline:none;transition:border-color .15s;}
+  .ifield input:focus{border-color:var(--accent);}
+  .ifield input::placeholder{color:var(--muted);}
+  .divider{display:flex;align-items:center;gap:10px;margin:20px 0;color:var(--muted);font-size:11px;font-family:'DM Mono',monospace;}
+  .divider::before,.divider::after{content:'';flex:1;height:1px;background:var(--border);}
+
+  /* ── MAIN APP ── */
+  .container{max-width:1440px;margin:0 auto;padding:28px 24px;position:relative;z-index:1;}
+  header{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid var(--border);flex-wrap:wrap;gap:14px;}
+  .header-left h1{font-size:24px;font-weight:800;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+  .header-left p{font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);margin-top:3px;}
+  .header-right{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+  .user-chip{display:flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);padding:5px 12px;border-radius:6px;font-family:'DM Mono',monospace;font-size:12px;color:var(--muted2);}
+  .u-dot{width:8px;height:8px;border-radius:50%;background:var(--green);flex-shrink:0;}
+  .last-updated{font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);background:var(--surface);border:1px solid var(--border);padding:5px 11px;border-radius:6px;}
+  .btn-refresh{display:flex;align-items:center;gap:7px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;border:none;padding:9px 18px;border-radius:8px;font-family:'Syne',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;box-shadow:0 4px 16px rgba(79,142,247,.25);}
+  .btn-refresh:hover{transform:translateY(-1px);}
+  .btn-refresh.loading{opacity:.7;cursor:not-allowed;pointer-events:none;}
+  .btn-logout{background:transparent;border:1px solid var(--border);color:var(--muted);padding:5px 11px;border-radius:6px;font-family:'DM Mono',monospace;font-size:11px;cursor:pointer;transition:all .15s;}
+  .btn-logout:hover{border-color:var(--red);color:var(--red);}
+  .spin{animation:spin 1s linear infinite;display:inline-block;}
+  @keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+
+  /* Stats */
+  .stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:22px;}
+  @media(max-width:600px){.stats-row{grid-template-columns:repeat(2,1fr);}}
+  .stat-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px;position:relative;overflow:hidden;}
+  .stat-card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;}
+  .stat-card.c-blue::after{background:var(--accent);}
+  .stat-card.c-green::after{background:var(--green);}
+  .stat-card.c-gray::after{background:var(--muted);}
+  .stat-card.c-yellow::after{background:var(--yellow);}
+  .stat-label{font-size:10px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.9px;margin-bottom:5px;}
+  .stat-value{font-size:30px;font-weight:800;line-height:1;}
+  .stat-card.c-blue .stat-value{color:var(--accent);}
+  .stat-card.c-green .stat-value{color:var(--green);}
+  .stat-card.c-gray .stat-value{color:var(--muted2);}
+  .stat-card.c-yellow .stat-value{color:var(--yellow);}
+
+  /* Controls */
+  .controls-bar{display:flex;align-items:center;gap:10px;margin-bottom:16px;flex-wrap:wrap;}
+  .btn-sm{background:var(--surface);border:1px solid var(--border);color:var(--muted2);padding:6px 13px;border-radius:6px;font-family:'Syne',sans-serif;font-size:12px;font-weight:600;cursor:pointer;transition:all .15s;}
+  .btn-sm:hover{border-color:var(--accent);color:var(--accent);}
+  .search-input{background:var(--surface);border:1px solid var(--border);color:var(--text);padding:6px 12px;border-radius:6px;font-family:'DM Mono',monospace;font-size:12px;width:190px;outline:none;}
+  .search-input:focus{border-color:var(--accent);}
+  .search-input::placeholder{color:var(--muted);}
+  .dd-wrap{position:relative;margin-left:auto;}
+  .dd-btn{background:var(--surface);border:1px solid var(--border);color:var(--muted2);padding:6px 12px;border-radius:6px;font-family:'DM Mono',monospace;font-size:12px;cursor:pointer;display:flex;align-items:center;gap:7px;min-width:170px;justify-content:space-between;transition:all .15s;white-space:nowrap;}
+  .dd-btn:hover,.dd-btn.open{border-color:var(--accent);color:var(--text);}
+  .dd-panel{position:absolute;top:calc(100% + 5px);right:0;background:var(--surface2);border:1px solid var(--border);border-radius:8px;min-width:210px;z-index:300;box-shadow:0 8px 32px rgba(0,0,0,.5);overflow:hidden;display:none;}
+  .dd-panel.open{display:block;}
+  .dd-search{width:100%;background:var(--surface);border:none;border-bottom:1px solid var(--border);color:var(--text);padding:8px 12px;font-family:'DM Mono',monospace;font-size:12px;outline:none;}
+  .dd-search::placeholder{color:var(--muted);}
+  .dd-list{max-height:230px;overflow-y:auto;}
+  .dd-opt{padding:7px 12px;font-family:'DM Mono',monospace;font-size:12px;cursor:pointer;color:var(--muted2);display:flex;align-items:center;gap:8px;transition:background .1s;user-select:none;}
+  .dd-opt:hover{background:rgba(255,255,255,.04);color:var(--text);}
+  .dd-opt.sel{color:var(--accent);background:rgba(79,142,247,.08);}
+  .dd-dot{width:7px;height:7px;border-radius:50%;background:var(--muted);flex-shrink:0;}
+  .dd-opt.sel .dd-dot{background:var(--accent);}
+
+  /* Groups & tables */
+  .client-group{background:var(--surface);border:1px solid var(--border);border-radius:12px;margin-bottom:14px;overflow:hidden;transition:box-shadow .2s;}
+  .client-group:hover{box-shadow:0 4px 20px rgba(0,0,0,.3);}
+  .client-header{display:flex;align-items:center;justify-content:space-between;padding:13px 18px;cursor:pointer;border-bottom:1px solid var(--border);user-select:none;background:var(--surface2);transition:background .15s;flex-wrap:wrap;gap:8px;}
+  .client-header:hover{background:#1e2535;}
+  .client-name-wrap{display:flex;align-items:center;gap:10px;}
+  .client-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;}
+  .client-name{font-size:15px;font-weight:700;}
+  .client-badges{display:flex;align-items:center;gap:7px;flex-wrap:wrap;}
+  .badge{font-family:'DM Mono',monospace;font-size:11px;padding:2px 8px;border-radius:4px;font-weight:500;}
+  .b-total{background:rgba(79,142,247,.12);color:var(--accent);border:1px solid rgba(79,142,247,.28);}
+  .b-active{background:rgba(251,191,36,.12);color:var(--yellow);border:1px solid rgba(251,191,36,.28);}
+  .b-ns{background:rgba(148,163,184,.1);color:var(--muted2);border:1px solid rgba(148,163,184,.2);}
+  .b-done{background:rgba(52,211,153,.1);color:var(--green);border:1px solid rgba(52,211,153,.22);}
+  .chevron{color:var(--muted);font-size:17px;transition:transform .2s;flex-shrink:0;}
+  .chevron.open{transform:rotate(180deg);}
+  .table-wrap{overflow-x:auto;}
+  table{width:100%;border-collapse:collapse;font-size:13px;}
+  th{font-family:'DM Mono',monospace;font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:.8px;color:var(--muted);padding:8px 14px;text-align:left;background:rgba(255,255,255,.02);border-bottom:1px solid var(--border);white-space:nowrap;}
+  td{padding:8px 14px;border-bottom:1px solid rgba(37,42,56,.55);vertical-align:middle;}
+  tr:last-child td{border-bottom:none;}
+  tr:hover td{background:rgba(255,255,255,.02);}
+  .ticket-key{font-family:'DM Mono',monospace;font-size:12px;color:var(--accent);text-decoration:none;font-weight:500;white-space:nowrap;}
+  .ticket-key:hover{text-decoration:underline;}
+  .ticket-summary{color:var(--text);max-width:350px;line-height:1.4;font-size:13px;}
+  .sb{display:inline-flex;align-items:center;gap:5px;padding:3px 8px;border-radius:4px;font-family:'DM Mono',monospace;font-size:11px;font-weight:500;white-space:nowrap;}
+  .sd{width:6px;height:6px;border-radius:50%;}
+  .s-done{background:rgba(52,211,153,.1);color:var(--green);border:1px solid rgba(52,211,153,.22);}.s-done .sd{background:var(--green);}
+  .s-ip{background:rgba(79,142,247,.1);color:var(--accent);border:1px solid rgba(79,142,247,.22);}.s-ip .sd{background:var(--accent);}
+  .s-todo{background:rgba(148,163,184,.08);color:var(--muted2);border:1px solid rgba(148,163,184,.18);}.s-todo .sd{background:var(--muted2);}
+  .s-bl{background:rgba(100,116,139,.1);color:#64748b;border:1px solid rgba(100,116,139,.18);}.s-bl .sd{background:#64748b;}
+  .s-rev{background:rgba(251,191,36,.1);color:var(--yellow);border:1px solid rgba(251,191,36,.22);}.s-rev .sd{background:var(--yellow);}
+  .s-oth{background:rgba(167,139,250,.1);color:var(--purple);border:1px solid rgba(167,139,250,.22);}.s-oth .sd{background:var(--purple);}
+  .ac{font-family:'DM Mono',monospace;font-size:11px;color:var(--muted2);white-space:nowrap;}
+  .dc{font-family:'DM Mono',monospace;font-size:11px;color:var(--muted2);white-space:nowrap;}
+  .lt{font-family:'DM Mono',monospace;font-size:12px;font-weight:500;white-space:nowrap;}
+  .lt-lo{color:var(--green);}.lt-mi{color:var(--yellow);}.lt-hi{color:var(--red);}
+  .btn-md{background:transparent;border:1px solid rgba(52,211,153,.32);color:var(--green);padding:3px 9px;border-radius:5px;font-family:'DM Mono',monospace;font-size:11px;cursor:pointer;transition:all .15s;display:inline-flex;align-items:center;gap:4px;white-space:nowrap;}
+  .btn-md:hover{background:rgba(52,211,153,.1);border-color:var(--green);}
+  .btn-md:disabled{opacity:.4;cursor:not-allowed;pointer-events:none;}
+  .done-section{border-top:1px solid var(--border);background:rgba(0,0,0,.15);}
+  .done-toggle{display:flex;align-items:center;gap:7px;padding:9px 18px;cursor:pointer;font-size:12px;color:var(--muted);font-family:'DM Mono',monospace;user-select:none;}
+  .done-toggle:hover{color:var(--green);}
+  .done-chev{font-size:13px;transition:transform .2s;}
+  .done-chev.open{transform:rotate(90deg);}
+  .done-badge{background:rgba(52,211,153,.1);color:var(--green);border:1px solid rgba(52,211,153,.18);font-size:10px;padding:1px 6px;border-radius:3px;}
+  .done-body{display:none;overflow-x:auto;}
+  .done-body.open{display:block;}
+  .done-body tr td{opacity:.58;}
+  .done-body tr:hover td{opacity:.9;}
+
+  /* Toast */
+  .toast-wrap{position:fixed;bottom:22px;right:22px;z-index:999;display:flex;flex-direction:column;gap:8px;}
+  .toast{background:var(--surface2);border:1px solid var(--border);padding:11px 16px;border-radius:8px;font-size:13px;min-width:250px;box-shadow:0 8px 24px rgba(0,0,0,.4);animation:tslide .2s ease;}
+  .toast.success{border-left:3px solid var(--green);}
+  .toast.error{border-left:3px solid var(--red);}
+  .toast.info{border-left:3px solid var(--accent);}
+  @keyframes tslide{from{transform:translateX(16px);opacity:0}to{transform:translateX(0);opacity:1}}
+</style>
+</head>
+<body>
+<div class="toast-wrap" id="tw"></div>
+
+<!-- ══════════════════════════════════════════════════
+     SCREEN 1: SETUP GUIDE (shown when CLIENT_ID not yet configured)
+     ══════════════════════════════════════════════════ -->
+<div class="fullscreen" id="setupScreen" style="display:none">
+  <div class="card" style="max-width:560px">
+    <div class="card-logo">⚙️</div>
+    <h2>One-time Setup Required</h2>
+    <p class="sub">Register a free Atlassian OAuth app so users can log in with their Atlassian/Google account. Takes about 10 minutes.</p>
+
+    <div class="setup-step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        Go to <a href="https://developer.atlassian.com/console/myapps/" target="_blank">developer.atlassian.com/console/myapps</a>
+        → <strong>Create</strong> → <strong>OAuth 2.0 integration</strong>.
+        Name it <code>Jira Team Dashboard</code>.
+      </div>
+    </div>
+    <div class="setup-step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        Under <strong>Authorization</strong>, add this exact <strong>Callback URL</strong>:
+        <div class="copy-row">
+          <span class="copy-val" id="redirectUriDisplay">—</span>
+          <button class="copy-btn" onclick="copyRedirectUri()">Copy</button>
+        </div>
+      </div>
+    </div>
+    <div class="setup-step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        Under <strong>Permissions</strong>, add:<br>
+        • <strong>Jira API</strong> → <code>read:jira-work</code>, <code>write:jira-work</code><br>
+        • <strong>User identity API</strong> → <code>read:me</code><br>
+        • Enable <strong>Offline access</strong> (for token refresh)
+      </div>
+    </div>
+    <div class="setup-step">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        Copy your <strong>Client ID</strong> and paste it below, then open this file in a text editor and replace <code>YOUR_ATLASSIAN_CLIENT_ID</code> permanently.
+      </div>
+    </div>
+
+    <div class="ifield" style="margin-top:8px">
+      <label>Client ID (paste here to test)</label>
+      <input type="text" id="setupClientId" placeholder="e.g. ABCD1234567890abcdef…" oninput="onSetupClientIdInput()"/>
+    </div>
+    <div class="err-box" id="setupErr"></div>
+    <button class="btn-primary" id="setupSaveBtn" onclick="saveClientIdAndLogin()" disabled>
+      Save &amp; Login with Atlassian →
+    </button>
+    <p class="security-note">
+      <span class="lock">🔒</span> The Client ID is not a secret — it is safe to embed in this HTML file. No client secret is required (PKCE flow). Tokens are stored in session memory only and cleared when you close the browser tab.
+    </p>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════
+     SCREEN 2: LOGIN
+     ══════════════════════════════════════════════════ -->
+<div class="fullscreen" id="loginScreen" style="display:none">
+  <div class="card">
+    <div class="card-logo">🎯</div>
+    <h2>Jira Team Dashboard</h2>
+    <p class="sub">Sign in with your Atlassian account to view the Jira tickets you have reported.</p>
+
+    <div class="scope-list">
+      <p>This app will request access to:</p>
+      <div class="scope-item"><span class="tick">✓</span> Read Jira issues you reported</div>
+      <div class="scope-item"><span class="tick">✓</span> Transition your reported issues to Done</div>
+      <div class="scope-item"><span class="tick">✓</span> Read your name and email (to identify you)</div>
+      <div class="scope-item" style="color:var(--muted)">✗ Cannot read other users' data</div>
+      <div class="scope-item" style="color:var(--muted)">✗ Cannot create, edit, or delete issues</div>
+    </div>
+
+    <div class="err-box" id="loginErr"></div>
+
+    <button class="btn-primary" id="loginBtn" onclick="startLogin()">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
+      Login with Atlassian
+    </button>
+    <button class="btn-secondary" onclick="showSetupScreen()">⚙️ Setup / Change Client ID</button>
+
+    <p class="security-note">
+      <span class="lock">🔒</span> You will be redirected to Atlassian's official login page. If your organisation uses Google Workspace SSO, you will see a "Continue with Google" option. Credentials are never sent to this app — only a short-lived access token is returned. Tokens are cleared when you close this tab.
+    </p>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════
+     SCREEN 3: MAIN DASHBOARD
+     ══════════════════════════════════════════════════ -->
+<div id="appScreen" style="display:none">
+  <div class="container">
+    <header>
+      <div class="header-left">
+        <h1>🎯 Jira Ticket Dashboard</h1>
+        <p id="headerSub">Loading…</p>
+      </div>
+      <div class="header-right">
+        <div class="user-chip"><span class="u-dot"></span><span id="headerUser">—</span></div>
+        <div class="last-updated" id="lu">Updated: —</div>
+        <button class="btn-refresh" id="btnR" onclick="refresh()"><span id="rIcon">↻</span> Refresh</button>
+        <button class="btn-logout" onclick="logout()">Logout</button>
+      </div>
+    </header>
+
+    <div class="stats-row">
+      <div class="stat-card c-blue"><div class="stat-label">Total Tickets</div><div class="stat-value" id="sTotal">—</div></div>
+      <div class="stat-card c-green"><div class="stat-label">Done</div><div class="stat-value" id="sDone">—</div></div>
+      <div class="stat-card c-gray"><div class="stat-label">Not Started</div><div class="stat-value" id="sNS">—</div></div>
+      <div class="stat-card c-yellow"><div class="stat-label">Active</div><div class="stat-value" id="sActive">—</div></div>
+    </div>
+
+    <div class="controls-bar">
+      <button class="btn-sm" onclick="expandAll()">Expand All</button>
+      <button class="btn-sm" onclick="collapseAll()">Collapse All</button>
+      <input class="search-input" type="text" id="srch" placeholder="Search tickets…" oninput="applyFilters()"/>
+      <div class="dd-wrap" id="asnWrap">
+        <button class="dd-btn" id="asnBtn" onclick="ddToggle('asn',event)">
+          <span id="asnLabel">👤 All Assignees</span><span style="color:var(--muted)">▾</span>
+        </button>
+        <div class="dd-panel" id="asnPanel">
+          <input class="dd-search" type="text" id="asnSrch" placeholder="Search assignees…" oninput="ddFilter('asn')"/>
+          <div class="dd-list" id="asnList"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="dash"></div>
+  </div>
+</div>
+
+<script>
+'use strict';
+
+// ╔══════════════════════════════════════════════════════════════════════╗
+// ║  CONFIGURATION — Replace CLIENT_ID after registering your OAuth app  ║
+// ║  See setup guide (click "Setup" on the login screen)                 ║
+// ╚══════════════════════════════════════════════════════════════════════╝
+const CONFIG = {
+  CLIENT_ID: 'xtLaSSXv7eKGXejZjiVFoDpdV9t8XneW',        // ← Paste your Client ID here
+  REDIRECT_URI: window.location.href.split('?')[0].split('#')[0],
+  AUTH_URL:  'https://auth.atlassian.com/authorize',
+  TOKEN_URL: 'https://auth.atlassian.com/oauth/token',
+  API_BASE:  'https://api.atlassian.com',
+  SCOPES:    'read:jira-work write:jira-work read:me offline_access',
+  // Token refresh buffer: refresh if less than 5 min until expiry
+  REFRESH_BUFFER_MS: 5 * 60 * 1000,
+};
+
+// ── SESSION STORAGE KEYS (namespace to avoid collisions) ────────────────────
+const SK = {
+  TOKENS:   'jd_tokens',     // {access_token, refresh_token, expires_at}
+  USER:     'jd_user',       // {accountId, displayName, email, cloudId, siteUrl}
+  VERIFIER: 'jd_pkce_verif', // PKCE code_verifier (temporary, cleared after use)
+  STATE:    'jd_oauth_state',// CSRF state nonce (temporary, cleared after use)
+};
+
+// ── RUNTIME STATE ────────────────────────────────────────────────────────────
+const COLORS=['#4f8ef7','#7c5cfa','#34d399','#fbbf24','#f87171','#22d3ee','#fb923c','#a78bfa','#38bdf8','#e879f9'];
+let allData=[], selAsn=null;
+
+// ════════════════════════════════════════════════════════════════════════════
+// SECTION 1 — PKCE UTILITIES
+// ════════════════════════════════════════════════════════════════════════════
+
+// Cryptographically random string using Web Crypto API (available on HTTPS + localhost)
+function randomString(len=64){
+  const chars='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-._~';
+  const arr=new Uint8Array(len);
+  crypto.getRandomValues(arr);
+  return Array.from(arr,b=>chars[b%chars.length]).join('');
+}
+
+// base64url encode (no padding, URL-safe)
+function b64url(buf){
+  return btoa(String.fromCharCode(...new Uint8Array(buf)))
+    .replace(/\+/g,'-').replace(/\//g,'_').replace(/=/g,'');
+}
+
+async function generatePKCE(){
+  const verifier=randomString(64);
+  const digest=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(verifier));
+  return {verifier, challenge:b64url(digest)};
+}
+
+// ════════════════════════════════════════════════════════════════════════════
+// SECTION 2 — TOKEN MANAGEMENT (sessionStorage only — cleared on tab close)
+// ════════════════════════════════════════════════════════════════════════════
+
+function saveTokens(t){
+  // Never log tokens. Store expiry as absolute timestamp.
+  sessionStorage.setItem(SK.TOKENS, JSON.stringify({
+    access_token:  t.access_token,
+    refresh_token: t.refresh_token || null,
+    expires_at:    Date.now() + (t.expires_in || 3600) * 1000,
+  }));
+}
+
+function getTokens(){
+  try{ return JSON.parse(sessionStorage.getItem(SK.TOKENS)); }
+  catch(e){ return null; }
+}
+
+function saveUser(u){ sessionStorage.setItem(SK.USER, JSON.stringify(u)); }
+function getUser(){
+  try{ return JSON.parse(sessionStorage.getItem(SK.USER)); }
+  catch(e){ return null; }
+}
+
+function clearSession(){
+  Object.values(SK).forEach(k=>sessionStorage.removeItem(k));
+}
+
+function isTokenExpiringSoon(){
+  const t=getTokens();
+  return !t || Date.now() >= (t.expires_at - CONFIG.REFRESH_BUFFER_MS);
+}
+
+// Returns a valid access token, refreshing if needed
+async function getAccessToken(){
+  if(!isTokenExpiringSoon()){
+    const t=getTokens();
+    if(t?.access_token) return t.access_token;
+  }
+  // Attempt refresh
+  const t=getTokens();
+  if(!t?.refresh_token) throw new Error('Session expired. Please log in again.');
+  const body=new URLSearchParams({
+    grant_type:    'refresh_token',
+    client_id:     CONFIG.CLIENT_ID,
+    refresh_token: t.refresh_token,
+  });
+  const resp=await fetch(CONFIG.TOKEN_URL,{
+    method:'POST',
+    headers:{'Content-Type':'application/x-www-form-urlencoded'},
+    body: body.toString(),
+  });
+  if(!resp.ok) throw new Error('Token refresh failed. Please log in again.');
+  const fresh=await resp.json();
+  saveTokens(fresh);
+  return fresh.access_token;
+}
+
+// ════════════════════════════════════════════════════════════════════════════
+// SECTION 3 — OAUTH 2.0 FLOW
+// ════════════════════════════════════════════════════════════════════════════
+
+async function startLogin(){
+  if(!getConfiguredClientId()){ showSetupScreen(); return; }
+  const btn=document.getElementById('loginBtn');
+  btn.disabled=true; btn.textContent='Redirecting…';
+
+  // Generate PKCE + state, store temporarily in sessionStorage
+  const {verifier,challenge}=await generatePKCE();
+  const state=randomString(32);
+  sessionStorage.setItem(SK.VERIFIER, verifier);
+  sessionStorage.setItem(SK.STATE, state);
+
+  const params=new URLSearchParams({
+    audience:          'api.atlassian.com',
+    client_id:         getConfiguredClientId(),
+    scope:             CONFIG.SCOPES,
+    redirect_uri:      CONFIG.REDIRECT_URI,
+    state:             state,
+    response_type:     'code',
+    prompt:            'consent',
+    code_challenge:    challenge,
+    code_challenge_method: 'S256',
+  });
+  // Navigate to Atlassian — user will see Google SSO if configured on their org
+  window.location.href = `${CONFIG.AUTH_URL}?${params}`;
+}
+
+async function handleOAuthCallback(){
+  const params=new URLSearchParams(window.location.search);
+  const code=params.get('code');
+  const returnedState=params.get('state');
+  const error=params.get('error');
+
+  // Clean the URL immediately — never leave auth code in browser history
+  history.replaceState({}, document.title, CONFIG.REDIRECT_URI);
+
+  if(error){
+    showLoginScreen();
+    showLoginError(`Atlassian returned an error: ${error} — ${params.get('error_description')||''}`);
+    return;
+  }
+  if(!code){ showLoginScreen(); return; }
+
+  // ── CSRF check: state must match exactly what we generated ──────────────
+  const savedState=sessionStorage.getItem(SK.STATE);
+  const verifier=sessionStorage.getItem(SK.VERIFIER);
+  sessionStorage.removeItem(SK.STATE);    // one-time use
+  sessionStorage.removeItem(SK.VERIFIER); // one-time use
+
+  if(!savedState || returnedState !== savedState){
+    showLoginScreen();
+    showLoginError('Security check failed (state mismatch). This could indicate a CSRF attack. Please try again.');
+    return;
+  }
+  if(!verifier){
+    showLoginScreen();
+    showLoginError('PKCE verifier missing. Please try logging in again.');
+    return;
+  }
+
+  // ── Exchange code for tokens ─────────────────────────────────────────────
+  showScreen('loading');
+  try{
+    const body=new URLSearchParams({
+      grant_type:    'authorization_code',
+      client_id:     getConfiguredClientId(),
+      code:          code,
+      redirect_uri:  CONFIG.REDIRECT_URI,
+      code_verifier: verifier,  // PKCE — no client_secret needed
+    });
+    const resp=await fetch(CONFIG.TOKEN_URL,{
+      method:'POST',
+      headers:{'Content-Type':'application/x-www-form-urlencoded'},
+      body: body.toString(),
+    });
+    if(!resp.ok){
+      const err=await resp.json().catch(()=>({error_description:'Unknown error'}));
+      throw new Error(err.error_description || `HTTP ${resp.status}`);
+    }
+    const tokens=await resp.json();
+    saveTokens(tokens);
+
+    // ── Fetch user identity ──────────────────────────────────────────────
+    const [me, resources]=await Promise.all([fetchMe(), fetchAccessibleResources()]);
+    const resource = resources[0]; // use first accessible site
+    const user={
+      accountId:   me.account_id,
+      displayName: me.name,
+      email:       me.email,
+      cloudId:     resource?.id    || '',
+      siteUrl:     resource?.url   || 'https://appier.atlassian.net',
+      siteName:    resource?.name  || '',
+    };
+    saveUser(user);
+    launchDashboard(user);
+  }catch(e){
+    clearSession();
+    showLoginScreen();
+    showLoginError(`Login failed: ${e.message}`);
+  }
+}
+
+// ════════════════════════════════════════════════════════════════════════════
+// SECTION 4 — JIRA REST API (direct, no Anthropic API needed)
+// ════════════════════════════════════════════════════════════════════════════
+
+async function apiFetch(url, opts={}){
+  const token=await getAccessToken();
+  const resp=await fetch(url,{
+    ...opts,
+    headers:{
+      'Authorization': `Bearer ${token}`,
+      'Content-Type':  'application/json',
+      'Accept':        'application/json',
+      ...(opts.headers||{}),
+    },
+  });
+  if(resp.status===401){
+    // Token truly invalid — force re-login
+    clearSession();
+    showLoginScreen();
+    showLoginError('Your session has expired. Please log in again.');
+    throw new Error('Session expired');
+  }
+  if(!resp.ok){
+    const body=await resp.json().catch(()=>null);
+    throw new Error(body?.message || body?.errorMessages?.[0] || `HTTP ${resp.status}`);
+  }
+  // Some Jira endpoints return 204 No Content
+  if(resp.status===204) return null;
+  return resp.json();
+}
+
+async function fetchMe(){
+  return apiFetch(`${CONFIG.API_BASE}/me`);
+}
+
+async function fetchAccessibleResources(){
+  return apiFetch(`${CONFIG.API_BASE}/oauth/token/accessible-resources`);
+}
+
+// Fetch ALL pages of issues reported by the current user
+async function fetchAllIssues(user){
+  const {accountId, cloudId, siteUrl}=user;
+  const base=`${CONFIG.API_BASE}/ex/jira/${cloudId}`;
+  const jql=encodeURIComponent(`reporter = "${accountId}" ORDER BY created DESC`);
+  const fields='summary,status,assignee,reporter,created,resolutiondate';
+  let issues=[], startAt=0, total=Infinity;
+
+  while(issues.length < total){
+    const data=await apiFetch(
+      `${base}/rest/api/3/search?jql=${jql}&fields=${fields}&maxResults=100&startAt=${startAt}`
+    );
+    total=data.total;
+    issues=[...issues,...data.issues];
+    if(data.issues.length===0 || issues.length>=total) break;
+    startAt+=data.issues.length;
+  }
+
+  return issues.map(i=>{
+    const f=i.fields||{};
+    return {
+      key:            i.key,
+      url:            `${siteUrl}/browse/${i.key}`,
+      summary:        f.summary||'',
+      status:         f.status?.name||'Unknown',
+      assignee:       f.assignee?.displayName||'Unassigned',
+      reporter:       f.reporter?.displayName||'Unknown',
+      created:        (f.created||'').slice(0,10),
+      resolutiondate: f.resolutiondate ? f.resolutiondate.slice(0,10) : null,
+    };
+  });
+}
+
+// Mark a ticket as Done via direct Jira REST API
+async function markIssueDone(key){
+  const user=getUser();
+  const base=`${CONFIG.API_BASE}/ex/jira/${user.cloudId}`;
+
+  // Step 1: get available transitions
+  const data=await apiFetch(`${base}/rest/api/3/issue/${key}/transitions`);
+  const doneT=(data.transitions||[]).find(t=>
+    t.name.toLowerCase()==='done' && t.isAvailable!==false
+  );
+  if(!doneT) throw new Error(`No "Done" transition available for ${key}`);
+
+  // Step 2: apply the transition
+  await apiFetch(`${base}/rest/api/3/issue/${key}/transitions`,{
+    method: 'POST',
+    body:   JSON.stringify({transition:{id:doneT.id}}),
+  });
+}
+
+// ════════════════════════════════════════════════════════════════════════════
+// SECTION 5 — DASHBOARD LOGIC (unchanged from previous version)
+// ════════════════════════════════════════════════════════════════════════════
+
+function normU(s){
+  return(s||'').replace(/[\uFF01-\uFF5E]/g,c=>String.fromCharCode(c.charCodeAt(0)-0xFEE0)).replace(/\u3000/g,' ').trim();
+}
+const ALIASES={'10/10hope':'10/10Hope','1010hope':'10/10Hope','10/10':'10/10Hope','田原香':'Qchicken','qchicken':'Qchicken'};
+function normClient(raw){
+  if(!raw) return null;
+  const n=normU(raw);
+  const k=n.toLowerCase().replace(/[^a-z0-9\/\u4e00-\u9fff]/g,'');
+  for(const[a,b] of Object.entries(ALIASES))
+    if(k===a.toLowerCase().replace(/[^a-z0-9\/\u4e00-\u9fff]/g,'')) return b;
+  return n.charAt(0).toUpperCase()+n.slice(1);
+}
+function extractClient(s){
+  const m=normU(s).match(/\[([^\]]+)\]/);
+  return m ? normClient(m[1].trim())||'Others' : 'Others';
+}
+function isDone(s){return['done','duplicate','archive','closed','resolved'].includes((s||'').toLowerCase());}
+function isBacklog(s){const l=(s||'').toLowerCase();return l==='backlog'||l==='csm backlog'||l==='issue backlog';}
+function isActive(s){return !isDone(s)&&!isBacklog(s);}
+function statusPriority(s){
+  const l=(s||'').toLowerCase();
+  if(isBacklog(s))return 0; if(l==='to do')return 1;
+  if(l.includes('progress'))return 2; if(l.includes('client review'))return 3;
+  return 4;
+}
+function ltC(d){return d<=3?'lt-lo':d<=14?'lt-mi':'lt-hi';}
+function calcLT(c){return Math.floor((Date.now()-new Date(c))/86400000);}
+function sClass(s){
+  const l=(s||'').toLowerCase();
+  if(['done','duplicate','archive'].includes(l))return 's-done';
+  if(l.includes('progress'))return 's-ip'; if(l==='to do')return 's-todo';
+  if(isBacklog(s))return 's-bl'; if(l.includes('review')||l.includes('approval')||l==='prep')return 's-rev';
+  return 's-oth';
+}
+function esc(s){return(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+
+// Mark Done — now uses direct REST API
+async function markDone(key,btn){
+  btn.disabled=true; btn.innerHTML='<span class="spin">↻</span>';
+  toast('info',`Transitioning ${key} to Done…`);
+  try{
+    await markIssueDone(key);
+    const i=allData.find(x=>x.key===key);
+    if(i){i.status='Done'; i.resolutiondate=new Date().toISOString().slice(0,10);}
+    toast('success',`✓ ${key} marked as Done in Jira`);
+    renderDashboard(allData);
+  }catch(e){
+    toast('error',`Failed to update ${key}: ${e.message}`);
+    btn.disabled=false; btn.innerHTML='✓ Mark Done';
+  }
+}
+
+function toast(type,msg){
+  const c=document.getElementById('tw'),t=document.createElement('div');
+  t.className=`toast ${type}`; t.textContent=msg; c.appendChild(t);
+  setTimeout(()=>t.remove(),4000);
+}
+
+function ddToggle(id,e){
+  e.stopPropagation();
+  const panel=document.getElementById(id+'Panel'),btn=document.getElementById(id+'Btn');
+  const opening=!panel.classList.contains('open');
+  document.getElementById('asnPanel').classList.remove('open');
+  document.getElementById('asnBtn').classList.remove('open');
+  if(opening){panel.classList.add('open');btn.classList.add('open');document.getElementById(id+'Srch').focus();}
+}
+document.addEventListener('click',()=>{
+  const p=document.getElementById('asnPanel'),b=document.getElementById('asnBtn');
+  if(p){p.classList.remove('open');b.classList.remove('open');}
+});
+function ddFilter(id){
+  const q=document.getElementById(id+'Srch').value.toLowerCase();
+  document.querySelectorAll(`#${id}List .dd-opt`).forEach(o=>{o.style.display=o.textContent.toLowerCase().includes(q)?'':'none';});
+}
+function ddPick(id,val,el){
+  selAsn=val;
+  document.querySelectorAll(`#${id}List .dd-opt`).forEach(o=>o.classList.remove('sel'));
+  el.classList.add('sel');
+  document.getElementById('asnLabel').textContent=val?`👤 ${val}`:'👤 All Assignees';
+  document.getElementById(id+'Panel').classList.remove('open');
+  document.getElementById(id+'Btn').classList.remove('open');
+  applyFilters();
+}
+function buildDropdown(id,values){
+  const list=document.getElementById(id+'List');
+  list.innerHTML=`<div class="dd-opt ${selAsn===null?'sel':''}" onclick="ddPick('${id}',null,this)"><span class="dd-dot"></span>All Assignees</div>`
+    +values.map(v=>`<div class="dd-opt ${selAsn===v?'sel':''}" onclick="ddPick('${id}','${esc(v)}',this)"><span class="dd-dot"></span>${esc(v)}</div>`).join('');
+}
+
+function mkRow(issue,showBtn){
+  const days=calcLT(issue.created), done=isDone(issue.status);
+  const sumClean=esc(normU(issue.summary).replace(/\[[^\]]+\]\s*/,''));
+  return `<tr data-key="${issue.key}" data-search="${(issue.key+' '+issue.summary+' '+issue.assignee+' '+issue.reporter+' '+issue.status).toLowerCase()}" data-asn="${esc(issue.assignee)}">
+    <td><a class="ticket-key" href="${issue.url}" target="_blank">${issue.key}</a></td>
+    <td><div class="ticket-summary">${sumClean}</div></td>
+    <td><span class="sb ${sClass(issue.status)}"><span class="sd"></span>${esc(issue.status)}</span></td>
+    <td><span class="ac">${esc(issue.assignee)}</span></td>
+    <td><span class="dc">${issue.created}</span></td>
+    <td><span class="lt ${ltC(days)}">${days}d</span></td>
+    <td style="min-width:108px">${showBtn&&!done?`<button class="btn-md" onclick="markDone('${issue.key}',this)">✓ Mark Done</button>`:(done?'<span style="color:var(--green);font-family:DM Mono,monospace;font-size:11px;opacity:.6">✓ done</span>':'')}</td>
+  </tr>`;
+}
+
+function mkGroup(client,issues,ci){
+  const color=COLORS[ci%COLORS.length];
+  const gid='g_'+client.replace(/[^a-z0-9]/gi,'_');
+  const thead=`<thead><tr><th>Ticket</th><th>Summary</th><th>Status</th><th>Assignee</th><th>Created</th><th>Lead Time</th><th>Action</th></tr></thead>`;
+  const done=issues.filter(i=>isDone(i.status));
+  const notDone=issues.filter(i=>!isDone(i.status)).sort((a,b)=>statusPriority(a.status)-statusPriority(b.status));
+  const cActive=notDone.filter(i=>isActive(i.status)).length;
+  const cNS=notDone.filter(i=>isBacklog(i.status)).length;
+  return `<div class="client-group" id="${gid}">
+    <div class="client-header" onclick="toggleGroup('${gid}')">
+      <div class="client-name-wrap"><span class="client-dot" style="background:${color}"></span><span class="client-name" style="color:${color}">${esc(client)}</span></div>
+      <div class="client-badges">
+        <span class="badge b-total">${issues.length} total</span>
+        ${cActive?`<span class="badge b-active">${cActive} active</span>`:''}
+        ${cNS?`<span class="badge b-ns">${cNS} not started</span>`:''}
+        ${done.length?`<span class="badge b-done">${done.length} done</span>`:''}
+        <span class="chevron open" id="${gid}_chev">▾</span>
+      </div>
+    </div>
+    <div class="group-body" id="${gid}_body">
+      ${notDone.length?`<div class="table-wrap"><table>${thead}<tbody>${notDone.map(i=>mkRow(i,true)).join('')}</tbody></table></div>`
+        :'<div style="padding:13px 18px;color:var(--muted);font-size:13px;font-style:italic">No active tickets</div>'}
+      ${done.length?`<div class="done-section">
+        <div class="done-toggle" onclick="toggleDone('${gid}_done')"><span class="done-chev" id="${gid}_done_chev">▸</span>Archive / Done <span class="done-badge">${done.length}</span></div>
+        <div class="done-body" id="${gid}_done"><table class="done-table">${thead}<tbody>${done.map(i=>mkRow(i,false)).join('')}</tbody></table></div>
+      </div>`:''}
+    </div>
+  </div>`;
+}
+
+function renderDashboard(issues){
+  allData=issues;
+  const map={};
+  for(const i of issues){const c=extractClient(i.summary);if(!map[c])map[c]=[];map[c].push(i);}
+  const sorted=Object.keys(map).sort((a,b)=>{
+    if(a==='Others')return 1; if(b==='Others')return -1;
+    return map[b].filter(i=>!isDone(i.status)).length - map[a].filter(i=>!isDone(i.status)).length;
+  });
+  document.getElementById('sTotal').textContent=issues.length;
+  document.getElementById('sDone').textContent=issues.filter(i=>isDone(i.status)).length;
+  document.getElementById('sNS').textContent=issues.filter(i=>isBacklog(i.status)).length;
+  document.getElementById('sActive').textContent=issues.filter(i=>isActive(i.status)).length;
+  const now=new Date();
+  document.getElementById('lu').textContent='Updated: '+now.toLocaleDateString('en-GB')+' '+now.toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'});
+  document.getElementById('dash').innerHTML=sorted.map((c,i)=>mkGroup(c,map[c],i)).join('');
+  buildDropdown('asn',[...new Set(issues.map(i=>i.assignee))].sort());
+  applyFilters();
+}
+
+function applyFilters(){
+  const q=document.getElementById('srch').value.toLowerCase().trim();
+  document.querySelectorAll('tr[data-search]').forEach(tr=>{
+    tr.style.display=(!q||tr.dataset.search.includes(q))&&(!selAsn||tr.dataset.asn===selAsn)?'':'none';
+  });
+  document.querySelectorAll('.client-group').forEach(g=>{
+    g.style.display=g.querySelectorAll('tr[data-search]:not([style*="none"])').length?'':'none';
+  });
+}
+function toggleGroup(gid){
+  const b=document.getElementById(gid+'_body'),c=document.getElementById(gid+'_chev');
+  if(!b)return; const h=b.style.display==='none'; b.style.display=h?'':'none'; c.classList.toggle('open',h);
+}
+function toggleDone(id){
+  const e=document.getElementById(id),c=document.getElementById(id+'_chev');
+  if(!e)return; e.classList.toggle('open'); if(c)c.classList.toggle('open',e.classList.contains('open'));
+}
+function expandAll(){document.querySelectorAll('.group-body').forEach(e=>e.style.display='');document.querySelectorAll('.chevron').forEach(e=>e.classList.add('open'));}
+function collapseAll(){document.querySelectorAll('.group-body').forEach(e=>e.style.display='none');document.querySelectorAll('.chevron').forEach(e=>e.classList.remove('open'));}
+
+async function refresh(){
+  const btn=document.getElementById('btnR'),icon=document.getElementById('rIcon');
+  btn.classList.add('loading'); icon.innerHTML='<span class="spin">↻</span>';
+  toast('info','Fetching latest tickets…');
+  try{
+    const user=getUser();
+    if(!user) throw new Error('Not logged in');
+    const issues=await fetchAllIssues(user);
+    renderDashboard(issues);
+    toast('success',`✓ Loaded ${issues.length} tickets`);
+  }catch(e){
+    toast('error',`Refresh failed: ${e.message}`);
+  }
+  btn.classList.remove('loading'); icon.textContent='↻';
+}
+
+function scheduleDaily(){
+  const t=new Date(); t.setDate(t.getDate()+1); t.setHours(0,1,0,0);
+  setTimeout(()=>{refresh().catch(()=>{});scheduleDaily();}, t-new Date());
+}
+
+// ════════════════════════════════════════════════════════════════════════════
+// SECTION 6 — SCREEN MANAGEMENT & APP INIT
+// ════════════════════════════════════════════════════════════════════════════
+
+function showScreen(name){
+  ['setupScreen','loginScreen','appScreen'].forEach(id=>{
+    const el=document.getElementById(id);
+    if(el) el.style.display=(id===name+'Screen'||id===name)?'':'none';
+  });
+  if(name==='appScreen') document.getElementById('appScreen').style.display='block';
+}
+
+function showSetupScreen(){
+  document.getElementById('redirectUriDisplay').textContent=CONFIG.REDIRECT_URI;
+  showScreen('setup');
+}
+function showLoginScreen(){
+  showScreen('login');
+  const btn=document.getElementById('loginBtn');
+  btn.disabled=false; btn.innerHTML='<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg> Login with Atlassian';
+}
+function showLoginError(msg){
+  const el=document.getElementById('loginErr'); el.textContent=msg; el.style.display='block';
+}
+function getConfiguredClientId(){
+  // Check for a runtime-set client ID (from setup screen) first, then CONFIG
+  const stored=sessionStorage.getItem('jd_client_id');
+  const id=stored||CONFIG.CLIENT_ID;
+  return id==='YOUR_ATLASSIAN_CLIENT_ID' ? null : id;
+}
+function onSetupClientIdInput(){
+  const v=document.getElementById('setupClientId').value.trim();
+  document.getElementById('setupSaveBtn').disabled=!v||v==='YOUR_ATLASSIAN_CLIENT_ID';
+}
+function saveClientIdAndLogin(){
+  const v=document.getElementById('setupClientId').value.trim();
+  if(!v) return;
+  // Store temporarily for this session; user should also edit the HTML file
+  sessionStorage.setItem('jd_client_id', v);
+  showLoginScreen();
+  startLogin();
+}
+function copyRedirectUri(){
+  navigator.clipboard.writeText(CONFIG.REDIRECT_URI).then(()=>toast('success','Copied!'));
+}
+function logout(){
+  clearSession();
+  selAsn=null; allData=[];
+  showLoginScreen();
+  toast('info','Logged out — session cleared');
+}
+
+async function launchDashboard(user){
+  showScreen('app');
+  document.getElementById('headerUser').textContent=user.displayName;
+  document.getElementById('headerSub').textContent=
+    `${user.email} · ${user.siteName||user.siteUrl} · Reporter view`;
+  try{
+    const issues=await fetchAllIssues(user);
+    renderDashboard(issues);
+    toast('success',`Welcome ${user.displayName} — loaded ${issues.length} tickets`);
+    scheduleDaily();
+  }catch(e){
+    toast('error',`Could not load tickets: ${e.message}`);
+  }
+}
+
+// ── ENTRY POINT ──────────────────────────────────────────────────────────────
+(async function init(){
+  // Security: warn if not on HTTPS (PKCE crypto requires secure context)
+  if(location.protocol==='http:' && location.hostname!=='localhost'){
+    alert('⚠️ Warning: This page is loaded over HTTP. OAuth login requires HTTPS. Please host this file on a secure server.');
+    return;
+  }
+
+  // Case 1: Returning from Atlassian OAuth redirect (URL has ?code=...)
+  if(new URLSearchParams(window.location.search).has('code')){
+    await handleOAuthCallback();
+    return;
+  }
+
+  // Case 2: Already have a valid session in sessionStorage
+  const tokens=getTokens();
+  const user=getUser();
+  if(tokens && user && !isTokenExpiringSoon()){
+    launchDashboard(user);
+    return;
+  }
+
+  // Case 3: CLIENT_ID not configured yet — show setup guide
+  if(!getConfiguredClientId()){
+    showSetupScreen();
+    return;
+  }
+
+  // Case 4: No session — show login screen
+  showLoginScreen();
+})();
+</script>
+</body>
+</html>
