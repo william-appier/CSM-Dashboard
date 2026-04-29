@@ -29,6 +29,10 @@
   .btn-primary:disabled{opacity:.5;cursor:not-allowed;pointer-events:none;transform:none;}
   .err-box{background:rgba(248,113,113,.08);border:1px solid rgba(248,113,113,.25);border-radius:8px;padding:12px 14px;color:var(--red);font-size:12px;margin-bottom:16px;display:none;line-height:1.5;}
   .login-note{font-size:11px;color:var(--muted);line-height:1.7;margin-top:20px;text-align:center;padding-top:16px;border-top:1px solid var(--border);}
+  .btn-preview{width:100%;background:transparent;color:var(--muted2);border:1px dashed var(--border);padding:11px;border-radius:10px;font-family:'Syne',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;margin-top:10px;}
+  .btn-preview:hover{border-color:var(--accent);color:var(--accent);background:rgba(79,142,247,.05);}
+  .preview-badge{position:fixed;bottom:16px;left:16px;background:rgba(251,191,36,.15);border:1px solid rgba(251,191,36,.4);color:var(--yellow);font-family:'DM Mono',monospace;font-size:11px;padding:6px 12px;border-radius:6px;z-index:999;display:flex;align-items:center;gap:8px;}
+  .preview-badge button{background:transparent;border:none;color:var(--yellow);cursor:pointer;font-size:13px;padding:0;line-height:1;}
 
   /* ── MAIN APP ── */
   .container{max-width:1440px;margin:0 auto;padding:28px 24px;position:relative;z-index:1;}
@@ -142,6 +146,79 @@
   .toast.error{border-left:3px solid var(--red);}
   .toast.info{border-left:3px solid var(--accent);}
   @keyframes tslide{from{transform:translateX(16px);opacity:0}to{transform:translateX(0);opacity:1}}
+
+  /* ── SIDE PANEL ── */
+  .panel-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:400;opacity:0;pointer-events:none;transition:opacity .25s;backdrop-filter:blur(2px);}
+  .panel-overlay.open{opacity:1;pointer-events:all;}
+  .side-panel{position:fixed;top:0;right:0;width:460px;max-width:95vw;height:100vh;background:var(--surface);border-left:1px solid var(--border);z-index:401;display:flex;flex-direction:column;transform:translateX(100%);transition:transform .3s cubic-bezier(.4,0,.2,1);box-shadow:-8px 0 40px rgba(0,0,0,.4);}
+  .side-panel.open{transform:translateX(0);}
+  .panel-header{display:flex;align-items:center;justify-content:space-between;padding:18px 20px;border-bottom:1px solid var(--border);flex-shrink:0;gap:12px;background:var(--surface2);}
+  .panel-title-wrap{display:flex;align-items:center;gap:10px;min-width:0;flex:1;}
+  .panel-key{font-family:'DM Mono',monospace;font-size:13px;font-weight:600;color:var(--accent);text-decoration:none;white-space:nowrap;flex-shrink:0;}
+  .panel-key:hover{text-decoration:underline;}
+  .panel-status-badge{font-family:'DM Mono',monospace;font-size:11px;padding:3px 9px;border-radius:4px;white-space:nowrap;}
+  .panel-close{background:transparent;border:none;color:var(--muted);font-size:18px;cursor:pointer;padding:4px 6px;border-radius:4px;flex-shrink:0;transition:all .15s;line-height:1;}
+  .panel-close:hover{background:rgba(248,113,113,.1);color:var(--red);}
+  .panel-body{flex:1;overflow-y:auto;padding:20px;}
+  .panel-summary{font-size:14px;font-weight:600;color:var(--text);line-height:1.5;margin-bottom:14px;}
+  .panel-meta{background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:12px 14px;margin-bottom:20px;display:flex;flex-direction:column;gap:6px;}
+  .panel-meta-row{display:flex;align-items:center;gap:8px;}
+  .pm-label{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.7px;min-width:72px;}
+  .pm-val{font-family:'DM Mono',monospace;font-size:12px;color:var(--muted2);}
+  .panel-section{margin-bottom:22px;}
+  .panel-section-title{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;margin-bottom:10px;}
+  .panel-transitions{display:flex;flex-wrap:wrap;gap:7px;}
+  .tr-btn{background:var(--surface2);border:1px solid var(--border);color:var(--muted2);padding:6px 14px;border-radius:6px;font-family:'Syne',sans-serif;font-size:12px;font-weight:600;cursor:pointer;transition:all .15s;}
+  .tr-btn:hover{border-color:var(--accent);color:var(--accent);}
+  .tr-btn.done-tr{border-color:rgba(52,211,153,.4);color:var(--green);}
+  .tr-btn.done-tr:hover{background:rgba(52,211,153,.1);}
+  .tr-btn:disabled{opacity:.4;cursor:not-allowed;pointer-events:none;}
+  .panel-reassign-wrap{position:relative;}
+  .panel-input{width:100%;background:var(--surface2);border:1px solid var(--border);color:var(--text);padding:9px 12px;border-radius:8px;font-family:'DM Mono',monospace;font-size:12px;outline:none;transition:border-color .15s;}
+  .panel-input:focus{border-color:var(--accent);}
+  .panel-input::placeholder{color:var(--muted);}
+  .panel-user-results{position:absolute;top:calc(100% + 4px);left:0;right:0;background:var(--surface2);border:1px solid var(--border);border-radius:8px;z-index:10;box-shadow:0 8px 24px rgba(0,0,0,.4);max-height:200px;overflow-y:auto;}
+  .panel-user-opt{padding:9px 12px;font-family:'DM Mono',monospace;font-size:12px;cursor:pointer;color:var(--muted2);display:flex;align-items:center;gap:8px;transition:background .1s;}
+  .panel-user-opt:hover{background:rgba(255,255,255,.05);color:var(--text);}
+  .panel-user-avatar{width:26px;height:26px;border-radius:50%;background:var(--surface);border:1px solid var(--border);object-fit:cover;flex-shrink:0;}
+  .panel-assigned-to{margin-top:8px;font-family:'DM Mono',monospace;font-size:12px;color:var(--muted);min-height:16px;}
+  .panel-textarea{width:100%;background:var(--surface2);border:1px solid var(--border);color:var(--text);padding:10px 12px;border-radius:8px;font-family:'Syne',sans-serif;font-size:13px;resize:vertical;min-height:90px;outline:none;transition:border-color .15s;line-height:1.5;}
+  .panel-textarea:focus{border-color:var(--accent);}
+  .panel-textarea::placeholder{color:var(--muted);}
+  .panel-btn-submit{margin-top:8px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;border:none;padding:9px 20px;border-radius:8px;font-family:'Syne',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;width:100%;}
+  .panel-btn-submit:hover{opacity:.9;}
+  .panel-btn-submit:disabled{opacity:.5;cursor:not-allowed;pointer-events:none;}
+  .comment-item{padding:12px 0;border-bottom:1px solid var(--border);}
+  .comment-item:last-child{border-bottom:none;}
+  .comment-author{font-family:'DM Mono',monospace;font-size:11px;font-weight:500;color:var(--muted2);margin-bottom:4px;display:flex;align-items:center;justify-content:space-between;}
+  .comment-date{font-size:10px;color:var(--muted);}
+  .comment-body{font-size:13px;color:var(--text);line-height:1.6;white-space:pre-wrap;word-break:break-word;}
+  .panel-loading{font-family:'DM Mono',monospace;font-size:12px;color:var(--muted);font-style:italic;}
+  .panel-empty{font-family:'DM Mono',monospace;font-size:12px;color:var(--muted);font-style:italic;}
+  .panel-description{font-size:13px;color:var(--muted2);line-height:1.7;background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:12px 14px;white-space:pre-wrap;word-break:break-word;max-height:220px;overflow-y:auto;}
+  .panel-description.empty{color:var(--muted);font-style:italic;}
+  /* Tracking rows — same hover as tbd */
+  .tracking-row{cursor:pointer;}
+  .tracking-row:hover td{background:rgba(79,142,247,.06)!important;}
+  .tracking-row.panel-active td{background:rgba(79,142,247,.1)!important;}
+
+  /* ── TABS ── */
+  .tabs{display:flex;gap:2px;margin-bottom:24px;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:4px;}
+  .tab-btn{flex:1;padding:9px 16px;border:none;border-radius:7px;font-family:'Syne',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;color:var(--muted);background:transparent;display:flex;align-items:center;justify-content:center;gap:7px;}
+  .tab-btn:hover{color:var(--text);}
+  .tab-btn.active{background:var(--surface2);color:var(--text);box-shadow:0 2px 8px rgba(0,0,0,.3);}
+  .tab-btn .tab-count{font-family:'DM Mono',monospace;font-size:10px;padding:2px 7px;border-radius:3px;background:rgba(255,255,255,.06);color:var(--muted2);}
+  .tab-btn.active .tab-count{background:rgba(79,142,247,.15);color:var(--accent);}
+  .tab-pane{display:none;}
+  .tab-pane.active{display:block;}
+
+  /* ── TO BE DONE TABLE ── */
+  .tbd-wrap{background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;}
+  .tbd-row{cursor:pointer;}
+  .tbd-row:hover td{background:rgba(79,142,247,.06)!important;}
+  .tbd-row.panel-active td{background:rgba(79,142,247,.1)!important;}
+  .tbd-empty{padding:40px;text-align:center;color:var(--muted);font-size:14px;}
+  .tbd-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:22px;}
 </style>
 </head>
 <body>
@@ -163,6 +240,10 @@
       Sign in with Atlassian
     </button>
 
+    <button class="btn-preview" onclick="loadPreview()">
+      🎨 Preview UI (mock data)
+    </button>
+
     <p class="login-note">
       🔒 Redirects to Atlassian's official login. Each user sees only their own reported tickets. Session is cleared when you close this tab.
     </p>
@@ -180,6 +261,11 @@
      SCREEN 3: MAIN DASHBOARD
      ══════════════════════════════════════════════════ -->
 <div id="appScreen" style="display:none">
+  <!-- Preview mode badge — only visible when using mock data -->
+  <div class="preview-badge" id="previewBadge" style="display:none">
+    🎨 Preview Mode — mock data
+    <button onclick="exitPreview()" title="Exit preview">✕</button>
+  </div>
   <div class="container">
     <header>
       <div class="header-left">
@@ -194,29 +280,125 @@
       </div>
     </header>
 
-    <div class="stats-row">
-      <div class="stat-card c-blue"><div class="stat-label">Total Tickets</div><div class="stat-value" id="sTotal">—</div></div>
-      <div class="stat-card c-green"><div class="stat-label">Done</div><div class="stat-value" id="sDone">—</div></div>
-      <div class="stat-card c-gray"><div class="stat-label">Not Started</div><div class="stat-value" id="sNS">—</div></div>
-      <div class="stat-card c-yellow"><div class="stat-label">Active</div><div class="stat-value" id="sActive">—</div></div>
+    <!-- TABS -->
+    <div class="tabs">
+      <button class="tab-btn active" id="tab-tracking" onclick="switchTab('tracking')">
+        📋 Issue Tracking <span class="tab-count" id="tc-tracking">—</span>
+      </button>
+      <button class="tab-btn" id="tab-tbd" onclick="switchTab('tbd')">
+        ✅ To Be Done <span class="tab-count" id="tc-tbd">—</span>
+      </button>
     </div>
 
-    <div class="controls-bar">
-      <button class="btn-sm" onclick="expandAll()">Expand All</button>
-      <button class="btn-sm" onclick="collapseAll()">Collapse All</button>
-      <input class="search-input" type="text" id="srch" placeholder="Search tickets…" oninput="applyFilters()"/>
-      <div class="dd-wrap" id="asnWrap">
-        <button class="dd-btn" id="asnBtn" onclick="ddToggle('asn',event)">
-          <span id="asnLabel">👤 All Assignees</span><span style="color:var(--muted)">▾</span>
-        </button>
-        <div class="dd-panel" id="asnPanel">
-          <input class="dd-search" type="text" id="asnSrch" placeholder="Search assignees…" oninput="ddFilter('asn')"/>
-          <div class="dd-list" id="asnList"></div>
+    <!-- TAB: ISSUE TRACKING -->
+    <div class="tab-pane active" id="pane-tracking">
+      <div class="stats-row">
+        <div class="stat-card c-blue"><div class="stat-label">Total Tickets</div><div class="stat-value" id="sTotal">—</div></div>
+        <div class="stat-card c-green"><div class="stat-label">Done</div><div class="stat-value" id="sDone">—</div></div>
+        <div class="stat-card c-gray"><div class="stat-label">Not Started</div><div class="stat-value" id="sNS">—</div></div>
+        <div class="stat-card c-yellow"><div class="stat-label">Active</div><div class="stat-value" id="sActive">—</div></div>
+      </div>
+      <div class="controls-bar">
+        <button class="btn-sm" onclick="expandAll()">Expand All</button>
+        <button class="btn-sm" onclick="collapseAll()">Collapse All</button>
+        <input class="search-input" type="text" id="srch" placeholder="Search tickets…" oninput="applyFilters()"/>
+        <div class="dd-wrap" id="asnWrap">
+          <button class="dd-btn" id="asnBtn" onclick="ddToggle('asn',event)">
+            <span id="asnLabel">👤 All Assignees</span><span style="color:var(--muted)">▾</span>
+          </button>
+          <div class="dd-panel" id="asnPanel">
+            <input class="dd-search" type="text" id="asnSrch" placeholder="Search assignees…" oninput="ddFilter('asn')"/>
+            <div class="dd-list" id="asnList"></div>
+          </div>
         </div>
       </div>
+      <div id="dash"></div>
     </div>
 
-    <div id="dash"></div>
+    <!-- TAB: TO BE DONE -->
+    <div class="tab-pane" id="pane-tbd">
+      <div class="tbd-stats stats-row">
+        <div class="stat-card c-yellow"><div class="stat-label">Pending</div><div class="stat-value" id="tbdPending">—</div></div>
+        <div class="stat-card c-red" style="--red:#f87171" ><div class="stat-label">Overdue (&gt;14d)</div><div class="stat-value" id="tbdOverdue" style="color:var(--red)">—</div></div>
+        <div class="stat-card c-green"><div class="stat-label">Avg Lead Time</div><div class="stat-value" id="tbdAvg" style="font-size:22px;padding-top:4px">—</div></div>
+      </div>
+      <div class="controls-bar">
+        <input class="search-input" type="text" id="tbdSrch" placeholder="Search tickets…" oninput="applyTbdFilters()" style="width:240px"/>
+      </div>
+      <div class="tbd-wrap">
+        <div id="tbdDash"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SIDE PANEL ── -->
+  <div class="panel-overlay" id="panelOverlay" onclick="closePanel()"></div>
+  <div class="side-panel" id="sidePanel">
+    <div class="panel-header">
+      <div class="panel-title-wrap">
+        <a class="panel-key" id="panelKey" href="#" target="_blank">—</a>
+        <span class="panel-status-badge" id="panelStatus"></span>
+      </div>
+      <button class="panel-close" onclick="closePanel()">✕</button>
+    </div>
+
+    <div class="panel-body">
+      <!-- Summary + meta -->
+      <div class="panel-summary" id="panelSummary"></div>
+      <div class="panel-meta">
+        <div class="panel-meta-row"><span class="pm-label">Assignee</span><span class="pm-val" id="panelAssignee">—</span></div>
+        <div class="panel-meta-row"><span class="pm-label">Reporter</span><span class="pm-val" id="panelReporter">—</span></div>
+        <div class="panel-meta-row"><span class="pm-label">Created</span><span class="pm-val" id="panelCreated">—</span></div>
+        <div class="panel-meta-row"><span class="pm-label">Lead Time</span><span class="pm-val" id="panelLT">—</span></div>
+      </div>
+
+      <!-- Description (both modes) -->
+      <div class="panel-section">
+        <div class="panel-section-title">Description</div>
+        <div class="panel-description" id="panelDescription">
+          <span class="panel-loading">Loading…</span>
+        </div>
+      </div>
+
+      <!-- ACTION SECTIONS — To Be Done mode only -->
+      <div id="panelActions">
+        <!-- Status transitions -->
+        <div class="panel-section">
+          <div class="panel-section-title">Change Status</div>
+          <div class="panel-transitions" id="panelTransitions">
+            <span class="panel-loading">Loading transitions…</span>
+          </div>
+        </div>
+
+        <!-- Reassign -->
+        <div class="panel-section">
+          <div class="panel-section-title">Reassign To</div>
+          <div class="panel-reassign-wrap">
+            <input class="panel-input" type="text" id="panelAssigneeSearch"
+              placeholder="Search by name…" oninput="searchAssignees()"
+              autocomplete="off"/>
+            <div class="panel-user-results" id="panelUserResults" style="display:none"></div>
+            <div class="panel-assigned-to" id="panelAssignedTo"></div>
+          </div>
+        </div>
+
+        <!-- Comment box -->
+        <div class="panel-section">
+          <div class="panel-section-title">Add Comment</div>
+          <textarea class="panel-textarea" id="panelComment"
+            placeholder="Write a comment… (e.g. Reassigning to you — please review the API config)"></textarea>
+          <button class="panel-btn-submit" id="panelCommentBtn" onclick="submitComment()">
+            Send Comment
+          </button>
+        </div>
+      </div>
+
+      <!-- Recent comments (both modes, limit differs) -->
+      <div class="panel-section">
+        <div class="panel-section-title" id="panelCommentTitle">Recent Comments</div>
+        <div id="panelCommentList"><span class="panel-loading">Loading…</span></div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -523,6 +705,41 @@ async function fetchAllIssues(user){
 }
 
 // Mark a ticket as Done via direct Jira REST API
+// Fetch issues assigned to the current user that are not done
+async function fetchAssignedIssues(user){
+  const {accountId, cloudId, siteUrl}=user;
+  const base=`${CONFIG.API_BASE}/ex/jira/${cloudId}`;
+  const since = new Date(); since.setFullYear(since.getFullYear() - 1);
+  const sinceStr = since.toISOString().slice(0,10).replace(/-/g,'/');
+  const jql=`assignee = "${accountId}" AND statusCategory != Done AND created >= "${sinceStr}" ORDER BY created ASC`;
+  const fields=['summary','status','assignee','reporter','created','resolutiondate'];
+  let issues=[], nextPageToken=null;
+
+  while(true){
+    const payload={jql, fields, maxResults:100};
+    if(nextPageToken) payload.nextPageToken=nextPageToken;
+    const data=await apiFetch(`${base}/rest/api/3/search/jql`,{
+      method:'POST', body:JSON.stringify(payload),
+    });
+    const batch=data.issues||[];
+    issues=[...issues,...batch];
+    nextPageToken=data.nextPageToken||null;
+    if(!nextPageToken||batch.length<100) break;
+  }
+
+  return issues.map(i=>{
+    const f=i.fields||{};
+    return {
+      key:i.key, url:`${siteUrl}/browse/${i.key}`,
+      summary:f.summary||'', status:f.status?.name||'Unknown',
+      assignee:f.assignee?.displayName||'Unassigned',
+      reporter:f.reporter?.displayName||'Unknown',
+      created:(f.created||'').slice(0,10),
+      resolutiondate:f.resolutiondate?f.resolutiondate.slice(0,10):null,
+    };
+  });
+}
+
 async function markIssueDone(key){
   const user=getUser();
   const base=`${CONFIG.API_BASE}/ex/jira/${user.cloudId}`;
@@ -637,14 +854,14 @@ function buildDropdown(id,values){
 function mkRow(issue,showBtn){
   const days=calcLT(issue.created), done=isDone(issue.status);
   const sumClean=esc(normU(issue.summary).replace(/\[[^\]]+\]\s*/,''));
-  return `<tr data-key="${issue.key}" data-search="${(issue.key+' '+issue.summary+' '+issue.assignee+' '+issue.reporter+' '+issue.status).toLowerCase()}" data-asn="${esc(issue.assignee)}">
-    <td><a class="ticket-key" href="${issue.url}" target="_blank">${issue.key}</a></td>
+  return `<tr class="tracking-row" data-key="${issue.key}" data-search="${(issue.key+' '+issue.summary+' '+issue.assignee+' '+issue.reporter+' '+issue.status).toLowerCase()}" data-asn="${esc(issue.assignee)}" onclick="openPanel('${issue.key}',event,'tracking')">
+    <td onclick="event.stopPropagation()"><a class="ticket-key" href="${issue.url}" target="_blank">${issue.key}</a></td>
     <td><div class="ticket-summary">${sumClean}</div></td>
     <td><span class="sb ${sClass(issue.status)}"><span class="sd"></span>${esc(issue.status)}</span></td>
     <td><span class="ac">${esc(issue.assignee)}</span></td>
     <td><span class="dc">${issue.created}</span></td>
     <td><span class="lt ${ltC(days)}">${days}d</span></td>
-    <td style="min-width:108px">${showBtn&&!done?`<button class="btn-md" onclick="markDone('${issue.key}',this)">✓ Mark Done</button>`:(done?'<span style="color:var(--green);font-family:DM Mono,monospace;font-size:11px;opacity:.6">✓ done</span>':'')}</td>
+    <td style="min-width:108px" onclick="event.stopPropagation()">${showBtn&&!done?`<button class="btn-md" onclick="markDone('${issue.key}',this)">✓ Mark Done</button>`:(done?'<span style="color:var(--green);font-family:DM Mono,monospace;font-size:11px;opacity:.6">✓ done</span>':'')}</td>
   </tr>`;
 }
 
@@ -676,6 +893,382 @@ function mkGroup(client,issues,ci){
       </div>`:''}
     </div>
   </div>`;
+}
+
+// ════════════════════════════════════════════════════════════════════════════
+// SIDE PANEL — open, load, comment, reassign, transition
+// ════════════════════════════════════════════════════════════════════════════
+let panelKey  = null;
+let panelMode = 'tracking'; // 'tracking' = read-only | 'tbd' = full actions
+let assigneeSearchTimer = null;
+
+function openPanel(key, e, mode='tbd'){
+  if(e) e.stopPropagation();
+  panelKey  = key;
+  panelMode = mode;
+
+  // Highlight active row in the correct tab
+  document.querySelectorAll('.tbd-row, .tracking-row').forEach(r=>{
+    r.classList.toggle('panel-active', r.dataset.key===key);
+  });
+
+  // Show/hide action sections based on mode
+  const actionsEl = document.getElementById('panelActions');
+  actionsEl.style.display = mode==='tbd' ? '' : 'none';
+
+  // Update comment section title
+  document.getElementById('panelCommentTitle').textContent =
+    mode==='tracking' ? 'Recent Comments (last 5)' : 'Add Comment';
+
+  // Find issue from correct data source for instant meta render
+  const issue = mode==='tbd'
+    ? tbdData.find(i=>i.key===key)
+    : allData.find(i=>i.key===key);
+  if(issue) populatePanelMeta(issue);
+
+  // Reset description + comments to loading state
+  document.getElementById('panelDescription').innerHTML='<span class="panel-loading">Loading…</span>';
+  document.getElementById('panelCommentList').innerHTML='<span class="panel-loading">Loading…</span>';
+
+  // Open panel
+  document.getElementById('sidePanel').classList.add('open');
+  document.getElementById('panelOverlay').classList.add('open');
+
+  // Reset inputs (only needed in tbd mode but harmless to always reset)
+  document.getElementById('panelComment').value='';
+  document.getElementById('panelAssigneeSearch').value='';
+  document.getElementById('panelUserResults').style.display='none';
+  document.getElementById('panelAssignedTo').textContent='';
+
+  // Load data from Jira
+  loadPanelDescription(key);
+  loadPanelComments(key, mode==='tracking' ? 5 : 8);
+  if(mode==='tbd') loadPanelTransitions(key);
+}
+
+function closePanel(){
+  document.getElementById('sidePanel').classList.remove('open');
+  document.getElementById('panelOverlay').classList.remove('open');
+  document.querySelectorAll('.tbd-row, .tracking-row').forEach(r=>r.classList.remove('panel-active'));
+  panelKey=null;
+}
+
+// Close on Escape key
+document.addEventListener('keydown', e=>{ if(e.key==='Escape') closePanel(); });
+
+function populatePanelMeta(issue){
+  const days = calcLT(issue.created);
+  document.getElementById('panelKey').textContent = issue.key;
+  document.getElementById('panelKey').href = issue.url;
+  document.getElementById('panelSummary').textContent = normU(issue.summary);
+  document.getElementById('panelAssignee').textContent = issue.assignee || '—';
+  document.getElementById('panelReporter').textContent = issue.reporter;
+  document.getElementById('panelCreated').textContent = issue.created;
+  document.getElementById('panelLT').textContent = days + 'd';
+  document.getElementById('panelLT').style.color =
+    days<=3?'var(--green)':days<=14?'var(--yellow)':'var(--red)';
+
+  const sb = document.getElementById('panelStatus');
+  sb.textContent = issue.status;
+  sb.className = 'panel-status-badge sb ' + sClass(issue.status);
+}
+
+async function loadPanelTransitions(key){
+  const el = document.getElementById('panelTransitions');
+  el.innerHTML = '<span class="panel-loading">Loading…</span>';
+  try{
+    const user = getUser();
+    if(!user){ el.innerHTML='<span class="panel-empty">Login required</span>'; return; }
+    const base = `${CONFIG.API_BASE}/ex/jira/${user.cloudId}`;
+    const data = await apiFetch(`${base}/rest/api/3/issue/${key}/transitions`);
+    const transitions = (data.transitions||[]).filter(t=>t.isAvailable!==false);
+    if(!transitions.length){ el.innerHTML='<span class="panel-empty">No transitions available</span>'; return; }
+    el.innerHTML = transitions.map(t=>{
+      const isDoneT = t.name.toLowerCase()==='done';
+      return `<button class="tr-btn ${isDoneT?'done-tr':''}"
+        onclick="applyTransition('${key}','${t.id}','${esc(t.name)}',this)">
+        ${isDoneT?'✓ ':''}${esc(t.name)}
+      </button>`;
+    }).join('');
+  }catch(e){
+    el.innerHTML=`<span class="panel-empty">Could not load transitions</span>`;
+  }
+}
+
+async function applyTransition(key, transitionId, transitionName, btn){
+  btn.disabled=true;
+  const orig=btn.innerHTML;
+  btn.innerHTML='<span class="spin">↻</span>';
+  try{
+    const user=getUser();
+    const base=`${CONFIG.API_BASE}/ex/jira/${user.cloudId}`;
+    await apiFetch(`${base}/rest/api/3/issue/${key}/transitions`,{
+      method:'POST',
+      body:JSON.stringify({transition:{id:transitionId}}),
+    });
+    toast('success',`✓ ${key} → ${transitionName}`);
+
+    // Update tbdData status
+    const issue = tbdData.find(i=>i.key===key);
+    if(issue) issue.status = transitionName;
+
+    // If Done — remove from list and close panel
+    if(transitionName.toLowerCase()==='done'){
+      tbdData = tbdData.filter(i=>i.key!==key);
+      const tracked = allData.find(i=>i.key===key);
+      if(tracked){tracked.status='Done';tracked.resolutiondate=new Date().toISOString().slice(0,10);}
+      renderDashboard(allData);
+      renderTbd(tbdData);
+      closePanel();
+    } else {
+      // Refresh transitions + update status badge
+      if(issue) populatePanelMeta(issue);
+      renderTbd(tbdData);
+      loadPanelTransitions(key);
+    }
+  }catch(e){
+    toast('error',`Transition failed: ${e.message}`);
+    btn.disabled=false; btn.innerHTML=orig;
+  }
+}
+
+async function loadPanelDescription(key){
+  const el=document.getElementById('panelDescription');
+  try{
+    const user=getUser();
+    if(!user){ el.innerHTML='<span class="panel-empty">Login required</span>'; return; }
+    const base=`${CONFIG.API_BASE}/ex/jira/${user.cloudId}`;
+    const data=await apiFetch(`${base}/rest/api/3/issue/${key}?fields=description,summary`);
+    const desc=data.fields?.description;
+    if(!desc){
+      el.className='panel-description empty';
+      el.textContent='No description provided.';
+      return;
+    }
+    const text=extractAdfText(desc).trim();
+    el.className='panel-description';
+    el.textContent=text||'No description provided.';
+  }catch(e){
+    el.innerHTML='<span class="panel-empty">Could not load description</span>';
+  }
+}
+
+async function loadPanelComments(key, maxResults=8){
+  const el=document.getElementById('panelCommentList');
+  el.innerHTML='<span class="panel-loading">Loading comments…</span>';
+  try{
+    const user=getUser();
+    if(!user){ el.innerHTML='<span class="panel-empty">Login required</span>'; return; }
+    const base=`${CONFIG.API_BASE}/ex/jira/${user.cloudId}`;
+    const data=await apiFetch(`${base}/rest/api/3/issue/${key}/comment?maxResults=${maxResults}&orderBy=-created`);
+    const comments=(data.comments||[]);
+    if(!comments.length){
+      el.innerHTML='<span class="panel-empty">No comments yet</span>';
+      return;
+    }
+    el.innerHTML=comments.map(c=>{
+      const author=c.author?.displayName||'Unknown';
+      const date=(c.created||'').slice(0,10);
+      // Extract plain text from Atlassian Document Format (ADF)
+      const body=extractAdfText(c.body)||'(no text)';
+      return `<div class="comment-item">
+        <div class="comment-author">${esc(author)}<span class="comment-date">${date}</span></div>
+        <div class="comment-body">${esc(body)}</div>
+      </div>`;
+    }).join('');
+  }catch(e){
+    el.innerHTML='<span class="panel-empty">Could not load comments</span>';
+  }
+}
+
+// Recursively extract plain text from Atlassian Document Format (ADF)
+function extractAdfText(node){
+  if(!node) return '';
+  if(typeof node==='string') return node;
+  if(node.type==='text') return node.text||'';
+  if(node.type==='hardBreak') return '\n';
+  if(node.type==='paragraph') return (node.content||[]).map(extractAdfText).join('')+'\n';
+  if(node.content) return (node.content||[]).map(extractAdfText).join('');
+  return '';
+}
+
+async function submitComment(){
+  const text=document.getElementById('panelComment').value.trim();
+  if(!text){ toast('info','Please write a comment first'); return; }
+  if(!panelKey) return;
+
+  const btn=document.getElementById('panelCommentBtn');
+  btn.disabled=true; btn.textContent='Sending…';
+  try{
+    const user=getUser();
+    const base=`${CONFIG.API_BASE}/ex/jira/${user.cloudId}`;
+    // Jira REST API v3 requires ADF format for comment body
+    await apiFetch(`${base}/rest/api/3/issue/${panelKey}/comment`,{
+      method:'POST',
+      body:JSON.stringify({
+        body:{
+          type:'doc', version:1,
+          content:[{type:'paragraph',content:[{type:'text',text}]}]
+        }
+      }),
+    });
+    toast('success','Comment posted');
+    document.getElementById('panelComment').value='';
+    loadPanelComments(panelKey); // Refresh comment list
+  }catch(e){
+    toast('error',`Failed to post comment: ${e.message}`);
+  }
+  btn.disabled=false; btn.textContent='Send Comment';
+}
+
+// Debounced user search for reassign
+function searchAssignees(){
+  clearTimeout(assigneeSearchTimer);
+  const q=document.getElementById('panelAssigneeSearch').value.trim();
+  const res=document.getElementById('panelUserResults');
+  if(q.length<2){ res.style.display='none'; return; }
+  assigneeSearchTimer=setTimeout(()=>doSearchAssignees(q), 300);
+}
+
+async function doSearchAssignees(q){
+  const res=document.getElementById('panelUserResults');
+  res.style.display='block';
+  res.innerHTML='<div class="panel-user-opt" style="pointer-events:none"><span class="panel-loading">Searching…</span></div>';
+  try{
+    const user=getUser();
+    if(!user){ res.style.display='none'; return; }
+    const base=`${CONFIG.API_BASE}/ex/jira/${user.cloudId}`;
+    const data=await apiFetch(
+      `${base}/rest/api/3/user/search?query=${encodeURIComponent(q)}&maxResults=8`
+    );
+    if(!data.length){
+      res.innerHTML='<div class="panel-user-opt" style="pointer-events:none"><span class="panel-empty">No users found</span></div>';
+      return;
+    }
+    res.innerHTML=data.map(u=>`
+      <div class="panel-user-opt" onclick="selectAssignee('${esc(u.accountId)}','${esc(u.displayName)}',this)">
+        ${u.avatarUrls?.['24x24']?`<img class="panel-user-avatar" src="${u.avatarUrls['24x24']}" alt=""/>`:'<span class="panel-user-avatar" style="display:inline-flex;align-items:center;justify-content:center;font-size:10px;color:var(--muted)">👤</span>'}
+        <span>${esc(u.displayName)}</span>
+        <span style="font-size:10px;color:var(--muted);margin-left:auto">${esc(u.emailAddress||'')}</span>
+      </div>`).join('');
+  }catch(e){
+    res.style.display='none';
+  }
+}
+
+async function selectAssignee(accountId, displayName, el){
+  document.getElementById('panelUserResults').style.display='none';
+  document.getElementById('panelAssigneeSearch').value='';
+  if(!panelKey) return;
+
+  document.getElementById('panelAssignedTo').textContent='Assigning…';
+  try{
+    const user=getUser();
+    const base=`${CONFIG.API_BASE}/ex/jira/${user.cloudId}`;
+    await apiFetch(`${base}/rest/api/3/issue/${panelKey}/assignee`,{
+      method:'PUT',
+      body:JSON.stringify({accountId}),
+    });
+    document.getElementById('panelAssignedTo').textContent=`✓ Reassigned to ${displayName}`;
+    document.getElementById('panelAssignedTo').style.color='var(--green)';
+    toast('success',`✓ ${panelKey} reassigned to ${displayName}`);
+
+    // If reassigned away from self, offer to remove from To Be Done list
+    const currentUser=getUser();
+    if(accountId!==currentUser.accountId){
+      tbdData=tbdData.filter(i=>i.key!==panelKey);
+      renderTbd(tbdData);
+      closePanel();
+    }
+  }catch(e){
+    document.getElementById('panelAssignedTo').textContent='Reassign failed: '+e.message;
+    document.getElementById('panelAssignedTo').style.color='var(--red)';
+    toast('error',`Reassign failed: ${e.message}`);
+  }
+}
+
+// ── TAB MANAGEMENT ──────────────────────────────────────────────────────────
+let tbdData = [];
+
+function switchTab(name){
+  ['tracking','tbd'].forEach(t=>{
+    document.getElementById('tab-'+t).classList.toggle('active', t===name);
+    document.getElementById('pane-'+t).classList.toggle('active', t===name);
+  });
+}
+
+// ── TO BE DONE RENDER ────────────────────────────────────────────────────────
+function renderTbd(issues){
+  tbdData = issues;
+  // Sort by lead time DESC (longest = highest priority)
+  const sorted = [...issues].sort((a,b)=>calcLT(a.created)-calcLT(b.created)).reverse();
+
+  const pending = sorted.length;
+  const overdue = sorted.filter(i=>calcLT(i.created)>14).length;
+  const avg = pending ? Math.round(sorted.reduce((s,i)=>s+calcLT(i.created),0)/pending) : 0;
+
+  document.getElementById('tbdPending').textContent = pending;
+  document.getElementById('tbdOverdue').textContent = overdue;
+  document.getElementById('tbdAvg').textContent = pending ? avg+'d' : '—';
+  document.getElementById('tc-tbd').textContent = pending;
+
+  if(pending===0){
+    document.getElementById('tbdDash').innerHTML=
+      '<div class="tbd-empty">🎉 No pending tickets assigned to you!</div>';
+    return;
+  }
+
+  const thead=`<thead><tr>
+    <th>Ticket</th><th>Summary</th><th>Client</th><th>Status</th>
+    <th>Reporter</th><th>Created</th><th>Lead Time ↓</th><th>Action</th>
+  </tr></thead>`;
+
+  const rows = sorted.map(i=>{
+    const days=calcLT(i.created);
+    const client=extractClient(i.summary)||'—';
+    const sumClean=esc(normU(i.summary).replace(/\[[^\]]+\]\s*/,''));
+    return `<tr class="tbd-row" data-key="${i.key}" data-tbd-search="${(i.key+' '+i.summary+' '+i.status+' '+i.reporter).toLowerCase()}" onclick="openPanel('${i.key}',event,'tbd')">
+      <td><a class="ticket-key" href="${i.url}" target="_blank" onclick="event.stopPropagation()">${i.key}</a></td>
+      <td><div class="ticket-summary">${sumClean}</div></td>
+      <td><span style="font-family:'DM Mono',monospace;font-size:11px;color:var(--muted2)">${esc(client)}</span></td>
+      <td><span class="sb ${sClass(i.status)}"><span class="sd"></span>${esc(i.status)}</span></td>
+      <td><span class="ac">${esc(i.reporter)}</span></td>
+      <td><span class="dc">${i.created}</span></td>
+      <td><span class="lt ${ltC(days)}">${days}d</span></td>
+      <td onclick="event.stopPropagation()">
+        <button class="btn-md" onclick="markDoneTbd('${i.key}',this)">✓ Done</button>
+      </td>
+    </tr>`;
+  }).join('');
+
+  document.getElementById('tbdDash').innerHTML=
+    `<div class="table-wrap"><table>${thead}<tbody>${rows}</tbody></table></div>`;
+}
+
+function applyTbdFilters(){
+  const q=document.getElementById('tbdSrch').value.toLowerCase().trim();
+  document.querySelectorAll('tr[data-tbd-search]').forEach(tr=>{
+    tr.style.display=!q||tr.dataset.tbdSearch.includes(q)?'':'none';
+  });
+}
+
+async function markDoneTbd(key,btn){
+  btn.disabled=true; btn.innerHTML='<span class="spin">↻</span>';
+  toast('info',`Transitioning ${key} to Done…`);
+  try{
+    await markIssueDone(key);
+    // Remove from tbdData and re-render
+    tbdData=tbdData.filter(i=>i.key!==key);
+    renderTbd(tbdData);
+    // Also update allData if present (keeps Issue Tracking in sync)
+    const tracked=allData.find(i=>i.key===key);
+    if(tracked){tracked.status='Done';tracked.resolutiondate=new Date().toISOString().slice(0,10);}
+    renderDashboard(allData);
+    toast('success',`✓ ${key} marked as Done`);
+  }catch(e){
+    toast('error',`Failed to update ${key}: ${e.message}`);
+    btn.disabled=false; btn.innerHTML='✓ Mark Done';
+  }
 }
 
 function renderDashboard(issues){
@@ -724,9 +1317,14 @@ async function refresh(){
   try{
     const user=getUser();
     if(!user) throw new Error('Not logged in');
-    const issues=await fetchAllIssues(user);
-    renderDashboard(issues);
-    toast('success',`✓ Loaded ${issues.length} tickets`);
+    const [reported, assigned] = await Promise.all([
+      fetchAllIssues(user),
+      fetchAssignedIssues(user),
+    ]);
+    renderDashboard(reported);
+    renderTbd(assigned);
+    document.getElementById('tc-tracking').textContent = reported.length;
+    toast('success',`✓ ${reported.length} reported · ${assigned.length} assigned`);
   }catch(e){
     toast('error',`Refresh failed: ${e.message}`);
   }
@@ -767,7 +1365,7 @@ function showSetupScreen(){ showLoginScreen(); }
 function copyRedirectUri(){}
 function logout(){
   clearSession();
-  selAsn=null; allData=[];
+  selAsn=null; allData=[]; tbdData=[];
   showLoginScreen();
   toast('info','Logged out — session cleared');
 }
@@ -778,13 +1376,72 @@ async function launchDashboard(user){
   document.getElementById('headerSub').textContent=
     `${user.email} · ${user.siteName||user.siteUrl} · Reporter view`;
   try{
-    const issues=await fetchAllIssues(user);
-    renderDashboard(issues);
-    toast('success',`Welcome ${user.displayName} — loaded ${issues.length} tickets`);
+    // Fetch both datasets in parallel
+    const [reported, assigned] = await Promise.all([
+      fetchAllIssues(user),
+      fetchAssignedIssues(user),
+    ]);
+    renderDashboard(reported);
+    renderTbd(assigned);
+    document.getElementById('tc-tracking').textContent = reported.length;
+    toast('success',`Welcome ${user.displayName} — loaded ${reported.length} reported, ${assigned.length} assigned`);
     scheduleDaily();
   }catch(e){
     toast('error',`Could not load tickets: ${e.message}`);
   }
+}
+
+// ── PREVIEW / MOCK MODE ──────────────────────────────────────────────────────
+const MOCK_REPORTED = [
+  {key:'ETS-3345',url:'#',summary:'[Mannings] Campaign #3115910 investigation',status:'To Do',assignee:'hazel.wang',reporter:'william.wt.lin',created:'2026-04-28',resolutiondate:null},
+  {key:'QGWL-25560',url:'#',summary:'[Mannings] Campaign #3115910 investigation',status:'Backlog',assignee:'hazel.wang',reporter:'william.wt.lin',created:'2026-04-28',resolutiondate:null},
+  {key:'QGWL-25487',url:'#',summary:'[Mannings] Check edm campaign deliver queries',status:'In Progress',assignee:'hazel.wang',reporter:'william.wt.lin',created:'2026-04-20',resolutiondate:null},
+  {key:'ETS-3058',url:'#',summary:'[Mannings] Request on prediction support data',status:'In Progress',assignee:'Zoe Cheng',reporter:'william.wt.lin',created:'2026-04-15',resolutiondate:null},
+  {key:'QGWL-25317',url:'#',summary:'[1010Hope] klickngo API Integration',status:'In Progress',assignee:'Mark Liu',reporter:'william.wt.lin',created:'2026-04-01',resolutiondate:null},
+  {key:'QGWL-25295',url:'#',summary:'[Mannings] OJM delete this node only feature is not working',status:'Backlog',assignee:'hazel.wang',reporter:'william.wt.lin',created:'2026-03-30',resolutiondate:null},
+  {key:'QGWL-24972',url:'#',summary:'[Qchicken] Enable campaign agent for client',status:'Backlog',assignee:'susan.huang',reporter:'william.wt.lin',created:'2026-02-13',resolutiondate:null},
+  {key:'ETS-3173',url:'#',summary:'[Mannings] Integration status checking',status:'Done',assignee:'jason.wu',reporter:'william.wt.lin',created:'2026-04-21',resolutiondate:'2026-04-21'},
+  {key:'ETS-3166',url:'#',summary:'[Mannings] Check edm campaign deliver queries',status:'Done',assignee:'hazel.wang',reporter:'william.wt.lin',created:'2026-04-21',resolutiondate:'2026-04-22'},
+  {key:'ESPS-43',url:'#',summary:'[1010Hope] Create GCP environment',status:'Done',assignee:'mia.chu',reporter:'william.wt.lin',created:'2026-04-09',resolutiondate:'2026-04-22'},
+  {key:'ETS-2926',url:'#',summary:'[Qchicken] Enable event count condition on AIQUA',status:'Done',assignee:'vivian.yang',reporter:'william.wt.lin',created:'2026-04-09',resolutiondate:'2026-04-09'},
+  {key:'FIN-2402',url:'#',summary:'[Luxgen] 2026-3月服務交付報告',status:'Done',assignee:'william.wt.lin',reporter:'william.wt.lin',created:'2026-04-01',resolutiondate:'2026-04-01'},
+  {key:'AIR-4126',url:'#',summary:'Feature request on providing event prediction on AIRIS UI',status:'To Do',assignee:'Michael Palmer',reporter:'william.wt.lin',created:'2026-02-05',resolutiondate:null},
+  {key:'BBT-7216',url:'#',summary:'[55688潔衣家] Customized binding feature show error messages',status:'Pending Approval',assignee:'rick.lee',reporter:'william.wt.lin',created:'2026-02-12',resolutiondate:null},
+  {key:'EAM-355',url:'#',summary:'Offboard Request - Genki',status:'Backlog',assignee:'Roland Wang',reporter:'william.wt.lin',created:'2026-03-16',resolutiondate:null},
+];
+
+const MOCK_ASSIGNED = [
+  {key:'ETS-9001',url:'#',summary:'[Mannings] Review webhook integration docs',status:'In Progress',assignee:'william.wt.lin',reporter:'hazel.wang',created:'2026-03-01',resolutiondate:null},
+  {key:'ETS-9002',url:'#',summary:'[1010Hope] Validate KlickNGo API response format',status:'To Do',assignee:'william.wt.lin',reporter:'Mark Liu',created:'2026-03-15',resolutiondate:null},
+  {key:'QGWL-9003',url:'#',summary:'[Qchicken] Confirm DQB toggle settings',status:'Backlog',assignee:'william.wt.lin',reporter:'vivian.yang',created:'2026-02-20',resolutiondate:null},
+  {key:'ETS-9004',url:'#',summary:'[Luxgen] Monthly delivery report sign-off',status:'To Do',assignee:'william.wt.lin',reporter:'Brandon Tang',created:'2026-04-10',resolutiondate:null},
+  {key:'PROJ-9005',url:'#',summary:'[Mannings] Approve AIXON renewal contract',status:'UNDER CLIENT REVIEW',assignee:'william.wt.lin',reporter:'jason.wu',created:'2026-01-20',resolutiondate:null},
+];
+
+function loadPreview(){
+  const mockUser = {
+    accountId: 'preview-user',
+    displayName: 'william.wt.lin (Preview)',
+    email: 'william.wt.lin@appier.com',
+    cloudId: 'preview',
+    siteUrl: 'https://appier.atlassian.net',
+    siteName: 'appier (Preview)',
+  };
+  showScreen('app');
+  document.getElementById('headerUser').textContent = mockUser.displayName;
+  document.getElementById('headerSub').textContent =
+    `${mockUser.email} · ${mockUser.siteName} · Reporter view`;
+  document.getElementById('previewBadge').style.display = 'flex';
+  renderDashboard(MOCK_REPORTED);
+  renderTbd(MOCK_ASSIGNED);
+  document.getElementById('tc-tracking').textContent = MOCK_REPORTED.length;
+  toast('info', '🎨 Preview mode — showing mock data');
+}
+
+function exitPreview(){
+  document.getElementById('previewBadge').style.display = 'none';
+  allData = []; tbdData = []; selAsn = null;
+  showLoginScreen();
 }
 
 // ── ENTRY POINT ──────────────────────────────────────────────────────────────
