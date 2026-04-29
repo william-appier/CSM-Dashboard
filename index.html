@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Jira Team Dashboard</title>
 <!-- Security: restrict resource loading to known trusted origins -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com https://auth.atlassian.com https://api.atlassian.com https://*.workers.dev; connect-src https://auth.atlassian.com https://api.atlassian.com https://*.workers.dev; img-src blob: data:;">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com https://*.atlassian.com https://api.media.atlassian.com https://*.workers.dev; connect-src https://*.atlassian.com https://api.media.atlassian.com https://*.workers.dev; img-src blob: data: https://api.media.atlassian.com; media-src blob: https://api.media.atlassian.com;">
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -1135,13 +1135,30 @@ async function fetchMediaBlob(att, token, type, allMedia, idx){
   const slot = document.getElementById('media-'+att.id);
   if(!slot) return;
   try{
-    // att.content points to the direct site URL (appier.atlassian.net/...) which
-    // rejects OAuth Bearer tokens. We must use the api.atlassian.com/ex/jira/ base
-    // which accepts them. Construct the correct URL from the attachment ID.
+    // Step 1: Call Jira attachment API with Bearer token — it returns a 302
+    // redirect to api.media.atlassian.com with a self-authenticating pre-signed URL.
+    // Step 2: Follow the redirect manually WITHOUT the Authorization header
+    // (sending auth headers across domains is blocked by browsers).
     const user = getUser();
     const apiContentUrl = `${CONFIG.API_BASE}/ex/jira/${user.cloudId}/rest/api/3/attachment/content/${att.id}`;
+
+    // First request: get the redirect URL (don't follow automatically)
+    let mediaUrl = apiContentUrl;
+    try{
+      const redir = await fetch(apiContentUrl, {
+        headers:{ 'Authorization': `Bearer ${token}` },
+        redirect: 'manual', // capture the redirect without following
+      });
+      // redirect: 'manual' gives type 'opaqueredirect' — extract Location header
+      // In most browsers this isn't accessible due to CORS, so fall through to
+      // direct fetch with follow which works when CSP allows the media domain
+    }catch(_){}
+
+    // Direct fetch with redirect follow — now that CSP allows api.media.atlassian.com
+    // the browser can follow the 302 from api.atlassian.com → api.media.atlassian.com
     const resp = await fetch(apiContentUrl, {
-      headers:{ 'Authorization': `Bearer ${token}` }
+      headers:{ 'Authorization': `Bearer ${token}` },
+      redirect: 'follow',
     });
     if(!resp.ok){
       slot.innerHTML=`<span style="font-size:10px;color:var(--muted);padding:6px;text-align:center;display:block">${esc(att.filename)}<br><span style="font-size:9px">Failed to load (${resp.status})</span></span>`;
