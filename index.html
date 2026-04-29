@@ -480,37 +480,31 @@ async function fetchAccessibleResources(){
 }
 
 // Fetch ALL pages of issues reported by the current user
-// Uses new POST /rest/api/3/search/jql endpoint (migrated from deprecated /search)
 async function fetchAllIssues(user){
-  const {accountId, cloudId, siteUrl}=user;
+  const {accountId, cloudId}=user;
   const base=`${CONFIG.API_BASE}/ex/jira/${cloudId}`;
-  // Date restriction required by Jira Cloud OAuth — fetches last 12 months
+  // Date restriction required by Jira Cloud OAuth
   const since = new Date(); since.setFullYear(since.getFullYear() - 1);
   const sinceStr = since.toISOString().slice(0,10).replace(/-/g,'/');
   const jql=`reporter = "${accountId}" AND created >= "${sinceStr}" ORDER BY created DESC`;
-  // New /search/jql requires fields as comma-separated string, not array
-  const fields='summary,status,assignee,reporter,created,resolutiondate';
-  let issues=[], nextPageToken=null, total=Infinity;
+  // fields must be an array for POST /search/jql
+  // startAt is NOT supported — pagination uses nextPageToken only
+  const fields=['summary','status','assignee','reporter','created','resolutiondate'];
+  let issues=[], nextPageToken=null;
 
-  while(issues.length < total){
-    const payload = {
-      jql,
-      fields,
-      maxResults: 100,
-    };
-    // Use nextPageToken for pagination if available, else use startAt
+  while(true){
+    const payload = { jql, fields, maxResults: 100 };
     if(nextPageToken) payload.nextPageToken = nextPageToken;
-    else payload.startAt = issues.length;
 
     const data=await apiFetch(`${base}/rest/api/3/search/jql`, {
       method: 'POST',
       body: JSON.stringify(payload),
     });
-    total = data.total ?? data.issues?.length ?? 0;
     const batch = data.issues || [];
     issues = [...issues, ...batch];
     nextPageToken = data.nextPageToken || null;
-    if(batch.length === 0 || issues.length >= total || !nextPageToken && batch.length < 100) break;
+    // Stop when no nextPageToken or batch smaller than maxResults
+    if(!nextPageToken || batch.length < 100) break;
   }
 
   return issues.map(i=>{
