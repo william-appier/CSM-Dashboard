@@ -20,40 +20,15 @@
   /* ── FULLSCREEN CARD SCREENS (setup / login) ── */
   .fullscreen{position:fixed;inset:0;z-index:500;display:flex;align-items:center;justify-content:center;padding:24px;}
   .card{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:44px 48px;width:100%;max-width:480px;box-shadow:0 32px 80px rgba(0,0,0,.6);position:relative;z-index:1;}
-  .card-logo{font-size:28px;margin-bottom:4px;}
-  .card h2{font-size:22px;font-weight:800;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:6px;}
-  .card .sub{font-family:'DM Mono',monospace;font-size:12px;color:var(--muted);line-height:1.6;margin-bottom:30px;}
-  .btn-primary{width:100%;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;border:none;padding:13px;border-radius:10px;font-family:'Syne',sans-serif;font-size:15px;font-weight:700;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 4px 20px rgba(79,142,247,.3);}
-  .btn-primary:hover{transform:translateY(-1px);box-shadow:0 6px 24px rgba(79,142,247,.4);}
+  /* Login card elements */
+  .login-logo{font-size:40px;margin-bottom:12px;text-align:center;}
+  .card h2{font-size:24px;font-weight:800;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:8px;text-align:center;}
+  .card .sub{font-size:13px;color:var(--muted2);line-height:1.7;margin-bottom:28px;text-align:center;}
+  .btn-primary{width:100%;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;border:none;padding:14px;border-radius:10px;font-family:'Syne',sans-serif;font-size:15px;font-weight:700;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 4px 20px rgba(79,142,247,.3);}
+  .btn-primary:hover{transform:translateY(-1px);box-shadow:0 8px 28px rgba(79,142,247,.4);}
   .btn-primary:disabled{opacity:.5;cursor:not-allowed;pointer-events:none;transform:none;}
-  .btn-secondary{width:100%;background:transparent;color:var(--muted2);border:1px solid var(--border);padding:11px;border-radius:10px;font-family:'Syne',sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:all .15s;margin-top:10px;}
-  .btn-secondary:hover{border-color:var(--accent);color:var(--accent);}
-  .scope-list{background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:14px 16px;margin-bottom:24px;}
-  .scope-list p{font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;margin-bottom:8px;}
-  .scope-item{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted2);padding:3px 0;}
-  .scope-item .tick{color:var(--green);font-size:14px;}
-  .security-note{font-size:11px;color:var(--muted);line-height:1.6;margin-top:20px;padding-top:16px;border-top:1px solid var(--border);}
-  .security-note .lock{color:var(--green);}
   .err-box{background:rgba(248,113,113,.08);border:1px solid rgba(248,113,113,.25);border-radius:8px;padding:12px 14px;color:var(--red);font-size:12px;margin-bottom:16px;display:none;line-height:1.5;}
-
-  /* Setup guide */
-  .setup-step{display:flex;gap:14px;margin-bottom:20px;}
-  .step-num{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
-  .step-body{font-size:13px;color:var(--muted2);line-height:1.7;}
-  .step-body strong{color:var(--text);}
-  .step-body code{font-family:'DM Mono',monospace;font-size:12px;background:var(--surface2);padding:1px 6px;border-radius:3px;border:1px solid var(--border);}
-  .step-body a{color:var(--accent);text-decoration:none;}
-  .copy-row{display:flex;align-items:center;gap:8px;margin-top:6px;}
-  .copy-val{font-family:'DM Mono',monospace;font-size:12px;background:var(--surface2);border:1px solid var(--border);padding:6px 10px;border-radius:6px;color:var(--cyan);flex:1;word-break:break-all;}
-  .copy-btn{background:var(--surface2);border:1px solid var(--border);color:var(--muted2);padding:6px 10px;border-radius:6px;font-family:'DM Mono',monospace;font-size:11px;cursor:pointer;white-space:nowrap;transition:all .15s;}
-  .copy-btn:hover{border-color:var(--accent);color:var(--accent);}
-  .ifield{margin-bottom:14px;}
-  .ifield label{display:block;font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;margin-bottom:5px;}
-  .ifield input{width:100%;background:var(--surface2);border:1px solid var(--border);color:var(--text);padding:9px 12px;border-radius:7px;font-family:'DM Mono',monospace;font-size:13px;outline:none;transition:border-color .15s;}
-  .ifield input:focus{border-color:var(--accent);}
-  .ifield input::placeholder{color:var(--muted);}
-  .divider{display:flex;align-items:center;gap:10px;margin:20px 0;color:var(--muted);font-size:11px;font-family:'DM Mono',monospace;}
-  .divider::before,.divider::after{content:'';flex:1;height:1px;background:var(--border);}
+  .login-note{font-size:11px;color:var(--muted);line-height:1.7;margin-top:20px;text-align:center;padding-top:16px;border-top:1px solid var(--border);}
 
   /* ── MAIN APP ── */
   .container{max-width:1440px;margin:0 auto;padding:28px 24px;position:relative;z-index:1;}
@@ -173,92 +148,32 @@
 <div class="toast-wrap" id="tw"></div>
 
 <!-- ══════════════════════════════════════════════════
-     SCREEN 1: SETUP GUIDE (shown when CLIENT_ID not yet configured)
-     ══════════════════════════════════════════════════ -->
-<div class="fullscreen" id="setupScreen" style="display:none">
-  <div class="card" style="max-width:560px">
-    <div class="card-logo">⚙️</div>
-    <h2>One-time Setup Required</h2>
-    <p class="sub">Register a free Atlassian OAuth app so users can log in with their Atlassian/Google account. Takes about 10 minutes.</p>
-
-    <div class="setup-step">
-      <div class="step-num">1</div>
-      <div class="step-body">
-        Go to <a href="https://developer.atlassian.com/console/myapps/" target="_blank">developer.atlassian.com/console/myapps</a>
-        → <strong>Create</strong> → <strong>OAuth 2.0 integration</strong>.
-        Name it <code>Jira Team Dashboard</code>.
-      </div>
-    </div>
-    <div class="setup-step">
-      <div class="step-num">2</div>
-      <div class="step-body">
-        Under <strong>Authorization</strong>, add this exact <strong>Callback URL</strong>:
-        <div class="copy-row">
-          <span class="copy-val" id="redirectUriDisplay">—</span>
-          <button class="copy-btn" onclick="copyRedirectUri()">Copy</button>
-        </div>
-      </div>
-    </div>
-    <div class="setup-step">
-      <div class="step-num">3</div>
-      <div class="step-body">
-        Under <strong>Permissions</strong>, add:<br>
-        • <strong>Jira API</strong> → <code>read:jira-work</code>, <code>write:jira-work</code><br>
-        • <strong>User identity API</strong> → <code>read:me</code><br>
-        • Enable <strong>Offline access</strong> (for token refresh)
-      </div>
-    </div>
-    <div class="setup-step">
-      <div class="step-num">4</div>
-      <div class="step-body">
-        Copy your <strong>Client ID</strong> and paste it below, then open this file in a text editor and replace <code>YOUR_ATLASSIAN_CLIENT_ID</code> permanently.
-      </div>
-    </div>
-
-    <div class="ifield" style="margin-top:8px">
-      <label>Client ID (paste here to test)</label>
-      <input type="text" id="setupClientId" placeholder="e.g. ABCD1234567890abcdef…" oninput="onSetupClientIdInput()"/>
-    </div>
-    <div class="err-box" id="setupErr"></div>
-    <button class="btn-primary" id="setupSaveBtn" onclick="saveClientIdAndLogin()" disabled>
-      Save &amp; Login with Atlassian →
-    </button>
-    <p class="security-note">
-      <span class="lock">🔒</span> The Client ID is not a secret — it is safe to embed in this HTML file. No client secret is required (PKCE flow). Tokens are stored in session memory only and cleared when you close the browser tab.
-    </p>
-  </div>
-</div>
-
-<!-- ══════════════════════════════════════════════════
-     SCREEN 2: LOGIN
+     LOGIN SCREEN
      ══════════════════════════════════════════════════ -->
 <div class="fullscreen" id="loginScreen" style="display:none">
   <div class="card">
-    <div class="card-logo">🎯</div>
+    <div class="login-logo">🎯</div>
     <h2>Jira Team Dashboard</h2>
-    <p class="sub">Sign in with your Atlassian account to view the Jira tickets you have reported.</p>
-
-    <div class="scope-list">
-      <p>This app will request access to:</p>
-      <div class="scope-item"><span class="tick">✓</span> Read Jira issues you reported</div>
-      <div class="scope-item"><span class="tick">✓</span> Transition your reported issues to Done</div>
-      <div class="scope-item"><span class="tick">✓</span> Read your name and email (to identify you)</div>
-      <div class="scope-item" style="color:var(--muted)">✗ Cannot read other users' data</div>
-      <div class="scope-item" style="color:var(--muted)">✗ Cannot create, edit, or delete issues</div>
-    </div>
+    <p class="sub">Track Jira tickets you've reported, grouped by client — all in one place.</p>
 
     <div class="err-box" id="loginErr"></div>
 
     <button class="btn-primary" id="loginBtn" onclick="startLogin()">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
-      Login with Atlassian
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+      Sign in with Atlassian
     </button>
-    <button class="btn-secondary" onclick="showSetupScreen()">⚙️ Setup / Change Client ID</button>
 
-    <p class="security-note">
-      <span class="lock">🔒</span> You will be redirected to Atlassian's official login page. If your organisation uses Google Workspace SSO, you will see a "Continue with Google" option. Credentials are never sent to this app — only a short-lived access token is returned. Tokens are cleared when you close this tab.
+    <p class="login-note">
+      🔒 Redirects to Atlassian's official login. Each user sees only their own reported tickets. Session is cleared when you close this tab.
     </p>
   </div>
+</div>
+
+<!-- Hidden setup screen stub (keeps JS references alive) -->
+<div id="setupScreen" style="display:none">
+  <span id="redirectUriDisplay"></span>
+  <input id="setupClientId"/>
+  <div id="setupErr"></div>
 </div>
 
 <!-- ══════════════════════════════════════════════════
@@ -313,7 +228,7 @@
 // ║  See setup guide (click "Setup" on the login screen)                 ║
 // ╚══════════════════════════════════════════════════════════════════════╝
 const CONFIG = {
-  CLIENT_ID: 'YOUR_ATLASSIAN_CLIENT_ID',        // ← Paste your Client ID here
+  CLIENT_ID: 'xtLaSSXv7eKGXejZjiVFoDpdV9t8XneW',        // ← Paste your Client ID here
   // Must match exactly what is registered in Atlassian OAuth app Callback URL
   REDIRECT_URI: 'https://williamwtlin-bit.github.io/',
   AUTH_URL:  'https://auth.atlassian.com/authorize',
@@ -504,7 +419,10 @@ async function handleOAuthCallback(){
 
     // ── Fetch user identity ──────────────────────────────────────────────
     const [me, resources]=await Promise.all([fetchMe(), fetchAccessibleResources()]);
-    const resource = resources[0]; // use first accessible site
+    // Pick the resource that has Jira scopes — avoids accidentally picking Confluence
+    const resource = resources.find(r =>
+      r.scopes && r.scopes.some(s => s.includes('jira'))
+    ) || resources[0];
     const user={
       accountId:   me.account_id,
       displayName: me.name,
@@ -562,21 +480,30 @@ async function fetchAccessibleResources(){
 }
 
 // Fetch ALL pages of issues reported by the current user
+// Uses POST /search to avoid 410 issues with GET and long query strings
 async function fetchAllIssues(user){
   const {accountId, cloudId, siteUrl}=user;
   const base=`${CONFIG.API_BASE}/ex/jira/${cloudId}`;
-  const jql=encodeURIComponent(`reporter = "${accountId}" ORDER BY created DESC`);
-  const fields='summary,status,assignee,reporter,created,resolutiondate';
+  const jql=`reporter = "${accountId}" ORDER BY created DESC`;
+  const fields=['summary','status','assignee','reporter','created','resolutiondate'];
   let issues=[], startAt=0, total=Infinity;
 
   while(issues.length < total){
-    const data=await apiFetch(
-      `${base}/rest/api/3/search?jql=${jql}&fields=${fields}&maxResults=100&startAt=${startAt}`
-    );
-    total=data.total;
-    issues=[...issues,...data.issues];
-    if(data.issues.length===0 || issues.length>=total) break;
-    startAt+=data.issues.length;
+    const data=await apiFetch(`${base}/rest/api/3/search`, {
+      method: 'POST',
+      body: JSON.stringify({
+        jql,
+        fields,
+        maxResults: 100,
+        startAt,
+        expand: [],
+      }),
+    });
+    total=data.total || 0;
+    const batch=data.issues || [];
+    issues=[...issues,...batch];
+    if(batch.length===0 || issues.length>=total) break;
+    startAt+=batch.length;
   }
 
   return issues.map(i=>{
@@ -815,46 +742,28 @@ function scheduleDaily(){
 // ════════════════════════════════════════════════════════════════════════════
 
 function showScreen(name){
-  ['setupScreen','loginScreen','appScreen'].forEach(id=>{
+  ['loginScreen','appScreen'].forEach(id=>{
     const el=document.getElementById(id);
     if(el) el.style.display=(id===name+'Screen'||id===name)?'':'none';
   });
   if(name==='appScreen') document.getElementById('appScreen').style.display='block';
 }
 
-function showSetupScreen(){
-  document.getElementById('redirectUriDisplay').textContent=CONFIG.REDIRECT_URI;
-  showScreen('setup');
-}
 function showLoginScreen(){
   showScreen('login');
   const btn=document.getElementById('loginBtn');
-  btn.disabled=false; btn.innerHTML='<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg> Login with Atlassian';
+  btn.disabled=false;
+  btn.innerHTML='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg> Sign in with Atlassian';
 }
 function showLoginError(msg){
   const el=document.getElementById('loginErr'); el.textContent=msg; el.style.display='block';
 }
 function getConfiguredClientId(){
-  // Check for a runtime-set client ID (from setup screen) first, then CONFIG
-  const stored=sessionStorage.getItem('jd_client_id');
-  const id=stored||CONFIG.CLIENT_ID;
-  return id==='YOUR_ATLASSIAN_CLIENT_ID' ? null : id;
+  return CONFIG.CLIENT_ID || null;
 }
-function onSetupClientIdInput(){
-  const v=document.getElementById('setupClientId').value.trim();
-  document.getElementById('setupSaveBtn').disabled=!v||v==='YOUR_ATLASSIAN_CLIENT_ID';
-}
-function saveClientIdAndLogin(){
-  const v=document.getElementById('setupClientId').value.trim();
-  if(!v) return;
-  // Store temporarily for this session; user should also edit the HTML file
-  sessionStorage.setItem('jd_client_id', v);
-  showLoginScreen();
-  startLogin();
-}
-function copyRedirectUri(){
-  navigator.clipboard.writeText(CONFIG.REDIRECT_URI).then(()=>toast('success','Copied!'));
-}
+// Stub — setup screen removed
+function showSetupScreen(){ showLoginScreen(); }
+function copyRedirectUri(){}
 function logout(){
   clearSession();
   selAsn=null; allData=[];
@@ -899,13 +808,7 @@ async function launchDashboard(user){
     return;
   }
 
-  // Case 3: CLIENT_ID not configured yet — show setup guide
-  if(!getConfiguredClientId()){
-    showSetupScreen();
-    return;
-  }
-
-  // Case 4: No session — show login screen
+  // Case 3: No session — show login screen
   showLoginScreen();
 })();
 </script>
