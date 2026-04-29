@@ -481,7 +481,7 @@ async function fetchAccessibleResources(){
 
 // Fetch ALL pages of issues reported by the current user
 async function fetchAllIssues(user){
-  const {accountId, cloudId}=user;
+  const {accountId, cloudId, siteUrl}=user;
   const base=`${CONFIG.API_BASE}/ex/jira/${cloudId}`;
   // Date restriction required by Jira Cloud OAuth
   const since = new Date(); since.setFullYear(since.getFullYear() - 1);
