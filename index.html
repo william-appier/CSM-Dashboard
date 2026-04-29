@@ -484,7 +484,10 @@ async function fetchAccessibleResources(){
 async function fetchAllIssues(user){
   const {accountId, cloudId, siteUrl}=user;
   const base=`${CONFIG.API_BASE}/ex/jira/${cloudId}`;
-  const jql=`reporter = "${accountId}" ORDER BY created DESC`;
+  // Date restriction required by Jira Cloud OAuth — fetches last 12 months
+  const since = new Date(); since.setFullYear(since.getFullYear() - 1);
+  const sinceStr = since.toISOString().slice(0,10).replace(/-/g,'/');
+  const jql=`reporter = "${accountId}" AND created >= "${sinceStr}" ORDER BY created DESC`;
   // New /search/jql requires fields as comma-separated string, not array
   const fields='summary,status,assignee,reporter,created,resolutiondate';
   let issues=[], nextPageToken=null, total=Infinity;
