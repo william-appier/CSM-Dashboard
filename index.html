@@ -193,6 +193,11 @@
   .comment-author{font-family:'DM Mono',monospace;font-size:11px;font-weight:500;color:var(--muted2);margin-bottom:4px;display:flex;align-items:center;justify-content:space-between;}
   .comment-date{font-size:10px;color:var(--muted);}
   .comment-body{font-size:13px;color:var(--text);line-height:1.6;white-space:pre-wrap;word-break:break-word;}
+  .comment-media{display:grid;grid-template-columns:repeat(auto-fill,minmax(90px,1fr));gap:6px;margin-top:8px;}
+  .comment-media-item{border-radius:6px;overflow:hidden;background:var(--surface2);border:1px solid var(--border);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;position:relative;cursor:pointer;transition:border-color .15s;}
+  .comment-media-item:hover{border-color:var(--accent);}
+  .comment-media-item:hover .media-zoom{opacity:1;}
+  .comment-thumb{width:100%;height:100%;object-fit:cover;display:block;}
   .panel-loading{font-family:'DM Mono',monospace;font-size:12px;color:var(--muted);font-style:italic;}
   .panel-empty{font-family:'DM Mono',monospace;font-size:12px;color:var(--muted);font-style:italic;}
   .panel-description{font-size:13px;color:var(--muted2);line-height:1.7;background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:12px 14px;max-height:480px;overflow-y:auto;}
@@ -1272,30 +1277,119 @@ async function loadPanelComments(key, maxResults=8){
       el.innerHTML='<span class="panel-empty">No comments yet</span>';
       return;
     }
-    el.innerHTML=comments.map(c=>{
+
+    // Render comment shells (text only first)
+    el.innerHTML=comments.map((c,ci)=>{
       const author=c.author?.displayName||'Unknown';
       const date=(c.created||'').slice(0,10);
-      // Extract plain text from Atlassian Document Format (ADF)
-      const body=extractAdfText(c.body)||'(no text)';
+      const bodyText=extractAdfText(c.body).trim()||'';
+      const mediaNodes=extractAdfMedia(c.body);
+      const mediaHtml=mediaNodes.length
+        ? `<div class="comment-media" id="cmedia-${key}-${ci}"></div>`
+        : '';
       return `<div class="comment-item">
         <div class="comment-author">${esc(author)}<span class="comment-date">${date}</span></div>
-        <div class="comment-body">${esc(body)}</div>
+        ${bodyText?`<div class="comment-body">${esc(bodyText)}</div>`:''}
+        ${mediaHtml}
       </div>`;
     }).join('');
+
+    // Now fetch media for each comment that has attachments
+    const token=await getAccessToken();
+    let globalMediaIdx=0; // shared index into _mediaRegistry for navigation
+    comments.forEach((c,ci)=>{
+      const mediaNodes=extractAdfMedia(c.body);
+      if(!mediaNodes.length) return;
+      const gridEl=document.getElementById(`cmedia-${key}-${ci}`);
+      if(!gridEl) return;
+
+      mediaNodes.forEach((m,mi)=>{
+        const slotId=`cslot-${key}-${ci}-${mi}`;
+        const slot=document.createElement('div');
+        slot.className='comment-media-item';
+        slot.id=slotId;
+        slot.innerHTML='<span class="panel-loading" style="font-size:9px">…</span>';
+        slot.dataset.mIdx=globalMediaIdx;
+        gridEl.appendChild(slot);
+
+        if(m.mediaType==='external' && m.url){
+          // External image — use URL directly, no auth needed
+          const imgEl=document.createElement('img');
+          imgEl.className='comment-thumb';
+          imgEl.src=m.url;
+          imgEl.alt='';
+          const zoomEl=document.createElement('div');
+          zoomEl.className='media-zoom'; zoomEl.textContent='🔍';
+          slot.innerHTML='';
+          slot.appendChild(imgEl);
+          slot.appendChild(zoomEl);
+          _mediaRegistry[globalMediaIdx]={url:m.url, name:`attachment-${mi+1}`, type:'img'};
+          const capturedIdx=globalMediaIdx;
+          slot.addEventListener('click',()=>openPreviewModal(capturedIdx, _mediaRegistry.filter(Boolean).length));
+        } else {
+          // Internal Jira file — fetch with auth via api.atlassian.com
+          // (same approach as issue attachments — redirects to api.media.atlassian.com)
+          const apiUrl=`${CONFIG.API_BASE}/ex/jira/${user.cloudId}/rest/api/3/attachment/content/${m.id}`;
+          const capturedIdx=globalMediaIdx;
+          fetch(apiUrl,{headers:{'Authorization':`Bearer ${token}`},redirect:'follow'})
+            .then(r=>{
+              if(!r.ok) throw new Error(r.status);
+              return r.blob();
+            })
+            .then(blob=>{
+              const url=URL.createObjectURL(blob);
+              const isVideo=m.mimeType?.startsWith('video/');
+              _mediaRegistry[capturedIdx]={url, name:`comment-attachment-${mi+1}`, type:isVideo?'video':'img'};
+              if(isVideo){
+                slot.innerHTML=`<video class="comment-thumb" src="${url}" preload="metadata" muted playsinline></video>
+                  <div class="media-zoom">▶</div>`;
+                slot.querySelector('video').addEventListener('loadedmetadata',v=>v.target.currentTime=0.5);
+              } else {
+                slot.innerHTML=`<img class="comment-thumb" src="${url}" alt="" draggable="false"/>
+                  <div class="media-zoom">🔍</div>`;
+              }
+              slot.addEventListener('click',()=>openPreviewModal(capturedIdx, _mediaRegistry.filter(Boolean).length));
+            })
+            .catch(()=>{
+              slot.innerHTML='<span style="font-size:9px;color:var(--muted);text-align:center;padding:4px">Could not load</span>';
+            });
+        }
+        globalMediaIdx++;
+      });
+    });
+
   }catch(e){
     el.innerHTML='<span class="panel-empty">Could not load comments</span>';
   }
 }
 
-// Recursively extract plain text from Atlassian Document Format (ADF)
+// Recursively extract plain text from ADF
 function extractAdfText(node){
   if(!node) return '';
   if(typeof node==='string') return node;
   if(node.type==='text') return node.text||'';
   if(node.type==='hardBreak') return '\n';
   if(node.type==='paragraph') return (node.content||[]).map(extractAdfText).join('')+'\n';
+  // Skip media nodes — handled separately by extractAdfMedia
+  if(node.type==='mediaSingle'||node.type==='mediaInline') return '';
   if(node.content) return (node.content||[]).map(extractAdfText).join('');
   return '';
+}
+
+// Extract media file IDs and types from ADF (for comment attachments)
+function extractAdfMedia(node, results=[]){
+  if(!node||typeof node!=='object') return results;
+  if(node.type==='media' && node.attrs?.id){
+    results.push({
+      id:         node.attrs.id,
+      mediaType:  node.attrs.type||'file',       // 'file' | 'external'
+      mimeType:   node.attrs.mimeType||'',
+      url:        node.attrs.url||null,          // for external images
+      collection: node.attrs.collection||'',
+    });
+  }
+  if(node.content) node.content.forEach(n=>extractAdfMedia(n,results));
+  return results;
 }
 
 async function submitComment(){
