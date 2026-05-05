@@ -917,7 +917,29 @@ async function apiFetch(url, opts={}){
   if(opts.body && method !== 'GET' && method !== 'HEAD'){
     fetchOpts.body = opts.body;
   }
-  const resp=await fetch(url, fetchOpts);
+
+  // For mutating requests, prevent the browser from silently converting POST→GET
+  // when the Atlassian API gateway issues a 302 redirect to the Jira instance.
+  // Using redirect:'manual' lets us detect the redirect and re-issue with the correct method.
+  let resp;
+  if(method !== 'GET' && method !== 'HEAD'){
+    const manualResp = await fetch(url, {...fetchOpts, redirect:'manual'});
+    if(manualResp.type === 'opaqueredirect'){
+      // Gateway redirected — re-issue the POST directly to the Jira site URL
+      const user = getUser();
+      const pathMatch = url.match(/\/(rest\/.+)$/);
+      if(user?.siteUrl && pathMatch){
+        resp = await fetch(`${user.siteUrl}/${pathMatch[1]}`, {...fetchOpts, redirect:'follow'});
+      } else {
+        throw new Error('API gateway issued an unexpected redirect. Please log out and log back in.');
+      }
+    } else {
+      resp = manualResp;
+    }
+  } else {
+    resp = await fetch(url, fetchOpts);
+  }
+
   if(resp.status===401){
     // Token truly invalid — force re-login
     clearSession();
