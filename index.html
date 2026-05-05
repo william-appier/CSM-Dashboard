@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Jira Team Dashboard</title>
 <!-- Security: restrict resource loading to known trusted origins -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com https://*.atlassian.com https://api.media.atlassian.com https://*.workers.dev; connect-src https://*.atlassian.com https://api.media.atlassian.com https://*.workers.dev; img-src blob: data: https://api.media.atlassian.com https://*.atlassian.com https://*.atl-paas.net https://secure.gravatar.com; media-src blob: https://api.media.atlassian.com;">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com https://*.atlassian.com https://api.media.atlassian.com https://*.workers.dev; connect-src https://*.atlassian.com https://api.media.atlassian.com https://*.workers.dev; img-src blob: data: https:; media-src blob: https://api.media.atlassian.com;">
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -895,6 +895,11 @@ async function handleOAuthCallback(){
 async function apiFetch(url, opts={}){
   if(url.includes('/ex/jira//')){
     throw new Error('API URL is malformed — cloudId is missing. Please log in again.');
+  }
+  // A trailing slash before '?' means a key/id was empty (e.g. /issue/?fields=...)
+  // Atlassian 301-redirects these to the bare collection endpoint, and browsers follow with GET → 405
+  if(/\/\?/.test(url)){
+    throw new Error(`API URL has an empty path segment (likely a missing ticket key): ${url}`);
   }
   const token=await getAccessToken();
   // Explicitly set method to prevent browsers silently converting POST→GET on redirect
@@ -2788,6 +2793,7 @@ async function wizCreateOnboardTicket(){
     const base = `${CONFIG.API_BASE}/ex/jira/${user.cloudId}`;
 
     // Fetch sample ticket to clone its fields
+    if(!cat.onboardTicket?.sampleKey) throw new Error('No sample ticket key configured for this platform.');
     const sample = await apiFetch(`${base}/rest/api/3/issue/${cat.onboardTicket.sampleKey}?fields=issuetype,project,priority,labels`);
     const f = sample.fields||{};
 
@@ -3209,6 +3215,7 @@ async function wizCreateAllTickets(){
     for(const feat of selected){
       btn.textContent=`Creating ${feat.name}…`;
       // Fetch sample ticket fields
+      if(!feat.sample) throw new Error(`No sample ticket key configured for feature: ${feat.name}`);
       const sample = await apiFetch(`${base}/rest/api/3/issue/${feat.sample}?fields=issuetype,project,priority,labels,description`);
       const sf = sample.fields||{};
 
@@ -3407,6 +3414,7 @@ async function refreshObStatuses(list, user){
   for(const ob of list){
     for(const feat of ob.features){
       try{
+        if(!feat.ticketKey) continue; // empty key would produce a trailing-slash URL → 301 redirect → 405 GET
         const data = await apiFetch(`${base}/rest/api/3/issue/${feat.ticketKey}?fields=status`);
         const status = data.fields?.status?.name||feat.status;
         feat.status = status;
