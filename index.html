@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Jira Team Dashboard</title>
 <!-- Security: restrict resource loading to known trusted origins -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com https://*.atlassian.com https://api.media.atlassian.com https://*.workers.dev; connect-src https://*.atlassian.com https://api.media.atlassian.com https://*.workers.dev; img-src blob: data: https://api.media.atlassian.com; media-src blob: https://api.media.atlassian.com;">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com https://*.atlassian.com https://api.media.atlassian.com https://*.workers.dev; connect-src https://*.atlassian.com https://api.media.atlassian.com https://*.workers.dev; img-src blob: data: https://api.media.atlassian.com https://*.atlassian.com https://*.atl-paas.net https://secure.gravatar.com; media-src blob: https://api.media.atlassian.com;">
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -876,6 +876,9 @@ async function handleOAuthCallback(){
       siteUrl:     resource?.url   || 'https://appier.atlassian.net',
       siteName:    resource?.name  || '',
     };
+    if(!user.cloudId){
+      throw new Error('Could not determine Atlassian Cloud ID. Ensure your OAuth app scopes include read:jira-work and that your account has access to a Jira site.');
+    }
     saveUser(user);
     launchDashboard(user);
   }catch(e){
@@ -890,6 +893,9 @@ async function handleOAuthCallback(){
 // ════════════════════════════════════════════════════════════════════════════
 
 async function apiFetch(url, opts={}){
+  if(url.includes('/ex/jira//')){
+    throw new Error('API URL is malformed — cloudId is missing. Please log in again.');
+  }
   const token=await getAccessToken();
   // Explicitly set method to prevent browsers silently converting POST→GET on redirect
   const method = opts.method || 'GET';
