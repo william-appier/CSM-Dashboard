@@ -286,6 +286,17 @@
   .tbd-row{cursor:pointer;}
   .tbd-row:hover td{background:rgba(79,142,247,.06)!important;}
   .tbd-row.panel-active td{background:rgba(79,142,247,.1)!important;}
+  /* Inline reassign dropdown */
+  .inline-asn-wrap{position:relative;display:inline-block;}
+  .inline-asn-dd{position:absolute;top:calc(100% + 4px);right:0;min-width:220px;background:var(--surface2);border:1px solid var(--border);border-radius:8px;z-index:300;box-shadow:0 8px 24px rgba(0,0,0,.5);overflow:hidden;display:none;}
+  .inline-asn-dd.open{display:block;}
+  .inline-asn-search{width:100%;background:var(--surface);border:none;border-bottom:1px solid var(--border);color:var(--text);padding:7px 10px;font-family:'DM Mono',monospace;font-size:12px;outline:none;}
+  .inline-asn-list{max-height:180px;overflow-y:auto;}
+  .inline-asn-opt{padding:7px 10px;font-family:'DM Mono',monospace;font-size:12px;cursor:pointer;color:var(--muted2);display:flex;align-items:center;gap:7px;transition:background .1s;}
+  .inline-asn-opt:hover{background:rgba(255,255,255,.04);color:var(--text);}
+  .inline-asn-opt img{width:20px;height:20px;border-radius:50%;}
+  .btn-reassign{background:var(--surface2);border:1px solid var(--border);color:var(--muted2);padding:4px 9px;border-radius:5px;font-family:'DM Mono',monospace;font-size:11px;cursor:pointer;transition:all .15s;white-space:nowrap;}
+  .btn-reassign:hover{border-color:var(--accent);color:var(--accent);}
   .tbd-empty{padding:40px;text-align:center;color:var(--muted);font-size:14px;}
   .tbd-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:22px;}
 
@@ -587,6 +598,14 @@
         <span class="bulk-count" id="tbdBulkCount"><strong>0</strong> selected</span>
         <div class="bulk-actions">
           <button class="bulk-btn success-btn" onclick="tbdBulkMarkDone()">✓ Mark All Done</button>
+          <div class="inline-asn-wrap" id="tbdBulkAsnWrap">
+            <button class="bulk-btn" onclick="toggleTbdBulkAsnDd(event)">👤 Reassign All</button>
+            <div class="inline-asn-dd" id="tbdBulkAsnDd">
+              <input class="inline-asn-search" type="text" id="tbdBulkAsnSearch"
+                placeholder="Search…" oninput="filterTbdBulkAsn()" autocomplete="off"/>
+              <div class="inline-asn-list" id="tbdBulkAsnList"></div>
+            </div>
+          </div>
           <button class="bulk-btn" onclick="tbdBulkCopyKeys()">📋 Copy Keys</button>
         </div>
       </div>
@@ -1795,6 +1814,138 @@ function switchTab(name){
   if(name==='tracking') renderOnboardingProgress();
 }
 
+// ── REASSIGN HELPERS (shared by bulk + per-row) ──────────────────────────────
+let _asnCache = [];
+
+async function loadAsnCache(){
+  if(_asnCache.length) return _asnCache;
+  const user = getUser();
+  if(!user) return [];
+  try{
+    const base = `${CONFIG.API_BASE}/ex/jira/${user.cloudId}`;
+    const data = await apiFetch(`${base}/rest/api/3/user/search?query=.&maxResults=50`);
+    _asnCache = (data||[]).filter(u=>u.accountType==='atlassian');
+  }catch(_){ _asnCache=[]; }
+  return _asnCache;
+}
+
+function renderAsnList(listEl, searchEl, onPick){
+  const q = (searchEl?.value||'').toLowerCase();
+  const users = q ? _asnCache.filter(u=>(u.displayName||'').toLowerCase().includes(q)||(u.emailAddress||'').toLowerCase().includes(q)) : _asnCache;
+  if(!users.length){ listEl.innerHTML='<div class="inline-asn-opt" style="pointer-events:none;color:var(--muted)">No users found</div>'; return; }
+  listEl.innerHTML = users.map(u=>`
+    <div class="inline-asn-opt" onclick="(${onPick.toString()})('${esc(u.accountId)}','${esc(u.displayName)}')">
+      ${u.avatarUrls?.['24x24']?`<img src="${u.avatarUrls['24x24']}" alt=""/>`:'👤'}
+      <span>${esc(u.displayName)}</span>
+      <span style="font-size:10px;color:var(--muted);margin-left:auto">${esc(u.emailAddress||'')}</span>
+    </div>`).join('');
+}
+
+// ── Per-row reassign ──────────────────────────────────────────────────────────
+let _openRowDd = null;
+
+async function openRowAsnDd(key, btn, e){
+  e.stopPropagation();
+  const dd = document.getElementById('rowAsn-'+key);
+  if(!dd) return;
+  // Close any other open dropdown
+  if(_openRowDd && _openRowDd!==key){
+    const prev = document.getElementById('rowAsn-'+_openRowDd);
+    if(prev) prev.classList.remove('open');
+  }
+  const isOpen = dd.classList.toggle('open');
+  _openRowDd = isOpen ? key : null;
+  if(isOpen){
+    document.getElementById('rowAsnSearch-'+key)?.focus();
+    const list = document.getElementById('rowAsnList-'+key);
+    const search = document.getElementById('rowAsnSearch-'+key);
+    if(list && !list.children.length){
+      list.innerHTML='<div class="inline-asn-opt" style="pointer-events:none;color:var(--muted)">Loading…</div>';
+      await loadAsnCache();
+      renderAsnList(list, search, (accountId, displayName)=>pickRowAsn(key, accountId, displayName));
+    }
+  }
+}
+
+function filterRowAsn(key){
+  const list   = document.getElementById('rowAsnList-'+key);
+  const search = document.getElementById('rowAsnSearch-'+key);
+  if(list) renderAsnList(list, search, (accountId, displayName)=>pickRowAsn(key, accountId, displayName));
+}
+
+async function pickRowAsn(key, accountId, displayName){
+  const dd = document.getElementById('rowAsn-'+key);
+  if(dd) dd.classList.remove('open');
+  _openRowDd = null;
+  toast('info',`Reassigning ${key} to ${displayName}…`);
+  try{
+    const user = getUser();
+    const base = `${CONFIG.API_BASE}/ex/jira/${user.cloudId}`;
+    await apiFetch(`${base}/rest/api/3/issue/${key}/assignee`,{ method:'PUT', body:JSON.stringify({accountId}) });
+    toast('success',`✓ ${key} reassigned to ${displayName}`);
+    // Remove from TBD list if reassigned away from self
+    if(accountId !== user.accountId){
+      tbdData = tbdData.filter(i=>i.key!==key);
+      renderTbd(tbdData);
+    }
+  }catch(e){ toast('error',`Reassign failed: ${e.message}`); }
+}
+
+// ── Bulk reassign ─────────────────────────────────────────────────────────────
+async function toggleTbdBulkAsnDd(e){
+  e.stopPropagation();
+  const dd   = document.getElementById('tbdBulkAsnDd');
+  const list = document.getElementById('tbdBulkAsnList');
+  const srch = document.getElementById('tbdBulkAsnSearch');
+  if(!dd) return;
+  const isOpen = dd.classList.toggle('open');
+  if(isOpen){
+    srch?.focus();
+    if(!_asnCache.length){
+      list.innerHTML='<div class="inline-asn-opt" style="pointer-events:none;color:var(--muted)">Loading…</div>';
+      await loadAsnCache();
+    }
+    renderAsnList(list, srch, (accountId, displayName)=>tbdBulkReassign(accountId, displayName));
+  }
+}
+
+function filterTbdBulkAsn(){
+  const list = document.getElementById('tbdBulkAsnList');
+  const srch = document.getElementById('tbdBulkAsnSearch');
+  renderAsnList(list, srch, (accountId, displayName)=>tbdBulkReassign(accountId, displayName));
+}
+
+async function tbdBulkReassign(accountId, displayName){
+  document.getElementById('tbdBulkAsnDd')?.classList.remove('open');
+  if(!tbdBulkSelected.size){ toast('info','No tickets selected'); return; }
+  const keys = [...tbdBulkSelected];
+  toast('info',`Reassigning ${keys.length} tickets to ${displayName}…`);
+  const user = getUser();
+  const base = `${CONFIG.API_BASE}/ex/jira/${user.cloudId}`;
+  let ok=0, fail=0;
+  for(const key of keys){
+    try{
+      await apiFetch(`${base}/rest/api/3/issue/${key}/assignee`,{ method:'PUT', body:JSON.stringify({accountId}) });
+      ok++;
+    }catch(_){ fail++; }
+  }
+  if(ok)   toast('success',`✓ Reassigned ${ok} tickets to ${displayName}`);
+  if(fail) toast('error',`${fail} tickets could not be reassigned`);
+  clearTbdBulk();
+  // If reassigned to someone else, remove from list
+  if(accountId !== user?.accountId){
+    tbdData = tbdData.filter(i=>!keys.includes(i.key));
+    renderTbd(tbdData);
+  }
+}
+
+// Close dropdowns on outside click
+document.addEventListener('click', ()=>{
+  document.querySelectorAll('.inline-asn-dd.open').forEach(d=>d.classList.remove('open'));
+  _openRowDd = null;
+  document.getElementById('tbdBulkAsnDd')?.classList.remove('open');
+});
+
 // ── TBD BULK ACTIONS ─────────────────────────────────────────────────────────
 let tbdBulkSelected = new Set();
 
@@ -1898,7 +2049,7 @@ function renderTbd(issues){
   const thead=`<thead><tr>
     <th class="cb-th"><input type="checkbox" class="group-cb" id="tbdGroupCb" title="Select all" onchange="onTbdGroupCbChange(this)"/></th>
     <th>Ticket</th><th>Summary</th><th>Client</th><th>Status</th>
-    <th>Reporter</th><th>Created</th><th>Lead Time ↓</th><th>Action</th>
+    <th>Reporter</th><th>Created</th><th>Lead Time ↓</th><th>Reassign</th><th>Action</th>
   </tr></thead>`;
 
   const rows = sorted.map(i=>{
@@ -1916,6 +2067,16 @@ function renderTbd(issues){
       <td><span class="ac">${esc(i.reporter)}</span></td>
       <td><span class="dc">${i.created}</span></td>
       <td><span class="lt ${ltC(days)}">${days}d</span></td>
+      <td onclick="event.stopPropagation()">
+        <div class="inline-asn-wrap">
+          <button class="btn-reassign" onclick="openRowAsnDd('${i.key}',this,event)">👤 Reassign</button>
+          <div class="inline-asn-dd" id="rowAsn-${i.key}">
+            <input class="inline-asn-search" type="text" id="rowAsnSearch-${i.key}"
+              placeholder="Search…" oninput="filterRowAsn('${i.key}')" autocomplete="off"/>
+            <div class="inline-asn-list" id="rowAsnList-${i.key}"></div>
+          </div>
+        </div>
+      </td>
       <td onclick="event.stopPropagation()">
         <button class="btn-md" onclick="markDoneTbd('${i.key}',this)">✓ Done</button>
       </td>
@@ -2050,12 +2211,27 @@ async function bulkMarkDone(){
   renderDashboard(allData);
 }
 
-function renderDashboard(issues){
-  allData=issues;
+function getOnboardingTicketKeys(){
+  const keys = new Set();
+  try{
+    [...loadOnboardings(), ...loadDrafts()].forEach(ob=>{
+      if(ob.onboardTicketKey) keys.add(ob.onboardTicketKey);
+      (ob.features||[]).forEach(f=>{ if(f.ticketKey) keys.add(f.ticketKey); });
+    });
+  }catch(_){}
+  return keys;
+}
 
-  // Build client→issues map
+function renderDashboard(issues){
+  allData=issues; // keep full set for mark-done sync
+
+  // Filter out onboarding wizard tickets — shown in Onboarding Progress only
+  const obKeys = getOnboardingTicketKeys();
+  const filtered = obKeys.size ? issues.filter(i=>!obKeys.has(i.key)) : issues;
+
+  // Build client→issues map using filtered set
   const map={};
-  for(const i of issues){const c=extractClient(i.summary);if(!map[c])map[c]=[];map[c].push(i);}
+  for(const i of filtered){const c=extractClient(i.summary);if(!map[c])map[c]=[];map[c].push(i);}
 
   // Split into: active clients (has open tickets) vs completed clients (all done)
   const activeClients    = [];
@@ -2066,19 +2242,23 @@ function renderDashboard(issues){
     else         completedClients.push(c);
   });
 
-  // Rule 1 & 2: Sort active clients by open ticket count DESC (Others included, no exception)
+  // Rule 1 & 2: Sort active clients by open ticket count DESC; Others always last
   const openCount = c => map[c].filter(i=>!isDone(i.status)).length;
-  activeClients.sort((a,b)=> openCount(b) - openCount(a));
+  activeClients.sort((a,b)=>{
+    if(a==='Others') return 1;   // Others always last among active
+    if(b==='Others') return -1;
+    return openCount(b) - openCount(a);
+  });
 
   // Rule 3: Completed clients sorted alphabetically inside the super-group
   completedClients.sort((a,b)=>a.localeCompare(b));
 
   // Stats
-  const doneCt = issues.filter(i=>isDone(i.status)).length;
-  document.getElementById('sTotal').textContent=issues.length;
+  const doneCt = filtered.filter(i=>isDone(i.status)).length;
+  document.getElementById('sTotal').textContent=filtered.length;
   document.getElementById('sDone').textContent=doneCt;
-  document.getElementById('sNS').textContent=issues.filter(i=>isBacklog(i.status)).length;
-  document.getElementById('sActive').textContent=issues.filter(i=>isActive(i.status)).length;
+  document.getElementById('sNS').textContent=filtered.filter(i=>isBacklog(i.status)).length;
+  document.getElementById('sActive').textContent=filtered.filter(i=>isActive(i.status)).length;
   document.getElementById('tc-tracking').textContent=issues.length - doneCt;
   const now=new Date();
   document.getElementById('lu').textContent='Updated: '+now.toLocaleDateString('en-GB')+' '+now.toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'});
@@ -2823,7 +3003,7 @@ function renderWizAccountAndFeatures(body, footer){
         value="${esc(wiz.opportunityLink)}" oninput="wiz.opportunityLink=this.value.trim()"/>
     </div>
     <div class="wiz-field">
-      <label class="wiz-label">Assign TS To All Tickets <span class="wiz-req">*</span></label>
+      <label class="wiz-label">Assign TS To All Tickets <span style="color:var(--muted);font-size:9px;margin-left:4px">(optional)</span></label>
       <div class="wiz-asn-wrap" id="wizAsnWrap">
         <button class="wiz-asn-btn ${wiz.assignee?'selected':''}" id="wizAsnBtn" onclick="toggleWizAsnDropdown(event)">
           ${wiz.assignee?.avatarUrl ? `<img class="wab-avatar" src="${wiz.assignee.avatarUrl}" alt=""/>` : '<span style="font-size:14px">👤</span>'}
@@ -2880,7 +3060,6 @@ async function wizCreateOnboardTicket(){
   if(!wiz.clientName){ err.textContent='Client name is required'; err.style.display='block'; return; }
   if(!wiz.legalTicket){ err.textContent='Legal ticket is required (e.g. LEG-XXXX)'; err.style.display='block'; return; }
   if(!wiz.opportunityLink){ err.textContent='Opportunity link is required'; err.style.display='block'; return; }
-  if(!wiz.assignee){ err.textContent='Please assign a TS team member to handle these tickets'; err.style.display='block'; return; }
   const warnErr2 = document.getElementById('wizErr2');
   if(warnErr2&&Object.keys(wiz.selectedFeatures).length===0){
     warnErr2.textContent='⚠️ No channels or features selected — you can still create the onboard ticket and select them when resuming.';
@@ -2940,6 +3119,7 @@ async function wizCreateOnboardTicket(){
     };
     // Only send minimal priority object
     if(f.priority?.id) payload.fields.priority = { id: f.priority.id };
+    // Only set assignee if one was selected (optional)
     if(wiz.assignee?.accountId) payload.fields.assignee = { accountId: wiz.assignee.accountId };
 
     const created = await apiFetch(`${base}/rest/api/3/issue`, { method:'POST', body:JSON.stringify(payload) });
@@ -3083,17 +3263,19 @@ function renderWizAppIds(body, footer){
       in all feature ticket descriptions automatically.
     </p>
 
-    <!-- Summary of selected features -->
-    <div style="height:1px;background:var(--border);margin:18px 0 14px"></div>
-    <p style="font-size:12px;font-weight:700;color:var(--text);margin-bottom:8px">
-      Features selected in Step 1 (${Object.keys(wiz.selectedFeatures).length})
-    </p>
-    <div style="display:flex;flex-wrap:wrap;gap:6px">
-      ${CATALOGS[wiz.platform].features
-          .filter(f=>wiz.selectedFeatures[f.id])
-          .map(f=>`<span style="font-family:'DM Mono',monospace;font-size:11px;padding:3px 9px;border-radius:4px;background:rgba(79,142,247,.1);color:var(--accent);border:1px solid rgba(79,142,247,.25)">${esc(f.name)}</span>`)
-          .join('')||'<span style="color:var(--muted);font-size:12px">No features selected — go back to Step 1</span>'}
-    </div>`;
+    <!-- Summary of selected features — computed fresh each render -->
+    <div style="height:1px;background:var(--border);margin:18px 0 14px"></div>`;
+
+  // Compute selected features fresh at render time (not inside the template string)
+  const _selFeats = (CATALOGS[wiz.platform]?.features||[]).filter(f=>wiz.selectedFeatures[f.id]);
+  body.innerHTML += `<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
+    <p style="font-size:12px;font-weight:700;color:var(--text);margin:0">Features selected (${_selFeats.length})</p>
+    <button onclick="wizBack()" style="background:transparent;border:none;color:var(--accent);font-size:11px;font-family:DM Mono,monospace;cursor:pointer;text-decoration:underline">← Edit selection</button>
+  </div>
+  <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:4px">
+    ${_selFeats.map(f=>`<span style="font-family:'DM Mono',monospace;font-size:11px;padding:3px 9px;border-radius:4px;background:rgba(79,142,247,.1);color:var(--accent);border:1px solid rgba(79,142,247,.25)">${esc(f.name)}</span>`).join('')
+      ||'<span style="color:var(--muted);font-size:12px">No features selected — click ← Edit selection above</span>'}
+  </div>`;
 
   footer.innerHTML = `
     <button class="btn-wiz-back" onclick="wizBack()">← Back</button>
