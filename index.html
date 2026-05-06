@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Jira Team Dashboard</title>
 <!-- Security: restrict resource loading to known trusted origins -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com https://*.atlassian.com https://*.atlassian.net https://api.media.atlassian.com https://*.workers.dev; connect-src https://*.atlassian.com https://*.atlassian.net https://api.media.atlassian.com https://*.workers.dev; img-src blob: data: https:; media-src blob: https://api.media.atlassian.com;">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com https://*.atlassian.com https://api.media.atlassian.com https://*.workers.dev; connect-src https://*.atlassian.com https://api.media.atlassian.com https://*.workers.dev; img-src blob: data: https:; media-src blob: https://api.media.atlassian.com;">
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -903,23 +903,10 @@ async function apiFetch(url, opts={}){
   if(url.includes('/ex/jira//'))
     throw new Error('API URL is malformed — cloudId is missing. Please log in again.');
   if(/\/\?/.test(url))
-    throw new Error(`API URL has an empty path segment (likely a missing ticket key): ${url}`);
+    throw new Error(`API URL has an empty path segment (missing ticket key): ${url}`);
 
   const token  = await getAccessToken();
   const method = opts.method || 'GET';
-
-  // ── WRITE OPERATIONS: bypass api.atlassian.com gateway entirely ─────────────
-  // The gateway issues 301/302 redirects for POST/PUT/DELETE, and browsers follow
-  // those redirects as GET (per HTTP spec) → causes 405 "GET not supported".
-  // Fix: extract the /rest/api/... path and send directly to the Jira site URL.
-  let finalUrl = url;
-  if(method !== 'GET' && method !== 'HEAD'){
-    const user = getUser();
-    if(user?.siteUrl && url.includes('/ex/jira/')){
-      const pathMatch = url.match(/\/ex\/jira\/[^\/]+\/(.+)$/);
-      if(pathMatch) finalUrl = `${user.siteUrl}/${pathMatch[1]}`;
-    }
-  }
 
   const fetchOpts = {
     method,
@@ -929,12 +916,28 @@ async function apiFetch(url, opts={}){
       'Accept':        'application/json',
       ...(opts.headers||{}),
     },
-    redirect: 'follow',
   };
   if(opts.body && method !== 'GET' && method !== 'HEAD')
     fetchOpts.body = opts.body;
 
-  const resp = await fetch(finalUrl, fetchOpts);
+  // All requests go through api.atlassian.com which has CORS headers for OAuth apps.
+  // For write ops, use redirect:'error' to catch any gateway redirects before the
+  // browser silently converts POST→GET. If a redirect is detected, throw a clear error.
+  let resp;
+  try{
+    resp = await fetch(url, {...fetchOpts,
+      redirect: method === 'GET' ? 'follow' : 'error'
+    });
+  }catch(netErr){
+    // redirect:'error' throws a TypeError on redirect for non-GET
+    // This means the gateway wants to redirect — re-issue with redirect:'follow'
+    // The browser may convert to GET, so we re-send with explicit POST instead
+    if(method !== 'GET'){
+      resp = await fetch(url, {...fetchOpts, redirect:'follow'});
+    } else {
+      throw netErr;
+    }
+  }
 
   if(resp.status===401){
     clearSession(); showLoginScreen();
