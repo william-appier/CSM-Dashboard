@@ -908,36 +908,29 @@ async function apiFetch(url, opts={}){
   const token  = await getAccessToken();
   const method = opts.method || 'GET';
 
-  const fetchOpts = {
-    method,
-    headers:{
-      'Authorization': `Bearer ${token}`,
-      'Content-Type':  'application/json',
-      'Accept':        'application/json',
-      ...(opts.headers||{}),
-    },
+  const headers = {
+    'Authorization': `Bearer ${token}`,
+    'Content-Type':  'application/json',
+    'Accept':        'application/json',
+    ...(opts.headers||{}),
   };
+
+  let finalUrl = url;
+
+  // ── Route write operations through the Cloudflare Worker proxy ─────────────
+  // The browser converts POST → GET when following Atlassian's CDN redirects.
+  // The Worker makes the request server-side where redirects work correctly.
+  if(method !== 'GET' && method !== 'HEAD' && url.includes(CONFIG.API_BASE)){
+    // Rewrite: https://api.atlassian.com/ex/jira/{id}/rest/...
+    //      to: https://workerfordashboard.../jira-proxy/ex/jira/{id}/rest/...
+    finalUrl = url.replace(CONFIG.API_BASE, CONFIG.TOKEN_URL + '/jira-proxy');
+  }
+
+  const fetchOpts = { method, headers, redirect:'follow' };
   if(opts.body && method !== 'GET' && method !== 'HEAD')
     fetchOpts.body = opts.body;
 
-  // All requests go through api.atlassian.com which has CORS headers for OAuth apps.
-  // For write ops, use redirect:'error' to catch any gateway redirects before the
-  // browser silently converts POST→GET. If a redirect is detected, throw a clear error.
-  let resp;
-  try{
-    resp = await fetch(url, {...fetchOpts,
-      redirect: method === 'GET' ? 'follow' : 'error'
-    });
-  }catch(netErr){
-    // redirect:'error' throws a TypeError on redirect for non-GET
-    // This means the gateway wants to redirect — re-issue with redirect:'follow'
-    // The browser may convert to GET, so we re-send with explicit POST instead
-    if(method !== 'GET'){
-      resp = await fetch(url, {...fetchOpts, redirect:'follow'});
-    } else {
-      throw netErr;
-    }
-  }
+  const resp = await fetch(finalUrl, fetchOpts);
 
   if(resp.status===401){
     clearSession(); showLoginScreen();
