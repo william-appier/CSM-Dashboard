@@ -288,13 +288,16 @@
   .tbd-row.panel-active td{background:rgba(79,142,247,.1)!important;}
   /* Inline reassign dropdown */
   .inline-asn-wrap{position:relative;display:inline-block;}
-  .inline-asn-dd{position:fixed;min-width:220px;background:var(--surface2);border:1px solid var(--border);border-radius:8px;z-index:9999;box-shadow:0 8px 24px rgba(0,0,0,.5);overflow:hidden;display:none;}
+  .inline-asn-dd{position:fixed;min-width:280px;background:var(--surface2);border:1px solid var(--border);border-radius:10px;z-index:9999;box-shadow:0 12px 40px rgba(0,0,0,.6);overflow:hidden;display:none;}
   .inline-asn-dd.open{display:block;}
-  .inline-asn-search{width:100%;background:var(--surface);border:none;border-bottom:1px solid var(--border);color:var(--text);padding:7px 10px;font-family:'DM Mono',monospace;font-size:12px;outline:none;}
-  .inline-asn-list{max-height:180px;overflow-y:auto;}
-  .inline-asn-opt{padding:7px 10px;font-family:'DM Mono',monospace;font-size:12px;cursor:pointer;color:var(--muted2);display:flex;align-items:center;gap:7px;transition:background .1s;}
-  .inline-asn-opt:hover{background:rgba(255,255,255,.04);color:var(--text);}
-  .inline-asn-opt img{width:20px;height:20px;border-radius:50%;}
+  .inline-asn-search{width:100%;background:var(--surface);border:none;border-bottom:1px solid var(--border);color:var(--text);padding:9px 12px;font-family:'DM Mono',monospace;font-size:12px;outline:none;letter-spacing:.3px;}
+  .inline-asn-search::placeholder{color:var(--muted);}
+  .inline-asn-list{max-height:220px;overflow-y:auto;}
+  .inline-asn-opt{padding:9px 12px;font-family:'DM Mono',monospace;font-size:12px;cursor:pointer;color:var(--muted2);display:flex;align-items:center;gap:9px;transition:background .1s;}
+  .inline-asn-opt:hover{background:rgba(79,142,247,.08);color:var(--text);}
+  .inline-asn-opt .asn-avatar{width:28px;height:28px;border-radius:50%;object-fit:cover;flex-shrink:0;background:var(--surface);border:1px solid var(--border);}
+  .inline-asn-opt .asn-name{font-weight:600;color:var(--text);flex:1;}
+  .inline-asn-opt .asn-email{font-size:10px;color:var(--muted);margin-left:auto;max-width:130px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
   .btn-reassign{background:var(--surface2);border:1px solid var(--border);color:var(--muted2);padding:4px 9px;border-radius:5px;font-family:'DM Mono',monospace;font-size:11px;cursor:pointer;transition:all .15s;white-space:nowrap;}
   .btn-reassign:hover{border-color:var(--accent);color:var(--accent);}
   .tbd-empty{padding:40px;text-align:center;color:var(--muted);font-size:14px;}
@@ -402,6 +405,8 @@
   .ob-appid-missing{font-family:'DM Mono',monospace;font-size:11px;color:var(--yellow);}
   .ob-del-btn{background:transparent;border:1px solid rgba(248,113,113,.3);color:var(--red);padding:3px 8px;border-radius:4px;font-size:11px;cursor:pointer;margin-left:auto;transition:all .15s;}
   .ob-del-btn:hover{background:rgba(248,113,113,.1);}
+  .btn-add-feat{background:transparent;border:1px solid rgba(79,142,247,.35);color:var(--accent);padding:4px 10px;border-radius:5px;font-family:'Syne',sans-serif;font-size:11px;font-weight:600;cursor:pointer;transition:all .15s;}
+  .btn-add-feat:hover{background:rgba(79,142,247,.1);}
   /* Draft / resume */
   .ob-card.draft{border-color:rgba(251,191,36,.3);}
   .ob-card.draft .ob-card-header{background:rgba(251,191,36,.05);}
@@ -1835,9 +1840,11 @@ function renderAsnList(listEl, searchEl, onPick){
   if(!users.length){ listEl.innerHTML='<div class="inline-asn-opt" style="pointer-events:none;color:var(--muted)">No users found</div>'; return; }
   listEl.innerHTML = users.map(u=>`
     <div class="inline-asn-opt" onclick="(${onPick.toString()})('${esc(u.accountId)}','${esc(u.displayName)}')">
-      ${u.avatarUrls?.['24x24']?`<img src="${u.avatarUrls['24x24']}" alt=""/>`:'👤'}
-      <span>${esc(u.displayName)}</span>
-      <span style="font-size:10px;color:var(--muted);margin-left:auto">${esc(u.emailAddress||'')}</span>
+      ${u.avatarUrls?.['48x48']||u.avatarUrls?.['24x24']
+        ? `<img class="asn-avatar" src="${u.avatarUrls['48x48']||u.avatarUrls['24x24']}" alt=""/>`
+        : `<span class="asn-avatar" style="display:flex;align-items:center;justify-content:center;font-size:12px;background:var(--accent);color:#fff;font-weight:700">${(u.displayName||'?')[0].toUpperCase()}</span>`}
+      <span class="asn-name">${esc(u.displayName)}</span>
+      <span class="asn-email">${esc(u.emailAddress||'')}</span>
     </div>`).join('');
 }
 
@@ -2144,17 +2151,16 @@ function onRowCbChange(cb){
 }
 
 function onGroupCbChange(gid, headerCb){
-  // Toggle all visible (non-filtered) rows in this group
   const body = document.getElementById(gid+'_body');
   if(!body) return;
   body.querySelectorAll('.row-cb').forEach(cb=>{
     const tr = cb.closest('tr');
-    if(tr && tr.style.display!=='none'){
-      cb.checked = headerCb.checked;
-      const key = cb.dataset.key;
-      if(headerCb.checked) bulkSelected.add(key);
-      else                  bulkSelected.delete(key);
-    }
+    if(!tr || tr.style.display==='none') return;
+    // Skip rows inside .done-body (archived/done) — only select active rows
+    if(cb.closest('.done-body')) return;
+    cb.checked = headerCb.checked;
+    if(headerCb.checked) bulkSelected.add(cb.dataset.key);
+    else                  bulkSelected.delete(cb.dataset.key);
   });
   updateBulkBar();
 }
@@ -2164,7 +2170,8 @@ function syncGroupCb(table){
   if(!table) return;
   const headerCb = table.querySelector('.group-cb');
   if(!headerCb) return;
-  const rowCbs = [...table.querySelectorAll('.row-cb')].filter(c=>c.closest('tr')?.style.display!=='none');
+  // Only sync based on active (non-done) visible rows
+  const rowCbs = [...table.querySelectorAll('.row-cb')].filter(c=>!c.closest('.done-body') && c.closest('tr')?.style.display!=='none');
   const allChecked = rowCbs.length>0 && rowCbs.every(c=>c.checked);
   const anyChecked = rowCbs.some(c=>c.checked);
   headerCb.checked       = allChecked;
@@ -2670,12 +2677,14 @@ function renderOnboardingProgressMock(){
           ? `<div class="ob-appid-row">
                <span class="ob-appid-label">App ID</span>
                <span class="ob-appid-val">${esc(ob.appId)}</span>
+               <button class="btn-add-feat" onclick="addObFeatures('${ob.id}')">＋ Add Features</button>
                <button class="ob-del-btn" onclick="deleteOnboarding('${ob.id}')">Delete record</button>
              </div>`
           : `<div class="ob-appid-row">
                <span class="ob-appid-label">App ID</span>
                <span class="ob-appid-missing">⏳ Awaiting from TS team</span>
                <button class="appid-scan-btn" style="font-size:11px">🔍 Scan (preview)</button>
+               <button class="btn-add-feat" onclick="addObFeatures('${ob.id}')">＋ Add Features</button>
                <button class="ob-del-btn" onclick="deleteOnboarding('${ob.id}')">Delete</button>
              </div>`}
         <table class="ob-feat-table">
@@ -3047,10 +3056,13 @@ function renderWizAccountAndFeatures(body, footer){
 
     <!-- Divider -->
     <div style="height:1px;background:var(--border);margin:18px 0 14px"></div>
-    <p style="font-size:12px;font-weight:700;color:var(--text);margin-bottom:4px">Channels & Features to Enable</p>
+    <p style="font-size:12px;font-weight:700;color:var(--text);margin-bottom:4px">
+      ${wiz._addToObId ? 'Select Additional Features to Enable' : 'Channels & Features to Enable'}
+    </p>
     <p style="font-size:12px;color:var(--muted);margin-bottom:12px;line-height:1.5">
-      These will appear in the onboarding ticket so the TS team knows what to prepare.
-      Feature tickets are only created after the App ID is received.
+      ${wiz._addToObId
+        ? 'Pick features to add. Already-created features are greyed out.'
+        : 'These will appear in the onboarding ticket so the TS team knows what to prepare. Feature tickets are only created after the App ID is received.'}
     </p>
     <div class="wiz-err" id="wizErr2"></div>
     ${cats.map(cat=>renderFeatCategory(cat, CATALOGS[wiz.platform].features.filter(f=>f.category===cat))).join('')}
@@ -3311,11 +3323,14 @@ function renderFeatCategory(catName, features){
     <div class="feat-grid">
       ${features.map(f=>{
         const sel = !!wiz.selectedFeatures[f.id];
-        return `<div class="feat-item ${sel?'selected':''}" id="fi-${f.id}">
-          <div class="feat-row" onclick="toggleFeature('${f.id}')">
-            <div class="feat-checkbox">${sel?'✓':''}</div>
+        // In add-features mode, grey out features already in the onboarding record
+        const existingOb = wiz._addToObId ? loadOnboardings().find(o=>o.id===wiz._addToObId) : null;
+        const alreadyDone = existingOb ? existingOb.features.some(ef=>ef.featureId===f.id) : false;
+        return `<div class="feat-item ${sel?'selected':''}" id="fi-${f.id}" style="${alreadyDone?'opacity:.4;pointer-events:none':''}">
+          <div class="feat-row" onclick="${alreadyDone?'':"toggleFeature('" + f.id + "')"}">
+            <div class="feat-checkbox">${alreadyDone?'✓':sel?'✓':''}</div>
             <span class="feat-name">${f.name}</span>
-            <span class="feat-mode-badge">${f.mode==='manual_clone'?'⚠️ manual':'clone'}</span>
+            <span class="feat-mode-badge">${alreadyDone?'✓ created':f.mode==='manual_clone'?'⚠️ manual':'clone'}</span>
           </div>
           ${f.extra.length||f.mode==='manual_clone' ? `<div class="feat-extra" id="fe-${f.id}">
             ${f.extra.map(ex=>`
@@ -3634,13 +3649,14 @@ async function wizCreateAllTickets(){
       createdAt:        new Date().toISOString().slice(0,10),
       features:         created,
     };
-    addOnboarding(ob);
-    // Clean up draft now that onboarding is complete
-    deleteDraft('draft_'+wiz.onboardTicketKey);
-    toast('success', `✓ Created ${created.length} feature tickets!`);
+    // If adding features to existing onboarding, append; otherwise create new record
+    if(!finalizeAddObFeatures(created)){
+      addOnboarding(ob);
+      deleteDraft('draft_'+wiz.onboardTicketKey);
+    }
+    toast('success', `✓ Created ${created.length} feature ticket${created.length===1?'':'s'}!`);
     closeWizard();
     renderOnboardingProgress();
-    // Refresh the main dashboard to show new tickets
     refresh().catch(()=>{});
 
   }catch(e){
@@ -3839,6 +3855,53 @@ async function scanAppIdForOb(obId, ticketKey){
 function toggleObCard(gid){
   const body = document.getElementById(gid+'_body');
   if(body) body.classList.toggle('open');
+}
+
+// ── ADD FEATURES TO EXISTING ONBOARDING ─────────────────────────────────────
+function addObFeatures(obId){
+  const ob = loadOnboardings().find(o=>o.id===obId);
+  if(!ob){ toast('error','Onboarding record not found'); return; }
+
+  // Pre-fill wizard with existing onboarding data
+  wiz.platform          = ob.platform;
+  wiz.clientName        = ob.clientName;
+  wiz.legalTicket       = ob.legalTicket;
+  wiz.opportunityLink   = ob.opportunityLink;
+  wiz.assignee          = ob.assignee || null;
+  wiz.onboardTicketKey  = ob.onboardTicketKey;
+  wiz.appId             = ob.appId || '';
+  wiz.projectId         = ob.projectId || '';
+  wiz.organizationId    = ob.organizationId || '';
+  wiz.selectedFeatures  = {};  // start fresh — user picks which new ones to add
+  wiz.extraFields       = {};
+  wiz._addToObId        = obId; // flag: adding to existing record, not creating new
+
+  // Pre-populate _global extra fields from existing record
+  wiz.extraFields['_global'] = {
+    legalTicket:     ob.legalTicket,
+    opportunityLink: ob.opportunityLink,
+  };
+
+  // Open wizard at Step 1 (Account & Features) so user can pick additional features
+  // but skip directly to feature selection (account fields pre-filled)
+  wiz.step = 1;
+  document.getElementById('wizOverlay').style.display='flex';
+  renderWizStep();
+  toast('info',`Adding features to ${ob.clientName} — select new features below`);
+}
+
+// After ticket creation in wizCreateAllTickets, if _addToObId is set,
+// append the new features to the existing onboarding record instead of creating new one
+function finalizeAddObFeatures(created){
+  const obId = wiz._addToObId;
+  if(!obId) return false;
+  const list = loadOnboardings();
+  const ob   = list.find(o=>o.id===obId);
+  if(!ob) return false;
+  ob.features = [...(ob.features||[]), ...created];
+  saveOnboardings(list);
+  delete wiz._addToObId;
+  return true;
 }
 
 // ── ENTRY POINT ──────────────────────────────────────────────────────────────
