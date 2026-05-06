@@ -2846,7 +2846,8 @@ async function wizCreateOnboardTicket(){
         labels:      [...(f.labels||[]), 'onboarding-dashboard'],
       }
     };
-    if(f.priority) payload.fields.priority = f.priority;
+    // Only send minimal priority object
+    if(f.priority?.id) payload.fields.priority = { id: f.priority.id };
     if(wiz.assignee?.accountId) payload.fields.assignee = { accountId: wiz.assignee.accountId };
 
     const created = await apiFetch(`${base}/rest/api/3/issue`, { method:'POST', body:JSON.stringify(payload) });
@@ -3262,18 +3263,21 @@ async function wizCreateAllTickets(){
         sf.summary?.includes('{') ? sf.summary : `[${wiz.clientName}] ${feat.name}`
       ).replace(/\[.*?\]\s*/, `[${wiz.clientName}] `); // ensure [ClientName] is correct
 
+      // Only send minimal field objects — Jira rejects full cloned objects with self/iconUrl etc.
       const payload = {
         fields:{
           project:     { key: feat.board || (CATALOGS[wiz.platform]?.board) || 'QGWL' },
-          issuetype:   sf.issuetype||{name:'Task'},
+          issuetype:   sf.issuetype?.id ? { id: sf.issuetype.id } : { name: 'Task' },
           summary:     resolvedSummary,
           reporter:    { accountId: user.accountId },
           description: { type:'doc', version:1, content:[...clonedContent, ...appendContent] },
-          labels:      [...(sf.labels||[]), 'onboarding-dashboard', `ob-${wiz.clientName.toLowerCase().replace(/\s+/g,'-')}`],
+          labels:      [...(sf.labels||[]).filter(l=>typeof l==='string'), 'onboarding-dashboard',
+                        `ob-${wiz.clientName.toLowerCase().replace(/\s+/g,'-')}`],
         }
       };
-      if(sf.priority) payload.fields.priority=sf.priority;
-      if(wiz.assignee?.accountId) payload.fields.assignee={ accountId: wiz.assignee.accountId };
+      // Priority: only send id to avoid full object rejection
+      if(sf.priority?.id) payload.fields.priority = { id: sf.priority.id };
+      if(wiz.assignee?.accountId) payload.fields.assignee = { accountId: wiz.assignee.accountId };
 
       const res = await apiFetch(`${base}/rest/api/3/issue`,{method:'POST',body:JSON.stringify(payload)});
 
