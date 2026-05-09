@@ -2773,9 +2773,11 @@ const CATALOGS = {
         suggestedAssignee:'Meh-Chi Yeh',
         extra:[{id:'arName',label:'AIRIS Name',placeholder:'e.g. Mannings_AIRIS'},{id:'arId',label:'AIRIS ID',placeholder:'e.g. ar-xxx'},{id:'axId',label:'Aixon ID',placeholder:'e.g. ax-xxx'},{id:'eam_project_id',label:'EAM Project ID',placeholder:'e.g. eam-xxx'}]},
       { id:'credit_system',  category:'Compulsory', name:'Credit System',        sample:'AEP-6694',   mode:'clone', board:'AEP',
+        crossBoardTask:true,  // AEP-6694 is Sub-task in sample but PROJ is parent board — create as Task
         suggestedAssignee:'Mark Chu',
         extra:[{id:'salesforceId',label:'Salesforce ID',placeholder:'e.g. sf-xxx'},{id:'agentStartDate',label:'Agent Start Date',placeholder:'YYYY-MM-DD',type:'date'},{id:'agentEndDate',label:'Agent End Date',placeholder:'YYYY-MM-DD',type:'date'},{id:'agent',label:'Agent Name(s)',placeholder:'e.g. AgentA, AgentB'},{id:'agentCredit',label:'Agent Credit',placeholder:'e.g. 1000',type:'number'}]},
       { id:'agent_config',   category:'Compulsory', name:'Agent Config',         sample:'AGNT-814',   mode:'manual_clone', board:'AGNT', manual:true,
+        crossBoardTask:true,  // AGNT-814 is Sub-task in sample — create as Task in AGNT
         suggestedAssignee:'Mark Chu', extra:[]},
       { id:'onboard_agent',  category:'Compulsory', name:'Onboard Agent',        sample:'AGNT-815',   mode:'clone', board:'AGNT',
         suggestedAssignee:'Susan Huang',
@@ -2785,6 +2787,10 @@ const CATALOGS = {
 
   OJM: {
     board: 'PHXX',
+    // PHXX requires Acceptance Criteria (customfield_21349) in ADF format
+    requiredCustomFields: {
+      customfield_21349: { type:'doc', version:1, content:[{type:'paragraph', content:[{type:'text', text:'See ticket description for onboarding details.'}]}] }
+    },
     guideline: {
       url: null,
       label: null,
@@ -3238,6 +3244,10 @@ async function wizCreateOnboardTicket(){
     if(f.priority?.id) payload.fields.priority = { id: f.priority.id };
     // Only set assignee if one was selected (optional)
     if(wiz.assignee?.accountId) payload.fields.assignee = { accountId: wiz.assignee.accountId };
+    // Merge board-specific required custom fields
+    const obBoardKey = CATALOGS[wiz.platform]?.board || 'QGWL';
+    const obReqCF    = Object.values(CATALOGS).find(c=>c.board===obBoardKey)?.requiredCustomFields || {};
+    Object.assign(payload.fields, obReqCF);
 
     const created = await apiFetch(`${base}/rest/api/3/issue`, { method:'POST', body:JSON.stringify(payload) });
     wiz.onboardTicketKey = created.key;
@@ -3698,12 +3708,15 @@ async function wizCreateAllTickets(){
       };
       const cleanCloned = clonedContent.map(stripLocalIds);
 
-      // Only send minimal field objects — Jira rejects full cloned objects with self/iconUrl etc.
-      const isSubtask = sf.issuetype?.subtask === true;
+      // crossBoardTask: sample is Sub-task but we must create as Task (different board than parent)
+      const isSubtask      = sf.issuetype?.subtask === true && !feat.crossBoardTask;
+      const issueTypeFinal = feat.crossBoardTask
+        ? { name: 'Task' }
+        : (sf.issuetype?.id ? { id: sf.issuetype.id } : { name: 'Task' });
       const payload = {
         fields:{
           project:     { key: feat.board || (CATALOGS[wiz.platform]?.board) || 'QGWL' },
-          issuetype:   sf.issuetype?.id ? { id: sf.issuetype.id } : { name: 'Task' },
+          issuetype:   issueTypeFinal,
           summary:     resolvedSummary,
           reporter:    { accountId: user.accountId },
           description: { type:'doc', version:1, content:[...cleanCloned, ...appendContent] },
@@ -3718,6 +3731,10 @@ async function wizCreateAllTickets(){
       // Priority: only send id to avoid full object rejection
       if(sf.priority?.id) payload.fields.priority = { id: sf.priority.id };
       if(wiz.assignee?.accountId) payload.fields.assignee = { accountId: wiz.assignee.accountId };
+      // Merge board-specific required custom fields (e.g. PHXX needs Acceptance Criteria)
+      const boardKey = feat.board || cat.board || 'QGWL';
+      const reqCF = Object.values(CATALOGS).find(c=>c.board===boardKey)?.requiredCustomFields || {};
+      Object.assign(payload.fields, reqCF);
 
       const res = await apiFetch(`${base}/rest/api/3/issue`,{method:'POST',body:JSON.stringify(payload)});
 
