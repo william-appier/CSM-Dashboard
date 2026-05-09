@@ -2736,7 +2736,14 @@ const PLATFORMS = [
 const CATALOGS = {
   AIQUA: {
     board: 'QGWL',
+    reporterRequired: true,
     guideline: null,
+    // Step 2 fields: IDs provided by TS after the onboard ticket is processed
+    step2Fields: [
+      { id:'appId',          label:'App ID',          required:true,  placeholder:'Provided by TS team' },
+      { id:'projectId',      label:'Project ID',      required:false, placeholder:'e.g. proj-abc-123' },
+      { id:'organizationId', label:'Organization ID', required:false, placeholder:'e.g. org-xyz-456' },
+    ],
     onboardTicket: {
       sampleKey: 'QGWL-25607',
       summaryTpl: '[{clientName}] AIQUA Onboarding',
@@ -2759,6 +2766,11 @@ const CATALOGS = {
 
   'Segment Agent': {
     board: 'PROJ',
+    step2Fields: [
+      { id:'appId',          label:'App ID (AQ)',     required:true,  placeholder:'Provided by TS team' },
+      { id:'projectId',      label:'Project ID',      required:false, placeholder:'e.g. proj-abc-123' },
+      { id:'organizationId', label:'Organization ID', required:false, placeholder:'e.g. org-xyz-456' },
+    ],
     guideline: {
       url: 'https://appier.atlassian.net/wiki/spaces/PROJ/pages/4417093633/Segment+Agent+Onboarding+Doc',
       label: 'Segment Agent Onboarding Doc',
@@ -2787,6 +2799,11 @@ const CATALOGS = {
 
   OJM: {
     board: 'PHXX',
+    step2Fields: [
+      { id:'appId',          label:'App ID',          required:true,  placeholder:'Provided by TS team' },
+      { id:'projectId',      label:'Project ID',      required:false, placeholder:'e.g. proj-abc-123' },
+      { id:'organizationId', label:'Organization ID', required:false, placeholder:'e.g. org-xyz-456' },
+    ],
     // PHXX requires Acceptance Criteria (customfield_21349) in ADF format
     requiredCustomFields: {
       customfield_21349: { type:'doc', version:1, content:[{type:'paragraph', content:[{type:'text', text:'See ticket description for onboarding details.'}]}] }
@@ -2813,6 +2830,9 @@ const CATALOGS = {
 
   BotBonnie: {
     board: 'BBT',
+    step2Fields: [
+      { id:'organizationId', label:'Organization ID', required:true, placeholder:'Provided by TS team' },
+    ],
     guideline: null,
     onboardTicket: {
       sampleKey: 'BBT-7539',
@@ -3235,7 +3255,9 @@ async function wizCreateOnboardTicket(){
         project:     { key: CATALOGS[wiz.platform]?.board || 'QGWL' },
         issuetype:   f.issuetype || { name:'Task' },
         summary:     `[${wiz.clientName}] ${wiz.platform} Onboarding`,
-        reporter:    { accountId: user.accountId },
+        // Only set reporter for boards that require it (e.g. QGWL)
+        ...(CATALOGS[wiz.platform]?.reporterRequired
+            ? { reporter: { accountId: user.accountId } } : {}),
         description: resolveAdfTemplates({ type:'doc', version:1, content:[{type:'paragraph',content:[{type:'text',text:desc}]}] }),
         labels:      [...(f.labels||[]), 'onboarding-dashboard'],
       }
@@ -3367,63 +3389,56 @@ document.addEventListener('click', e=>{
 // ── STEP 2: App ID fetch + feature selection ──────────────────────────────────
 function renderWizAppIds(body, footer){
   document.getElementById('wizTitle').textContent = `${wiz.platform} — Enter IDs`;
+  const cat       = CATALOGS[wiz.platform];
+  const fields    = cat?.step2Fields || [
+    { id:'appId', label:'App ID', required:true, placeholder:'Provided by TS team' },
+    { id:'projectId', label:'Project ID', required:false, placeholder:'e.g. proj-abc-123' },
+    { id:'organizationId', label:'Organization ID', required:false, placeholder:'e.g. org-xyz-456' },
+  ];
+  const hasAppId  = fields.some(f=>f.id==='appId');
 
-  const appIdStatus = wiz.appId
-    ? `<div class="appid-status"><span class="appid-dot found"></span><span class="appid-text">App ID: <strong style="color:var(--green)">${esc(wiz.appId)}</strong></span></div>`
-    : `<div class="appid-status">
-        <span class="appid-dot searching" id="appidDot"></span>
-        <span class="appid-text" id="appidText">App ID not yet received from TS team</span>
-        <button class="appid-scan-btn" onclick="scanForAppId()">🔍 Scan Comments</button>
-       </div>`;
+  // App ID status indicator (only shown when appId is in fields)
+  const appIdStatus = hasAppId
+    ? (wiz.appId
+        ? `<div class="appid-status"><span class="appid-dot found"></span>
+            <span class="appid-text">App ID: <strong style="color:var(--green)">${esc(wiz.appId)}</strong></span></div>`
+        : `<div class="appid-status">
+            <span class="appid-dot searching" id="appidDot"></span>
+            <span class="appid-text" id="appidText">Not yet received from TS team</span>
+            <button class="appid-scan-btn" onclick="scanForAppId()">🔍 Scan Comments</button>
+           </div>`)
+    : '';
+
+  // Render field inputs dynamically from step2Fields
+  const fieldHtml = fields.map(f => `
+    <div class="wiz-field" style="margin-bottom:12px">
+      <label class="wiz-label">${esc(f.label)} ${f.required?'<span class="wiz-req">*</span>':''}</label>
+      ${f.id==='appId' ? appIdStatus : ''}
+      <input class="wiz-input ${wiz[f.id]?'filled':''}" id="wiz_${f.id}"
+        placeholder="${esc(f.placeholder||'')}"
+        value="${esc(wiz[f.id]||'')}"
+        oninput="wiz.${f.id}=this.value.trim();${f.id==='appId'?'updateAppIdStyle()':''}"/>
+    </div>`).join('');
+
+  // Feature summary
+  const _selFeats = (cat?.features||[]).filter(f=>wiz.selectedFeatures[f.id]);
 
   body.innerHTML = `
     <p style="font-size:13px;color:var(--muted2);margin-bottom:16px;line-height:1.6">
       Enter the IDs provided by the TS team after processing
       <a href="https://appier.atlassian.net/browse/${wiz.onboardTicketKey||''}" target="_blank"
-        style="color:var(--accent);font-family:DM Mono,monospace">${wiz.onboardTicketKey||'the onboard ticket'}</a>.
-      These will be substituted into all feature ticket descriptions.
+        style="color:var(--accent);font-family:'DM Mono',monospace">${wiz.onboardTicketKey||'the onboard ticket'}</a>.
     </p>
     <div class="wiz-err" id="wizErrIds"></div>
-
-    <div class="wiz-field">
-      <label class="wiz-label">App ID <span class="wiz-req">*</span></label>
-      ${appIdStatus}
-      <input class="wiz-input ${wiz.appId?'filled':''}" id="wizAppId"
-        placeholder="Enter manually or scan from ticket comments"
-        value="${esc(wiz.appId)}" oninput="wiz.appId=this.value.trim();updateAppIdStyle()"/>
-    </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
-      <div class="wiz-field" style="margin-bottom:0">
-        <label class="wiz-label">Project ID</label>
-        <input class="wiz-input ${wiz.projectId?'filled':''}" id="wizProjectId"
-          placeholder="e.g. proj-abc-123"
-          value="${esc(wiz.projectId)}" oninput="wiz.projectId=this.value.trim()"/>
-      </div>
-      <div class="wiz-field" style="margin-bottom:0">
-        <label class="wiz-label">Organization ID</label>
-        <input class="wiz-input ${wiz.organizationId?'filled':''}" id="wizOrgId"
-          placeholder="e.g. org-xyz-456"
-          value="${esc(wiz.organizationId)}" oninput="wiz.organizationId=this.value.trim()"/>
-      </div>
-    </div>
-    <p class="wiz-hint" style="margin-top:8px">
-      These IDs substitute <code style="font-family:DM Mono,monospace;font-size:11px;background:var(--surface);padding:1px 5px;border-radius:3px;border:1px solid var(--border)">{appId}</code>,
-      <code style="font-family:DM Mono,monospace;font-size:11px;background:var(--surface);padding:1px 5px;border-radius:3px;border:1px solid var(--border)">{projectId}</code>,
-      <code style="font-family:DM Mono,monospace;font-size:11px;background:var(--surface);padding:1px 5px;border-radius:3px;border:1px solid var(--border)">{organizationId}</code>
-      in all feature ticket descriptions automatically.
-    </p>
-
-    <!-- Summary of selected features — computed fresh each render -->
+    ${fieldHtml}
     <div style="height:1px;background:var(--border);margin:18px 0 14px"></div>`;
 
-  // Compute selected features fresh at render time (not inside the template string)
-  const _selFeats = (CATALOGS[wiz.platform]?.features||[]).filter(f=>wiz.selectedFeatures[f.id]);
   body.innerHTML += `<div style="margin-bottom:8px">
     <p style="font-size:12px;font-weight:700;color:var(--text);margin:0">Features selected (${_selFeats.length})</p>
   </div>
   <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:4px">
     ${_selFeats.map(f=>`<span style="font-family:'DM Mono',monospace;font-size:11px;padding:3px 9px;border-radius:4px;background:rgba(79,142,247,.1);color:var(--accent);border:1px solid rgba(79,142,247,.25)">${esc(f.name)}</span>`).join('')
-      ||'<span style="color:var(--muted);font-size:12px">No features selected — go back to Step 1 to select features</span>'}
+      ||'<span style="color:var(--muted);font-size:12px">No features selected — go back to Step 1</span>'}
   </div>`;
 
   footer.innerHTML = `
@@ -3432,158 +3447,16 @@ function renderWizAppIds(body, footer){
     <button class="btn-wiz-next" onclick="wizValidateIds()">Review & Create →</button>`;
 }
 
-function renderFeatCategory(catName, features){
-  return `<div class="feat-category">
-    <div class="feat-cat-label">${catName}</div>
-    <div class="feat-grid">
-      ${features.map(f=>{
-        const sel = !!wiz.selectedFeatures[f.id];
-        // In add-features mode, grey out features already in the onboarding record
-        const existingOb = wiz._addToObId ? loadOnboardings().find(o=>o.id===wiz._addToObId) : null;
-        const alreadyDone = existingOb ? existingOb.features.some(ef=>ef.featureId===f.id) : false;
-        return `<div class="feat-item ${sel?'selected':''}" id="fi-${f.id}" style="${alreadyDone?'opacity:.4;pointer-events:none':''}">
-          <div class="feat-row" onclick="${alreadyDone?'':"toggleFeature('" + f.id + "')"}">
-            <div class="feat-checkbox">${alreadyDone?'✓':sel?'✓':''}</div>
-            <span class="feat-name">${f.name}</span>
-            <span class="feat-mode-badge">${alreadyDone?'✓ created':f.mode==='manual_clone'?'⚠️ manual':'clone'}</span>
-          </div>
-          ${f.extra.length||f.mode==='manual_clone' ? `<div class="feat-extra" id="fe-${f.id}">
-            ${f.extra.map(ex=>`
-              <div>
-                <label class="wiz-label">${ex.label}</label>
-                <input class="wiz-input" type="${ex.type||'text'}" id="fex-${f.id}-${ex.id}"
-                  placeholder="${ex.placeholder||''}"
-                  value="${esc((wiz.extraFields[f.id]||{})[ex.id]||'')}"
-                  oninput="setFeatureExtra('${f.id}','${ex.id}',this.value)"
-                  ${ex.type==='number'?'min="0" style="width:100%"':''}/>
-              </div>`).join('')}
-            ${(f.manual||f.mode==='manual_clone')?`<p class="wiz-hint">⚠️ This ticket requires manual update after creation — clone from <a href="https://appier.atlassian.net/browse/${f.sample}" target="_blank">${f.sample}</a>.</p>`:''}
-          ${f.suggestedAssignee?`<p class="wiz-hint" style="color:var(--accent)">💡 Suggested assignee: <strong>${esc(f.suggestedAssignee)}</strong></p>`:''}
-          </div>` : ''}
-        </div>`;
-      }).join('')}
-    </div>
-  </div>`;
-}
-
-function toggleFeature(id){
-  if(wiz.selectedFeatures[id]) delete wiz.selectedFeatures[id];
-  else wiz.selectedFeatures[id] = true;
-
-  const item = document.getElementById('fi-'+id);
-  if(!item) return;
-  const sel = !!wiz.selectedFeatures[id];
-  item.classList.toggle('selected', sel);
-  const cb = item.querySelector('.feat-checkbox');
-  if(cb) cb.textContent = sel ? '✓' : '';
-  const extra = document.getElementById('fe-'+id);
-  if(extra) extra.style.display = sel ? 'flex' : 'none';
-}
-
-function setFeatureExtra(featId, fieldId, value){
-  if(!wiz.extraFields[featId]) wiz.extraFields[featId]={};
-  wiz.extraFields[featId][fieldId]=value.trim();
-}
-
-function updateAppIdStyle(){
-  const inp = document.getElementById('wizAppId');
-  if(inp) inp.classList.toggle('filled', !!wiz.appId);
-}
-
-// ── SHARED ID SCANNER ────────────────────────────────────────────────────────
-// Scans both the ticket description AND all comments for appId, projectId, organizationId.
-// Returns { appId, projectId, organizationId } — any field not found is null.
-async function scanTicketForIds(ticketKey){
-  const user = getUser();
-  const base = `${CONFIG.API_BASE}/ex/jira/${user.cloudId}`;
-
-  // Fetch ticket description + comments in parallel
-  const [issueData, commentData] = await Promise.all([
-    apiFetch(`${base}/rest/api/3/issue/${ticketKey}?fields=description`),
-    apiFetch(`${base}/rest/api/3/issue/${ticketKey}/comment?maxResults=30&orderBy=-created`),
-  ]);
-
-  // Collect all text blocks to scan: description first, then comments newest-first
-  const blocks = [];
-  if(issueData.fields?.description) blocks.push(extractAdfText(issueData.fields.description));
-  for(const c of (commentData.comments||[])) blocks.push(extractAdfText(c.body));
-
-  const result = { appId:null, projectId:null, organizationId:null };
-
-  for(const txt of blocks){
-    if(!result.appId){
-      const m = txt.match(/app\s*[_\-]?\s*id\s*[:\-=]\s*([a-zA-Z0-9_\-\.]+)/i)
-              || txt.match(/appid\s*[:\-=]\s*([a-zA-Z0-9_\-\.]+)/i);
-      if(m) result.appId = m[1].trim();
-    }
-    if(!result.projectId){
-      const m = txt.match(/project\s*[_\-]?\s*id\s*[:\-=]\s*([a-zA-Z0-9_\-\.]+)/i)
-              || txt.match(/projectid\s*[:\-=]\s*([a-zA-Z0-9_\-\.]+)/i);
-      if(m) result.projectId = m[1].trim();
-    }
-    if(!result.organizationId){
-      const m = txt.match(/org(?:anization)?\s*[_\-]?\s*id\s*[:\-=]\s*([a-zA-Z0-9_\-\.]+)/i)
-              || txt.match(/organizationid\s*[:\-=]\s*([a-zA-Z0-9_\-\.]+)/i);
-      if(m) result.organizationId = m[1].trim();
-    }
-    // Stop early if all three found
-    if(result.appId && result.projectId && result.organizationId) break;
-  }
-
-  return result;
-}
-
-async function scanForAppId(){
-  if(!wiz.onboardTicketKey){ toast('info','No onboard ticket yet'); return; }
-  const dot  = document.getElementById('appidDot');
-  const text = document.getElementById('appidText');
-  if(dot) dot.className='appid-dot searching';
-  if(text) text.textContent='Scanning ticket and comments…';
-  try{
-    const ids = await scanTicketForIds(wiz.onboardTicketKey);
-    const foundAny = ids.appId || ids.projectId || ids.organizationId;
-
-    if(ids.appId){
-      wiz.appId = ids.appId;
-      const inp = document.getElementById('wizAppId');
-      if(inp){ inp.value=ids.appId; inp.classList.add('filled'); }
-    }
-    if(ids.projectId){
-      wiz.projectId = ids.projectId;
-      const inp = document.getElementById('wizProjectId');
-      if(inp){ inp.value=ids.projectId; inp.classList.add('filled'); }
-    }
-    if(ids.organizationId){
-      wiz.organizationId = ids.organizationId;
-      const inp = document.getElementById('wizOrgId');
-      if(inp){ inp.value=ids.organizationId; inp.classList.add('filled'); }
-    }
-
-    if(foundAny){
-      const parts = [
-        ids.appId         ? `App ID: ${ids.appId}` : null,
-        ids.projectId     ? `Project ID: ${ids.projectId}` : null,
-        ids.organizationId? `Org ID: ${ids.organizationId}` : null,
-      ].filter(Boolean);
-      if(dot) dot.className='appid-dot found';
-      if(text) text.innerHTML=parts.map(p=>`<strong style="color:var(--green)">${esc(p)}</strong>`).join(' &nbsp;·&nbsp; ');
-      toast('success', `✓ Found: ${parts.join(', ')}`);
-    } else {
-      if(dot) dot.className='appid-dot manual';
-      if(text) text.textContent='No IDs found yet — enter manually below';
-      toast('info','IDs not found in ticket yet — TS team may not have responded');
-    }
-  }catch(e){
-    if(text) text.textContent='Scan failed — enter manually';
-    toast('error','Scan failed: '+e.message);
-  }
-}
 
 function wizValidateIds(){
-  const err = document.getElementById('wizErrIds');
-  if(!wiz.appId){
-    err.textContent='App ID is required to create feature tickets';
-    err.style.display='block'; return;
+  const err    = document.getElementById('wizErrIds');
+  const fields = CATALOGS[wiz.platform]?.step2Fields || [{id:'appId',required:true}];
+  // Check all required step2Fields are filled
+  for(const f of fields){
+    if(f.required && !wiz[f.id]){
+      err.textContent=`${f.label} is required to create tickets`;
+      err.style.display='block'; return;
+    }
   }
   if(Object.keys(wiz.selectedFeatures).length===0){
     err.textContent='No features selected — go back to Step 1 to select features';
@@ -3718,7 +3591,10 @@ async function wizCreateAllTickets(){
           project:     { key: feat.board || (CATALOGS[wiz.platform]?.board) || 'QGWL' },
           issuetype:   issueTypeFinal,
           summary:     resolvedSummary,
-          reporter:    { accountId: user.accountId },
+          // Only set reporter for boards that require it (e.g. QGWL)
+          // PHXX and others block it: "Field reporter cannot be set. It is not on the appropriate screen"
+          ...(Object.values(CATALOGS).find(c=>c.board===boardKey)?.reporterRequired
+              ? { reporter: { accountId: user.accountId } } : {}),
           description: { type:'doc', version:1, content:[...cleanCloned, ...appendContent] },
           labels:      [...(sf.labels||[]).filter(l=>typeof l==='string'), 'onboarding-dashboard',
                         `ob-${wiz.clientName.toLowerCase().replace(/\s+/g,'-')}`],
