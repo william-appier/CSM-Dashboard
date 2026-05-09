@@ -418,6 +418,17 @@
   .btn-resume:hover{opacity:.9;transform:translateY(-1px);}
   .wiz-save-later{background:transparent;border:1px solid var(--border);color:var(--muted2);padding:9px 16px;border-radius:8px;font-family:'Syne',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:all .15s;}
   .wiz-save-later:hover{border-color:var(--yellow);color:var(--yellow);}
+  /* Guideline box */
+  .wiz-guideline{background:rgba(79,142,247,.06);border:1px solid rgba(79,142,247,.2);border-radius:8px;padding:12px 14px;margin-bottom:16px;}
+  .wiz-guideline h4{font-family:'Syne',sans-serif;font-size:12px;font-weight:700;color:var(--accent);margin:0 0 6px 0;letter-spacing:.05em;}
+  .wiz-guideline a{color:var(--accent);font-family:'DM Mono',monospace;font-size:11px;}
+  .wiz-guideline ul{margin:6px 0 0 0;padding-left:16px;font-family:'DM Mono',monospace;font-size:11px;color:var(--muted2);}
+  .wiz-guideline ul li{margin-bottom:3px;}
+  /* OJM channel/feature picker */
+  .ojm-picker{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;}
+  .ojm-chip{padding:5px 12px;border-radius:20px;font-family:'DM Mono',monospace;font-size:11px;cursor:pointer;border:1px solid var(--border);color:var(--muted2);background:var(--surface2);transition:all .15s;}
+  .ojm-chip:hover{border-color:var(--accent);color:var(--accent);}
+  .ojm-chip.sel{border-color:var(--accent);color:var(--accent);background:rgba(79,142,247,.12);}
   /* Wizard assignee dropdown (same style as main assignee filter) */
   .wiz-asn-wrap{position:relative;}
   .wiz-asn-btn{width:100%;background:var(--surface2);border:1px solid var(--border);color:var(--muted2);padding:9px 12px;border-radius:7px;font-family:'DM Mono',monospace;font-size:13px;cursor:pointer;display:flex;align-items:center;gap:8px;text-align:left;transition:all .15s;}
@@ -2692,7 +2703,7 @@ function renderOnboardingProgressMock(){
             ${ob.features.map(f=>{
               const days = Math.floor((Date.now()-new Date(ob.createdAt))/86400000);
               return `<tr>
-                <td style="font-size:12px">${esc(f.name)}${f.mode==='manual_clone'?'<span style="margin-left:6px;font-family:DM Mono,monospace;font-size:9px;padding:1px 5px;border-radius:3px;background:rgba(251,191,36,.12);color:var(--yellow);border:1px solid rgba(251,191,36,.3)">MANUAL</span>':''}</td>
+                <td style="font-size:12px">${esc(f.name)}${(f.manual||f.mode==='manual_clone')?'<span style="margin-left:6px;font-family:DM Mono,monospace;font-size:9px;padding:1px 5px;border-radius:3px;background:rgba(251,191,36,.12);color:var(--yellow);border:1px solid rgba(251,191,36,.3)">MANUAL</span>':''}</td>
                 <td><a class="ob-ticket-link" href="https://appier.atlassian.net/browse/${f.ticketKey}" target="_blank">${f.ticketKey}</a></td>
                 <td><span class="sb ${sClass(f.status)}"><span class="sd"></span>${esc(f.status)}</span></td>
                 <td><span class="lt ${ltC(days)}">${days}d</span></td>
@@ -2714,62 +2725,97 @@ function renderOnboardingProgressMock(){
 
 // ── FEATURE CATALOG ──────────────────────────────────────────────────────────
 const PLATFORMS = [
-  { id:'AIQUA',     icon:'🎯', active:true  },
-  { id:'AIXON',     icon:'🤖', active:false },
-  { id:'BotBonnie', icon:'🤖', active:false },
-  { id:'AIRIS',     icon:'👁️',  active:false },
-  { id:'OJM',       icon:'💬', active:false },
+  { id:'AIQUA',          icon:'🎯', active:true  },
+  { id:'Segment Agent',  icon:'🤖', active:true  },
+  { id:'OJM',            icon:'💬', active:true  },
+  { id:'BotBonnie',      icon:'🤖', active:true  },
+  { id:'AIXON',          icon:'🧠', active:false },
+  { id:'AIRIS',          icon:'👁️',  active:false },
 ];
 
 const CATALOGS = {
   AIQUA: {
     board: 'QGWL',
+    guideline: null,
     onboardTicket: {
-      sampleKey: 'QGWL-25607',           // Updated sample ticket
+      sampleKey: 'QGWL-25607',
       summaryTpl: '[{clientName}] AIQUA Onboarding',
     },
     features: [
-      { id:'sms',          category:'Channels',  name:'Enable SMS',
-        sample:'QGWL-25618', mode:'clone',
-        extra:[
-          {id:'smsQuantity',   label:'SMS Quantity',   placeholder:'e.g. 100000', type:'number'},
-          {id:'smsValidPeriod',label:'Valid Period',    placeholder:'e.g. 12 months / 2026-12-31'},
-        ]},
-      { id:'edm',          category:'Channels',  name:'Enable EDM Channel',
-        sample:'QGWL-25619', mode:'clone',
+      { id:'sms',         category:'Channels', name:'Enable SMS',                sample:'QGWL-25618', mode:'clone',
+        extra:[{id:'smsQuantity',label:'SMS Quantity',placeholder:'e.g. 100000',type:'number'},{id:'smsValidPeriod',label:'Valid Period',placeholder:'e.g. 12 months'}]},
+      { id:'edm',         category:'Channels', name:'Enable EDM Channel',         sample:'QGWL-25619', mode:'clone',
         extra:[{id:'email',label:'Email / Domain',placeholder:'e.g. noreply@client.com'}]},
-      { id:'onsite',       category:'Channels',  name:'On-site Experience',
-        sample:'QGWL-25620', mode:'clone', extra:[]},
-      { id:'product_feed', category:'Channels',  name:'Onboard Product Feed',
-        sample:'QGWL-14534', mode:'manual_clone', extra:[]},
-      { id:'seg_split',    category:'Audience',  name:'Segment Split',
-        sample:'QGWL-25620', mode:'clone', extra:[]},
-      { id:'new_seg',      category:'Audience',  name:'New Segment UI',
-        sample:'QGWL-25621', mode:'clone', extra:[]},
-      { id:'creative',     category:'Campaign',  name:'Creative Studio',
-        sample:'QGWL-25620', mode:'clone', extra:[]},
-      { id:'inapp',        category:'Campaign',  name:'In-app Creative Studio',
-        sample:'QGWL-25620', mode:'clone', extra:[]},
-      { id:'content_asst', category:'Campaign',  name:'Content Assistant',
-        sample:'QGWL-25620', mode:'clone', extra:[]},
-      { id:'feed_trigger', category:'Campaign',  name:'Feed Trigger',
-        sample:'QGWL-25213', mode:'manual_clone', extra:[]},
+      { id:'onsite',      category:'Channels', name:'On-site Experience',          sample:'QGWL-25620', mode:'clone', extra:[]},
+      { id:'product_feed',category:'Channels', name:'Onboard Product Feed',        sample:'QGWL-25675', mode:'manual_clone', extra:[], manual:true},
+      { id:'seg_split',   category:'Audience', name:'Segment Split',               sample:'QGWL-25620', mode:'clone', extra:[]},
+      { id:'new_seg',     category:'Audience', name:'New Segment UI',              sample:'QGWL-25621', mode:'clone', extra:[]},
+      { id:'creative',    category:'Campaign', name:'Creative Studio',             sample:'QGWL-25620', mode:'clone', extra:[]},
+      { id:'inapp',       category:'Campaign', name:'In-app Creative Studio',      sample:'QGWL-25620', mode:'clone', extra:[]},
+      { id:'content_asst',category:'Campaign', name:'Content Assistant',           sample:'QGWL-25620', mode:'clone', extra:[]},
+      { id:'feed_trigger',category:'Campaign', name:'Feed Trigger',               sample:'QGWL-25674', mode:'manual_clone', extra:[], manual:true},
     ]
   },
-  // OJM catalog — uses PHXX + BBT boards, marked coming soon until boards wired up
+
+  'Segment Agent': {
+    board: 'PROJ',
+    guideline: {
+      url: 'https://appier.atlassian.net/wiki/spaces/PROJ/pages/4417093633/Segment+Agent+Onboarding+Doc',
+      label: 'Segment Agent Onboarding Doc',
+      prereqs: ['AEP onboarding must be completed first', 'Dummy AIRIS account required (if pure AQ)'],
+    },
+    onboardTicket: {
+      sampleKey: 'PROJ-33300',
+      summaryTpl: '[{clientName}] Segment Agent Onboarding',
+    },
+    features: [
+      { id:'agent_onboard',  category:'Compulsory', name:'Agent Onboard Ticket', sample:'PROJ-33300', mode:'clone', board:'PROJ',
+        suggestedAssignee:'Meh-Chi Yeh',
+        extra:[{id:'arName',label:'AIRIS Name',placeholder:'e.g. Mannings_AIRIS'},{id:'arId',label:'AIRIS ID',placeholder:'e.g. ar-xxx'},{id:'axId',label:'Aixon ID',placeholder:'e.g. ax-xxx'},{id:'eam_project_id',label:'EAM Project ID',placeholder:'e.g. eam-xxx'}]},
+      { id:'credit_system',  category:'Compulsory', name:'Credit System',        sample:'AEP-6694',   mode:'clone', board:'AEP',
+        suggestedAssignee:'Mark Chu',
+        extra:[{id:'salesforceId',label:'Salesforce ID',placeholder:'e.g. sf-xxx'},{id:'agentStartDate',label:'Agent Start Date',placeholder:'YYYY-MM-DD',type:'date'},{id:'agentEndDate',label:'Agent End Date',placeholder:'YYYY-MM-DD',type:'date'},{id:'agent',label:'Agent Name(s)',placeholder:'e.g. AgentA, AgentB'},{id:'agentCredit',label:'Agent Credit',placeholder:'e.g. 1000',type:'number'}]},
+      { id:'agent_config',   category:'Compulsory', name:'Agent Config',         sample:'AGNT-814',   mode:'manual_clone', board:'AGNT', manual:true,
+        suggestedAssignee:'Mark Chu', extra:[]},
+      { id:'onboard_agent',  category:'Compulsory', name:'Onboard Agent',        sample:'AGNT-815',   mode:'clone', board:'AGNT',
+        suggestedAssignee:'Susan Huang',
+        extra:[{id:'domain',label:'Client Domain',placeholder:'e.g. client.com'}]},
+    ]
+  },
+
   OJM: {
     board: 'PHXX',
+    guideline: {
+      url: null,
+      label: null,
+      prereqs: ['Dummy BB account required (if pure AQ)'],
+    },
+    ojmChannels: ['In Web','In App','Web Push','App Push','SMS','eDM','Line','Omnichat','Whatsapp','Kakao'],
+    ojmFeatures: ['Webhook'],
     onboardTicket: {
-      sampleKey: 'PHXX-3893',
+      sampleKey: 'PHXX-6251',
       summaryTpl: '[{clientName}] OJM Onboarding',
     },
     features: [
-      { id:'enable_ojm',    category:'Channels',  name:'Enable OJM',
-        sample:'PHXX-3893', mode:'manual_clone', extra:[]},
-      { id:'dummy_bb',      category:'Line',      name:'Create Dummy BB (Line)',
-        sample:'BBT-7073',  mode:'manual_clone', extra:[], board:'BBT'},
+      { id:'enable_ojm', category:'Compulsory', name:'Enable OJM', sample:'PHXX-6251', mode:'manual_clone', board:'PHXX', manual:true,
+        suggestedAssignee:'Shiv',
+        extra:[{id:'botId',label:'Bot ID',placeholder:'Provided by client'}]},
+      { id:'ojm_features', category:'Compulsory', name:'OJM Feature Enablement', sample:'PHXX-6252', mode:'clone', board:'PHXX',
+        extra:[]}, // OJMfeatures/OJMchannels built from picker
     ]
-  }
+  },
+
+  BotBonnie: {
+    board: 'BBT',
+    guideline: null,
+    onboardTicket: {
+      sampleKey: 'BBT-7539',
+      summaryTpl: '[{clientName}] BotBonnie Onboarding',
+    },
+    features: [
+      { id:'bb_onboard', category:'Compulsory', name:'BotBonnie Onboard', sample:'BBT-7539', mode:'manual_clone', board:'BBT', manual:true, extra:[]},
+    ]
+  },
 };
 
 // ── LOCALSTORAGE ──────────────────────────────────────────────────────────────
@@ -2799,7 +2845,9 @@ function saveWizAsDraft(){
     organizationId:   wiz.organizationId,
     selectedFeatures: wiz.selectedFeatures,
     extraFields:      wiz.extraFields,
-    step:             2,  // resumes at App IDs step (features already saved)
+    ojmSelectedChannels: wiz.ojmSelectedChannels||[],
+    ojmSelectedFeatures: wiz.ojmSelectedFeatures||[],
+    step:             2,
   };
   const list = loadDrafts().filter(d=>d.id!==draft.id); // replace existing draft for same ticket
   list.unshift(draft);
@@ -2830,9 +2878,11 @@ function resumeDraft(draftId){
   wiz.appId            = draft.appId || '';
   wiz.projectId        = draft.projectId || '';
   wiz.organizationId   = draft.organizationId || '';
-  wiz.selectedFeatures = draft.selectedFeatures || {};
-  wiz.extraFields      = draft.extraFields || {};
-  wiz.step             = draft.step || 2;
+  wiz.selectedFeatures    = draft.selectedFeatures || {};
+  wiz.extraFields         = draft.extraFields || {};
+  wiz.ojmSelectedChannels = draft.ojmSelectedChannels || [];
+  wiz.ojmSelectedFeatures = draft.ojmSelectedFeatures || [];
+  wiz.step                = draft.step || 2;
 
   document.getElementById('wizOverlay').style.display='flex';
   renderWizStep();
@@ -2883,8 +2933,11 @@ let wiz = {
   appId: '',                // auto-detected or manually entered
   projectId: '',
   organizationId: '',
-  selectedFeatures: {},     // { featureId: { extraFields: {} } }
+  selectedFeatures: {},     // { featureId: true }
   extraFields: {},          // { featureId: { fieldId: value } }
+  ojmSelectedChannels: [], // OJM channels selected by user
+  ojmSelectedFeatures: [], // OJM features selected by user
+  _addToObId: null,         // when adding features to existing onboarding
 };
 
 // ── TEMPLATE ENGINE ───────────────────────────────────────────────────────────
@@ -2898,22 +2951,27 @@ function resolveTemplate(str){
   const _channels = _sel.filter(f=>f.category==='Channels').map(f=>f.name);
   const _features = _sel.filter(f=>f.category!=='Channels').map(f=>f.name);
 
+  // Build OJM channels/features strings
+  const _ojmChannels = (wiz.ojmSelectedChannels||[]).join(', ') || 'None';
+  const _ojmFeatures = (wiz.ojmSelectedFeatures||[]).join(', ') || 'None';
+
   const vars = {
-    clientName:     wiz.clientName    || '',
-    appId:          wiz.appId         || '[TBD]',
-    projectId:      wiz.projectId     || '[TBD]',
-    organizationId: wiz.organizationId|| '[TBD]',
-    legalTicket:    wiz.legalTicket   || '',
-    opportunityLink:wiz.opportunityLink|| '',
-    platform:       wiz.platform      || '',
-    // {channels} and {features} — comma-separated lists
-    channels:       _channels.length ? _channels.join(', ') : 'None',
-    features:       _features.length ? _features.join(', ') : 'None',
-    // {TS} — assigned TS person
-    TS:             wiz.assignee?.displayName || '[TBD]',
-    // {enableFeature} is set per-ticket in wizCreateAllTickets (feature-specific)
-    enableFeature:  '',
-    // Flatten all feature extra fields: {smsQuantity}, {smsValidPeriod}, {email}, etc.
+    clientName:      wiz.clientName     || '',
+    appId:           wiz.appId          || '[TBD]',
+    projectId:       wiz.projectId      || '[TBD]',
+    organizationId:  wiz.organizationId || '[TBD]',
+    legalTicket:     wiz.legalTicket    || '',
+    opportunityLink: wiz.opportunityLink|| '',
+    platform:        wiz.platform       || '',
+    // Built lists
+    channels:        _channels.length ? _channels.join(', ') : 'None',
+    features:        _features.length ? _features.join(', ') : 'None',
+    OJMchannels:     _ojmChannels,
+    OJMfeatures:     _ojmFeatures,
+    // People
+    TS:              wiz.assignee?.displayName || '[TBD]',
+    enableFeature:   '',
+    // Flatten all feature extra fields (smsQuantity, arName, salesforceId, botId, etc.)
     ...Object.values(wiz.extraFields||{}).reduce((acc,obj)=>({...acc,...obj}),{}),
   };
   return str.replace(/\{(\w+)\}/g, (match, key)=> key in vars ? vars[key] : match);
@@ -3052,6 +3110,17 @@ function renderWizAccountAndFeatures(body, footer){
 
     <!-- Divider -->
     <div style="height:1px;background:var(--border);margin:18px 0 14px"></div>
+
+    <!-- Guideline box (shown when platform has one) -->
+    ${(()=>{
+      const gl = CATALOGS[wiz.platform]?.guideline;
+      if(!gl) return '';
+      const parts = [];
+      if(gl.url) parts.push('<a href="'+gl.url+'" target="_blank">📖 '+esc(gl.label||'View Guideline')+'</a>');
+      if(gl.prereqs?.length) parts.push('<ul>'+gl.prereqs.map(p=>'<li>'+esc(p)+'</li>').join('')+'</ul>');
+      return parts.length ? '<div class="wiz-guideline"><h4>📋 GUIDELINES & PREREQUISITES</h4>'+parts.join('')+'</div>' : '';
+    })()}
+
     <p style="font-size:12px;font-weight:700;color:var(--text);margin-bottom:4px">
       ${wiz._addToObId ? 'Select Additional Features to Enable' : 'Channels & Features to Enable'}
     </p>
@@ -3060,6 +3129,23 @@ function renderWizAccountAndFeatures(body, footer){
         ? 'Pick features to add. Already-created features are greyed out.'
         : 'These will appear in the onboarding ticket so the TS team knows what to prepare. Feature tickets are only created after the App ID is received.'}
     </p>
+
+    <!-- OJM: channel + feature picker (shown only for OJM platform) -->
+    ${wiz.platform==='OJM' ? `
+    <div style="margin-bottom:16px">
+      <p style="font-size:11px;font-weight:700;color:var(--text);margin-bottom:6px">OJM CHANNELS <span style="color:var(--red)">*</span></p>
+      <div class="ojm-picker" id="ojmChannelPicker">
+        ${(CATALOGS.OJM.ojmChannels||[]).map(ch=>`
+          <div class="ojm-chip${(wiz.ojmSelectedChannels||[]).includes(ch)?' sel':''}"
+               onclick="toggleOjmChip('channel','${esc(ch)}')">${esc(ch)}</div>`).join('')}
+      </div>
+      <p style="font-size:11px;font-weight:700;color:var(--text);margin:12px 0 6px">OJM FEATURES</p>
+      <div class="ojm-picker" id="ojmFeaturePicker">
+        ${(CATALOGS.OJM.ojmFeatures||[]).map(ft=>`
+          <div class="ojm-chip${(wiz.ojmSelectedFeatures||[]).includes(ft)?' sel':''}"
+               onclick="toggleOjmChip('feature','${esc(ft)}')">${esc(ft)}</div>`).join('')}
+      </div>
+    </div>` : ''}
     <div class="wiz-err" id="wizErr2"></div>
     ${cats.map(cat=>renderFeatCategory(cat, CATALOGS[wiz.platform].features.filter(f=>f.category===cat))).join('')}
 
@@ -3224,6 +3310,29 @@ function renderWizAsnList(q){
     </div>`).join('');
 }
 
+function toggleOjmChip(type, value){
+  if(type==='channel'){
+    const arr = wiz.ojmSelectedChannels||[];
+    const i = arr.indexOf(value);
+    if(i>=0) arr.splice(i,1); else arr.push(value);
+    wiz.ojmSelectedChannels = arr;
+  } else {
+    const arr = wiz.ojmSelectedFeatures||[];
+    const i = arr.indexOf(value);
+    if(i>=0) arr.splice(i,1); else arr.push(value);
+    wiz.ojmSelectedFeatures = arr;
+  }
+  // Re-render just the chip pickers without full re-render
+  const chPicker = document.getElementById('ojmChannelPicker');
+  if(chPicker) chPicker.querySelectorAll('.ojm-chip').forEach(el=>{
+    el.classList.toggle('sel',(wiz.ojmSelectedChannels||[]).includes(el.textContent));
+  });
+  const ftPicker = document.getElementById('ojmFeaturePicker');
+  if(ftPicker) ftPicker.querySelectorAll('.ojm-chip').forEach(el=>{
+    el.classList.toggle('sel',(wiz.ojmSelectedFeatures||[]).includes(el.textContent));
+  });
+}
+
 function pickWizAssignee(accountId, displayName, avatarUrl){
   wiz.assignee = { accountId, displayName, avatarUrl };
   document.getElementById('wizAsnPanel')?.classList.remove('open');
@@ -3338,7 +3447,8 @@ function renderFeatCategory(catName, features){
                   oninput="setFeatureExtra('${f.id}','${ex.id}',this.value)"
                   ${ex.type==='number'?'min="0" style="width:100%"':''}/>
               </div>`).join('')}
-            ${f.mode==='manual_clone'?`<p class="wiz-hint">⚠️ This ticket will be cloned from <a href="https://appier.atlassian.net/browse/${f.sample}" target="_blank">${f.sample}</a> — you will need to fill in additional details after creation.</p>`:''}
+            ${(f.manual||f.mode==='manual_clone')?`<p class="wiz-hint">⚠️ This ticket requires manual update after creation — clone from <a href="https://appier.atlassian.net/browse/${f.sample}" target="_blank">${f.sample}</a>.</p>`:''}
+          ${f.suggestedAssignee?`<p class="wiz-hint" style="color:var(--accent)">💡 Suggested assignee: <strong>${esc(f.suggestedAssignee)}</strong></p>`:''}
           </div>` : ''}
         </div>`;
       }).join('')}
@@ -3555,8 +3665,15 @@ async function wizCreateAllTickets(){
       const appLine = wiz.appId ? `App ID: ${wiz.appId}` : 'App ID: [TBD - see onboard ticket]';
       const descText = `${appLine}${extraLines?'\n'+extraLines:''}\n\nOnboard Ticket: ${wiz.onboardTicketKey||'N/A'}`;
 
-      // Set {enableFeature} to this specific feature's name before resolving templates
+      // Set {enableFeature} and OJM-specific vars before resolving templates
       wiz.extraFields['_enableFeature'] = { enableFeature: feat.name };
+      // For OJM feature enablement, build {OJMchannels}/{OJMfeatures} from picker selections
+      if(wiz.platform==='OJM' && feat.id==='ojm_features'){
+        wiz.extraFields['_ojm'] = {
+          OJMchannels: (wiz.ojmSelectedChannels||[]).join(', ')||'None',
+          OJMfeatures: (wiz.ojmSelectedFeatures||[]).join(', ')||'None',
+        };
+      }
 
       // Build cloned + template-resolved description
       const clonedContent = sf.description?.content
@@ -3621,7 +3738,7 @@ async function wizCreateAllTickets(){
         }
       }
 
-      created.push({ featureId:feat.id, ticketKey:res.key,
+      created.push({ name:feat.name, featureId:feat.id, ticketKey:res.key, manual:feat.manual||false,
                      mode:feat.mode, name:feat.name, status:'Backlog' });
 
       // Open manual clone tickets in new tab so user can fill them in
@@ -3743,7 +3860,7 @@ async function renderOnboardingProgress(){
               <td id="obst-${ob.onboardTicketKey}"><span class="sb ${sClass(ob.onboardStatus||'')}"><span class="sd"></span>${esc(ob.onboardStatus||'Loading…')}</span></td>
             </tr>
             ${ob.features.map(f=>`<tr>
-              <td>${esc(f.name)}${f.mode==='manual_clone'?'<span style="margin-left:6px;font-family:DM Mono,monospace;font-size:9px;padding:1px 5px;border-radius:3px;background:rgba(251,191,36,.12);color:var(--yellow);border:1px solid rgba(251,191,36,.3)">MANUAL</span>':''}</td>
+              <td>${esc(f.name)}${(f.manual||f.mode==='manual_clone')?'<span style="margin-left:6px;font-family:DM Mono,monospace;font-size:9px;padding:1px 5px;border-radius:3px;background:rgba(251,191,36,.12);color:var(--yellow);border:1px solid rgba(251,191,36,.3)">MANUAL</span>':''}</td>
               <td><a class="ob-ticket-link" href="https://appier.atlassian.net/browse/${f.ticketKey}" target="_blank">${f.ticketKey}</a></td>
               <td id="obst-${f.ticketKey}"><span class="sb ${sClass(f.status||'Backlog')}"><span class="sd"></span>${esc(f.status||'Backlog')}</span></td>
             </tr>`).join('')}
