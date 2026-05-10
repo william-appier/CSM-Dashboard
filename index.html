@@ -3454,10 +3454,12 @@ async function wizCreateOnboardTicket(){
   // If already created, just advance to next step
   if(wiz.onboardTicketKey){ wizNext(); return; }
 
-  const err = document.getElementById('wizErr1');
-  if(!wiz.clientName)     { if(err){err.textContent='Client name is required';err.style.display='block';} return; }
-  if(!wiz.legalTicket)    { if(err){err.textContent='Legal ticket is required';err.style.display='block';} return; }
-  if(!wiz.opportunityLink){ if(err){err.textContent='Opportunity link is required';err.style.display='block';} return; }
+  // Validation is done in wizAccountNext; here we just check TS step's error div
+  const err = document.getElementById('wizErr2');
+  if(!wiz.clientName||!wiz.legalTicket||!wiz.opportunityLink){
+    if(err){err.textContent='Missing account details — please go back and complete step 2';err.style.display='block';}
+    return;
+  }
   if(err) err.style.display='none';
 
   const btn = document.getElementById('wizAccBtn');
@@ -3501,7 +3503,7 @@ async function wizCreateOnboardTicket(){
 
     const created = await apiFetch(`${base}/rest/api/3/issue`,{method:'POST',body:JSON.stringify(payload)});
     wiz.onboardTicketKey = created.key;
-    renderWizStep(); // re-render step 1 to show success + "Select Features →" button
+    renderWizStep(); // re-render step 2 (Assign TS) to show success banner + Enter IDs button
     toast('success', `✓ Onboard ticket created: ${created.key}`);
   }catch(e){
     if(err){ err.textContent='Failed: '+e.message; err.style.display='block'; }
@@ -3549,21 +3551,35 @@ function renderWizAssignTS(body, footer){
       <button onclick="clearWizAssignee()" style="margin-left:auto;background:transparent;border:1px solid var(--border);color:var(--muted2);border-radius:6px;padding:4px 10px;font-size:11px;cursor:pointer">✕ Clear</button>
     </div>` : ''}`;
 
-  footer.innerHTML = `
+  // Show ticket creation success banner if already created
+  if(wiz.onboardTicketKey){
+    body.innerHTML += `
+    <div style="height:1px;background:var(--border);margin:16px 0"></div>
+    <div class="wiz-success" style="display:flex;align-items:center;gap:8px;margin-bottom:0">
+      ✓ Onboard ticket created:
+      <a href="https://appier.atlassian.net/browse/${wiz.onboardTicketKey}"
+        target="_blank" style="color:var(--green);font-family:'DM Mono',monospace">${wiz.onboardTicketKey}</a>
+    </div>`;
+  }
+  body.innerHTML += `<div class="wiz-err" id="wizErr2" style="margin-top:10px"></div>`;
+
+  footer.innerHTML = wiz.onboardTicketKey ? `
     <button class="btn-wiz-back" onclick="wizBack()">← Back</button>
-    <button class="btn-wiz-next" onclick="wizNext()">Enter IDs →</button>`;
+    <button class="btn-wiz-next" onclick="wizNext()">Enter IDs →</button>
+  ` : `
+    <button class="btn-wiz-back" onclick="wizBack()">← Back</button>
+    <button class="btn-wiz-next" id="wizAccBtn" onclick="wizCreateOnboardTicket()">Create Onboard Ticket →</button>`;
 
   // Load users on render
   setTimeout(()=>{ if(!wizAsnAllUsers.length) loadWizAsnUsers(); }, 50);
 }
 
-// STEP 1: Account details + create onboard ticket (no feature selection yet)
+// STEP 1: Account details — collect fields only, ticket created after TS assigned
 function renderWizAccount(body, footer){
   document.getElementById('wizTitle').textContent = `${wiz.platform} — Account Details`;
   body.innerHTML = `
     <p style="font-size:13px;color:var(--muted2);margin-bottom:16px;line-height:1.6">
-      Fill in the client details to create the onboarding ticket.
-      After creation, you will select the features to enable.
+      Fill in the client details. The onboard ticket will be created after assigning a TS responsible.
     </p>
     <div class="wiz-err" id="wizErr1"></div>
     <div class="wiz-field">
@@ -3580,23 +3596,21 @@ function renderWizAccount(body, footer){
       <label class="wiz-label">Opportunity Link <span class="wiz-req">*</span></label>
       <input class="wiz-input" id="wizOppLink" placeholder="https://..."
         value="${esc(wiz.opportunityLink)}" oninput="wiz.opportunityLink=this.value.trim()"/>
-    </div>
+    </div>`;
 
-    ${wiz.onboardTicketKey ? `
-    <div style="height:1px;background:var(--border);margin:14px 0"></div>
-    <div class="wiz-success" style="display:flex;align-items:center;gap:8px;margin-bottom:0">
-      ✓ Onboard ticket created:
-      <a href="https://appier.atlassian.net/browse/${wiz.onboardTicketKey}"
-        target="_blank" style="color:var(--green);font-family:DM Mono,monospace">${wiz.onboardTicketKey}</a>
-    </div>` : ''}`;
+  footer.innerHTML = `
+    <button class="btn-wiz-back" onclick="wizBack()">← Back</button>
+    <button class="btn-wiz-next" onclick="wizAccountNext()">Assign TS →</button>`;
+}
 
-  footer.innerHTML = wiz.onboardTicketKey ? `
-    <button class="btn-wiz-back" onclick="wizBack()">← Back</button>
-    <button class="btn-wiz-next" onclick="wizNext()">Assign TS →</button>
-  ` : `
-    <button class="btn-wiz-back" onclick="wizBack()">← Back</button>
-    <button class="btn-wiz-next" id="wizAccBtn" onclick="wizCreateOnboardTicket()">Create Onboard Ticket →</button>
-  `;
+// Validate account fields then advance — ticket is NOT created here
+function wizAccountNext(){
+  const err = document.getElementById('wizErr1');
+  if(!wiz.clientName)     { if(err){err.textContent='Client name is required';err.style.display='block';} return; }
+  if(!wiz.legalTicket)    { if(err){err.textContent='Legal ticket is required';err.style.display='block';} return; }
+  if(!wiz.opportunityLink){ if(err){err.textContent='Opportunity link is required';err.style.display='block';} return; }
+  if(err) err.style.display='none';
+  wizNext();
 }
 
 // STEP 2: Feature selection (runs after onboard ticket exists)
