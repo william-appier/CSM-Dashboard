@@ -3569,12 +3569,14 @@ function renderWizReview(body, footer){
   document.getElementById('wizTitle').textContent = 'Review & Create Tickets';
   const cat      = CATALOGS[wiz.platform];
   const selected = cat.features.filter(f=>wiz.selectedFeatures[f.id]);
-  const total    = 1 + selected.length; // 1 onboard + features
+  // Count only feature tickets — onboard ticket is already created, don't double-count
+  const featCount = selected.length;
+  const total     = wiz.onboardTicketKey ? featCount : 1 + featCount;
 
   body.innerHTML = `
     <p style="font-size:13px;color:var(--muted2);margin-bottom:16px;line-height:1.6">
-      Will create <strong style="color:var(--text)">${total} tickets</strong> in QGWL for
-      <strong style="color:var(--text)">${esc(wiz.clientName)}</strong> —
+      Will create <strong style="color:var(--text)">${total} ticket${total===1?'':'s'}</strong>
+      for <strong style="color:var(--text)">${esc(wiz.clientName)}</strong> —
       assigned to <strong style="color:var(--text)">${wiz.assignee?esc(wiz.assignee.displayName):'(unassigned)'}</strong>.
     </p>
     <div style="background:var(--surface2);border:1px solid var(--border);border-radius:7px;padding:10px 14px;margin-bottom:14px;display:grid;grid-template-columns:1fr 1fr;gap:6px 16px;font-family:'DM Mono',monospace;font-size:11px;">
@@ -3606,13 +3608,13 @@ function renderWizReview(body, footer){
     </div>
     ${selected.some(f=>f.mode==='manual_clone')?`
     <p style="font-size:11px;color:var(--yellow);margin-top:12px;line-height:1.6">
-      ⚠️ Manual clone tickets will be created and opened in Jira — please fill in the additional details required.
+      ⚠️ Manual clone tickets show a MANUAL badge on the tracking board — please clone the sample ticket in Jira and fill in the additional details.
     </p>`:''}`;
 
   footer.innerHTML = `
     <button class="btn-wiz-back" onclick="wizBack()">← Back</button>
     <button class="btn-wiz-create" id="wizCreateBtn" onclick="wizCreateAllTickets()">
-      🚀 Create ${total} Tickets
+      🚀 Create ${total} Ticket${total===1?'':'s'}
     </button>`;
 }
 
@@ -3732,10 +3734,7 @@ async function wizCreateAllTickets(){
       created.push({ name:feat.name, featureId:feat.id, ticketKey:res.key, manual:feat.manual||false,
                      mode:feat.mode, name:feat.name, status:'Backlog' });
 
-      // Open manual clone tickets in new tab so user can fill them in
-      if(feat.mode==='manual_clone'){
-        window.open(`https://appier.atlassian.net/browse/${res.key}`, '_blank');
-      }
+      // Manual clone tickets show MANUAL badge on tracking board — no auto-open
     }
 
     // Save onboarding record to localStorage
@@ -4117,9 +4116,8 @@ function addObFeatures(obId){
     opportunityLink: ob.opportunityLink,
   };
 
-  // Open wizard at Step 1 (Account & Features) so user can pick additional features
-  // but skip directly to feature selection (account fields pre-filled)
-  wiz.step = 1;
+  // Jump directly to Step 4 (Feature Selection) — IDs already filled, no need to re-enter
+  wiz.step = 3;
   document.getElementById('wizOverlay').style.display='flex';
   renderWizStep();
   toast('info',`Adding features to ${ob.clientName} — select new features below`);
