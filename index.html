@@ -437,7 +437,7 @@
   .wiz-asn-btn .wab-avatar{width:22px;height:22px;border-radius:50%;object-fit:cover;flex-shrink:0;}
   .wiz-asn-btn .wab-name{flex:1;}
   .wiz-asn-btn .wab-chev{color:var(--muted);font-size:12px;flex-shrink:0;}
-  .wiz-asn-panel{position:absolute;top:calc(100% + 4px);left:0;right:0;background:var(--surface2);border:1px solid var(--border);border-radius:8px;z-index:200;box-shadow:0 8px 32px rgba(0,0,0,.5);overflow:hidden;display:none;}
+  .wiz-asn-panel{position:fixed;min-width:260px;background:var(--surface2);border:1px solid var(--border);border-radius:8px;z-index:9999;box-shadow:0 8px 32px rgba(0,0,0,.5);overflow:hidden;display:none;}
   .wiz-asn-panel.open{display:block;}
   .wiz-asn-search{width:100%;background:var(--surface);border:none;border-bottom:1px solid var(--border);color:var(--text);padding:8px 12px;font-family:'DM Mono',monospace;font-size:12px;outline:none;}
   .wiz-asn-search::placeholder{color:var(--muted);}
@@ -3278,6 +3278,147 @@ function renderFeatCategory(catName, feats){
     +'</div>';
 }
 
+
+// ── WIZARD ASSIGNEE DROPDOWN ─────────────────────────────────────────────────
+let wizAsnAllUsers = [];
+
+async function toggleWizAsnDropdown(e){
+  e.stopPropagation();
+  const panel = document.getElementById('wizAsnPanel');
+  const btn   = document.getElementById('wizAsnBtn');
+  if(!panel||!btn) return;
+  const isOpen = panel.classList.toggle('open');
+  btn.classList.toggle('open', isOpen);
+  if(isOpen){
+    const r = btn.getBoundingClientRect();
+    const dropH = 280;
+    const top = (window.innerHeight - r.bottom > dropH) ? r.bottom + 4 : r.top - dropH - 4;
+    panel.style.top   = Math.max(4, top) + 'px';
+    panel.style.left  = r.left + 'px';
+    panel.style.width = r.width + 'px';
+    document.getElementById('wizAsnSearchInput')?.focus();
+    if(!wizAsnAllUsers.length) await loadWizAsnUsers();
+  }
+}
+
+async function loadWizAsnUsers(){
+  const list = document.getElementById('wizAsnList');
+  if(!list) return;
+  list.innerHTML = '<div class="wiz-asn-opt" style="pointer-events:none;color:var(--muted)">Loading…</div>';
+  try{
+    const user = getUser();
+    if(!user) return;
+    const base = `${CONFIG.API_BASE}/ex/jira/${user.cloudId}`;
+    const data = await apiFetch(`${base}/rest/api/3/user/search?query=.&maxResults=50`);
+    wizAsnAllUsers = (data||[]).filter(u=>u.accountType==='atlassian');
+    renderWizAsnList('');
+  }catch(e){
+    const list2 = document.getElementById('wizAsnList');
+    if(list2) list2.innerHTML = '<div class="wiz-asn-opt" style="pointer-events:none;color:var(--red)">Error: '+esc(e.message)+'</div>';
+  }
+}
+
+function filterWizAsnList(){
+  const q = document.getElementById('wizAsnSearchInput')?.value?.toLowerCase()||'';
+  renderWizAsnList(q);
+}
+
+function renderWizAsnList(q){
+  const list = document.getElementById('wizAsnList');
+  if(!list) return;
+  const users = q ? wizAsnAllUsers.filter(u=>(u.displayName||'').toLowerCase().includes(q)||(u.emailAddress||'').toLowerCase().includes(q)) : wizAsnAllUsers;
+  if(!users.length){ list.innerHTML='<div class="wiz-asn-opt" style="pointer-events:none;color:var(--muted)">No users found</div>'; return; }
+  list.innerHTML = users.map(u=>`
+    <div class="wiz-asn-opt ${wiz.assignee?.accountId===u.accountId?'sel':''}"
+      onclick="pickWizAssignee('${esc(u.accountId)}','${esc(u.displayName)}','${esc(u.avatarUrls?.['24x24']||'')}')">
+      ${u.avatarUrls?.['24x24']?`<img src="${u.avatarUrls['24x24']}" alt=""/>`:'<span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:var(--surface);font-size:10px">👤</span>'}
+      <span style="flex:1">${esc(u.displayName)}</span>
+      <span style="font-size:10px;color:var(--muted)">${esc(u.emailAddress||'')}</span>
+    </div>`).join('');
+}
+
+function pickWizAssignee(accountId, displayName, avatarUrl){
+  wiz.assignee = { accountId, displayName, avatarUrl };
+  document.getElementById('wizAsnPanel')?.classList.remove('open');
+  document.getElementById('wizAsnBtn')?.classList.remove('open');
+  renderWizStep(); // re-render to update button display
+}
+
+function clearWizAssignee(){ wiz.assignee = null; renderWizStep(); }
+
+// Close wizard assignee dropdown on outside click
+document.addEventListener('click', e=>{
+  const wrap = document.getElementById('wizAsnWrap');
+  if(wrap && !wrap.contains(e.target)){
+    document.getElementById('wizAsnPanel')?.classList.remove('open');
+    document.getElementById('wizAsnBtn')?.classList.remove('open');
+  }
+});
+
+// ── WIZARD ONBOARD TICKET CREATION ───────────────────────────────────────────
+async function wizCreateOnboardTicket(){
+  // Pre-populate global extra fields
+  if(!wiz.extraFields['_global']) wiz.extraFields['_global']={};
+  wiz.extraFields['_global'].legalTicket     = wiz.legalTicket;
+  wiz.extraFields['_global'].opportunityLink = wiz.opportunityLink;
+
+  // If already created, just advance to next step
+  if(wiz.onboardTicketKey){ wizNext(); return; }
+
+  const err = document.getElementById('wizErr1');
+  if(!wiz.clientName)     { if(err){err.textContent='Client name is required';err.style.display='block';} return; }
+  if(!wiz.legalTicket)    { if(err){err.textContent='Legal ticket is required';err.style.display='block';} return; }
+  if(!wiz.opportunityLink){ if(err){err.textContent='Opportunity link is required';err.style.display='block';} return; }
+  if(err) err.style.display='none';
+
+  const btn = document.getElementById('wizAccBtn');
+  if(btn){ btn.disabled=true; btn.textContent='Creating…'; }
+
+  try{
+    const user = getUser();
+    const base = `${CONFIG.API_BASE}/ex/jira/${user.cloudId}`;
+    const cat  = CATALOGS[wiz.platform];
+    const boardKey = cat?.board || 'QGWL';
+
+    // Fetch sample onboard ticket
+    const f = await apiFetch(`${base}/rest/api/3/issue/${cat.onboardTicket.sampleKey}?fields=issuetype,description,labels,priority`);
+
+    // Build description with template variables
+    const desc = [
+      'Client: '+wiz.clientName,
+      'Platform: '+wiz.platform,
+      'Legal Ticket: '+wiz.legalTicket,
+      'Opportunity Link: '+wiz.opportunityLink,
+      'Assigned TS: '+(wiz.assignee?.displayName||'TBD'),
+      '',
+      '--- To be filled in by TS ---',
+      'App ID: {appId}',
+      'Project ID: {projectId}',
+      'Organization ID: {organizationId}',
+    ].join('\n');
+
+    const payload = {
+      fields:{
+        project:     { key: boardKey },
+        issuetype:   f.fields?.issuetype?.id ? { id: f.fields.issuetype.id } : { name:'Task' },
+        summary:     resolveTemplate(`[${wiz.clientName}] ${wiz.platform} Onboarding`),
+        description: { type:'doc', version:1, content:[{type:'paragraph',content:[{type:'text',text:desc}]}] },
+        labels:      [...(f.fields?.labels||[]).filter(l=>typeof l==='string'), 'onboarding-dashboard'],
+        ...(cat?.reporterRequired ? { reporter:{ accountId:user.accountId } } : {}),
+        ...(Object.values(CATALOGS).find(c=>c.board===boardKey)?.requiredCustomFields||{}),
+      }
+    };
+    if(wiz.assignee?.accountId) payload.fields.assignee = { accountId: wiz.assignee.accountId };
+
+    const created = await apiFetch(`${base}/rest/api/3/issue`,{method:'POST',body:JSON.stringify(payload)});
+    wiz.onboardTicketKey = created.key;
+    renderWizStep(); // re-render step 1 to show success + "Select Features →" button
+    toast('success', `✓ Onboard ticket created: ${created.key}`);
+  }catch(e){
+    if(err){ err.textContent='Failed: '+e.message; err.style.display='block'; }
+    if(btn){ btn.disabled=false; btn.textContent='Create Onboard Ticket →'; }
+  }
+}
 
 // STEP 1: Account details + create onboard ticket (no feature selection yet)
 function renderWizAccount(body, footer){
