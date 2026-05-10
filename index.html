@@ -3063,12 +3063,39 @@ async function createBotBonnieTicket(){
       if(cleaned.content) cleaned.content = cleaned.content.map(stripLocalIds);
       return cleaned;
     }
-    // BBT-7539 has complex ADF (tables, smartlinks, Chinese) that fails on create
-    // Since this is a manual_clone, user fills the description in Jira anyway.
-    // Send a minimal description stub so the ticket creation succeeds.
-    const bbDesc = { type:'doc', version:1, content:[
-      { type:'paragraph', content:[{ type:'text', text:'BotBonnie onboarding for '+clientName+'. Please refer to BBT-7539 for the full configuration template.'}] }
-    ]};
+    // Sanitize the cloned ADF — convert taskList/taskItem (checkboxes) to bulletList/listItem
+    // since BBT's create API rejects taskList nodes. Also strip localIds and unsupported blocks.
+    function sanitizeAdf(node){
+      if(!node||typeof node!=='object') return node;
+      // Convert checkbox items to regular bullet points
+      if(node.type==='taskList'){
+        return { type:'bulletList', content:(node.content||[]).map(sanitizeAdf).filter(Boolean) };
+      }
+      if(node.type==='taskItem'){
+        // Prefix with [ ] or [x] to preserve checkbox state visually
+        const checked = node.attrs?.state==='DONE';
+        const prefix = { type:'text', text:(checked?'[x] ':'[ ] ') };
+        const kids   = (node.content||[]).flatMap(c=>c.content||[c]);
+        return { type:'listItem', content:[{ type:'paragraph', content:[prefix,...kids.map(sanitizeAdf)] }] };
+      }
+      // Remove unsupported block types but keep their text content
+      if(['inlineCard','blockCard','embedCard'].includes(node.type)){
+        const url = node.attrs?.url||'';
+        return url ? { type:'text', text:url } : null;
+      }
+      // Strip localId and other non-standard attrs
+      const {attrs,...rest} = node;
+      const cleanAttrs = attrs
+        ? Object.fromEntries(Object.entries(attrs).filter(([k])=>!['localId','timestamp'].includes(k)))
+        : undefined;
+      const cleaned = (cleanAttrs&&Object.keys(cleanAttrs).length) ? {...rest,attrs:cleanAttrs} : rest;
+      if(cleaned.content) cleaned.content = cleaned.content.map(sanitizeAdf).filter(Boolean);
+      return cleaned;
+    }
+
+    const bbDesc = sf.fields?.description
+      ? { type:'doc', version:1, content:(sf.fields.description.content||[]).map(sanitizeAdf).filter(Boolean) }
+      : { type:'doc', version:1, content:[{ type:'paragraph', content:[{ type:'text', text:'BotBonnie onboarding for '+clientName+'. Please refer to BBT-7539 for the full configuration template.' }] }] };
     const payload = {
       fields:{
         project:    { key:'BBT' },
