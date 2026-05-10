@@ -4035,30 +4035,29 @@ function toggleOjmChip(type, value){
 
 async function scanAndResume(draftId, ticketKey){
   if(!ticketKey){ toast('info','No ticket key'); return; }
-  toast('info','Scanning comments for App ID…');
+  toast('info','Scanning ticket for IDs…');
   try{
-    const user = getUser();
-    const base = `${CONFIG.API_BASE}/ex/jira/${user.cloudId}`;
-    const data = await apiFetch(`${base}/rest/api/3/issue/${ticketKey}/comment?maxResults=20&orderBy=-created`);
-    let found=null;
-    for(const c of (data.comments||[])){
-      const txt=extractAdfText(c.body);
-      const m=txt.match(/app\s*[_-]?\s*id\s*[:\-=]\s*([a-zA-Z0-9_\-\.]+)/i)
-              ||txt.match(/appid\s*[:\-=]\s*([a-zA-Z0-9_\-\.]+)/i);
-      if(m){found=m[1].trim();break;}
-    }
-    if(found){
-      // Update the draft with the found App ID then auto-resume
+    const ids = await scanTicketForIds(ticketKey);
+    const foundAny = ids.appId || ids.projectId || ids.organizationId;
+
+    if(foundAny){
       const drafts = loadDrafts();
       const draft  = drafts.find(d=>d.id===draftId);
       if(draft){
-        draft.appId = found;
+        if(ids.appId)          draft.appId          = ids.appId;
+        if(ids.projectId)      draft.projectId      = ids.projectId;
+        if(ids.organizationId) draft.organizationId = ids.organizationId;
         saveDrafts(drafts);
       }
-      toast('success',`✓ App ID found: ${found} — resuming wizard`);
-      setTimeout(()=>resumeDraft(draftId), 600);
+      const parts = [
+        ids.appId          ? 'App ID: '+ids.appId          : null,
+        ids.projectId      ? 'Project ID: '+ids.projectId  : null,
+        ids.organizationId ? 'Org ID: '+ids.organizationId : null,
+      ].filter(Boolean);
+      toast('success', '✓ Found: '+parts.join(', ')+' — resuming wizard');
+      setTimeout(()=>resumeDraft(draftId), 700);
     } else {
-      toast('info','App ID not found in comments yet — TS team may not have responded');
+      toast('info','No IDs found in ticket yet — enter manually in the wizard');
     }
   }catch(e){ toast('error','Scan failed: '+e.message); }
 }
