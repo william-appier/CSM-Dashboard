@@ -3685,15 +3685,19 @@ async function wizCreateAllTickets(){
       const issueTypeFinal = feat.crossBoardTask
         ? { name: 'Task' }
         : (sf.issuetype?.id ? { id: sf.issuetype.id } : { name: 'Task' });
+      // Declare boardKey FIRST — used in both reporter check and requiredCustomFields
+      const boardKey = feat.board || cat?.board || 'QGWL';
+      const boardCat = Object.values(CATALOGS).find(c=>c.board===boardKey);
+
       const payload = {
         fields:{
-          project:     { key: feat.board || (CATALOGS[wiz.platform]?.board) || 'QGWL' },
+          project:     { key: boardKey },
           issuetype:   issueTypeFinal,
           summary:     resolvedSummary,
           // Only set reporter for boards that require it (e.g. QGWL)
-          // PHXX and others block it: "Field reporter cannot be set. It is not on the appropriate screen"
-          ...(Object.values(CATALOGS).find(c=>c.board===boardKey)?.reporterRequired
-              ? { reporter: { accountId: user.accountId } } : {}),
+          ...(boardCat?.reporterRequired ? { reporter: { accountId: user.accountId } } : {}),
+          // Merge required custom fields (e.g. PHXX needs Acceptance Criteria in ADF)
+          ...(boardCat?.requiredCustomFields||{}),
           description: { type:'doc', version:1, content:[...cleanCloned, ...appendContent] },
           labels:      [...(sf.labels||[]).filter(l=>typeof l==='string'), 'onboarding-dashboard',
                         `ob-${wiz.clientName.toLowerCase().replace(/\s+/g,'-')}`],
@@ -3703,13 +3707,8 @@ async function wizCreateAllTickets(){
       if(isSubtask && wiz.onboardTicketKey){
         payload.fields.parent = { key: wiz.onboardTicketKey };
       }
-      // Priority: only send id to avoid full object rejection
-      if(sf.priority?.id) payload.fields.priority = { id: sf.priority.id };
-      if(wiz.assignee?.accountId) payload.fields.assignee = { accountId: wiz.assignee.accountId };
-      // Merge board-specific required custom fields (e.g. PHXX needs Acceptance Criteria)
-      const boardKey = feat.board || cat.board || 'QGWL';
-      const reqCF = Object.values(CATALOGS).find(c=>c.board===boardKey)?.requiredCustomFields || {};
-      Object.assign(payload.fields, reqCF);
+      if(sf.priority?.id)           payload.fields.priority = { id: sf.priority.id };
+      if(wiz.assignee?.accountId)   payload.fields.assignee = { accountId: wiz.assignee.accountId };
 
       const res = await apiFetch(`${base}/rest/api/3/issue`,{method:'POST',body:JSON.stringify(payload)});
 
@@ -3978,7 +3977,11 @@ async function scanTicketForIds(ticketKey){
   // Collect all text: description first, then comments newest-first
   const blocks = [];
   if(issueData.fields?.description) blocks.push(extractAdfText(issueData.fields.description));
-  for(const c of (commentData.comments||[])) blocks.push(extractAdfText(c.body));
+  for(const c of (commentData.comments||[])){
+    // Comments can be ADF objects or plain strings
+    if(c.body && typeof c.body === 'object') blocks.push(extractAdfText(c.body));
+    else if(typeof c.body === 'string')       blocks.push(c.body);
+  }
   const fullText = blocks.join('\n');
 
   // Scan the combined text for all three IDs at once
