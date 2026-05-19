@@ -12,19 +12,20 @@
     --bg:#0d0f14;--surface:#151820;--surface2:#1c2030;--border:#252a38;
     --accent:#4f8ef7;--accent2:#7c5cfa;--green:#34d399;--yellow:#fbbf24;
     --red:#f87171;--purple:#a78bfa;--text:#e2e8f0;--muted:#64748b;--muted2:#94a3b8;
+    --orange:#fb923c;
   }
   /* ── LIGHT MODE ── */
   html.light {
     --bg:#f4f5f7;--surface:#ffffff;--surface2:#f8f9fb;--border:#e2e5eb;
     --accent:#3b6ef5;--accent2:#6c4beb;--green:#16a34a;--yellow:#d97706;
     --red:#dc2626;--purple:#7c3aed;--text:#1a1d27;--muted:#7a8499;--muted2:#4a5166;
+    --orange:#ea580c;
   }
   html.light body::before{background-image:linear-gradient(rgba(59,110,245,.025)1px,transparent 1px),linear-gradient(90deg,rgba(59,110,245,.025)1px,transparent 1px);}
   html.light .card{box-shadow:0 8px 40px rgba(0,0,0,.1);}
   html.light .client-group:hover{box-shadow:0 4px 16px rgba(0,0,0,.08);}
   html.light .completed-header:hover{background:#f0f2f6;}
   html.light .client-header:hover{background:#f0f2f6;}
-  html.light .ob-card-header:hover{background:#f0f2f6;}
   html.light .all-done-row:hover{border-color:rgba(22,163,74,.3);background:rgba(22,163,74,.03);}
   html.light .wiz-modal{box-shadow:0 16px 48px rgba(0,0,0,.12);}
   html.light .side-panel{box-shadow:-6px 0 32px rgba(0,0,0,.1);}
@@ -511,6 +512,160 @@
   .btn-wiz-create{background:linear-gradient(135deg,var(--green),#059669);color:#fff;border:none;padding:9px 22px;border-radius:8px;font-family:'Syne',sans-serif;font-size:13px;font-weight:700;cursor:pointer;transition:all .2s;box-shadow:0 3px 12px rgba(52,211,153,.25);}
   .btn-wiz-create:hover{opacity:.9;}
   .btn-wiz-create:disabled{opacity:.5;cursor:not-allowed;pointer-events:none;}
+
+  /* ══ CSM BRIEF TAB ══════════════════════════════════════════════════════════ */
+  /* Account cards grid */
+  .account-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:14px;}
+  .acct-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:border-color .2s,box-shadow .2s;cursor:pointer;}
+  .acct-card:hover{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent),0 4px 20px rgba(79,142,247,.12);}
+  .acct-card.health-red{border-left:3px solid var(--red);}
+  .acct-card.health-yellow{border-left:3px solid var(--yellow);}
+  .acct-card.health-green{border-left:3px solid var(--green);}
+  .acct-card.health-gray{border-left:3px solid var(--muted);}
+  .acct-header{padding:14px 16px 10px;display:flex;align-items:flex-start;justify-content:space-between;gap:10px;}
+  .acct-name{font-size:15px;font-weight:700;}
+  .acct-meta{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);margin-top:3px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+  .health-badge{font-size:11px;font-weight:700;padding:3px 9px;border-radius:99px;display:flex;align-items:center;gap:4px;flex-shrink:0;}
+  .health-badge.red{background:rgba(248,113,113,.12);color:var(--red);border:1px solid rgba(248,113,113,.25);}
+  .health-badge.yellow{background:rgba(251,191,36,.1);color:var(--yellow);border:1px solid rgba(251,191,36,.25);}
+  .health-badge.green{background:rgba(52,211,153,.1);color:var(--green);border:1px solid rgba(52,211,153,.25);}
+  .health-badge.gray{background:rgba(100,116,139,.1);color:var(--muted2);border:1px solid rgba(100,116,139,.2);}
+  .acct-insight{padding:0 16px 10px;font-size:12px;color:var(--muted2);line-height:1.5;border-bottom:1px solid var(--border);}
+  .diff-line{font-size:11px;font-family:'DM Mono',monospace;color:var(--green);margin-top:5px;display:flex;align-items:center;gap:5px;}
+  .diff-line.diff-new{color:var(--green);}
+  .diff-line.diff-close{color:var(--muted);}
+  .diff-line.diff-warn{color:var(--yellow);}
+  .acct-footer{padding:10px 16px;display:flex;align-items:center;justify-content:space-between;gap:8px;}
+  .risk-tags{display:flex;gap:5px;flex-wrap:wrap;}
+  .risk-tag{font-size:10px;font-family:'DM Mono',monospace;padding:2px 7px;border-radius:4px;background:rgba(255,255,255,.04);border:1px solid var(--border);color:var(--muted2);}
+  .risk-tag.mtg{border-color:rgba(79,142,247,.3);color:var(--accent);}
+  .risk-tag.ticket{border-color:rgba(251,191,36,.3);color:var(--yellow);}
+  .risk-tag.renewal{border-color:rgba(248,113,113,.3);color:var(--red);}
+  .risk-tag.silent{border-color:rgba(100,116,139,.3);color:var(--muted2);}
+  .risk-tag.ok{border-color:rgba(52,211,153,.3);color:var(--green);}
+  .acct-counts{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);display:flex;gap:10px;align-items:center;}
+  /* Brief side panel (separate from Jira side panel) */
+  .brief-panel-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:400;backdrop-filter:blur(2px);}
+  .brief-panel-overlay.open{display:block;}
+  .brief-side-panel{position:fixed;right:0;top:0;bottom:0;width:520px;max-width:100vw;background:var(--surface);border-left:1px solid var(--border);z-index:401;overflow-y:auto;transform:translateX(100%);transition:transform .25s cubic-bezier(.4,0,.2,1);box-shadow:-8px 0 40px rgba(0,0,0,.5);}
+  .brief-side-panel.open{transform:translateX(0);}
+  .brief-panel-head{padding:20px 22px 16px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;background:var(--surface);z-index:1;}
+  .brief-panel-title{font-size:16px;font-weight:800;}
+  .brief-panel-sub{font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);margin-top:2px;}
+  .brief-panel-close{background:none;border:1px solid var(--border);color:var(--muted2);width:30px;height:30px;border-radius:6px;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;transition:all .15s;flex-shrink:0;}
+  .brief-panel-close:hover{border-color:var(--red);color:var(--red);}
+  .brief-panel-body{padding:20px 22px;}
+  .p-section{margin-bottom:22px;}
+  .p-section-title{font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.9px;margin-bottom:10px;display:flex;align-items:center;gap:7px;}
+  .p-section-title::after{content:'';flex:1;height:1px;background:var(--border);}
+  .mtg-row{background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:10px 12px;margin-bottom:7px;display:flex;align-items:flex-start;gap:10px;}
+  .mtg-date{font-family:'DM Mono',monospace;font-size:11px;color:var(--accent);font-weight:600;min-width:48px;margin-top:1px;}
+  .mtg-info .title{font-size:13px;font-weight:600;}
+  .mtg-info .meta{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);margin-top:3px;}
+  .brief-ticket-row{background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:10px 12px;margin-bottom:7px;display:flex;align-items:flex-start;gap:10px;}
+  .brief-ticket-key{font-family:'DM Mono',monospace;font-size:11px;color:var(--accent);font-weight:600;min-width:90px;flex-shrink:0;}
+  .brief-ticket-info .title{font-size:13px;font-weight:600;line-height:1.3;}
+  .brief-ticket-info .meta{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);margin-top:3px;display:flex;gap:8px;flex-wrap:wrap;}
+  .status-dot{display:inline-flex;align-items:center;gap:4px;}
+  .status-dot::before{content:'';width:6px;height:6px;border-radius:50%;flex-shrink:0;}
+  .status-dot.in-progress::before{background:var(--yellow);}
+  .status-dot.backlog::before{background:var(--muted);}
+  .status-dot.open::before{background:var(--accent);}
+  .brief-pinned-badge{font-size:10px;padding:1px 6px;background:rgba(79,142,247,.1);color:var(--accent);border:1px solid rgba(79,142,247,.2);border-radius:3px;font-family:'DM Mono',monospace;}
+  .suggestion-row{background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:12px 14px;margin-bottom:8px;border-left:3px solid var(--border);}
+  .suggestion-row.high{border-left-color:var(--red);}
+  .suggestion-row.medium{border-left-color:var(--yellow);}
+  .suggestion-row.low{border-left-color:var(--muted);}
+  .sug-label{font-size:10px;font-family:'DM Mono',monospace;color:var(--muted);margin-bottom:5px;display:flex;gap:8px;align-items:center;}
+  .sug-text{font-size:13px;line-height:1.45;}
+  .project-row{background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:10px 12px;margin-bottom:7px;display:flex;align-items:center;justify-content:space-between;gap:10px;}
+  .proj-name{font-size:13px;font-weight:600;}
+  .proj-status{font-family:'DM Mono',monospace;font-size:10px;padding:2px 8px;border-radius:4px;}
+  .proj-status.progress{background:rgba(251,191,36,.1);color:var(--yellow);border:1px solid rgba(251,191,36,.2);}
+  .proj-status.ok{background:rgba(52,211,153,.1);color:var(--green);border:1px solid rgba(52,211,153,.2);}
+  .proj-status.blocked{background:rgba(248,113,113,.1);color:var(--red);border:1px solid rgba(248,113,113,.2);}
+  .brief-empty-state{text-align:center;color:var(--muted);font-size:13px;padding:28px;background:var(--surface2);border:1px solid var(--border);border-radius:8px;font-family:'DM Mono',monospace;}
+  /* OKR section */
+  .okr-section{background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:12px;}
+  .okr-section-head{padding:12px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px;cursor:pointer;transition:background .15s;}
+  .okr-section-head:hover{background:var(--surface2);}
+  .okr-section-head .title{font-size:13px;font-weight:700;display:flex;align-items:center;gap:8px;}
+  .okr-section-head .count{font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);}
+  .okr-body{border-top:1px solid var(--border);padding:12px 16px;display:none;}
+  .okr-body.open{display:block;}
+  .okr-item{font-size:13px;color:var(--muted2);padding:6px 0;border-bottom:1px solid rgba(37,42,56,.5);display:flex;align-items:flex-start;gap:10px;line-height:1.4;}
+  .okr-item:last-child{border-bottom:none;}
+  .okr-item .client-tag{font-family:'DM Mono',monospace;font-size:10px;padding:2px 7px;background:rgba(79,142,247,.08);color:var(--accent);border:1px solid rgba(79,142,247,.15);border-radius:3px;white-space:nowrap;flex-shrink:0;}
+  .okr-copy-btn{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;border:none;padding:9px 18px;border-radius:8px;font-family:'Syne',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;box-shadow:0 4px 16px rgba(79,142,247,.25);}
+  .okr-copy-btn:hover{transform:translateY(-1px);}
+  .okr-quarter-sel{background:var(--surface);border:1px solid var(--border);color:var(--text);padding:6px 12px;border-radius:7px;font-family:'DM Mono',monospace;font-size:12px;cursor:pointer;outline:none;}
+  /* Session log */
+  .log-controls{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;align-items:center;}
+  .log-select{background:var(--surface);border:1px solid var(--border);color:var(--text);padding:6px 10px;border-radius:6px;font-family:'DM Mono',monospace;font-size:12px;outline:none;cursor:pointer;}
+  .log-select:focus{border-color:var(--accent);}
+  .add-log-btn{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;border:none;padding:7px 16px;border-radius:7px;font-family:'Syne',sans-serif;font-size:12px;font-weight:700;cursor:pointer;margin-left:auto;transition:all .2s;}
+  .add-log-btn:hover{transform:translateY(-1px);}
+  .log-entry{background:var(--surface);border:1px solid var(--border);border-radius:9px;padding:11px 14px;margin-bottom:8px;display:flex;align-items:flex-start;gap:10px;}
+  .log-emoji{font-size:16px;flex-shrink:0;margin-top:1px;}
+  .log-body{flex:1;}
+  .log-tags{display:flex;align-items:center;gap:6px;margin-bottom:4px;flex-wrap:wrap;}
+  .log-cat{font-size:10px;font-family:'DM Mono',monospace;padding:2px 7px;border-radius:3px;}
+  .log-cat.onboard{background:rgba(79,142,247,.1);color:var(--accent);}
+  .log-cat.renewal{background:rgba(52,211,153,.1);color:var(--green);}
+  .log-cat.ticket{background:rgba(167,139,250,.1);color:var(--purple);}
+  .log-cat.feature{background:rgba(251,191,36,.1);color:var(--yellow);}
+  .log-cat.pitching{background:rgba(251,146,60,.1);color:var(--orange);}
+  .log-cat.ai{background:rgba(244,114,182,.1);color:#f472b6;}
+  .log-cat.team{background:rgba(100,116,139,.1);color:var(--muted2);}
+  .log-cat.other{background:rgba(100,116,139,.08);color:var(--muted);}
+  .log-client{font-family:'DM Mono',monospace;font-size:10px;font-weight:600;color:var(--text);}
+  .log-date{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);margin-left:auto;}
+  .log-desc{font-size:13px;color:var(--muted2);line-height:1.4;}
+  .log-qtr{font-family:'DM Mono',monospace;font-size:10px;color:var(--border);margin-top:3px;}
+  .log-del{background:none;border:none;color:var(--border);cursor:pointer;font-size:15px;padding:0 2px;flex-shrink:0;transition:color .15s;}
+  .log-del:hover{color:var(--red);}
+  /* Add log modal */
+  .log-modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:500;align-items:center;justify-content:center;padding:20px;}
+  .log-modal-overlay.open{display:flex;}
+  .log-modal{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:28px;width:100%;max-width:440px;box-shadow:0 24px 60px rgba(0,0,0,.6);}
+  .log-modal h3{font-size:16px;font-weight:800;margin-bottom:18px;}
+  .log-form-row{margin-bottom:14px;}
+  .log-form-row label{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.7px;display:block;margin-bottom:5px;}
+  .log-form-row input,.log-form-row select,.log-form-row textarea{width:100%;background:var(--surface2);border:1px solid var(--border);color:var(--text);padding:8px 11px;border-radius:7px;font-family:'DM Mono',monospace;font-size:12px;outline:none;transition:border-color .15s;}
+  .log-form-row input:focus,.log-form-row select:focus,.log-form-row textarea:focus{border-color:var(--accent);}
+  .log-form-row textarea{resize:vertical;font-family:'Syne',sans-serif;font-size:13px;min-height:70px;}
+  .log-modal-btns{display:flex;gap:8px;margin-top:18px;}
+  .log-modal-cancel{flex:1;background:var(--surface2);border:1px solid var(--border);color:var(--muted2);padding:10px;border-radius:8px;font-family:'Syne',sans-serif;font-size:13px;font-weight:600;cursor:pointer;}
+  .log-modal-cancel:hover{color:var(--text);}
+  .log-modal-save{flex:2;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;border:none;padding:10px;border-radius:8px;font-family:'Syne',sans-serif;font-size:13px;font-weight:700;cursor:pointer;}
+  .log-modal-save:disabled{opacity:.4;cursor:not-allowed;}
+  /* Brief sub-tabs */
+  .brief-tabs{display:flex;gap:2px;margin-bottom:20px;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:4px;}
+  .brief-tab-btn{flex:1;padding:9px 14px;border:none;border-radius:7px;font-family:'Syne',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;color:var(--muted);background:transparent;display:flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;}
+  .brief-tab-btn:hover{color:var(--text);}
+  .brief-tab-btn.active{background:var(--surface2);color:var(--text);box-shadow:0 2px 8px rgba(0,0,0,.3);}
+  .brief-tab-count{font-family:'DM Mono',monospace;font-size:10px;padding:2px 6px;border-radius:3px;background:rgba(255,255,255,.06);color:var(--muted2);}
+  .brief-tab-btn.active .brief-tab-count{background:rgba(79,142,247,.15);color:var(--accent);}
+  .brief-tab-pane{display:none;}
+  .brief-tab-pane.active{display:block;}
+  /* Brief stats row */
+  .brief-stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:20px;}
+  @media(max-width:600px){.brief-stats-row{grid-template-columns:repeat(2,1fr);}}
+  .brief-stat-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:12px 14px;position:relative;overflow:hidden;}
+  .brief-stat-card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;}
+  .brief-stat-card.c-red::after{background:var(--red);}
+  .brief-stat-card.c-yellow::after{background:var(--yellow);}
+  .brief-stat-card.c-green::after{background:var(--green);}
+  .brief-stat-card.c-blue::after{background:var(--accent);}
+  .brief-stat-card .stat-label{font-size:10px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;margin-bottom:4px;}
+  .brief-stat-val{font-size:28px;font-weight:800;line-height:1;}
+  .brief-stat-card.c-red .brief-stat-val{color:var(--red);}
+  .brief-stat-card.c-yellow .brief-stat-val{color:var(--yellow);}
+  .brief-stat-card.c-green .brief-stat-val{color:var(--green);}
+  .brief-stat-card.c-blue .brief-stat-val{color:var(--accent);}
+  /* Brief section misc */
+  .brief-section-title{font-size:15px;font-weight:700;}
+  .no-accounts{text-align:center;padding:60px 20px;color:var(--muted);font-size:13px;font-family:'DM Mono',monospace;}
 </style>
 </head>
 <body>
@@ -581,6 +736,9 @@
       </button>
       <button class="tab-btn" id="tab-tbd" onclick="switchTab('tbd')">
         ✅ To Be Done <span class="tab-count" id="tc-tbd">—</span>
+      </button>
+      <button class="tab-btn" id="tab-brief" onclick="switchTab('brief')">
+        📊 CSM Brief <span class="tab-count" id="tc-brief">—</span>
       </button>
     </div>
 
@@ -688,9 +846,143 @@
         <div id="tbdDash"></div>
       </div>
     </div>
+
+    <!-- ══ CSM BRIEF TAB PANE ══ -->
+    <div class="tab-pane" id="pane-brief">
+
+      <!-- Stats row -->
+      <div class="brief-stats-row">
+        <div class="brief-stat-card c-red"><div class="stat-label">Critical</div><div class="brief-stat-val" id="bs-crit">—</div></div>
+        <div class="brief-stat-card c-yellow"><div class="stat-label">At Risk</div><div class="brief-stat-val" id="bs-risk">—</div></div>
+        <div class="brief-stat-card c-green"><div class="stat-label">On Track</div><div class="brief-stat-val" id="bs-ok">—</div></div>
+        <div class="brief-stat-card c-blue"><div class="stat-label">Meetings (14d)</div><div class="brief-stat-val" id="bs-mtg">—</div></div>
+      </div>
+
+      <!-- Sub-tabs -->
+      <div class="brief-tabs">
+        <button class="brief-tab-btn active" id="btab-brief" onclick="briefSwitchTab('brief')">
+          📋 Account Brief <span class="brief-tab-count" id="btc-brief">—</span>
+        </button>
+        <button class="brief-tab-btn" id="btab-okr" onclick="briefSwitchTab('okr')">
+          📊 OKR Log <span class="brief-tab-count" id="btc-okr">—</span>
+        </button>
+        <button class="brief-tab-btn" id="btab-log" onclick="briefSwitchTab('log')">
+          🗒 Session Log <span class="brief-tab-count" id="btc-log">—</span>
+        </button>
+      </div>
+
+      <!-- Sub-pane: Account Brief -->
+      <div class="brief-tab-pane active" id="bpane-brief">
+        <div class="account-grid" id="accountGrid"></div>
+      </div>
+
+      <!-- Sub-pane: OKR Log -->
+      <div class="brief-tab-pane" id="bpane-okr">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;flex-wrap:wrap;">
+          <div class="brief-section-title">Q OKR Summary</div>
+          <select class="okr-quarter-sel" id="okrQSel" onchange="renderOKR()">
+            <option>Q1 2026</option><option selected>Q2 2026</option>
+            <option>Q3 2026</option><option>Q4 2026</option>
+          </select>
+          <button class="okr-copy-btn" onclick="copyOKR()" id="okrCopyBtn">Copy Summary</button>
+        </div>
+        <div id="okrSections"></div>
+      </div>
+
+      <!-- Sub-pane: Session Log -->
+      <div class="brief-tab-pane" id="bpane-log">
+        <div class="log-controls">
+          <select class="log-select" id="logQFilter" onchange="renderLog()">
+            <option value="all">All quarters</option>
+            <option value="Q1 2026">Q1 2026</option>
+            <option value="Q2 2026" selected>Q2 2026</option>
+            <option value="Q3 2026">Q3 2026</option>
+            <option value="Q4 2026">Q4 2026</option>
+          </select>
+          <select class="log-select" id="logCatFilter" onchange="renderLog()">
+            <option value="all">All categories</option>
+            <option value="onboard">🚀 Onboard</option>
+            <option value="renewal">🔄 Renewal</option>
+            <option value="ticket">🎫 Ticket Resolved</option>
+            <option value="feature">⚡ Feature Enabled</option>
+            <option value="pitching">🎯 Pitching</option>
+            <option value="ai">🤖 AI Adoption</option>
+            <option value="team">🤝 Team Contribution</option>
+            <option value="other">📌 Other</option>
+          </select>
+          <select class="log-select" id="logClientFilter" onchange="renderLog()">
+            <option value="all">All accounts</option>
+            <option>Mannings</option><option>SCMP</option><option>10/10Hope</option>
+            <option>Luxgen</option><option>55688</option><option>田原香</option>
+            <option>Internal</option><option>Other</option>
+          </select>
+          <button class="add-log-btn" onclick="openAddModal()">＋ Log Activity</button>
+        </div>
+        <div id="logList"></div>
+      </div>
+
+    </div>
   </div>
 
-  <!-- ══ ONBOARDING WIZARD MODAL ══ -->
+  <!-- Brief account side panel (separate from Jira ticket side panel) -->
+  <div class="brief-panel-overlay" id="briefPanelOverlay" onclick="closeBriefPanel()"></div>
+  <div class="brief-side-panel" id="briefSidePanel">
+    <div class="brief-panel-head">
+      <div>
+        <div class="brief-panel-title" id="briefPanelTitle">—</div>
+        <div class="brief-panel-sub" id="briefPanelSub">—</div>
+      </div>
+      <button class="brief-panel-close" onclick="closeBriefPanel()">✕</button>
+    </div>
+    <div class="brief-panel-body" id="briefPanelBody"></div>
+  </div>
+
+  <!-- Add Log Modal -->
+  <div class="log-modal-overlay" id="addModal">
+    <div class="log-modal">
+      <h3>Log Activity</h3>
+      <div class="log-form-row">
+        <label>Date</label>
+        <input type="text" id="mDate" placeholder="YYYY-MM-DD">
+      </div>
+      <div class="log-form-row">
+        <label>Quarter</label>
+        <select id="mQuarter">
+          <option>Q1 2026</option><option selected>Q2 2026</option>
+          <option>Q3 2026</option><option>Q4 2026</option>
+        </select>
+      </div>
+      <div class="log-form-row">
+        <label>Category</label>
+        <select id="mCat">
+          <option value="onboard">🚀 Onboard</option>
+          <option value="renewal">🔄 Renewal</option>
+          <option value="ticket">🎫 Ticket Resolved</option>
+          <option value="feature">⚡ Feature Enabled</option>
+          <option value="pitching">🎯 Pitching</option>
+          <option value="ai">🤖 AI Adoption</option>
+          <option value="team">🤝 Team Contribution</option>
+          <option value="other">📌 Other</option>
+        </select>
+      </div>
+      <div class="log-form-row">
+        <label>Account</label>
+        <select id="mClient">
+          <option>Mannings</option><option>SCMP</option><option>10/10Hope</option>
+          <option>Luxgen</option><option>55688</option><option>田原香</option>
+          <option>Internal</option><option>Other</option>
+        </select>
+      </div>
+      <div class="log-form-row">
+        <label>Description</label>
+        <textarea id="mDesc" placeholder="What did you do? e.g. Enabled AIRIS for Mannings…"></textarea>
+      </div>
+      <div class="log-modal-btns">
+        <button class="log-modal-cancel" onclick="closeModal()">Cancel</button>
+        <button class="log-modal-save" id="mSaveBtn" onclick="saveEntry()" disabled>Add to Log</button>
+      </div>
+    </div>
+  </div>
   <div class="wiz-overlay" id="wizOverlay" style="display:none" onclick="wizOverlayClick(event)">
     <div class="wiz-modal">
       <div class="wiz-progress"><div class="wiz-progress-bar" id="wizProgressBar" style="width:0%"></div></div>
@@ -1882,11 +2174,12 @@ async function selectAssignee(accountId, displayName, el){
 let tbdData = [];
 
 function switchTab(name){
-  ['tracking','tbd'].forEach(t=>{
+  ['tracking','tbd','brief'].forEach(t=>{
     document.getElementById('tab-'+t).classList.toggle('active', t===name);
     document.getElementById('pane-'+t).classList.toggle('active', t===name);
   });
   if(name==='tracking') renderOnboardingProgress();
+  if(name==='brief'){ renderBriefStats(); briefUpdateTabCounts(); }
 }
 
 // ── REASSIGN HELPERS (shared by bulk + per-row) ──────────────────────────────
@@ -4657,8 +4950,506 @@ function finalizeAddObFeatures(created){
   return true;
 }
 
+// ════════════════════════════════════════════════════════════════════════════
+// CSM BRIEF — DATA, STATE & FUNCTIONS
+// ════════════════════════════════════════════════════════════════════════════
+
+const ACCOUNTS = [
+  {
+    id:'mannings', name:'Mannings', health:'red',
+    insight:'AIXP-1840 open 11 days — no update from Jin Chen. Bi-weekly May 28.',
+    diffs:[{type:'warn',text:'AIXP-1840 no update in 11 days'}],
+    riskTags:['mtg','ticket'], ticketCount:1, mtgCount:3,
+    projects:[
+      {name:'Q3 Renewal Contract',status:'progress'},
+      {name:'AIXON → AIRIS Upgrade (Q4)',status:'progress'},
+    ],
+    meetings:[
+      {date:'May 28',title:'Bi-weekly Meeting',meta:'11:00–12:00 HKT · Teams · Rola Chung'},
+      {date:'Jun 1',title:'Mannings Quotation',meta:'11:15–12:00 HKT'},
+      {date:'Jun 4',title:'Monthly Meeting',meta:'11:00–12:00 HKT · Teams · Rola Chung'},
+    ],
+    tickets:[
+      {key:'AIXP-1840',title:'IPA_Mannings_Meta 沒有產出 AI suggestions',status:'in-progress',assignee:'Jin Chen',pinned:true},
+    ],
+    suggestions:[
+      {priority:'high',label:'Ticket · High',text:'Chase Jin Chen on AIXP-1840 before May 28 — 11 days open with no update.'},
+      {priority:'high',label:'Renewal · High',text:'Prep Q3 renewal quotation now — Jun 1 meeting is 14 days away.'},
+      {priority:'medium',label:'Timeline · Medium',text:'Confirm AIRIS upgrade ETA before Jun 4 monthly — currently no timeline set.'},
+    ],
+  },
+  {
+    id:'scmp', name:'SCMP', health:'yellow',
+    insight:'PROJ-33328 in backlog since May 15. June renewal has no calendar event yet.',
+    diffs:[], riskTags:['renewal','ticket'], ticketCount:1, mtgCount:2,
+    projects:[
+      {name:'Segments Enablement',status:'progress'},
+      {name:'Renewal (June 2026)',status:'blocked'},
+    ],
+    meetings:[
+      {date:'May 19',title:'Segment / Experiment / Insight Interview',meta:'10:30–11:00 HKT · Recurring weekly'},
+      {date:'May 26',title:'Segment / Experiment / Insight Interview',meta:'10:30–11:00 HKT'},
+    ],
+    tickets:[
+      {key:'PROJ-33328',title:'Enable segment quota increase to 50',status:'backlog',assignee:'Michael Palmer',pinned:false},
+    ],
+    suggestions:[
+      {priority:'high',label:'Renewal · High',text:'June renewal has no meeting booked yet — schedule it this week.'},
+      {priority:'medium',label:'Ticket · Medium',text:'PROJ-33328 sitting in backlog since May 15. Follow up with Michael Palmer.'},
+    ],
+  },
+  {
+    id:'1010hope', name:'10/10Hope', health:'yellow',
+    insight:'klickngo API integration in progress. EC & POS integration has no ticket yet.',
+    diffs:[], riskTags:['ticket'], ticketCount:1, mtgCount:2,
+    projects:[
+      {name:'AIQUA Usage Tracking',status:'progress'},
+      {name:'EC & POS Integration',status:'progress'},
+    ],
+    meetings:[
+      {date:'May 18',title:'10/10 整合',meta:'14:30–15:00 HKT · Recurring'},
+      {date:'May 25',title:'10/10 整合',meta:'14:30–15:00 HKT'},
+    ],
+    tickets:[
+      {key:'QGWL-25317',title:'klickngo API Integration for 10/10 Hope',status:'in-progress',assignee:'Mark Liu',pinned:false},
+    ],
+    suggestions:[
+      {priority:'medium',label:'Ticket · Medium',text:'Get Mark Liu update on QGWL-25317 klickngo API integration status.'},
+      {priority:'medium',label:'Action · Medium',text:'EC & POS integration has no formal ticket — consider raising one to track it.'},
+    ],
+  },
+  {
+    id:'luxgen', name:'Luxgen', health:'yellow',
+    insight:'Renewal decision meetings were May 19. Log the outcome and update status.',
+    diffs:[{type:'new',text:'確認是否延 Luxgen 合約 — outcome pending log'}],
+    riskTags:['renewal'], ticketCount:0, mtgCount:1,
+    projects:[{name:'Contract Renewal Decision',status:'progress'}],
+    meetings:[{date:'May 26',title:'Luxgen checking',meta:'10:00–10:30 HKT · Recurring'}],
+    tickets:[],
+    suggestions:[
+      {priority:'high',label:'Renewal · High',text:'Log the May 19 renewal outcome — renew, churn, or pending? Update account status.'},
+    ],
+  },
+  {
+    id:'55688', name:'55688', health:'yellow',
+    insight:'Tracking Service Agent purchase intent. Weekly check-in ongoing.',
+    diffs:[], riskTags:['ticket'], ticketCount:0, mtgCount:2,
+    projects:[{name:'Service Agent Purchase Decision',status:'progress'}],
+    meetings:[
+      {date:'May 19',title:'55688 SA Tracking',meta:'09:15–09:45 HKT · Recurring'},
+      {date:'May 26',title:'55688 SA Tracking',meta:'09:15–09:45 HKT'},
+    ],
+    tickets:[],
+    suggestions:[
+      {priority:'medium',label:'Action · Medium',text:'Bring Service Agent pricing summary to May 19 meeting. Push for a clear decision timeline.'},
+    ],
+  },
+  {
+    id:'tiyuanxiang', name:'田原香', health:'green',
+    insight:'Use case tracking session weekly. No blockers detected.',
+    diffs:[], riskTags:['ok'], ticketCount:0, mtgCount:2,
+    projects:[
+      {name:'Automation Journey Development',status:'progress'},
+      {name:'Agent Usage & Feedback',status:'ok'},
+    ],
+    meetings:[
+      {date:'May 20',title:'田原香 use case tracking',meta:'09:30–10:00 HKT · Recurring'},
+      {date:'May 27',title:'田原香 use case tracking',meta:'09:30–10:00 HKT'},
+    ],
+    tickets:[],
+    suggestions:[
+      {priority:'low',label:'Action · Low',text:'Collect agent usage feedback at May 20 session and log for OKR.'},
+    ],
+  },
+];
+
+const BRIEF_CAT_META = {
+  onboard:  {emoji:'🚀', label:'Onboard',           cls:'onboard'},
+  renewal:  {emoji:'🔄', label:'Renewal',            cls:'renewal'},
+  ticket:   {emoji:'🎫', label:'Ticket Resolved',    cls:'ticket'},
+  feature:  {emoji:'⚡', label:'Feature Enabled',    cls:'feature'},
+  pitching: {emoji:'🎯', label:'Pitching',           cls:'pitching'},
+  ai:       {emoji:'🤖', label:'AI Adoption',        cls:'ai'},
+  team:     {emoji:'🤝', label:'Team Contribution',  cls:'team'},
+  other:    {emoji:'📌', label:'Other',              cls:'other'},
+};
+
+const OKR_SECTIONS = [
+  {key:'onboard',  title:'1. Onboarded new accounts'},
+  {key:'renewal',  title:'2. Renewed successfully'},
+  {key:'pitching', title:'3. Others — Pitching & team contribution'},
+  {key:'feature',  title:'4. Pilot / New feature enablement'},
+  {key:'ai',       title:'5. AI adoption'},
+  {key:'team',     title:'6. Functional knowledge & teamwork'},
+  {key:'ticket',   title:'7. Issues resolved'},
+  {key:'other',    title:'8. Other contributions'},
+];
+
+const RISK_LABELS = {mtg:'📅 Meeting Due', ticket:'🐛 Ticket Blocked', renewal:'⚠️ Renewal Risk', silent:'👻 Client Silent', ok:'✅ On Track'};
+
+const PRELOADED_LOG = [
+  {id:1,  date:'2026-Q1', quarter:'Q1 2026', category:'onboard',  client:'10/10Hope', description:'AIQUA onboarded (Prizm HK)'},
+  {id:2,  date:'2026-Q1', quarter:'Q1 2026', category:'renewal',  client:'Mannings',  description:'Renewed AQ & AX to 2026-06-30'},
+  {id:3,  date:'2026-Q1', quarter:'Q1 2026', category:'renewal',  client:'田原香',     description:'Renewed to 2027-02-16'},
+  {id:4,  date:'2026-Q1', quarter:'Q1 2026', category:'pitching', client:'Internal',  description:'Genki — AA opportunity pitched'},
+  {id:5,  date:'2026-Q1', quarter:'Q1 2026', category:'pitching', client:'Mannings',  description:'AA & AR opportunities pitched'},
+  {id:6,  date:'2026-Q1', quarter:'Q1 2026', category:'pitching', client:'Internal',  description:'Partner team pitching — Prizm (City Super)'},
+  {id:7,  date:'2026-Q1', quarter:'Q1 2026', category:'pitching', client:'Internal',  description:'Partner team pitching — Ledgerbio (Chinachem)'},
+  {id:8,  date:'2026-Q1', quarter:'Q1 2026', category:'team',     client:'SCMP',      description:'Assisted in finding SCMP for panel speaker'},
+  {id:9,  date:'2026-Q1', quarter:'Q1 2026', category:'feature',  client:'田原香',     description:'Campaign agent enabled'},
+  {id:10, date:'2026-Q1', quarter:'Q1 2026', category:'feature',  client:'Mannings',  description:'AB test with new recommendations filtering rules'},
+  {id:11, date:'2026-Q1', quarter:'Q1 2026', category:'ai',       client:'Internal',  description:'Gemini + NotebookLM as first answer-seeking before team'},
+  {id:12, date:'2026-Q1', quarter:'Q1 2026', category:'ai',       client:'Internal',  description:'AI video scene generation for AA demo'},
+  {id:13, date:'2026-Q1', quarter:'Q1 2026', category:'ai',       client:'Internal',  description:'NotebookLM + Gemini + Canva/Felo.ai for slides'},
+  {id:14, date:'2026-Q1', quarter:'Q1 2026', category:'ai',       client:'Mannings',  description:'Gemini for bi-weekly report preparation'},
+  {id:15, date:'2026-Q1', quarter:'Q1 2026', category:'team',     client:'Internal',  description:'LON insights shared to Darren, Brian, Eric'},
+  {id:16, date:'2026-Q1', quarter:'Q1 2026', category:'team',     client:'Internal',  description:'UX interview with Medet'},
+  {id:17, date:'2026-Q1', quarter:'Q1 2026', category:'team',     client:'Internal',  description:'AQ recommendation sharing with Zebbie'},
+];
+
+// ── BRIEF STATE ───────────────────────────────────────────────────────────────
+let logEntries = [];
+let briefNextId = 100;
+const BRIEF_LOG_KEY = 'csm_session_log';
+
+function loadLog(){
+  try{ return JSON.parse(localStorage.getItem(BRIEF_LOG_KEY)||'null')||[...PRELOADED_LOG]; }
+  catch(_){ return [...PRELOADED_LOG]; }
+}
+function saveLog(){ localStorage.setItem(BRIEF_LOG_KEY, JSON.stringify(logEntries)); }
+
+// ── BRIEF INIT (called once on page load) ─────────────────────────────────────
+function initBrief(){
+  logEntries = loadLog();
+  briefNextId = Math.max(briefNextId, ...logEntries.map(e=>e.id||0)) + 1;
+  renderBriefCards();
+  renderOKR();
+  renderLog();
+  renderBriefStats();
+  briefUpdateTabCounts();
+
+  // Wire mDesc textarea to enable/disable save button
+  const mDesc = document.getElementById('mDesc');
+  if(mDesc){
+    mDesc.addEventListener('input', function(){
+      const btn = document.getElementById('mSaveBtn');
+      if(btn) btn.disabled = !this.value.trim();
+    });
+  }
+  // Close add-log modal on overlay click
+  const addModal = document.getElementById('addModal');
+  if(addModal){
+    addModal.addEventListener('click', function(e){
+      if(e.target===this) closeModal();
+    });
+  }
+  // Seed mDate with today (YYYY-MM-DD)
+  const mDate = document.getElementById('mDate');
+  if(mDate && !mDate.value){
+    mDate.value = new Date().toISOString().split('T')[0];
+  }
+}
+
+// ── BRIEF SUB-TAB SWITCH ──────────────────────────────────────────────────────
+function briefSwitchTab(name){
+  ['brief','okr','log'].forEach(t=>{
+    const btn  = document.getElementById('btab-'+t);
+    const pane = document.getElementById('bpane-'+t);
+    if(btn)  btn.classList.toggle('active',  t===name);
+    if(pane) pane.classList.toggle('active', t===name);
+  });
+}
+
+// ── BRIEF STATS ───────────────────────────────────────────────────────────────
+function renderBriefStats(){
+  const crit = ACCOUNTS.filter(a=>a.health==='red').length;
+  const risk = ACCOUNTS.filter(a=>a.health==='yellow').length;
+  const ok   = ACCOUNTS.filter(a=>a.health==='green').length;
+  const mtgs = ACCOUNTS.reduce((s,a)=>s+a.mtgCount,0);
+  const setCt = (id,v)=>{ const el=document.getElementById(id); if(el) el.textContent=v; };
+  setCt('bs-crit', crit); setCt('bs-risk', risk); setCt('bs-ok', ok); setCt('bs-mtg', mtgs);
+  // Update main tab count
+  const tc = document.getElementById('tc-brief');
+  if(tc) tc.textContent = ACCOUNTS.length;
+}
+
+function briefUpdateTabCounts(){
+  const set = (id,v)=>{ const el=document.getElementById(id); if(el) el.textContent=v; };
+  set('btc-brief', ACCOUNTS.length);
+  set('btc-okr',   logEntries.length);
+  set('btc-log',   logEntries.length);
+  set('tc-brief',  ACCOUNTS.length);
+}
+
+// ── ACCOUNT BRIEF RENDER ──────────────────────────────────────────────────────
+function renderBriefCards(){
+  const grid = document.getElementById('accountGrid');
+  if(!grid) return;
+  const sorted = [...ACCOUNTS].sort((a,b)=>{
+    const order={red:0,yellow:1,green:2,gray:3};
+    return (order[a.health]??3)-(order[b.health]??3);
+  });
+  grid.innerHTML = sorted.map(acct=>{
+    const hBadge={red:'🔴 Critical',yellow:'🟡 At Risk',green:'🟢 On Track',gray:'⚪ Unclear'}[acct.health]||'⚪';
+    const diffHTML = acct.diffs.map(d=>`<div class="diff-line diff-${esc(d.type)}">${d.type==='new'?'↗':d.type==='close'?'↘':'⚠'} ${esc(d.text)}</div>`).join('');
+    const riskHTML = acct.riskTags.map(t=>`<span class="risk-tag ${esc(t)}">${RISK_LABELS[t]||t}</span>`).join('');
+    return `
+    <div class="acct-card health-${esc(acct.health)}" onclick="openBriefPanel('${esc(acct.id)}')">
+      <div class="acct-header">
+        <div>
+          <div class="acct-name">${esc(acct.name)}</div>
+          <div class="acct-meta">
+            <span>🎫 ${acct.ticketCount} ticket${acct.ticketCount!==1?'s':''}</span>
+            <span>📅 ${acct.mtgCount} meeting${acct.mtgCount!==1?'s':''}</span>
+          </div>
+        </div>
+        <div class="health-badge ${esc(acct.health)}">${hBadge}</div>
+      </div>
+      <div class="acct-insight">
+        ${esc(acct.insight)}
+        ${diffHTML}
+      </div>
+      <div class="acct-footer">
+        <div class="risk-tags">${riskHTML}</div>
+        <div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--muted)">→ Full brief</div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+// ── BRIEF SIDE PANEL ──────────────────────────────────────────────────────────
+function openBriefPanel(id){
+  const acct = ACCOUNTS.find(a=>a.id===id);
+  if(!acct) return;
+  const titleEl = document.getElementById('briefPanelTitle');
+  const subEl   = document.getElementById('briefPanelSub');
+  const bodyEl  = document.getElementById('briefPanelBody');
+  if(titleEl) titleEl.textContent = acct.name;
+  const hLabel = {red:'🔴 Critical',yellow:'🟡 At Risk',green:'🟢 On Track',gray:'⚪ Unclear'}[acct.health]||'';
+  if(subEl) subEl.textContent = hLabel + ' · Updated today';
+
+  const mtgHTML = acct.meetings.length
+    ? acct.meetings.map(m=>`
+        <div class="mtg-row">
+          <div class="mtg-date">${esc(m.date)}</div>
+          <div class="mtg-info">
+            <div class="title">${esc(m.title)}</div>
+            <div class="meta">${esc(m.meta)}</div>
+          </div>
+        </div>`).join('')
+    : '<div class="brief-empty-state">No meetings in next 14 days</div>';
+
+  const tickHTML = acct.tickets.length
+    ? acct.tickets.map(t=>`
+        <div class="brief-ticket-row">
+          <div class="brief-ticket-key">${esc(t.key)}</div>
+          <div class="brief-ticket-info">
+            <div class="title">${esc(t.title)} ${t.pinned?'<span class="brief-pinned-badge">pinned</span>':''}</div>
+            <div class="meta">
+              <span class="status-dot ${esc(t.status)}">${esc(t.status.replace('-',' '))}</span>
+              <span>${esc(t.assignee)}</span>
+            </div>
+          </div>
+        </div>`).join('')
+    : '<div class="brief-empty-state">No active tickets</div>';
+
+  const projHTML = acct.projects.length
+    ? acct.projects.map(p=>`
+        <div class="project-row">
+          <div class="proj-name">${esc(p.name)}</div>
+          <div class="proj-status ${esc(p.status)}">${{progress:'🟡 In Progress',ok:'🟢 On Track',blocked:'🔴 Blocked'}[p.status]||p.status}</div>
+        </div>`).join('')
+    : '';
+
+  const sugHTML = acct.suggestions.map((s,i)=>`
+    <div class="suggestion-row ${esc(s.priority)}">
+      <div class="sug-label"><span>${i+1}</span><span>${esc(s.label)}</span></div>
+      <div class="sug-text">${esc(s.text)}</div>
+    </div>`).join('');
+
+  if(bodyEl) bodyEl.innerHTML = `
+    <div class="p-section">
+      <div class="p-section-title">📅 Upcoming Meetings</div>
+      ${mtgHTML}
+    </div>
+    <div class="p-section">
+      <div class="p-section-title">🎫 Active Tickets</div>
+      ${tickHTML}
+    </div>
+    ${acct.projects.length?`
+    <div class="p-section">
+      <div class="p-section-title">🗂 Projects</div>
+      ${projHTML}
+    </div>`:''}
+    <div class="p-section">
+      <div class="p-section-title">💡 Suggestions</div>
+      ${sugHTML}
+      <div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);margin-top:10px">
+        Reply in Claude: "Done: [#]" or "Didn't work: [#]" to log outcome
+      </div>
+    </div>
+  `;
+
+  const ov = document.getElementById('briefPanelOverlay');
+  const sp = document.getElementById('briefSidePanel');
+  if(ov) ov.classList.add('open');
+  if(sp) sp.classList.add('open');
+}
+
+function closeBriefPanel(){
+  const ov = document.getElementById('briefPanelOverlay');
+  const sp = document.getElementById('briefSidePanel');
+  if(ov) ov.classList.remove('open');
+  if(sp) sp.classList.remove('open');
+}
+
+// ── OKR TAB ───────────────────────────────────────────────────────────────────
+function renderOKR(){
+  const qSel = document.getElementById('okrQSel');
+  if(!qSel) return;
+  const q = qSel.value;
+  const filtered = logEntries.filter(e=>e.quarter===q);
+  const container = document.getElementById('okrSections');
+  if(!container) return;
+  container.innerHTML = OKR_SECTIONS.map(sec=>{
+    const items = filtered.filter(e=>e.category===sec.key);
+    const id = 'okr-'+sec.key;
+    return `
+    <div class="okr-section">
+      <div class="okr-section-head" onclick="toggleOKRSection('${id}')">
+        <div class="title">${BRIEF_CAT_META[sec.key]?.emoji||'•'} ${esc(sec.title)}</div>
+        <div class="count">${items.length} item${items.length!==1?'s':''}</div>
+      </div>
+      <div class="okr-body" id="${id}">
+        ${items.length
+          ? items.map(e=>`
+            <div class="okr-item">
+              <span class="client-tag">${esc(e.client)}</span>
+              <span>${esc(e.description)}</span>
+            </div>`).join('')
+          : '<div style="font-family:\'DM Mono\',monospace;font-size:11px;color:var(--muted)">None this quarter</div>'}
+      </div>
+    </div>`;
+  }).join('');
+  briefUpdateTabCounts();
+}
+
+function toggleOKRSection(id){
+  const el = document.getElementById(id);
+  if(el) el.classList.toggle('open');
+}
+
+function copyOKR(){
+  const qSel = document.getElementById('okrQSel');
+  if(!qSel) return;
+  const q = qSel.value;
+  const filtered = logEntries.filter(e=>e.quarter===q);
+  let txt = `📊 OKR SUMMARY — CSM Brief (${q})\n\n`;
+  OKR_SECTIONS.forEach(sec=>{
+    const items = filtered.filter(e=>e.category===sec.key);
+    txt += sec.title+'\n';
+    txt += items.length
+      ? items.map(e=>`  • [${e.client}] ${e.description}`).join('\n')+'\n'
+      : '  • None this quarter\n';
+    txt += '\n';
+  });
+  navigator.clipboard.writeText(txt).then(()=>{
+    const btn = document.getElementById('okrCopyBtn');
+    if(btn){ btn.textContent='✓ Copied!'; setTimeout(()=>btn.textContent='Copy Summary', 2000); }
+  });
+}
+
+// ── SESSION LOG TAB ───────────────────────────────────────────────────────────
+function renderLog(){
+  const qF   = document.getElementById('logQFilter');
+  const catF  = document.getElementById('logCatFilter');
+  const cliF  = document.getElementById('logClientFilter');
+  if(!qF||!catF||!cliF) return;
+  const q      = qF.value;
+  const cat    = catF.value;
+  const client = cliF.value;
+  const filtered = logEntries.filter(e=>{
+    if(q!=='all' && e.quarter!==q) return false;
+    if(cat!=='all' && e.category!==cat) return false;
+    if(client!=='all' && e.client!==client) return false;
+    return true;
+  });
+  const list = document.getElementById('logList');
+  if(!list) return;
+  if(!filtered.length){
+    list.innerHTML='<div class="brief-empty-state">No entries match your filters</div>';
+    briefUpdateTabCounts(); return;
+  }
+  list.innerHTML = filtered.map(e=>`
+    <div class="log-entry">
+      <span class="log-emoji">${BRIEF_CAT_META[e.category]?.emoji||'📌'}</span>
+      <div class="log-body">
+        <div class="log-tags">
+          <span class="log-cat ${esc(e.category)}">${esc(BRIEF_CAT_META[e.category]?.label||e.category)}</span>
+          <span class="log-client">${esc(e.client)}</span>
+          <span class="log-date">${esc(e.date)}</span>
+        </div>
+        <div class="log-desc">${esc(e.description)}</div>
+        <div class="log-qtr">${esc(e.quarter)}</div>
+      </div>
+      <button class="log-del" onclick="deleteLogEntry(${e.id})" title="Remove">✕</button>
+    </div>`).join('');
+  briefUpdateTabCounts();
+}
+
+function deleteLogEntry(id){
+  logEntries = logEntries.filter(e=>e.id!==id);
+  saveLog();
+  renderLog();
+  renderOKR();
+  briefUpdateTabCounts();
+}
+
+// ── ADD LOG MODAL ─────────────────────────────────────────────────────────────
+function openAddModal(){
+  const today = new Date().toISOString().split('T')[0];
+  const mDate = document.getElementById('mDate');
+  const mDesc = document.getElementById('mDesc');
+  const mSaveBtn = document.getElementById('mSaveBtn');
+  if(mDate) mDate.value = today;
+  if(mDesc) mDesc.value = '';
+  if(mSaveBtn) mSaveBtn.disabled = true;
+  const modal = document.getElementById('addModal');
+  if(modal) modal.classList.add('open');
+}
+
+function closeModal(){
+  const modal = document.getElementById('addModal');
+  if(modal) modal.classList.remove('open');
+}
+
+function saveEntry(){
+  const mDesc = document.getElementById('mDesc');
+  const desc = mDesc ? mDesc.value.trim() : '';
+  if(!desc) return;
+  const entry = {
+    id: briefNextId++,
+    date:        document.getElementById('mDate')?.value    || new Date().toISOString().split('T')[0],
+    quarter:     document.getElementById('mQuarter')?.value || 'Q2 2026',
+    category:    document.getElementById('mCat')?.value     || 'other',
+    client:      document.getElementById('mClient')?.value  || 'Other',
+    description: desc,
+  };
+  logEntries.push(entry);
+  saveLog();
+  closeModal();
+  renderLog();
+  renderOKR();
+  briefUpdateTabCounts();
+}
+
+// ════════════════════════════════════════════════════════════════════════════
+// END CSM BRIEF
+// ════════════════════════════════════════════════════════════════════════════
+
 // ── ENTRY POINT ──────────────────────────────────────────────────────────────
 initTheme(); // Apply saved theme on load
+initBrief(); // Initialise CSM Brief tab (static data, no auth needed)
 (async function init(){
   // Security: warn if not on HTTPS (PKCE crypto requires secure context)
   if(location.protocol==='http:' && location.hostname!=='localhost'){
