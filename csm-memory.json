@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-25T15:00:00+08:00",
+  "lastUpdated": "2026-05-26T01:22:11.119+08:00",
   "ignoreTickets": [
     {
       "key": "QGWL-20748",
@@ -24,10 +24,10 @@
     {
       "key": "AIXP-1840",
       "account": "mannings",
-      "title": "IPA_Mannings_Meta æ²æç¢åº AI suggestions",
+      "title": "IPA_Mannings_Meta Ã¦Â²ÂÃ¦ÂÂÃ§ÂÂ¢Ã¥ÂÂº AI suggestions",
       "assignee": "Jin Chen",
       "addedOn": "2026-05-18",
-      "note": "Client reported no AI suggestions since ~Apr 23. Campaign 120241282408710634, Customer ID 1004726734. AI auto-apply was turned off. You are CC'd â follow up with Jin Chen before May 28 bi-weekly."
+      "note": "Client reported no AI suggestions since ~Apr 23. Campaign 120241282408710634, Customer ID 1004726734. AI auto-apply was turned off. You are CC'd Ã¢ÂÂ follow up with Jin Chen before May 28 bi-weekly."
     }
   ],
   "contractDates": [
@@ -35,37 +35,37 @@
       "account": "Luxgen",
       "platform": "BB",
       "endDate": "2026-11-23",
-      "note": "BB contract 2026/5/24–11/23, NTD 50,000/mo — LEG-16090 approved"
+      "note": "BB contract 2026/5/24â11/23, NTD 50,000/mo â LEG-16090 approved"
     },
     {
       "account": "SCMP",
       "platform": "AIQUA",
       "endDate": null,
-      "note": "Renewal target June 2026 â date unknown, likely imminent"
+      "note": "Renewal target June 2026 Ã¢ÂÂ date unknown, likely imminent"
     },
     {
       "account": "Mannings",
       "platform": "AIQUA",
       "endDate": null,
-      "note": "Unknown â ask CSM to confirm"
+      "note": "Unknown Ã¢ÂÂ ask CSM to confirm"
     },
     {
       "account": "Mannings",
       "platform": "AIRIS",
       "endDate": null,
-      "note": "Unknown â ask CSM to confirm"
+      "note": "Unknown Ã¢ÂÂ ask CSM to confirm"
     },
     {
       "account": "10/10Hope",
       "platform": "BotBonnie",
       "endDate": null,
-      "note": "Unknown â ask CSM to confirm"
+      "note": "Unknown Ã¢ÂÂ ask CSM to confirm"
     },
     {
-      "account": "ç°åé¦",
+      "account": "Ã§ÂÂ°Ã¥ÂÂÃ©Â¦Â",
       "platform": "BotBonnie/AIQUA",
       "endDate": null,
-      "note": "Unknown â ask CSM to confirm"
+      "note": "Unknown Ã¢ÂÂ ask CSM to confirm"
     }
   ],
   "okrLog": [
@@ -84,7 +84,7 @@
     {
       "date": "2026-Q1",
       "category": "Renewal",
-      "client": "ç°åé¦",
+      "client": "Ã§ÂÂ°Ã¥ÂÂÃ©Â¦Â",
       "description": "Renewed to 2027-02-16"
     },
     {
@@ -120,7 +120,7 @@
     {
       "date": "2026-Q1",
       "category": "Feature Enabled",
-      "client": "ç°åé¦",
+      "client": "Ã§ÂÂ°Ã¥ÂÂÃ©Â¦Â",
       "description": "Campaign agent enabled"
     },
     {
@@ -205,7 +205,7 @@
       "date": "2026-Q2",
       "category": "Renewal",
       "client": "Luxgen",
-      "description": "成功續約至 2026-11 (BB contract 2026/5/24–11/23)"
+      "description": "æåçºç´è³ 2026-11 (BB contract 2026/5/24â11/23)"
     },
     {
       "date": "2026-Q2",
@@ -296,6 +296,120 @@
       "category": "AI Adoption",
       "client": "Internal",
       "description": "CSM task tracking tool built"
+    },
+    {
+      "date": "2026-Q2",
+      "category": "Pitching",
+      "client": "Momax",
+      "description": "Referred Momax from Jammy to Partner team"
+    },
+    {
+      "date": "2026-Q2",
+      "category": "Pitching",
+      "client": "Mannings",
+      "description": "Mannings AIRIS pitching"
+    },
+    {
+      "date": "2026-Q2",
+      "category": "Pitching",
+      "client": "SCMP",
+      "description": "SCMP BB pitching"
+    },
+    {
+      "date": "2026-Q2",
+      "category": "Team Contribution",
+      "client": "17live TW",
+      "description": "Referral 17live TW to BB sales team"
+    },
+    {
+      "date": "2026-Q2",
+      "category": "Team Contribution",
+      "client": "LON",
+      "description": "Answered Darren LON pitching request"
+    },
+    {
+      "date": "2026-Q2",
+      "category": "Team Contribution",
+      "client": "Internal",
+      "description": "Assisted on AA UX interview"
+    },
+    {
+      "date": "2026-Q2",
+      "category": "Team Contribution",
+      "client": "Internal",
+      "description": "Assisted on eDM agent prototype"
+    },
+    {
+      "date": "2026-Q2",
+      "category": "Team Contribution",
+      "client": "Internal",
+      "description": "Insights report discussion with PM"
+    },
+    {
+      "date": "2026-Q2",
+      "category": "Team Contribution",
+      "client": "Internal",
+      "description": "Assisted in Agent testing and feedback"
+    },
+    {
+      "date": "2026-Q2",
+      "category": "Team Contribution",
+      "client": "LON",
+      "description": "LON finance payment assist"
+    },
+    {
+      "date": "2026-Q2",
+      "category": "Team Contribution",
+      "client": "Internal",
+      "description": "Assisted in template builder interview"
+    },
+    {
+      "date": "2026-Q2",
+      "category": "Team Contribution",
+      "client": "Mannings",
+      "description": "Adjusted platform communication Mannings ↔ CrossX"
+    },
+    {
+      "date": "2026-Q2",
+      "category": "Team Contribution",
+      "client": "SCMP",
+      "description": "Invited HK guest to event and found panel speaker from SCMP"
+    },
+    {
+      "date": "2026-Q2",
+      "category": "Team Contribution",
+      "client": "Internal",
+      "description": "Assisted in Eddie AQ exam"
+    },
+    {
+      "date": "2026-Q2",
+      "category": "Team Contribution",
+      "client": "Mannings",
+      "description": "Answered Mannings SEA tech questions"
+    },
+    {
+      "date": "2026-Q2",
+      "category": "AI Adoption",
+      "client": "Internal",
+      "description": "Built Slides creation skill using Claude"
+    },
+    {
+      "date": "2026-Q2",
+      "category": "AI Adoption",
+      "client": "Internal",
+      "description": "Built CSM tracking dashboard (this dashboard)"
+    },
+    {
+      "date": "2026-Q2",
+      "category": "AI Adoption",
+      "client": "Internal",
+      "description": "Built CSM ask anything skill"
+    },
+    {
+      "date": "2026-Q2",
+      "category": "AI Adoption",
+      "client": "Internal",
+      "description": "Built CSM task tracking automation"
     }
   ],
   "sessionLog": [],
