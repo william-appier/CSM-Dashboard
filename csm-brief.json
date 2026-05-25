@@ -1,300 +1,164 @@
 {
-  "generatedAt": "2026-05-25T11:00:00+08:00",
+  "generatedAt": "2026-05-25T14:30:00+08:00",
   "accounts": [
-    {
-      "id": "luxgen",
-      "name": "Luxgen",
-      "health": "red",
-      "insight": "⚡ Contract extension meeting TODAY at 15:00 HKT. Outcome determines renewal path.",
-      "diffs": [
-        {
-          "type": "new",
-          "text": "Meeting TODAY: 延長luxgen合約 15:00–16:00 HKT"
-        }
-      ],
-      "riskTags": [
-        "mtg",
-        "renewal"
-      ],
-      "ticketCount": 0,
-      "mtgCount": 2,
-      "projects": [
-        {
-          "name": "Contract Renewal Decision",
-          "status": "blocked"
-        }
-      ],
-      "meetings": [
-        {
-          "date": "May 25",
-          "title": "延長luxgen合約",
-          "meta": "15:00–16:00 HKT · TODAY"
-        },
-        {
-          "date": "Jun 7",
-          "title": "Luxgen+MN Quotation",
-          "meta": "09:00–09:30 HKT"
-        }
-      ],
-      "tickets": [],
-      "suggestions": [
-        {
-          "priority": "high",
-          "label": "Renewal · High",
-          "text": "Contract meeting is TODAY at 15:00 — prepare renewal terms and confirm extension period before joining."
-        },
-        {
-          "priority": "high",
-          "label": "Follow-up · High",
-          "text": "Log outcome immediately after the meeting and book Jun 7 quotation prep if extension is confirmed."
-        }
-      ]
-    },
     {
       "id": "mannings",
       "name": "Mannings",
       "health": "red",
-      "insight": "AIXP-1840 still In Progress (updated May 22). Bi-weekly meeting in 3 days — chase Jin Chen today.",
+      "insight": "New bug PROJ-33301 (FB V2 upload failure, assigned to William) surfaced. AIXP-1840 IPA AI suggestions still In Progress. Bi-weekly in 3 days — prep required.",
       "diffs": [
-        {
-          "type": "warn",
-          "text": "AIXP-1840 no resolution — 3 days to bi-weekly"
-        }
+        { "type": "new", "text": "PROJ-33301 Facebook V2 upload failure assigned to William.wt.lin — needs triage before May 28 bi-weekly" }
       ],
-      "riskTags": [
-        "ticket",
-        "mtg"
-      ],
-      "ticketCount": 3,
+      "riskTags": ["ticket", "mtg"],
+      "ticketCount": 4,
       "mtgCount": 3,
       "projects": [
-        {
-          "name": "Q3 Renewal Contract",
-          "status": "progress"
-        },
-        {
-          "name": "AIXON → AIRIS Upgrade (Q4)",
-          "status": "progress"
-        }
+        { "name": "Q3 Renewal Contract", "status": "progress" },
+        { "name": "AIXON → AIRIS Upgrade (Q4)", "status": "progress" }
       ],
       "meetings": [
-        {
-          "date": "May 28",
-          "title": "Appier x Mannings Bi-weekly",
-          "meta": "11:00–12:00 HKT · Teams · Rola Chung"
-        },
-        {
-          "date": "Jun 1",
-          "title": "Mannings Quotation",
-          "meta": "11:15–12:00 HKT"
-        },
-        {
-          "date": "Jun 4",
-          "title": "Appier x Mannings Monthly",
-          "meta": "11:00–12:00 HKT · Teams · Rola Chung"
-        }
+        { "date": "May 28", "title": "Appier x Mannings Bi-weekly", "meta": "11:00–12:00 HKT · Teams · Rola Chung" },
+        { "date": "Jun 1", "title": "Mannings Quotation", "meta": "11:15–12:00 HKT" },
+        { "date": "Jun 4", "title": "Appier x Mannings Monthly", "meta": "11:00–12:00 HKT · Teams · Rola Chung" }
       ],
       "tickets": [
-        {
-          "key": "AIXP-1840",
-          "title": "IPA_Mannings_Meta 沒有產出 AI suggestions",
-          "status": "in-progress",
-          "assignee": "Jin Chen",
-          "pinned": true
-        },
-        {
-          "key": "QGWL-20748",
-          "title": "Investigate campaign #21671500000 impression",
-          "status": "backlog",
-          "assignee": "Unassigned",
-          "pinned": false
-        },
-        {
-          "key": "PROJ-29658",
-          "title": "Activate A&S brain demographic information",
-          "status": "in-progress",
-          "assignee": "Michael Palmer",
-          "pinned": false
-        }
+        { "key": "PROJ-33301", "title": "Facebook V2 upload failure for Output node (Hair Loss campaign)", "status": "open", "assignee": "william.wt.lin", "pinned": true },
+        { "key": "AIXP-1840", "title": "IPA_Mannings_Meta 沒有產出AI suggestions", "status": "in-progress", "assignee": "Jin Chen", "pinned": true },
+        { "key": "QGWL-20748", "title": "Investigate campaign #21671500000 impression", "status": "open", "assignee": "Unassigned", "pinned": false },
+        { "key": "PROJ-29658", "title": "Activate A&S brain demographic information", "status": "in-progress", "assignee": "Michael Palmer", "pinned": false }
       ],
       "suggestions": [
-        {
-          "priority": "high",
-          "label": "Ticket · High",
-          "text": "Chase Jin Chen on AIXP-1840 today — bi-weekly is May 28 and client will ask for update."
-        },
-        {
-          "priority": "high",
-          "label": "Renewal · High",
-          "text": "Prep Q3 renewal quotation before Jun 1 meeting — confirm scope and pricing now."
-        },
-        {
-          "priority": "medium",
-          "label": "Ticket · Medium",
-          "text": "QGWL-20748 unassigned in backlog — assign or close before it ages further."
-        }
+        { "priority": "high", "label": "Ticket · High", "text": "PROJ-33301 (FB V2 failure) is assigned to you — investigate or escalate before the May 28 bi-weekly; client will ask." },
+        { "priority": "high", "label": "Ticket · High", "text": "Chase Jin Chen on AIXP-1840 today — no update since May 22 and bi-weekly is May 28." },
+        { "priority": "medium", "label": "Renewal · Medium", "text": "Prep Q3 renewal quotation before Jun 1 meeting — confirm scope and pricing now." }
       ]
     },
     {
       "id": "scmp",
       "name": "SCMP",
       "health": "yellow",
-      "insight": "PROJ-33328 closed. No meetings in next 14 days — June renewal still unbooked.",
-      "diffs": [
-        {
-          "type": "close",
-          "text": "PROJ-33328 appears resolved"
-        }
-      ],
-      "riskTags": [
-        "renewal",
-        "silent"
-      ],
+      "insight": "No open tickets or meetings in next 14 days. June renewal still unbooked — and outreach needed this week.",
+      "diffs": [],
+      "riskTags": ["renewal", "silent"],
       "ticketCount": 0,
       "mtgCount": 0,
       "projects": [
-        {
-          "name": "Segments Enablement",
-          "status": "done"
-        },
-        {
-          "name": "Renewal (June 2026)",
-          "status": "blocked"
-        }
+        { "name": "Segments Enablement", "status": "done" },
+        { "name": "Renewal (June 2026)", "status": "blocked" }
       ],
       "meetings": [],
       "tickets": [],
       "suggestions": [
-        {
-          "priority": "high",
-          "label": "Renewal · High",
-          "text": "June renewal has no meeting booked — schedule it this week before slots fill up."
-        },
-        {
-          "priority": "medium",
-          "label": "Outreach · Medium",
-          "text": "No meetings or tickets in the next 14 days — send a check-in message to confirm relationship health."
-        }
+        { "priority": "high", "label": "Renewal · High", "text": "June renewal has no meeting booked — schedule it this week before slots fill up." },
+        { "priority": "medium", "label": "Outreach · Medium", "text": "No meetings or tickets in next 14 days — send a check-in message to confirm relationship health." }
       ]
     },
     {
       "id": "55688",
       "name": "55688",
       "health": "yellow",
-      "insight": "Renewal check scheduled Jun 2. No active tickets — track Service Agent purchase intent.",
+      "insight": "QGWL-19924 Blocked (High priority, timeout in AQ JM, 11+ months stalled). Renewal check meeting Jun 2. BBT-5428 RFQ pending.",
       "diffs": [
-        {
-          "type": "new",
-          "text": "Renewal check booked: Jun 2 09:00 HKT"
-        }
+        { "type": "warn", "text": "QGWL-19924 Blocked for 11+ months (timeout in AQ JM, High priority) — risk before Jun 2 renewal call" }
       ],
-      "riskTags": [
-        "renewal"
-      ],
-      "ticketCount": 0,
+      "riskTags": ["ticket", "renewal", "mtg"],
+      "ticketCount": 2,
       "mtgCount": 1,
       "projects": [
-        {
-          "name": "Service Agent Evaluation",
-          "status": "progress"
-        }
+        { "name": "Service Agent Customization (RFQ)", "status": "blocked" },
+        { "name": "AQ Journey Manager Timeout Fix", "status": "blocked" }
       ],
       "meetings": [
-        {
-          "date": "Jun 2",
-          "title": "Renew check for 55688",
-          "meta": "09:00–10:00 HKT"
-        }
+        { "date": "Jun 2", "title": "Renew check for 55688", "meta": "09:00–10:00 HKT" }
       ],
-      "tickets": [],
+      "tickets": [
+        { "key": "BBT-5428", "title": "【RFQ】55688 客服功能優化客製", "status": "open", "assignee": "Brian Tsai", "pinned": true },
+        { "key": "QGWL-19924", "title": "55688 Timeout limitation in AQ JM should be shortened", "status": "blocked", "assignee": "Shiv Raj", "pinned": true }
+      ],
       "suggestions": [
-        {
-          "priority": "medium",
-          "label": "Renewal · Medium",
-          "text": "Prepare talking points for Jun 2 renewal check — confirm Service Agent interest and next steps."
-        },
-        {
-          "priority": "low",
-          "label": "Ticket · Low",
-          "text": "No active Jira tickets — consider raising one if Service Agent trial is progressing."
-        }
+        { "priority": "high", "label": "Renewal · High", "text": "Prepare renewal talking points for Jun 2 — include QGWL-19924 blocked status and BBT-5428 RFQ timeline for client." },
+        { "priority": "medium", "label": "Ticket · Medium", "text": "Escalate QGWL-19924 (Blocked 11+ months) before Jun 2 renewal — client may raise the timeout fix." }
       ]
     },
     {
       "id": "1010hope",
       "name": "10/10Hope",
       "health": "yellow",
-      "insight": "BBT-7073 resolved. No active tickets or meetings found. EC & POS integration status unclear.",
+      "insight": "klickngo API (QGWL-25317) and AIQUA onboarding (QGWL-24745) both In Progress with Mark Liu. No upcoming meetings — schedule a sync.",
       "diffs": [
-        {
-          "type": "close",
-          "text": "BBT-7073 appears resolved"
-        }
+        { "type": "new", "text": "QGWL-25317 klickngo API Integration In Progress (Mark Liu)" },
+        { "type": "new", "text": "QGWL-24745 Onboarding new AIQUA account In Progress (Mark Liu)" }
       ],
-      "riskTags": [
-        "silent"
-      ],
-      "ticketCount": 0,
+      "riskTags": ["ticket"],
+      "ticketCount": 2,
       "mtgCount": 0,
       "projects": [
-        {
-          "name": "AIQUA Usage Tracking",
-          "status": "progress"
-        },
-        {
-          "name": "EC & POS Integration",
-          "status": "progress"
-        }
+        { "name": "AIQUAOnboarding", "status": "progress" },
+        { "name": "klickngo API Integration", "status": "progress" }
       ],
       "meetings": [],
-      "tickets": [],
+      "tickets": [
+        { "key": "QGWL-25317", "title": "[1010Hope] klickngo API Integration for 10/10 Hope", "status": "in-progress", "assignee": "Mark Liu", "pinned": true },
+        { "key": "QGWL-24745", "title": "[1010Hope] Onboarding new AIQUA account", "status": "in-progress", "assignee": "Mark Liu", "pinned": false }
+      ],
       "suggestions": [
-        {
-          "priority": "medium",
-          "label": "Ticket · Medium",
-          "text": "Raise a Jira ticket for EC & POS integration — no tracking exists and progress is unclear."
-        },
-        {
-          "priority": "medium",
-          "label": "Outreach · Medium",
-          "text": "No meetings in 14 days — schedule a check-in to verify AIQUA usage health."
-        }
+        { "priority": "medium", "label": "Ticket · Medium", "text": "Schedule a sync with Mark Liu to confirm klickngo API (QGWL-25317) and AIQUA onboarding (QGWL-24745) timeline — both in progress with no ETA visible." },
+        { "priority": "medium", "label": "Outreach · Medium", "text": "No meetings in next 14 days — book a check-in to review overall onboarding progress with client." }
       ]
     },
     {
-      "id": "tianxiang",
-      "name": "田原香",
-      "health": "green",
-      "insight": "Use case tracking meetings on May 27 & Jun 3. Automation journey progressing normally.",
-      "diffs": [],
-      "riskTags": [],
-      "ticketCount": 0,
+      "id": "luxgen",
+      "name": "Luxgen",
+      "health": "yellow",
+      "insight": "Renewal contract LEG-16090 submitted to legal (2026/5/24–11/23, Waiting for Approval). Contract extension meeting TODAY at 15:00. Jun 7 quotation meeting ahead.",
+      "diffs": [
+        { "type": "new", "text": "LEG-16090 BB - Luxgen TW - Renew - 2026 submitted to legal today, Waiting for Approval" }
+      ],
+      "riskTags": ["mtg", "renewal"],
+      "ticketCount": 1,
       "mtgCount": 2,
       "projects": [
-        {
-          "name": "Automation Journey",
-          "status": "progress"
-        }
+        { "name": "Contract Renewal 2026 (BB)", "status": "progress" }
       ],
       "meetings": [
-        {
-          "date": "May 27",
-          "title": "田原香 use case tracking",
-          "meta": "09:30–10:00 HKT · Recurring"
-        },
-        {
-          "date": "Jun 3",
-          "title": "田原香 use case tracking",
-          "meta": "09:30–10:00 HKT · Recurring"
-        }
+        { "date": "May 25", "title": "延長luxgen吉約", "meta": "15:00–16:00 HKT · TODAY" },
+        { "date": "Jun 7", "title": "Luxgen+MN Quotation", "meta": "09:00–09:30 HKT" }
       ],
-      "tickets": [],
+      "tickets": [
+        { "key": "LEG-16090", "title": "BB - Luxgen TW - Renew - 2026 (contract 2026/5/24–11/23, NTD 50,000/mo)", "status": "in-progress", "assignee": "jenny.liu", "pinned": true }
+      ],
       "suggestions": [
-        {
-          "priority": "low",
-          "label": "Health · Low",
-          "text": "Collect agent usage feedback in the May 27 tracking session — document progress for OKR log."
-        }
+        { "priority": "high", "label": "Renewal · High", "text": "Log outcome of today's contract extension meeting — confirm acceptance and track LEG-16090 through legal approval." },
+        { "priority": "medium", "label": "Follow-up · Medium", "text": "Prepare for Jun 7 Luxgen+MN quotation — review renewal contract terms and confirm scope for next period." }
+      ]
+    },
+    {
+      "id": "tiangyuanxiang",
+      "name": "田原香",
+      "health": "green",
+      "insight": "EUU onboarding (AEP-6089) In Progress. Use case tracking meetings May 27 & Jun 3. Send time optimization in Backlog.",
+      "diffs": [
+        { "type": "new", "text": "AEP-6089 EUU 田原香 onboarding In Progress (Ann Huang)" },
+        { "type": "new", "text": "QGWL-25627 send time optimization in Backlog (vivian.yang)" }
+      ],
+      "riskTags": ["ticket", "mtg"],
+      "ticketCount": 2,
+      "mtgCount": 2,
+      "projects": [
+        { "name": "EUU Onboarding", "status": "progress" },
+        { "name": "Campaign Agent Feature", "status": "progress" }
+      ],
+      "meetings": [
+        { "date": "May 27", "title": "田原香 use case tracking", "meta": "09:30–10:00 HKT · Recurring" },
+        { "date": "Jun 3", "title": "田原香 use case tracking", "meta": "09:30–10:00 HKT · Recurring" }
+      ],
+      "tickets": [
+        { "key": "AEP-6089", "title": "[EUU] 田原香 onboarding (Epic)", "status": "in-progress", "assignee": "Ann Huang", "pinned": true },
+        { "key": "QGWL-25627", "title": "[田原香] Enable send time optimization", "status": "open", "assignee": "vivian.yang", "pinned": false }
+      ],
+      "suggestions": [
+        { "priority": "medium", "label": "Ticket · Medium", "text": "Confirm EUU onboarding (AEP-6089) status before May 27 tracking session — document progress for OKR log." },
+        { "priority": "low", "label": "Ticket · Low", "text": "Follow up on QGWL-25627 (send time optimization) with vivian.yang — currently in Backlog with no ETA." }
       ]
     }
   ]
