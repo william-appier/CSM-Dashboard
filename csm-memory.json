@@ -1,43 +1,309 @@
 {
-  "lastUpdated": "2026-05-25T14:30:00+08:00",
-  "ignoreTickets": [],
+  "lastUpdated": "2026-05-25T15:00:00+08:00",
+  "ignoreTickets": [
+    {
+      "key": "QGWL-20748",
+      "account": "mannings",
+      "ignoredOn": "2026-05-25",
+      "reason": "Confirmed no longer relevant"
+    },
+    {
+      "key": "PROJ-29658",
+      "account": "mannings",
+      "ignoredOn": "2026-05-25",
+      "reason": "Confirmed no longer relevant"
+    },
+    {
+      "key": "QGWL-24972",
+      "account": "tiangyuanxiang",
+      "ignoredOn": "2026-05-25",
+      "reason": "Confirmed no longer relevant"
+    }
+  ],
   "pinnedTickets": [
     {
       "key": "AIXP-1840",
       "account": "mannings",
-      "title": "IPA_Mannings_Meta 沒有產出 AI suggestions",
+      "title": "IPA_Mannings_Meta æ²æç¢åº AI suggestions",
       "assignee": "Jin Chen",
       "addedOn": "2026-05-18",
-      "note": "Client reported no AI suggestions since ~Apr 23. Campaign 120241282408710634, Customer ID 1004726734. AI auto-apply was turned off. You are CC'd — follow up with Jin Chen before May 28 bi-weekly."
+      "note": "Client reported no AI suggestions since ~Apr 23. Campaign 120241282408710634, Customer ID 1004726734. AI auto-apply was turned off. You are CC'd â follow up with Jin Chen before May 28 bi-weekly."
     }
   ],
   "contractDates": [
-    { "account": "Luxgen",    "platform": "BB",         "endDate": "2026-11-23", "note": "LEG-16090 submitted to legal 2026-05-24, NTD 50,000/mo" },
-    { "account": "SCMP",      "platform": "AIQUA",      "endDate": null,         "note": "Renewal target June 2026 — date unknown, likely imminent" },
-    { "account": "Mannings",  "platform": "AIQUA",      "endDate": null,         "note": "Unknown — ask CSM to confirm" },
-    { "account": "Mannings",  "platform": "AIRIS",      "endDate": null,         "note": "Unknown — ask CSM to confirm" },
-    { "account": "10/10Hope", "platform": "BotBonnie",  "endDate": null,         "note": "Unknown — ask CSM to confirm" },
-    { "account": "田原香",    "platform": "BotBonnie/AIQUA", "endDate": null,    "note": "Unknown — ask CSM to confirm" }
+    {
+      "account": "Luxgen",
+      "platform": "BB",
+      "endDate": "2026-11-23",
+      "note": "BB contract 2026/5/24–11/23, NTD 50,000/mo — LEG-16090 approved"
+    },
+    {
+      "account": "SCMP",
+      "platform": "AIQUA",
+      "endDate": null,
+      "note": "Renewal target June 2026 â date unknown, likely imminent"
+    },
+    {
+      "account": "Mannings",
+      "platform": "AIQUA",
+      "endDate": null,
+      "note": "Unknown â ask CSM to confirm"
+    },
+    {
+      "account": "Mannings",
+      "platform": "AIRIS",
+      "endDate": null,
+      "note": "Unknown â ask CSM to confirm"
+    },
+    {
+      "account": "10/10Hope",
+      "platform": "BotBonnie",
+      "endDate": null,
+      "note": "Unknown â ask CSM to confirm"
+    },
+    {
+      "account": "ç°åé¦",
+      "platform": "BotBonnie/AIQUA",
+      "endDate": null,
+      "note": "Unknown â ask CSM to confirm"
+    }
   ],
   "okrLog": [
-    { "date": "2026-Q1", "category": "Onboard",           "client": "10/10Hope (Prizm HK)", "description": "AIQUA onboarded" },
-    { "date": "2026-Q1", "category": "Renewal",           "client": "Mannings",             "description": "Renewed AQ & AX to 2026-06-30" },
-    { "date": "2026-Q1", "category": "Renewal",           "client": "田原香",               "description": "Renewed to 2027-02-16" },
-    { "date": "2026-Q1", "category": "Pitching",          "client": "Genki",                "description": "AA opportunity pitched" },
-    { "date": "2026-Q1", "category": "Pitching",          "client": "Mannings",             "description": "AA & AR opportunities pitched" },
-    { "date": "2026-Q1", "category": "Pitching",          "client": "Prizm (City Super)",   "description": "Partner team pitching assisted" },
-    { "date": "2026-Q1", "category": "Pitching",          "client": "Ledgerbio (Chinachem)","description": "Partner team pitching assisted" },
-    { "date": "2026-Q1", "category": "Team Contribution", "client": "SCMP",                 "description": "Assisted in finding SCMP for panel speaker" },
-    { "date": "2026-Q1", "category": "Feature Enabled",   "client": "田原香",               "description": "Campaign agent enabled" },
-    { "date": "2026-Q1", "category": "Feature Enabled",   "client": "Mannings",             "description": "AB test with new recommendations filtering rules" },
-    { "date": "2026-Q1", "category": "AI Adoption",       "client": "Internal",             "description": "Gemini + NotebookLM as first answer-seeking before team" },
-    { "date": "2026-Q1", "category": "AI Adoption",       "client": "Internal",             "description": "AI video scene generation for AA demo" },
-    { "date": "2026-Q1", "category": "AI Adoption",       "client": "Internal",             "description": "NotebookLM + Gemini + Canva/Felo.ai for slides" },
-    { "date": "2026-Q1", "category": "AI Adoption",       "client": "Mannings",             "description": "Gemini for bi-weekly report preparation" },
-    { "date": "2026-Q1", "category": "Team Contribution", "client": "Internal",             "description": "LON insights shared to Darren, Brian, Eric" },
-    { "date": "2026-Q1", "category": "Team Contribution", "client": "Internal",             "description": "UX interview with Medet" },
-    { "date": "2026-Q1", "category": "Team Contribution", "client": "Internal",             "description": "AQ recommendation sharing with Zebbie" }
+    {
+      "date": "2026-Q1",
+      "category": "Onboard",
+      "client": "10/10Hope (Prizm HK)",
+      "description": "AIQUA onboarded"
+    },
+    {
+      "date": "2026-Q1",
+      "category": "Renewal",
+      "client": "Mannings",
+      "description": "Renewed AQ & AX to 2026-06-30"
+    },
+    {
+      "date": "2026-Q1",
+      "category": "Renewal",
+      "client": "ç°åé¦",
+      "description": "Renewed to 2027-02-16"
+    },
+    {
+      "date": "2026-Q1",
+      "category": "Pitching",
+      "client": "Genki",
+      "description": "AA opportunity pitched"
+    },
+    {
+      "date": "2026-Q1",
+      "category": "Pitching",
+      "client": "Mannings",
+      "description": "AA & AR opportunities pitched"
+    },
+    {
+      "date": "2026-Q1",
+      "category": "Pitching",
+      "client": "Prizm (City Super)",
+      "description": "Partner team pitching assisted"
+    },
+    {
+      "date": "2026-Q1",
+      "category": "Pitching",
+      "client": "Ledgerbio (Chinachem)",
+      "description": "Partner team pitching assisted"
+    },
+    {
+      "date": "2026-Q1",
+      "category": "Team Contribution",
+      "client": "SCMP",
+      "description": "Assisted in finding SCMP for panel speaker"
+    },
+    {
+      "date": "2026-Q1",
+      "category": "Feature Enabled",
+      "client": "ç°åé¦",
+      "description": "Campaign agent enabled"
+    },
+    {
+      "date": "2026-Q1",
+      "category": "Feature Enabled",
+      "client": "Mannings",
+      "description": "AB test with new recommendations filtering rules"
+    },
+    {
+      "date": "2026-Q1",
+      "category": "AI Adoption",
+      "client": "Internal",
+      "description": "Gemini + NotebookLM as first answer-seeking before team"
+    },
+    {
+      "date": "2026-Q1",
+      "category": "AI Adoption",
+      "client": "Internal",
+      "description": "AI video scene generation for AA demo"
+    },
+    {
+      "date": "2026-Q1",
+      "category": "AI Adoption",
+      "client": "Internal",
+      "description": "NotebookLM + Gemini + Canva/Felo.ai for slides"
+    },
+    {
+      "date": "2026-Q1",
+      "category": "AI Adoption",
+      "client": "Mannings",
+      "description": "Gemini for bi-weekly report preparation"
+    },
+    {
+      "date": "2026-Q1",
+      "category": "Team Contribution",
+      "client": "Internal",
+      "description": "LON insights shared to Darren, Brian, Eric"
+    },
+    {
+      "date": "2026-Q1",
+      "category": "Team Contribution",
+      "client": "Internal",
+      "description": "UX interview with Medet"
+    },
+    {
+      "date": "2026-Q1",
+      "category": "Team Contribution",
+      "client": "Internal",
+      "description": "AQ recommendation sharing with Zebbie"
+    },
+    {
+      "date": "2026-Q2",
+      "category": "Pitching",
+      "client": "Momax",
+      "description": "Opportunity pitched"
+    },
+    {
+      "date": "2026-Q2",
+      "category": "Pitching",
+      "client": "Mannings",
+      "description": "AIRIS opportunity pitched"
+    },
+    {
+      "date": "2026-Q2",
+      "category": "Pitching",
+      "client": "SCMP",
+      "description": "BotBonnie opportunity pitched"
+    },
+    {
+      "date": "2026-Q2",
+      "category": "Pitching",
+      "client": "17live TW",
+      "description": "Opportunity pitched"
+    },
+    {
+      "date": "2026-Q2",
+      "category": "Pitching",
+      "client": "LON",
+      "description": "Opportunity pitched"
+    },
+    {
+      "date": "2026-Q2",
+      "category": "Renewal",
+      "client": "Luxgen",
+      "description": "成功續約至 2026-11 (BB contract 2026/5/24–11/23)"
+    },
+    {
+      "date": "2026-Q2",
+      "category": "Ticket Resolved",
+      "client": "SCMP",
+      "description": "Segment quota increase resolved"
+    },
+    {
+      "date": "2026-Q2",
+      "category": "Team Contribution",
+      "client": "Internal",
+      "description": "AA UX interview"
+    },
+    {
+      "date": "2026-Q2",
+      "category": "Team Contribution",
+      "client": "Internal",
+      "description": "Insights report PM collaboration"
+    },
+    {
+      "date": "2026-Q2",
+      "category": "Team Contribution",
+      "client": "Internal",
+      "description": "LON finance team support"
+    },
+    {
+      "date": "2026-Q2",
+      "category": "Team Contribution",
+      "client": "Internal",
+      "description": "Template builder interview"
+    },
+    {
+      "date": "2026-Q2",
+      "category": "Team Contribution",
+      "client": "Mannings",
+      "description": "CrossX comms coordination"
+    },
+    {
+      "date": "2026-Q2",
+      "category": "Team Contribution",
+      "client": "SCMP",
+      "description": "Event speaker coordination"
+    },
+    {
+      "date": "2026-Q2",
+      "category": "Team Contribution",
+      "client": "Internal",
+      "description": "Eddie AQ exam support"
+    },
+    {
+      "date": "2026-Q2",
+      "category": "Team Contribution",
+      "client": "Mannings",
+      "description": "SEA tech Q&A"
+    },
+    {
+      "date": "2026-Q2",
+      "category": "AI Adoption",
+      "client": "Internal",
+      "description": "eDM agent prototype built"
+    },
+    {
+      "date": "2026-Q2",
+      "category": "AI Adoption",
+      "client": "Internal",
+      "description": "Agent testing feedback provided"
+    },
+    {
+      "date": "2026-Q2",
+      "category": "AI Adoption",
+      "client": "Internal",
+      "description": "Slides creation skill built"
+    },
+    {
+      "date": "2026-Q2",
+      "category": "AI Adoption",
+      "client": "Internal",
+      "description": "CSM tracking dashboard built"
+    },
+    {
+      "date": "2026-Q2",
+      "category": "AI Adoption",
+      "client": "Internal",
+      "description": "CSM ask-anything skill built"
+    },
+    {
+      "date": "2026-Q2",
+      "category": "AI Adoption",
+      "client": "Internal",
+      "description": "CSM task tracking tool built"
+    }
   ],
   "sessionLog": [],
-  "feedbackLog": []
+  "feedbackLog": [],
+  "rules": [
+    {
+      "id": "okr-consolidate",
+      "rule": "OKR entries: consolidate by theme, never log individual ticket keys"
+    }
+  ]
 }
