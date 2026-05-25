@@ -36,6 +36,14 @@
   html.light .platform-card .pc-icon img{mix-blend-mode:multiply;}
   .btn-theme{background:transparent;border:1px solid var(--border);color:var(--muted2);padding:5px 11px;border-radius:6px;font-family:'DM Mono',monospace;font-size:12px;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:6px;white-space:nowrap;}
   .btn-theme:hover{border-color:var(--accent);color:var(--accent);}
+  /* ── SYNC BAR ── */
+  .sync-bar{display:flex;align-items:center;gap:10px;margin-bottom:14px;padding:7px 14px;background:var(--surface);border:1px solid var(--border);border-radius:8px;}
+  .sync-dot{width:7px;height:7px;border-radius:50%;background:var(--muted);flex-shrink:0;transition:background .3s;}
+  .sync-dot.ok{background:var(--green);}
+  .sync-dot.err{background:var(--red);}
+  .sync-dot.spin{background:var(--yellow);animation:sdpulse 1s ease-in-out infinite;}
+  @keyframes sdpulse{0%,100%{opacity:1}50%{opacity:.35}}
+  .sync-label{font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);flex:1;}
   *{box-sizing:border-box;margin:0;padding:0;}
   body{background:var(--bg);color:var(--text);font-family:'Syne',sans-serif;min-height:100vh;}
   body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(79,142,247,.03)1px,transparent 1px),linear-gradient(90deg,rgba(79,142,247,.03)1px,transparent 1px);background-size:40px 40px;pointer-events:none;z-index:0;}
@@ -851,6 +859,13 @@
 
     <!-- ══ CSM BRIEF TAB PANE ══ -->
     <div class="tab-pane" id="pane-brief">
+
+
+      <!-- Sync bar -->
+      <div class="sync-bar">
+        <span class="sync-dot spin" id="syncDot"></span>
+        <span class="sync-label" id="syncLabel">Loading brief from GitHub…</span>
+      </div>
 
       <!-- Stats row -->
       <div class="brief-stats-row">
@@ -4956,7 +4971,7 @@ function finalizeAddObFeatures(created){
 // CSM BRIEF — DATA, STATE & FUNCTIONS
 // ════════════════════════════════════════════════════════════════════════════
 
-const ACCOUNTS = [
+let ACCOUNTS = [
   {
     id:'mannings', name:'Mannings', health:'red',
     insight:'AIXP-1840 open 11 days — no update from Jin Chen. Bi-weekly May 28.',
@@ -5121,7 +5136,42 @@ function loadLog(){
 function saveLog(){ localStorage.setItem(BRIEF_LOG_KEY, JSON.stringify(logEntries)); }
 
 // ── BRIEF INIT (called once on page load) ─────────────────────────────────────
+
+// ── GITHUB BRIEF AUTO-SYNC ────────────────────────────────────────────────────
+// csm-brief.json lives in the repo root → served by GitHub Pages at same origin.
+// Claude pushes a new version via GitHub API after every brief generation.
+// Dashboard fetches it on every load — zero manual steps.
+
+function _setSyncUI(state, text) {
+  const dot = document.getElementById('syncDot');
+  const lbl = document.getElementById('syncLabel');
+  if (dot) { dot.className = 'sync-dot' + (state ? ' ' + state : ''); }
+  if (lbl) { lbl.textContent = text; }
+}
+
+async function loadBriefFromGitHub() {
+  _setSyncUI('spin', 'Loading brief from GitHub…');
+  try {
+    // Cache-bust so we always get the latest commit, not a CDN-cached copy
+    const res = await fetch('/csm-brief.json?_=' + Date.now());
+    if (!res.ok) throw new Error(res.status === 404 ? 'No brief pushed yet — ask Claude to generate your brief.' : 'HTTP ' + res.status);
+    const data = await res.json();
+    if (!Array.isArray(data.accounts) || data.accounts.length === 0) throw new Error('Brief is empty — ask Claude to generate your brief.');
+    ACCOUNTS = data.accounts;
+    renderBriefCards();
+    renderBriefStats();
+    briefUpdateTabCounts();
+    const ts = data.generatedAt
+      ? new Date(data.generatedAt).toLocaleString('en-HK', { month:'short', day:'numeric', hour:'2-digit', minute:'2-digit', hour12:false, timeZone:'Asia/Hong_Kong' })
+      : '?';
+    _setSyncUI('ok', 'Brief synced · ' + ts + ' HKT · auto-updated by Claude each morning');
+  } catch (e) {
+    _setSyncUI('err', e.message || 'Could not load brief');
+  }
+}
+
 function initBrief(){
+  loadBriefFromGitHub();
   logEntries = loadLog();
   briefNextId = Math.max(briefNextId, ...logEntries.map(e=>e.id||0)) + 1;
   renderBriefCards();
