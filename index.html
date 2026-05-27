@@ -5780,7 +5780,7 @@ initBrief(); // Initialise CSM Brief tab (static data, no auth needed)
     if(btn) btn.disabled = true;
     try{
       var isAppsScript = /script\.google\.com\/macros\/s\//i.test(savedUrl);
-      if(isAppsScript){
+      if(false){ // apps script returns CSV - handled by CSV path below
         // ── Apps Script path: fetch JSON ──────────────────────────────────────────────────────
         var myEmail = arGetCurrentEmail();
         var sep = savedUrl.includes('?') ? '&' : '?';
