@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-26T11:20:30.245+08:00",
+  "generatedAt": "2026-05-27T09:00:45.424+08:00",
   "accounts": [
     {
       "id": "mannings",
@@ -238,12 +238,7 @@
       "name": "City Super",
       "health": "yellow",
       "insight": "LEG-15992 open 0d.",
-      "diffs": [
-        {
-          "type": "new",
-          "text": "LEG-15992 Legend World Technology Development Limited_AIQUA_HK_Order F"
-        }
-      ],
+      "diffs": [],
       "riskTags": [
         "ticket"
       ],
@@ -256,7 +251,7 @@
           "key": "LEG-15992",
           "title": "Legend World Technology Development Limited_AIQUA_HK_Order Form(User: CitySuper) ",
           "status": "open",
-          "assignee": "lambert.chen",
+          "assignee": "emily.cheng",
           "pinned": true
         }
       ],
