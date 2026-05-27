@@ -5420,7 +5420,7 @@ function renderBriefCards(){
       </div>
       <div class="acct-footer">
         <div class="risk-tags">${riskHTML}</div>
-        <div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--muted)">→ Full brief</div>
+        <div style="font-family:\'DM Mono\',monospace;font-size:10px;color:var(--muted)">→ Full brief</div>
       </div>
     </div>`;
   }).join('');
@@ -5493,7 +5493,7 @@ function openBriefPanel(id){
     <div class="p-section">
       <div class="p-section-title">💡 Suggestions</div>
       ${sugHTML}
-      <div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);margin-top:10px">
+      <div style="font-family:\'DM Mono\',monospace;font-size:10px;color:var(--muted);margin-top:10px">
         Reply in Claude: "Done: [#]" or "Didn't work: [#]" to log outcome
       </div>
     </div>
@@ -5956,7 +5956,7 @@ initBrief(); // Initialise CSM Brief tab (static data, no auth needed)
       var amtStr = isNaN(amtN) ? (r.amount||'—')
         : amtN.toLocaleString('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0});
       return '<tr><td>'+_esc(r.account)+'</td><td>'+_esc(r.opportunity)+'</td>'+
-        '<td style="font-family:'DM Mono',monospace;text-align:right">'+_esc(amtStr)+'</td>'+
+        '<td style="font-family:\'DM Mono\',monospace;text-align:right">'+_esc(amtStr)+'</td>'+
         '<td><span class="ar-badge '+sc+'">'+_esc(r.status||'—')+'</span></td>'+
         '<td style="font-family:\'DM Mono\',monospace">'+_esc(r.date)+'</td></tr>';
     }).join('');
