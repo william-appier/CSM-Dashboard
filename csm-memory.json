@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-28T16:11:40.670+08:00",
+  "lastUpdated": "2026-05-28T17:44:26+08:00",
   "rules": [
     {
       "id": "okr-consolidate",
@@ -30,12 +30,6 @@
       "account": "mannings",
       "ignoredOn": "2026-05-26",
       "reason": "Ticket closed — AI suggestions issue resolved by Jin Chen"
-    },
-    {
-      "key": "QGWL-19924",
-      "account": "55688",
-      "ignoredOn": "2026-05-26",
-      "reason": "AQ JM Timeout Fix closed"
     },
     {
       "key": "AEP-6089",
