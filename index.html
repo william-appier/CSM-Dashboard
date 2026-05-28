@@ -1077,9 +1077,9 @@
           <option value="Billed">🧾 Billed</option>
           <option value="Invalid">❌ Invalid</option>          <option value="Scheduled">📅 Scheduled</option>          <option value="Draft">📝 Draft</option>
         </select>
-        <label class="ar-my-toggle">
-          <input type="checkbox" id="arMyOnly" checked onchange="arRender()"> My accounts only
-        </label>
+        <select id="arCsmFilter" onchange="arRender()" style="padding:6px 10px;border-radius:8px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:12px;cursor:pointer;min-width:160px">
+          <option value="">All CSMs</option>
+        </select>
       </div>
 
       <!-- Data table -->
@@ -5898,11 +5898,26 @@ initBrief(); // Initialise CSM Brief tab (static data, no auth needed)
     });
     var _la=``,_lo=``,_le=``;
     mapped.forEach(function(r){
+      var isNewA=!!r.account;
       if(r.account) _la=r.account; else r.account=_la;
       if(r.opportunity) _lo=r.opportunity; else r.opportunity=_lo;
+      if(isNewA) _le=``;
       if(r.csmEmail) _le=r.csmEmail; else r.csmEmail=_le;
     });
     arRawData = mapped.filter(function(r){ return r.opportunity || r.account; });
+    var _cs={};
+    arRawData.forEach(function(r){ _cs[r.csmEmail||'__nocsm__']=1; });
+    var _sd=document.getElementById('arCsmFilter');
+    if(_sd){
+      var _pv=_sd.value;
+      _sd.innerHTML='<option value="">All CSMs</option>';
+      Object.keys(_cs).sort().forEach(function(e){
+        var o=document.createElement('option');
+        o.value=e; o.textContent=e==='__nocsm__'?'(No CSM)':e.split('@')[0];
+        _sd.appendChild(o);
+      });
+      if(_pv && _sd.querySelector('option[value="'+_pv+'"]')) _sd.value=_pv;
+    }
     arRender();
   }
 
@@ -5919,15 +5934,15 @@ initBrief(); // Initialise CSM Brief tab (static data, no auth needed)
   };
 
   window.arRender = function(){
-    var myEmail = arGetCurrentEmail();
-    var myOnlyEl = document.getElementById(`arMyOnly`);
+    var csmFEl = document.getElementById(`arCsmFilter`);
     var searchEl = document.getElementById(`arSearch`);
     var statusEl = document.getElementById(`arStatusFilter`);
-    var useMyOnly = myOnlyEl ? myOnlyEl.checked : true;
+    var csmF = csmFEl ? csmFEl.value : ``;
     var search    = searchEl ? searchEl.value.toLowerCase() : ``;
     var statusF   = statusEl ? statusEl.value : ``;
     var rows = arRawData.slice();
-    if(useMyOnly && myEmail) rows = rows.filter(function(r){ return r.csmEmail === myEmail; });
+    if(csmF===`__nocsm__`) rows=rows.filter(function(r){ return !r.csmEmail; });
+    else if(csmF) rows=rows.filter(function(r){ return r.csmEmail===csmF; });
     if(search) rows = rows.filter(function(r){
       return r.account.toLowerCase().includes(search) || r.opportunity.toLowerCase().includes(search);
     });
