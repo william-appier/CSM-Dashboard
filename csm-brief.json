@@ -1,29 +1,12 @@
 {
-  "generatedAt": "2026-05-28T09:00:14.306+08:00",
+  "generatedAt": "2026-05-28T17:31:46.628+08:00",
   "accounts": [
     {
       "id": "mannings",
       "name": "Mannings",
       "health": "yellow",
-      "insight": "Appier x Mannings Bi-weekly Meeting May 28 · renewal due Jun 2026.",
-      "diffs": [
-        {
-          "type": "close",
-          "text": "LEG-16095 closed"
-        },
-        {
-          "type": "close",
-          "text": "PROJ-33301 closed"
-        },
-        {
-          "type": "close",
-          "text": "QGWL-20748 closed"
-        },
-        {
-          "type": "close",
-          "text": "PROJ-29658 closed"
-        }
-      ],
+      "insight": "Mannings quotation Jun 1 · renewal due Jun 2026.",
+      "diffs": [],
       "riskTags": [
         "renewal",
         "mtg"
@@ -42,11 +25,6 @@
       ],
       "meetings": [
         {
-          "date": "May 28",
-          "title": "Appier x Mannings Bi-weekly Meeting",
-          "meta": "11:00–12:00 HKT · Rola Chung"
-        },
-        {
           "date": "Jun 1",
           "title": "Mannings quotation",
           "meta": "11:15–12:00 HKT · william.wt.lin@appier.com"
@@ -54,6 +32,11 @@
         {
           "date": "Jun 4",
           "title": "Appier x Mannings Monthly Meeting",
+          "meta": "11:00–12:00 HKT · Rola Chung"
+        },
+        {
+          "date": "Jun 11",
+          "title": "Appier x Mannings Bi-weekly Meeting",
           "meta": "11:00–12:00 HKT · Rola Chung"
         }
       ],
@@ -67,7 +50,7 @@
         {
           "priority": "medium",
           "label": "Meeting · Medium",
-          "text": "Prep for Appier x Mannings Bi-weekly Meeting on May 28 (11:00–12:00 HKT · Rola Chung)"
+          "text": "Prep for Mannings quotation on Jun 1 (11:15–12:00 HKT · william.wt.lin@appier.com)"
         }
       ]
     },
@@ -107,16 +90,7 @@
       "name": "10/10Hope",
       "health": "green",
       "insight": "No active tickets — all clear.",
-      "diffs": [
-        {
-          "type": "close",
-          "text": "QGWL-25317 closed"
-        },
-        {
-          "type": "close",
-          "text": "QGWL-24745 closed"
-        }
-      ],
+      "diffs": [],
       "riskTags": [],
       "ticketCount": 0,
       "mtgCount": 0,
@@ -145,12 +119,7 @@
       "name": "Luxgen",
       "health": "green",
       "insight": "No active tickets — all clear.",
-      "diffs": [
-        {
-          "type": "close",
-          "text": "LEG-16090 closed"
-        }
-      ],
+      "diffs": [],
       "riskTags": [],
       "ticketCount": 0,
       "mtgCount": 0,
@@ -175,12 +144,7 @@
       "name": "55688",
       "health": "yellow",
       "insight": "Renew check for 55688 Jun 2.",
-      "diffs": [
-        {
-          "type": "close",
-          "text": "QGWL-19924 closed"
-        }
-      ],
+      "diffs": [],
       "riskTags": [
         "mtg"
       ],
@@ -217,20 +181,7 @@
       "name": "田原香",
       "health": "green",
       "insight": "No active tickets — all clear.",
-      "diffs": [
-        {
-          "type": "close",
-          "text": "QGWL-25627 closed"
-        },
-        {
-          "type": "close",
-          "text": "AEP-6090 closed"
-        },
-        {
-          "type": "close",
-          "text": "AEP-6089 closed"
-        }
-      ],
+      "diffs": [],
       "riskTags": [],
       "ticketCount": 0,
       "mtgCount": 0,
@@ -258,7 +209,7 @@
       "id": "momax",
       "name": "Momax",
       "health": "yellow",
-      "insight": "Momax AI Marketing Proposal _Prizm/Appier May 29.",
+      "insight": "Momax AI Marketing Proposal (Prizm/Appier) May 29.",
       "diffs": [],
       "riskTags": [
         "mtg"
@@ -269,8 +220,8 @@
       "meetings": [
         {
           "date": "May 29",
-          "title": "Momax AI Marketing Proposal _Prizm/Appier",
-          "meta": "09:30–10:10 HKT · emily.cheng@appier.com"
+          "title": "Momax AI Marketing Proposal (Prizm/Appier)",
+          "meta": "14:15–14:45 HKT · emily.cheng@appier.com"
         }
       ],
       "tickets": [],
@@ -278,7 +229,7 @@
         {
           "priority": "medium",
           "label": "Meeting · Medium",
-          "text": "Prep for Momax AI Marketing Proposal _Prizm/Appier on May 29 (09:30–10:10 HKT · emily.cheng@appier.com)"
+          "text": "Prep for Momax AI Marketing Proposal (Prizm/Appier) on May 29 (14:15–14:45 HKT · emily.cheng@appier.com)"
         }
       ]
     },
