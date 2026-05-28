@@ -1,0 +1,610 @@
+--e232cbed7599906d4d2cc8a111e1ad759e77723a67a0daf4b192b9fdd7d9
+Content-Disposition: form-data; name="…"
+
+/**
+ * CSM Brief Worker — Cloudflare Worker with Cron Trigger
+ * Runs daily at 01:00 UTC (09:00 HKT)
+ *
+ * Required env vars (Cloudflare Dashboard → Worker → Settings → Variables):
+ *   JIRA_API_TOKEN        — Jira API token for william.wt.lin@appier.com
+ *   GITHUB_TOKEN          — GitHub PAT with repo write access
+ *   GOOGLE_CLIENT_ID      — Google OAuth2 client ID
+ *   GOOGLE_CLIENT_SECRET  — Google OAuth2 client secret
+ *   GOOGLE_REFRESH_TOKEN  — OAuth2 refresh token (calendar.readonly scope)
+ *
+ * Output: writes csm-brief.json to GitHub Pages repo every run.
+ * Reads:  csm-memory.json for ignore list, pinned tickets, contract dates.
+ */
+
+const GITHUB_OWNER = '…';
+const GITHUB_REPO  = '…';
+const GITHUB_API   = `…`;
+
+const ACCOUNTS = [
+  {
+    id: '…',
+    name: '…',
+    keywords: ['…'],
+    calendarKeyword: '…',
+    pinnedTickets: ['…'],
+    projects: ['…', '…'],
+    contractRenewal: '…',
+  },
+  {
+    id: '…',
+    name: '…',
+    keywords: ['…'],
+    calendarKeyword: '…',
+    pinnedTickets: [],
+    projects: ['…', '…'],
+    contractRenewal: '…',
+  },
+  {
+    id: '…',
+    name: '…',
+    keywords: ['…'],
+    calendarKeyword: '…',
+    pinnedTickets: [],
+    projects: ['…', '…'],
+    contractRenewal: null,
+  },
+  {
+    id: '…',
+    name: '…',
+    keywords: ['…'],
+    calendarKeyword: '…',
+    pinnedTickets: [],
+    projects: ['…'],
+    contractRenewal: '…',
+  },
+  {
+    id: '…',
+    name: '…',
+    keywords: ['…'],
+    calendarKeyword: '…',
+    pinnedTickets: [],
+    projects: ['…', '…'],
+    contractRenewal: null,
+  },
+  {
+    id: '…',
+    name: '…',
+    keywords: ['…'],
+    calendarKeyword: '…',
+    pinnedTickets: [],
+    projects: ['…', '…'],
+    contractRenewal: '…',
+  },
+  {
+    id: '…',
+    name: '…',
+    keywords: ['…'],
+    calendarKeyword: '…',
+    pinnedTickets: [],
+    projects: [],
+    contractRenewal: null,
+  },
+  {
+    id: '…',
+    name: '…',
+    keywords: ['…', '…', '…', '…'],
+    calendarKeyword: '…',
+    pinnedTickets: [],
+    projects: [],
+    contractRenewal: null,
+  },
+];
+
+// Covers standard Jira statuses + common approval/review workflow statuses
+const ACTIVE_STATUSES = '…';
+const JIRA_CLOUD_ID   = '…';
+const JIRA_EMAIL      = '…'; // used for Basic auth header
+
+// ── ENTRY POINTS ──────────────────────────────────────────────────────────────
+
+export default {
+  async scheduled(event, env, ctx) {
+    ctx.waitUntil(runDailyBrief(env));
+  },
+
+  async fetch(request, env, ctx) {
+    const path = new URL(request.url).pathname;
+    if (path === '…') {
+      ctx.waitUntil(runDailyBrief(env));
+      return new Response('…', {
+        headers: { '…': '…' },
+      });
+    }
+    if (path === '…') {
+      try {
+        await runDailyBrief(env);
+        return new Response(JSON.stringify({ status: '…', time: new Date().toISOString() }), {
+          headers: { '…': '…' },
+        });
+      } catch (err) {
+        return new Response(JSON.stringify({ status: '…', message: err.message, stack: err.stack }), {
+          status: 500,
+          headers: { '…': '…' },
+        });
+      }
+    }
+    if (path === '…') {
+      return new Response(JSON.stringify({ status: '…', time: new Date().toISOString() }), {
+        headers: { '…': '…' },
+      });
+    }
+    if (path === '…' && request.method === '…') {
+      // Accepts full csm-memory.json body and writes it to GitHub
+      // Called by Claude via Chrome when corporate proxy blocks direct GitHub PUT
+      try {
+        const corsHeaders = {
+          '…': '…',
+          '…': '…',
+        };
+        const newMemory = await request.json();
+        newMemory.lastUpdated = new Date(Date.now() + 8 * 3600000).toISOString().replace('…', '…');
+        await writeGitHubJSON('…', newMemory, '…', env);
+        return new Response(JSON.stringify({ status: '…', time: newMemory.lastUpdated }), { headers: corsHeaders });
+      } catch (err) {
+        return new Response(JSON.stringify({ status: '…', message: err.message }), {
+          status: 500, headers: { '…': '…', '…': '…' },
+        });
+      }
+    }
+    if (path === '…' && request.method === '…') {
+      return new Response(null, {
+        headers: {
+          '…': '…',
+          '…': '…',
+          '…': '…',
+        },
+      });
+    }
+    if (path === '…' && request.method === '…') {
+      // Injects OKR sync script into index.html so dashboard always loads fresh data from csm-memory.json
+      // Safe to call multiple times — checks for existing injection marker before patching
+      const cors = { '…': '…', '…': '…' };
+      try {
+        // Read current index.html
+        const r = await fetch(`…`, {
+          headers: { Authorization: `…`, Accept: '…', '…': '…' },
+        });
+        if (!r.ok) throw new Error(`…`);
+        const d = await r.json();
+        const sha = d.sha;
+        const html = decodeURIComponent(escape(atob(d.content.replace(/\n/g, '…'))));
+
+        // Idempotency: skip if already patched
+        const MARKER = '…';
+        if (html.includes(MARKER)) {
+          return new Response(JSON.stringify({ status: '…' }), { headers: cors });
+        }
+
+        const syncScript = `…`;
+
+        const patched = html.replace('…', syncScript + '…');
+        if (patched === html) throw new Error('…');
+
+        // Write back
+        const content = btoa(unescape(encodeURIComponent(patched)));
+        const wr = await fetch(`…`, {
+          method: '…',
+          headers: { Authorization: `…`, '…': '…', Accept: '…', '…': '…' },
+          body: JSON.stringify({ message: '…', content, sha }),
+        });
+        if (!wr.ok) throw new Error(`…`);
+        return new Response(JSON.stringify({ status: '…', message: '…' }), { headers: cors });
+      } catch (err) {
+        return new Response(JSON.stringify({ status: '…', message: err.message }), { status: 500, headers: cors });
+      }
+    }
+    if (path === '…' && request.method === '…') {
+      return new Response(null, { headers: { '…': '…', '…': '…', '…': '…' } });
+    }
+    if (path === '…') {
+      try {
+        const token = await getGoogleAccessToken(env);
+        const now = new Date();
+        const twoWeeks = new Date(now.getTime() + 14 * 24 * 3600 * 1000);
+        const params = new URLSearchParams({
+          q: '…',
+          timeMin: now.toISOString(),
+          timeMax: twoWeeks.toISOString(),
+          singleEvents: '…',
+          orderBy: '…',
+          maxResults: '…',
+        });
+        const r = await fetch(
+          `…`,
+          { headers: { Authorization: `…` } }
+        );
+        const d = await r.json();
+        // Return full raw response so we can see errors or data
+        return new Response(JSON.stringify({ httpStatus: r.status, body: d }), {
+          headers: { '…': '…' },
+        });
+      } catch (err) {
+        return new Response(JSON.stringify({ status: '…', message: err.message }), {
+          status: 500, headers: { '…': '…' },
+        });
+      }
+    }
+    return new Response('…');
+  },
+};
+
+// ── MAIN ──────────────────────────────────────────────────────────────────────
+
+async function runDailyBrief(env) {
+  try {
+    const generatedAt = getHKTTimestamp();
+
+    // 1. Load persistent memory (ignore list, pinned tickets, contract dates)
+    const memory = await readGitHubJSON('…', env);
+    const ignoreSet = new Set((memory.ignoreTickets || []).map(t => t.key));
+
+    // Merge memory pinned tickets into ACCOUNTS
+    const accounts = ACCOUNTS.map(acct => {
+      const memPinned = (memory.pinnedTickets || [])
+        .filter(p => p.account === acct.id)
+        .map(p => p.key);
+      return { ...acct, pinnedTickets: [...new Set([...acct.pinnedTickets, ...memPinned])] };
+    });
+
+    // 2. Fetch previous brief for diff detection
+    const prevBrief = await readGitHubJSON('…', env);
+    const prevAccounts = {};
+    for (const a of (prevBrief.accounts || [])) prevAccounts[a.id] = a;
+
+    // 3. Fetch live Jira data and Google Calendar in parallel
+    const [accountData, calendarByAccount] = await Promise.all([
+      Promise.all(accounts.map(acct => fetchAccountData(acct, ignoreSet, env))),
+      fetchAllCalendarMeetings(accounts, env),
+    ]);
+
+    // 4. Build rule-based insight per account
+    const withInsights = accountData.map(data => ({
+      ...data,
+      meetings: calendarByAccount[data.id] || [],
+      insight: buildInsight(data, calendarByAccount[data.id] || []),
+    }));
+
+    // 5. Build diffs vs previous brief
+    const withDiffs = withInsights.map(data => ({
+      ...data,
+      diffs: buildDiffs(data, prevAccounts[data.id]),
+    }));
+
+    // 6. Assemble csm-brief.json
+    const brief = {
+      generatedAt,
+      accounts: withDiffs.map(a => ({
+        id:          a.id,
+        name:        a.name,
+        health:      getHealth(a.tickets, a, a.meetings),
+        insight:     a.insight,
+        diffs:       a.diffs,
+        riskTags:    getRiskTags(a),
+        ticketCount: a.tickets.length,
+        mtgCount:    a.meetings.length,
+        projects:    a.projects.map(p => ({ name: p, status: '…' })),
+        meetings:    a.meetings,
+        tickets:     a.tickets.map(t => ({
+          key:      t.key,
+          title:    t.title,
+          status:   t.status,
+          assignee: t.assignee,
+          pinned:   t.pinned,
+        })),
+        suggestions: buildSuggestions(a),
+      })),
+    };
+
+    // 7. Upload csm-brief.json to GitHub
+    await writeGitHubJSON('…', brief, '…', env);
+
+    console.log('…', generatedAt);
+  } catch (err) {
+    console.error('…', err.message, err.stack);
+    throw err;
+  }
+}
+
+// ── GOOGLE CALENDAR ───────────────────────────────────────────────────────────
+
+async function getGoogleAccessToken(env) {
+  const r = await fetch('…', {
+    method: '…',
+    headers: { '…': '…' },
+    body: new URLSearchParams({
+      client_id:     env.GOOGLE_CLIENT_ID,
+      client_secret: env.GOOGLE_CLIENT_SECRET,
+      refresh_token: env.GOOGLE_REFRESH_TOKEN,
+      grant_type:    '…',
+    }),
+  });
+  const d = await r.json();
+  if (!d.access_token) throw new Error(`…`);
+  return d.access_token;
+}
+
+async function fetchAllCalendarMeetings(accounts, env) {
+  // If Google creds not set, return empty — brief still works without calendar
+  if (!env.GOOGLE_REFRESH_TOKEN || !env.GOOGLE_CLIENT_ID || !env.GOOGLE_CLIENT_SECRET) {
+    console.log('…');
+    return {};
+  }
+
+  let accessToken;
+  try {
+    accessToken = await getGoogleAccessToken(env);
+  } catch (e) {
+    console.error('…', e.message);
+    return {};
+  }
+
+  const now      = new Date();
+  const twoWeeks = new Date(now.getTime() + 14 * 24 * 3600 * 1000);
+  const timeMin  = now.toISOString();
+  const timeMax  = twoWeeks.toISOString();
+
+  const results = await Promise.all(
+    accounts.map(acct => fetchAccountMeetings(acct, accessToken, timeMin, timeMax))
+  );
+
+  const out = {};
+  accounts.forEach((acct, i) => { out[acct.id] = results[i]; });
+  return out;
+}
+
+async function fetchAccountMeetings(acct, accessToken, timeMin, timeMax) {
+  try {
+    const params = new URLSearchParams({
+      q:            acct.calendarKeyword,
+      timeMin,
+      timeMax,
+      singleEvents: '…',
+      orderBy:      '…',
+      maxResults:   '…',
+    });
+    const r = await fetch(
+      `…`,
+      { headers: { Authorization: `…` } }
+    );
+    const d = await r.json();
+    return (d.items || [])
+      .filter(e => e.status === '…')
+      .map(e => {
+        const start   = new Date(e.start?.dateTime || e.start?.date);
+        const end     = new Date(e.end?.dateTime   || e.end?.date);
+        const dateStr = start.toLocaleDateString('…', { month: '…', day: '…', timeZone: '…' });
+        const t0      = start.toLocaleTimeString('…', { hour: '…', minute: '…', hour12: false, timeZone: '…' });
+        const t1      = end.toLocaleTimeString  ('…', { hour: '…', minute: '…', hour12: false, timeZone: '…' });
+        const org     = e.organizer?.displayName || e.organizer?.email || '…';
+        return {
+          date:  dateStr,
+          title: e.summary || '…',
+          meta:  `…`,
+        };
+      });
+  } catch (e) {
+    console.error(`…`, e.message);
+    return [];
+  }
+}
+
+// ── GITHUB ────────────────────────────────────────────────────────────────────
+
+async function readGitHubJSON(path, env) {
+  try {
+    const r = await fetch(`…`, {
+      headers: {
+        Authorization: `…`,
+        Accept: '…',
+        '…': '…',
+      },
+    });
+    if (!r.ok) return {};
+    const d = await r.json();
+    return JSON.parse(atob(d.content.replace(/\n/g, '…')));
+  } catch (_) {
+    return {};
+  }
+}
+
+async function writeGitHubJSON(path, obj, message, env) {
+  let sha;
+  try {
+    const r = await fetch(`…`, {
+      headers: {
+        Authorization: `…`,
+        Accept: '…',
+        '…': '…',
+      },
+    });
+    if (r.ok) { const d = await r.json(); sha = d.sha; }
+  } catch (_) {}
+
+  const content = btoa(unescape(encodeURIComponent(JSON.stringify(obj, null, 2))));
+  const body = { message, content };
+  if (sha) body.sha = sha;
+
+  const r = await fetch(`…`, {
+    method: '…',
+    headers: {
+      Authorization: `…`,
+      '…': '…',
+      Accept: '…',
+      '…': '…',
+    },
+    body: JSON.stringify(body),
+  });
+  if (!r.ok) {
+    const err = await r.text();
+    throw new Error(`…`);
+  }
+  return r.json();
+}
+
+// ── JIRA ──────────────────────────────────────────────────────────────────────
+
+async function fetchAccountData(acct, ignoreSet, env) {
+  const base = `…`;
+  const auth = btoa(`…`);
+  const headers = { Authorization: `…`, Accept: '…' };
+
+  // Support multiple keywords per account (case/space insensitive via Jira's ~ operator)
+  const keywordList = acct.keywords || [acct.keyword];
+  const jqlParts    = keywordList.map(k => `…`).join('…');
+  const jql         = `…`;
+  const res = await fetch(
+    `…`,
+    { headers }
+  );
+  const data = await res.json();
+
+  const liveTickets = (data.issues || [])
+    .filter(i => !ignoreSet.has(i.key))
+    .map(i => ({
+      key:      i.key,
+      title:    i.fields.summary,
+      status:   normalizeStatus(i.fields.status?.name),
+      assignee: i.fields.assignee?.displayName || '…',
+      daysOld:  daysSince(i.fields.updated),
+      pinned:   acct.pinnedTickets.includes(i.key),
+    }));
+
+  // Fetch pinned tickets not in JQL results
+  const liveKeys    = new Set(liveTickets.map(t => t.key));
+  const missingPins = acct.pinnedTickets.filter(k => !liveKeys.has(k) && !ignoreSet.has(k));
+  const pinnedExtra = (await Promise.all(missingPins.map(async key => {
+    try {
+      const r = await fetch(`…`, { headers });
+      const d = await r.json();
+      const st = d.fields?.status?.name || '…';
+      if (/done|closed|resolved|won.t fix|duplicate/i.test(st)) return null;
+      return {
+        key,
+        title:    d.fields?.summary || key,
+        status:   normalizeStatus(st),
+        assignee: d.fields?.assignee?.displayName || '…',
+        daysOld:  daysSince(d.fields?.updated),
+        pinned:   true,
+      };
+    } catch (_) { return null; }
+  }))).filter(Boolean);
+
+  const tickets = [...pinnedExtra, ...liveTickets.filter(t => !acct.pinnedTickets.includes(t.key))];
+  return { ...acct, tickets };
+}
+
+function normalizeStatus(s = '…') {
+  const l = s.toLowerCase();
+  if (l.includes('…'))         return '…';
+  if (l.includes('…'))          return '…';
+  if (/blocked|impediment/.test(l))   return '…';
+  return '…';
+}
+
+function daysSince(iso) {
+  if (!iso) return null;
+  return Math.floor((Date.now() - new Date(iso).getTime()) / 86400000);
+}
+
+// ── HEALTH ────────────────────────────────────────────────────────────────────
+
+function getHealth(tickets, acct, meetings = []) {
+  if (tickets.some(t => t.status === '…'))                          return '…';
+  if (tickets.some(t => t.pinned && t.status === '…'))          return '…';
+  if (tickets.some(t => t.daysOld != null && t.daysOld > 7))             return '…';
+  if (tickets.length > 0)                                                 return '…';
+  if (['…', '…'].includes(acct.contractRenewal))            return '…';
+  if (meetings.length > 0)                                                return '…';
+  return '…';
+}
+
+// ── DIFFS ─────────────────────────────────────────────────────────────────────
+
+function buildDiffs(current, prev) {
+  if (!prev) return [];
+  const diffs = [];
+  const prevKeys = new Set((prev.tickets || []).map(t => t.key));
+  const currKeys = new Set(current.tickets.map(t => t.key));
+
+  for (const t of current.tickets) {
+    if (!prevKeys.has(t.key))
+      diffs.push({ type: '…', text: `…` });
+  }
+  for (const t of (prev.tickets || [])) {
+    if (!currKeys.has(t.key))
+      diffs.push({ type: '…', text: `…` });
+  }
+  for (const t of current.tickets) {
+    if (t.status === '…' && (prev.tickets || []).find(p => p.key === t.key && p.status !== '…'))
+      diffs.push({ type: '…', text: `…` });
+  }
+  const healthRank = { green: 0, yellow: 1, red: 2 };
+  if ((healthRank[current.health] ?? 0) > (healthRank[prev.health] ?? 0))
+    diffs.push({ type: '…', text: `…` });
+
+  return diffs;
+}
+
+// ── RISK TAGS ─────────────────────────────────────────────────────────────────
+
+function getRiskTags(data) {
+  const tags = [];
+  if (data.tickets.length > 0)                                                         tags.push('…');
+  if (['…', '…', '…'].includes(data.contractRenewal))                  tags.push('…');
+  if (data.tickets.some(t => t.status === '…' || (t.daysOld != null && t.daysOld > 14))) tags.push('…');
+  if (data.meetings && data.meetings.length > 0)                                        tags.push('…');
+  return tags;
+}
+
+// ── SUGGESTIONS ───────────────────────────────────────────────────────────────
+
+function buildSuggestions(data) {
+  const s = [];
+  for (const t of data.tickets) {
+    if (t.pinned && (t.status === '…' || t.status === '…')) {
+      s.push({ priority: '…', label: '…', text: `…` });
+    }
+  }
+  if (['…', '…'].includes(data.contractRenewal)) {
+    s.push({ priority: '…', label: '…', text: `…` });
+  }
+  if (data.meetings && data.meetings.length > 0) {
+    const next = data.meetings[0];
+    s.push({ priority: '…', label: '…', text: `…` });
+  }
+  if (!s.length && data.tickets.length === 0) {
+    s.push({ priority: '…', label: '…', text: `…` });
+  }
+  return s.slice(0, 3);
+}
+
+// ── INSIGHT ───────────────────────────────────────────────────────────────────
+
+function buildInsight(data, meetings = []) {
+  const parts = [];
+  if (data.tickets.length > 0) {
+    const t = data.tickets[0];
+    parts.push(`…`);
+    if (data.tickets.length > 1) parts.push(`…`);
+  }
+  if (meetings.length > 0) {
+    parts.push(`…`);
+  }
+  if (['…', '…'].includes(data.contractRenewal)) {
+    parts.push(`…`);
+  }
+  return parts.length > 0 ? parts.join('…') + '…' : '…';
+}
+
+// ── HELPERS ───────────────────────────────────────────────────────────────────
+
+function getHKTTimestamp() {
+  const hkt = new Date(Date.now() + 8 * 3600000);
+  return hkt.toISOString().replace('…', '…');
+}
+--e232cbed7599906d4d2cc8a111e1ad759e77723a67a0daf4b192b9fdd7d9--
