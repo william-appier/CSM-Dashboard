@@ -1092,6 +1092,8 @@
               <th onclick="arSort('amount')" id="arTh-amount">Invoice Amount <span class="sort-arrow">↕</span></th>
               <th onclick="arSort('status')" id="arTh-status">AR Status <span class="sort-arrow">↕</span></th>
               <th onclick="arSort('date')" id="arTh-date">Expected Date <span class="sort-arrow">↕</span></th>
+              <th onclick="arSort('startDate')" id="arTh-startDate">Contract Start <span class="sort-arrow">↕</span></th>
+              <th onclick="arSort('endDate')" id="arTh-endDate">Contract End <span class="sort-arrow">↕</span></th>
             </tr>
           </thead>
           <tbody id="arTbody"></tbody>
@@ -5888,6 +5890,8 @@ initBrief(); // Initialise CSM Brief tab (static data, no auth needed)
     var colCsmEmail = arFindCol(headers,`CSM Email`,`CSM`,`Owner Email`);
     var colStatus   = arFindCol(headers,`AR Status`,`Status`);
     var colDate     = arFindCol(headers,`Expected Sending Date`,`Expected Date`,`Due Date`,`Date`);
+    var colStartDate = arFindCol(headers,`Opportunity: Actual Activation Date`,`Activation Date`,`Contract Start`);
+    var colExpDate   = arFindCol(headers,`Opportunity: Contract Expiry Date`,`Contract Expiry Date`,`Contract End`);
     var mapped = rows.map(function(r){
       return {
         account:     String(r[colAccount]  || ``).trim(),
@@ -5896,6 +5900,8 @@ initBrief(); // Initialise CSM Brief tab (static data, no auth needed)
         csmEmail:    String(r[colCsmEmail] || ``).trim().toLowerCase(),
         status:      String(r[colStatus]   || ``).trim(),
         date:        String(r[colDate]     || ``).trim(),
+        startDate:   String(r[colStartDate]|| ``).trim(),
+        endDate:     String(r[colExpDate]  || ``).trim(),
       };
     });
     var _la=``,_lo=``,_le=``;
@@ -5961,7 +5967,7 @@ initBrief(); // Initialise CSM Brief tab (static data, no auth needed)
     var tbody = document.getElementById(`arTbody`);
     if(!tbody) return;
     if(!rows.length){
-      tbody.innerHTML = `<tr><td colspan="5" style="text-align:center;padding:24px;color:var(--muted)">No records match.</td></tr>`;
+      tbody.innerHTML = `<tr><td colspan="7" style="text-align:center;padding:24px;color:var(--muted)">No records match.</td></tr>`;
       return;
     }
     function _pa(s){ return parseFloat(String(s).replace(/[^0-9.\-]/g,``))||0; }
@@ -5985,7 +5991,7 @@ initBrief(); // Initialise CSM Brief tab (static data, no auth needed)
       opps.forEach(function(o){ oppMap[o].forEach(function(r){
         var m=String(r.amount).match(/([A-Z]{3})/); if(m) aCur=m[1]; aTotal+=_pa(r.amount);
       }); });
-      html+=`<tr style="background:var(--surface2)"><td colspan="5" style="padding:8px 14px;border-top:2px solid var(--accent);border-bottom:1px solid var(--border)">`;
+      html+=`<tr style="background:var(--surface2)"><td colspan="7" style="padding:8px 14px;border-top:2px solid var(--accent);border-bottom:1px solid var(--border)">`;
       html+=`<div style="display:flex;justify-content:space-between;align-items:center">`;
       html+=`<span style="font-weight:600;font-size:13px">🏢 `+_esc(acct)+`</span>`;
       html+=`<span style="font-family:'DM Mono',monospace;font-size:12px;color:var(--accent)">`+(aCur?_esc(aCur+` `+Math.round(aTotal).toLocaleString()):`—`)+`</span>`;
@@ -5995,7 +6001,7 @@ initBrief(); // Initialise CSM Brief tab (static data, no auth needed)
         oRows.forEach(function(r){
           var m=String(r.amount).match(/([A-Z]{3})/); if(m) oCur=m[1]; oTotal+=_pa(r.amount);
         });
-        html+=`<tr style="background:var(--surface)"><td colspan="5" style="padding:5px 14px 5px 28px;border-bottom:1px solid var(--border)">`;
+        html+=`<tr style="background:var(--surface)"><td colspan="7" style="padding:5px 14px 5px 28px;border-bottom:1px solid var(--border)">`;
         html+=`<div style="display:flex;justify-content:space-between;align-items:center">`;
         html+=`<span style="font-size:12px;color:var(--text)">📋 `+_esc(opp)+`</span>`;
         html+=`<span style="font-family:'DM Mono',monospace;font-size:11px;color:var(--muted2)">`+(oCur?_esc(oCur+` `+Math.round(oTotal).toLocaleString()):`—`)+`</span>`;
@@ -6004,7 +6010,7 @@ initBrief(); // Initialise CSM Brief tab (static data, no auth needed)
           html+=`<tr style="background:var(--bg)"><td style="padding:4px 8px 4px 44px;font-family:'DM Mono',monospace;font-size:11px;color:var(--muted)">`+_esc(r.date)+`</td>`;
           html+=`<td></td><td style="padding:4px 12px;text-align:right;font-family:'DM Mono',monospace;font-size:12px">`+_esc(r.amount)+`</td>`;
           html+=`<td style="padding:4px 8px"><span class="ar-badge `+_sc(r.status)+`">`+_esc(r.status||`—`)+`</span></td>`;
-          html+=`<td style="padding:4px 12px;font-size:11px;color:var(--muted)">`+_esc(r.csmEmail.split(`@`)[0])+`</td></tr>`;
+          html+=`<td style="padding:4px 12px;font-size:11px;color:var(--muted)">`+_esc(r.csmEmail.split(`@`)[0])+`</td><td style="padding:4px 12px;font-size:11px;color:var(--muted)">`+_esc(r.startDate)+`</td><td style="padding:4px 12px;font-size:11px;color:var(--muted)">`+_esc(r.endDate)+`</td></tr>`;
         });
       });
     });
