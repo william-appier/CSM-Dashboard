@@ -29,13 +29,13 @@
       "key": "AIXP-1840",
       "account": "mannings",
       "ignoredOn": "2026-05-26",
-      "reason": "Ticket closed — AI suggestions issue resolved by Jin Chen"
+      "reason": "Ticket closed â AI suggestions issue resolved by Jin Chen"
     },
     {
       "key": "AEP-6089",
       "account": "tiangyuanxiang",
       "ignoredOn": "2026-05-28",
-      "reason": "EUU onboarding confirmed complete — dropped per CSM"
+      "reason": "EUU onboarding confirmed complete â dropped per CSM"
     }
   ],
   "pinnedTickets": [
@@ -45,39 +45,51 @@
       "addedOn": "2026-05-26",
       "title": "City Super legal/contract ticket",
       "assignee": "",
-      "note": "Pinned by CSM — track progress"
+      "note": "Pinned by CSM â track progress"
     }
   ],
   "contractDates": [
     {
       "account": "Luxgen",
       "platform": "BB",
+      "startDate": "2026-05-24",
       "endDate": "2026-11-23",
       "note": "BB contract 2026/5/24-11/23, NTD 50,000/mo — LEG-16090 approved"
     },
     {
       "account": "SCMP",
       "platform": "AIQUA",
-      "endDate": null,
+      "startDate": "2025-07-01",
+      "endDate": "2026-06-30",
       "note": "Renewal target June 2026 — arrange meeting after client feedback."
     },
     {
       "account": "Mannings",
       "platform": "AIQUA/AIRIS",
+      "startDate": null,
       "endDate": "2026-06-30",
       "note": "Renewed AQ & AX to 2026-06-30 (Q1)"
     },
     {
       "account": "10/10Hope",
       "platform": "BotBonnie",
+      "startDate": null,
       "endDate": null,
       "note": "Unknown — ask CSM to confirm"
     },
     {
       "account": "田原香",
       "platform": "BotBonnie/AIQUA",
-      "endDate": null,
-      "note": "Unknown — ask CSM to confirm"
+      "startDate": "2026-02-17",
+      "endDate": "2027-02-16",
+      "note": "Contract 2026/2/17-2027/2/16 per AR report"
+    },
+    {
+      "account": "55688",
+      "platform": "AIQUA",
+      "startDate": "2025-11-25",
+      "endDate": "2026-11-24",
+      "note": "Contract 2025/11/25-2026/11/24 per AR report"
     }
   ],
   "okrLog": [
@@ -96,7 +108,7 @@
     {
       "date": "2026-Q1",
       "category": "Renewal",
-      "client": "田原香",
+      "client": "ç°åé¦",
       "description": "Renewed to 2027-02-16"
     },
     {
@@ -132,7 +144,7 @@
     {
       "date": "2026-Q1",
       "category": "Feature Enabled",
-      "client": "田原香",
+      "client": "ç°åé¦",
       "description": "Campaign agent enabled"
     },
     {
@@ -307,13 +319,13 @@
       "date": "2026-Q2",
       "category": "Ticket Resolved",
       "client": "SCMP",
-      "description": "Segment enablement closed — awaiting client feedback for renewal"
+      "description": "Segment enablement closed â awaiting client feedback for renewal"
     },
     {
       "date": "2026-Q2",
       "category": "Ticket Resolved",
       "client": "Mannings",
-      "description": "AIXP-1840 closed — AI suggestions issue resolved (Jin Chen)"
+      "description": "AIXP-1840 closed â AI suggestions issue resolved (Jin Chen)"
     },
     {
       "date": "2026-Q2",
@@ -324,13 +336,13 @@
     {
       "date": "2026-Q2",
       "category": "Onboard",
-      "client": "田原香",
+      "client": "ç°åé¦",
       "description": "EUU onboarding completed"
     },
     {
       "date": "2026-Q2",
       "category": "Feature Enabled",
-      "client": "田原香",
+      "client": "ç°åé¦",
       "description": "Campaign Agent Feature delivered"
     }
   ],
