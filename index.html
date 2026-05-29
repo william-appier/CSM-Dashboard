@@ -7,19 +7,26 @@
 <!-- Security: restrict resource loading to known trusted origins -->
 <meta http-equiv="Content-Security-Policy" contenht="default-src 'self' 'unsafe-inlhine' https://fonts.googleapis.com https://fonts.gstatic.com https://*.atlassian.com https://api.media.atlassian.com https://*.workers.dev https://cdnjs.cloudflare.com; connect-src 'self' https://*.atlassian.com https://api.media.atlassian.com https://*.workers.dev https://docs.google.com https://drive.google.com https://script.google.com https://script.googleusercontent.com https://lh3.googleusercontent.com; img-src blob: data: https:; media-src blob: https://api.media.atlassian.com;">
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
-<style>
+<style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+  
   :root {
-    --bg:#0d0f14;--surface:#151820;--surface2:#1c2030;--border:#252a38;
-    --accent:#4f8ef7;--accent2:#7c5cfa;--green:#34d399;--yellow:#fbbf24;
-    --red:#f87171;--purple:#a78bfa;--text:#e2e8f0;--muted:#64748b;--muted2:#94a3b8;
-    --orange:#fb923c;
+    --bg:#0b0d15;--surface:#131620;--surface2:#191d2b;--border:#232840;
+    --accent:#4b8ef8;--accent2:#7c5cfa;--green:#22c55e;--yellow:#eab308;
+    --red:#ef4444;--purple:#a855f7;--text:#e8eaf2;--muted:#6b7599;--muted2:#8b95b4;
+    --orange:#f97316;--teal:#14b8a6;
+    --red-soft:rgba(239,68,68,.14);--green-soft:rgba(34,197,94,.14);
+    --orange-soft:rgba(249,115,22,.14);--yellow-soft:rgba(234,179,8,.14);
+    --blue-soft:rgba(75,142,248,.14);--gray-soft:rgba(107,117,153,.14);
   }
   /* ── LIGHT MODE ── */
   html.light {
-    --bg:#f4f5f7;--surface:#ffffff;--surface2:#f8f9fb;--border:#e2e5eb;
-    --accent:#3b6ef5;--accent2:#6c4beb;--green:#16a34a;--yellow:#d97706;
-    --red:#dc2626;--purple:#7c3aed;--text:#1a1d27;--muted:#7a8499;--muted2:#4a5166;
-    --orange:#ea580c;
+    --bg:#f4f6fa;--surface:#ffffff;--surface2:#edf0f7;--border:#d6daea;
+    --accent:#3b6ef5;--accent2:#6c4beb;--green:#16a34a;--yellow:#ca8a04;
+    --red:#dc2626;--purple:#7c3aed;--text:#1a1e2e;--muted:#64748b;--muted2:#475569;
+    --orange:#ea580c;--teal:#0d9488;
+    --red-soft:rgba(220,38,38,.12);--green-soft:rgba(22,163,74,.12);
+    --orange-soft:rgba(234,88,12,.12);--yellow-soft:rgba(202,138,4,.12);
+    --blue-soft:rgba(59,110,245,.12);--gray-soft:var(--gray-soft);
   }
   html.light body::before{background-image:linear-gradient(rgba(59,110,245,.025)1px,transparent 1px),linear-gradient(90deg,rgba(59,110,245,.025)1px,transparent 1px);}
   html.light .card{box-shadow:0 8px 40px rgba(0,0,0,.1);}
@@ -142,7 +149,7 @@
   .completed-header:hover{background:#1a1e2a;}
   .completed-header.open{border-bottom-color:var(--border);}
   .completed-title{font-size:14px;font-weight:700;color:var(--muted2);flex:1;}
-  .completed-badge{font-family:'DM Mono',monospace;font-size:11px;padding:2px 8px;border-radius:4px;background:rgba(52,211,153,.1);color:var(--green);border:1px solid rgba(52,211,153,.2);}
+  .completed-badge{font-family:'DM Mono',monospace;font-size:11px;padding:2px 8px;border-radius:100px;background:rgba(52,211,153,.1);color:var(--green);border:1px solid rgba(52,211,153,.2);}
   .completed-chev{color:var(--muted);font-size:17px;transition:transform .2s;}
   .completed-chev.open{transform:rotate(180deg);}
   .completed-body{display:none;padding:10px 12px;display:none;}
@@ -157,7 +164,7 @@
   .client-badges{display:flex;align-items:center;gap:7px;flex-wrap:wrap;}
   .badge{font-family:'DM Mono',monospace;font-size:11px;padding:2px 8px;border-radius:4px;font-weight:500;}
   .b-total{background:rgba(79,142,247,.12);color:var(--accent);border:1px solid rgba(79,142,247,.28);}
-  .b-active{background:rgba(251,191,36,.12);color:var(--yellow);border:1px solid rgba(251,191,36,.28);}
+  .b-active{background:var(--yellow-soft);color:var(--yellow);border:1px solid rgba(251,191,36,.28);}
   .b-ns{background:rgba(148,163,184,.1);color:var(--muted2);border:1px solid rgba(148,163,184,.2);}
   .b-done{background:rgba(52,211,153,.1);color:var(--green);border:1px solid rgba(52,211,153,.22);}
   .chevron{color:var(--muted);font-size:17px;transition:transform .2s;flex-shrink:0;}
@@ -304,7 +311,7 @@
   .preview-filename{font-family:'DM Mono',monospace;font-size:12px;color:var(--muted2);flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
   .preview-hint{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);white-space:nowrap;}
   .preview-close{background:transparent;border:none;color:var(--muted);font-size:20px;cursor:pointer;line-height:1;padding:2px 6px;border-radius:4px;transition:all .15s;flex-shrink:0;}
-  .preview-close:hover{background:rgba(248,113,113,.15);color:var(--red);}
+  .preview-close:hover{background:var(--red-soft);color:var(--red);}
   .preview-content{background:#000;display:flex;align-items:center;justify-content:center;overflow:hidden;flex:1;min-height:0;}
   .preview-img{max-width:92vw;max-height:calc(92vh - 52px);object-fit:contain;display:block;user-select:none;}
   .preview-video{max-width:92vw;max-height:calc(92vh - 52px);display:block;outline:none;}
@@ -422,7 +429,7 @@
   .review-ticket{display:flex;align-items:center;gap:10px;background:var(--surface2);border:1px solid var(--border);border-radius:7px;padding:10px 12px;}
   .review-ticket .rt-badge{font-family:'DM Mono',monospace;font-size:10px;padding:2px 7px;border-radius:3px;white-space:nowrap;}
   .rt-clone{background:rgba(79,142,247,.12);color:var(--accent);border:1px solid rgba(79,142,247,.3);}
-  .rt-manual{background:rgba(251,191,36,.12);color:var(--yellow);border:1px solid rgba(251,191,36,.3);}
+  .rt-manual{background:var(--yellow-soft);color:var(--yellow);border:1px solid rgba(251,191,36,.3);}
   .rt-compulsory{background:rgba(167,139,250,.12);color:var(--purple);border:1px solid rgba(167,139,250,.3);}
   .review-ticket .rt-name{font-size:13px;color:var(--text);flex:1;}
   .review-ticket .rt-ref{font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);}
@@ -438,7 +445,7 @@
   .ob-card-header{display:flex;align-items:center;gap:10px;padding:12px 16px;cursor:pointer;background:var(--surface2);user-select:none;transition:background .15s;flex-wrap:wrap;}
   .ob-card-header:hover{background:#1e2535;}
   .ob-client{font-size:14px;font-weight:700;color:var(--text);}
-  .ob-platform-badge{font-family:'DM Mono',monospace;font-size:10px;padding:2px 8px;border-radius:4px;background:rgba(124,92,250,.12);color:var(--accent2);border:1px solid rgba(124,92,250,.3);}
+  .ob-platform-badge{font-family:'DM Mono',monospace;font-size:10px;padding:2px 8px;border-radius:100px;background:rgba(124,92,250,.12);color:var(--accent2);border:1px solid rgba(124,92,250,.3);}
   .ob-date{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);margin-left:auto;}
   .ob-progress-bar-wrap{flex:1 1 100%;height:4px;background:var(--border);border-radius:2px;margin-top:4px;}
   .ob-progress-fill{height:100%;background:linear-gradient(90deg,var(--green),var(--accent));border-radius:2px;transition:width .4s;}
@@ -462,7 +469,7 @@
   /* Draft / resume */
   .ob-card.draft{border-color:rgba(251,191,36,.3);}
   .ob-card.draft .ob-card-header{background:rgba(251,191,36,.05);}
-  .draft-badge{font-family:'DM Mono',monospace;font-size:10px;padding:2px 7px;border-radius:3px;background:rgba(251,191,36,.12);color:var(--yellow);border:1px solid rgba(251,191,36,.3);}
+  .draft-badge{font-family:'DM Mono',monospace;font-size:10px;padding:2px 7px;border-radius:3px;background:var(--yellow-soft);color:var(--yellow);border:1px solid rgba(251,191,36,.3);}
   .btn-resume{display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,var(--yellow),var(--orange));color:#fff;border:none;padding:5px 14px;border-radius:6px;font-family:'Syne',sans-serif;font-size:12px;font-weight:700;cursor:pointer;transition:all .2s;white-space:nowrap;}
   .btn-resume:hover{opacity:.9;transform:translateY(-1px);}
   .wiz-save-later{background:transparent;border:1px solid var(--border);color:var(--muted2);padding:9px 16px;border-radius:8px;font-family:'Syne',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:all .15s;}
@@ -538,7 +545,7 @@
   .acct-name{font-size:15px;font-weight:700;}
   .acct-meta{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);margin-top:3px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
   .health-badge{font-size:11px;font-weight:700;padding:3px 9px;border-radius:99px;display:flex;align-items:center;gap:4px;flex-shrink:0;}
-  .health-badge.red{background:rgba(248,113,113,.12);color:var(--red);border:1px solid rgba(248,113,113,.25);}
+  .health-badge.red{background:var(--red-soft);color:var(--red);border:1px solid rgba(248,113,113,.25);}
   .health-badge.yellow{background:rgba(251,191,36,.1);color:var(--yellow);border:1px solid rgba(251,191,36,.25);}
   .health-badge.green{background:rgba(52,211,153,.1);color:var(--green);border:1px solid rgba(52,211,153,.25);}
   .health-badge.gray{background:rgba(100,116,139,.1);color:var(--muted2);border:1px solid rgba(100,116,139,.2);}
@@ -549,7 +556,7 @@
   .diff-line.diff-warn{color:var(--yellow);}
   .acct-footer{padding:10px 16px;display:flex;align-items:center;justify-content:space-between;gap:8px;}
   .risk-tags{display:flex;gap:5px;flex-wrap:wrap;}
-  .risk-tag{font-size:10px;font-family:'DM Mono',monospace;padding:2px 7px;border-radius:4px;background:rgba(255,255,255,.04);border:1px solid var(--border);color:var(--muted2);}
+  .risk-tag{font-size:10px;font-family:'DM Mono',monospace;padding:2px 7px;border-radius:100px;background:rgba(255,255,255,.04);border:1px solid var(--border);color:var(--muted2);}
   .risk-tag.mtg{border-color:rgba(79,142,247,.3);color:var(--accent);}
   .risk-tag.ticket{border-color:rgba(251,191,36,.3);color:var(--yellow);}
   .risk-tag.renewal{border-color:rgba(248,113,113,.3);color:var(--red);}
@@ -3316,7 +3323,7 @@ function renderOnboardingProgressMock(){
             ${ob.features.map(f=>{
               const days = Math.floor((Date.now()-new Date(ob.createdAt))/86400000);
               return `<tr>
-                <td style="font-size:12px">${esc(f.name)}${(f.manual||f.mode==='manual_clone')?'<span style="margin-left:6px;font-family:DM Mono,monospace;font-size:9px;padding:1px 5px;border-radius:3px;background:rgba(251,191,36,.12);color:var(--yellow);border:1px solid rgba(251,191,36,.3)">MANUAL</span>':''}</td>
+                <td style="font-size:12px">${esc(f.name)}${(f.manual||f.mode==='manual_clone')?'<span style="margin-left:6px;font-family:DM Mono,monospace;font-size:9px;padding:1px 5px;border-radius:3px;background:var(--yellow-soft);color:var(--yellow);border:1px solid rgba(251,191,36,.3)">MANUAL</span>':''}</td>
                 <td><a class="ob-ticket-link" href="https://appier.atlassian.net/browse/${f.ticketKey}" target="_blank">${f.ticketKey}</a></td>
                 <td><span class="sb ${sClass(f.status)}"><span class="sd"></span>${esc(f.status)}</span></td>
                 <td><span class="lt ${ltC(days)}">${days}d</span></td>
@@ -4039,7 +4046,7 @@ function renderFeatCategory(catName, feats){
     var alreadyDone = existingOb ? existingOb.features.some(function(ef){ return ef.featureId===f.id; }) : false;
     var sel         = !!wiz.selectedFeatures[f.id];
     var manualBadge = (f.manual||f.mode==='manual_clone')
-      ? '<span style="margin-left:5px;font-family:DM Mono,monospace;font-size:9px;padding:1px 5px;border-radius:3px;background:rgba(251,191,36,.12);color:var(--yellow);border:1px solid rgba(251,191,36,.3)">MANUAL</span>' : '';
+      ? '<span style="margin-left:5px;font-family:DM Mono,monospace;font-size:9px;padding:1px 5px;border-radius:3px;background:var(--yellow-soft);color:var(--yellow);border:1px solid rgba(251,191,36,.3)">MANUAL</span>' : '';
 
     // Build extra fields HTML
     var extraHtml = (f.extra||[]).map(function(ex){
@@ -4770,7 +4777,7 @@ async function renderOnboardingProgress(){
               <td id="obst-${ob.onboardTicketKey}"><span class="sb ${sClass(ob.onboardStatus||'')}"><span class="sd"></span>${esc(ob.onboardStatus||'Loading…')}</span></td>
             </tr>
             ${ob.features.map(f=>`<tr>
-              <td>${esc(f.name)}${(f.manual||f.mode==='manual_clone')?'<span style="margin-left:6px;font-family:DM Mono,monospace;font-size:9px;padding:1px 5px;border-radius:3px;background:rgba(251,191,36,.12);color:var(--yellow);border:1px solid rgba(251,191,36,.3)">MANUAL</span>':''}</td>
+              <td>${esc(f.name)}${(f.manual||f.mode==='manual_clone')?'<span style="margin-left:6px;font-family:DM Mono,monospace;font-size:9px;padding:1px 5px;border-radius:3px;background:var(--yellow-soft);color:var(--yellow);border:1px solid rgba(251,191,36,.3)">MANUAL</span>':''}</td>
               <td><a class="ob-ticket-link" href="https://appier.atlassian.net/browse/${f.ticketKey}" target="_blank">${f.ticketKey}</a></td>
               <td id="obst-${f.ticketKey}"><span class="sb ${sClass(f.status||'Backlog')}"><span class="sd"></span>${esc(f.status||'Backlog')}</span></td>
             </tr>`).join('')}
