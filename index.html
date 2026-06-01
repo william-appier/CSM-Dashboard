@@ -1629,7 +1629,7 @@ async function markIssueDone(key){
 function normU(s){
   return(s||'').replace(/[\uFF01-\uFF5E]/g,c=>String.fromCharCode(c.charCodeAt(0)-0xFEE0)).replace(/\u3000/g,' ').trim();
 }
-const ALIASES={'10/10hope':'10/10Hope','1010hope':'10/10Hope','10/10':'10/10Hope','田原香':'Qchicken','qchicken':'Qchicken'};
+const ALIASES={'10/10hope':'10/10Hope','1010hope':'10/10Hope','10/10':'10/10Hope','田原香':'Qchicken','qchicken':'Qchicken','sogo':'Sogo','SOGO':'Sogo'};
 function normClient(raw){
   if(!raw) return null;
   const n=normU(raw);
