@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-28T17:44:26+08:00",
+  "lastUpdated": "2026-06-01T07:19:35.868Z",
   "rules": [
     {
       "id": "okr-consolidate",
@@ -347,5 +347,36 @@
     }
   ],
   "feedbackLog": [],
-  "sessionLog": []
+  "sessionLog": [],
+  "recurringTasks": [
+    {
+      "id": "mannings-monthly-quotation",
+      "account": "mannings",
+      "label": "Mannings 月結流程",
+      "steps": [
+        "準備 Quotation",
+        "開 Invoice",
+        "上傳 GEP"
+      ],
+      "frequency": "monthly",
+      "reminderDay": 1,
+      "status": "pending",
+      "lastCompletedMonth": null,
+      "note": "每月1日開始 tracking，完成後由 William 確認"
+    },
+    {
+      "id": "55688-lon-quarterly",
+      "account": "55688",
+      "label": "55688-潔衣家 LON 費用",
+      "steps": [
+        "開 LON 費用"
+      ],
+      "frequency": "quarterly",
+      "intervalDays": 90,
+      "lastDoneDate": "2026-04-21",
+      "nextDueDate": "2026-07-21",
+      "status": "pending",
+      "note": "每季一次，上次 2026-04-21，下次 2026-07-21"
+    }
+  ]
 }
