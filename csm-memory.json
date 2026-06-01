@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-01T07:19:35.868Z",
+  "lastUpdated": "2026-06-01T07:30:19.212Z",
   "rules": [
     {
       "id": "okr-consolidate",
@@ -378,5 +378,18 @@
       "status": "pending",
       "note": "每季一次，上次 2026-04-21，下次 2026-07-21"
     }
-  ]
+  ],
+  "accountNotes": {
+    "sogo": {
+      "name": "Sogo",
+      "displayName": "Sogo",
+      "aliases": [
+        "SOGO",
+        "Sogo",
+        "sogo"
+      ],
+      "addedOn": "2026-06-01",
+      "note": "Added by William. Jira tickets use both \"SOGO\" and \"Sogo\" — alias fix applied."
+    }
+  }
 }
