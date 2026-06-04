@@ -1,18 +1,18 @@
 {
-  "generatedAt": "2026-06-04T09:00:20.892+08:00",
+  "generatedAt": "2026-06-04T10:26:12.872+08:00",
   "accounts": [
     {
       "id": "mannings",
       "name": "Mannings",
       "health": "red",
-      "insight": "⚠️ CONTRACT EXPIRES in 26 days (2026-06-30) · Appier x Mannings Monthly Meeting Jun 4.",
+      "insight": "⚠️ CONTRACT EXPIRES in 26 days (2026-06-30) · Appier x Mannings Bi-weekly Meeting Jun 11.",
       "diffs": [],
       "riskTags": [
         "renewal",
         "mtg"
       ],
       "ticketCount": 0,
-      "mtgCount": 2,
+      "mtgCount": 1,
       "contractAlert": {
         "daysLeft": 26,
         "endDate": "2026-06-30",
@@ -32,11 +32,6 @@
       ],
       "meetings": [
         {
-          "date": "Jun 4",
-          "title": "Appier x Mannings Monthly Meeting",
-          "meta": "11:00–12:00 HKT · Rola Chung"
-        },
-        {
           "date": "Jun 11",
           "title": "Appier x Mannings Bi-weekly Meeting",
           "meta": "11:00–12:00 HKT · Rola Chung"
@@ -52,7 +47,7 @@
         {
           "priority": "medium",
           "label": "Meeting · Medium",
-          "text": "Prep for Appier x Mannings Monthly Meeting on Jun 4 (11:00–12:00 HKT · Rola Chung)"
+          "text": "Prep for Appier x Mannings Bi-weekly Meeting on Jun 11 (11:00–12:00 HKT · Rola Chung)"
         }
       ]
     },
@@ -67,7 +62,7 @@
         "mtg"
       ],
       "ticketCount": 0,
-      "mtgCount": 1,
+      "mtgCount": 2,
       "contractAlert": {
         "daysLeft": 26,
         "endDate": "2026-06-30",
@@ -90,6 +85,11 @@
           "date": "Jun 4",
           "title": "SCMP slide prepare",
           "meta": "16:00–17:00 HKT · william.wt.lin@appier.com"
+        },
+        {
+          "date": "Jun 10",
+          "title": "SCMP X Appier - Solutions Review",
+          "meta": "10:00–11:00 HKT · Wan Luk"
         }
       ],
       "tickets": [],
