@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-06-07T09:00:04.358+08:00",
+  "generatedAt": "2026-06-08T09:00:20.608+08:00",
   "accounts": [
     {
       "id": "mannings",
       "name": "Mannings",
       "health": "red",
-      "insight": "⚠️ CONTRACT EXPIRES in 23 days (2026-06-30) · Mannings slide Jun 8.",
+      "insight": "⚠️ CONTRACT EXPIRES in 22 days (2026-06-30) · Mannings slide Jun 8.",
       "diffs": [],
       "riskTags": [
         "renewal",
@@ -14,11 +14,11 @@
       "ticketCount": 0,
       "mtgCount": 2,
       "contractAlert": {
-        "daysLeft": 23,
+        "daysLeft": 22,
         "endDate": "2026-06-30",
         "platform": "AIQUA/AIRIS",
         "tier": "urgent",
-        "label": "⚠️ CONTRACT EXPIRES in 23 days (2026-06-30)"
+        "label": "⚠️ CONTRACT EXPIRES in 22 days (2026-06-30)"
       },
       "projects": [
         {
@@ -47,7 +47,7 @@
         {
           "priority": "high",
           "label": "Renewal · High 🟠",
-          "text": "⚠️ CONTRACT EXPIRES in 23 days (2026-06-30) — confirm renewal terms and get signature this week."
+          "text": "⚠️ CONTRACT EXPIRES in 22 days (2026-06-30) — confirm renewal terms and get signature this week."
         },
         {
           "priority": "medium",
@@ -60,7 +60,7 @@
       "id": "scmp",
       "name": "SCMP",
       "health": "red",
-      "insight": "⚠️ CONTRACT EXPIRES in 23 days (2026-06-30) · SCMP - pre-meeting catch-up/ rehearsal Jun 9.",
+      "insight": "⚠️ CONTRACT EXPIRES in 22 days (2026-06-30) · SCMP - pre-meeting catch-up/ rehearsal Jun 9.",
       "diffs": [],
       "riskTags": [
         "renewal",
@@ -69,11 +69,11 @@
       "ticketCount": 0,
       "mtgCount": 2,
       "contractAlert": {
-        "daysLeft": 23,
+        "daysLeft": 22,
         "endDate": "2026-06-30",
         "platform": "AIQUA",
         "tier": "urgent",
-        "label": "⚠️ CONTRACT EXPIRES in 23 days (2026-06-30)"
+        "label": "⚠️ CONTRACT EXPIRES in 22 days (2026-06-30)"
       },
       "projects": [
         {
@@ -102,7 +102,7 @@
         {
           "priority": "high",
           "label": "Renewal · High 🟠",
-          "text": "⚠️ CONTRACT EXPIRES in 23 days (2026-06-30) — confirm renewal terms and get signature this week."
+          "text": "⚠️ CONTRACT EXPIRES in 22 days (2026-06-30) — confirm renewal terms and get signature this week."
         },
         {
           "priority": "medium",
@@ -244,7 +244,7 @@
       "id": "citysuper",
       "name": "City Super",
       "health": "yellow",
-      "insight": "LEG-15992 open 1d.",
+      "insight": "LEG-15992 open 2d.",
       "diffs": [],
       "riskTags": [
         "ticket"
