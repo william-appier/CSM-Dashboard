@@ -31,14 +31,17 @@
     return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
   }
 
+  /* public API */
   window.openFeatureEnableWizard = function () {
     feW = { step: 0, platform: null, clientName: '', appId: '', selectedFeatures: {} };
     document.getElementById('feOverlay').style.display = 'flex';
     feRender();
   };
-  window.closeFeWizard = function () { document.getElementById('feOverlay').style.display = 'none'; };
-  window.fePickPlatform = function (p) { feW.platform = p; fePlatformStep(); };
-  window.feToggleFeat = function (id) {
+  window.closeFeWizard    = function () { document.getElementById('feOverlay').style.display = 'none'; };
+  window.fePickPlatform   = function (p) { feW.platform = p; fePlatformStep(); };
+  window.feSetClientName  = function (v) { feW.clientName = v; };
+  window.feSetAppId       = function (v) { feW.appId = v; };
+  window.feToggleFeat     = function (id) {
     feW.selectedFeatures[id] = !feW.selectedFeatures[id];
     var el = document.querySelector('.fe-feat-item[data-id="' + id + '"]');
     if (el) { el.classList.toggle('fe-active', !!feW.selectedFeatures[id]); }
@@ -135,16 +138,15 @@
     document.getElementById('feBody').innerHTML =
       '<div class="wiz-field-group" style="margin-bottom:18px">' +
         '<label class="wiz-label">Client Name <span style="color:var(--red)">*</span></label>' +
-        '<input class="wiz-input" id="feClientName" placeholder="e.g. Mannings HK" value="' + esc(feW.clientName) + '" oninput="feW.clientName=this.value">' +
+        '<input class="wiz-input" id="feClientName" placeholder="e.g. Mannings HK" value="' + esc(feW.clientName) + '" oninput="window.feSetClientName(this.value)">' +
       '</div>' +
       '<div class="wiz-field-group">' +
         '<label class="wiz-label">App ID <span style="color:var(--red)">*</span></label>' +
-        '<input class="wiz-input" id="feAppId" placeholder="e.g. 12345" value="' + esc(feW.appId) + '" oninput="feW.appId=this.value">' +
+        '<input class="wiz-input" id="feAppId" placeholder="e.g. 12345" value="' + esc(feW.appId) + '" oninput="window.feSetAppId(this.value)">' +
       '</div>';
     document.getElementById('feFooter').innerHTML =
       '<button class="wiz-btn-sec" onclick="feBack()">← Back</button>' +
       '<button class="wiz-btn-pri" onclick="feNext()">Next →</button>';
-    setTimeout(function () { var el = document.getElementById('feClientName'); if (el) { el.focus(); } }, 50);
   }
 
   function feFeaturesStep() {
