@@ -5,7 +5,7 @@
     '.fe-feat-list{display:flex;flex-direction:column;gap:0;max-height:380px;overflow-y:auto;padding-right:4px}',
     '.fe-feat-list-preview{max-height:220px}',
     '.fe-cat-header{font-size:.7rem;font-weight:700;letter-spacing:.08em;color:var(--muted);padding:10px 0 4px;border-bottom:1px solid var(--border);margin-bottom:4px;text-transform:uppercase}',
-    '.fe-feat-item{border:1px solid var(--border);border-radius:8px;margin-bottom:4px;overflow:hidden;transition:border-color .15s}',
+    '.fe-feat-item{border:1px solid var(--border)!important;border-radius:8px!important;margin-bottom:4px;transition:border-color .15s;padding:0!important;background:var(--surface)!important;min-height:0}',
     '.fe-feat-item.fe-row-on{border-color:var(--accent)}',
     '.fe-feat-row{display:flex;align-items:center;gap:10px;padding:10px 14px;cursor:pointer;user-select:none;transition:background .15s}',
     '.fe-feat-row:hover{background:rgba(99,102,241,.06)}',
@@ -303,6 +303,7 @@
     var badge    = isManual
       ? '<span class="fe-badge-manual">⚠ manual</span>'
       : '<span class="fe-badge-clone">clone</span>';
+
     var extraHtml = '';
     if (f.extra && f.extra.length) {
       extraHtml = f.extra.map(function(ex) {
@@ -317,6 +318,7 @@
           + '></div>';
       }).join('');
     }
+
     var hintHtml = '';
     if (f.sample) {
       var link = '<a href="https://appier.atlassian.net/browse/' + f.sample + '" target="_blank">' + f.sample + '</a>';
@@ -327,7 +329,9 @@
     if (f.suggestedAssignee) {
       hintHtml += '<p class="fe-hint" style="color:var(--accent)">💡 Suggested assignee: <strong>' + esc(f.suggestedAssignee) + '</strong></p>';
     }
+
     var hasExtra = !!(extraHtml || hintHtml);
+
     return '<div class="fe-feat-item' + (sel ? ' fe-row-on' : '') + '" data-id="' + f.id + '">'
       + '<div class="fe-feat-row" onclick="window.feToggleFeat(\'' + f.id + '\')">'
       + '<div class="fe-feat-cb' + (sel ? ' fe-cb-on' : '') + '">' + (sel ? '✓' : '') + '</div>'
