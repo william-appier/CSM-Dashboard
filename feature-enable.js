@@ -5,7 +5,7 @@
     '.fe-feat-list{display:flex;flex-direction:column;gap:0;max-height:380px;overflow-y:auto;padding-right:4px}',
     '.fe-feat-list-preview{max-height:220px}',
     '.fe-cat-header{font-size:.7rem;font-weight:700;letter-spacing:.08em;color:var(--muted);padding:10px 0 4px;border-bottom:1px solid var(--border);margin-bottom:4px;text-transform:uppercase}',
-    '.fe-feat-item{border:1px solid var(--border)!important;border-radius:8px!important;margin-bottom:4px;transition:border-color .15s;padding:0!important;background:var(--surface)!important;min-height:0}',
+    '.fe-feat-item{border:1px solid var(--border)!important;border-radius:8px!important;margin-bottom:4px;transition:border-color .15s;padding:0!important;background:var(--surface)!important;flex-shrink:0}',
     '.fe-feat-item.fe-row-on{border-color:var(--accent)}',
     '.fe-feat-row{display:flex;align-items:center;gap:10px;padding:10px 14px;cursor:pointer;user-select:none;transition:background .15s}',
     '.fe-feat-row:hover{background:rgba(99,102,241,.06)}',
