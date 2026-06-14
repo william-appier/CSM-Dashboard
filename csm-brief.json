@@ -1,33 +1,12 @@
 {
-  "generatedAt": "2026-06-13T09:00:01.004+08:00",
+  "generatedAt": "2026-06-14T09:00:26.904+08:00",
   "accounts": [
     {
       "id": "mannings",
       "name": "Mannings",
       "health": "yellow",
       "insight": "Appier x Mannings Bi-weekly Meeting Jun 25 · renewal due Jun 2026.",
-      "diffs": [
-        {
-          "type": "close",
-          "text": "QGWL-24671 closed"
-        },
-        {
-          "type": "close",
-          "text": "ETS-4179 closed"
-        },
-        {
-          "type": "close",
-          "text": "ETS-4145 closed"
-        },
-        {
-          "type": "close",
-          "text": "QGWL-25931 closed"
-        },
-        {
-          "type": "close",
-          "text": "ETS-4130 closed"
-        }
-      ],
+      "diffs": [],
       "riskTags": [
         "renewal",
         "mtg"
@@ -232,7 +211,7 @@
       "id": "citysuper",
       "name": "City Super",
       "health": "yellow",
-      "insight": "LEG-15992 open 7d.",
+      "insight": "LEG-15992 open 8d.",
       "diffs": [],
       "riskTags": [
         "ticket"
