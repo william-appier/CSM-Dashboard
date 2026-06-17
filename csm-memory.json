@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-09T03:47:10.673Z",
+  "lastUpdated": "2026-06-17T13:36:09.664+08:00",
   "rules": [
     {
       "id": "okr-consolidate",
@@ -29,13 +29,13 @@
       "key": "AIXP-1840",
       "account": "mannings",
       "ignoredOn": "2026-05-26",
-      "reason": "Ticket closed ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ AI suggestions issue resolved by Jin Chen"
+      "reason": "Ticket closed ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ AI suggestions issue resolved by Jin Chen"
     },
     {
       "key": "AEP-6089",
       "account": "tiangyuanxiang",
       "ignoredOn": "2026-05-28",
-      "reason": "EUU onboarding confirmed complete ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ dropped per CSM"
+      "reason": "EUU onboarding confirmed complete ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ dropped per CSM"
     }
   ],
   "pinnedTickets": [
@@ -45,7 +45,7 @@
       "addedOn": "2026-05-26",
       "title": "City Super legal/contract ticket",
       "assignee": "",
-      "note": "Pinned by CSM ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ track progress"
+      "note": "Pinned by CSM ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ track progress"
     }
   ],
   "contractDates": [
@@ -54,14 +54,14 @@
       "platform": "BB",
       "startDate": "2026-05-24",
       "endDate": "2026-11-23",
-      "note": "BB contract 2026/5/24-11/23, NTD 50,000/mo ÃÂ¢ÃÂÃÂ LEG-16090 approved"
+      "note": "BB contract 2026/5/24-11/23, NTD 50,000/mo ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ LEG-16090 approved"
     },
     {
       "account": "SCMP",
       "platform": "AIQUA",
       "startDate": "2025-07-01",
       "endDate": "2026-06-30",
-      "note": "Renewal target June 2026 ÃÂ¢ÃÂÃÂ arrange meeting after client feedback."
+      "note": "Renewal target June 2026 ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ arrange meeting after client feedback."
     },
     {
       "account": "Mannings",
@@ -75,10 +75,10 @@
       "platform": "BotBonnie",
       "startDate": null,
       "endDate": null,
-      "note": "Unknown ÃÂ¢ÃÂÃÂ ask CSM to confirm"
+      "note": "Unknown ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ ask CSM to confirm"
     },
     {
-      "account": "ÃÂ§ÃÂÃÂ°ÃÂ¥ÃÂÃÂÃÂ©ÃÂ¦ÃÂ",
+      "account": "ÃÂÃÂ§ÃÂÃÂÃÂÃÂ°ÃÂÃÂ¥ÃÂÃÂÃÂÃÂÃÂÃÂ©ÃÂÃÂ¦ÃÂÃÂ",
       "platform": "BotBonnie/AIQUA",
       "startDate": "2026-02-17",
       "endDate": "2027-02-16",
@@ -108,7 +108,7 @@
     {
       "date": "2026-Q1",
       "category": "Renewal",
-      "client": "ÃÂÃÂ§ÃÂÃÂÃÂÃÂ°ÃÂÃÂ¥ÃÂÃÂÃÂÃÂÃÂÃÂ©ÃÂÃÂ¦ÃÂÃÂ",
+      "client": "ÃÂÃÂÃÂÃÂ§ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂ¥ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ©ÃÂÃÂÃÂÃÂ¦ÃÂÃÂÃÂÃÂ",
       "description": "Renewed to 2027-02-16"
     },
     {
@@ -144,7 +144,7 @@
     {
       "date": "2026-Q1",
       "category": "Feature Enabled",
-      "client": "ÃÂÃÂ§ÃÂÃÂÃÂÃÂ°ÃÂÃÂ¥ÃÂÃÂÃÂÃÂÃÂÃÂ©ÃÂÃÂ¦ÃÂÃÂ",
+      "client": "ÃÂÃÂÃÂÃÂ§ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂ¥ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ©ÃÂÃÂÃÂÃÂ¦ÃÂÃÂÃÂÃÂ",
       "description": "Campaign agent enabled"
     },
     {
@@ -319,13 +319,13 @@
       "date": "2026-Q2",
       "category": "Ticket Resolved",
       "client": "SCMP",
-      "description": "Segment enablement closed ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ awaiting client feedback for renewal"
+      "description": "Segment enablement closed ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ awaiting client feedback for renewal"
     },
     {
       "date": "2026-Q2",
       "category": "Ticket Resolved",
       "client": "Mannings",
-      "description": "AIXP-1840 closed ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ AI suggestions issue resolved (Jin Chen)"
+      "description": "AIXP-1840 closed ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ AI suggestions issue resolved (Jin Chen)"
     },
     {
       "date": "2026-Q2",
@@ -336,20 +336,20 @@
     {
       "date": "2026-Q2",
       "category": "Onboard",
-      "client": "ÃÂÃÂ§ÃÂÃÂÃÂÃÂ°ÃÂÃÂ¥ÃÂÃÂÃÂÃÂÃÂÃÂ©ÃÂÃÂ¦ÃÂÃÂ",
+      "client": "ÃÂÃÂÃÂÃÂ§ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂ¥ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ©ÃÂÃÂÃÂÃÂ¦ÃÂÃÂÃÂÃÂ",
       "description": "EUU onboarding completed"
     },
     {
       "date": "2026-Q2",
       "category": "Feature Enabled",
-      "client": "ÃÂÃÂ§ÃÂÃÂÃÂÃÂ°ÃÂÃÂ¥ÃÂÃÂÃÂÃÂÃÂÃÂ©ÃÂÃÂ¦ÃÂÃÂ",
+      "client": "ÃÂÃÂÃÂÃÂ§ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ°ÃÂÃÂÃÂÃÂ¥ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ©ÃÂÃÂÃÂÃÂ¦ÃÂÃÂÃÂÃÂ",
       "description": "Campaign Agent Feature delivered"
     },
     {
       "date": "2026-06-09",
       "category": "Onboard",
-      "client": "è¡åååé",
-      "description": "æ°å¸³èæ¥æï¼ç­å¾å®æäº¤æ¥æè­°"
+      "client": "Ã¨Â¡ÂÃ¥ÂÂÃ¥ÂÂÃ¥ÂÂÃ©ÂÂ",
+      "description": "Ã¦ÂÂ°Ã¥Â¸Â³Ã¨ÂÂÃ¦ÂÂ¥Ã¦ÂÂÃ¯Â¼ÂÃ§Â­ÂÃ¥Â¾ÂÃ¥Â®ÂÃ¦ÂÂÃ¤ÂºÂ¤Ã¦ÂÂ¥Ã¦ÂÂÃ¨Â­Â°"
     },
     {
       "date": "2026-06-15",
@@ -357,45 +357,56 @@
       "category": "Feature Enabled",
       "client": "SCMP",
       "description": "Segments Enablement project completed"
+    },
+    {
+      "date": "2026-Q2",
+      "category": "Renewal",
+      "client": "Mannings",
+      "description": "Q3 renewal contract sent to client — pending signature (2026-06-17)."
     }
   ],
   "feedbackLog": [],
   "sessionLog": [
     {
       "date": "2026-06-09",
-      "client": "è¡åååé",
-      "note": "æ°å¸³èå å¥è¿½è¹¤ â ç­å¾å®æäº¤æ¥æè­°"
+      "client": "Ã¨Â¡ÂÃ¥ÂÂÃ¥ÂÂÃ¥ÂÂÃ©ÂÂ",
+      "note": "Ã¦ÂÂ°Ã¥Â¸Â³Ã¨ÂÂÃ¥ÂÂ Ã¥ÂÂ¥Ã¨Â¿Â½Ã¨Â¹Â¤ Ã¢ÂÂ Ã§Â­ÂÃ¥Â¾ÂÃ¥Â®ÂÃ¦ÂÂÃ¤ÂºÂ¤Ã¦ÂÂ¥Ã¦ÂÂÃ¨Â­Â°"
+    },
+    {
+      "date": "2026-06-17",
+      "client": "Mannings",
+      "note": "Q3 renewal contract provided to client — waiting for client to sign back."
     }
   ],
   "recurringTasks": [
     {
       "id": "mannings-monthly-quotation",
       "account": "mannings",
-      "label": "Mannings ÃÂ¦ÃÂÃÂÃÂ§ÃÂµÃÂÃÂ¦ÃÂµÃÂÃÂ§ÃÂ¨ÃÂ",
+      "label": "Mannings ÃÂÃÂ¦ÃÂÃÂÃÂÃÂÃÂÃÂ§ÃÂÃÂµÃÂÃÂÃÂÃÂ¦ÃÂÃÂµÃÂÃÂÃÂÃÂ§ÃÂÃÂ¨ÃÂÃÂ",
       "steps": [
-        "ÃÂ¦ÃÂºÃÂÃÂ¥ÃÂÃÂ Quotation",
-        "ÃÂ©ÃÂÃÂ Invoice",
-        "ÃÂ¤ÃÂ¸ÃÂÃÂ¥ÃÂÃÂ³ GEP"
+        "ÃÂÃÂ¦ÃÂÃÂºÃÂÃÂÃÂÃÂ¥ÃÂÃÂÃÂÃÂ Quotation",
+        "ÃÂÃÂ©ÃÂÃÂÃÂÃÂ Invoice",
+        "ÃÂÃÂ¤ÃÂÃÂ¸ÃÂÃÂÃÂÃÂ¥ÃÂÃÂÃÂÃÂ³ GEP"
       ],
       "frequency": "monthly",
       "reminderDay": 1,
       "status": "pending",
       "lastCompletedMonth": null,
-      "note": "ÃÂ¦ÃÂ¯ÃÂÃÂ¦ÃÂÃÂ1ÃÂ¦ÃÂÃÂ¥ÃÂ©ÃÂÃÂÃÂ¥ÃÂ§ÃÂ trackingÃÂ¯ÃÂ¼ÃÂÃÂ¥ÃÂ®ÃÂÃÂ¦ÃÂÃÂÃÂ¥ÃÂ¾ÃÂÃÂ§ÃÂÃÂ± William ÃÂ§ÃÂ¢ÃÂºÃÂ¨ÃÂªÃÂ"
+      "note": "ÃÂÃÂ¦ÃÂÃÂ¯ÃÂÃÂÃÂÃÂ¦ÃÂÃÂÃÂÃÂ1ÃÂÃÂ¦ÃÂÃÂÃÂÃÂ¥ÃÂÃÂ©ÃÂÃÂÃÂÃÂÃÂÃÂ¥ÃÂÃÂ§ÃÂÃÂ trackingÃÂÃÂ¯ÃÂÃÂ¼ÃÂÃÂÃÂÃÂ¥ÃÂÃÂ®ÃÂÃÂÃÂÃÂ¦ÃÂÃÂÃÂÃÂÃÂÃÂ¥ÃÂÃÂ¾ÃÂÃÂÃÂÃÂ§ÃÂÃÂÃÂÃÂ± William ÃÂÃÂ§ÃÂÃÂ¢ÃÂÃÂºÃÂÃÂ¨ÃÂÃÂªÃÂÃÂ"
     },
     {
       "id": "55688-lon-quarterly",
       "account": "55688",
-      "label": "55688-ÃÂ¦ÃÂ½ÃÂÃÂ¨ÃÂ¡ÃÂ£ÃÂ¥ÃÂ®ÃÂ¶ LON ÃÂ¨ÃÂ²ÃÂ»ÃÂ§ÃÂÃÂ¨",
+      "label": "55688-ÃÂÃÂ¦ÃÂÃÂ½ÃÂÃÂÃÂÃÂ¨ÃÂÃÂ¡ÃÂÃÂ£ÃÂÃÂ¥ÃÂÃÂ®ÃÂÃÂ¶ LON ÃÂÃÂ¨ÃÂÃÂ²ÃÂÃÂ»ÃÂÃÂ§ÃÂÃÂÃÂÃÂ¨",
       "steps": [
-        "ÃÂ©ÃÂÃÂ LON ÃÂ¨ÃÂ²ÃÂ»ÃÂ§ÃÂÃÂ¨"
+        "ÃÂÃÂ©ÃÂÃÂÃÂÃÂ LON ÃÂÃÂ¨ÃÂÃÂ²ÃÂÃÂ»ÃÂÃÂ§ÃÂÃÂÃÂÃÂ¨"
       ],
       "frequency": "quarterly",
       "intervalDays": 90,
       "lastDoneDate": "2026-04-21",
       "nextDueDate": "2026-07-21",
       "status": "pending",
-      "note": "ÃÂ¦ÃÂ¯ÃÂÃÂ¥ÃÂ­ÃÂ£ÃÂ¤ÃÂ¸ÃÂÃÂ¦ÃÂ¬ÃÂ¡ÃÂ¯ÃÂ¼ÃÂÃÂ¤ÃÂ¸ÃÂÃÂ¦ÃÂ¬ÃÂ¡ 2026-04-21ÃÂ¯ÃÂ¼ÃÂÃÂ¤ÃÂ¸ÃÂÃÂ¦ÃÂ¬ÃÂ¡ 2026-07-21"
+      "note": "ÃÂÃÂ¦ÃÂÃÂ¯ÃÂÃÂÃÂÃÂ¥ÃÂÃÂ­ÃÂÃÂ£ÃÂÃÂ¤ÃÂÃÂ¸ÃÂÃÂÃÂÃÂ¦ÃÂÃÂ¬ÃÂÃÂ¡ÃÂÃÂ¯ÃÂÃÂ¼ÃÂÃÂÃÂÃÂ¤ÃÂÃÂ¸ÃÂÃÂÃÂÃÂ¦ÃÂÃÂ¬ÃÂÃÂ¡ 2026-04-21ÃÂÃÂ¯ÃÂÃÂ¼ÃÂÃÂÃÂÃÂ¤ÃÂÃÂ¸ÃÂÃÂÃÂÃÂ¦ÃÂÃÂ¬ÃÂÃÂ¡ 2026-07-21"
     }
   ],
   "pendingActions": [
@@ -405,20 +416,20 @@
       "addedOn": "2026-06-05",
       "label": "Prepare Mannings recommendation review slide",
       "status": "pending",
-      "note": "Recurring item Ã¢ÂÂ appears in daily brief until marked done. Context: renewal due 2026-06-30."
+      "note": "Recurring item ÃÂ¢ÃÂÃÂ appears in daily brief until marked done. Context: renewal due 2026-06-30."
     }
   ],
   "trackedAccounts": [
     {
       "id": "xindongli",
-      "name": "è¡åååé",
+      "name": "Ã¨Â¡ÂÃ¥ÂÂÃ¥ÂÂÃ¥ÂÂÃ©ÂÂ",
       "jiraKeywords": [
-        "è¡åååé",
+        "Ã¨Â¡ÂÃ¥ÂÂÃ¥ÂÂÃ¥ÂÂÃ©ÂÂ",
         "xindongli"
       ],
-      "calendarKeyword": "è¡åååé",
+      "calendarKeyword": "Ã¨Â¡ÂÃ¥ÂÂÃ¥ÂÂÃ¥ÂÂÃ©ÂÂ",
       "addedOn": "2026-06-09",
-      "notes": "æ°å¸³èï¼ç­å¾äº¤æ¥æè­°"
+      "notes": "Ã¦ÂÂ°Ã¥Â¸Â³Ã¨ÂÂÃ¯Â¼ÂÃ§Â­ÂÃ¥Â¾ÂÃ¤ÂºÂ¤Ã¦ÂÂ¥Ã¦ÂÂÃ¨Â­Â°"
     }
   ]
 }
