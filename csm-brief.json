@@ -5,7 +5,7 @@
       "id": "mannings",
       "name": "Mannings",
       "health": "yellow",
-      "insight": "CAM-395958 open 0d · +12 more · Appier x Mannings Bi-weekly Meeting Jun 25 · renewal due Jun 2026.",
+      "insight": "⚠️ CONTRACT EXPIRES in 12 days (2026-06-30). Q3 renewal contract sent Jun 17 — pending client signature on LEG-16095 AIQUA Order Form; PSDC-1399 Mannings go-live newly started (Paul Huang). Bi-weekly meeting Jun 25 at 11:00 HKT with Rola Chung.",
       "diffs": [
         {
           "type": "new",
@@ -139,12 +139,17 @@
         {
           "priority": "high",
           "label": "Renewal · High",
-          "text": "Mannings renewal due Jun 2026 — confirm status now"
+          "text": "Contract expires 2026-06-30 (12 days). Q3 renewal sent Jun 17 to Rola Chung — follow up on signature and confirm LEG-16095 AIQUA Order Form scope immediately."
+        },
+        {
+          "priority": "high",
+          "label": "Meeting · High",
+          "text": "Bi-weekly meeting Jun 25 at 11:00–12:00 HKT (Rola Chung). Prepare recommendation review slide and bring renewal status — aim to confirm signed contract before or during meeting."
         },
         {
           "priority": "medium",
-          "label": "Meeting · Medium",
-          "text": "Prep for Appier x Mannings Bi-weekly Meeting on Jun 25 (11:00–12:00 HKT · Rola Chung)"
+          "label": "Go-live · Medium",
+          "text": "PSDC-1399 Mannings go-live newly opened with Paul Huang (in-progress). Confirm go-live timeline so it aligns with renewal scope before the Jun 25 meeting."
         }
       ]
     },
@@ -152,7 +157,7 @@
       "id": "scmp",
       "name": "SCMP",
       "health": "yellow",
-      "insight": "AIQ-1465 open 329d · +1 more · SCMP AR renewal proposal Jun 18 · renewal due Jun 2026.",
+      "insight": "⚠️ CONTRACT EXPIRES in 12 days (2026-06-30). SCMP AR renewal proposal meeting TODAY at 14:00–14:45 HKT — prime opportunity to close the renewal; AIQ-1465 has been open 329 days. Segments Enablement completed Jun 15 — lead with this as a value proof.",
       "diffs": [],
       "riskTags": [
         "ticket",
@@ -200,12 +205,17 @@
         {
           "priority": "high",
           "label": "Renewal · High",
-          "text": "SCMP renewal due Jun 2026 — confirm status now"
+          "text": "Contract expires 2026-06-30 (12 days). Meeting TODAY at 14:00 HKT — bring renewal proposal with confirmed scope and pricing; leverage Segments Enablement completion (Jun 15) as proof of value."
+        },
+        {
+          "priority": "high",
+          "label": "Meeting · High",
+          "text": "SCMP AR renewal proposal TODAY 14:00–14:45 HKT (william.wt.lin). Address AIQ-1465 (open 329d) directly and clarify whether it blocks or is separate from the renewal decision."
         },
         {
           "priority": "medium",
-          "label": "Meeting · Medium",
-          "text": "Prep for SCMP AR renewal proposal on Jun 18 (14:00–14:45 HKT · william.wt.lin@appier.com)"
+          "label": "Stale ticket · Medium",
+          "text": "AID-8880 SCMP_Letzshop AiDeal Lite is open with Eric Tung. Confirm if still in scope or close as part of renewal cleanup to simplify the contract discussion."
         }
       ]
     },
@@ -213,7 +223,7 @@
       "id": "1010hope",
       "name": "10/10Hope",
       "health": "green",
-      "insight": "No active tickets — all clear.",
+      "insight": "No open tickets or meetings this week — klickngo API integration and AIQUA onboarding both in progress with Mark Liu. Proactive check-in recommended to maintain momentum on active integration work.",
       "diffs": [],
       "riskTags": [],
       "ticketCount": 0,
@@ -235,7 +245,7 @@
         {
           "priority": "low",
           "label": "Check-in · Low",
-          "text": "No active tickets — send a check-in to 10/10Hope"
+          "text": "No active tickets surfaced this week. Ping Mark Liu on klickngo API integration and AIQUA onboarding status to ensure both tracks stay on schedule."
         }
       ]
     },
@@ -243,7 +253,7 @@
       "id": "luxgen",
       "name": "Luxgen",
       "health": "yellow",
-      "insight": "LEG-16090 open 13d · +8 more.",
+      "insight": "Luxgen has 9 open tickets and no meetings this week — LEG-16090 BB contract renewal in-progress (jenny.liu), and EAM-227 offboard of AQ/AX/EDP is open with Roland Wang. No calendar touchpoint is a risk signal; BB contract active until 2026-11-23.",
       "diffs": [],
       "riskTags": [
         "ticket",
@@ -324,13 +334,29 @@
           "pinned": false
         }
       ],
-      "suggestions": []
+      "suggestions": [
+        {
+          "priority": "high",
+          "label": "Meeting · High",
+          "text": "No meeting scheduled for Luxgen. 9 active tickets with no calendar entry — book a check-in to align on EAM-227 offboard scope (keep BB, drop AQ/AX/EDP) and BB contract onboarding status."
+        },
+        {
+          "priority": "medium",
+          "label": "Offboard · Medium",
+          "text": "EAM-227 offboarding AQ, AX, EDP for Luxgen is open with Roland Wang. Confirm scope and timeline to avoid disruption alongside the active BB contract (NTD 50,000/mo to Nov 23)."
+        },
+        {
+          "priority": "low",
+          "label": "Integration · Low",
+          "text": "QGWL-10821 AIQUA Web SDK embedded BB Web Chat SDK in-progress with Mark Liu. Check delivery timeline as part of BB contract onboarding deliverables."
+        }
+      ]
     },
     {
       "id": "55688",
       "name": "55688",
       "health": "red",
-      "insight": "BBT-5428 backlog 191d · +12 more · [潔衣家]BotBonnie 產品更新及討論 Jun 24.",
+      "insight": "BBT-5428 Service Agent RFQ has been in backlog for 191 days (Brian Tsai) — this is the critical item to unblock for 55688. 55688 BotBonnie bi-weekly meeting Jun 24 at 14:30 HKT — key opportunity to escalate RFQ progress directly with the client.",
       "diffs": [],
       "riskTags": [
         "ticket",
@@ -448,9 +474,19 @@
       ],
       "suggestions": [
         {
+          "priority": "high",
+          "label": "Escalation · High",
+          "text": "BBT-5428 Service Agent RFQ backlog 191d (Brian Tsai). Escalate for a concrete timeline commitment — bring this as the #1 agenda item to the Jun 24 BotBonnie bi-weekly meeting."
+        },
+        {
+          "priority": "high",
+          "label": "Meeting · High",
+          "text": "55688 BotBonnie bi-weekly Jun 24 at 14:30–15:00 HKT. Prepare RFQ status on BBT-5428 and review aging BBT backlog items (BBT-5346, BBT-5368) to reprioritize or close."
+        },
+        {
           "priority": "medium",
-          "label": "Meeting · Medium",
-          "text": "Prep for [潔衣家]BotBonnie 產品更新及討論 on Jun 24 (14:30–15:00 HKT · william.wt.lin@appier.com)"
+          "label": "Stale backlog · Medium",
+          "text": "Multiple unassigned BBT tickets (BBT-5346, BBT-5368, BBT-4897, BBT-5292) are aging. Review with Brian Tsai in the Jun 24 meeting to close out irrelevant items and keep backlog actionable."
         }
       ]
     },
@@ -458,7 +494,7 @@
       "id": "tiangyuanxiang",
       "name": "田原香",
       "health": "yellow",
-      "insight": "APC-697 open 7d · +12 more.",
+      "insight": "田原香 has 13 open tickets including APC-697/APC-698 (unassigned template creation bug, open 7 days) and active display campaigns. Focus is developing new use cases post-onboarding. Weekly tracking meeting next Tuesday Jun 23 at 09:30 HKT.",
       "diffs": [],
       "riskTags": [
         "ticket",
@@ -567,13 +603,29 @@
           "pinned": false
         }
       ],
-      "suggestions": []
+      "suggestions": [
+        {
+          "priority": "high",
+          "label": "Bug · High",
+          "text": "APC-697 and APC-698 (template creation bug in campaign setup, unassigned) both opened 7 days ago. Assign to the correct team and get a resolution timeline before the Jun 23 meeting."
+        },
+        {
+          "priority": "medium",
+          "label": "Meeting · Medium",
+          "text": "Weekly tracking meeting Tuesday Jun 23 at 09:30 HKT. Lead with APC-697/698 fix status and bring 1–2 concrete new use case proposals to maintain post-onboarding momentum."
+        },
+        {
+          "priority": "low",
+          "label": "New use cases · Low",
+          "text": "Account focus has shifted to developing new use cases. Prepare a shortlist (e.g. campaign automation, on-site segmentation) to bring to the Jun 23 meeting for client input."
+        }
+      ]
     },
     {
       "id": "momax",
       "name": "Momax",
       "health": "yellow",
-      "insight": "CAM-350143 open 399d · +1 more.",
+      "insight": "Momax has 2 stale tickets — CAM-350143 open 399 days (Gary Huang) and CAM-257353 in-progress (Mandy Tsai). No meetings or active projects; account was referred to Partner team in Q2. Risk of going cold without a proactive touchpoint.",
       "diffs": [],
       "riskTags": [
         "ticket",
@@ -600,13 +652,24 @@
           "pinned": false
         }
       ],
-      "suggestions": []
+      "suggestions": [
+        {
+          "priority": "high",
+          "label": "Stale ticket · High",
+          "text": "CAM-350143 Momax CPV Multi Geo open 399 days with Gary Huang. Confirm if this campaign is still active or close it to give an accurate picture of account health."
+        },
+        {
+          "priority": "medium",
+          "label": "Check-in · Medium",
+          "text": "No meetings or active projects for Momax. Schedule a proactive check-in — the account was referred to Partner team in Q2 and needs a regular touchpoint to stay warm."
+        }
+      ]
     },
     {
       "id": "citysuper",
       "name": "City Super",
       "health": "yellow",
-      "insight": "AIR-4564 in-progress 0d · +13 more.",
+      "insight": "City Super has 14 active tickets — AIR-4564 Prizm HK demo account in-progress (Mark Liu), LEG-16086 AIQUA Order Form is unassigned and needs action, and multiple Prizm AIBID campaign tickets active (Forrest Hung). No meetings scheduled.",
       "diffs": [],
       "riskTags": [
         "ticket",
@@ -717,7 +780,23 @@
           "pinned": false
         }
       ],
-      "suggestions": []
+      "suggestions": [
+        {
+          "priority": "high",
+          "label": "Legal · High",
+          "text": "LEG-16086 AIQUA Order Form for City Super (CLONE) is unassigned. Assign to the correct owner and track to completion to unblock contract and onboarding progress."
+        },
+        {
+          "priority": "medium",
+          "label": "Demo · Medium",
+          "text": "AIR-4564 and ETS-4261/4262 (Prizm HK demo account, all with Mark Liu). Confirm delivery timeline so the demo is ready to support ongoing Prizm partner engagement."
+        },
+        {
+          "priority": "low",
+          "label": "Campaigns · Low",
+          "text": "Multiple Prizm AIBID campaign tickets (CAM-384613, CAM-382749, CAM-382624, etc.) active with Forrest Hung. Confirm no ad ops bottlenecks before any upcoming campaign launches."
+        }
+      ]
     },
     {
       "id": "xindongli",
