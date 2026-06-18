@@ -136,7 +136,7 @@ const OKR_SECTIONS = [
 
 const RISK_LABELS = {mtg:'📅 Meeting Due', ticket:'🐛 Ticket Blocked', renewal:'⚠️ Renewal Risk', silent:'👻 Client Silent', ok:'✅ On Track'};
 
-const PREMOADEF_LOG = [
+const PRELOADED_LOG = [
   {id:1,  date:'2026-Q1', quarter:'Q1 2026', category:'onboard',  client:'10/10Hope', description:'AIQUA onboarded (Prizm HK)'},
   {id:2,  date:'2026-Q1', quarter:'Q1 2026', category:'renewal',  client:'Mannings',  description:'Renewed AQ & AX to 2026-06-30'},
   {id:3,  date:'2026-Q1', quarter:'Q1 2026', category:'renewal',  client:'田原香',     description:'Renewed to 2027-02-16'},
@@ -529,4 +529,3 @@ function saveEntry(){
 // ════════════════════════════════════════════════════════════════════════════
 // END CSM BRIEF
 // ════════════════════════════════════════════════════════════════════════════
-
