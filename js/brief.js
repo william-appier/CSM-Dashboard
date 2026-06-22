@@ -1,30 +1,30 @@
 'use strict';
 
-// CSM BRIEF \u00e2\u0080\u0094 DATA, STATE & FUNCTIONS
-// \u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090
+// CSM BRIEF \u2014 DATA, STATE & FUNCTIONS
+// \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550
 
 let ACCOUNTS = [
   {
     id:'mannings', name:'Mannings', health:'red',
-    insight:'AIXP-1840 open 11 days \u00e2\u0080\u0094 no update from Jin Chen. Bi-weekly May 28.',
+    insight:'AIXP-1840 open 11 days \u2014 no update from Jin Chen. Bi-weekly May 28.',
     diffs:[{type:'warn',text:'AIXP-1840 no update in 11 days'}],
     riskTags:['mtg','ticket'], ticketCount:1, mtgCount:3,
     projects:[
       {name:'Q3 Renewal Contract',status:'progress'},
-      {name:'AIXON \u00e2\u0086\u0092 AIRIS Upgrade (Q4)',status:'progress'},
+      {name:'AIXON \u2192 AIRIS Upgrade (Q4)',status:'progress'},
     ],
     meetings:[
-      {date:'May 28',title:'Bi-weekly Meeting',meta:'11:00\u00e2\u0080\u009312:00 HKT \u00c2\u00b7 Teams \u00c2\u00b7 Rola Chung'},
-      {date:'Jun 1',title:'Mannings Quotation',meta:'11:15\u00e2\u0080\u009312:00 HKT'},
-      {date:'Jun 4',title:'Monthly Meeting',meta:'11:00\u00e2\u0080\u009312:00 HKT \u00c2\u00b7 Teams \u00c2\u00b7 Rola Chung'},
+      {date:'May 28',title:'Bi-weekly Meeting',meta:'11:00\u201312:00 HKT \u00b7 Teams \u00b7 Rola Chung'},
+      {date:'Jun 1',title:'Mannings Quotation',meta:'11:15\u201312:00 HKT'},
+      {date:'Jun 4',title:'Monthly Meeting',meta:'11:00\u201312:00 HKT \u00b7 Teams \u00b7 Rola Chung'},
     ],
     tickets:[
-      {key:'AIXP-1840',title:'IPA_Mannings_Meta \u00e6\u00b2\u0092\u00e6\u009c\u0089\u00e7\u0094\u00a2\u00e5\u0087\u00ba AI suggestions',status:'in-progress',assignee:'Jin Chen',pinned:true},
+      {key:'AIXP-1840',title:'IPA_Mannings_Meta \u6c92\u6709\u7522\u51fa AI suggestions',status:'in-progress',assignee:'Jin Chen',pinned:true},
     ],
     suggestions:[
-      {priority:'high',label:'Ticket \u00c2\u00b7 High',text:'Chase Jin Chen on AIXP-1840 before May 28 \u00e2\u0080\u0094 11 days open with no update.'},
-      {priority:'high',label:'Renewal \u00c2\u00b7 High',text:'Prep Q3 renewal quotation now \u00e2\u0080\u0094 Jun 1 meeting is 14 days away.'},
-      {priority:'medium',label:'Timeline \u00c2\u00b7 Medium',text:'Confirm AIRIS upgrade ETA before Jun 4 monthly \u00e2\u0080\u0094 currently no timeline set.'},
+      {priority:'high',label:'Ticket \u00b7 High',text:'Chase Jin Chen on AIXP-1840 before May 28 \u2014 11 days open with no update.'},
+      {priority:'high',label:'Renewal \u00b7 High',text:'Prep Q3 renewal quotation now \u2014 Jun 1 meeting is 14 days away.'},
+      {priority:'medium',label:'Timeline \u00b7 Medium',text:'Confirm AIRIS upgrade ETA before Jun 4 monthly \u2014 currently no timeline set.'},
     ],
   },
   {
@@ -36,15 +36,15 @@ let ACCOUNTS = [
       {name:'Renewal (June 2026)',status:'blocked'},
     ],
     meetings:[
-      {date:'May 19',title:'Segment / Experiment / Insight Interview',meta:'10:30\u00e2\u0080\u009311:00 HKT \u00c2\u00b7 Recurring weekly'},
-      {date:'May 26',title:'Segment / Experiment / Insight Interview',meta:'10:30\u00e2\u0080\u009311:00 HKT'},
+      {date:'May 19',title:'Segment / Experiment / Insight Interview',meta:'10:30\u201311:00 HKT \u00b7 Recurring weekly'},
+      {date:'May 26',title:'Segment / Experiment / Insight Interview',meta:'10:30\u201311:00 HKT'},
     ],
     tickets:[
       {key:'PROJ-33328',title:'Enable segment quota increase to 50',status:'backlog',assignee:'Michael Palmer',pinned:false},
     ],
     suggestions:[
-      {priority:'high',label:'Renewal \u00c2\u00b7 High',text:'June renewal has no meeting booked yet \u00e2\u0080\u0094 schedule it this week.'},
-      {priority:'medium',label:'Ticket \u00c2\u00b7 Medium',text:'PROJ-33328 sitting in backlog since May 15. Follow up with Michael Palmer.'},
+      {priority:'high',label:'Renewal \u00b7 High',text:'June renewal has no meeting booked yet \u2014 schedule it this week.'},
+      {priority:'medium',label:'Ticket \u00b7 Medium',text:'PROJ-33328 sitting in backlog since May 15. Follow up with Michael Palmer.'},
     ],
   },
   {
@@ -56,27 +56,27 @@ let ACCOUNTS = [
       {name:'EC & POS Integration',status:'progress'},
     ],
     meetings:[
-      {date:'May 18',title:'10/10 \u00e6\u0095\u00b4\u00e5\u0090\u0088',meta:'14:30\u00e2\u0080\u009315:00 HKT \u00c2\u00b7 Recurring'},
-      {date:'May 25',title:'10/10 \u00e6\u0095\u00b4\u00e5\u0090\u0088',meta:'14:30\u00e2\u0080\u009315:00 HKT'},
+      {date:'May 18',title:'10/10 \u6574\u5408',meta:'14:30\u201315:00 HKT \u00b7 Recurring'},
+      {date:'May 25',title:'10/10 \u6574\u5408',meta:'14:30\u201315:00 HKT'},
     ],
     tickets:[
       {key:'QGWL-25317',title:'klickngo API Integration for 10/10 Hope',status:'in-progress',assignee:'Mark Liu',pinned:false},
     ],
     suggestions:[
-      {priority:'medium',label:'Ticket \u00c2\u00b7 Medium',text:'Get Mark Liu update on QGWL-25317 klickngo API integration status.'},
-      {priority:'medium',label:'Action \u00c2\u00b7 Medium',text:'EC & POS integration has no formal ticket \u00e2\u0080\u0094 consider raising one to track it.'},
+      {priority:'medium',label:'Ticket \u00b7 Medium',text:'Get Mark Liu update on QGWL-25317 klickngo API integration status.'},
+      {priority:'medium',label:'Action \u00b7 Medium',text:'EC & POS integration has no formal ticket \u2014 consider raising one to track it.'},
     ],
   },
   {
     id:'luxgen', name:'Luxgen', health:'yellow',
     insight:'Renewal decision meetings were May 19. Log the outcome and update status.',
-    diffs:[{type:'new',text:'\u00e7\u00a2\u00ba\u00e8\u00aa\u008d\u00e6\u0098\u00af\u00e5\u0090\u00a6\u00e5\u00bb\u00b6 Luxgen \u00e5\u0090\u0088\u00e7\u00b4\u0084 \u00e2\u0080\u0094 outcome pending log'}],
+    diffs:[{type:'new',text:'\u78ba\u8a8d\u662f\u5426\u5ef6 Luxgen \u5408\u7d04 \u2014 outcome pending log'}],
     riskTags:['renewal'], ticketCount:0, mtgCount:1,
     projects:[{name:'Contract Renewal Decision',status:'progress'}],
-    meetings:[{date:'May 26',title:'Luxgen checking',meta:'10:00\u00e2\u0080\u009310:30 HKT \u00c2\u00b7 Recurring'}],
+    meetings:[{date:'May 26',title:'Luxgen checking',meta:'10:00\u201310:30 HKT \u00b7 Recurring'}],
     tickets:[],
     suggestions:[
-      {priority:'high',label:'Renewal \u00c2\u00b7 High',text:'Log the May 19 renewal outcome \u00e2\u0080\u0094 renew, churn, or pending? Update account status.'},
+      {priority:'high',label:'Renewal \u00b7 High',text:'Log the May 19 renewal outcome \u2014 renew, churn, or pending? Update account status.'},
     ],
   },
   {
@@ -85,16 +85,16 @@ let ACCOUNTS = [
     diffs:[], riskTags:['ticket'], ticketCount:0, mtgCount:2,
     projects:[{name:'Service Agent Purchase Decision',status:'progress'}],
     meetings:[
-      {date:'May 19',title:'55688 SA Tracking',meta:'09:15\u00e2\u0080\u009309:45 HKT \u00c2\u00b7 Recurring'},
-      {date:'May 26',title:'55688 SA Tracking',meta:'09:15\u00e2\u0080\u009309:45 HKT'},
+      {date:'May 19',title:'55688 SA Tracking',meta:'09:15\u201309:45 HKT \u00b7 Recurring'},
+      {date:'May 26',title:'55688 SA Tracking',meta:'09:15\u201309:45 HKT'},
     ],
     tickets:[],
     suggestions:[
-      {priority:'medium',label:'Action \u00c2\u00b7 Medium',text:'Bring Service Agent pricing summary to May 19 meeting. Push for a clear decision timeline.'},
+      {priority:'medium',label:'Action \u00b7 Medium',text:'Bring Service Agent pricing summary to May 19 meeting. Push for a clear decision timeline.'},
     ],
   },
   {
-    id:'tiyuanxiang', name:'\u00e7\u0094\u00b0\u00e5\u008e\u009f\u00e9\u00a6\u0099', health:'green',
+    id:'tiyuanxiang', name:'\u7530\u539f\u9999', health:'green',
     insight:'Use case tracking session weekly. No blockers detected.',
     diffs:[], riskTags:['ok'], ticketCount:0, mtgCount:2,
     projects:[
@@ -102,31 +102,31 @@ let ACCOUNTS = [
       {name:'Agent Usage & Feedback',status:'ok'},
     ],
     meetings:[
-      {date:'May 20',title:'\u00e7\u0094\u00b0\u00e5\u008e\u009f\u00e9\u00a6\u0099 use case tracking',meta:'09:30\u00e2\u0080\u009310:00 HKT \u00c2\u00b7 Recurring'},
-      {date:'May 27',title:'\u00e7\u0094\u00b0\u00e5\u008e\u009f\u00e9\u00a6\u0099 use case tracking',meta:'09:30\u00e2\u0080\u009310:00 HKT'},
+      {date:'May 20',title:'\u7530\u539f\u9999 use case tracking',meta:'09:30\u201310:00 HKT \u00b7 Recurring'},
+      {date:'May 27',title:'\u7530\u539f\u9999 use case tracking',meta:'09:30\u201310:00 HKT'},
     ],
     tickets:[],
     suggestions:[
-      {priority:'low',label:'Action \u00c2\u00b7 Low',text:'Collect agent usage feedback at May 20 session and log for OKR.'},
+      {priority:'low',label:'Action \u00b7 Low',text:'Collect agent usage feedback at May 20 session and log for OKR.'},
     ],
   },
 ];
 
 const BRIEF_CAT_META = {
-  onboard:  {emoji:'\u00f0\u009f\u009a\u0080', label:'Onboard',           cls:'onboard'},
-  renewal:  {emoji:'\u00f0\u009f\u0094\u0084', label:'Renewal',            cls:'renewal'},
-  ticket:   {emoji:'\u00f0\u009f\u008e\u00ab', label:'Ticket Resolved',    cls:'ticket'},
-  feature:  {emoji:'\u00e2\u009a\u00a1', label:'Feature Enabled',    cls:'feature'},
-  pitching: {emoji:'\u00f0\u009f\u008e\u00af', label:'Pitching',           cls:'pitching'},
-  ai:       {emoji:'\u00f0\u009f\u00a4\u0096', label:'AI Adoption',        cls:'ai'},
-  team:     {emoji:'\u00f0\u009f\u00a4\u009d', label:'Team Contribution',  cls:'team'},
-  other:    {emoji:'\u00f0\u009f\u0093\u008c', label:'Other',              cls:'other'},
+  onboard:  {emoji:'\u{1f680}', label:'Onboard',           cls:'onboard'},
+  renewal:  {emoji:'\u{1f504}', label:'Renewal',            cls:'renewal'},
+  ticket:   {emoji:'\u{1f3ab}', label:'Ticket Resolved',    cls:'ticket'},
+  feature:  {emoji:'\u26a1', label:'Feature Enabled',    cls:'feature'},
+  pitching: {emoji:'\u{1f3af}', label:'Pitching',           cls:'pitching'},
+  ai:       {emoji:'\u{1f916}', label:'AI Adoption',        cls:'ai'},
+  team:     {emoji:'\u{1f91d}', label:'Team Contribution',  cls:'team'},
+  other:    {emoji:'\u{1f4cc}', label:'Other',              cls:'other'},
 };
 
 const OKR_SECTIONS = [
   {key:'onboard',  title:'1. Onboarded new accounts'},
   {key:'renewal',  title:'2. Renewed successfully'},
-  {key:'pitching', title:'3. Others \u00e2\u0080\u0094 Pitching & team contribution'},
+  {key:'pitching', title:'3. Others \u2014 Pitching & team contribution'},
   {key:'feature',  title:'4. Pilot / New feature enablement'},
   {key:'ai',       title:'5. AI adoption'},
   {key:'team',     title:'6. Functional knowledge & teamwork'},
@@ -134,18 +134,18 @@ const OKR_SECTIONS = [
   {key:'other',    title:'8. Other contributions'},
 ];
 
-const RISK_LABELS = {mtg:'\u00f0\u009f\u0093\u0085 Meeting Due', ticket:'\u00f0\u009f\u0090\u009b Ticket Blocked', renewal:'\u00e2\u009a\u00a0\u00ef\u00b8\u008f Renewal Risk', silent:'\u00f0\u009f\u0091\u00bb Client Silent', ok:'\u00e2\u009c\u0085 On Track'};
+const RISK_LABELS = {mtg:'\u{1f4c5} Meeting Due', ticket:'\u{1f41b} Ticket Blocked', renewal:'\u26a0\ufe0f Renewal Risk', silent:'\u{1f47b} Client Silent', ok:'\u2705 On Track'};
 
 const PRELOADED_LOG = [
   {id:1,  date:'2026-Q1', quarter:'Q1 2026', category:'onboard',  client:'10/10Hope', description:'AIQUA onboarded (Prizm HK)'},
   {id:2,  date:'2026-Q1', quarter:'Q1 2026', category:'renewal',  client:'Mannings',  description:'Renewed AQ & AX to 2026-06-30'},
-  {id:3,  date:'2026-Q1', quarter:'Q1 2026', category:'renewal',  client:'\u00e7\u0094\u00b0\u00e5\u008e\u009f\u00e9\u00a6\u0099',     description:'Renewed to 2027-02-16'},
-  {id:4,  date:'2026-Q1', quarter:'Q1 2026', category:'pitching', client:'Internal',  description:'Genki \u00e2\u0080\u0094 AA opportunity pitched'},
+  {id:3,  date:'2026-Q1', quarter:'Q1 2026', category:'renewal',  client:'\u7530\u539f\u9999',     description:'Renewed to 2027-02-16'},
+  {id:4,  date:'2026-Q1', quarter:'Q1 2026', category:'pitching', client:'Internal',  description:'Genki \u2014 AA opportunity pitched'},
   {id:5,  date:'2026-Q1', quarter:'Q1 2026', category:'pitching', client:'Mannings',  description:'AA & AR opportunities pitched'},
-  {id:6,  date:'2026-Q1', quarter:'Q1 2026', category:'pitching', client:'Internal',  description:'Partner team pitching \u00e2\u0080\u0094 Prizm (City Super)'},
-  {id:7,  date:'2026-Q1', quarter:'Q1 2026', category:'pitching', client:'Internal',  description:'Partner team pitching \u00e2\u0080\u0094 Ledgerbio (Chinachem)'},
+  {id:6,  date:'2026-Q1', quarter:'Q1 2026', category:'pitching', client:'Internal',  description:'Partner team pitching \u2014 Prizm (City Super)'},
+  {id:7,  date:'2026-Q1', quarter:'Q1 2026', category:'pitching', client:'Internal',  description:'Partner team pitching \u2014 Ledgerbio (Chinachem)'},
   {id:8,  date:'2026-Q1', quarter:'Q1 2026', category:'team',     client:'SCMP',      description:'Assisted in finding SCMP for panel speaker'},
-  {id:9,  date:'2026-Q1', quarter:'Q1 2026', category:'feature',  client:'\u00e7\u0094\u00b0\u00e5\u008e\u009f\u00e9\u00a6\u0099',     description:'Campaign agent enabled'},
+  {id:9,  date:'2026-Q1', quarter:'Q1 2026', category:'feature',  client:'\u7530\u539f\u9999',     description:'Campaign agent enabled'},
   {id:10, date:'2026-Q1', quarter:'Q1 2026', category:'feature',  client:'Mannings',  description:'AB test with new recommendations filtering rules'},
   {id:11, date:'2026-Q1', quarter:'Q1 2026', category:'ai',       client:'Internal',  description:'Gemini + NotebookLM as first answer-seeking before team'},
   {id:12, date:'2026-Q1', quarter:'Q1 2026', category:'ai',       client:'Internal',  description:'AI video scene generation for AA demo'},
@@ -156,7 +156,7 @@ const PRELOADED_LOG = [
   {id:17, date:'2026-Q1', quarter:'Q1 2026', category:'team',     client:'Internal',  description:'AQ recommendation sharing with Zebbie'},
 ];
 
-// \u00e2\u0094\u0080\u00e2\u0094\u0080 BRIEF STATE \u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080
+// \u2500\u2500 BRIEF STATE \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
 let logEntries = [];
 let briefNextId = 100;
 const BRIEF_LOG_KEY = 'csm_session_log';
@@ -167,12 +167,12 @@ function loadLog(){
 }
 function saveLog(){ localStorage.setItem(BRIEF_LOG_KEY, JSON.stringify(logEntries)); }
 
-// \u00e2\u0094\u0080\u00e2\u0094\u0080 BRIEF INIT (called once on page load) \u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080
+// \u2500\u2500 BRIEF INIT (called once on page load) \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
 
-// \u00e2\u0094\u0080\u00e2\u0094\u0080 GITHUB BRIEF AUTO-SYNC \u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080
-// csm-brief.json lives in the repo root \u00e2\u0086\u0092 served by GitHub Pages at same origin.
+// \u2500\u2500 GITHUB BRIEF AUTO-SYNC \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
+// csm-brief.json lives in the repo root \u2192 served by GitHub Pages at same origin.
 // Claude pushes a new version via GitHub API after every brief generation.
-// Dashboard fetches it on every load \u00e2\u0080\u0094 zero manual steps.
+// Dashboard fetches it on every load \u2014 zero manual steps.
 
 function _setSyncUI(state, text) {
   const dot = document.getElementById('syncDot');
@@ -182,13 +182,13 @@ function _setSyncUI(state, text) {
 }
 
 async function loadBriefFromGitHub() {
-  _setSyncUI('spin', 'Loading brief from GitHub\u00e2\u0080\u00a6');
+  _setSyncUI('spin', 'Loading brief from GitHub\u2026');
   try {
     // Cache-bust so we always get the latest commit, not a CDN-cached copy
     const res = await fetch('./csm-brief.json?_=' + Date.now());
-    if (!res.ok) throw new Error(res.status === 404 ? 'No brief pushed yet \u00e2\u0080\u0094 ask Claude to generate your brief.' : 'HTTP ' + res.status);
+    if (!res.ok) throw new Error(res.status === 404 ? 'No brief pushed yet \u2014 ask Claude to generate your brief.' : 'HTTP ' + res.status);
     const data = await res.json();
-    if (!Array.isArray(data.accounts) || data.accounts.length === 0) throw new Error('Brief is empty \u00e2\u0080\u0094 ask Claude to generate your brief.');
+    if (!Array.isArray(data.accounts) || data.accounts.length === 0) throw new Error('Brief is empty \u2014 ask Claude to generate your brief.');
     ACCOUNTS = data.accounts;
     renderBriefCards();
     renderBriefStats();
@@ -196,7 +196,7 @@ async function loadBriefFromGitHub() {
     const ts = data.generatedAt
       ? new Date(data.generatedAt).toLocaleString('en-HK', { month:'short', day:'numeric', hour:'2-digit', minute:'2-digit', hour12:false, timeZone:'Asia/Hong_Kong' })
       : '?';
-    _setSyncUI('ok', 'Brief synced \u00c2\u00b7 ' + ts + ' HKT \u00c2\u00b7 auto-updated by Claude each morning');
+    _setSyncUI('ok', 'Brief synced \u00b7 ' + ts + ' HKT \u00b7 auto-updated by Claude each morning');
   } catch (e) {
     _setSyncUI('err', e.message || 'Could not load brief');
   }
@@ -234,7 +234,7 @@ function initBrief(){
   }
 }
 
-// \u00e2\u0094\u0080\u00e2\u0094\u0080 BRIEF SUB-TAB SWITCH \u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080
+// \u2500\u2500 BRIEF SUB-TAB SWITCH \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
 function briefSwitchTab(name){
   ['brief','okr'].forEach(t=>{
     const btn  = document.getElementById('btab-'+t);
@@ -244,7 +244,7 @@ function briefSwitchTab(name){
   });
 }
 
-// \u00e2\u0094\u0080\u00e2\u0094\u0080 BRIEF STATS \u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080
+// \u2500\u2500 BRIEF STATS \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
 function renderBriefStats(){
   const crit = ACCOUNTS.filter(a=>a.health==='red').length;
   const risk = ACCOUNTS.filter(a=>a.health==='yellow').length;
@@ -264,7 +264,7 @@ function briefUpdateTabCounts(){
   set('tc-brief',  ACCOUNTS.length);
 }
 
-// \u00e2\u0094\u0080\u00e2\u0094\u0080 ACCOUNT BRIEF RENDER \u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080
+// \u2500\u2500 ACCOUNT BRIEF RENDER \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
 function renderBriefCards(){
   const grid = document.getElementById('accountGrid');
   if(!grid) return;
@@ -273,8 +273,8 @@ function renderBriefCards(){
     return (order[a.health]??3)-(order[b.health]??3);
   });
   grid.innerHTML = sorted.map(acct=>{
-    const hBadge={red:'\u00f0\u009f\u0094\u00b4 Critical',yellow:'\u00f0\u009f\u009f\u00a1 At Risk',green:'\u00f0\u009f\u009f\u00a2 On Track',gray:'\u00e2\u009a\u00aa Unclear'}[acct.health]||'\u00e2\u009a\u00aa';
-    const diffHTML = acct.diffs.map(d=>`<div class="diff-line diff-${esc(d.type)}">${d.type==='new'?'\u00e2\u0086\u0097':d.type==='close'?'\u00e2\u0086\u0098':'\u00e2\u009a\u00a0'} ${esc(d.text)}</div>`).join('');
+    const hBadge={red:'\u{1f534} Critical',yellow:'\u{1f7e1} At Risk',green:'\u{1f7e2} On Track',gray:'\u26aa Unclear'}[acct.health]||'\u26aa';
+    const diffHTML = acct.diffs.map(d=>`<div class="diff-line diff-${esc(d.type)}">${d.type==='new'?'\u2197':d.type==='close'?'\u2198':'\u26a0'} ${esc(d.text)}</div>`).join('');
     const riskHTML = acct.riskTags.map(t=>`<span class="risk-tag ${esc(t)}">${RISK_LABELS[t]||t}</span>`).join('');
     return `
     <div class="acct-card health-${esc(acct.health)}" onclick="openBriefPanel('${esc(acct.id)}')">
@@ -282,8 +282,8 @@ function renderBriefCards(){
         <div>
           <div class="acct-name">${esc(acct.name)}</div>
           <div class="acct-meta">
-            <span>\u00f0\u009f\u008e\u00ab ${acct.ticketCount} ticket${acct.ticketCount!==1?'s':''}</span>
-            <span>\u00f0\u009f\u0093\u0085 ${acct.mtgCount} meeting${acct.mtgCount!==1?'s':''}</span>
+            <span>\u{1f3ab} ${acct.ticketCount} ticket${acct.ticketCount!==1?'s':''}</span>
+            <span>\u{1f4c5} ${acct.mtgCount} meeting${acct.mtgCount!==1?'s':''}</span>
           </div>
         </div>
         <div class="health-badge ${esc(acct.health)}">${hBadge}</div>
@@ -294,13 +294,13 @@ function renderBriefCards(){
       </div>
       <div class="acct-footer">
         <div class="risk-tags">${riskHTML}</div>
-        <div style="font-family:\'DM Mono\',monospace;font-size:10px;color:var(--muted)">\u00e2\u0086\u0092 Full brief</div>
+        <div style="font-family:\'DM Mono\',monospace;font-size:10px;color:var(--muted)">\u2192 Full brief</div>
       </div>
     </div>`;
   }).join('');
 }
 
-// \u00e2\u0094\u0080\u00e2\u0094\u0080 BRIEF SIDE PANEL \u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080
+// \u2500\u2500 BRIEF SIDE PANEL \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
 function openBriefPanel(id){
   const acct = ACCOUNTS.find(a=>a.id===id);
   if(!acct) return;
@@ -308,8 +308,8 @@ function openBriefPanel(id){
   const subEl   = document.getElementById('briefPanelSub');
   const bodyEl  = document.getElementById('briefPanelBody');
   if(titleEl) titleEl.textContent = acct.name;
-  const hLabel = {red:'\u00f0\u009f\u0094\u00b4 Critical',yellow:'\u00f0\u009f\u009f\u00a1 At Risk',green:'\u00f0\u009f\u009f\u00a2 On Track',gray:'\u00e2\u009a\u00aa Unclear'}[acct.health]||'';
-  if(subEl) subEl.textContent = hLabel + ' \u00c2\u00b7 Updated today';
+  const hLabel = {red:'\u{1f534} Critical',yellow:'\u{1f7e1} At Risk',green:'\u{1f7e2} On Track',gray:'\u26aa Unclear'}[acct.health]||'';
+  if(subEl) subEl.textContent = hLabel + ' \u00b7 Updated today';
 
   const mtgHTML = acct.meetings.length
     ? acct.meetings.map(m=>`
@@ -340,7 +340,7 @@ function openBriefPanel(id){
     ? acct.projects.map(p=>`
         <div class="project-row">
           <div class="proj-name">${esc(p.name)}</div>
-          <div class="proj-status ${esc(p.status)}">${{progress:'\u00f0\u009f\u009f\u00a1 In Progress',ok:'\u00f0\u009f\u009f\u00a2 On Track',blocked:'\u00f0\u009f\u0094\u00b4 Blocked'}[p.status]||p.status}</div>
+          <div class="proj-status ${esc(p.status)}">${{progress:'\u{1f7e1} In Progress',ok:'\u{1f7e2} On Track',blocked:'\u{1f534} Blocked'}[p.status]||p.status}</div>
         </div>`).join('')
     : '';
 
@@ -352,20 +352,20 @@ function openBriefPanel(id){
 
   if(bodyEl) bodyEl.innerHTML = `
     <div class="p-section">
-      <div class="p-section-title">\u00f0\u009f\u0093\u0085 Upcoming Meetings</div>
+      <div class="p-section-title">\u{1f4c5} Upcoming Meetings</div>
       ${mtgHTML}
     </div>
     <div class="p-section">
-      <div class="p-section-title">\u00f0\u009f\u008e\u00ab Active Tickets</div>
+      <div class="p-section-title">\u{1f3ab} Active Tickets</div>
       ${tickHTML}
     </div>
     ${acct.projects.length?`
     <div class="p-section">
-      <div class="p-section-title">\u00f0\u009f\u0097\u0082 Projects</div>
+      <div class="p-section-title">\u{1f5c2} Projects</div>
       ${projHTML}
     </div>`:''}
     <div class="p-section">
-      <div class="p-section-title">\u00f0\u009f\u0092\u00a1 Suggestions</div>
+      <div class="p-section-title">\u{1f4a1} Suggestions</div>
       ${sugHTML}
       <div style="font-family:\'DM Mono\',monospace;font-size:10px;color:var(--muted);margin-top:10px">
         Reply in Claude: "Done: [#]" or "Didn't work: [#]" to log outcome
@@ -386,7 +386,7 @@ function closeBriefPanel(){
   if(sp) sp.classList.remove('open');
 }
 
-// \u00e2\u0094\u0080\u00e2\u0094\u0080 OKR TAB \u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080
+// \u2500\u2500 OKR TAB \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
 function renderOKR(){
   const qSel = document.getElementById('okrQSel');
   if(!qSel) return;
@@ -400,7 +400,7 @@ function renderOKR(){
     return `
     <div class="okr-section">
       <div class="okr-section-head" onclick="toggleOKRSection('${id}')">
-        <div class="title">${BRIEF_CAT_META[sec.key]?.emoji||'\u00e2\u0080\u00a2'} ${esc(sec.title)}</div>
+        <div class="title">${BRIEF_CAT_META[sec.key]?.emoji||'\u2022'} ${esc(sec.title)}</div>
         <div class="count">${items.length} item${items.length!==1?'s':''}</div>
       </div>
       <div class="okr-body" id="${id}">
@@ -427,22 +427,22 @@ function copyOKR(){
   if(!qSel) return;
   const q = qSel.value;
   const filtered = logEntries.filter(e=>e.quarter===q);
-  let txt = `\u00f0\u009f\u0093\u008a OKR SUMMARY \u00e2\u0080\u0094 CSM Brief (${q})\n\n`;
+  let txt = `\u{1f4ca} OKR SUMMARY \u2014 CSM Brief (${q})\n\n`;
   OKR_SECTIONS.forEach(sec=>{
     const items = filtered.filter(e=>e.category===sec.key);
     txt += sec.title+'\n';
     txt += items.length
-      ? items.map(e=>`  \u00e2\u0080\u00a2 [${e.client}] ${e.description}`).join('\n')+'\n'
-      : '  \u00e2\u0080\u00a2 None this quarter\n';
+      ? items.map(e=>`  \u2022 [${e.client}] ${e.description}`).join('\n')+'\n'
+      : '  \u2022 None this quarter\n';
     txt += '\n';
   });
   navigator.clipboard.writeText(txt).then(()=>{
     const btn = document.getElementById('okrCopyBtn');
-    if(btn){ btn.textContent='\u00e2\u009c\u0093 Copied!'; setTimeout(()=>btn.textContent='Copy Summary', 2000); }
+    if(btn){ btn.textContent='\u2713 Copied!'; setTimeout(()=>btn.textContent='Copy Summary', 2000); }
   });
 }
 
-// \u00e2\u0094\u0080\u00e2\u0094\u0080 SESSION LOG TAB \u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080
+// \u2500\u2500 SESSION LOG TAB \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
 function renderLog(){
   const qF   = document.getElementById('logQFilter');
   const catF  = document.getElementById('logCatFilter');
@@ -465,7 +465,7 @@ function renderLog(){
   }
   list.innerHTML = filtered.map(e=>`
     <div class="log-entry">
-      <span class="log-emoji">${BRIEF_CAT_META[e.category]?.emoji||'\u00f0\u009f\u0093\u008c'}</span>
+      <span class="log-emoji">${BRIEF_CAT_META[e.category]?.emoji||'\u{1f4cc}'}</span>
       <div class="log-body">
         <div class="log-tags">
           <span class="log-cat ${esc(e.category)}">${esc(BRIEF_CAT_META[e.category]?.label||e.category)}</span>
@@ -475,7 +475,7 @@ function renderLog(){
         <div class="log-desc">${esc(e.description)}</div>
         <div class="log-qtr">${esc(e.quarter)}</div>
       </div>
-      <button class="log-del" onclick="deleteLogEntry(${e.id})" title="Remove">\u00e2\u009c\u0095</button>
+      <button class="log-del" onclick="deleteLogEntry(${e.id})" title="Remove">\u2715</button>
     </div>`).join('');
   briefUpdateTabCounts();
 }
@@ -488,7 +488,7 @@ function deleteLogEntry(id){
   briefUpdateTabCounts();
 }
 
-// \u00e2\u0094\u0080\u00e2\u0094\u0080 ADD LOG MODAL \u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080\u00e2\u0094\u0080
+// \u2500\u2500 ADD LOG MODAL \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
 function openAddModal(){
   const today = new Date().toISOString().split('T')[0];
   const mDate = document.getElementById('mDate');
@@ -526,6 +526,6 @@ function saveEntry(){
   briefUpdateTabCounts();
 }
 
-// \u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090
+// \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550
 // END CSM BRIEF
-// \u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090\u00e2\u0095\u0090
+// \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550
