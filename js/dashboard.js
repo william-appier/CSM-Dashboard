@@ -63,6 +63,7 @@ async function markDone(key,btn){
     if(i){i.status='Done'; i.resolutiondate=new Date().toISOString().slice(0,10);}
     toast('success',`\u2713 ${key} marked as Done in Jira`);
     renderDashboard(allData);
+    saveCsmTracked(allData);
   }catch(e){
     toast('error',`Failed to update ${key}: ${e.message}`);
     btn.disabled=false; btn.innerHTML='\u2713 Mark Done';
@@ -1118,6 +1119,7 @@ async function markDoneTbd(key,btn){
     const tracked=allData.find(i=>i.key===key);
     if(tracked){tracked.status='Done';tracked.resolutiondate=new Date().toISOString().slice(0,10);}
     renderDashboard(allData);
+    saveCsmTracked(allData);
     toast('success',`\u2713 ${key} marked as Done`);
   }catch(e){
     toast('error',`Failed to update ${key}: ${e.message}`);
