@@ -330,8 +330,17 @@ function openBriefPanel(id){
     const _p = _m[1].toLowerCase().replace(/[^a-z0-9\u4e00-\u9fff]/g,'');
     return _p.includes(_acctN) || _acctN.includes(_p);
   });
+
+  // Intersect with localStorage tracked tickets if available
+  var _lsTracked = (function(){try{return JSON.parse(localStorage.getItem('csmTracked')||'{}')}catch(_e){return {};}})();
+  var _lsKey = Object.keys(_lsTracked).find(function(k){
+    var kn = k.toLowerCase().replace(/[^a-z0-9\u4e00-\u9fff]/g,'');
+    return kn.includes(_acctN) || _acctN.includes(kn);
+  });
+  var _trackedKeys = _lsKey ? new Set(_lsTracked[_lsKey]) : null;
+  var _displayTix = _trackedKeys ? _filtTix.filter(function(t){return _trackedKeys.has(t.key);}) : _filtTix;
   const tickHTML = acct.tickets.length
-    ? _filtTix.map(t=>`
+    ? _displayTix.map(t=>`
         <div class="brief-ticket-row">
           <div class="brief-ticket-key">${esc(t.key)}</div>
           <div class="brief-ticket-info">
