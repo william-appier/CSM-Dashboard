@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-06-22T10:35:11.435+08:00",
+  "generatedAt": "2026-06-22T10:34:07.949+08:00",
   "accounts": [
     {
       "id": "mannings",
       "name": "Mannings",
       "health": "yellow",
-      "insight": "CAM-395958 in-progress 3d · +12 more · Appier x Mannings Bi-weekly Meeting Jun 25 · renewal due Jun 2026.",
+      "insight": "⚠️ CONTRACT EXPIRES in 8 days (2026-06-30). Bi-weekly meeting Jun 25 at 11:00 HKT with Rola Chung — bring finalized renewal proposal. LEG-16095 (AIQUA/AIRIS Q3 Renewal Order Form) is open with emily.cheng; confirm paperwork status before the call.",
       "diffs": [],
       "riskTags": [
         "ticket",
@@ -133,14 +133,16 @@
       ],
       "suggestions": [
         {
-          "priority": "high",
           "label": "Renewal · High",
-          "text": "Mannings renewal due Jun 2026 — confirm status now"
+          "text": "Contract expires 2026-06-30 (8 days). Draft the AIQUA/AIRIS renewal proposal now, confirm scope with client, and plan to close at the Jun 25 bi-weekly meeting."
         },
         {
-          "priority": "medium",
-          "label": "Meeting · Medium",
-          "text": "Prep for Appier x Mannings Bi-weekly Meeting on Jun 25 (11:00–12:00 HKT · Rola Chung)"
+          "label": "Meeting Prep · High",
+          "text": "Bi-weekly meeting Jun 25 at 11:00 HKT with Rola Chung. Align on renewal terms and Q4 AIXON→AIRIS upgrade timeline — don't leave the call without a signed commitment or a next step date."
+        },
+        {
+          "label": "Legal Tracking · Medium",
+          "text": "LEG-16095 (Order Form Q3 Renewal) is open with emily.cheng. Confirm it is progressing and will be ready before contract expiry on Jun 30."
         }
       ]
     },
@@ -148,7 +150,7 @@
       "id": "scmp",
       "name": "SCMP",
       "health": "yellow",
-      "insight": "AIQ-1465 open 333d · +1 more · renewal due Jun 2026.",
+      "insight": "⚠️ CONTRACT EXPIRES in 8 days (2026-06-30). No meeting is scheduled and AIQ-1465 is blocked on a JWT token issue — renewal is at immediate risk without outreach today.",
       "diffs": [],
       "riskTags": [
         "ticket",
@@ -187,9 +189,16 @@
       ],
       "suggestions": [
         {
-          "priority": "high",
           "label": "Renewal · High",
-          "text": "SCMP renewal due Jun 2026 — confirm status now"
+          "text": "Contract expires 2026-06-30 (8 days). Book an emergency renewal call with SCMP immediately — no meeting is currently on calendar and time is critically short."
+        },
+        {
+          "label": "Blocker · High",
+          "text": "AIQ-1465 is blocked on a JWT token error. Escalate to engineering today; resolving this shows responsiveness heading into renewal discussions."
+        },
+        {
+          "label": "Engagement · Medium",
+          "text": "Account is silent — only 2 open tickets and no meetings. Proactively contact the client to surface any concerns before they decide not to renew."
         }
       ]
     },
@@ -197,7 +206,7 @@
       "id": "1010hope",
       "name": "10/10Hope",
       "health": "green",
-      "insight": "No active tickets — all clear.",
+      "insight": "Active integrations on track — klickngo API and AIQUA onboarding both in progress with Mark Liu; no open support tickets, suggesting stable progress.",
       "diffs": [],
       "riskTags": [],
       "ticketCount": 0,
@@ -217,9 +226,12 @@
       "tickets": [],
       "suggestions": [
         {
-          "priority": "low",
-          "label": "Check-in · Low",
-          "text": "No active tickets — send a check-in to 10/10Hope"
+          "label": "Integration Check · Medium",
+          "text": "klickngo API integration and AIQUA onboarding are both in progress with Mark Liu. Verify current status and confirm there are no blockers or timeline risks."
+        },
+        {
+          "label": "Proactive Outreach · Low",
+          "text": "Zero open tickets suggests smooth delivery. Schedule a brief client check-in to confirm onboarding timeline satisfaction and identify any upcoming needs."
         }
       ]
     },
@@ -227,7 +239,7 @@
       "id": "luxgen",
       "name": "Luxgen",
       "health": "yellow",
-      "insight": "LEG-16090 open 17d · +8 more.",
+      "insight": "No meetings in calendar — risk signal. EAM-227 (Offboard Request, Roland Wang) conflicts with the active BB renewal LEG-16090 (jenny.liu); clarify client intent immediately.",
       "diffs": [],
       "riskTags": [
         "ticket",
@@ -308,13 +320,26 @@
           "pinned": false
         }
       ],
-      "suggestions": []
+      "suggestions": [
+        {
+          "label": "Offboard Risk · High",
+          "text": "EAM-227 (Offboard Request, Roland Wang) is open alongside the BB renewal LEG-16090. Clarify immediately whether this is a partial or full offboard — a misread here could lose the account."
+        },
+        {
+          "label": "Meeting · High",
+          "text": "No client meetings are scheduled. Book a check-in with Luxgen this week to confirm their intentions for the active BB contract (NTD 50,000/mo through Nov 2026)."
+        },
+        {
+          "label": "Renewal Monitoring · Medium",
+          "text": "BB contract (LEG-16090, jenny.liu) is active through 2026-11-23. Keep tabs on progress and confirm renewal terms are being tracked with the legal team."
+        }
+      ]
     },
     {
       "id": "55688",
       "name": "55688",
       "health": "red",
-      "insight": "BBT-5428 backlog 195d · +12 more · [潔衣家]BotBonnie 產品更新及討論 Jun 24.",
+      "insight": "Meeting Jun 24 at 14:30 HKT — prepare BotBonnie product update agenda. BBT-5428 (Service Agent RFQ 客服功能優化, Brian Tsai) is still in backlog — use the meeting to drive a timeline commitment.",
       "diffs": [],
       "riskTags": [
         "ticket",
@@ -432,9 +457,16 @@
       ],
       "suggestions": [
         {
-          "priority": "medium",
-          "label": "Meeting · Medium",
-          "text": "Prep for [潔衣家]BotBonnie 產品更新及討論 on Jun 24 (14:30–15:00 HKT · william.wt.lin@appier.com)"
+          "label": "Meeting Prep · High",
+          "text": "BotBonnie 產品更新及討論 on Jun 24 at 14:30 HKT. Prepare product update summary and push Brian Tsai for a decision or next step on BBT-5428 (Service Agent RFQ)."
+        },
+        {
+          "label": "RFQ · High",
+          "text": "BBT-5428 (55688 Service Agent RFQ, Brian Tsai) remains in backlog. Confirm whether a budget decision has been made and press for a timeline commitment at the Jun 24 meeting."
+        },
+        {
+          "label": "Account Health · Medium",
+          "text": "Account is red with 13 open tickets. Review stale items before Jun 24 and close out any resolved issues to show momentum."
         }
       ]
     },
@@ -442,7 +474,7 @@
       "id": "tiangyuanxiang",
       "name": "田原香",
       "health": "yellow",
-      "insight": "APC-697 open 11d · +12 more.",
+      "insight": "Weekly tracking meeting expected Tuesday Jun 23 at 09:30 HKT — not currently visible in calendar. APC-697/698 (template editor bug, unassigned) may be blocking new use case development.",
       "diffs": [],
       "riskTags": [
         "ticket",
@@ -551,13 +583,26 @@
           "pinned": false
         }
       ],
-      "suggestions": []
+      "suggestions": [
+        {
+          "label": "Meeting Check · High",
+          "text": "Weekly tracking meeting (Tuesdays 09:30 HKT) is missing from calendar for Jun 23. Confirm it is still scheduled or create the invite to maintain cadence."
+        },
+        {
+          "label": "Bug Triage · Medium",
+          "text": "APC-697 and APC-698 (template editor 'create from scratch' bug) are both unassigned. Assign an owner and get an ETA — these may be blocking the client's new use case work."
+        },
+        {
+          "label": "Use Case Pipeline · Low",
+          "text": "Onboarding and Campaign Agent Feature are complete. Follow up on what new use cases the client is developing and whether they need product or technical support."
+        }
+      ]
     },
     {
       "id": "momax",
       "name": "Momax",
       "health": "yellow",
-      "insight": "CAM-350143 open 403d · +1 more.",
+      "insight": "Silent account with no upcoming meetings. CAM-350143 (CPV Multi-Geo 2025, Gary Huang) is open and CAM-257353 (Q1 Ecom 2023) is still in-progress — both need a status check.",
       "diffs": [],
       "riskTags": [
         "ticket",
@@ -584,13 +629,22 @@
           "pinned": false
         }
       ],
-      "suggestions": []
+      "suggestions": [
+        {
+          "label": "Engagement · Medium",
+          "text": "No meetings scheduled and only 2 campaign tickets open. Proactively reach out to Momax to discuss Q3/Q4 campaign planning before the pipeline goes cold."
+        },
+        {
+          "label": "Ticket Review · Low",
+          "text": "CAM-350143 (CPV Multi-Geo 2025, Gary Huang) has been open a long time. Confirm with Gary whether this campaign is still active or should be closed out."
+        }
+      ]
     },
     {
       "id": "citysuper",
       "name": "City Super",
       "health": "yellow",
-      "insight": "AIR-4564 in-progress 4d · +13 more.",
+      "insight": "Four Prizm demo account tickets (AIR-4564, ETS-4262, ETS-4261, QGWL-25915 — all Mark Liu) are in progress. LEG-16086 (AIQUA Order Form CLONE) is open and unassigned — needs an owner.",
       "diffs": [],
       "riskTags": [
         "ticket",
@@ -701,13 +755,26 @@
           "pinned": false
         }
       ],
-      "suggestions": []
+      "suggestions": [
+        {
+          "label": "Prizm Demo · High",
+          "text": "Four linked Prizm demo account tickets are all with Mark Liu. Confirm ETA with Mark and whether the client is expecting delivery — misaligned expectations here create relationship risk."
+        },
+        {
+          "label": "Legal · Medium",
+          "text": "LEG-16086 (AIQUA Order Form CLONE) is open and unassigned. Assign an owner and confirm its status to avoid blocking a renewal or expansion deal."
+        },
+        {
+          "label": "Engagement · Low",
+          "text": "No meetings scheduled with City Super. Book a check-in to align on Prizm partnership progress and confirm Q3 product roadmap expectations."
+        }
+      ]
     },
     {
       "id": "xindongli",
       "name": "行動力國際",
       "health": "yellow",
-      "insight": "BBT-7270 open 103d · +3 more.",
+      "insight": "Account handover in progress. BBT-7270 (Service Agent wrong custom answers, vivian.yang) and BBT-4660 (BotBonnie→Phoenix migration, Salem Chen) are both open — these should be resolved or clearly handed off before the transition completes.",
       "diffs": [],
       "riskTags": [
         "ticket",
@@ -753,7 +820,20 @@
           "pinned": false
         }
       ],
-      "suggestions": []
+      "suggestions": [
+        {
+          "label": "Handover · High",
+          "text": "Account handover is in progress. Ensure BBT-7270 and BBT-4660 each have a named owner and a clear ETA documented before the handover is finalized."
+        },
+        {
+          "label": "Bug Resolution · Medium",
+          "text": "BBT-7270 (Service Agent wrong custom answers, vivian.yang) is open. Confirm root cause and fix timeline — leaving this unresolved at handover creates a poor first impression for the incoming CSM."
+        },
+        {
+          "label": "Migration · Medium",
+          "text": "BBT-4660 (BotBonnie→Phoenix migration, Salem Chen) is open. Confirm migration status and whether the client has been notified of the expected completion date."
+        }
+      ]
     }
   ]
 }
