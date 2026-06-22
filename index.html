@@ -14,14 +14,14 @@
 <body>
 <div class="toast-wrap" id="tw"></div>
 
-<!-- ââââââââââââââââââââââââââââââââââââââââââââââââââ
+<!-- ══════════════════════════════════════════════════
      LOGIN SCREEN
-     ââââââââââââââââââââââââââââââââââââââââââââââââââ -->
+     ══════════════════════════════════════════════════ -->
 <div class="fullscreen" id="loginScreen" style="display:none">
   <div class="card">
-    <div class="login-logo">ð¯</div>
+    <div class="login-logo">🎯</div>
     <h2>Jira Team Dashboard</h2>
-    <p class="sub">Track Jira tickets you've reported, grouped by client â all in one place.</p>
+    <p class="sub">Track Jira tickets you've reported, grouped by client — all in one place.</p>
 
     <div class="err-box" id="loginErr"></div>
 
@@ -33,7 +33,7 @@
     
 
     <p class="login-note">
-      ð Redirects to Atlassian's official login. Each user sees only their own reported tickets. Session is cleared when you close this tab.
+      🔒 Redirects to Atlassian's official login. Each user sees only their own reported tickets. Session is cleared when you close this tab.
     </p>
   </div>
 </div>
@@ -45,26 +45,26 @@
   <div id="setupErr"></div>
 </div>
 
-<!-- ââââââââââââââââââââââââââââââââââââââââââââââââââ
+<!-- ══════════════════════════════════════════════════
      SCREEN 3: MAIN DASHBOARD
-     ââââââââââââââââââââââââââââââââââââââââââââââââââ -->
+     ══════════════════════════════════════════════════ -->
 <div id="appScreen" style="display:none">
-  <!-- Preview mode badge â only visible when using mock data -->
+  <!-- Preview mode badge — only visible when using mock data -->
   <div class="preview-badge" id="previewBadge" style="display:none">
-    ð¨ Preview Mode â mock data
-    <button onclick="exitPreview()" title="Exit preview">â</button>
+    🎨 Preview Mode — mock data
+    <button onclick="exitPreview()" title="Exit preview">✕</button>
   </div>
   <div class="container">
     <header>
       <div class="header-left">
-        <h1>ð¯ Jira Ticket Dashboard</h1>
-        <p id="headerSub">Loadingâ¦</p>
+        <h1>🎯 Jira Ticket Dashboard</h1>
+        <p id="headerSub">Loading…</p>
       </div>
       <div class="header-right">
-        <div class="user-chip"><span class="u-dot"></span><span id="headerUser">â</span></div>
-        <div class="last-updated" id="lu">Updated: â</div>
-        <button class="btn-refresh" id="btnR" onclick="refresh()"><span id="rIcon">â»</span> Refresh</button>
-        <button class="btn-theme" id="btnTheme" onclick="toggleTheme()">ð Dark</button>
+        <div class="user-chip"><span class="u-dot"></span><span id="headerUser">—</span></div>
+        <div class="last-updated" id="lu">Updated: —</div>
+        <button class="btn-refresh" id="btnR" onclick="refresh()"><span id="rIcon">↻</span> Refresh</button>
+        <button class="btn-theme" id="btnTheme" onclick="toggleTheme()">🌙 Dark</button>
         <button class="btn-logout" onclick="logout()">Logout</button>
       </div>
     </header>
@@ -72,17 +72,17 @@
     <!-- TABS -->
     <div class="tabs">
       <button class="tab-btn active" id="tab-tracking" onclick="switchTab('tracking')">
-        ð Issue Tracking <span class="tab-count" id="tc-tracking">â</span>
-        <span class="tab-draft-badge" id="tabDraftBadge" style="display:none" title="Onboarding drafts waiting for App ID">â¸</span>
+        📋 Issue Tracking <span class="tab-count" id="tc-tracking">—</span>
+        <span class="tab-draft-badge" id="tabDraftBadge" style="display:none" title="Onboarding drafts waiting for App ID">⏸</span>
       </button>
       <button class="tab-btn" id="tab-tbd" onclick="switchTab('tbd')">
-        â To Be Done <span class="tab-count" id="tc-tbd">â</span>
+        ✅ To Be Done <span class="tab-count" id="tc-tbd">—</span>
       </button>
       <button class="tab-btn" id="tab-ar" onclick="switchTab('ar')">
-        ð³ CSM AR Status <span class="tab-count" id="tc-ar">â</span>
+        💳 CSM AR Status <span class="tab-count" id="tc-ar">—</span>
       </button>
       <button class="tab-btn" id="tab-brief" onclick="switchTab('brief')" style="display:none">
-        ð CSM Brief <span class="tab-count" id="tc-brief">â</span>
+        📊 CSM Brief <span class="tab-count" id="tc-brief">—</span>
       </button>
     </div>
 
@@ -93,66 +93,66 @@
       <div class="ob-progress-section" id="obProgressSection" style="display:none">
         <div class="ob-progress-header">
           <div>
-            <span class="ob-progress-title">ð Onboarding Progress</span>
+            <span class="ob-progress-title">🚀 Onboarding Progress</span>
             <p style="font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);margin-top:2px">
               Drafts awaiting App ID can be resumed below
             </p>
           </div>
-          <button class="btn-new-ob" onclick="openWizard()">ï¼ New Onboarding</button><button class="btn-feat-enable" onclick="openFeatureEnableWizard()">â¡ Feature Enable</button>
+          <button class="btn-new-ob" onclick="openWizard()">＋ New Onboarding</button><button class="btn-feat-enable" onclick="openFeatureEnableWizard()">⚡ Feature Enable</button>
         </div>
         <div class="ob-cards" id="obCards"></div>
       </div>
 
       <!-- New Onboarding button when no onboardings exist -->
       <div id="obNewWrap" style="margin-bottom:16px;display:flex;justify-content:flex-end;">
-        <button class="btn-new-ob" onclick="openWizard()">ð New Onboarding</button><button class="btn-feat-enable" onclick="openFeatureEnableWizard()">â¡ Feature Enable</button>
+        <button class="btn-new-ob" onclick="openWizard()">🚀 New Onboarding</button><button class="btn-feat-enable" onclick="openFeatureEnableWizard()">⚡ Feature Enable</button>
       </div>
 
-      <!-- Pinned Tickets Session â always shown at top -->
+      <!-- Pinned Tickets Session — always shown at top -->
       <div class="pinned-section" id="pinnedSection">
         <div class="pinned-header">
-          <span>ð</span>
+          <span>📌</span>
           <span class="pinned-title">Pinned Tickets</span>
           <span class="pinned-badge" id="pinnedCount">0 tickets</span>
           <div class="pinned-add-wrap">
             <input class="pinned-input" id="pinnedInput" placeholder="e.g. LEG-1234"
               onkeydown="if(event.key==='Enter')addPinnedTicket()"/>
-            <button class="pinned-add-btn" id="pinnedAddBtn" onclick="addPinnedTicket()">ï¼ Track</button>
+            <button class="pinned-add-btn" id="pinnedAddBtn" onclick="addPinnedTicket()">＋ Track</button>
           </div>
         </div>
         <div id="pinnedBody">
-          <div class="pinned-empty">No pinned tickets yet â paste any Jira key above to track it here.</div>
+          <div class="pinned-empty">No pinned tickets yet — paste any Jira key above to track it here.</div>
         </div>
       </div>
 
       <div class="stats-row">
-        <div class="stat-card c-blue"><div class="stat-label">Total Tickets</div><div class="stat-value" id="sTotal">â</div></div>
-        <div class="stat-card c-green"><div class="stat-label">Done</div><div class="stat-value" id="sDone">â</div></div>
-        <div class="stat-card c-gray"><div class="stat-label">Not Started</div><div class="stat-value" id="sNS">â</div></div>
-        <div class="stat-card c-yellow"><div class="stat-label">Active</div><div class="stat-value" id="sActive">â</div></div>
+        <div class="stat-card c-blue"><div class="stat-label">Total Tickets</div><div class="stat-value" id="sTotal">—</div></div>
+        <div class="stat-card c-green"><div class="stat-label">Done</div><div class="stat-value" id="sDone">—</div></div>
+        <div class="stat-card c-gray"><div class="stat-label">Not Started</div><div class="stat-value" id="sNS">—</div></div>
+        <div class="stat-card c-yellow"><div class="stat-label">Active</div><div class="stat-value" id="sActive">—</div></div>
       </div>
       <div class="controls-bar">
         <button class="btn-sm" onclick="expandAll()">Expand All</button>
         <button class="btn-sm" onclick="collapseAll()">Collapse All</button>
-        <input class="search-input" type="text" id="srch" placeholder="Search ticketsâ¦" oninput="applyFilters()"/>
+        <input class="search-input" type="text" id="srch" placeholder="Search tickets…" oninput="applyFilters()"/>
         <div class="dd-wrap" id="asnWrap">
           <button class="dd-btn" id="asnBtn" onclick="ddToggle('asn',event)">
-            <span id="asnLabel">ð¤ All Assignees</span><span style="color:var(--muted)">â¾</span>
+            <span id="asnLabel">👤 All Assignees</span><span style="color:var(--muted)">▾</span>
           </button>
           <div class="dd-panel" id="asnPanel">
-            <input class="dd-search" type="text" id="asnSrch" placeholder="Search assigneesâ¦" oninput="ddFilter('asn')"/>
+            <input class="dd-search" type="text" id="asnSrch" placeholder="Search assignees…" oninput="ddFilter('asn')"/>
             <div class="dd-list" id="asnList"></div>
           </div>
         </div>
       </div>
       <!-- Bulk action bar (appears when checkboxes selected) -->
       <div class="bulk-bar" id="bulkBar">
-        <button class="bulk-deselect" onclick="clearBulkSelection()" title="Clear selection">â</button>
+        <button class="bulk-deselect" onclick="clearBulkSelection()" title="Clear selection">✕</button>
         <span class="bulk-count" id="bulkCount"><strong>0</strong> selected</span>
         <div class="bulk-actions">
-          <button class="bulk-btn success-btn" onclick="bulkMarkDone()">â Mark All Done</button>
-          <button class="bulk-btn" onclick="bulkIgnoreTickets()" title="Hide from active view â moves to Archive section">ð« Ignore</button>
-          <button class="bulk-btn" onclick="bulkCopyKeys()">ð Copy Keys</button>
+          <button class="bulk-btn success-btn" onclick="bulkMarkDone()">✓ Mark All Done</button>
+          <button class="bulk-btn" onclick="bulkIgnoreTickets()" title="Hide from active view — moves to Archive section">🚫 Ignore</button>
+          <button class="bulk-btn" onclick="bulkCopyKeys()">📋 Copy Keys</button>
         </div>
       </div>
       <div id="dash"></div>
@@ -161,29 +161,29 @@
     <!-- TAB: TO BE DONE -->
     <div class="tab-pane" id="pane-tbd">
       <div class="tbd-stats stats-row">
-        <div class="stat-card c-yellow"><div class="stat-label">Pending</div><div class="stat-value" id="tbdPending">â</div></div>
-        <div class="stat-card c-red" style="--red:#f87171" ><div class="stat-label">Overdue (&gt;14d)</div><div class="stat-value" id="tbdOverdue" style="color:var(--red)">â</div></div>
-        <div class="stat-card c-green"><div class="stat-label">Avg Lead Time</div><div class="stat-value" id="tbdAvg" style="font-size:22px;padding-top:4px">â</div></div>
+        <div class="stat-card c-yellow"><div class="stat-label">Pending</div><div class="stat-value" id="tbdPending">—</div></div>
+        <div class="stat-card c-red" style="--red:#f87171" ><div class="stat-label">Overdue (&gt;14d)</div><div class="stat-value" id="tbdOverdue" style="color:var(--red)">—</div></div>
+        <div class="stat-card c-green"><div class="stat-label">Avg Lead Time</div><div class="stat-value" id="tbdAvg" style="font-size:22px;padding-top:4px">—</div></div>
       </div>
       <div class="controls-bar">
-        <input class="search-input" type="text" id="tbdSrch" placeholder="Search ticketsâ¦" oninput="applyTbdFilters()" style="width:240px"/>
+        <input class="search-input" type="text" id="tbdSrch" placeholder="Search tickets…" oninput="applyTbdFilters()" style="width:240px"/>
       </div>
       <!-- TBD Bulk action bar -->
       <div class="bulk-bar" id="tbdBulkBar">
-        <button class="bulk-deselect" onclick="clearTbdBulk()" title="Clear selection">â</button>
+        <button class="bulk-deselect" onclick="clearTbdBulk()" title="Clear selection">✕</button>
         <span class="bulk-count" id="tbdBulkCount"><strong>0</strong> selected</span>
         <div class="bulk-actions">
-          <button class="bulk-btn success-btn" onclick="tbdBulkMarkDone()">â Mark All Done</button>
+          <button class="bulk-btn success-btn" onclick="tbdBulkMarkDone()">✓ Mark All Done</button>
           <div class="inline-asn-wrap" id="tbdBulkAsnWrap">
-            <button class="bulk-btn" onclick="toggleTbdBulkAsnDd(event)">ð¤ Reassign All</button>
+            <button class="bulk-btn" onclick="toggleTbdBulkAsnDd(event)">👤 Reassign All</button>
             <div class="inline-asn-dd" id="tbdBulkAsnDd">
               <input class="inline-asn-search" type="text" id="tbdBulkAsnSearch"
-                placeholder="Type name to search membersâ¦" oninput="filterTbdBulkAsn()" autocomplete="off"/>
+                placeholder="Type name to search members…" oninput="filterTbdBulkAsn()" autocomplete="off"/>
               <div class="inline-asn-list" id="tbdBulkAsnList"></div>
             </div>
           </div>
-          <button class="bulk-btn" onclick="tbdBulkCopyKeys()">ð Copy Keys</button>
-          <button class="bulk-btn" onclick="tbdBulkIgnoreTickets()" title="Hide from TBD view â moves to Ignored section">ð« Ignore</button>
+          <button class="bulk-btn" onclick="tbdBulkCopyKeys()">📋 Copy Keys</button>
+          <button class="bulk-btn" onclick="tbdBulkIgnoreTickets()" title="Hide from TBD view — moves to Ignored section">🚫 Ignore</button>
         </div>
       </div>
       <div class="tbd-wrap">
@@ -191,31 +191,31 @@
       </div>
     </div>
 
-    <!-- ââ CSM BRIEF TAB PANE ââ -->
+    <!-- ══ CSM BRIEF TAB PANE ══ -->
     <div class="tab-pane" id="pane-brief">
 
 
       <!-- Sync bar -->
       <div class="sync-bar">
         <span class="sync-dot spin" id="syncDot"></span>
-        <span class="sync-label" id="syncLabel">Loading brief from GitHubâ¦</span>
+        <span class="sync-label" id="syncLabel">Loading brief from GitHub…</span>
       </div>
 
       <!-- Stats row -->
       <div class="brief-stats-row">
-        <div class="brief-stat-card c-red"><div class="stat-label">Critical</div><div class="brief-stat-val" id="bs-crit">â</div></div>
-        <div class="brief-stat-card c-yellow"><div class="stat-label">At Risk</div><div class="brief-stat-val" id="bs-risk">â</div></div>
-        <div class="brief-stat-card c-green"><div class="stat-label">On Track</div><div class="brief-stat-val" id="bs-ok">â</div></div>
-        <div class="brief-stat-card c-blue"><div class="stat-label">Meetings (14d)</div><div class="brief-stat-val" id="bs-mtg">â</div></div>
+        <div class="brief-stat-card c-red"><div class="stat-label">Critical</div><div class="brief-stat-val" id="bs-crit">—</div></div>
+        <div class="brief-stat-card c-yellow"><div class="stat-label">At Risk</div><div class="brief-stat-val" id="bs-risk">—</div></div>
+        <div class="brief-stat-card c-green"><div class="stat-label">On Track</div><div class="brief-stat-val" id="bs-ok">—</div></div>
+        <div class="brief-stat-card c-blue"><div class="stat-label">Meetings (14d)</div><div class="brief-stat-val" id="bs-mtg">—</div></div>
       </div>
 
       <!-- Sub-tabs -->
       <div class="brief-tabs">
         <button class="brief-tab-btn active" id="btab-brief" onclick="briefSwitchTab('brief')">
-          ð Account Brief <span class="brief-tab-count" id="btc-brief">â</span>
+          📋 Account Brief <span class="brief-tab-count" id="btc-brief">—</span>
         </button>
         <button class="brief-tab-btn" id="btab-okr" onclick="briefSwitchTab('okr')">
-          ð OKR Log <span class="brief-tab-count" id="btc-okr">â</span>
+          📊 OKR Log <span class="brief-tab-count" id="btc-okr">—</span>
         </button>
         
       </div>
@@ -244,7 +244,7 @@
   </div>
 
 
-    <!-- ââ CSM AR RSTATUSTABPANE ââ -->
+    <!-- ══ CSM AR RSTATUSTABPANE ══ -->
     <div class="tab-pane" id="pane-ar">
 
       <!-- help note (hidden, not used in simple mode) -->
@@ -254,7 +254,7 @@
       <div id="arLoadBar" class="ar-load-bar" style="display:none">
         <span class="ar-load-dot" id="arDot"></span>
         <span class="ar-load-label" id="arLoadLabel">Ready</span>
-        <button class="ar-load-btn" id="arRefreshBtn" onclick="arLoadData()">ð Refresh</button>
+        <button class="ar-load-btn" id="arRefreshBtn" onclick="arLoadData()">🔄 Refresh</button>
         <span id="arLastLoaded" style="font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);margin-left:4px;"></span>
         <button class="ar-load-btn" onclick="arDisconnect()" style="border-color:rgba(248,113,113,"></span>
         <button class="ar-load-btn" onclick="arDisconnect()" style="border-color:rgba(248,113,113,"></span>
@@ -268,40 +268,40 @@
 
       <!-- Connect button (shown when not connected) -->
       <div id="arConnectBox" class="ar-connect-box">
-        <div class="ar-connect-title">ð CSM AR Status Check</div>
+        <div class="ar-connect-title">📊 CSM AR Status Check</div>
         <div class="ar-connect-sub">
           Paste the <strong>Apps Script URL</strong> below (one-time setup by admin).<br>
           The script reads the <em>latest AR file</em> from your shared Drive folder automatically.<br>
-          Your accounts are filtered by your login email â no sign-in popup needed.
+          Your accounts are filtered by your login email — no sign-in popup needed.
         </div>
         <div class="ar-url-row">
           <input type="text" class="ar-url-input" id="arUrlInput"
-            placeholder="https://script.google.com/macros/s/â¦/exec">
-          <button class="ar-save-btn" onclick="arSaveUrl()">Connect â</button>
+            placeholder="https://script.google.com/macros/s/…/exec">
+          <button class="ar-save-btn" onclick="arSaveUrl()">Connect ➜</button>
         </div>
         <div style="margin-top:10px;font-size:11px;color:var(--muted);font-family:'DM Mono',monospace;">
-          ð¡ URL saved in your browser. All CSMs use the same script URL.
+          💡 URL saved in your browser. All CSMs use the same script URL.
           Need setup help? Ask your admin to follow the instructions in the README.
         </div>
       </div>
 
       <!-- Stats row -->
       <div class="ar-stats-row" id="arStatsRow" style="display:none">
-        <div class="ar-stat c-blue"><div class="ar-stat-label">Total</div><div class="ar-stat-val" id="arStatTotal">â</div></div>
-        <div class="ar-stat c-green"><div class="ar-stat-label">Paid</div><div class="ar-stat-val" id="arStatPaid">â</div></div>
-        <div class="ar-stat c-yellow"><div class="ar-stat-label">Unpaid</div><div class="ar-stat-val" id="arStatUnpaid">â</div></div>
-        <div class="ar-stat c-red"><div class="ar-stat-label">Invalid</div><div class="ar-stat-val" id="arStatInvalid">â</div></div>
+        <div class="ar-stat c-blue"><div class="ar-stat-label">Total</div><div class="ar-stat-val" id="arStatTotal">—</div></div>
+        <div class="ar-stat c-green"><div class="ar-stat-label">Paid</div><div class="ar-stat-val" id="arStatPaid">—</div></div>
+        <div class="ar-stat c-yellow"><div class="ar-stat-label">Unpaid</div><div class="ar-stat-val" id="arStatUnpaid">—</div></div>
+        <div class="ar-stat c-red"><div class="ar-stat-label">Invalid</div><div class="ar-stat-val" id="arStatInvalid">—</div></div>
       </div>
 
       <!-- Controls bar -->
       <div class="ar-ctrl-bar" id="arCtrlBar" style="display:none">
-        <input type="text" class="ar-search" id="arSearch" placeholder="ð Search account or opportunityâ¦" oninput="arRender()">
+        <input type="text" class="ar-search" id="arSearch" placeholder="🔍 Search account or opportunity…" oninput="arRender()">
         <select class="ar-filter-sel" id="arStatusFilter" onchange="arRender()">
           <option value="">All statuses</option>
-          <option value="Paid">â Paid</option>
-          <option value="Unpaid">â³ Unpaid</option>
-          <option value="Billed">ð§¾ Billed</option>
-          <option value="Invalid">â Invalid</option>          <option value="Scheduled">ð Scheduled</option>          <option value="Draft">ð Draft</option>
+          <option value="Paid">✅ Paid</option>
+          <option value="Unpaid">⏳ Unpaid</option>
+          <option value="Billed">🧾 Billed</option>
+          <option value="Invalid">❌ Invalid</option>          <option value="Scheduled">📅 Scheduled</option>          <option value="Draft">📝 Draft</option>
         </select>
         <select id="arCsmFilter" onchange="arRender()" style="padding:6px 10px;border-radius:8px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:12px;cursor:pointer;min-width:160px">
           <option value="">All CSMs</option>
@@ -322,10 +322,10 @@
   <div class="brief-side-panel" id="briefSidePanel">
     <div class="brief-panel-head">
       <div>
-        <div class="brief-panel-title" id="briefPanelTitle">â</div>
-        <div class="brief-panel-sub" id="briefPanelSub">â</div>
+        <div class="brief-panel-title" id="briefPanelTitle">—</div>
+        <div class="brief-panel-sub" id="briefPanelSub">—</div>
       </div>
-      <button class="brief-panel-close" onclick="closeBriefPanel()">â</button>
+      <button class="brief-panel-close" onclick="closeBriefPanel()">✕</button>
     </div>
     <div class="brief-panel-body" id="briefPanelBody"></div>
   </div>
@@ -348,27 +348,27 @@
       <div class="log-form-row">
         <label>Category</label>
         <select id="mCat">
-          <option value="onboard">ð Onboard</option>
-          <option value="renewal">ð Renewal</option>
-          <option value="ticket">ð« Ticket Resolved</option>
-          <option value="feature">â¡ Feature Enabled</option>
-          <option value="pitching">ð¯ Pitching</option>
-          <option value="ai">ð¤ AI Adoption</option>
-          <option value="team">ð¤ Team Contribution</option>
-          <option value="other">ð Other</option>
+          <option value="onboard">🚀 Onboard</option>
+          <option value="renewal">🔄 Renewal</option>
+          <option value="ticket">🎫 Ticket Resolved</option>
+          <option value="feature">⚡ Feature Enabled</option>
+          <option value="pitching">🎯 Pitching</option>
+          <option value="ai">🤖 AI Adoption</option>
+          <option value="team">🤝 Team Contribution</option>
+          <option value="other">📌 Other</option>
         </select>
       </div>
       <div class="log-form-row">
         <label>Account</label>
         <select id="mClient">
           <option>Mannings</option><option>SCMP</option><option>10/10Hope</option>
-          <option>Luxgen</option><option>55688</option><option>ç°åé¦</option>
+          <option>Luxgen</option><option>55688</option><option>田原香</option>
           <option>Internal</option><option>Other</option>
         </select>
       </div>
       <div class="log-form-row">
         <label>Description</label>
-        <textarea id="mDesc" placeholder="What did you do? e.g. Enabled AIRIS for Manningsâ¦"></textarea>
+        <textarea id="mDesc" placeholder="What did you do? e.g. Enabled AIRIS for Mannings…"></textarea>
       </div>
       <div class="log-modal-btns">
         <button class="log-modal-cancel" onclick="closeModal()">Cancel</button>
@@ -382,49 +382,49 @@
       <div class="wiz-header">
         <span class="wiz-title" id="wizTitle">New Onboarding</span>
         <span class="wiz-step-indicator" id="wizStepInd"></span>
-        <button class="wiz-close" onclick="closeWizard()">â</button>
+        <button class="wiz-close" onclick="closeWizard()">✕</button>
       </div>
       <div class="wiz-body" id="wizBody"></div>
       <div class="wiz-footer" id="wizFooter"></div>
     </div>
   </div>
 
-  <!-- ââ SIDE PANEL ââ -->
+  <!-- ── SIDE PANEL ── -->
   <div class="panel-overlay" id="panelOverlay" onclick="closePanel()"></div>
   <div class="side-panel" id="sidePanel">
     <div class="panel-header">
       <div class="panel-title-wrap">
-        <a class="panel-key" id="panelKey" href="#" target="_blank">â</a>
+        <a class="panel-key" id="panelKey" href="#" target="_blank">—</a>
         <span class="panel-status-badge" id="panelStatus"></span>
       </div>
-      <button class="panel-close" onclick="closePanel()">â</button>
+      <button class="panel-close" onclick="closePanel()">✕</button>
     </div>
 
     <div class="panel-body">
       <!-- Summary + meta -->
       <div class="panel-summary" id="panelSummary"></div>
       <div class="panel-meta">
-        <div class="panel-meta-row"><span class="pm-label">Assignee</span><span class="pm-val" id="panelAssignee">â</span></div>
-        <div class="panel-meta-row"><span class="pm-label">Reporter</span><span class="pm-val" id="panelReporter">â</span></div>
-        <div class="panel-meta-row"><span class="pm-label">Created</span><span class="pm-val" id="panelCreated">â</span></div>
-        <div class="panel-meta-row"><span class="pm-label">Lead Time</span><span class="pm-val" id="panelLT">â</span></div>
+        <div class="panel-meta-row"><span class="pm-label">Assignee</span><span class="pm-val" id="panelAssignee">—</span></div>
+        <div class="panel-meta-row"><span class="pm-label">Reporter</span><span class="pm-val" id="panelReporter">—</span></div>
+        <div class="panel-meta-row"><span class="pm-label">Created</span><span class="pm-val" id="panelCreated">—</span></div>
+        <div class="panel-meta-row"><span class="pm-label">Lead Time</span><span class="pm-val" id="panelLT">—</span></div>
       </div>
 
       <!-- Description (both modes) -->
       <div class="panel-section">
         <div class="panel-section-title">Description</div>
         <div class="panel-description" id="panelDescription">
-          <span class="panel-loading">Loadingâ¦</span>
+          <span class="panel-loading">Loading…</span>
         </div>
       </div>
 
-      <!-- ACTION SECTIONS â To Be Done mode only -->
+      <!-- ACTION SECTIONS — To Be Done mode only -->
       <div id="panelActions">
         <!-- Status transitions -->
         <div class="panel-section">
           <div class="panel-section-title">Change Status</div>
           <div class="panel-transitions" id="panelTransitions">
-            <span class="panel-loading">Loading transitionsâ¦</span>
+            <span class="panel-loading">Loading transitions…</span>
           </div>
         </div>
 
@@ -433,7 +433,7 @@
           <div class="panel-section-title">Reassign To</div>
           <div class="panel-reassign-wrap">
             <input class="panel-input" type="text" id="panelAssigneeSearch"
-              placeholder="Search by nameâ¦" oninput="searchAssignees()"
+              placeholder="Search by name…" oninput="searchAssignees()"
               autocomplete="off"/>
             <div class="panel-user-results" id="panelUserResults" style="display:none"></div>
             <div class="panel-assigned-to" id="panelAssignedTo"></div>
@@ -444,7 +444,7 @@
         <div class="panel-section">
           <div class="panel-section-title">Add Comment</div>
           <textarea class="panel-textarea" id="panelComment"
-            placeholder="Write a commentâ¦ (e.g. Reassigning to you â please review the API config)"></textarea>
+            placeholder="Write a comment… (e.g. Reassigning to you — please review the API config)"></textarea>
           <button class="panel-btn-submit" id="panelCommentBtn" onclick="submitComment()">
             Send Comment
           </button>
@@ -454,20 +454,20 @@
       <!-- Recent comments (both modes, limit differs) -->
       <div class="panel-section">
         <div class="panel-section-title" id="panelCommentTitle">Recent Comments</div>
-        <div id="panelCommentList"><span class="panel-loading">Loadingâ¦</span></div>
+        <div id="panelCommentList"><span class="panel-loading">Loading…</span></div>
       </div>
     </div>
   </div>
 </div>
 
-  <!-- Scripts: load order matters â all globals share page scope -->
+  <!-- Scripts: load order matters — all globals share page scope -->
   <script src="js/config.js"></script>
   <script src="js/auth.js"></script>
   <script src="js/api.js"></script>
-  <script src="js/dashboard.js?v=20260622b"></script>
+  <script src="js/dashboard.js?v=20260622c"></script>
   <script src="js/screens.js"></script>
   <script src="js/onboarding.js"></script>
-  <script src="js/brief.js?v=20260622b"></script>
+  <script src="js/brief.js?v=20260622c"></script>
   <script src="js/app.js"></script>
 
   <!-- SheetJS for CSV/Excel parsing -->
@@ -476,7 +476,7 @@
 
   <!-- Feature Enable Wizard -->
 <style id="fe-wiz-styles">.btn-feat-enable{background:linear-gradient(135deg,#8b6ff7,#5b9ef8);color:#fff;border:none;border-radius:10px;padding:10px 18px;font-weight:700;font-size:0.85rem;cursor:pointer;transition:opacity .2s;margin-left:8px}.btn-feat-enable:hover{opacity:.85}.fe-platform-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:12px}.fe-platform-card{border:2px solid var(--border);border-radius:14px;padding:22px 12px;text-align:center;cursor:pointer;transition:all .15s;background:var(--surface)}.fe-platform-card:hover:not(.fe-disabled){border-color:var(--accent);transform:translateY(-2px)}.fe-platform-card.fe-selected{border-color:var(--accent);background:var(--blue-soft)}.fe-platform-card.fe-disabled{opacity:.38;cursor:not-allowed}.fe-feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px}.fe-feat-item{padding:12px 14px;border-radius:10px;border:1.5px solid var(--border);cursor:pointer;transition:all .15s;background:var(--surface)}.fe-feat-item:hover{border-color:var(--accent)}.fe-feat-item.fe-active{border-color:var(--accent);background:var(--blue-soft)}.fe-preview-card{background:var(--surface);border-radius:12px;padding:16px;border:1px solid var(--border)}.fe-preview-row{display:flex;justify-content:space-between;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--border);font-size:.87rem}.fe-preview-row:last-child{border-bottom:none}.fe-preview-label{color:var(--muted);font-weight:600;white-space:nowrap;margin-right:12px}.fe-preview-val{color:var(--text);text-align:right}
-/* ââ Feature Enable v2: catalog list styles âââââââââââââ */
+/* ── Feature Enable v2: catalog list styles ───────────── */
 .fe-feat-list{display:flex;flex-direction:column;gap:6px;max-height:340px;overflow-y:auto;padding-right:4px}
 .fe-feat-list-preview{max-height:220px}
 .fe-cat-header{font-size:.7rem;font-weight:700;letter-spacing:.08em;color:var(--muted);padding:10px 0 4px}
@@ -485,10 +485,10 @@
 .fe-feat-row.fe-row-on{border-color:var(--accent);background:rgba(99,102,241,.12)}
 .fe-feat-cb{width:16px;height:16px;border-radius:4px;border:2px solid var(--muted);flex-shrink:0;transition:all .15s}
 .fe-feat-cb.fe-cb-on{background:var(--accent);border-color:var(--accent)}
-.fe-feat-cb.fe-cb-on::after{content:'â';display:block;color:#fff;font-size:11px;line-height:12px;text-align:center}
+.fe-feat-cb.fe-cb-on::after{content:'✓';display:block;color:#fff;font-size:11px;line-height:12px;text-align:center}
 .fe-feat-name{flex:1;font-size:.88rem;font-weight:500}
 .fe-badge-clone{font-size:.7rem;padding:2px 8px;border-radius:4px;border:1px solid var(--border);color:var(--muted);flex-shrink:0}
 .fe-badge-manual{font-size:.7rem;padding:2px 8px;border-radius:4px;background:rgba(245,158,11,.15);color:#f59e0b;border:1px solid rgba(245,158,11,.3);flex-shrink:0}
 .fe-preview-feat-row{display:flex;align-items:center;justify-content:space-between;padding:8px 12px;border-radius:6px;border:1px solid var(--border)}
-/* ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ */
+/* ──────────────────────────────────────────────────────────── */
 </style><div id="feOverlay" class="wiz-overlay" onclick="if(e
