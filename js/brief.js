@@ -333,9 +333,11 @@ function openBriefPanel(id){
 
   // Intersect with localStorage tracked tickets if available
   var _lsTracked = (function(){try{return JSON.parse(localStorage.getItem('csmTracked')||'{}')}catch(_e){return {};}})();
+  var _briefAliases = {'qchicken': '\u7530\u539f\u9999', '\u7530\u539f\u9999': 'qchicken'};
+  var _acctAlias = (_briefAliases[_acctN] || '').toLowerCase().replace(/[^a-z0-9\u4e00-\u9fff]/g,'');
   var _lsKey = Object.keys(_lsTracked).find(function(k){
     var kn = k.toLowerCase().replace(/[^a-z0-9\u4e00-\u9fff]/g,'');
-    return kn.includes(_acctN) || _acctN.includes(kn);
+    return kn.includes(_acctN) || _acctN.includes(kn) || (_acctAlias && (kn.includes(_acctAlias) || _acctAlias.includes(kn)));
   });
   var _trackedKeys = _lsKey ? new Set(_lsTracked[_lsKey]) : null;
   var _displayTix = _trackedKeys ? _filtTix.filter(function(t){return _trackedKeys.has(t.key);}) : _filtTix;
