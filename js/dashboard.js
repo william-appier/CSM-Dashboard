@@ -14,13 +14,13 @@
 
 'use strict';
 
-// SECTION 5 — DASHBOARD LOGIC (unchanged from previous version)
-// ════════════════════════════════════════════════════════════════════════════
+// SECTION 5 \u2014 DASHBOARD LOGIC (unchanged from previous version)
+// \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550
 
 function normU(s){
   return(s||'').replace(/[\uFF01-\uFF5E]/g,c=>String.fromCharCode(c.charCodeAt(0)-0xFEE0)).replace(/\u3000/g,' ').trim();
 }
-const ALIASES={'10/10hope':'10/10Hope','1010hope':'10/10Hope','10/10':'10/10Hope','田原香':'Qchicken','qchicken':'Qchicken','sogo':'Sogo','SOGO':'Sogo'};
+const ALIASES={'10/10hope':'10/10Hope','1010hope':'10/10Hope','10/10':'10/10Hope','\u7530\u539f\u9999':'Qchicken','qchicken':'Qchicken','sogo':'Sogo','SOGO':'Sogo'};
 function normClient(raw){
   if(!raw) return null;
   const n=normU(raw);
@@ -53,19 +53,19 @@ function sClass(s){
 }
 function esc(s){return(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 
-// Mark Done — now uses direct REST API
+// Mark Done \u2014 now uses direct REST API
 async function markDone(key,btn){
-  btn.disabled=true; btn.innerHTML='<span class="spin">↻</span>';
-  toast('info',`Transitioning ${key} to Done…`);
+  btn.disabled=true; btn.innerHTML='<span class="spin">\u21bb</span>';
+  toast('info',`Transitioning ${key} to Done\u2026`);
   try{
     await markIssueDone(key);
     const i=allData.find(x=>x.key===key);
     if(i){i.status='Done'; i.resolutiondate=new Date().toISOString().slice(0,10);}
-    toast('success',`✓ ${key} marked as Done in Jira`);
+    toast('success',`\u2713 ${key} marked as Done in Jira`);
     renderDashboard(allData);
   }catch(e){
     toast('error',`Failed to update ${key}: ${e.message}`);
-    btn.disabled=false; btn.innerHTML='✓ Mark Done';
+    btn.disabled=false; btn.innerHTML='\u2713 Mark Done';
   }
 }
 
@@ -95,7 +95,7 @@ function ddPick(id,val,el){
   selAsn=val;
   document.querySelectorAll(`#${id}List .dd-opt`).forEach(o=>o.classList.remove('sel'));
   el.classList.add('sel');
-  document.getElementById('asnLabel').textContent=val?`👤 ${val}`:'👤 All Assignees';
+  document.getElementById('asnLabel').textContent=val?`\u{1f464} ${val}`:'\u{1f464} All Assignees';
   document.getElementById(id+'Panel').classList.remove('open');
   document.getElementById(id+'Btn').classList.remove('open');
   applyFilters();
@@ -120,7 +120,7 @@ function mkRow(issue,showBtn){
     <td><span class="ac">${esc(issue.assignee)}</span></td>
     <td><span class="dc">${issue.created}</span></td>
     <td><span class="lt ${ltC(days)}">${days}d</span></td>
-    <td style="min-width:108px" onclick="event.stopPropagation()">${showBtn&&!done?`<button class="btn-md" onclick="markDone('${issue.key}',this)">✓ Mark Done</button>`:(done?'<span style="color:var(--green);font-family:DM Mono,monospace;font-size:11px;opacity:.6">✓ done</span>':'')}</td>
+    <td style="min-width:108px" onclick="event.stopPropagation()">${showBtn&&!done?`<button class="btn-md" onclick="markDone('${issue.key}',this)">\u2713 Mark Done</button>`:(done?'<span style="color:var(--green);font-family:DM Mono,monospace;font-size:11px;opacity:.6">\u2713 done</span>':'')}</td>
   </tr>`;
 }
 
@@ -138,7 +138,7 @@ function mkGroup(client,issues,ci){
   const cNS=notDone.filter(i=>isBacklog(i.status)).length;
   const allDone = notDone.length===0 && done.length>0;
 
-  // ── ALL-DONE: render as a single compact row ──────────────────────────────
+  // \u2500\u2500 ALL-DONE: render as a single compact row \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
   if(allDone){
     // Hidden search targets so search still finds tickets inside collapsed rows
     const searchTargets=done.map(i=>`<span class="ad-search-target" data-search="${(i.key+' '+i.summary+' '+i.assignee+' '+i.status).toLowerCase()}" data-asn="${esc(i.assignee)}"></span>`).join('');
@@ -147,8 +147,8 @@ function mkGroup(client,issues,ci){
       <div class="all-done-row" onclick="toggleAllDone('${gid}')">
         <span class="client-dot" style="background:${color}"></span>
         <span class="client-name" style="color:${color}">${esc(client)}</span>
-        <span class="ad-done-badge">✓ ${done.length} done</span>
-        <span class="ad-chev" id="${gid}_adchev">▸</span>
+        <span class="ad-done-badge">\u2713 ${done.length} done</span>
+        <span class="ad-chev" id="${gid}_adchev">\u25b8</span>
       </div>
       <div class="all-done-tickets" id="${gid}_adtickets">
         <table class="done-table">${thead}<tbody>${done.map(i=>mkRow(i,false)).join('')}</tbody></table>
@@ -156,7 +156,7 @@ function mkGroup(client,issues,ci){
     </div>`;
   }
 
-  // ── NORMAL: has active/not-started tickets ────────────────────────────────
+  // \u2500\u2500 NORMAL: has active/not-started tickets \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
   return `<div class="client-group" id="${gid}">
     <div class="client-header" onclick="toggleGroup('${gid}')">
       <div class="client-name-wrap"><span class="client-dot" style="background:${color}"></span><span class="client-name" style="color:${color}">${esc(client)}</span></div>
@@ -165,14 +165,14 @@ function mkGroup(client,issues,ci){
         ${cActive?`<span class="badge b-active">${cActive} active</span>`:''}
         ${cNS?`<span class="badge b-ns">${cNS} not started</span>`:''}
         ${done.length?`<span class="badge b-done">${done.length} done</span>`:''}
-        <span class="chevron open" id="${gid}_chev">▾</span>
+        <span class="chevron open" id="${gid}_chev">\u25be</span>
       </div>
     </div>
     <div class="group-body" id="${gid}_body">
       ${notDone.length?`<div class="table-wrap"><table>${thead}<tbody>${notDone.map(i=>mkRow(i,true)).join('')}</tbody></table></div>`
         :'<div style="padding:13px 18px;color:var(--muted);font-size:13px;font-style:italic">No active tickets</div>'}
       ${done.length?`<div class="done-section">
-        <div class="done-toggle" onclick="toggleDone('${gid}_done')"><span class="done-chev" id="${gid}_done_chev">▸</span>Archive / Done <span class="done-badge">${done.length}</span></div>
+        <div class="done-toggle" onclick="toggleDone('${gid}_done')"><span class="done-chev" id="${gid}_done_chev">\u25b8</span>Archive / Done <span class="done-badge">${done.length}</span></div>
         <div class="done-body" id="${gid}_done"><table class="done-table">${thead}<tbody>${done.map(i=>mkRow(i,false)).join('')}</tbody></table></div>
       </div>`:''}
     </div>
@@ -187,9 +187,9 @@ function toggleAllDone(gid){
   if(chev) chev.classList.toggle('open', tickets.classList.contains('open'));
 }
 
-// ════════════════════════════════════════════════════════════════════════════
-// SIDE PANEL — open, load, comment, reassign, transition
-// ════════════════════════════════════════════════════════════════════════════
+// \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550
+// SIDE PANEL \u2014 open, load, comment, reassign, transition
+// \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550
 let panelKey  = null;
 let panelMode = 'tracking'; // 'tracking' = read-only | 'tbd' = full actions
 let assigneeSearchTimer = null;
@@ -221,8 +221,8 @@ function openPanel(key, e, mode='tbd'){
   // Reset description + comments to loading state, clear media registry
   _mediaRegistry = [];
   document.querySelector('.preview-modal')?.remove();
-  document.getElementById('panelDescription').innerHTML='<span class="panel-loading">Loading…</span>';
-  document.getElementById('panelCommentList').innerHTML='<span class="panel-loading">Loading…</span>';
+  document.getElementById('panelDescription').innerHTML='<span class="panel-loading">Loading\u2026</span>';
+  document.getElementById('panelCommentList').innerHTML='<span class="panel-loading">Loading\u2026</span>';
 
   // Open panel
   document.getElementById('sidePanel').classList.add('open');
@@ -255,7 +255,7 @@ function populatePanelMeta(issue){
   document.getElementById('panelKey').textContent = issue.key;
   document.getElementById('panelKey').href = issue.url;
   document.getElementById('panelSummary').textContent = normU(issue.summary);
-  document.getElementById('panelAssignee').textContent = issue.assignee || '—';
+  document.getElementById('panelAssignee').textContent = issue.assignee || '\u2014';
   document.getElementById('panelReporter').textContent = issue.reporter;
   document.getElementById('panelCreated').textContent = issue.created;
   document.getElementById('panelLT').textContent = days + 'd';
@@ -269,7 +269,7 @@ function populatePanelMeta(issue){
 
 async function loadPanelTransitions(key){
   const el = document.getElementById('panelTransitions');
-  el.innerHTML = '<span class="panel-loading">Loading…</span>';
+  el.innerHTML = '<span class="panel-loading">Loading\u2026</span>';
   try{
     const user = getUser();
     if(!user){ el.innerHTML='<span class="panel-empty">Login required</span>'; return; }
@@ -281,7 +281,7 @@ async function loadPanelTransitions(key){
       const isDoneT = t.name.toLowerCase()==='done';
       return `<button class="tr-btn ${isDoneT?'done-tr':''}"
         onclick="applyTransition('${key}','${t.id}','${esc(t.name)}',this)">
-        ${isDoneT?'✓ ':''}${esc(t.name)}
+        ${isDoneT?'\u2713 ':''}${esc(t.name)}
       </button>`;
     }).join('');
   }catch(e){
@@ -292,7 +292,7 @@ async function loadPanelTransitions(key){
 async function applyTransition(key, transitionId, transitionName, btn){
   btn.disabled=true;
   const orig=btn.innerHTML;
-  btn.innerHTML='<span class="spin">↻</span>';
+  btn.innerHTML='<span class="spin">\u21bb</span>';
   try{
     const user=getUser();
     const base=`${CONFIG.API_BASE}/ex/jira/${user.cloudId}`;
@@ -300,13 +300,13 @@ async function applyTransition(key, transitionId, transitionName, btn){
       method:'POST',
       body:JSON.stringify({transition:{id:transitionId}}),
     });
-    toast('success',`✓ ${key} → ${transitionName}`);
+    toast('success',`\u2713 ${key} \u2192 ${transitionName}`);
 
     // Update tbdData status
     const issue = tbdData.find(i=>i.key===key);
     if(issue) issue.status = transitionName;
 
-    // If Done — remove from list and close panel
+    // If Done \u2014 remove from list and close panel
     if(transitionName.toLowerCase()==='done'){
       tbdData = tbdData.filter(i=>i.key!==key);
       const tracked = allData.find(i=>i.key===key);
@@ -356,8 +356,8 @@ async function loadPanelDescription(key){
         <div class="media-grid" id="mediaGrid-${key}">`;
       for(const att of allMedia){
         html += `<div class="media-item" id="media-${esc(att.id)}" title="${esc(att.filename)}">
-          <div class="media-zoom">🔍</div>
-          <span class="panel-loading" style="font-size:10px;padding:4px">Loading…</span>
+          <div class="media-zoom">\u{1f50d}</div>
+          <span class="panel-loading" style="font-size:10px;padding:4px">Loading\u2026</span>
         </div>`;
       }
       html += '</div></div>';
@@ -383,7 +383,7 @@ async function loadPanelDescription(key){
   }
 }
 
-// ── MEDIA PREVIEW SYSTEM ────────────────────────────────────────────────────
+// \u2500\u2500 MEDIA PREVIEW SYSTEM \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
 // Stores all loaded media for the current panel: [{url, name, type}]
 let _mediaRegistry = [];
 
@@ -391,7 +391,7 @@ async function fetchMediaBlob(att, token, type, allMedia, idx){
   const slot = document.getElementById('media-'+att.id);
   if(!slot) return;
   try{
-    // Step 1: Call Jira attachment API with Bearer token — it returns a 302
+    // Step 1: Call Jira attachment API with Bearer token \u2014 it returns a 302
     // redirect to api.media.atlassian.com with a self-authenticating pre-signed URL.
     // Step 2: Follow the redirect manually WITHOUT the Authorization header
     // (sending auth headers across domains is blocked by browsers).
@@ -405,13 +405,13 @@ async function fetchMediaBlob(att, token, type, allMedia, idx){
         headers:{ 'Authorization': `Bearer ${token}` },
         redirect: 'manual', // capture the redirect without following
       });
-      // redirect: 'manual' gives type 'opaqueredirect' — extract Location header
+      // redirect: 'manual' gives type 'opaqueredirect' \u2014 extract Location header
       // In most browsers this isn't accessible due to CORS, so fall through to
       // direct fetch with follow which works when CSP allows the media domain
     }catch(_){}
 
-    // Direct fetch with redirect follow — now that CSP allows api.media.atlassian.com
-    // the browser can follow the 302 from api.atlassian.com → api.media.atlassian.com
+    // Direct fetch with redirect follow \u2014 now that CSP allows api.media.atlassian.com
+    // the browser can follow the 302 from api.atlassian.com \u2192 api.media.atlassian.com
     const resp = await fetch(apiContentUrl, {
       headers:{ 'Authorization': `Bearer ${token}` },
       redirect: 'follow',
@@ -430,14 +430,14 @@ async function fetchMediaBlob(att, token, type, allMedia, idx){
     if(type==='img'){
       slot.innerHTML=`
         <img class="media-thumb" src="${url}" alt="${esc(att.filename)}" draggable="false"/>
-        <div class="media-zoom">🔍</div>
+        <div class="media-zoom">\u{1f50d}</div>
         <div class="media-name">${esc(att.filename)}</div>`;
       slot.addEventListener('click', ()=>openPreviewModal(idx, allMedia.length));
     } else {
       // Video: show first frame as thumbnail via video element
       slot.innerHTML=`
         <video class="media-video-thumb" src="${url}" preload="metadata" muted playsinline></video>
-        <div class="media-zoom">▶</div>
+        <div class="media-zoom">\u25b6</div>
         <div class="media-video-badge">VIDEO</div>
         <div class="media-name">${esc(att.filename)}</div>`;
       // Seek to 0.5s to show a frame as thumbnail
@@ -471,13 +471,13 @@ function openPreviewModal(idx, total){
       <div class="preview-topbar">
         <span class="preview-filename">${esc(item.name)}</span>
         <span class="preview-hint">Click outside or press Esc to close</span>
-        <button class="preview-close" onclick="document.querySelector('.preview-modal')?.remove()">✕</button>
+        <button class="preview-close" onclick="document.querySelector('.preview-modal')?.remove()">\u2715</button>
       </div>
       <div class="preview-content">${contentHtml}</div>
       ${total>1?`<div class="preview-footer">
         <div class="preview-nav">
-          <button class="prev-nav-btn" id="prevBtn" onclick="navigatePreview(-1)" ${idx===0?'disabled':''}>← Prev</button>
-          <button class="prev-nav-btn" id="nextBtn" onclick="navigatePreview(1)" ${idx>=total-1?'disabled':''}>Next →</button>
+          <button class="prev-nav-btn" id="prevBtn" onclick="navigatePreview(-1)" ${idx===0?'disabled':''}>\u2190 Prev</button>
+          <button class="prev-nav-btn" id="nextBtn" onclick="navigatePreview(1)" ${idx>=total-1?'disabled':''}>Next \u2192</button>
         </div>
         <span class="preview-counter">${idx+1} / ${total}</span>
       </div>`:''}
@@ -517,7 +517,7 @@ document.addEventListener('keydown', e=>{
 
 async function loadPanelComments(key, maxResults=8){
   const el=document.getElementById('panelCommentList');
-  el.innerHTML='<span class="panel-loading">Loading comments…</span>';
+  el.innerHTML='<span class="panel-loading">Loading comments\u2026</span>';
   try{
     const user=getUser();
     if(!user){ el.innerHTML='<span class="panel-empty">Login required</span>'; return; }
@@ -559,18 +559,18 @@ async function loadPanelComments(key, maxResults=8){
         const slot=document.createElement('div');
         slot.className='comment-media-item';
         slot.id=slotId;
-        slot.innerHTML='<span class="panel-loading" style="font-size:9px">…</span>';
+        slot.innerHTML='<span class="panel-loading" style="font-size:9px">\u2026</span>';
         slot.dataset.mIdx=globalMediaIdx;
         gridEl.appendChild(slot);
 
         if(m.mediaType==='external' && m.url){
-          // External image — use URL directly, no auth needed
+          // External image \u2014 use URL directly, no auth needed
           const imgEl=document.createElement('img');
           imgEl.className='comment-thumb';
           imgEl.src=m.url;
           imgEl.alt='';
           const zoomEl=document.createElement('div');
-          zoomEl.className='media-zoom'; zoomEl.textContent='🔍';
+          zoomEl.className='media-zoom'; zoomEl.textContent='\u{1f50d}';
           slot.innerHTML='';
           slot.appendChild(imgEl);
           slot.appendChild(zoomEl);
@@ -578,8 +578,8 @@ async function loadPanelComments(key, maxResults=8){
           const capturedIdx=globalMediaIdx;
           slot.addEventListener('click',()=>openPreviewModal(capturedIdx, _mediaRegistry.filter(Boolean).length));
         } else {
-          // Internal Jira file — fetch with auth via api.atlassian.com
-          // (same approach as issue attachments — redirects to api.media.atlassian.com)
+          // Internal Jira file \u2014 fetch with auth via api.atlassian.com
+          // (same approach as issue attachments \u2014 redirects to api.media.atlassian.com)
           const apiUrl=`${CONFIG.API_BASE}/ex/jira/${user.cloudId}/rest/api/3/attachment/content/${m.id}`;
           const capturedIdx=globalMediaIdx;
           fetch(apiUrl,{headers:{'Authorization':`Bearer ${token}`},redirect:'follow'})
@@ -593,11 +593,11 @@ async function loadPanelComments(key, maxResults=8){
               _mediaRegistry[capturedIdx]={url, name:`comment-attachment-${mi+1}`, type:isVideo?'video':'img'};
               if(isVideo){
                 slot.innerHTML=`<video class="comment-thumb" src="${url}" preload="metadata" muted playsinline></video>
-                  <div class="media-zoom">▶</div>`;
+                  <div class="media-zoom">\u25b6</div>`;
                 slot.querySelector('video').addEventListener('loadedmetadata',v=>v.target.currentTime=0.5);
               } else {
                 slot.innerHTML=`<img class="comment-thumb" src="${url}" alt="" draggable="false"/>
-                  <div class="media-zoom">🔍</div>`;
+                  <div class="media-zoom">\u{1f50d}</div>`;
               }
               slot.addEventListener('click',()=>openPreviewModal(capturedIdx, _mediaRegistry.filter(Boolean).length));
             })
@@ -621,7 +621,7 @@ function extractAdfText(node){
   if(node.type==='text') return node.text||'';
   if(node.type==='hardBreak') return '\n';
   if(node.type==='paragraph') return (node.content||[]).map(extractAdfText).join('')+'\n';
-  // Skip media nodes — handled separately by extractAdfMedia
+  // Skip media nodes \u2014 handled separately by extractAdfMedia
   if(node.type==='mediaSingle'||node.type==='mediaInline') return '';
   if(node.content) return (node.content||[]).map(extractAdfText).join('');
   return '';
@@ -649,7 +649,7 @@ async function submitComment(){
   if(!panelKey) return;
 
   const btn=document.getElementById('panelCommentBtn');
-  btn.disabled=true; btn.textContent='Sending…';
+  btn.disabled=true; btn.textContent='Sending\u2026';
   try{
     const user=getUser();
     const base=`${CONFIG.API_BASE}/ex/jira/${user.cloudId}`;
@@ -684,7 +684,7 @@ function searchAssignees(){
 async function doSearchAssignees(q){
   const res=document.getElementById('panelUserResults');
   res.style.display='block';
-  res.innerHTML='<div class="panel-user-opt" style="pointer-events:none"><span class="panel-loading">Searching…</span></div>';
+  res.innerHTML='<div class="panel-user-opt" style="pointer-events:none"><span class="panel-loading">Searching\u2026</span></div>';
   try{
     const user=getUser();
     if(!user){ res.style.display='none'; return; }
@@ -698,7 +698,7 @@ async function doSearchAssignees(q){
     }
     res.innerHTML=data.map(u=>`
       <div class="panel-user-opt" onclick="selectAssignee('${esc(u.accountId)}','${esc(u.displayName)}',this)">
-        ${u.avatarUrls?.['24x24']?`<img class="panel-user-avatar" src="${u.avatarUrls['24x24']}" alt=""/>`:'<span class="panel-user-avatar" style="display:inline-flex;align-items:center;justify-content:center;font-size:10px;color:var(--muted)">👤</span>'}
+        ${u.avatarUrls?.['24x24']?`<img class="panel-user-avatar" src="${u.avatarUrls['24x24']}" alt=""/>`:'<span class="panel-user-avatar" style="display:inline-flex;align-items:center;justify-content:center;font-size:10px;color:var(--muted)">\u{1f464}</span>'}
         <span>${esc(u.displayName)}</span>
         <span style="font-size:10px;color:var(--muted);margin-left:auto">${esc(u.emailAddress||'')}</span>
       </div>`).join('');
@@ -712,7 +712,7 @@ async function selectAssignee(accountId, displayName, el){
   document.getElementById('panelAssigneeSearch').value='';
   if(!panelKey) return;
 
-  document.getElementById('panelAssignedTo').textContent='Assigning…';
+  document.getElementById('panelAssignedTo').textContent='Assigning\u2026';
   try{
     const user=getUser();
     const base=`${CONFIG.API_BASE}/ex/jira/${user.cloudId}`;
@@ -720,9 +720,9 @@ async function selectAssignee(accountId, displayName, el){
       method:'PUT',
       body:JSON.stringify({accountId}),
     });
-    document.getElementById('panelAssignedTo').textContent=`✓ Reassigned to ${displayName}`;
+    document.getElementById('panelAssignedTo').textContent=`\u2713 Reassigned to ${displayName}`;
     document.getElementById('panelAssignedTo').style.color='var(--green)';
-    toast('success',`✓ ${panelKey} reassigned to ${displayName}`);
+    toast('success',`\u2713 ${panelKey} reassigned to ${displayName}`);
 
     // If reassigned away from self, offer to remove from To Be Done list
     const currentUser=getUser();
@@ -738,7 +738,7 @@ async function selectAssignee(accountId, displayName, el){
   }
 }
 
-// ── TAB MANAGEMENT ──────────────────────────────────────────────────────────
+// \u2500\u2500 TAB MANAGEMENT \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
 let tbdData = [];
 
 function switchTab(name){
@@ -751,7 +751,7 @@ function switchTab(name){
   if(name==='ar'){ arTabActivated(); }
 }
 
-// ── REASSIGN HELPERS (shared by bulk + per-row) ──────────────────────────────
+// \u2500\u2500 REASSIGN HELPERS (shared by bulk + per-row) \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
 let _asnCache = [];
 
 async function loadAsnCache(){
@@ -780,7 +780,7 @@ function renderAsnList(listEl, searchEl, onPick){
     </div>`).join('');
 }
 
-// ── Per-row reassign ──────────────────────────────────────────────────────────
+// \u2500\u2500 Per-row reassign \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
 let _openRowDd = null;
 
 async function openRowAsnDd(key, btn, e){
@@ -813,7 +813,7 @@ async function openRowAsnDd(key, btn, e){
     const list   = document.getElementById('rowAsnList-'+key);
     const search = document.getElementById('rowAsnSearch-'+key);
     if(list && !list.children.length){
-      list.innerHTML='<div class="inline-asn-opt" style="pointer-events:none;color:var(--muted)">Loading…</div>';
+      list.innerHTML='<div class="inline-asn-opt" style="pointer-events:none;color:var(--muted)">Loading\u2026</div>';
       await loadAsnCache();
       renderAsnList(list, search, (accountId, displayName)=>pickRowAsn(key, accountId, displayName));
     }
@@ -830,12 +830,12 @@ async function pickRowAsn(key, accountId, displayName){
   const dd = document.getElementById('rowAsn-'+key);
   if(dd) dd.classList.remove('open');
   _openRowDd = null;
-  toast('info',`Reassigning ${key} to ${displayName}…`);
+  toast('info',`Reassigning ${key} to ${displayName}\u2026`);
   try{
     const user = getUser();
     const base = `${CONFIG.API_BASE}/ex/jira/${user.cloudId}`;
     await apiFetch(`${base}/rest/api/3/issue/${key}/assignee`,{ method:'PUT', body:JSON.stringify({accountId}) });
-    toast('success',`✓ ${key} reassigned to ${displayName}`);
+    toast('success',`\u2713 ${key} reassigned to ${displayName}`);
     // Remove from TBD list if reassigned away from self
     if(accountId !== user.accountId){
       tbdData = tbdData.filter(i=>i.key!==key);
@@ -844,7 +844,7 @@ async function pickRowAsn(key, accountId, displayName){
   }catch(e){ toast('error',`Reassign failed: ${e.message}`); }
 }
 
-// ── Bulk reassign ─────────────────────────────────────────────────────────────
+// \u2500\u2500 Bulk reassign \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
 async function toggleTbdBulkAsnDd(e){
   e.stopPropagation();
   const dd   = document.getElementById('tbdBulkAsnDd');
@@ -855,7 +855,7 @@ async function toggleTbdBulkAsnDd(e){
   if(isOpen){
     srch?.focus();
     if(!_asnCache.length){
-      list.innerHTML='<div class="inline-asn-opt" style="pointer-events:none;color:var(--muted)">Loading…</div>';
+      list.innerHTML='<div class="inline-asn-opt" style="pointer-events:none;color:var(--muted)">Loading\u2026</div>';
       await loadAsnCache();
     }
     renderAsnList(list, srch, (accountId, displayName)=>tbdBulkReassign(accountId, displayName));
@@ -872,7 +872,7 @@ async function tbdBulkReassign(accountId, displayName){
   document.getElementById('tbdBulkAsnDd')?.classList.remove('open');
   if(!tbdBulkSelected.size){ toast('info','No tickets selected'); return; }
   const keys = [...tbdBulkSelected];
-  toast('info',`Reassigning ${keys.length} tickets to ${displayName}…`);
+  toast('info',`Reassigning ${keys.length} tickets to ${displayName}\u2026`);
   const user = getUser();
   const base = `${CONFIG.API_BASE}/ex/jira/${user.cloudId}`;
   let ok=0, fail=0;
@@ -882,7 +882,7 @@ async function tbdBulkReassign(accountId, displayName){
       ok++;
     }catch(_){ fail++; }
   }
-  if(ok)   toast('success',`✓ Reassigned ${ok} tickets to ${displayName}`);
+  if(ok)   toast('success',`\u2713 Reassigned ${ok} tickets to ${displayName}`);
   if(fail) toast('error',`${fail} tickets could not be reassigned`);
   clearTbdBulk();
   // If reassigned to someone else, remove from list
@@ -899,7 +899,7 @@ document.addEventListener('click', ()=>{
   document.getElementById('tbdBulkAsnDd')?.classList.remove('open');
 });
 
-// ── TBD BULK ACTIONS ─────────────────────────────────────────────────────────
+// \u2500\u2500 TBD BULK ACTIONS \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
 let tbdBulkSelected = new Set();
 
 function onTbdCbChange(cb){
@@ -932,7 +932,7 @@ function updateTbdBulkBar(){
   const bar   = document.getElementById('tbdBulkBar');
   const count = document.getElementById('tbdBulkCount');
   if(!bar||!count) return;
-  // Derive count + keys directly from DOM — always in sync with what's visually checked
+  // Derive count + keys directly from DOM \u2014 always in sync with what's visually checked
   const checked = [...document.querySelectorAll('.tbd-cb:checked')];
   tbdBulkSelected = new Set(checked.map(c=>c.dataset.key));
   const n = tbdBulkSelected.size;
@@ -954,7 +954,7 @@ function tbdBulkCopyKeys(){
     .then(()=>toast('success',`Copied ${tbdBulkSelected.size} ticket keys`));
 }
 
-// ── TBD IGNORE ───────────────────────────────────────────────────────────────
+// \u2500\u2500 TBD IGNORE \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
 const TBD_IGNORE_KEY = 'jd_tbd_ignored';
 function loadTbdIgnored(){ try{ return new Set(JSON.parse(localStorage.getItem(TBD_IGNORE_KEY)||'[]')); }catch(e){ console.error('[TBD Ignore] loadTbdIgnored:',e); return new Set(); } }
 function saveTbdIgnored(s){ try{ localStorage.setItem(TBD_IGNORE_KEY, JSON.stringify([...s])); }catch(e){ console.error('[TBD Ignore] saveTbdIgnored:',e); } }
@@ -966,7 +966,7 @@ function tbdBulkIgnoreTickets(){
   keys.forEach(k=>ign.add(k));
   saveTbdIgnored(ign);
   tbdData = tbdData.filter(i=>!ign.has(i.key));
-  toast('info',`${keys.length} ticket${keys.length===1?'':'s'} ignored — hidden from TBD view`);
+  toast('info',`${keys.length} ticket${keys.length===1?'':'s'} ignored \u2014 hidden from TBD view`);
   clearTbdBulk();
   renderTbd(tbdData);
 }
@@ -984,7 +984,7 @@ async function tbdBulkMarkDone(){
   const user = getUser();
   if(!user){ toast('error','Not logged in'); return; }
   const base = `${CONFIG.API_BASE}/ex/jira/${user.cloudId}`;
-  toast('info',`Marking ${keys.length} tickets as Done…`);
+  toast('info',`Marking ${keys.length} tickets as Done\u2026`);
   let ok=0, fail=0;
   for(const key of keys){
     try{
@@ -998,13 +998,13 @@ async function tbdBulkMarkDone(){
       ok++;
     }catch(e){ fail++; }
   }
-  if(ok)   toast('success',`✓ Marked ${ok} ticket${ok===1?'':'s'} as Done`);
+  if(ok)   toast('success',`\u2713 Marked ${ok} ticket${ok===1?'':'s'} as Done`);
   if(fail) toast('error',`${fail} ticket${fail===1?'':'s'} could not be transitioned`);
   clearTbdBulk();
   renderTbd(tbdData);
 }
 
-// ── TO BE DONE RENDER ────────────────────────────────────────────────────────
+// \u2500\u2500 TO BE DONE RENDER \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
 function renderTbd(issues){
   tbdData = issues;
   tbdBulkSelected.clear();
@@ -1061,7 +1061,7 @@ function renderTbd(issues){
     html += `<div class="table-wrap"><table>${thead}<tbody>${rows}</tbody></table></div>`;
   }
 
-  // ── Ignored section ───────────────────────────────────────────────────────
+  // \u2500\u2500 Ignored section \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
   if(ignored.length){
     const ignRows = ignored.map(i=>{
       const sumClean=esc(normU(i.summary).replace(/\[[^\]]+\]\s*/,''));
@@ -1107,8 +1107,8 @@ function applyTbdFilters(){
 }
 
 async function markDoneTbd(key,btn){
-  btn.disabled=true; btn.innerHTML='<span class="spin">↻</span>';
-  toast('info',`Transitioning ${key} to Done…`);
+  btn.disabled=true; btn.innerHTML='<span class="spin">\u21bb</span>';
+  toast('info',`Transitioning ${key} to Done\u2026`);
   try{
     await markIssueDone(key);
     // Remove from tbdData and re-render
@@ -1118,16 +1118,16 @@ async function markDoneTbd(key,btn){
     const tracked=allData.find(i=>i.key===key);
     if(tracked){tracked.status='Done';tracked.resolutiondate=new Date().toISOString().slice(0,10);}
     renderDashboard(allData);
-    toast('success',`✓ ${key} marked as Done`);
+    toast('success',`\u2713 ${key} marked as Done`);
   }catch(e){
     toast('error',`Failed to update ${key}: ${e.message}`);
-    btn.disabled=false; btn.innerHTML='✓ Mark Done';
+    btn.disabled=false; btn.innerHTML='\u2713 Mark Done';
   }
 }
 
-// ════════════════════════════════════════════════════════════════════════════
-// IGNORED TICKETS (local only — hides from active view, shows in archive)
-// ════════════════════════════════════════════════════════════════════════════
+// \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550
+// IGNORED TICKETS (local only \u2014 hides from active view, shows in archive)
+// \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550
 const IGNORE_KEY = 'jd_ignored_tickets';
 function loadIgnored(){ try{ return new Set(JSON.parse(localStorage.getItem(IGNORE_KEY)||'[]')); }catch(_){ return new Set(); } }
 function saveIgnored(s){ localStorage.setItem(IGNORE_KEY, JSON.stringify([...s])); }
@@ -1137,7 +1137,7 @@ function bulkIgnoreTickets(){
   const ign = loadIgnored();
   [...bulkSelected].forEach(k=>ign.add(k));
   saveIgnored(ign);
-  toast('info',`${bulkSelected.size} ticket${bulkSelected.size===1?'':'s'} ignored — moved to Archive`);
+  toast('info',`${bulkSelected.size} ticket${bulkSelected.size===1?'':'s'} ignored \u2014 moved to Archive`);
   clearBulkSelection();
   renderDashboard(allData);
 }
@@ -1150,9 +1150,9 @@ function unignoreTicket(key){
   toast('info',`${key} restored to active`);
 }
 
-// ════════════════════════════════════════════════════════════════════════════
+// \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550
 // BULK ACTIONS
-// ════════════════════════════════════════════════════════════════════════════
+// \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550
 let bulkSelected = new Set(); // Set of ticket keys currently checked
 
 function onRowCbChange(cb){
@@ -1169,7 +1169,7 @@ function onGroupCbChange(gid, headerCb){
   body.querySelectorAll('.row-cb').forEach(cb=>{
     const tr = cb.closest('tr');
     if(!tr || tr.style.display==='none') return;
-    // Skip rows inside .done-body (archived/done) — only select active rows
+    // Skip rows inside .done-body (archived/done) \u2014 only select active rows
     if(cb.closest('.done-body')) return;
     cb.checked = headerCb.checked;
     if(headerCb.checked) bulkSelected.add(cb.dataset.key);
@@ -1195,7 +1195,7 @@ function updateBulkBar(){
   const bar   = document.getElementById('bulkBar');
   const count = document.getElementById('bulkCount');
   if(!bar||!count) return;
-  // Derive count + keys directly from DOM — always in sync with what's visually checked
+  // Derive count + keys directly from DOM \u2014 always in sync with what's visually checked
   const checked = [...document.querySelectorAll('#pane-tracking .row-cb:checked')];
   bulkSelected = new Set(checked.map(c=>c.dataset.key));
   const n = bulkSelected.size;
@@ -1223,7 +1223,7 @@ async function bulkMarkDone(){
   if(!user){ toast('error','Not logged in'); return; }
   const base = `${CONFIG.API_BASE}/ex/jira/${user.cloudId}`;
 
-  toast('info',`Marking ${keys.length} tickets as Done…`);
+  toast('info',`Marking ${keys.length} tickets as Done\u2026`);
   let successCount=0, failCount=0;
 
   for(const key of keys){
@@ -1245,7 +1245,7 @@ async function bulkMarkDone(){
     }
   }
 
-  if(successCount) toast('success',`✓ Marked ${successCount} ticket${successCount===1?'':'s'} as Done`);
+  if(successCount) toast('success',`\u2713 Marked ${successCount} ticket${successCount===1?'':'s'} as Done`);
   if(failCount)    toast('error',`${failCount} ticket${failCount===1?'':'s'} could not be transitioned`);
   clearBulkSelection();
   renderDashboard(allData);
@@ -1268,12 +1268,12 @@ function renderDashboard(issues){
   bulkSelected.clear();
   updateBulkBar();
 
-  // Filter out onboarding wizard tickets — shown in Onboarding Progress only
+  // Filter out onboarding wizard tickets \u2014 shown in Onboarding Progress only
   const obKeys  = getOnboardingTicketKeys();
   const ignored = loadIgnored();
   const filtered = issues.filter(i=>!obKeys.has(i.key) && !ignored.has(i.key));
 
-  // Build client→issues map using filtered set
+  // Build client\u2192issues map using filtered set
   const map={};
   for(const i of filtered){const c=extractClient(i.summary);if(!map[c])map[c]=[];map[c].push(i);}
 
@@ -1317,10 +1317,10 @@ function renderDashboard(issues){
     html += `
     <div class="completed-super" id="completedSuper">
       <div class="completed-header" id="completedHeader" onclick="toggleCompleted()">
-        <span>✓</span>
+        <span>\u2713</span>
         <span class="completed-title">Completed Clients</span>
-        <span class="completed-badge">${completedClients.length} clients · ${totalDoneTickets} tickets</span>
-        <span class="completed-chev" id="completedChev">▾</span>
+        <span class="completed-badge">${completedClients.length} clients \u00b7 ${totalDoneTickets} tickets</span>
+        <span class="completed-chev" id="completedChev">\u25be</span>
       </div>
       <div class="completed-body" id="completedBody">
         ${innerRows}
@@ -1346,17 +1346,17 @@ function toggleCompleted(){
 function applyFilters(){
   const q=document.getElementById('srch').value.toLowerCase().trim();
 
-  // ── Filter regular group rows ──────────────────────────────────────────────
+  // \u2500\u2500 Filter regular group rows \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
   document.querySelectorAll('tr[data-search]').forEach(tr=>{
     tr.style.display=(!q||tr.dataset.search.includes(q))&&(!selAsn||tr.dataset.asn===selAsn)?'':'none';
   });
 
-  // ── Show/hide normal client groups ─────────────────────────────────────────
+  // \u2500\u2500 Show/hide normal client groups \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
   document.querySelectorAll('.client-group').forEach(g=>{
     g.style.display=g.querySelectorAll('tr[data-search]:not([style*="none"])').length?'':'none';
   });
 
-  // ── Handle all-done compact rows inside the super-group ────────────────────
+  // \u2500\u2500 Handle all-done compact rows inside the super-group \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
   let anyCompletedMatch=false;
   document.querySelectorAll('.all-done-section').forEach(sec=>{
     const targets=sec.querySelectorAll('.ad-search-target');
@@ -1382,7 +1382,7 @@ function applyFilters(){
     }
   });
 
-  // ── Show/hide + auto-expand the Completed Clients super-group ──────────────
+  // \u2500\u2500 Show/hide + auto-expand the Completed Clients super-group \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
   const superEl  = document.getElementById('completedSuper');
   const superBody= document.getElementById('completedBody');
   const superChev= document.getElementById('completedChev');
@@ -1410,8 +1410,8 @@ function collapseAll(){document.querySelectorAll('.group-body').forEach(e=>e.sty
 
 async function refresh(){
   const btn=document.getElementById('btnR'),icon=document.getElementById('rIcon');
-  btn.classList.add('loading'); icon.innerHTML='<span class="spin">↻</span>';
-  toast('info','Fetching latest tickets…');
+  btn.classList.add('loading'); icon.innerHTML='<span class="spin">\u21bb</span>';
+  toast('info','Fetching latest tickets\u2026');
   try{
     const user=getUser();
     if(!user) throw new Error('Not logged in');
@@ -1421,11 +1421,11 @@ async function refresh(){
     ]);
     renderDashboard(reported);
     renderTbd(assigned);
-    toast('success',`✓ ${reported.length} reported · ${assigned.length} assigned`);
+    toast('success',`\u2713 ${reported.length} reported \u00b7 ${assigned.length} assigned`);
   }catch(e){
     toast('error',`Refresh failed: ${e.message}`);
   }
-  btn.classList.remove('loading'); icon.textContent='↻';
+  btn.classList.remove('loading'); icon.textContent='\u21bb';
 }
 
 function scheduleDaily(){
@@ -1433,7 +1433,7 @@ function scheduleDaily(){
   setTimeout(()=>{refresh().catch(()=>{});scheduleDaily();}, t-new Date());
 }
 
-// ════════════════════════════════════════════════════════════════════════════
+// \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550
 
 /* Ignored ticket row style */
 document.head.insertAdjacentHTML('beforeend','<style>.row-ignored{opacity:.4;background:#f8f8f8}.row-ignored td{color:#aaa}.row-ignored td:first-child::before{content:"[ignored] ";font-style:normal;opacity:1}.row-ignored a{color:#bbb;pointer-events:none}</style>');
