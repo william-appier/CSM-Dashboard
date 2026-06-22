@@ -322,8 +322,16 @@ function openBriefPanel(id){
         </div>`).join('')
     : '<div class="brief-empty-state">No meetings in next 14 days</div>';
 
+  // Filter out tickets with a [PREFIX] that doesn't match this account
+  const _acctN = (acct.name||''). toLowerCase().replace(/[^a-z0-9\u4e00-\u9fff]/g,'');
+  const _filtTix = (acct.tickets||[]).filter(function(t){
+    const _m = (t.title||''). match(/^\[([^\]]+)\]/);
+    if (!_m) return true;
+    const _p = _m[1].toLowerCase().replace(/[^a-z0-9\u4e00-\u9fff]/g,'');
+    return _p.includes(_acctN) || _acctN.includes(_p);
+  });
   const tickHTML = acct.tickets.length
-    ? acct.tickets.map(t=>`
+    ? _filtTix.map(t=>`
         <div class="brief-ticket-row">
           <div class="brief-ticket-key">${esc(t.key)}</div>
           <div class="brief-ticket-info">
