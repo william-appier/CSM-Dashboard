@@ -1428,12 +1428,25 @@ async function refresh(){
       if (_bK.size > 0) _bIssues = reported.filter(function(i){return _bK.has(i.key);});
     } catch(_e) {}
     renderDashboard(_bIssues);
+    saveCsmTracked(_bIssues);
     renderTbd(assigned);
     toast('success',`\u2713 ${reported.length} reported \u00b7 ${assigned.length} assigned`);
   }catch(e){
     toast('error',`Refresh failed: ${e.message}`);
   }
   btn.classList.remove('loading'); icon.textContent='\u21bb';
+}
+
+// Save currently-tracked (non-done) tickets per client to localStorage
+function saveCsmTracked(issues) {
+  var _t = {};
+  (issues || []).forEach(function(issue) {
+    var _c = extractClient(issue);
+    if (!_c) return;
+    if (!_t[_c]) _t[_c] = [];
+    if (!isDone(issue)) _t[_c].push(issue.key);
+  });
+  try { localStorage.setItem('csmTracked', JSON.stringify(_t)); } catch(_e) {}
 }
 
 function scheduleDaily(){
