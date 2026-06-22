@@ -85,18 +85,18 @@
   window.arLoadData = async function(){
     var savedUrl = arGetSavedUrl();
     if(!savedUrl){ arShowConnect(); return; }
-    arSetStatus('spin', 'Loading…');
+    arSetStatus('spin', 'Loading\u2026');
     var btn = document.getElementById('arRefreshBtn');
     if(btn) btn.disabled = true;
     try{
       var isAppsScript = /script\.google\.com\/macros\/s\//i.test(savedUrl);
       if(false){ // apps script returns CSV - handled by CSV path below
-        // ── Apps Script path: fetch JSON ──────────────────────────────────────────────────────
+        // \u2500\u2500 Apps Script path: fetch JSON \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
         var myEmail = arGetCurrentEmail();
         var sep = savedUrl.includes('?') ? '&' : '?';
         var fetchUrl = savedUrl + sep + 'action=ar' + (myEmail ? '&email=' + encodeURIComponent(myEmail) : '');
         var resp = await fetch(fetchUrl, {redirect:'follow', cache:'no-store'});
-        if(!resp.ok) throw new Error('HTTP ' + resp.status + ' from Apps Script — check deployment settings.');
+        if(!resp.ok) throw new Error('HTTP ' + resp.status + ' from Apps Script \u2014 check deployment settings.');
         var json;
         try{ json = await resp.json(); }
         catch(e){ throw new Error('Apps Script did not return valid JSON. Ensure it is deployed as a web app with execute access for \'Anyone\'.'); }
@@ -105,14 +105,14 @@
         if(!rows) throw new Error('Unexpected JSON shape from Apps Script.');
         if(json.source){
           var tsEl = document.getElementById('arLastLoaded');
-          if(tsEl) tsEl.textContent = '📄 ' + json.source;
+          if(tsEl) tsEl.textContent = '\u{1f4c4} ' + json.source;
         }
         arFinalize(rows, 'json');
       } else {
-        // ── Direct Sheets / CSV path ────────────────────────────────────────────────────
+        // \u2500\u2500 Direct Sheets / CSV path \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
         var fetchUrl = arToCsvUrl(savedUrl);
         var resp = await fetch(fetchUrl, {cache:'no-store'});
-        if(!resp.ok) throw new Error('HTTP ' + resp.status + ' — make sure the sheet is shared as Anyone with the link.');
+        if(!resp.ok) throw new Error('HTTP ' + resp.status + ' \u2014 make sure the sheet is shared as Anyone with the link.');
         var ct = resp.headers.get('content-type') || '';
         var buf = await resp.arrayBuffer();
         var isExcel = ct.includes('spreadsheet') || ct.includes('officedocument') ||
@@ -124,7 +124,7 @@
         } else {
           var text = new TextDecoder('utf-8').decode(buf);
           var lines = text.split('\n').filter(function(l){ return l.trim(); });
-          if(lines.length < 2) throw new Error('Empty or unreadable file — make sure the sheet is shared publicly.');
+          if(lines.length < 2) throw new Error('Empty or unreadable file \u2014 make sure the sheet is shared publicly.');
           var headerIdx=0;for(var hi=0;hi<Math.min(lines.length,30);hi++){var th=arParseCsvLine(lines[hi]);if(th.some(function(c){return c.toLowerCase().includes('account');})){headerIdx=hi;break;}}var headers=arParseCsvLine(lines[headerIdx]);
           var rows2 = [];
           for(var i = headerIdx+1; i < lines.length; i++){
@@ -240,7 +240,7 @@
       var th = document.getElementById('arTh-' + c);
       if(!th) return;
       var arrow = th.querySelector('.sort-arrow');
-      if(arrow) arrow.textContent = (c === _arSortBy) ? (_arSortAsc ? '↑' : '↓') : '↕';
+      if(arrow) arrow.textContent = (c === _arSortBy) ? (_arSortAsc ? '\u2191' : '\u2193') : '\u2195';
     });
     arRender();
   };
@@ -266,7 +266,7 @@
     function _set(id,v){ var el=document.getElementById(id); if(el) el.textContent=v; }
     _set(`arStatTotal`,total); _set(`arStatPaid`,paid);
     _set(`arStatUnpaid`,unpaid); _set(`arStatInvalid`,invalid);
-    _set(`tc-ar`, total||`—`);
+    _set(`tc-ar`, total||`\u2014`);
     var tbody = document.getElementById(`arTbody`);
     if(!tbody) return;
     if(!rows.length){
@@ -296,8 +296,8 @@
       }); });
       html+=`<tr style="background:var(--surface2)"><td colspan="5" style="padding:8px 14px;border-top:2px solid var(--accent);border-bottom:1px solid var(--border)">`;
       html+=`<div style="display:flex;justify-content:space-between;align-items:center">`;
-      html+=`<span style="font-weight:600;font-size:13px">🏢 `+_esc(acct)+`</span>`;
-      html+=`<span style="font-family:'DM Mono',monospace;font-size:12px;color:var(--accent)">`+(aCur?_esc(aCur+` `+Math.round(aTotal).toLocaleString()):`—`)+`</span>`;
+      html+=`<span style="font-weight:600;font-size:13px">\u{1f3e2} `+_esc(acct)+`</span>`;
+      html+=`<span style="font-family:'DM Mono',monospace;font-size:12px;color:var(--accent)">`+(aCur?_esc(aCur+` `+Math.round(aTotal).toLocaleString()):`\u2014`)+`</span>`;
       html+=`</div></td></tr>`;
       opps.forEach(function(opp){
         var oRows=oppMap[opp], oTotal=0, oCur=``;
@@ -306,14 +306,14 @@
         });
         html+=`<tr style="background:var(--surface)"><td colspan="5" style="padding:5px 14px 5px 28px;border-bottom:1px solid var(--border)">`;
         html+=`<div style="display:flex;justify-content:space-between;align-items:center">`;
-        html+=`<span style="font-size:12px;color:var(--text)">📋 `+_esc(opp)+`</span>`;
-        (function(){var _ed=oRows[0]&&oRows[0].endDate||``;var _ec=`var(--muted)`;if(_ed){var _dl=Math.round((new Date(_ed)-new Date(new Date().setHours(0,0,0,0)))/86400000);if(_dl<=0)_ec=`#ef4444`;else if(_dl<=30)_ec=`#f97316`;}html+=`<span style="font-size:11px;color:var(--muted);font-family:'DM Mono',monospace;margin:0 auto;white-space:nowrap">`+(oRows[0]&&(oRows[0].startDate||oRows[0].endDate)?(oRows[0].startDate?_esc(oRows[0].startDate)+` `:``)+`→`+(oRows[0].endDate?` `+`<span style="color:`+_ec+`">`+_esc(oRows[0].endDate)+`</span>`:``):``)+`</span>`;})();;
-        html+=`<span style="font-family:'DM Mono',monospace;font-size:11px;color:var(--muted2)">`+(oCur?_esc(oCur+` `+Math.round(oTotal).toLocaleString()):`—`)+`</span>`;
+        html+=`<span style="font-size:12px;color:var(--text)">\u{1f4cb} `+_esc(opp)+`</span>`;
+        (function(){var _ed=oRows[0]&&oRows[0].endDate||``;var _ec=`var(--muted)`;if(_ed){var _dl=Math.round((new Date(_ed)-new Date(new Date().setHours(0,0,0,0)))/86400000);if(_dl<=0)_ec=`#ef4444`;else if(_dl<=30)_ec=`#f97316`;}html+=`<span style="font-size:11px;color:var(--muted);font-family:'DM Mono',monospace;margin:0 auto;white-space:nowrap">`+(oRows[0]&&(oRows[0].startDate||oRows[0].endDate)?(oRows[0].startDate?_esc(oRows[0].startDate)+` `:``)+`\u2192`+(oRows[0].endDate?` `+`<span style="color:`+_ec+`">`+_esc(oRows[0].endDate)+`</span>`:``):``)+`</span>`;})();;
+        html+=`<span style="font-family:'DM Mono',monospace;font-size:11px;color:var(--muted2)">`+(oCur?_esc(oCur+` `+Math.round(oTotal).toLocaleString()):`\u2014`)+`</span>`;
         html+=`</div></td></tr>`;
         oRows.forEach(function(r){
           html+=`<tr style="background:var(--bg)"><td style="padding:4px 8px 4px 44px;font-family:'DM Mono',monospace;font-size:11px;color:var(--muted)">`+_esc(r.date)+`</td>`;
           html+=`<td></td><td style="padding:4px 12px;text-align:right;font-family:'DM Mono',monospace;font-size:12px">`+_esc(r.amount)+`</td>`;
-          html+=`<td style="padding:4px 8px"><span class="ar-badge `+_sc(r.status)+`">`+_esc(r.status||`—`)+`</span></td>`;
+          html+=`<td style="padding:4px 8px"><span class="ar-badge `+_sc(r.status)+`">`+_esc(r.status||`\u2014`)+`</span></td>`;
           html+=`<td style="padding:4px 12px;font-size:11px;color:var(--muted)">`+_esc(r.csmEmail.split(`@`)[0])+`</td></tr>`;
         });
       });
