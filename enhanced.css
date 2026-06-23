@@ -321,3 +321,64 @@ html:not(.light) .sync-label {
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: var(--border-hi); border-radius: 10px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--muted); }
+
+
+/* ── Ticket flag buttons ─────────────────────────────────────────── */
+.brief-ticket-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+.brief-tix-actions {
+  display: flex;
+  gap: 4px;
+  flex-shrink: 0;
+  opacity: 0;
+  transition: opacity 0.15s;
+  align-self: center;
+}
+.brief-ticket-row:hover .brief-tix-actions {
+  opacity: 1;
+}
+.tix-flag-btn {
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid;
+  cursor: pointer;
+  font-family: 'DM Mono', monospace;
+  line-height: 1.4;
+  background: transparent;
+  transition: background 0.1s, color 0.1s;
+}
+.tix-flag-btn.tix-done {
+  border-color: #22c55e;
+  color: #22c55e;
+}
+.tix-flag-btn.tix-done:hover {
+  background: #22c55e;
+  color: #fff;
+}
+.tix-flag-btn.tix-ignore {
+  border-color: var(--muted);
+  color: var(--muted);
+}
+.tix-flag-btn.tix-ignore:hover {
+  background: var(--muted);
+  color: #fff;
+}
+.tix-flag-btn.tix-restore {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.tix-flag-btn.tix-restore:hover {
+  background: var(--accent);
+  color: #fff;
+}
+.brief-flagged-toggle {
+  padding: 2px 0 4px;
+}
+.tix-hidden .brief-ticket-key,
+.tix-hidden .brief-ticket-info {
+  pointer-events: none;
+}
