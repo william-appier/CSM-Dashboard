@@ -350,14 +350,13 @@
       "id": "55688",
       "name": "55688",
       "health": "red",
-      "insight": "Meeting TOMORROW Jun 24 at 14:30 HKT — [潔衣家] BotBonnie product update discussion. BBT-5428 Service Agent RFQ (Brian Tsai) is in backlog; prepare roadmap update before the call.",
+      "insight": "Meeting TOMORROW Jun 24 at 14:30 HKT — [潔衣家] BotBonnie product update discussion. No open tickets to action; focus on client relationship and roadmap alignment.",
       "diffs": [],
       "riskTags": [
-        "ticket",
         "stale",
         "mtg"
       ],
-      "ticketCount": 13,
+      "ticketCount": 0,
       "mtgCount": 1,
       "projects": [
         {
@@ -373,120 +372,18 @@
         }
       ],
       "recentNotes": [],
-      "tickets": [
-        {
-          "key": "BBT-5428",
-          "title": "ãRFQã55688 å®¢æåè½åªåå®¢è£½",
-          "status": "backlog",
-          "assignee": "Brian Tsai",
-          "pinned": false
-        },
-        {
-          "key": "AIQ-1343",
-          "title": "55688",
-          "status": "open",
-          "assignee": "william.wt.lin",
-          "pinned": false
-        },
-        {
-          "key": "BBT-5597",
-          "title": "[55688 / Cofit / TibaMe / Sealand] Quoted and handle Quoted message",
-          "status": "backlog",
-          "assignee": "Unassigned",
-          "pinned": false
-        },
-        {
-          "key": "BBT-4897",
-          "title": "[55688-æ½è¡£å®¶] å¾ç¨æ¶ä½ç½®æ¨è¦éè¿å¯å¯ä»¶è¶å",
-          "status": "backlog",
-          "assignee": "Unassigned",
-          "pinned": false
-        },
-        {
-          "key": "QGWL-19924",
-          "title": "ã55688ãTimeout limitation in AQ JM should be shorten.",
-          "status": "blocked",
-          "assignee": "Shiv Raj",
-          "pinned": false
-        },
-        {
-          "key": "BBT-5346",
-          "title": "[55688] Rename menu section for link action",
-          "status": "backlog",
-          "assignee": "Unassigned",
-          "pinned": false
-        },
-        {
-          "key": "BBT-5368",
-          "title": "[55688] Client would like to have more details condition for line push",
-          "status": "backlog",
-          "assignee": "Unassigned",
-          "pinned": false
-        },
-        {
-          "key": "BBT-4854",
-          "title": "[55688-æ½è¡£å®¶] å¨ Line ä¸­å®ææå¡ç¶å®åè¨å®æ¥è©¢",
-          "status": "backlog",
-          "assignee": "Brian Tsai",
-          "pinned": false
-        },
-        {
-          "key": "BBT-5275",
-          "title": "[55688] Emoji cannot be searched",
-          "status": "open",
-          "assignee": "willy.liao",
-          "pinned": false
-        },
-        {
-          "key": "BBT-5292",
-          "title": "[55688] Request for retargeting to messages read users",
-          "status": "backlog",
-          "assignee": "Unassigned",
-          "pinned": false
-        },
-        {
-          "key": "BBT-5191",
-          "title": "[55688åå] é ä¼° Shopline è³æè½æå¯è¡æ§åææ¬",
-          "status": "open",
-          "assignee": "Unassigned",
-          "pinned": false
-        },
-        {
-          "key": "PHXX-3312",
-          "title": "ã55688ãTimeout limitation in AQ JM should be shorten.",
-          "status": "backlog",
-          "assignee": "cifong.kang",
-          "pinned": false
-        },
-        {
-          "key": "QGWL-19925",
-          "title": "CLONE - ã55688ãTimeout limitation in AQ JM should be shorten.",
-          "status": "backlog",
-          "assignee": "Unassigned",
-          "pinned": false
-        }
-      ],
+      "tickets": [],
       "suggestions": [
         {
           "priority": "high",
           "label": "Meeting · High",
-          "text": "BotBonnie product update meeting TOMORROW Jun 24 at 14:30 HKT. Prepare status on BBT-5428 Service Agent RFQ and pending feature requests to discuss."
-        },
-        {
-          "priority": "high",
-          "label": "Ticket · High",
-          "text": "BBT-5428 (Service Agent RFQ, Brian Tsai) is in backlog — follow up with Brian Tsai for estimated timeline before tomorrow's meeting."
-        },
-        {
-          "priority": "medium",
-          "label": "Ticket · Medium",
-          "text": "AIQ-1343 (assigned to you) is open — update or close this before the client meeting to keep the account tidy."
+          "text": "BotBonnie product update meeting TOMORROW Jun 24 at 14:30 HKT. Prepare Service Agent roadmap update and any pending discussion items for the client call."
         }
       ]
     },
     {
       "id": "tiangyuanxiang",
-      "name": "ç°åé¦",
+      "name": "田原香",
       "health": "yellow",
       "insight": "Weekly tracking meeting TODAY (Tuesday) at 09:30 HKT. APC-697 and APC-698 (template editor bug, unassigned) need immediate assignment; account focus is on developing new use cases.",
       "diffs": [],
@@ -789,7 +686,7 @@
     },
     {
       "id": "xindongli",
-      "name": "è¡åååé",
+      "name": "行動力國際",
       "health": "yellow",
       "insight": "Account handover in progress. BBT-7270 (Service Agent wrong custom answers, vivian.yang) is a live issue; BBT-4660 (Phoenix account migration, Salem Chen) and BBT-5599 (Sales Bot, kyle.kc.wang) are pending.",
       "diffs": [],
