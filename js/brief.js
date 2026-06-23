@@ -322,38 +322,47 @@ function openBriefPanel(id){
         </div>`).join('')
     : '<div class="brief-empty-state">No meetings in next 14 days</div>';
 
-  // Filter out tickets with a [PREFIX] that doesn't match this account
-  const _acctN = (acct.name||''). toLowerCase().replace(/[^a-z0-9\u4e00-\u9fff]/g,'');
-  const _filtTix = (acct.tickets||[]).filter(function(t){
-    const _m = (t.title||''). match(/^\[([^\]]+)\]/);
-    if (!_m) return true;
-    const _p = _m[1].toLowerCase().replace(/[^a-z0-9\u4e00-\u9fff]/g,'');
-    return _p.includes(_acctN) || _acctN.includes(_p);
-  });
-
-  // Intersect with localStorage tracked tickets if available
-  var _lsTracked = (function(){try{return JSON.parse(localStorage.getItem('csmTracked')||'{}')}catch(_e){return {};}})();
-  var _briefAliases = {'qchicken': '\u7530\u539f\u9999', '\u7530\u539f\u9999': 'qchicken'};
-  var _acctAlias = (_briefAliases[_acctN] || '').toLowerCase().replace(/[^a-z0-9\u4e00-\u9fff]/g,'');
-  var _lsKey = Object.keys(_lsTracked).find(function(k){
-    var kn = k.toLowerCase().replace(/[^a-z0-9\u4e00-\u9fff]/g,'');
-    return kn.includes(_acctN) || _acctN.includes(kn) || (_acctAlias && (kn.includes(_acctAlias) || _acctAlias.includes(kn)));
-  });
-  var _trackedKeys = _lsKey ? new Set(_lsTracked[_lsKey]) : null;
-  var _displayTix = _trackedKeys ? _filtTix.filter(function(t){return _trackedKeys.has(t.key);}) : _filtTix;
-  const tickHTML = acct.tickets.length
-    ? _displayTix.map(t=>`
-        <div class="brief-ticket-row">
-          <div class="brief-ticket-key">${esc(t.key)}</div>
-          <div class="brief-ticket-info">
-            <div class="title">${esc(t.title)} ${t.pinned?'<span class="brief-pinned-badge">pinned</span>':''}</div>
-            <div class="meta">
-              <span class="status-dot ${esc(t.status)}">${esc(t.status.replace('-',' '))}</span>
-              <span>${esc(t.assignee)}</span>
-            </div>
-          </div>
-        </div>`).join('')
-    : '<div class="brief-empty-state">No active tickets</div>';
+  // Flag-aware ticket filter — replaces old csmTracked logic
+const _acctN = (acct.name||'').toLowerCase().replace(/[^a-z0-9一-鿿]/g,'');
+const _allTix = (acct.tickets||[]).filter(function(t){
+  const _m = (t.title||'').match(/^[([^]]+)]/);
+  if (!_m) return true;
+  const _p = _m[1].toLowerCase().replace(/[^a-z0-9一-鿿]/g,'');
+  return _p.includes(_acctN) || _acctN.includes(_p);
+});
+const _flags = getTicketFlags();
+const _activeTix = _allTix.filter(t => _flags[t.key] !== 'done' && _flags[t.key] !== 'ignored');
+const _hiddenTix = _allTix.filter(t => _flags[t.key] === 'done' || _flags[t.key] === 'ignored');
+const _renderTixRow = (t, active) => `
+<div class="brief-ticket-row${active ? '' : ' tix-hidden'}">
+  <div class="brief-ticket-key" style="${active ? '' : 'opacity:0.4'}">${esc(t.key)}</div>
+  <div class="brief-ticket-info" style="${active ? '' : 'opacity:0.4;text-decoration:line-through'}">
+    <div class="title">${esc(t.title)}${t.pinned && active ? '<span class="brief-pinned-badge">pinned</span>' : ''}</div>
+    <div class="meta">
+      <span class="status-dot ${esc(t.status)}">${active ? esc(t.status.replace('-',' ')) : (_flags[t.key]==='done' ? '✓ done' : '⊘ ignored')}</span>
+      <span>${esc(t.assignee)}</span>
+    </div>
+  </div>
+  <div class="brief-tix-actions">
+    ${active
+      ? '<button onclick="flagTicket(''+esc(t.key)+'','done')" class="tix-flag-btn tix-done" title="Mark done">✓</button><button onclick="flagTicket(''+esc(t.key)+'','ignored')" class="tix-flag-btn tix-ignore" title="Ignore">⊘</button>'
+      : '<button onclick="unflagTicket(''+esc(t.key)+'')" class="tix-flag-btn tix-restore" title="Restore">↩</button>'
+    }
+  </div>
+</div>`;
+const tickHTML = _allTix.length === 0
+  ? '<div class="brief-empty-state">No active tickets</div>'
+  : (() => {
+      let html = _activeTix.map(t => _renderTixRow(t, true)).join('');
+      if (_hiddenTix.length) {
+        html += '<div class="brief-flagged-toggle"><button onclick="showFlaggedSection(''+esc(acct.id)+'')" style="background:none;border:none;color:var(--muted);cursor:pointer;font-size:10px;padding:4px 0;font-family:'DM Mono',monospace">'+_hiddenTix.length+' hidden (done/ignored) · show</button></div>';
+        html += '<div id="tix-flagged-'+esc(acct.id)+'" style="display:none">'+_hiddenTix.map(t => _renderTixRow(t, false)).join('')+'</div>';
+      }
+      if (_activeTix.length === 0 && _hiddenTix.length > 0) {
+        html = '<div class="brief-empty-state">All tickets marked done or ignored. <button onclick="showFlaggedSection(''+esc(acct.id)+'')" style="background:none;border:none;color:var(--accent);cursor:pointer;font-size:11px;padding:0 4px">Show '+_hiddenTix.length+' hidden</button></div><div id="tix-flagged-'+esc(acct.id)+'" style="display:none">'+_hiddenTix.map(t => _renderTixRow(t, false)).join('')+'</div>';
+      }
+      return html;
+    })();
 
   const projHTML = acct.projects.length
     ? acct.projects.map(p=>`
