@@ -405,26 +405,22 @@ const _renderTixRow = function(t, active) {
     + '</div>';
 };
 
-const _buildTickHTML = function() {
-  if (_allTix.length === 0) return '<div class="brief-empty-state">No active tickets</div>';
-  var html = '';
-  _activeTix.forEach(function(t){ html += _renderTixRow(t, true); });
-  if (_hiddenTix.length > 0) {
-    var hid = acct.id.replace(/[^a-z0-9]/g,'');
-    html += '<div class="brief-flagged-toggle">'
-          + '<button style="background:none;border:none;color:var(--muted);cursor:pointer;font-size:10px;padding:4px 0;font-family:'DM Mono',monospace" onclick="showFlaggedSection('' + hid + '')">'
-          + _hiddenTix.length + ' hidden (done / ignored) · show</button></div>';
-    var rows = '';
-    _hiddenTix.forEach(function(t){ rows += _renderTixRow(t, false); });
-    html += '<div id="tix-flagged-' + hid + '" style="display:none">' + rows + '</div>';
-  }
-  if (_activeTix.length === 0 && _hiddenTix.length > 0) {
-    var hid2 = acct.id.replace(/[^a-z0-9]/g,'');
-    html = '<div class="brief-empty-state">All tickets marked done or ignored. '
-         + '<button onclick="showFlaggedSection('' + hid2 + '')" style="background:none;border:none;color:var(--accent);cursor:pointer;font-size:11px;padding:0 4px">Show ' + _hiddenTix.length + ' hidden</button></div>'
-         + '<div id="tix-flagged-' + hid2 + '" style="display:none">' + rows + '</div>';
-  }
-  return html;
+var _buildTickHTML = function() {
+if (_allTix.length === 0) return '<div class="brief-empty-state">No active tickets</div>';
+var hid = acct.id.replace(/[^a-z0-9]/g, '');
+var rows = '', html = '';
+_activeTix.forEach(function(t){ html += _renderTixRow(t, true); });
+_hiddenTix.forEach(function(t){ rows += _renderTixRow(t, false); });
+if (_hiddenTix.length > 0) {
+  html += '<div class="brief-flagged-toggle"><button class="brief-flagged-toggle-btn" data-hid="' + hid + '" onclick="showFlaggedSection(this.dataset.hid)">'
+        + _hiddenTix.length + ' hidden (done / ignored) &middot; show</button></div>'
+        + '<div id="tix-flagged-' + hid + '" style="display:none">' + rows + '</div>';
+}
+if (_activeTix.length === 0 && _hiddenTix.length > 0) {
+  html = '<div class="brief-empty-state">All tickets marked done or ignored. <button class="brief-flagged-toggle-btn" data-hid="' + hid + '" onclick="showFlaggedSection(this.dataset.hid)">Show ' + _hiddenTix.length + ' hidden</button></div>'
+       + '<div id="tix-flagged-' + hid + '" style="display:none">' + rows + '</div>';
+}
+return html;
 };
 const tickHTML = _buildTickHTML();
 
