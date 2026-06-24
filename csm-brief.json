@@ -1,12 +1,65 @@
 {
-  "generatedAt": "2026-06-24T09:00:50.925+08:00",
+  "generatedAt": "2026-06-24T10:07:18.967+08:00",
   "accounts": [
     {
       "id": "mannings",
       "name": "Mannings",
       "health": "yellow",
       "insight": "CAM-395958 in-progress 0d · +12 more · Appier x Mannings Bi-weekly Meeting Jun 25 · renewal due Jun 2026.",
-      "diffs": [],
+      "diffs": [
+        {
+          "type": "new",
+          "text": "CAM-395958 [Website re-test]OMG_Mannings_Double 11 EC Campaign_Oct 2024"
+        },
+        {
+          "type": "new",
+          "text": "QGWL-25598 [SKM] Man-day estimation for SKM Online REC request (mapping"
+        },
+        {
+          "type": "new",
+          "text": "ETS-4145 [Mannings] Study data tracking on analytic studio"
+        },
+        {
+          "type": "new",
+          "text": "LEG-16095 The Dairy Farm Company Limited_Mannings HK_AIQUA/AIXION Orde"
+        },
+        {
+          "type": "new",
+          "text": "ETS-4179 [Mannings] Request to study the tracking code status on GTM"
+        },
+        {
+          "type": "new",
+          "text": "QGWL-25931 [Mannings] Feature Enable Request - eDM UTM 自動生成功能 (Email UT"
+        },
+        {
+          "type": "new",
+          "text": "ETS-4130 [Mannings] Initiate customized project discussion"
+        },
+        {
+          "type": "new",
+          "text": "CAM-386939 Mannings_Google account_Integration_20260318"
+        },
+        {
+          "type": "new",
+          "text": "CAM-385275 Chinese Pharm_WholeLove Plus NMN Manning's Promotion Campaig"
+        },
+        {
+          "type": "new",
+          "text": "AIQ-1045 Mannings"
+        },
+        {
+          "type": "new",
+          "text": "QGWL-24671 [Mannings] Resolving Content Security Privacy(CSP) limitatio"
+        },
+        {
+          "type": "new",
+          "text": "QGWL-18833 [SunUp] Evaluate the man-day needed for Sun Up's new EC doma"
+        },
+        {
+          "type": "new",
+          "text": "PSDC-1399 Mannings go-live"
+        }
+      ],
       "riskTags": [
         "ticket",
         "renewal",
@@ -55,7 +108,16 @@
       "name": "SCMP",
       "health": "yellow",
       "insight": "AIQ-1465 open 335d · +1 more · SCMP Jun 24 · renewal due Jun 2026.",
-      "diffs": [],
+      "diffs": [
+        {
+          "type": "new",
+          "text": "AIQ-1465 SCMP"
+        },
+        {
+          "type": "new",
+          "text": "AID-8880 SCMP_Letzshop_AiDeal Lite_Jun 2022"
+        }
+      ],
       "riskTags": [
         "ticket",
         "renewal",
@@ -127,7 +189,44 @@
       "name": "Luxgen",
       "health": "yellow",
       "insight": "LEG-16090 open 19d · +8 more.",
-      "diffs": [],
+      "diffs": [
+        {
+          "type": "new",
+          "text": "LEG-16090 BB - Luxgen TW - Renew - 2026"
+        },
+        {
+          "type": "new",
+          "text": "BBT-5953 [Luxgen] BB didn't block share to LINE friends even though m"
+        },
+        {
+          "type": "new",
+          "text": "AIQ-1200 Luxgen"
+        },
+        {
+          "type": "new",
+          "text": "EAM-227 [Remaining: AQ, AX, EDP, and keep BB] Offboard Request - Lux"
+        },
+        {
+          "type": "new",
+          "text": "BBT-3692 [Luxgen] User Feedback on Agent Analytics Dashboard: groupin"
+        },
+        {
+          "type": "new",
+          "text": "BBT-2905 [Luxgen] Copying imagemap modules inside a folder will rende"
+        },
+        {
+          "type": "new",
+          "text": "BBT-1061 [Luxgen] Timer for AI Rules"
+        },
+        {
+          "type": "new",
+          "text": "QGWL-11820 [Luxgen] Please help to check online/offline table name of L"
+        },
+        {
+          "type": "new",
+          "text": "QGWL-10821 [Luxgen]Luxgen AIQUA Web SDK embedded BB Web Chat SDK"
+        }
+      ],
       "riskTags": [
         "ticket",
         "stale"
@@ -235,7 +334,60 @@
       "name": "田原香",
       "health": "yellow",
       "insight": "APC-697 open 13d · +12 more.",
-      "diffs": [],
+      "diffs": [
+        {
+          "type": "new",
+          "text": "APC-697 [田原香]  create your own template from scratch cannot be click"
+        },
+        {
+          "type": "new",
+          "text": "APC-698 [田原香]  create your own template from scratch cannot be click"
+        },
+        {
+          "type": "new",
+          "text": "QGWL-25930 [田原香] Request to allow to save template for on-site editor"
+        },
+        {
+          "type": "new",
+          "text": "QGWL-25627 [田原香] Enable send time optimization"
+        },
+        {
+          "type": "new",
+          "text": "AEP-6091 [BB OJM id mapping backfill] 田原香"
+        },
+        {
+          "type": "new",
+          "text": "AEP-6090 [EUU] 田原香 onboarding"
+        },
+        {
+          "type": "new",
+          "text": "AIQ-1389 田原香"
+        },
+        {
+          "type": "new",
+          "text": "QGWL-23645 [田原香] Creative studio button will always shows an unexpected"
+        },
+        {
+          "type": "new",
+          "text": "QGWL-22084 [田原香] Wishlist for segmentation request"
+        },
+        {
+          "type": "new",
+          "text": "QGWL-22014 [田原香] On-site experience leading platform abnormal behavior"
+        },
+        {
+          "type": "new",
+          "text": "CAM-347922 [Resize]田原香_Display_SG_0505-0511"
+        },
+        {
+          "type": "new",
+          "text": "CAM-346249 [Resize] 田原香_Display+Video_HK_0411-0421"
+        },
+        {
+          "type": "new",
+          "text": "QGWL-21289 [田原香] Onboard Product Feed"
+        }
+      ],
       "riskTags": [
         "ticket",
         "stale"
@@ -256,7 +408,16 @@
       "name": "Momax",
       "health": "yellow",
       "insight": "CAM-350143 open 405d · +1 more.",
-      "diffs": [],
+      "diffs": [
+        {
+          "type": "new",
+          "text": "CAM-350143 Momax_CPV_Mulit Geo_2025"
+        },
+        {
+          "type": "new",
+          "text": "CAM-257353 Momax Q1 Ecom 2023 (FB 歸因)"
+        }
+      ],
       "riskTags": [
         "ticket",
         "stale"
@@ -272,7 +433,64 @@
       "name": "City Super",
       "health": "yellow",
       "insight": "AIR-4564 in-progress 6d · +13 more.",
-      "diffs": [],
+      "diffs": [
+        {
+          "type": "new",
+          "text": "AIR-4564 [demo account req] Prizm Hong Kong"
+        },
+        {
+          "type": "new",
+          "text": "ETS-4262 [demo account req] Prizm Hong Kong"
+        },
+        {
+          "type": "new",
+          "text": "ETS-4261 AIQUA_Demo account for Partner Prizm "
+        },
+        {
+          "type": "new",
+          "text": "QGWL-25915 AIQUA_Demo account for Partner Prizm "
+        },
+        {
+          "type": "new",
+          "text": "LEG-16086 CLONE - Legend World Technology Development Limited_AIQUA_HK"
+        },
+        {
+          "type": "new",
+          "text": "CAM-384613 [Campaign續跑] Prizm_AIBID_App Installation Campaign_AOS_20260"
+        },
+        {
+          "type": "new",
+          "text": "CAM-382749 [CIR]Prizm_AIBID_Lucky Draw Campaign_Video Playable Endcard_"
+        },
+        {
+          "type": "new",
+          "text": "CAM-382624 [預算調整] Prizm_AIBID_Lucky Draw Campaign_Playable Merge Game_C"
+        },
+        {
+          "type": "new",
+          "text": "CAM-382623 [預算調整]Prizm_AIBID_App Installation Campaign_IOS & AOS_260204"
+        },
+        {
+          "type": "new",
+          "text": "CAM-382210 [預算調整]Prizm_AIBID_App Installation Campaign_IOS & AOS"
+        },
+        {
+          "type": "new",
+          "text": "CAM-379802 [Resize]Prizm_AIBID_Adaptation for Standard Banner_Garden_Lu"
+        },
+        {
+          "type": "new",
+          "text": "CAM-381638 [CIR]Prizm_AIBID_Standard Banner_Garden_Lucky Draw_IOS_26012"
+        },
+        {
+          "type": "new",
+          "text": "CAM-381637 [CIR]Prizm_AIBID_Standard Banner_Garden_Lucky Draw_AOS_26012"
+        },
+        {
+          "type": "new",
+          "text": "CAM-380560 [Launch] Prizm_AIBID_Lucky Draw Campaign_Playable Merge Game"
+        }
+      ],
       "riskTags": [
         "ticket",
         "stale"
@@ -288,7 +506,24 @@
       "name": "行動力國際",
       "health": "yellow",
       "insight": "BBT-7270 open 105d · +3 more.",
-      "diffs": [],
+      "diffs": [
+        {
+          "type": "new",
+          "text": "BBT-7270 [行動力國際 - Service Agent] Can't get the right custom answers"
+        },
+        {
+          "type": "new",
+          "text": "BBT-7024 [行動力國際 ACT Power] triggered wrong reply module when keyword "
+        },
+        {
+          "type": "new",
+          "text": "BBT-5599 [行動力國際 ACT POWER] Enable sales bot feature for 行動力國際"
+        },
+        {
+          "type": "new",
+          "text": "BBT-4660 [行動力國際] BotBonnie to Phoenix Account Migration / Knowledge B"
+        }
+      ],
       "riskTags": [
         "ticket",
         "stale"
