@@ -1,41 +1,298 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M8 30 C8 18 16 10 24 10 C32 10 40 18 40 30 C40 38 34 42 24 42 C14 42 8 38 8 30Z'/><path d='M8 22 L4 12 L14 18'/><path d='M40 22 L44 12 L34 18'/><circle cx='18' cy='28' r='2' fill='%23333'/><circle cx='30' cy='28' r='2' fill='%23333'/><path d='M20 34 C20 34 22 36 24 36 C26 36 28 34 28 34'/><line x1='24' y1='32' x2='24' y2='34'/><line x1='18' y1='32' x2='14' y2='33'/><line x1='30' y1='32' x2='34' y2='33'/></svg>">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jira Team Dashboard</title>
-<!-- Security: restrict resource loading to known trusted origins -->
-<meta http-equiv="Content-Security-Policy" contenht="default-src 'self' 'unsafe-inlhine' https://fonts.googleapis.com https://fonts.gstatic.com https://*.atlassian.com https://api.media.atlassian.com https://*.workers.dev https://cdnjs.cloudflare.com; connect-src 'self' https://*.atlassian.com https://api.media.atlassian.com https://*.workers.dev https://docs.google.com https://drive.google.com https://script.google.com https://script.googleusercontent.com https://lh3.googleusercontent.com; img-src blob: data: https;; media-src blob: https://api.media.atlassian.com;">
-<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='none'><rect width='48' height='48' rx='12' fill='%232A2F69'/><path d='M14 34L24 14L34 34M18 26H30' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSM Hub · Appier</title>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com https://*.atlassian.com https://api.media.atlassian.com https://*.workers.dev https://cdnjs.cloudflare.com; connect-src 'self' https://*.atlassian.com https://api.media.atlassian.com https://*.workers.dev https://docs.google.com https://drive.google.com https://script.google.com https://script.googleusercontent.com https://lh3.googleusercontent.com https://raw.githubusercontent.com; img-src blob: data: https;; media-src blob: https://api.media.atlassian.com;">
+
+  <!-- Design system fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <!-- Fallback: keep existing fonts for JS-generated content -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Existing CSS (keep for JS-rendered content) -->
   <link rel="stylesheet" href="css/styles.css">
-<link rel="stylesheet" href="enhanced.css">
+  <link rel="stylesheet" href="enhanced.css">
+
+  <style>
+    /* ===== DESIGN SYSTEM TOKENS ===== */
+    :root {
+      --font-en: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      --font-mono: 'Fira Code', 'DM Mono', ui-monospace, Menlo, monospace;
+      --blue: #296AFF;
+      --blue-hover: #0E4EFF;
+      --c-high: rgba(0,10,58,1);
+      --c-med: rgba(0,10,58,.7);
+      --c-low: rgba(0,10,58,.55);
+      --c-lowm: rgba(0,10,58,.38);
+      --surface: #FFFFFF;
+      --surface-2: #F4F6F9;
+      --surface-3: #F2F3F5;
+      --border: #D9DAE1;
+      --border-soft: #EDEEF1;
+      --nav-bg: linear-gradient(180deg, #2A2F69 0%, #313F81 100%);
+      /* Override legacy tokens */
+      --bg: #F4F6F9;
+      --accent: #296AFF;
+      --text: rgba(0,10,58,1);
+      --muted: rgba(0,10,58,.42);
+      --border-color: #D9DAE1;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; height: 100%; }
+    body {
+      font-family: var(--font-en);
+      font-size: 14px;
+      line-height: 20px;
+      letter-spacing: .2px;
+      color: var(--c-high);
+      background: var(--surface-2);
+      -webkit-font-smoothing: antialiased;
+    }
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-thumb { background: rgba(0,10,58,.14); border-radius: 6px; border: 2px solid transparent; background-clip: content-box; }
+    ::-webkit-scrollbar-thumb:hover { background: rgba(0,10,58,.26); background-clip: content-box; }
+
+    /* ===== LAYOUT SHELL ===== */
+    #appScreen {
+      display: none;
+      height: 100vh;
+      overflow: hidden;
+      flex-direction: row !important;
+    }
+    #appScreen.visible {
+      display: flex !important;
+    }
+
+    /* ===== SIDEBAR ===== */
+    .csm-sidebar {
+      width: 236px;
+      flex: 0 0 236px;
+      height: 100%;
+      background: var(--nav-bg);
+      display: flex;
+      flex-direction: column;
+      padding: 18px 14px;
+      color: #fff;
+      overflow-y: auto;
+    }
+    .csm-sidebar-logo {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      padding: 2px 6px 22px;
+    }
+    .csm-logo-icon {
+      width: 34px; height: 34px;
+      border-radius: 9px;
+      background: rgba(255,255,255,.14);
+      display: flex; align-items: center; justify-content: center;
+      flex: 0 0 auto;
+    }
+    .csm-section-label {
+      font: 600 10px/1 var(--font-en);
+      letter-spacing: .1em;
+      color: rgba(255,255,255,.38);
+      padding: 0 8px 8px;
+      text-transform: uppercase;
+    }
+    .csm-nav-btn {
+      display: flex; align-items: center; gap: 11px;
+      height: 40px; padding: 0 11px;
+      border-radius: 9px; border: none;
+      cursor: pointer; text-align: left; width: 100%;
+      background: transparent;
+      color: rgba(255,255,255,.7);
+      font: 600 14px/20px var(--font-en);
+      transition: background .15s, color .15s;
+      margin-bottom: 2px;
+    }
+    .csm-nav-btn:hover { background: rgba(255,255,255,.1); color: #fff; }
+    .csm-nav-btn.active { background: rgba(255,255,255,.16); color: #fff; }
+    .csm-nav-count {
+      font: 600 11px/1 var(--font-en);
+      background: rgba(255,255,255,.18);
+      padding: 3px 8px; border-radius: 999px;
+      margin-left: auto;
+    }
+    .csm-sidebar-foot { margin-top: auto; display: flex; flex-direction: column; gap: 8px; padding-top: 16px; }
+    .csm-copilot-strip {
+      padding: 11px 12px; border-radius: 10px;
+      background: rgba(255,255,255,.07);
+      display: flex; gap: 10px; align-items: center;
+    }
+    .csm-user-row {
+      display: flex; align-items: center; gap: 10px;
+      padding: 6px 8px; border-radius: 8px;
+      cursor: pointer; transition: background .15s;
+    }
+    .csm-user-row:hover { background: rgba(255,255,255,.08); }
+    .csm-avatar-sm {
+      width: 30px; height: 30px;
+      border-radius: 999px;
+      background: #9B6BFF; color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font: 600 12px var(--font-en); flex: 0 0 auto;
+    }
+
+    /* ===== MAIN AREA ===== */
+    .csm-main {
+      flex: 1; min-width: 0;
+      display: flex; flex-direction: column; height: 100%;
+    }
+    .csm-topbar {
+      height: 58px; flex: 0 0 58px;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center;
+      padding: 0 24px; gap: 16px;
+    }
+    .csm-breadcrumb {
+      display: flex; align-items: center; gap: 8px;
+      font: 400 13px var(--font-en); color: var(--c-low);
+    }
+    .csm-breadcrumb-cur { color: var(--c-high); font-weight: 600; }
+    .csm-topbar-right {
+      margin-left: auto; display: flex; align-items: center; gap: 14px;
+    }
+    .csm-topbar-ts {
+      font: 400 12px var(--font-mono);
+      color: var(--c-lowm);
+    }
+    .csm-topbar-avatar {
+      width: 32px; height: 32px;
+      border-radius: 999px; background: #9B6BFF; color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font: 600 12px var(--font-en);
+    }
+    .csm-refresh-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      height: 32px; padding: 0 13px;
+      border-radius: 4px; border: 1px solid var(--border);
+      background: var(--surface); color: var(--c-med);
+      font: 600 13px var(--font-en); cursor: pointer;
+      transition: border-color .15s;
+    }
+    .csm-refresh-btn:hover { border-color: var(--blue); color: var(--blue); }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ===== CONTENT AREA ===== */
+    .csm-content {
+      flex: 1; min-height: 0;
+      overflow-y: auto;
+      padding: 24px 28px 60px;
+      background: var(--surface-2);
+    }
+
+    /* ===== HIDE OLD CHROME ===== */
+    .container > header,
+    .tabs { display: none !important; }
+    /* Kill old container padding so our pane content fills correctly */
+    .container { max-width: 100% !important; padding: 0 !important; margin: 0 !important; box-shadow: none !important; background: none !important; border-radius: 0 !important; }
+
+    /* Preview badge repositioned for sidebar layout */
+    .preview-badge { left: 244px !important; }
+
+    /* ===== STAT CARDS ===== */
+    .stats-row, .brief-stats-row, .tbd-stats { display: grid !important; grid-template-columns: repeat(4,1fr) !important; gap: 14px !important; margin-bottom: 18px !important; }
+    .ar-stats-row { display: grid !important; grid-template-columns: repeat(4,1fr) !important; gap: 14px !important; margin-bottom: 18px !important; }
+    .stat-card, .brief-stat-card {
+      background: var(--surface) !important; border: 1px solid var(--border) !important;
+      border-radius: 12px !important; padding: 16px 18px !important;
+      box-shadow: none !important;
+    }
+    .ar-stat { background: var(--surface) !important; border: 1px solid var(--border) !important; border-radius: 12px !important; padding: 16px 18px !important; box-shadow: none !important; }
+    .stat-card.c-blue, .ar-stat.c-blue { border-left: 3px solid #296AFF !important; }
+    .stat-card.c-green, .brief-stat-card.c-green, .ar-stat.c-green { border-left: 3px solid #00BA77 !important; }
+    .stat-card.c-gray { border-left: 3px solid #B3B6C4 !important; }
+    .stat-card.c-yellow, .brief-stat-card.c-yellow, .ar-stat.c-yellow { border-left: 3px solid #FE8022 !important; }
+    .brief-stat-card.c-red, .ar-stat.c-red, .stat-card.c-red { border-left: 3px solid #FB4078 !important; }
+    .stat-label, .ar-stat-label { font: 400 12px/16px var(--font-en) !important; color: var(--c-low) !important; margin-bottom: 6px !important; }
+    .stat-value { font: 400 30px/36px var(--font-en) !important; letter-spacing: -.3px !important; }
+    .brief-stat-val, .ar-stat-val { font: 400 26px/32px var(--font-en) !important; letter-spacing: -.3px !important; }
+
+    /* ===== CONTROLS / SEARCH ===== */
+    .controls-bar, .ar-ctrl-bar { display: flex !important; align-items: center !important; gap: 10px !important; margin-bottom: 14px !important; flex-wrap: wrap !important; }
+    .search-input, .ar-search { height: 34px !important; padding: 0 12px !important; border-radius: 4px !important; border: 1px solid var(--border) !important; background: var(--surface) !important; font: 400 14px var(--font-en) !important; color: var(--c-high) !important; outline: none !important; }
+    .search-input:focus, .ar-search:focus { border-color: var(--blue) !important; }
+    .btn-sm { height: 34px !important; padding: 0 13px !important; border-radius: 4px !important; border: 1px solid var(--border) !important; background: var(--surface) !important; color: var(--c-med) !important; font: 600 13px var(--font-en) !important; cursor: pointer !important; transition: border-color .15s !important; }
+    .btn-sm:hover { border-color: var(--blue) !important; color: var(--blue) !important; }
+    .dd-btn { height: 34px !important; padding: 0 12px !important; border-radius: 4px !important; border: 1px solid var(--border) !important; background: var(--surface) !important; font: 400 13px var(--font-en) !important; color: var(--c-med) !important; cursor: pointer !important; }
+
+    /* ===== GROUP / TICKET CARDS ===== */
+    .group-card { background: var(--surface) !important; border: 1px solid var(--border) !important; border-radius: 12px !important; overflow: hidden !important; margin-bottom: 12px !important; }
+    .group-header { border-bottom: 1px solid var(--border-soft) !important; }
+
+    /* ===== BRIEF ACCOUNT CARDS ===== */
+    .account-grid { display: grid !important; grid-template-columns: repeat(3,1fr) !important; gap: 14px !important; }
+    .account-card { background: var(--surface) !important; border: 1px solid var(--border) !important; border-radius: 12px !important; padding: 16px 18px !important; cursor: pointer !important; transition: border-color .15s, box-shadow .15s !important; }
+    .account-card:hover { border-color: var(--blue) !important; box-shadow: 0 1px 8px rgba(0,10,58,.08) !important; }
+
+    /* ===== BRIEF SUB-TABS ===== */
+    .brief-tabs { display: flex !important; gap: 4px !important; border-bottom: 1px solid var(--border) !important; margin-bottom: 18px !important; background: none !important; border-radius: 0 !important; padding: 0 !important; }
+    .brief-tab-btn { height: 38px !important; padding: 0 14px !important; border: none !important; border-bottom: 2px solid transparent !important; background: transparent !important; color: var(--c-low) !important; font: 600 14px var(--font-en) !important; cursor: pointer !important; border-radius: 0 !important; transition: color .15s !important; }
+    .brief-tab-btn.active { color: var(--c-high) !important; border-bottom-color: var(--blue) !important; }
+
+    /* ===== SYNC BAR ===== */
+    .sync-bar { display: flex !important; align-items: center !important; gap: 8px !important; padding: 8px 13px !important; background: rgba(41,106,255,.05) !important; border: 1px solid rgba(41,106,255,.14) !important; border-radius: 8px !important; margin-bottom: 16px !important; font: 400 13px var(--font-en) !important; color: #296AFF !important; }
+
+    /* ===== SIDE PANELS ===== */
+    .side-panel, .brief-side-panel { background: var(--surface) !important; }
+    .panel-key { font: 600 14px var(--font-mono) !important; color: var(--blue) !important; }
+
+    /* ===== BUTTONS ===== */
+    .btn-primary { background: var(--blue) !important; border-radius: 8px !important; font: 600 14px var(--font-en) !important; }
+    .btn-refresh { display: inline-flex !important; align-items: center !important; gap: 6px !important; height: 32px !important; padding: 0 13px !important; border-radius: 4px !important; border: 1px solid var(--border) !important; background: var(--surface) !important; color: var(--c-med) !important; font: 600 13px var(--font-en) !important; cursor: pointer !important; }
+
+    /* ===== MONO FONT FOR KEYS/DATES ===== */
+    .jira-key, .ticket-key, .panel-key { font-family: var(--font-mono) !important; }
+
+    /* ===== ONBOARDING CARDS ===== */
+    .ob-progress-section { margin-bottom: 22px; }
+    .btn-new-ob { background: var(--blue) !important; border-radius: 6px !important; font: 600 13px var(--font-en) !important; }
+    .btn-feat-enable { background: linear-gradient(96deg,#0E4EFF 7.96%,#712FFF 100%) !important; border-radius: 6px !important; font: 600 13px var(--font-en) !important; }
+
+    /* ===== PINNED SECTION ===== */
+    .pinned-section { background: var(--surface) !important; border: 1px solid var(--border) !important; border-radius: 12px !important; padding: 14px 16px !important; margin-bottom: 18px !important; }
+
+    /* ===== AR FILTER STYLES ===== */
+    .ar-filter-sel, #arCsmFilter { height: 34px !important; padding: 0 10px !important; border-radius: 4px !important; border: 1px solid var(--border) !important; background: var(--surface) !important; font: 400 13px var(--font-en) !important; color: var(--c-med) !important; }
+    .ar-table-wrap { background: var(--surface) !important; border: 1px solid var(--border) !important; border-radius: 12px !important; overflow: hidden !important; }
+    .ar-table { width: 100%; border-collapse: collapse; }
+
+    /* ===== LOGIN SCREEN ===== */
+    .fullscreen { background: var(--nav-bg) !important; }
+    .login-logo { font-size: 40px; text-align: center; margin-bottom: 12px; }
+    .card { background: var(--surface) !important; border-radius: 16px !important; padding: 36px !important; max-width: 400px !important; margin: auto !important; }
+
+    /* ===== OKR ===== */
+    .okr-quarter-sel { height: 32px; padding: 0 10px; border-radius: 4px; border: 1px solid var(--border); background: var(--surface); font: 400 13px var(--font-en); color: var(--c-med); cursor: pointer; }
+
+    /* ===== BULK BAR ===== */
+    .bulk-bar { background: var(--surface) !important; border: 1px solid var(--border) !important; border-radius: 8px !important; }
+  </style>
 </head>
 <body>
 <div class="toast-wrap" id="tw"></div>
 
-<!-- &#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;
+<!-- ══════════════════════════════════════════════════════════
      LOGIN SCREEN
-     &#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550; -->
+══════════════════════════════════════════════════════════ -->
 <div class="fullscreen" id="loginScreen" style="display:none">
-  <div class="card">
-    <div class="login-logo">&#x1f3af;</div>
-    <h2>Jira Team Dashboard</h2>
-    <p class="sub">Track Jira tickets you've reported, grouped by client &#x2014; all in one place.</p>
-
-    <div class="err-box" id="loginErr"></div>
-
-    <button class="btn-primary" id="loginBtn" onclick="startLogin()">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
-      Sign in with Atlassian
-    </button>
-
-    
-
-    <p class="login-note">
-      &#x1f512; Redirects to Atlassian's official login. Each user sees only their own reported tickets. Session is cleared when you close this tab.
-    </p>
-  </div>
+<div class="card">
+<div class="login-logo">🎯</div>
+<h2 style="font:700 22px/28px var(--font-en);margin:0 0 8px;text-align:center">CSM Hub</h2>
+<p class="sub" style="text-align:center;color:var(--c-low);margin:0 0 24px">Appier · Customer Success</p>
+<div class="err-box" id="loginErr"></div>
+<button class="btn-primary" id="loginBtn" onclick="startLogin()" style="width:100%;height:44px;display:flex;align-items:center;justify-content:center;gap:10px;border:none;cursor:pointer;color:#fff;font-size:14px;font-weight:600">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+  Sign in with Atlassian
+</button>
+<p class="login-note" style="text-align:center;font-size:12px;color:var(--c-lowm);margin:16px 0 0">🔒 Redirects to Atlassian's official login. Session cleared when you close this tab.</p>
+</div>
 </div>
 
 <!-- Hidden setup screen stub (keeps JS references alive) -->
@@ -45,450 +302,646 @@
   <div id="setupErr"></div>
 </div>
 
-<!-- &#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;
-     SCREEN 3: MAIN DASHBOARD
-     &#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550;&#x2550; -->
-<div id="appScreen" style="display:none">
-  <!-- Preview mode badge &#x2014; only visible when using mock data -->
+<!-- ══════════════════════════════════════════════════════════
+     MAIN APP — SIDEBAR LAYOUT
+══════════════════════════════════════════════════════════ -->
+<div id="appScreen">
+
+  <!-- Preview mode badge -->
   <div class="preview-badge" id="previewBadge" style="display:none">
-    &#x1f3a8; Preview Mode &#x2014; mock data
-    <button onclick="exitPreview()" title="Exit preview">&#x2715;</button>
+    🎨 Preview Mode — mock data
+    <button onclick="exitPreview()" title="Exit preview">✕</button>
   </div>
-  <div class="container">
-    <header>
-      <div class="header-left">
-        <h1>&#x1f3af; Jira Ticket Dashboard</h1>
-        <p id="headerSub">Loading&#x2026;</p>
+
+  <!-- ════ SIDEBAR ════ -->
+  <nav class="csm-sidebar">
+    <div class="csm-sidebar-logo">
+      <div class="csm-logo-icon">
+        <svg width="20" height="20" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M14 34L24 14L34 34" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M18.5 26H29.5" stroke="white" stroke-width="3.5" stroke-linecap="round"/>
+        </svg>
       </div>
-      <div class="header-right">
-        <div class="user-chip"><span class="u-dot"></span><span id="headerUser">&#x2014;</span></div>
-        <div class="last-updated" id="lu">Updated: &#x2014;</div>
-        <button class="btn-refresh" id="btnR" onclick="refresh()"><span id="rIcon">&#x21bb;</span> Refresh</button>
-        <button class="btn-theme" id="btnTheme" onclick="toggleTheme()">&#x1f319; Dark</button>
-        <button class="btn-logout" onclick="logout()">Logout</button>
+      <div style="line-height:1.15">
+        <div style="font:700 16px/1.1 var(--font-en);letter-spacing:.2px">CSM Hub</div>
+        <div style="font:400 11px/1.3 var(--font-en);color:rgba(255,255,255,.52)">Appier · Customer Success</div>
+      </div>
+    </div>
+
+    <div class="csm-section-label">WORKSPACE</div>
+    <div style="display:flex;flex-direction:column;gap:2px">
+
+      <button class="csm-nav-btn active" id="snav-tracking" onclick="snavSwitch('tracking')">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="flex:0 0 auto"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 14h5"/></svg>
+        <span style="flex:1">Issue tracking</span>
+        <span class="csm-nav-count" id="snc-tracking">—</span>
+      </button>
+
+      <button class="csm-nav-btn" id="snav-tbd" onclick="snavSwitch('tbd')">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="flex:0 0 auto"><circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.3 2.3 4.7-4.6"/></svg>
+        <span style="flex:1">To be done</span>
+        <span class="csm-nav-count" id="snc-tbd">—</span>
+      </button>
+
+      <button class="csm-nav-btn" id="snav-ar" onclick="snavSwitch('ar')">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="flex:0 0 auto"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+        <span style="flex:1">CSM AR status</span>
+        <span class="csm-nav-count" id="snc-ar">—</span>
+      </button>
+
+      <button class="csm-nav-btn" id="snav-brief" onclick="snavSwitch('brief')" style="display:none">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="flex:0 0 auto"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
+        <span style="flex:1">CSM brief</span>
+        <span class="csm-nav-count" id="snc-brief">—</span>
+      </button>
+
+    </div>
+
+    <div class="csm-sidebar-foot">
+      <div class="csm-copilot-strip">
+        <svg width="22" height="22" viewBox="0 0 48 48" fill="none" style="flex:0 0 auto"><rect width="48" height="48" rx="10" fill="rgba(255,255,255,.15)"/><path d="M14 34L24 14L34 34M18.5 26H29.5" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div style="min-width:0">
+          <div style="font:600 13px/16px var(--font-en)">AIRIS copilot</div>
+          <div style="font:400 11px/14px var(--font-en);color:rgba(255,255,255,.55)">Ask about your accounts</div>
+        </div>
+      </div>
+      <div class="csm-user-row" id="sidebarUserRow">
+        <div class="csm-avatar-sm" id="sidebarAvatarInit">WL</div>
+        <div style="min-width:0;flex:1">
+          <div style="font:600 13px/16px var(--font-en);overflow:hidden;text-overflow:ellipsis;white-space:nowrap" id="sidebarUserName">William Lin</div>
+          <div style="font:400 11px/14px var(--font-en);color:rgba(255,255,255,.5)">CSM · Greater China</div>
+        </div>
+        <button onclick="logout()" title="Sign out" style="border:none;background:none;cursor:pointer;color:rgba(255,255,255,.45);padding:4px;display:flex">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ════ MAIN AREA ════ -->
+  <div class="csm-main">
+
+    <!-- Topbar -->
+    <header class="csm-topbar">
+      <div class="csm-breadcrumb">
+        <span id="crumbTop">Issues</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>
+        <span class="csm-breadcrumb-cur" id="crumbCur">Issue tracking</span>
+      </div>
+      <div class="csm-topbar-right">
+        <span class="csm-topbar-ts" id="lu">—</span>
+        <button class="csm-refresh-btn" id="btnR" onclick="refresh()">
+          <span id="rIcon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-2.64-6.36"/><path d="M21 3v6h-6"/></svg></span>
+          Refresh
+        </button>
+        <div class="csm-topbar-avatar" id="topbarAvatarInit">WL</div>
+        <button onclick="toggleTheme()" id="btnTheme" style="display:none"></button>
       </div>
     </header>
 
-    <!-- TABS -->
-    <div class="tabs">
-      <button class="tab-btn active" id="tab-tracking" onclick="switchTab('tracking')">
-        &#x1f4cb; Issue Tracking <span class="tab-count" id="tc-tracking">&#x2014;</span>
-        <span class="tab-draft-badge" id="tabDraftBadge" style="display:none" title="Onboarding drafts waiting for App ID">&#x23f8;</span>
-      </button>
-      <button class="tab-btn" id="tab-tbd" onclick="switchTab('tbd')">
-        &#x2705; To Be Done <span class="tab-count" id="tc-tbd">&#x2014;</span>
-      </button>
-      <button class="tab-btn" id="tab-ar" onclick="switchTab('ar')">
-        &#x1f4b3; CSM AR Status <span class="tab-count" id="tc-ar">&#x2014;</span>
-      </button>
-      <button class="tab-btn" id="tab-brief" onclick="switchTab('brief')" style="display:none">
-        &#x1f4ca; CSM Brief <span class="tab-count" id="tc-brief">&#x2014;</span>
-      </button>
-    </div>
+    <!-- Content wrapper -->
+    <div class="csm-content">
+      <div class="container">
 
-    <!-- TAB: ISSUE TRACKING -->
-    <div class="tab-pane active" id="pane-tracking">
-
-      <!-- Onboarding progress cards -->
-      <div class="ob-progress-section" id="obProgressSection" style="display:none">
-        <div class="ob-progress-header">
-          <div>
-            <span class="ob-progress-title">&#x1f680; Onboarding Progress</span>
-            <p style="font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);margin-top:2px">
-              Drafts awaiting App ID can be resumed below
-            </p>
+        <!-- HIDDEN LEGACY CHROME (keeps JS references alive) -->
+        <header style="display:none">
+          <div class="header-left"><h1>CSM Hub</h1><p id="headerSub"></p></div>
+          <div class="header-right">
+            <div class="user-chip"><span class="u-dot"></span><span id="headerUser">—</span></div>
           </div>
-          <button class="btn-new-ob" onclick="openWizard()">&#xff0b; New Onboarding</button><button class="btn-feat-enable" onclick="openFeatureEnableWizard()">&#x26a1; Feature Enable</button>
-        </div>
-        <div class="ob-cards" id="obCards"></div>
-      </div>
+        </header>
 
-      <!-- New Onboarding button when no onboardings exist -->
-      <div id="obNewWrap" style="margin-bottom:16px;display:flex;justify-content:flex-end;">
-        <button class="btn-new-ob" onclick="openWizard()">&#x1f680; New Onboarding</button><button class="btn-feat-enable" onclick="openFeatureEnableWizard()">&#x26a1; Feature Enable</button>
-      </div>
+        <!-- HIDDEN LEGACY TABS (JS uses switchTab / tab-count IDs) -->
+        <div class="tabs" style="display:none">
+          <button class="tab-btn active" id="tab-tracking" onclick="switchTab('tracking')">Issue Tracking <span class="tab-count" id="tc-tracking">—</span><span class="tab-draft-badge" id="tabDraftBadge" style="display:none"></span></button>
+          <button class="tab-btn" id="tab-tbd" onclick="switchTab('tbd')">To Be Done <span class="tab-count" id="tc-tbd">—</span></button>
+          <button class="tab-btn" id="tab-ar" onclick="switchTab('ar')">CSM AR Status <span class="tab-count" id="tc-ar">—</span></button>
+          <button class="tab-btn" id="tab-brief" onclick="switchTab('brief')" style="display:none">CSM Brief <span class="tab-count" id="tc-brief">—</span></button>
+        </div>
 
-      <!-- Pinned Tickets Session &#x2014; always shown at top -->
-      <div class="pinned-section" id="pinnedSection">
-        <div class="pinned-header">
-          <span>&#x1f4cc;</span>
-          <span class="pinned-title">Pinned Tickets</span>
-          <span class="pinned-badge" id="pinnedCount">0 tickets</span>
-          <div class="pinned-add-wrap">
-            <input class="pinned-input" id="pinnedInput" placeholder="e.g. LEG-1234"
-              onkeydown="if(event.key==='Enter')addPinnedTicket()"/>
-            <button class="pinned-add-btn" id="pinnedAddBtn" onclick="addPinnedTicket()">&#xff0b; Track</button>
-          </div>
-        </div>
-        <div id="pinnedBody">
-          <div class="pinned-empty">No pinned tickets yet &#x2014; paste any Jira key above to track it here.</div>
-        </div>
-      </div>
-
-      <div class="stats-row">
-        <div class="stat-card c-blue"><div class="stat-label">Total Tickets</div><div class="stat-value" id="sTotal">&#x2014;</div></div>
-        <div class="stat-card c-green"><div class="stat-label">Done</div><div class="stat-value" id="sDone">&#x2014;</div></div>
-        <div class="stat-card c-gray"><div class="stat-label">Not Started</div><div class="stat-value" id="sNS">&#x2014;</div></div>
-        <div class="stat-card c-yellow"><div class="stat-label">Active</div><div class="stat-value" id="sActive">&#x2014;</div></div>
-      </div>
-      <div class="controls-bar">
-        <button class="btn-sm" onclick="expandAll()">Expand All</button>
-        <button class="btn-sm" onclick="collapseAll()">Collapse All</button>
-        <input class="search-input" type="text" id="srch" placeholder="Search tickets&#x2026;" oninput="applyFilters()"/>
-        <div class="dd-wrap" id="asnWrap">
-          <button class="dd-btn" id="asnBtn" onclick="ddToggle('asn',event)">
-            <span id="asnLabel">&#x1f464; All Assignees</span><span style="color:var(--muted)">&#x25be;</span>
-          </button>
-          <div class="dd-panel" id="asnPanel">
-            <input class="dd-search" type="text" id="asnSrch" placeholder="Search assignees&#x2026;" oninput="ddFilter('asn')"/>
-            <div class="dd-list" id="asnList"></div>
-          </div>
-        </div>
-      </div>
-      <!-- Bulk action bar (appears when checkboxes selected) -->
-      <div class="bulk-bar" id="bulkBar">
-        <button class="bulk-deselect" onclick="clearBulkSelection()" title="Clear selection">&#x2715;</button>
-        <span class="bulk-count" id="bulkCount"><strong>0</strong> selected</span>
-        <div class="bulk-actions">
-          <button class="bulk-btn success-btn" onclick="bulkMarkDone()">&#x2713; Mark All Done</button>
-          <button class="bulk-btn" onclick="bulkIgnoreTickets()" title="Hide from active view &#x2014; moves to Archive section">&#x1f6ab; Ignore</button>
-          <button class="bulk-btn" onclick="bulkCopyKeys()">&#x1f4cb; Copy Keys</button>
-        </div>
-      </div>
-      <div id="dash"></div>
-    </div>
-
-    <!-- TAB: TO BE DONE -->
-    <div class="tab-pane" id="pane-tbd">
-      <div class="tbd-stats stats-row">
-        <div class="stat-card c-yellow"><div class="stat-label">Pending</div><div class="stat-value" id="tbdPending">&#x2014;</div></div>
-        <div class="stat-card c-red" style="--red:#f87171" ><div class="stat-label">Overdue (&gt;14d)</div><div class="stat-value" id="tbdOverdue" style="color:var(--red)">&#x2014;</div></div>
-        <div class="stat-card c-green"><div class="stat-label">Avg Lead Time</div><div class="stat-value" id="tbdAvg" style="font-size:22px;padding-top:4px">&#x2014;</div></div>
-      </div>
-      <div class="controls-bar">
-        <input class="search-input" type="text" id="tbdSrch" placeholder="Search tickets&#x2026;" oninput="applyTbdFilters()" style="width:240px"/>
-      </div>
-      <!-- TBD Bulk action bar -->
-      <div class="bulk-bar" id="tbdBulkBar">
-        <button class="bulk-deselect" onclick="clearTbdBulk()" title="Clear selection">&#x2715;</button>
-        <span class="bulk-count" id="tbdBulkCount"><strong>0</strong> selected</span>
-        <div class="bulk-actions">
-          <button class="bulk-btn success-btn" onclick="tbdBulkMarkDone()">&#x2713; Mark All Done</button>
-          <div class="inline-asn-wrap" id="tbdBulkAsnWrap">
-            <button class="bulk-btn" onclick="toggleTbdBulkAsnDd(event)">&#x1f464; Reassign All</button>
-            <div class="inline-asn-dd" id="tbdBulkAsnDd">
-              <input class="inline-asn-search" type="text" id="tbdBulkAsnSearch"
-                placeholder="Type name to search members&#x2026;" oninput="filterTbdBulkAsn()" autocomplete="off"/>
-              <div class="inline-asn-list" id="tbdBulkAsnList"></div>
+        <!-- ════ TAB: ISSUE TRACKING ════ -->
+        <div class="tab-pane active" id="pane-tracking">
+          <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:20px;gap:16px">
+            <div>
+              <h1 style="margin:0;font:600 24px/32px var(--font-en)">Issue tracking</h1>
+              <p style="margin:4px 0 0;font:400 14px/20px var(--font-en);color:var(--c-low)">Jira tickets you've reported, grouped by client.</p>
+            </div>
+            <div style="display:flex;gap:10px">
+              <button class="btn-new-ob" onclick="openWizard()" style="display:flex;align-items:center;gap:7px;height:36px;padding:0 15px;border:none;cursor:pointer;color:#fff">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg> New onboarding
+              </button>
+              <button class="btn-feat-enable" onclick="openFeatureEnableWizard()" style="display:flex;align-items:center;gap:7px;height:36px;padding:0 15px;border:none;cursor:pointer;color:#fff">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4.5 13.5H11l-1 8.5 8.5-11.5H12z"/></svg> Feature enable
+              </button>
             </div>
           </div>
-          <button class="bulk-btn" onclick="tbdBulkCopyKeys()">&#x1f4cb; Copy Keys</button>
-          <button class="bulk-btn" onclick="tbdBulkIgnoreTickets()" title="Hide from TBD view &#x2014; moves to Ignored section">&#x1f6ab; Ignore</button>
+
+          <!-- Onboarding progress cards -->
+          <div class="ob-progress-section" id="obProgressSection" style="display:none">
+            <div class="ob-progress-header" style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
+              <span class="ob-progress-title" style="font:600 12px/16px var(--font-en);letter-spacing:.06em;text-transform:uppercase;color:var(--c-low)">Onboarding progress</span>
+            </div>
+            <div class="ob-cards" id="obCards" style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px"></div>
+          </div>
+
+          <!-- New Onboarding button when no onboardings exist -->
+          <div id="obNewWrap" style="display:none"></div>
+
+          <!-- Pinned Tickets -->
+          <div class="pinned-section" id="pinnedSection">
+            <div class="pinned-header" style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 17v5"/><path d="M9 10.8a2 2 0 0 1-1.1 1.8l-1.8.9A2 2 0 0 0 5 15.2V16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-.8a2 2 0 0 0-1.1-1.7l-1.8-.9a2 2 0 0 1-1.1-1.8V7a1 1 0 0 1 1-1 2 2 0 0 0 0-4H8a2 2 0 0 0 0 4 1 1 0 0 1 1 1z"/></svg>
+              <span class="pinned-title" style="font:700 15px/20px var(--font-en)">Pinned tickets</span>
+              <span class="pinned-badge" id="pinnedCount" style="font:400 12px var(--font-mono);color:var(--c-lowm)">0 tickets</span>
+              <div class="pinned-add-wrap" style="margin-left:auto;display:flex;gap:8px">
+                <input class="pinned-input" id="pinnedInput" placeholder="e.g. LEG-1234" onkeydown="if(event.key==='Enter')addPinnedTicket()" style="height:32px;width:150px;padding:0 11px;border-radius:4px;border:1px solid var(--border);background:var(--surface);font:400 13px var(--font-en);color:var(--c-high);outline:none"/>
+                <button class="pinned-add-btn" id="pinnedAddBtn" onclick="addPinnedTicket()" style="display:inline-flex;align-items:center;gap:5px;height:32px;padding:0 12px;border-radius:4px;border:1px solid var(--blue);background:var(--surface);color:var(--blue);font:600 13px var(--font-en);cursor:pointer">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg> Track
+                </button>
+              </div>
+            </div>
+            <div id="pinnedBody">
+              <div class="pinned-empty" style="font:400 13px var(--font-en);color:var(--c-lowm);padding:8px 4px">No pinned tickets yet — paste any Jira key above to track it here.</div>
+            </div>
+          </div>
+
+          <!-- Stats -->
+          <div class="stats-row">
+            <div class="stat-card c-blue"><div class="stat-label">Total tickets</div><div class="stat-value" id="sTotal">—</div></div>
+            <div class="stat-card c-green"><div class="stat-label">Done</div><div class="stat-value" id="sDone">—</div></div>
+            <div class="stat-card c-gray"><div class="stat-label">Not started</div><div class="stat-value" id="sNS">—</div></div>
+            <div class="stat-card c-yellow"><div class="stat-label">Active</div><div class="stat-value" id="sActive">—</div></div>
+          </div>
+
+          <!-- Controls -->
+          <div class="controls-bar">
+            <button class="btn-sm" onclick="expandAll()">Expand all</button>
+            <button class="btn-sm" onclick="collapseAll()">Collapse all</button>
+            <input class="search-input" type="text" id="srch" placeholder="Search tickets…" oninput="applyFilters()" style="width:280px"/>
+            <div class="dd-wrap" id="asnWrap">
+              <button class="dd-btn" id="asnBtn" onclick="ddToggle('asn',event)">
+                <span id="asnLabel">All assignees</span><span style="color:var(--c-lowm);margin-left:6px">▾</span>
+              </button>
+              <div class="dd-panel" id="asnPanel">
+                <input class="dd-search" type="text" id="asnSrch" placeholder="Search assignees…" oninput="ddFilter('asn')"/>
+                <div class="dd-list" id="asnList"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bulk action bar -->
+          <div class="bulk-bar" id="bulkBar">
+            <button class="bulk-deselect" onclick="clearBulkSelection()" title="Clear selection">✕</button>
+            <span class="bulk-count" id="bulkCount"><strong>0</strong> selected</span>
+            <div class="bulk-actions">
+              <button class="bulk-btn success-btn" onclick="bulkMarkDone()">✓ Mark all done</button>
+              <button class="bulk-btn" onclick="bulkIgnoreTickets()">🚫 Ignore</button>
+              <button class="bulk-btn" onclick="bulkCopyKeys()">📋 Copy keys</button>
+            </div>
+          </div>
+
+          <div id="dash"></div>
         </div>
-      </div>
-      <div class="tbd-wrap">
-        <div id="tbdDash"></div>
-      </div>
-    </div>
 
-    <!-- &#x2550;&#x2550; CSM BRIEF TAB PANE &#x2550;&#x2550; -->
-    <div class="tab-pane" id="pane-brief">
-
-
-      <!-- Sync bar -->
-      <div class="sync-bar">
-        <span class="sync-dot spin" id="syncDot"></span>
-        <span class="sync-label" id="syncLabel">Loading brief from GitHub&#x2026;</span>
-      </div>
-
-      <!-- Stats row -->
-      <div class="brief-stats-row">
-        <div class="brief-stat-card c-red"><div class="stat-label">Critical</div><div class="brief-stat-val" id="bs-crit">&#x2014;</div></div>
-        <div class="brief-stat-card c-yellow"><div class="stat-label">At Risk</div><div class="brief-stat-val" id="bs-risk">&#x2014;</div></div>
-        <div class="brief-stat-card c-green"><div class="stat-label">On Track</div><div class="brief-stat-val" id="bs-ok">&#x2014;</div></div>
-        <div class="brief-stat-card c-blue"><div class="stat-label">Meetings (14d)</div><div class="brief-stat-val" id="bs-mtg">&#x2014;</div></div>
-      </div>
-
-      <!-- Sub-tabs -->
-      <div class="brief-tabs">
-        <button class="brief-tab-btn active" id="btab-brief" onclick="briefSwitchTab('brief')">
-          &#x1f4cb; Account Brief <span class="brief-tab-count" id="btc-brief">&#x2014;</span>
-        </button>
-        <button class="brief-tab-btn" id="btab-okr" onclick="briefSwitchTab('okr')">
-          &#x1f4ca; OKR Log <span class="brief-tab-count" id="btc-okr">&#x2014;</span>
-        </button>
-        
-      </div>
-
-      <!-- Sub-pane: Account Brief -->
-      <div class="brief-tab-pane active" id="bpane-brief">
-        <div class="account-grid" id="accountGrid"></div>
-      </div>
-
-      <!-- Sub-pane: OKR Log -->
-      <div class="brief-tab-pane" id="bpane-okr">
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;flex-wrap:wrap;">
-          <div class="brief-section-title">Q OKR Summary</div>
-          <select class="okr-quarter-sel" id="okrQSel" onchange="renderOKR()">
-            <option>Q1 2026</option><option selected>Q2 2026</option>
-            <option>Q3 2026</option><option>Q4 2026</option>
-          </select>
-          <button class="okr-copy-btn" onclick="copyOKR()" id="okrCopyBtn">Copy Summary</button>
+        <!-- ════ TAB: TO BE DONE ════ -->
+        <div class="tab-pane" id="pane-tbd">
+          <div style="margin-bottom:20px">
+            <h1 style="margin:0;font:600 24px/32px var(--font-en)">To be done</h1>
+            <p style="margin:4px 0 0;font:400 14px/20px var(--font-en);color:var(--c-low)">Open tickets awaiting action, oldest first.</p>
+          </div>
+          <div class="tbd-stats stats-row">
+            <div class="stat-card c-yellow"><div class="stat-label">Pending</div><div class="stat-value" id="tbdPending">—</div></div>
+            <div class="stat-card c-red"><div class="stat-label">Overdue (&gt;14d)</div><div class="stat-value" id="tbdOverdue" style="color:#C3003A">—</div></div>
+            <div class="stat-card c-green"><div class="stat-label">Avg lead time</div><div class="stat-value" id="tbdAvg" style="font-size:22px">—</div></div>
+          </div>
+          <div class="controls-bar">
+            <input class="search-input" type="text" id="tbdSrch" placeholder="Search tickets…" oninput="applyTbdFilters()" style="width:280px"/>
+          </div>
+          <!-- TBD Bulk bar -->
+          <div class="bulk-bar" id="tbdBulkBar">
+            <button class="bulk-deselect" onclick="clearTbdBulk()" title="Clear selection">✕</button>
+            <span class="bulk-count" id="tbdBulkCount"><strong>0</strong> selected</span>
+            <div class="bulk-actions">
+              <button class="bulk-btn success-btn" onclick="tbdBulkMarkDone()">✓ Mark all done</button>
+              <div class="inline-asn-wrap" id="tbdBulkAsnWrap">
+                <button class="bulk-btn" onclick="toggleTbdBulkAsnDd(event)">Reassign all</button>
+                <div class="inline-asn-dd" id="tbdBulkAsnDd">
+                  <input class="inline-asn-search" type="text" id="tbdBulkAsnSearch" placeholder="Type name to search…" oninput="filterTbdBulkAsn()" autocomplete="off"/>
+                  <div class="inline-asn-list" id="tbdBulkAsnList"></div>
+                </div>
+              </div>
+              <button class="bulk-btn" onclick="tbdBulkCopyKeys()">📋 Copy keys</button>
+              <button class="bulk-btn" onclick="tbdBulkIgnoreTickets()">🚫 Ignore</button>
+            </div>
+          </div>
+          <div class="tbd-wrap"><div id="tbdDash"></div></div>
         </div>
-        <div id="okrSections"></div>
-      </div>
 
-      <!-- Sub-pane: Session Log -->
-      
-    </div>
-  </div>
+        <!-- ════ TAB: CSM BRIEF ════ -->
+        <div class="tab-pane" id="pane-brief">
+          <div style="margin-bottom:20px">
+            <h1 style="margin:0;font:600 24px/32px var(--font-en)">CSM brief</h1>
+            <p style="margin:4px 0 0;font:400 14px/20px var(--font-en);color:var(--c-low)">Account health and quarterly OKR log.</p>
+          </div>
 
+          <div class="sync-bar">
+            <span class="sync-dot spin" id="syncDot"></span>
+            <span class="sync-label" id="syncLabel">Loading brief from GitHub…</span>
+          </div>
 
-    <!-- &#x2550;&#x2550; CSM AR RSTATUSTABPANE &#x2550;&#x2550; -->
-    <div class="tab-pane" id="pane-ar">
+          <div class="brief-stats-row">
+            <div class="brief-stat-card c-red"><div class="stat-label">Critical</div><div class="brief-stat-val" id="bs-crit">—</div></div>
+            <div class="brief-stat-card c-yellow"><div class="stat-label">At risk</div><div class="brief-stat-val" id="bs-risk">—</div></div>
+            <div class="brief-stat-card c-green"><div class="stat-label">On track</div><div class="brief-stat-val" id="bs-ok">—</div></div>
+            <div class="brief-stat-card c-blue"><div class="stat-label">Meetings (14d)</div><div class="brief-stat-val" id="bs-mtg">—</div></div>
+          </div>
 
-      <!-- help note (hidden, not used in simple mode) -->
-      <div id="arSetupNote" style="display:none"></div>
+          <div class="brief-tabs">
+            <button class="brief-tab-btn active" id="btab-brief" onclick="briefSwitchTab('brief')">
+              Account brief <span class="brief-tab-count" id="btc-brief">—</span>
+            </button>
+            <button class="brief-tab-btn" id="btab-okr" onclick="briefSwitchTab('okr')">
+              OKR log <span class="brief-tab-count" id="btc-okr">—</span>
+            </button>
+          </div>
 
-      <!-- Status / load bar (shown when connected) -->
-      <div id="arLoadBar" class="ar-load-bar" style="display:none">
-        <span class="ar-load-dot" id="arDot"></span>
-        <span class="ar-load-label" id="arLoadLabel">Ready</span>
-        <button class="ar-load-btn" id="arRefreshBtn" onclick="arLoadData()">&#x1f504; Refresh</button>
-        <span id="arLastLoaded" style="font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);margin-left:4px;"></span>
-        <button class="ar-load-btn" onclick="arDisconnect()" style="border-color:rgba(248,113,113,"></span>
-        <button class="ar-load-btn" onclick="arDisconnect()" style="border-color:rgba(248,113,113,"></span>
-        <button class="ar-load-btn" onclick="arDisconnect()" style="border-color:rgba(248,113,113,"></span>
-        <button class="ar-load-btn" onclick="arDisconnect()" style="border-color:rgba(248,113,113,"></span>
-        <button class="ar-load-btn" onclick="arDisconnect()" style="border-color:rgba(248,113,113,"></span>
-        <button class="ar-load-btn" onclick="arDisconnect()" style="border-color:rgba(248,113,113,"></span>
-        <button class="ar-load-btn" onclick="arDisconnect()" style="border-color:rgba(248,113,113,"></span>
-        <button class="ar-load-btn" onclick="arDisconnect()" style="border-color:rgba(248,113,113,"></span>
-      </div>
+          <div class="brief-tab-pane active" id="bpane-brief">
+            <div class="account-grid" id="accountGrid"></div>
+          </div>
 
-      <!-- Connect button (shown when not connected) -->
-      <div id="arConnectBox" class="ar-connect-box">
-        <div class="ar-connect-title">&#x1f4ca; CSM AR Status Check</div>
-        <div class="ar-connect-sub">
-          Paste the <strong>Apps Script URL</strong> below (one-time setup by admin).<br>
-          The script reads the <em>latest AR file</em> from your shared Drive folder automatically.<br>
-          Your accounts are filtered by your login email &#x2014; no sign-in popup needed.
+          <div class="brief-tab-pane" id="bpane-okr">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;flex-wrap:wrap;">
+              <div class="brief-section-title" style="font:700 16px var(--font-en)">Quarterly OKR summary</div>
+              <select class="okr-quarter-sel" id="okrQSel" onchange="renderOKR()">
+                <option>Q1 2026</option><option selected>Q2 2026</option>
+                <option>Q3 2026</option><option>Q4 2026</option>
+              </select>
+              <button class="okr-copy-btn" onclick="copyOKR()" id="okrCopyBtn" style="height:32px;padding:0 13px;border-radius:4px;border:1px solid var(--border);background:var(--surface);color:var(--c-med);font:600 13px var(--font-en);cursor:pointer">Copy summary</button>
+            </div>
+            <div id="okrSections"></div>
+          </div>
         </div>
-        <div class="ar-url-row">
-          <input type="text" class="ar-url-input" id="arUrlInput"
-            placeholder="https://script.google.com/macros/s/&#x2026;/exec">
-          <button class="ar-save-btn" onclick="arSaveUrl()">Connect &#x279c;</button>
+
+        <!-- ════ TAB: CSM AR STATUS ════ -->
+        <div class="tab-pane" id="pane-ar">
+          <div style="margin-bottom:20px">
+            <h1 style="margin:0;font:600 24px/32px var(--font-en)">CSM AR status</h1>
+            <p style="margin:4px 0 0;font:400 14px/20px var(--font-en);color:var(--c-low)">Accounts receivable across your book of business.</p>
+          </div>
+
+          <div id="arSetupNote" style="display:none"></div>
+          <div id="arLoadBar" class="ar-load-bar" style="display:none">
+            <span class="ar-load-dot" id="arDot"></span>
+            <span class="ar-load-label" id="arLoadLabel">Ready</span>
+            <button class="ar-load-btn" id="arRefreshBtn" onclick="arLoadData()">🔄 Refresh</button>
+            <span id="arLastLoaded" style="font-family:var(--font-mono);font-size:11px;color:var(--c-lowm);margin-left:4px"></span>
+            <button class="ar-load-btn" onclick="arDisconnect()" style="border-color:rgba(248,113,113,.4);color:#C3003A;margin-left:auto">Disconnect</button>
+          </div>
+
+          <div id="arConnectBox" class="ar-connect-box" style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:28px;max-width:560px">
+            <div style="font:700 18px/24px var(--font-en);margin-bottom:8px">📊 CSM AR Status</div>
+            <div style="font:400 13px/20px var(--font-en);color:var(--c-low);margin-bottom:20px">
+              Paste the <strong>Apps Script URL</strong> below (one-time setup by admin).<br>
+              Your accounts are filtered by your login email — no sign-in popup needed.
+            </div>
+            <div class="ar-url-row" style="display:flex;gap:10px">
+              <input type="text" class="ar-url-input search-input" id="arUrlInput" placeholder="https://script.google.com/macros/s/…/exec" style="flex:1">
+              <button class="btn-primary ar-save-btn" onclick="arSaveUrl()" style="height:34px;padding:0 16px;border:none;cursor:pointer;color:#fff;font:600 13px var(--font-en);border-radius:4px">Connect →</button>
+            </div>
+            <div style="margin-top:10px;font-size:11px;color:var(--c-lowm);font-family:var(--font-mono)">💡 URL saved in your browser. All CSMs use the same script URL.</div>
+          </div>
+
+          <div class="ar-stats-row" id="arStatsRow" style="display:none">
+            <div class="ar-stat c-blue"><div class="ar-stat-label">Total</div><div class="ar-stat-val" id="arStatTotal">—</div></div>
+            <div class="ar-stat c-green"><div class="ar-stat-label">Paid</div><div class="ar-stat-val" id="arStatPaid">—</div></div>
+            <div class="ar-stat c-yellow"><div class="ar-stat-label">Unpaid</div><div class="ar-stat-val" id="arStatUnpaid">—</div></div>
+            <div class="ar-stat c-red"><div class="ar-stat-label">Invalid</div><div class="ar-stat-val" id="arStatInvalid">—</div></div>
+          </div>
+
+          <div class="ar-ctrl-bar" id="arCtrlBar" style="display:none">
+            <input type="text" class="search-input ar-search" id="arSearch" placeholder="🔍 Search account or opportunity…" oninput="arRender()" style="width:280px">
+            <select class="ar-filter-sel" id="arStatusFilter" onchange="arRender()">
+              <option value="">All statuses</option>
+              <option value="Paid">✅ Paid</option>
+              <option value="Unpaid">⏳ Unpaid</option>
+              <option value="Billed">🧾 Billed</option>
+              <option value="Invalid">❌ Invalid</option>
+              <option value="Scheduled">📅 Scheduled</option>
+              <option value="Draft">📝 Draft</option>
+            </select>
+            <select id="arCsmFilter" onchange="arRender()">
+              <option value="">All CSMs</option>
+            </select>
+          </div>
+
+          <div class="ar-table-wrap" id="arTableWrap" style="display:none">
+            <table class="ar-table"><tbody id="arTbody"></tbody></table>
+          </div>
         </div>
-        <div style="margin-top:10px;font-size:11px;color:var(--muted);font-family:'DM Mono',monospace;">
-          &#x1f4a1; URL saved in your browser. All CSMs use the same script URL.
-          Need setup help? Ask your admin to follow the instructions in the README.
-        </div>
-      </div>
 
-      <!-- Stats row -->
-      <div class="ar-stats-row" id="arStatsRow" style="display:none">
-        <div class="ar-stat c-blue"><div class="ar-stat-label">Total</div><div class="ar-stat-val" id="arStatTotal">&#x2014;</div></div>
-        <div class="ar-stat c-green"><div class="ar-stat-label">Paid</div><div class="ar-stat-val" id="arStatPaid">&#x2014;</div></div>
-        <div class="ar-stat c-yellow"><div class="ar-stat-label">Unpaid</div><div class="ar-stat-val" id="arStatUnpaid">&#x2014;</div></div>
-        <div class="ar-stat c-red"><div class="ar-stat-label">Invalid</div><div class="ar-stat-val" id="arStatInvalid">&#x2014;</div></div>
-      </div>
+      </div><!-- /.container -->
+    </div><!-- /.csm-content -->
+  </div><!-- /.csm-main -->
 
-      <!-- Controls bar -->
-      <div class="ar-ctrl-bar" id="arCtrlBar" style="display:none">
-        <input type="text" class="ar-search" id="arSearch" placeholder="&#x1f50d; Search account or opportunity&#x2026;" oninput="arRender()">
-        <select class="ar-filter-sel" id="arStatusFilter" onchange="arRender()">
-          <option value="">All statuses</option>
-          <option value="Paid">&#x2705; Paid</option>
-          <option value="Unpaid">&#x23f3; Unpaid</option>
-          <option value="Billed">&#x1f9fe; Billed</option>
-          <option value="Invalid">&#x274c; Invalid</option>          <option value="Scheduled">&#x1f4c5; Scheduled</option>          <option value="Draft">&#x1f4dd; Draft</option>
-        </select>
-        <select id="arCsmFilter" onchange="arRender()" style="padding:6px 10px;border-radius:8px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:12px;cursor:pointer;min-width:160px">
-          <option value="">All CSMs</option>
-        </select>
-      </div>
-
-      <!-- Data table -->
-      <div class="ar-table-wrap" id="arTableWrap" style="display:none">
-        <table class="ar-table">
-          <tbody id="arTbody"></tbody>
-        </table>
-      </div>
-
-    </div>
-
-  <!-- Brief account side panel (separate from Jira ticket side panel) -->
+  <!-- ════ BRIEF ACCOUNT SIDE PANEL ════ -->
   <div class="brief-panel-overlay" id="briefPanelOverlay" onclick="closeBriefPanel()"></div>
   <div class="brief-side-panel" id="briefSidePanel">
     <div class="brief-panel-head">
       <div>
-        <div class="brief-panel-title" id="briefPanelTitle">&#x2014;</div>
-        <div class="brief-panel-sub" id="briefPanelSub">&#x2014;</div>
+        <div class="brief-panel-title" id="briefPanelTitle">—</div>
+        <div class="brief-panel-sub" id="briefPanelSub">—</div>
       </div>
-      <button class="brief-panel-close" onclick="closeBriefPanel()">&#x2715;</button>
+      <button class="brief-panel-close" onclick="closeBriefPanel()">✕</button>
     </div>
     <div class="brief-panel-body" id="briefPanelBody"></div>
   </div>
 
-  <!-- Add Log Modal -->
+  <!-- ════ ADD LOG MODAL ════ -->
   <div class="log-modal-overlay" id="addModal">
     <div class="log-modal">
       <h3>Log Activity</h3>
-      <div class="log-form-row">
-        <label>Date</label>
-        <input type="text" id="mDate" placeholder="YYYY-MM-DD">
+      <div class="log-form-row"><label>Date</label><input type="text" id="mDate" placeholder="YYYY-MM-DD"></div>
+      <div class="log-form-row"><label>Quarter</label>
+        <select id="mQuarter"><option>Q1 2026</option><option selected>Q2 2026</option><option>Q3 2026</option><option>Q4 2026</option></select>
       </div>
-      <div class="log-form-row">
-        <label>Quarter</label>
-        <select id="mQuarter">
-          <option>Q1 2026</option><option selected>Q2 2026</option>
-          <option>Q3 2026</option><option>Q4 2026</option>
-        </select>
-      </div>
-      <div class="log-form-row">
-        <label>Category</label>
+      <div class="log-form-row"><label>Category</label>
         <select id="mCat">
-          <option value="onboard">&#x1f680; Onboard</option>
-          <option value="renewal">&#x1f504; Renewal</option>
-          <option value="ticket">&#x1f3ab; Ticket Resolved</option>
-          <option value="feature">&#x26a1; Feature Enabled</option>
-          <option value="pitching">&#x1f3af; Pitching</option>
-          <option value="ai">&#x1f916; AI Adoption</option>
-          <option value="team">&#x1f91d; Team Contribution</option>
-          <option value="other">&#x1f4cc; Other</option>
+          <option value="onboard">🚀 Onboard</option>
+          <option value="renewal">🔄 Renewal</option>
+          <option value="ticket">🎫 Ticket Resolved</option>
+          <option value="feature">⚡ Feature Enabled</option>
+          <option value="pitching">🎯 Pitching</option>
+          <option value="ai">🤖 AI Adoption</option>
+          <option value="team">🤝 Team Contribution</option>
+          <option value="other">📌 Other</option>
         </select>
       </div>
-      <div class="log-form-row">
-        <label>Account</label>
+      <div class="log-form-row"><label>Account</label>
         <select id="mClient">
           <option>Mannings</option><option>SCMP</option><option>10/10Hope</option>
-          <option>Luxgen</option><option>55688</option><option>&#x7530;&#x539f;&#x9999;</option>
+          <option>Luxgen</option><option>55688</option><option>田原香</option>
           <option>Internal</option><option>Other</option>
         </select>
       </div>
-      <div class="log-form-row">
-        <label>Description</label>
-        <textarea id="mDesc" placeholder="What did you do? e.g. Enabled AIRIS for Mannings&#x2026;"></textarea>
+      <div class="log-form-row"><label>Description</label>
+        <textarea id="mDesc" placeholder="What did you do? e.g. Enabled AIRIS for Mannings…"></textarea>
       </div>
       <div class="log-modal-btns">
         <button class="log-modal-cancel" onclick="closeModal()">Cancel</button>
-        <button class="log-modal-save" id="mSaveBtn" onclick="saveEntry()" disabled>Add to Log</button>
+        <button class="log-modal-save" id="mSaveBtn" onclick="saveEntry()" disabled>Add to log</button>
       </div>
     </div>
   </div>
+
+  <!-- ════ ONBOARDING WIZARD ════ -->
   <div class="wiz-overlay" id="wizOverlay" style="display:none" onclick="wizOverlayClick(event)">
     <div class="wiz-modal">
       <div class="wiz-progress"><div class="wiz-progress-bar" id="wizProgressBar" style="width:0%"></div></div>
       <div class="wiz-header">
         <span class="wiz-title" id="wizTitle">New Onboarding</span>
         <span class="wiz-step-indicator" id="wizStepInd"></span>
-        <button class="wiz-close" onclick="closeWizard()">&#x2715;</button>
+        <button class="wiz-close" onclick="closeWizard()">✕</button>
       </div>
       <div class="wiz-body" id="wizBody"></div>
       <div class="wiz-footer" id="wizFooter"></div>
     </div>
   </div>
 
-  <!-- &#x2500;&#x2500; SIDE PANEL &#x2500;&#x2500; -->
+  <!-- ════ TICKET SIDE PANEL ════ -->
   <div class="panel-overlay" id="panelOverlay" onclick="closePanel()"></div>
   <div class="side-panel" id="sidePanel">
     <div class="panel-header">
       <div class="panel-title-wrap">
-        <a class="panel-key" id="panelKey" href="#" target="_blank">&#x2014;</a>
+        <a class="panel-key" id="panelKey" href="#" target="_blank">—</a>
         <span class="panel-status-badge" id="panelStatus"></span>
       </div>
-      <button class="panel-close" onclick="closePanel()">&#x2715;</button>
+      <button class="panel-close" onclick="closePanel()">✕</button>
     </div>
-
     <div class="panel-body">
-      <!-- Summary + meta -->
       <div class="panel-summary" id="panelSummary"></div>
       <div class="panel-meta">
-        <div class="panel-meta-row"><span class="pm-label">Assignee</span><span class="pm-val" id="panelAssignee">&#x2014;</span></div>
-        <div class="panel-meta-row"><span class="pm-label">Reporter</span><span class="pm-val" id="panelReporter">&#x2014;</span></div>
-        <div class="panel-meta-row"><span class="pm-label">Created</span><span class="pm-val" id="panelCreated">&#x2014;</span></div>
-        <div class="panel-meta-row"><span class="pm-label">Lead Time</span><span class="pm-val" id="panelLT">&#x2014;</span></div>
+        <div class="panel-meta-row"><span class="pm-label">Assignee</span><span class="pm-val" id="panelAssignee">—</span></div>
+        <div class="panel-meta-row"><span class="pm-label">Reporter</span><span class="pm-val" id="panelReporter">—</span></div>
+        <div class="panel-meta-row"><span class="pm-label">Created</span><span class="pm-val" id="panelCreated">—</span></div>
+        <div class="panel-meta-row"><span class="pm-label">Lead time</span><span class="pm-val" id="panelLT">—</span></div>
       </div>
-
-      <!-- Description (both modes) -->
       <div class="panel-section">
         <div class="panel-section-title">Description</div>
-        <div class="panel-description" id="panelDescription">
-          <span class="panel-loading">Loading&#x2026;</span>
-        </div>
+        <div class="panel-description" id="panelDescription"><span class="panel-loading">Loading…</span></div>
       </div>
-
-      <!-- ACTION SECTIONS &#x2014; To Be Done mode only -->
       <div id="panelActions">
-        <!-- Status transitions -->
         <div class="panel-section">
-          <div class="panel-section-title">Change Status</div>
-          <div class="panel-transitions" id="panelTransitions">
-            <span class="panel-loading">Loading transitions&#x2026;</span>
-          </div>
+          <div class="panel-section-title">Change status</div>
+          <div class="panel-transitions" id="panelTransitions"><span class="panel-loading">Loading transitions…</span></div>
         </div>
-
-        <!-- Reassign -->
         <div class="panel-section">
-          <div class="panel-section-title">Reassign To</div>
+          <div class="panel-section-title">Reassign to</div>
           <div class="panel-reassign-wrap">
-            <input class="panel-input" type="text" id="panelAssigneeSearch"
-              placeholder="Search by name&#x2026;" oninput="searchAssignees()"
-              autocomplete="off"/>
+            <input class="panel-input" type="text" id="panelAssigneeSearch" placeholder="Search by name…" oninput="searchAssignees()" autocomplete="off"/>
             <div class="panel-user-results" id="panelUserResults" style="display:none"></div>
             <div class="panel-assigned-to" id="panelAssignedTo"></div>
           </div>
         </div>
-
-        <!-- Comment box -->
         <div class="panel-section">
-          <div class="panel-section-title">Add Comment</div>
-          <textarea class="panel-textarea" id="panelComment"
-            placeholder="Write a comment&#x2026; (e.g. Reassigning to you &#x2014; please review the API config)"></textarea>
-          <button class="panel-btn-submit" id="panelCommentBtn" onclick="submitComment()">
-            Send Comment
-          </button>
+          <div class="panel-section-title">Add comment</div>
+          <textarea class="panel-textarea" id="panelComment" placeholder="Write a comment…"></textarea>
+          <button class="panel-btn-submit" id="panelCommentBtn" onclick="submitComment()">Send comment</button>
         </div>
       </div>
-
-      <!-- Recent comments (both modes, limit differs) -->
       <div class="panel-section">
-        <div class="panel-section-title" id="panelCommentTitle">Recent Comments</div>
-        <div id="panelCommentList"><span class="panel-loading">Loading&#x2026;</span></div>
+        <div class="panel-section-title" id="panelCommentTitle">Recent comments</div>
+        <div id="panelCommentList"><span class="panel-loading">Loading…</span></div>
       </div>
     </div>
   </div>
-</div>
 
-  <!-- Scripts: load order matters &#x2014; all globals share page scope -->
-  <script src="js/config.js?v=20260622l"></script>
-  <script src="js/auth.js?v=20260622l"></script>
-  <script src="js/api.js?v=20260622l"></script>
-  <script src="js/dashboard.js?v=20260622l"></script>
-  <script src="js/screens.js?v=20260622l"></script>
-  <script src="js/onboarding.js?v=20260622l"></script>
-  <script src="js/brief.js?v=20260622l"></script>
-  <script src="js/app.js?v=20260622l"></script>
+</div><!-- /#appScreen -->
 
-  <!-- SheetJS for CSV/Excel parsing -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js?v=20260622l"></script>
-  <script src="js/activity-report.js?v=20260622l"></script>
-
-  <!-- Feature Enable Wizard -->
-<style id="fe-wiz-styles">.btn-feat-enable{background:linear-gradient(135deg,#8b6ff7,#5b9ef8);color:#fff;border:none;border-radius:10px;padding:10px 18px;font-weight:700;font-size:0.85rem;cursor:pointer;transition:opacity .2s;margin-left:8px}.btn-feat-enable:hover{opacity:.85}.fe-platform-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:12px}.fe-platform-card{border:2px solid var(--border);border-radius:14px;padding:22px 12px;text-align:center;cursor:pointer;transition:all .15s;background:var(--surface)}.fe-platform-card:hover:not(.fe-disabled){border-color:var(--accent);transform:translateY(-2px)}.fe-platform-card.fe-selected{border-color:var(--accent);background:var(--blue-soft)}.fe-platform-card.fe-disabled{opacity:.38;cursor:not-allowed}.fe-feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px}.fe-feat-item{padding:12px 14px;border-radius:10px;border:1.5px solid var(--border);cursor:pointer;transition:all .15s;background:var(--surface)}.fe-feat-item:hover{border-color:var(--accent)}.fe-feat-item.fe-active{border-color:var(--accent);background:var(--blue-soft)}.fe-preview-card{background:var(--surface);border-radius:12px;padding:16px;border:1px solid var(--border)}.fe-preview-row{display:flex;justify-content:space-between;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--border);font-size:.87rem}.fe-preview-row:last-child{border-bottom:none}.fe-preview-label{color:var(--muted);font-weight:600;white-space:nowrap;margin-right:12px}.fe-preview-val{color:var(--text);text-align:right}
-/* &#x2500;&#x2500; Feature Enable v2: catalog list styles &#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500; */
+<!-- Feature Enable Wizard styles (unchanged) -->
+<style id="fe-wiz-styles">
+.btn-feat-enable{background:linear-gradient(135deg,#8b6ff7,#5b9ef8);color:#fff;border:none;border-radius:6px;padding:9px 16px;font-weight:700;font-size:0.85rem;cursor:pointer;transition:opacity .2s;margin-left:8px}.btn-feat-enable:hover{opacity:.85}
+.fe-platform-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:12px}
+.fe-platform-card{border:2px solid var(--border);border-radius:12px;padding:22px 12px;text-align:center;cursor:pointer;transition:all .15s;background:var(--surface)}.fe-platform-card:hover:not(.fe-disabled){border-color:var(--accent);transform:translateY(-2px)}.fe-platform-card.fe-selected{border-color:var(--accent);background:#EAF1FF}.fe-platform-card.fe-disabled{opacity:.38;cursor:not-allowed}
+.fe-feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px}
+.fe-feat-item{padding:12px 14px;border-radius:10px;border:1.5px solid var(--border);cursor:pointer;transition:all .15s;background:var(--surface)}.fe-feat-item:hover{border-color:var(--accent)}.fe-feat-item.fe-active{border-color:var(--accent);background:#EAF1FF}
+.fe-preview-card{background:var(--surface);border-radius:12px;padding:16px;border:1px solid var(--border)}.fe-preview-row{display:flex;justify-content:space-between;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--border);font-size:.87rem}.fe-preview-row:last-child{border-bottom:none}.fe-preview-label{color:var(--muted);font-weight:600;white-space:nowrap;margin-right:12px}.fe-preview-val{color:var(--text);text-align:right}
 .fe-feat-list{display:flex;flex-direction:column;gap:6px;max-height:340px;overflow-y:auto;padding-right:4px}
 .fe-feat-list-preview{max-height:220px}
 .fe-cat-header{font-size:.7rem;font-weight:700;letter-spacing:.08em;color:var(--muted);padding:10px 0 4px}
 .fe-feat-row{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:8px;border:1px solid var(--border);cursor:pointer;transition:background .15s,border-color .15s}
-.fe-feat-row:hover{border-color:var(--accent);background:rgba(99,102,241,.06)}
-.fe-feat-row.fe-row-on{border-color:var(--accent);background:rgba(99,102,241,.12)}
-.fe-feat-cb{width:16px;height:16px;border-radius:4px;border:2px solid var(--muted);flex-shrink:0;transition:all .15s}
-.fe-feat-cb.fe-cb-on{background:var(--accent);border-color:var(--accent)}
-.fe-feat-cb.fe-cb-on::after{content:'&#x2713;';display:block;color:#fff;font-size:11px;line-height:12px;text-align:center}
+.fe-feat-row:hover{border-color:var(--accent);background:rgba(41,106,255,.06)}.fe-feat-row.fe-row-on{border-color:var(--accent);background:rgba(41,106,255,.1)}
+.fe-feat-cb{width:16px;height:16px;border-radius:4px;border:2px solid var(--muted);flex-shrink:0;transition:all .15s}.fe-feat-cb.fe-cb-on{background:var(--accent);border-color:var(--accent)}.fe-feat-cb.fe-cb-on::after{content:'✓';display:block;color:#fff;font-size:11px;line-height:12px;text-align:center}
 .fe-feat-name{flex:1;font-size:.88rem;font-weight:500}
 .fe-badge-clone{font-size:.7rem;padding:2px 8px;border-radius:4px;border:1px solid var(--border);color:var(--muted);flex-shrink:0}
 .fe-badge-manual{font-size:.7rem;padding:2px 8px;border-radius:4px;background:rgba(245,158,11,.15);color:#f59e0b;border:1px solid rgba(245,158,11,.3);flex-shrink:0}
 .fe-preview-feat-row{display:flex;align-items:center;justify-content:space-between;padding:8px 12px;border-radius:6px;border:1px solid var(--border)}
-/* &#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500;&#x2500; */
-</style><div id="feOverlay" class="wiz-overlay" onclick="if(e
+</style>
+<div id="feOverlay" class="wiz-overlay" style="display:none" onclick="if(event.target===this)closeFEWizard()">
+  <div class="wiz-modal" id="feModal" onclick="event.stopPropagation()">
+    <div class="wiz-progress"><div class="wiz-progress-bar" id="feProgressBar" style="width:0%"></div></div>
+    <div class="wiz-header">
+      <span class="wiz-title" id="feTitle">Feature Enable</span>
+      <span class="wiz-step-indicator" id="feStepInd"></span>
+      <button class="wiz-close" onclick="closeFEWizard()">✕</button>
+    </div>
+    <div class="wiz-body" id="feBody"></div>
+    <div class="wiz-footer" id="feFooter"></div>
+  </div>
+</div>
+
+<!-- ════ EXISTING SCRIPTS (unchanged) ════ -->
+<script src="js/config.js?v=20260622l"></script>
+<script src="js/auth.js?v=20260622l"></script>
+<script src="js/api.js?v=20260622l"></script>
+<script src="js/dashboard.js?v=20260622l"></script>
+<script src="js/screens.js?v=20260622l"></script>
+<script src="js/onboarding.js?v=20260622l"></script>
+<script src="js/brief.js?v=20260622l"></script>
+<script src="js/app.js?v=20260622l"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js?v=20260622l"></script>
+<script src="js/activity-report.js?v=20260622l"></script>
+
+<!-- ════ SIDEBAR BRIDGE ════ -->
+<script>
+(function() {
+  /* Breadcrumb map */
+  const CRUMB = {
+    tracking: ['Issues', 'Issue tracking'],
+    tbd: ['Issues', 'To be done'],
+    ar: ['Finance', 'CSM AR status'],
+    brief: ['Accounts', 'CSM brief']
+  };
+
+  /* Update sidebar active state + breadcrumb */
+  function updateSidebar(tab) {
+    ['tracking','tbd','ar','brief'].forEach(t => {
+      const btn = document.getElementById('snav-' + t);
+      if (btn) btn.classList.toggle('active', t === tab);
+    });
+    const [top, cur] = CRUMB[tab] || ['', tab];
+    const el = document.getElementById('crumbTop');
+    const ec = document.getElementById('crumbCur');
+    if (el) el.textContent = top;
+    if (ec) ec.textContent = cur;
+  }
+
+  /* Sidebar nav button handler — calls existing switchTab() */
+  window.snavSwitch = function(tab) {
+    if (typeof switchTab === 'function') switchTab(tab);
+    updateSidebar(tab);
+  };
+
+  /* Sync tab counts → sidebar nav counts */
+  function syncCounts() {
+    ['tracking','tbd','ar','brief'].forEach(t => {
+      const tc = document.getElementById('tc-' + t);
+      const sc = document.getElementById('snc-' + t);
+      if (tc && sc && tc.textContent && tc.textContent !== '—') {
+        sc.textContent = tc.textContent;
+      }
+    });
+  }
+
+  /* Sync user display name → sidebar */
+  function syncUser() {
+    const hu = document.getElementById('headerUser');
+    if (!hu || !hu.textContent || hu.textContent === '—') return;
+    const name = hu.textContent.trim();
+    const sn = document.getElementById('sidebarUserName');
+    if (sn && name) sn.textContent = name;
+    const init = name.split(/\s+/).filter(Boolean).map(w=>w[0]).join('').substring(0,2).toUpperCase();
+    const sa = document.getElementById('sidebarAvatarInit');
+    const ta = document.getElementById('topbarAvatarInit');
+    if (sa && init) sa.textContent = init;
+    if (ta && init) ta.textContent = init;
+  }
+
+  /* Patch switchTab to keep sidebar in sync */
+  function patchSwitchTab() {
+    if (typeof window.switchTab !== 'function') return;
+    const orig = window.switchTab;
+    window.switchTab = function(tab) {
+      orig(tab);
+      updateSidebar(tab);
+      syncCounts();
+    };
+  }
+
+  /* Mirror CSM Brief tab visibility in sidebar */
+  function mirrorBriefVisibility() {
+    const btn = document.getElementById('tab-brief');
+    const sBtn = document.getElementById('snav-brief');
+    if (!btn || !sBtn) return;
+    const obs = new MutationObserver(() => {
+      sBtn.style.display = btn.style.display || '';
+    });
+    obs.observe(btn, { attributes: true, attributeFilter: ['style'] });
+  }
+
+  /* Observe count changes */
+  function observeCounts() {
+    ['tc-tracking','tc-tbd','tc-ar','tc-brief'].forEach(id => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      new MutationObserver(syncCounts).observe(el, { childList: true, characterData: true, subtree: true });
+    });
+  }
+
+  /* Also update "lu" (last updated) display */
+  function syncLastUpdated() {
+    const lu = document.getElementById('lu');
+    // lu is already in the topbar, nothing to do
+  }
+
+  /* Init on DOM ready */
+  document.addEventListener('DOMContentLoaded', function() {
+    // Delay slightly so app.js has time to initialize
+    setTimeout(function() {
+      patchSwitchTab();
+      mirrorBriefVisibility();
+      observeCounts();
+      syncCounts();
+    }, 200);
+
+    // Periodically sync user + counts
+    setInterval(function() {
+      syncUser();
+      syncCounts();
+    }, 800);
+  });
+
+  /* Also handle when appScreen becomes visible */
+  const appEl = document.getElementById('appScreen');
+  if (appEl) {
+    const visObs = new MutationObserver(function() {
+      if (appEl.style.display !== 'none' && appEl.style.display !== '') {
+        // App just became visible — ensure sidebar layout
+        appEl.style.display = 'flex';
+      }
+    });
+    visObs.observe(appEl, { attributes: true, attributeFilter: ['style'] });
+  }
+
+  /* Override showScreen/showApp calls that set display:block instead of flex */
+  const origShow = window.show;
+  window.addEventListener('load', function() {
+    // Patch any function that shows appScreen to use flex
+    const _origBody = document.body;
+    const appScreenEl = document.getElementById('appScreen');
+    if (appScreenEl) {
+      const origDisplay = Object.getOwnPropertyDescriptor(appScreenEl.style, 'display');
+      // Watch for display changes via MutationObserver
+      new MutationObserver(function(muts) {
+        muts.forEach(function(m) {
+          if (m.attributeName === 'style' && appScreenEl.style.display === 'block') {
+            appScreenEl.style.display = 'flex';
+          }
+        });
+      }).observe(appScreenEl, { attributes: true, attributeFilter: ['style'] });
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
