@@ -63,6 +63,11 @@
       overflow: hidden;
       flex-direction: row !important;
     }
+    /* JS sets display:block — override to flex regardless of inline style */
+    #appScreen[style*="display: block"],
+    #appScreen[style*="display:block"],
+    #appScreen[style*="display: flex"],
+    #appScreen[style*="display:flex"],
     #appScreen.visible {
       display: flex !important;
     }
@@ -910,35 +915,28 @@
     }, 800);
   });
 
-  /* Also handle when appScreen becomes visible */
-  const appEl = document.getElementById('appScreen');
-  if (appEl) {
-    const visObs = new MutationObserver(function() {
-      if (appEl.style.display !== 'none' && appEl.style.display !== '') {
-        // App just became visible — ensure sidebar layout
-        appEl.style.display = 'flex';
-      }
-    });
-    visObs.observe(appEl, { attributes: true, attributeFilter: ['style'] });
-  }
-
-  /* Override showScreen/showApp calls that set display:block instead of flex */
-  const origShow = window.show;
+  /* Force appScreen to flex whenever JS sets it to block */
   window.addEventListener('load', function() {
-    // Patch any function that shows appScreen to use flex
-    const _origBody = document.body;
-    const appScreenEl = document.getElementById('appScreen');
-    if (appScreenEl) {
-      const origDisplay = Object.getOwnPropertyDescriptor(appScreenEl.style, 'display');
-      // Watch for display changes via MutationObserver
-      new MutationObserver(function(muts) {
-        muts.forEach(function(m) {
-          if (m.attributeName === 'style' && appScreenEl.style.display === 'block') {
-            appScreenEl.style.display = 'flex';
-          }
-        });
-      }).observe(appScreenEl, { attributes: true, attributeFilter: ['style'] });
+    var appScreenEl = document.getElementById('appScreen');
+    if (!appScreenEl) return;
+
+    function ensureFlex() {
+      var d = appScreenEl.style.display;
+      if (d && d !== 'none' && d !== 'flex') {
+        appScreenEl.style.display = 'flex';
+      }
     }
+
+    /* MutationObserver catches inline style changes */
+    new MutationObserver(function() { ensureFlex(); })
+      .observe(appScreenEl, { attributes: true, attributeFilter: ['style'] });
+
+    /* Poll as fallback for the first 5 seconds after load */
+    var polls = 0;
+    var iv = setInterval(function() {
+      ensureFlex();
+      if (++polls > 100) clearInterval(iv);
+    }, 50);
   });
 })();
 </script>
