@@ -800,6 +800,22 @@
 <script src="js/api.js?v=20260622l"></script>
 <script src="js/dashboard.js?v=20260622l"></script>
 <script src="js/screens.js?v=20260622l"></script>
+<script>
+/* ── FLEX PATCH: must run AFTER screens.js, BEFORE app.js ──
+   showScreen('app') sets display:'block'; we override it to 'flex'
+   so the sidebar layout renders correctly.                      */
+(function(){
+  var _orig = window.showScreen;
+  if(typeof _orig !== 'function') return;
+  window.showScreen = function(name) {
+    _orig(name);
+    if(name === 'app' || name === 'appScreen') {
+      var el = document.getElementById('appScreen');
+      if(el) { el.style.display = 'flex'; el.style.flexDirection = 'row'; }
+    }
+  };
+})();
+</script>
 <script src="js/onboarding.js?v=20260622l"></script>
 <script src="js/brief.js?v=20260622l"></script>
 <script src="js/app.js?v=20260622l"></script>
