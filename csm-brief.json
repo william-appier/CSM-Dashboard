@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-24T16:14:03.980+08:00",
+  "generatedAt": "2026-06-25T09:00:50.935+08:00",
   "accounts": [
     {
       "id": "mannings",
@@ -325,7 +325,7 @@
       "id": "tiangyuanxiang",
       "name": "田原香",
       "health": "yellow",
-      "insight": "APC-697 open 13d · +12 more.",
+      "insight": "APC-697 open 14d · +12 more.",
       "diffs": [
         {
           "type": "new",
@@ -399,7 +399,7 @@
       "id": "momax",
       "name": "Momax",
       "health": "yellow",
-      "insight": "CAM-350143 open 405d · +1 more.",
+      "insight": "CAM-350143 open 406d · +1 more.",
       "diffs": [
         {
           "type": "new",
