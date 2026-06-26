@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-26T14:53:50.613+08:00",
+  "lastUpdated": "2026-06-26T14:57:38.518+08:00",
   "rules": [
     {
       "id": "okr-consolidate",
@@ -42,6 +42,78 @@
       "account": "scmp",
       "ignoredOn": "2026-06-18",
       "reason": "Ticket done Ã¢ÂÂ Enable segment quota increase to 50"
+    },
+    {
+      "key": "AEP-6714",
+      "ignoredOn": "2026-06-26",
+      "source": "dashboard-hidden",
+      "reason": "hidden by CSM on dashboard"
+    },
+    {
+      "key": "AEP-6694",
+      "ignoredOn": "2026-06-26",
+      "source": "dashboard-hidden",
+      "reason": "hidden by CSM on dashboard"
+    },
+    {
+      "key": "BBT-7550",
+      "ignoredOn": "2026-06-26",
+      "source": "dashboard-hidden",
+      "reason": "hidden by CSM on dashboard"
+    },
+    {
+      "key": "PHXX-6266",
+      "ignoredOn": "2026-06-26",
+      "source": "dashboard-hidden",
+      "reason": "hidden by CSM on dashboard"
+    },
+    {
+      "key": "PHXX-6265",
+      "ignoredOn": "2026-06-26",
+      "source": "dashboard-hidden",
+      "reason": "hidden by CSM on dashboard"
+    },
+    {
+      "key": "EAM-355",
+      "ignoredOn": "2026-06-26",
+      "source": "dashboard-hidden",
+      "reason": "hidden by CSM on dashboard"
+    },
+    {
+      "key": "AIQ-1544",
+      "ignoredOn": "2026-06-26",
+      "source": "dashboard-hidden",
+      "reason": "hidden by CSM on dashboard"
+    },
+    {
+      "key": "AIQ-1503",
+      "ignoredOn": "2026-06-26",
+      "source": "dashboard-hidden",
+      "reason": "hidden by CSM on dashboard"
+    },
+    {
+      "key": "AIQ-1465",
+      "ignoredOn": "2026-06-26",
+      "source": "dashboard-hidden",
+      "reason": "hidden by CSM on dashboard"
+    },
+    {
+      "key": "AIR-4473",
+      "ignoredOn": "2026-06-26",
+      "source": "dashboard-hidden",
+      "reason": "hidden by CSM on dashboard"
+    },
+    {
+      "key": "PHXX-6293",
+      "ignoredOn": "2026-06-26",
+      "source": "dashboard-hidden",
+      "reason": "hidden by CSM on dashboard"
+    },
+    {
+      "key": "ATA-419",
+      "ignoredOn": "2026-06-26",
+      "source": "dashboard-hidden",
+      "reason": "hidden by CSM on dashboard"
     }
   ],
   "pinnedTickets": [
@@ -74,10 +146,7 @@
       "platform": "AIQUA/AIRIS",
       "startDate": null,
       "endDate": "2026-06-30",
-      "note": "Renewed AQ & AX to 2026-06-30 (Q1)",
-      "renewalContractSentDate": "2026-06-26",
-      "targetReceiveDate": "2026-06-26",
-      "status": "awaiting_signature"
+      "note": "Renewed AQ & AX to 2026-06-30 (Q1)"
     },
     {
       "account": "10/10Hope",
@@ -99,14 +168,6 @@
       "startDate": "2025-11-25",
       "endDate": "2026-11-24",
       "note": "Contract 2025/11/25-2026/11/24 per AR report"
-    },
-    {
-      "account": "SCMP",
-      "platform": "AIRIS",
-      "note": "Switching from AIXON to AIRIS. Contract shared 2026-06-26, target sign-back 2026-07-07.",
-      "contractSharedDate": "2026-06-26",
-      "targetSignDate": "2026-07-07",
-      "status": "pending_signature"
     }
   ],
   "okrLog": [
@@ -386,32 +447,10 @@
       "category": "Onboard",
       "client": "SCMP",
       "description": "AIRIS onboarding in approval â expected week of 2026-08-04"
-    },
-    {
-      "date": "2026-06-26",
-      "category": "Renewal",
-      "account": "SCMP",
-      "description": "Confirmed AIXON→AIRIS switch. Contract shared to client, target sign-back 2026-07-07."
-    },
-    {
-      "date": "2026-06-26",
-      "category": "Renewal",
-      "account": "Mannings",
-      "description": "Q3 renewal contract sent 2026-06-26, awaiting signed return today."
     }
   ],
   "feedbackLog": [],
   "sessionLog": [
-    {
-      "date": "2026-06-26",
-      "client": "SCMP",
-      "note": "Confirmed AX→AR switch. AIRIS contract shared to client, target sign-back 7/7."
-    },
-    {
-      "date": "2026-06-26",
-      "client": "Mannings",
-      "note": "Q3 renewal contract sent. Aiming to receive signed contract back today (6/26)."
-    },
     {
       "date": "2026-06-26",
       "time": "10:20 HKT",
@@ -507,18 +546,6 @@
     }
   ],
   "pendingActions": [
-    {
-      "date": "2026-06-26",
-      "account": "SCMP",
-      "action": "Follow up on AIRIS contract signature — target 2026-07-07.",
-      "dueDate": "2026-07-07"
-    },
-    {
-      "date": "2026-06-26",
-      "account": "Mannings",
-      "action": "Chase signed Q3 renewal contract — expected back today 2026-06-26.",
-      "dueDate": "2026-06-26"
-    },
     {
       "id": "mannings-slide-rec-review",
       "account": "mannings",
