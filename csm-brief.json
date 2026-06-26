@@ -4,30 +4,9 @@
     {
       "id": "mannings",
       "name": "Mannings",
-      "health": "yellow",
-      "insight": "⚠️ CONTRACT EXPIRES in 4 days (2026-06-30). Q3 renewal contract sent today 6/26 — awaiting signed return. Monthly meeting Jul 2 at 11:00 HKT.",
-      "diffs": [
-        {
-          "type": "new",
-          "key": "QGWL-19030",
-          "text": "QGWL-19030 (new)"
-        },
-        {
-          "type": "new",
-          "key": "QGWL-21234",
-          "text": "QGWL-21234 (new)"
-        },
-        {
-          "type": "removed",
-          "key": "ETS-4384",
-          "text": "ETS-4384 (closed/removed)"
-        },
-        {
-          "type": "removed",
-          "key": "QGWL-25931",
-          "text": "QGWL-25931 (closed/removed)"
-        }
-      ],
+      "health": "red",
+      "insight": "⚠️ CONTRACT EXPIRES in 4 days (2026-06-30). LEG-16095 Q3 renewal order form open (emily.cheng) — renewal contract sent today, awaiting signature. ETS-4130 customized project discussion open with Sherry Chen. Monthly meeting Jul 2 at 11:00 HKT.",
+      "diffs": [],
       "riskTags": [
         "ticket",
         "renewal",
@@ -62,25 +41,30 @@
         {
           "priority": "high",
           "label": "Renewal · High",
-          "text": "Renewal · High — Q3 renewal contract sent today (6/26), target receive-back today. If not received by EOD, follow up with Rola Chung first thing tomorrow."
+          "text": "Renewal · High — LEG-16095 Q3 renewal order form is open (emily.cheng). Contract sent today 6/26, target receive-back EOD. If not signed back by EOD, follow up with Rola Chung first thing Monday."
         },
         {
           "priority": "high",
           "label": "Meeting · High",
-          "text": "Meeting · High — Prep for Appier x Mannings Monthly Meeting on Jul 2 (11:00–12:00 HKT · Rola Chung). Confirm renewal status is resolved before the meeting."
+          "text": "Meeting · High — Appier x Mannings Monthly Meeting on Jul 2 (11:00–12:00 HKT · Rola Chung). Confirm renewal is resolved before joining — don't walk in with an unsigned contract."
+        },
+        {
+          "priority": "medium",
+          "label": "New Project · Medium",
+          "text": "New Project · Medium — ETS-4130 (Initiate customized project discussion, Sherry Chen) is open. Check scope and align internally before the Jul 2 meeting — good conversation starter."
         },
         {
           "priority": "low",
-          "label": "Tickets · Low",
-          "text": "Tickets · Low — 2 new QGWL tickets (QGWL-19030, QGWL-21234) opened. ETS-4384 and QGWL-25931 closed."
+          "label": "Backlog · Low",
+          "text": "Backlog · Low — QGWL-24671 (CSP limitation, zebbie.tran) is in backlog. No action needed now — monitor and flag to client if it becomes a blocker."
         }
       ]
     },
     {
       "id": "scmp",
       "name": "SCMP",
-      "health": "yellow",
-      "insight": "AX→AR switch confirmed. AIRIS contract shared to client on 6/26 — awaiting signature by 7/7. No new tickets since last run.",
+      "health": "red",
+      "insight": "⚠️ CONTRACT EXPIRES in 4 days (2026-06-30). No meetings scheduled and no new tickets since last run — contact client immediately to confirm AIQUA renewal.",
       "diffs": [],
       "riskTags": [
         "ticket",
@@ -104,12 +88,12 @@
         {
           "priority": "high",
           "label": "Renewal · High",
-          "text": "Renewal · High — AIRIS contract shared 2026-06-26, target sign-back 2026-07-07. Follow up mid-week to confirm receipt and address any client questions."
+          "text": "Renewal · High — Contract expires 2026-06-30 (4 days). Contact SCMP immediately to confirm AIQUA renewal scope and terms. No meeting booked — schedule one today."
         },
         {
-          "priority": "medium",
-          "label": "AIXON Offboarding · Medium",
-          "text": "AIXON offboarding · Medium — Confirm AIXON contract end date and offboarding timeline with SCMP once AIRIS contract is signed."
+          "priority": "high",
+          "label": "Meeting · High",
+          "text": "Meeting · High — No renewal meeting is on the calendar. Book a call with SCMP before end of day to prevent contract lapse on Jun 30."
         }
       ]
     },
