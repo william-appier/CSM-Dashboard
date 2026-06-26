@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-26T14:53:20.098+08:00",
+  "lastUpdated": "2026-06-26T14:53:50.613+08:00",
   "rules": [
     {
       "id": "okr-consolidate",
@@ -391,13 +391,13 @@
       "date": "2026-06-26",
       "category": "Renewal",
       "account": "SCMP",
-      "description": "Confirmed AIXON→AIRIS switch. Contract shared, target sign-back 2026-07-07."
+      "description": "Confirmed AIXON→AIRIS switch. Contract shared to client, target sign-back 2026-07-07."
     },
     {
       "date": "2026-06-26",
       "category": "Renewal",
       "account": "Mannings",
-      "description": "Q3 renewal contract sent 2026-06-26, awaiting signature today."
+      "description": "Q3 renewal contract sent 2026-06-26, awaiting signed return today."
     }
   ],
   "feedbackLog": [],
