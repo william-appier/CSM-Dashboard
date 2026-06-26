@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-26T14:57:38.518+08:00",
+  "lastUpdated": "2026-06-26T16:23:30.399+08:00",
   "rules": [
     {
       "id": "okr-consolidate",
@@ -447,6 +447,138 @@
       "category": "Onboard",
       "client": "SCMP",
       "description": "AIRIS onboarding in approval â expected week of 2026-08-04"
+    },
+    {
+      "date": "2026-Q2",
+      "category": "Onboard",
+      "account": "行動力國際",
+      "description": "Picked up 行動力國際 account. WhatsApp Service Agent discussion in progress."
+    },
+    {
+      "date": "2026-Q2",
+      "category": "Renewal",
+      "account": "Mannings",
+      "description": "Renewed AQ & AX to 2026-09-30. Contract signing in progress."
+    },
+    {
+      "date": "2026-Q2",
+      "category": "Renewal",
+      "account": "SCMP",
+      "description": "Renewal in progress — switching from AIXON to AIRIS (AR). Contract shared 2026-06-26, target sign-back 2026-07-07."
+    },
+    {
+      "date": "2026-Q2",
+      "category": "Pitching",
+      "account": "City Super",
+      "description": "AQ deal pitching with partner Prizm. In progress."
+    },
+    {
+      "date": "2026-Q2",
+      "category": "Pitching",
+      "account": "Momax",
+      "description": "Referred Momax to Partner team for AQ opportunity."
+    },
+    {
+      "date": "2026-Q2",
+      "category": "Pitching",
+      "account": "BB 代駕",
+      "description": "AR discussion in progress."
+    },
+    {
+      "date": "2026-Q2",
+      "category": "Pitching",
+      "account": "55688",
+      "description": "Customer Service Service Agent (SA) pitching in progress."
+    },
+    {
+      "date": "2026-Q2",
+      "category": "Feature Enabled",
+      "account": "田原香",
+      "description": "Implemented schema agent for 田原香. Pushing client to adopt the product."
+    },
+    {
+      "date": "2026-Q2",
+      "category": "Feature Enabled",
+      "account": "Mannings",
+      "description": "OJM merge node feature enabled for Mannings."
+    },
+    {
+      "date": "2026-Q2",
+      "category": "Feature Enabled",
+      "account": "田原香",
+      "description": "OJM merge node feature enabled for 田原香."
+    },
+    {
+      "date": "2026-Q2",
+      "category": "AI Adoption",
+      "account": "Internal",
+      "description": "Fully applied Claude to generate pitching decks and renewal decks from external & internal resources and performance data."
+    },
+    {
+      "date": "2026-Q2",
+      "category": "AI Adoption",
+      "account": "Internal",
+      "description": "Adopted new Claude skills: caveman (lower token consumption), llm-council (full analysis with 6 experts), frontend-design (beautify slide design)."
+    },
+    {
+      "date": "2026-Q2",
+      "category": "AI Adoption",
+      "account": "Internal",
+      "description": "Built and optimized CSM dashboard with daily brief (csm_reminder skill) — auto-scans tickets, calendar, and item records each morning."
+    },
+    {
+      "date": "2026-Q2",
+      "category": "AI Adoption",
+      "account": "Internal",
+      "description": "Merged Salesforce AR status into CSM dashboard via Google AppScript and Salesforce report subscription."
+    },
+    {
+      "date": "2026-Q2",
+      "category": "AI Adoption",
+      "account": "Internal",
+      "description": "Leveraged ask-anything skill to gather answers from Confluence, Jira tickets, and sales depot."
+    },
+    {
+      "date": "2026-Q2",
+      "category": "Team Contribution",
+      "account": "Internal",
+      "description": "LON insights shared to Darren — new discussion initiated."
+    },
+    {
+      "date": "2026-Q2",
+      "category": "Team Contribution",
+      "account": "Internal",
+      "description": "Provided CSM insights on platform onboarding process with backend team."
+    },
+    {
+      "date": "2026-Q2",
+      "category": "Team Contribution",
+      "account": "Alleypin",
+      "description": "Identified key communication gap between Alleypin and Appier on payment & contract issue. PM fixing API accordingly."
+    },
+    {
+      "date": "2026-Q2",
+      "category": "Team Contribution",
+      "account": "Internal",
+      "description": "Worked closely with pre-sales, partner sales and partner to close new deals (City Super, Momax in progress)."
+    },
+    {
+      "date": "2026-Q2",
+      "category": "Team Contribution",
+      "account": "Internal",
+      "description": "Collaborated with partner sales and sales ops to confirm deal status for contracts."
+    },
+    {
+      "date": "2026-Q2",
+      "category": "Team Contribution",
+      "account": "Internal",
+      "description": "Direct communication on AX→AR renewals — navigated AEP status constraints and aligned internal resources with client expectations."
+    },
+    {
+      "date": "2026-Q2",
+      "category": "Team Contribution",
+      "account": "Internal",
+      "description": "Open to additional work to drive sales — involved in early pitching and upsell discussions (55688 to AR, SCMP/Mannings to AR)."
     }
   ],
   "feedbackLog": [],
