@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-26T10:36:54.653+08:00",
+  "lastUpdated": "2026-06-26T14:53:20.098+08:00",
   "rules": [
     {
       "id": "okr-consolidate",
@@ -74,7 +74,10 @@
       "platform": "AIQUA/AIRIS",
       "startDate": null,
       "endDate": "2026-06-30",
-      "note": "Renewed AQ & AX to 2026-06-30 (Q1)"
+      "note": "Renewed AQ & AX to 2026-06-30 (Q1)",
+      "renewalContractSentDate": "2026-06-26",
+      "targetReceiveDate": "2026-06-26",
+      "status": "awaiting_signature"
     },
     {
       "account": "10/10Hope",
@@ -96,6 +99,14 @@
       "startDate": "2025-11-25",
       "endDate": "2026-11-24",
       "note": "Contract 2025/11/25-2026/11/24 per AR report"
+    },
+    {
+      "account": "SCMP",
+      "platform": "AIRIS",
+      "note": "Switching from AIXON to AIRIS. Contract shared 2026-06-26, target sign-back 2026-07-07.",
+      "contractSharedDate": "2026-06-26",
+      "targetSignDate": "2026-07-07",
+      "status": "pending_signature"
     }
   ],
   "okrLog": [
@@ -375,10 +386,32 @@
       "category": "Onboard",
       "client": "SCMP",
       "description": "AIRIS onboarding in approval â expected week of 2026-08-04"
+    },
+    {
+      "date": "2026-06-26",
+      "category": "Renewal",
+      "account": "SCMP",
+      "description": "Confirmed AIXON→AIRIS switch. Contract shared, target sign-back 2026-07-07."
+    },
+    {
+      "date": "2026-06-26",
+      "category": "Renewal",
+      "account": "Mannings",
+      "description": "Q3 renewal contract sent 2026-06-26, awaiting signature today."
     }
   ],
   "feedbackLog": [],
   "sessionLog": [
+    {
+      "date": "2026-06-26",
+      "client": "SCMP",
+      "note": "Confirmed AX→AR switch. AIRIS contract shared to client, target sign-back 7/7."
+    },
+    {
+      "date": "2026-06-26",
+      "client": "Mannings",
+      "note": "Q3 renewal contract sent. Aiming to receive signed contract back today (6/26)."
+    },
     {
       "date": "2026-06-26",
       "time": "10:20 HKT",
@@ -474,6 +507,18 @@
     }
   ],
   "pendingActions": [
+    {
+      "date": "2026-06-26",
+      "account": "SCMP",
+      "action": "Follow up on AIRIS contract signature — target 2026-07-07.",
+      "dueDate": "2026-07-07"
+    },
+    {
+      "date": "2026-06-26",
+      "account": "Mannings",
+      "action": "Chase signed Q3 renewal contract — expected back today 2026-06-26.",
+      "dueDate": "2026-06-26"
+    },
     {
       "id": "mannings-slide-rec-review",
       "account": "mannings",
