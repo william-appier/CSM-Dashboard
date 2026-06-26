@@ -4,8 +4,8 @@
     {
       "id": "mannings",
       "name": "Mannings",
-      "health": "red",
-      "insight": "⚠️ CONTRACT EXPIRES in 4 days (2026-06-30). Monthly meeting on Jul 2 at 11:00 HKT — prepare renewal proposal before the meeting. 2 new QGWL tickets opened; ETS-4384 and QGWL-25931 closed.",
+      "health": "yellow",
+      "insight": "⚠️ CONTRACT EXPIRES in 4 days (2026-06-30). Q3 renewal contract sent today 6/26 — awaiting signed return. Monthly meeting Jul 2 at 11:00 HKT.",
       "diffs": [
         {
           "type": "new",
@@ -62,25 +62,25 @@
         {
           "priority": "high",
           "label": "Renewal · High",
-          "text": "Renewal · High — Contract expires 2026-06-30 (4 days). This is CRITICAL — draft renewal proposal, confirm scope, and contact Rola Chung immediately to close before lapse."
+          "text": "Renewal · High — Q3 renewal contract sent today (6/26), target receive-back today. If not received by EOD, follow up with Rola Chung first thing tomorrow."
         },
         {
           "priority": "high",
           "label": "Meeting · High",
-          "text": "Meeting · High — Prep for Appier x Mannings Monthly Meeting on Jul 2 (11:00–12:00 HKT · Rola Chung). Bring renewal contract status and AIXON→AIRIS upgrade timeline."
+          "text": "Meeting · High — Prep for Appier x Mannings Monthly Meeting on Jul 2 (11:00–12:00 HKT · Rola Chung). Confirm renewal status is resolved before the meeting."
         },
         {
           "priority": "low",
           "label": "Tickets · Low",
-          "text": "Tickets · Low — 2 new QGWL tickets (QGWL-19030, QGWL-21234) opened. ETS-4384 and QGWL-25931 closed — confirm with client that resolved issues are satisfactory."
+          "text": "Tickets · Low — 2 new QGWL tickets (QGWL-19030, QGWL-21234) opened. ETS-4384 and QGWL-25931 closed."
         }
       ]
     },
     {
       "id": "scmp",
       "name": "SCMP",
-      "health": "red",
-      "insight": "⚠️ CONTRACT EXPIRES in 4 days (2026-06-30). No meetings scheduled and no new tickets since last run — contact client immediately to confirm AIQUA renewal.",
+      "health": "yellow",
+      "insight": "AX→AR switch confirmed. AIRIS contract shared to client on 6/26 — awaiting signature by 7/7. No new tickets since last run.",
       "diffs": [],
       "riskTags": [
         "ticket",
@@ -104,12 +104,12 @@
         {
           "priority": "high",
           "label": "Renewal · High",
-          "text": "Renewal · High — Contract expires 2026-06-30 (4 days). Contact SCMP immediately to confirm AIQUA renewal scope and terms. No meeting booked — schedule one today."
+          "text": "Renewal · High — AIRIS contract shared 2026-06-26, target sign-back 2026-07-07. Follow up mid-week to confirm receipt and address any client questions."
         },
         {
-          "priority": "high",
-          "label": "Meeting · High",
-          "text": "Meeting · High — No renewal meeting is on the calendar. Book a call with SCMP before end of day to prevent contract lapse on Jun 30."
+          "priority": "medium",
+          "label": "AIXON Offboarding · Medium",
+          "text": "AIXON offboarding · Medium — Confirm AIXON contract end date and offboarding timeline with SCMP once AIRIS contract is signed."
         }
       ]
     },
