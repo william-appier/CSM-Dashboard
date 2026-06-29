@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-29T10:07:39.862+08:00",
+  "lastUpdated": "2026-06-29T10:11:58.522+08:00",
   "rules": [
     {
       "id": "okr-consolidate",
@@ -595,7 +595,7 @@
     }
   ],
   "ticketSnapshot": {
-    "generatedAt": "2026-06-29T02:07:38.126Z",
+    "generatedAt": "2026-06-29T02:11:56.764Z",
     "keys": {
       "55688": [
         "QGWL-19925",
