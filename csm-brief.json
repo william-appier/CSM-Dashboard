@@ -1,12 +1,65 @@
 {
-  "generatedAt": "2026-06-29T10:04:42.299+08:00",
+  "generatedAt": "2026-06-29T10:09:19.716+08:00",
   "accounts": [
     {
       "id": "mannings",
       "name": "Mannings",
       "health": "yellow",
-      "insight": "⚠️ CONTRACT EXPIRES in 1 day (2026-06-30). Monthly meeting Jul 2 at 11:00 HKT — draft renewal proposal with confirmed scope before joining.",
-      "diffs": [],
+      "insight": "LEG-16095 open 2d · +12 more · Appier x Mannings Monthly Meeting Jul 2 · renewal due Jun 2026.",
+      "diffs": [
+        {
+          "type": "new",
+          "text": "LEG-16095 The Dairy Farm Company Limited_Mannings HK_AIQUA/AIXION Orde"
+        },
+        {
+          "type": "new",
+          "text": "QGWL-25598 [SKM] Man-day estimation for SKM Online REC request (mapping"
+        },
+        {
+          "type": "new",
+          "text": "ETS-4145 [Mannings] Study data tracking on analytic studio"
+        },
+        {
+          "type": "new",
+          "text": "ETS-4179 [Mannings] Request to study the tracking code status on GTM"
+        },
+        {
+          "type": "new",
+          "text": "ETS-4130 [Mannings] Initiate customized project discussion"
+        },
+        {
+          "type": "new",
+          "text": "CAM-386939 Mannings_Google account_Integration_20260318"
+        },
+        {
+          "type": "new",
+          "text": "CAM-385275 Chinese Pharm_WholeLove Plus NMN Manning's Promotion Campaig"
+        },
+        {
+          "type": "new",
+          "text": "AIQ-1045 Mannings"
+        },
+        {
+          "type": "new",
+          "text": "QGWL-24671 [Mannings] Resolving Content Security Privacy(CSP) limitatio"
+        },
+        {
+          "type": "new",
+          "text": "QGWL-18833 [SunUp] Evaluate the man-day needed for Sun Up's new EC doma"
+        },
+        {
+          "type": "new",
+          "text": "PSDC-1399 Mannings go-live"
+        },
+        {
+          "type": "new",
+          "text": "QGWL-21825 [Mannings] Check App events implementation status round 2"
+        },
+        {
+          "type": "new",
+          "text": "QGWL-21895 [Mannings] S2S event investigation"
+        }
+      ],
       "riskTags": [
         "ticket",
         "renewal",
@@ -41,17 +94,12 @@
         {
           "priority": "high",
           "label": "Renewal · High",
-          "text": "Contract expires 2026-06-30 (1 day). CRITICAL: Contact client TODAY to confirm renewal scope and timeline — do not let it lapse."
-        },
-        {
-          "priority": "high",
-          "label": "Meeting · High",
-          "text": "Monthly meeting Jul 2 at 11:00 HKT with Rola Chung — prepare renewal proposal and AIXON→AIRIS upgrade timeline before joining."
+          "text": "Mannings renewal due Jun 2026 — confirm status now"
         },
         {
           "priority": "medium",
-          "label": "Ticket · Medium",
-          "text": "LEG-16095 (AIQUA/AIXION Order Form) is open — confirm if it's tied to the renewal and track to resolution."
+          "label": "Meeting · Medium",
+          "text": "Prep for Appier x Mannings Monthly Meeting on Jul 2 (11:00–12:00 HKT · Rola Chung)"
         }
       ]
     },
@@ -59,8 +107,17 @@
       "id": "scmp",
       "name": "SCMP",
       "health": "yellow",
-      "insight": "⚠️ CONTRACT EXPIRES in 1 day (2026-06-30). No renewal meeting booked — contact client today to prevent lapse.",
-      "diffs": [],
+      "insight": "LEG-16265 open 2d · +1 more · renewal due Jun 2026.",
+      "diffs": [
+        {
+          "type": "new",
+          "text": "LEG-16265 SCMP Publishers_HK_AIRIS Sales Order "
+        },
+        {
+          "type": "new",
+          "text": "AID-8880 SCMP_Letzshop_AiDeal Lite_Jun 2022"
+        }
+      ],
       "riskTags": [
         "ticket",
         "renewal",
@@ -83,17 +140,7 @@
         {
           "priority": "high",
           "label": "Renewal · High",
-          "text": "Contract expires 2026-06-30 (1 day). CRITICAL: Call or email SCMP today to confirm renewal status — risk of lapse with no meeting scheduled."
-        },
-        {
-          "priority": "high",
-          "label": "Meeting · High",
-          "text": "No renewal meeting booked — schedule one immediately, contract expires tomorrow."
-        },
-        {
-          "priority": "medium",
-          "label": "Ticket · Medium",
-          "text": "LEG-16265 (AIRIS Sales Order) open — check if this is the renewal order and confirm its approval status."
+          "text": "SCMP renewal due Jun 2026 — confirm status now"
         }
       ]
     },
@@ -101,7 +148,7 @@
       "id": "1010hope",
       "name": "10/10Hope",
       "health": "green",
-      "insight": "No active tickets or meetings this week — check in with Mark Liu on klickngo API integration and AIQUA onboarding progress.",
+      "insight": "No active tickets — all clear.",
       "diffs": [],
       "riskTags": [],
       "mtgCount": 0,
@@ -119,14 +166,9 @@
       "recentNotes": [],
       "suggestions": [
         {
-          "priority": "medium",
-          "label": "Check-in · Medium",
-          "text": "Reach out to Mark Liu on klickngo API integration status and AIQUA onboarding timeline — both in progress with no open tickets."
-        },
-        {
           "priority": "low",
-          "label": "Proactive · Low",
-          "text": "No open tickets — confirm all onboarding milestones are on track before the next client sync."
+          "label": "Check-in · Low",
+          "text": "No active tickets — send a check-in to 10/10Hope"
         }
       ]
     },
@@ -134,8 +176,45 @@
       "id": "luxgen",
       "name": "Luxgen",
       "health": "yellow",
-      "insight": "LEG-16090 (BB contract 2026) active — EAM-227 partial offboard request open. No meetings scheduled, which is a risk signal.",
-      "diffs": [],
+      "insight": "LEG-16090 open 24d · +8 more.",
+      "diffs": [
+        {
+          "type": "new",
+          "text": "LEG-16090 BB - Luxgen TW - Renew - 2026"
+        },
+        {
+          "type": "new",
+          "text": "BBT-5953 [Luxgen] BB didn't block share to LINE friends even though m"
+        },
+        {
+          "type": "new",
+          "text": "AIQ-1200 Luxgen"
+        },
+        {
+          "type": "new",
+          "text": "EAM-227 [Remaining: AQ, AX, EDP, and keep BB] Offboard Request - Lux"
+        },
+        {
+          "type": "new",
+          "text": "BBT-3692 [Luxgen] User Feedback on Agent Analytics Dashboard: groupin"
+        },
+        {
+          "type": "new",
+          "text": "BBT-2905 [Luxgen] Copying imagemap modules inside a folder will rende"
+        },
+        {
+          "type": "new",
+          "text": "BBT-1061 [Luxgen] Timer for AI Rules"
+        },
+        {
+          "type": "new",
+          "text": "QGWL-11820 [Luxgen] Please help to check online/offline table name of L"
+        },
+        {
+          "type": "new",
+          "text": "QGWL-10821 [Luxgen]Luxgen AIQUA Web SDK embedded BB Web Chat SDK"
+        }
+      ],
       "riskTags": [
         "ticket",
         "stale"
@@ -149,39 +228,69 @@
       ],
       "meetings": [],
       "recentNotes": [],
-      "suggestions": [
-        {
-          "priority": "high",
-          "label": "Meeting · High",
-          "text": "No meetings on calendar — schedule a check-in to confirm BB contract utilization and clarify scope of EAM-227 (partial offboard: AQ, AX, EDP)."
-        },
-        {
-          "priority": "medium",
-          "label": "Ticket · Medium",
-          "text": "EAM-227 offboard request active — confirm it does not affect the BB contract (LEG-16090, valid until 2026-11-23)."
-        },
-        {
-          "priority": "low",
-          "label": "Bug · Low",
-          "text": "BBT-5953 (BB share to LINE friends bug) and BBT-3692 (analytics dashboard grouping) are lingering — confirm if client is awaiting resolution."
-        }
-      ]
+      "suggestions": []
     },
     {
       "id": "55688",
       "name": "55688",
       "health": "red",
-      "insight": "BBT-5428 (Service Agent RFQ, Brian Tsai) active — ETS-4411 newly opened; BBT-5191 closed. CDP discussion meeting Jul 7 at 15:00 HKT.",
+      "insight": "BBT-5428 backlog 2d · +13 more · 55688代駕CDP討論會議 Jul 7.",
       "diffs": [
         {
           "type": "new",
-          "key": "ETS-4411",
+          "text": "BBT-5428 【RFQ】55688 客服功能優化客製"
+        },
+        {
+          "type": "new",
           "text": "ETS-4411 [55688] Investigate the change log of the bot"
         },
         {
-          "type": "removed",
-          "key": "BBT-5191",
-          "text": "BBT-5191 (closed/removed)"
+          "type": "new",
+          "text": "AIQ-1343 55688"
+        },
+        {
+          "type": "new",
+          "text": "BBT-5597 [55688 / Cofit / TibaMe / Sealand] Quoted and handle Quoted "
+        },
+        {
+          "type": "new",
+          "text": "BBT-4897 [55688-潔衣家] 從用戶位置推薦附近可寄件超商"
+        },
+        {
+          "type": "new",
+          "text": "QGWL-19924 【55688】Timeout limitation in AQ JM should be shorten."
+        },
+        {
+          "type": "new",
+          "text": "BBT-5346 [55688] Rename menu section for link action"
+        },
+        {
+          "type": "new",
+          "text": "BBT-5368 [55688] Client would like to have more details condition for"
+        },
+        {
+          "type": "new",
+          "text": "BBT-4854 [55688-潔衣家] 在 Line 中完成會員綁定及訂單查詢"
+        },
+        {
+          "type": "new",
+          "text": "BBT-5275 [55688] Emoji cannot be searched"
+        },
+        {
+          "type": "new",
+          "text": "BBT-5292 [55688] Request for retargeting to messages read users"
+        },
+        {
+          "type": "new",
+          "text": "BBT-5191 [55688商城] 預估 Shopline 資料轉換可行性及成本"
+        },
+        {
+          "type": "new",
+          "text": "PHXX-3312 【55688】Timeout limitation in AQ JM should be shorten."
+        },
+        {
+          "type": "new",
+          "text": "QGWL-19925 CLONE - 【55688】Timeout limitation in AQ JM should be shorten"
         }
       ],
       "riskTags": [
@@ -206,19 +315,9 @@
       "recentNotes": [],
       "suggestions": [
         {
-          "priority": "high",
-          "label": "Ticket · High",
-          "text": "BBT-5428 (Service Agent RFQ) is the priority — confirm quote and decision timeline with Brian Tsai before the Jul 7 CDP meeting."
-        },
-        {
-          "priority": "high",
-          "label": "Meeting · High",
-          "text": "CDP discussion Jul 7 at 15:00 HKT — prepare CDP roadmap and Service Agent scope summary for client."
-        },
-        {
           "priority": "medium",
-          "label": "Ticket · Medium",
-          "text": "ETS-4411 newly opened today — review scope and assign priority before it ages."
+          "label": "Meeting · Medium",
+          "text": "Prep for 55688代駕CDP討論會議 on Jul 7 (15:00–16:00 HKT · jimmy.lin@appier.com)"
         }
       ]
     },
@@ -226,8 +325,61 @@
       "id": "tiangyuanxiang",
       "name": "田原香",
       "health": "yellow",
-      "insight": "APC-697/698 (template editor click bugs) open — weekly sync tomorrow Tue Jun 30 at 09:30 HKT. EUU Onboarding complete; focus shifting to new use case development.",
-      "diffs": [],
+      "insight": "APC-697 open 18d · +12 more.",
+      "diffs": [
+        {
+          "type": "new",
+          "text": "APC-697 [田原香]  create your own template from scratch cannot be click"
+        },
+        {
+          "type": "new",
+          "text": "APC-698 [田原香]  create your own template from scratch cannot be click"
+        },
+        {
+          "type": "new",
+          "text": "QGWL-25930 [田原香] Request to allow to save template for on-site editor"
+        },
+        {
+          "type": "new",
+          "text": "QGWL-25627 [田原香] Enable send time optimization"
+        },
+        {
+          "type": "new",
+          "text": "AEP-6091 [BB OJM id mapping backfill] 田原香"
+        },
+        {
+          "type": "new",
+          "text": "AEP-6090 [EUU] 田原香 onboarding"
+        },
+        {
+          "type": "new",
+          "text": "AIQ-1389 田原香"
+        },
+        {
+          "type": "new",
+          "text": "QGWL-23645 [田原香] Creative studio button will always shows an unexpected"
+        },
+        {
+          "type": "new",
+          "text": "QGWL-22084 [田原香] Wishlist for segmentation request"
+        },
+        {
+          "type": "new",
+          "text": "QGWL-22014 [田原香] On-site experience leading platform abnormal behavior"
+        },
+        {
+          "type": "new",
+          "text": "CAM-347922 [Resize]田原香_Display_SG_0505-0511"
+        },
+        {
+          "type": "new",
+          "text": "CAM-346249 [Resize] 田原香_Display+Video_HK_0411-0421"
+        },
+        {
+          "type": "new",
+          "text": "QGWL-21289 [田原香] Onboard Product Feed"
+        }
+      ],
       "riskTags": [
         "ticket",
         "stale"
@@ -241,30 +393,23 @@
       ],
       "meetings": [],
       "recentNotes": [],
-      "suggestions": [
-        {
-          "priority": "high",
-          "label": "Meeting · High",
-          "text": "Weekly tracking meeting tomorrow Jun 30 at 09:30 HKT — prepare new use case development options to discuss with client."
-        },
-        {
-          "priority": "medium",
-          "label": "Bug · Medium",
-          "text": "APC-697/698 (template creation click bug) open — confirm status and ETA to share at the weekly sync."
-        },
-        {
-          "priority": "low",
-          "label": "Roadmap · Low",
-          "text": "QGWL-25930 (save template for on-site editor) and QGWL-25627 (send time optimization) are feature requests — discuss prioritization with client."
-        }
-      ]
+      "suggestions": []
     },
     {
       "id": "momax",
       "name": "Momax",
       "health": "yellow",
-      "insight": "CAM-350143 (CPV campaign) open 410 days — account stale with no meetings. Verify if account is still active.",
-      "diffs": [],
+      "insight": "CAM-350143 open 410d · +1 more.",
+      "diffs": [
+        {
+          "type": "new",
+          "text": "CAM-350143 Momax_CPV_Mulit Geo_2025"
+        },
+        {
+          "type": "new",
+          "text": "CAM-257353 Momax Q1 Ecom 2023 (FB 歸因)"
+        }
+      ],
       "riskTags": [
         "ticket",
         "stale"
@@ -273,25 +418,67 @@
       "projects": [],
       "meetings": [],
       "recentNotes": [],
-      "suggestions": [
-        {
-          "priority": "high",
-          "label": "Review · High",
-          "text": "CAM-350143 open 410 days — confirm if Momax account is still active and whether this ticket should be closed or escalated."
-        },
-        {
-          "priority": "medium",
-          "label": "Check-in · Medium",
-          "text": "No meetings or recent activity — send a proactive check-in to assess relationship status and next steps."
-        }
-      ]
+      "suggestions": []
     },
     {
       "id": "citysuper",
       "name": "City Super",
       "health": "yellow",
-      "insight": "LEG-16086 (AIQUA HK contract) open 38 days — multiple Prizm/AIBID campaign tickets active with no meeting scheduled.",
-      "diffs": [],
+      "insight": "LEG-16086 open 38d · +12 more.",
+      "diffs": [
+        {
+          "type": "new",
+          "text": "LEG-16086 CLONE - Legend World Technology Development Limited_AIQUA_HK"
+        },
+        {
+          "type": "new",
+          "text": "CAM-384613 [Campaign續跑] Prizm_AIBID_App Installation Campaign_AOS_20260"
+        },
+        {
+          "type": "new",
+          "text": "CAM-382749 [CIR]Prizm_AIBID_Lucky Draw Campaign_Video Playable Endcard_"
+        },
+        {
+          "type": "new",
+          "text": "CAM-382624 [預算調整] Prizm_AIBID_Lucky Draw Campaign_Playable Merge Game_C"
+        },
+        {
+          "type": "new",
+          "text": "CAM-382623 [預算調整]Prizm_AIBID_App Installation Campaign_IOS & AOS_260204"
+        },
+        {
+          "type": "new",
+          "text": "CAM-382210 [預算調整]Prizm_AIBID_App Installation Campaign_IOS & AOS"
+        },
+        {
+          "type": "new",
+          "text": "CAM-379802 [Resize]Prizm_AIBID_Adaptation for Standard Banner_Garden_Lu"
+        },
+        {
+          "type": "new",
+          "text": "CAM-381638 [CIR]Prizm_AIBID_Standard Banner_Garden_Lucky Draw_IOS_26012"
+        },
+        {
+          "type": "new",
+          "text": "CAM-381637 [CIR]Prizm_AIBID_Standard Banner_Garden_Lucky Draw_AOS_26012"
+        },
+        {
+          "type": "new",
+          "text": "CAM-380560 [Launch] Prizm_AIBID_Lucky Draw Campaign_Playable Merge Game"
+        },
+        {
+          "type": "new",
+          "text": "CAM-380564 [Launch] Prizm_AIBID_Lucky Draw Campaign_Playable Merge Game"
+        },
+        {
+          "type": "new",
+          "text": "CAM-379776 [Launch] Prizm_AIBID_App Installation Campaign_Jan 2026 (AIB"
+        },
+        {
+          "type": "new",
+          "text": "CAM-379738 [Launch] Prizm_AIBID_App Installation Campaign_Jan 2026 (AIB"
+        }
+      ],
       "riskTags": [
         "ticket",
         "stale"
@@ -300,30 +487,31 @@
       "projects": [],
       "meetings": [],
       "recentNotes": [],
-      "suggestions": [
-        {
-          "priority": "high",
-          "label": "Ticket · High",
-          "text": "LEG-16086 (AIQUA contract) open 38 days — confirm if pending approval or needs escalation."
-        },
-        {
-          "priority": "medium",
-          "label": "Check-in · Medium",
-          "text": "No meetings scheduled — book a sync to review active Prizm/AIBID campaign performance and contract status."
-        },
-        {
-          "priority": "low",
-          "label": "Ops · Low",
-          "text": "Multiple Prizm AIBID campaigns (CAM-38xxxx) in adjustment/CIR states — verify all are running on track."
-        }
-      ]
+      "suggestions": []
     },
     {
       "id": "xindongli",
       "name": "行動力國際",
       "health": "yellow",
-      "insight": "BBT-7270 (Service Agent wrong answers) open 110 days with no resolution — account handover in progress and no meetings scheduled.",
-      "diffs": [],
+      "insight": "BBT-7270 open 110d · +3 more.",
+      "diffs": [
+        {
+          "type": "new",
+          "text": "BBT-7270 [行動力國際 - Service Agent] Can't get the right custom answers"
+        },
+        {
+          "type": "new",
+          "text": "BBT-7024 [行動力國際 ACT Power] triggered wrong reply module when keyword "
+        },
+        {
+          "type": "new",
+          "text": "BBT-5599 [行動力國際 ACT POWER] Enable sales bot feature for 行動力國際"
+        },
+        {
+          "type": "new",
+          "text": "BBT-4660 [行動力國際] BotBonnie to Phoenix Account Migration / Knowledge B"
+        }
+      ],
       "riskTags": [
         "ticket",
         "stale"
@@ -337,23 +525,7 @@
       ],
       "meetings": [],
       "recentNotes": [],
-      "suggestions": [
-        {
-          "priority": "high",
-          "label": "Ticket · High",
-          "text": "BBT-7270 open 110 days — escalate if still blocked; confirm ownership and expected resolution during the account handover."
-        },
-        {
-          "priority": "medium",
-          "label": "Handover · Medium",
-          "text": "Account Handover in progress — ensure knowledge transfer is complete and the incoming owner has context on all 4 open tickets."
-        },
-        {
-          "priority": "low",
-          "label": "Meeting · Low",
-          "text": "No meetings scheduled — book a handover sync to confirm next steps and close out BBT-5599 (sales bot feature)."
-        }
-      ]
+      "suggestions": []
     }
   ]
 }
