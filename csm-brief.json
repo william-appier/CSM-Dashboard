@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-06-28T09:00:50.992+08:00",
+  "generatedAt": "2026-06-29T09:00:50.928+08:00",
   "accounts": [
     {
       "id": "mannings",
       "name": "Mannings",
       "health": "yellow",
-      "insight": "LEG-16095 open 1d · +12 more · Appier x Mannings Monthly Meeting Jul 2 · renewal due Jun 2026.",
+      "insight": "LEG-16095 open 2d · +12 more · Appier x Mannings Monthly Meeting Jul 2 · renewal due Jun 2026.",
       "diffs": [
         {
           "type": "new",
@@ -107,7 +107,7 @@
       "id": "scmp",
       "name": "SCMP",
       "health": "yellow",
-      "insight": "LEG-16265 open 1d · +1 more · renewal due Jun 2026.",
+      "insight": "LEG-16265 open 2d · +1 more · renewal due Jun 2026.",
       "diffs": [
         {
           "type": "new",
@@ -176,7 +176,7 @@
       "id": "luxgen",
       "name": "Luxgen",
       "health": "yellow",
-      "insight": "LEG-16090 open 23d · +8 more.",
+      "insight": "LEG-16090 open 24d · +8 more.",
       "diffs": [
         {
           "type": "new",
@@ -234,7 +234,7 @@
       "id": "55688",
       "name": "55688",
       "health": "red",
-      "insight": "BBT-5428 backlog 1d · +13 more · 55688代駕CDP討論會議 Jul 7.",
+      "insight": "BBT-5428 backlog 2d · +13 more · 55688代駕CDP討論會議 Jul 7.",
       "diffs": [
         {
           "type": "new",
@@ -325,7 +325,7 @@
       "id": "tiangyuanxiang",
       "name": "田原香",
       "health": "yellow",
-      "insight": "APC-697 open 17d · +12 more.",
+      "insight": "APC-697 open 18d · +12 more.",
       "diffs": [
         {
           "type": "new",
@@ -399,7 +399,7 @@
       "id": "momax",
       "name": "Momax",
       "health": "yellow",
-      "insight": "CAM-350143 open 409d · +1 more.",
+      "insight": "CAM-350143 open 410d · +1 more.",
       "diffs": [
         {
           "type": "new",
@@ -424,7 +424,7 @@
       "id": "citysuper",
       "name": "City Super",
       "health": "yellow",
-      "insight": "LEG-16086 open 37d · +12 more.",
+      "insight": "LEG-16086 open 38d · +12 more.",
       "diffs": [
         {
           "type": "new",
@@ -493,7 +493,7 @@
       "id": "xindongli",
       "name": "行動力國際",
       "health": "yellow",
-      "insight": "BBT-7270 open 109d · +3 more.",
+      "insight": "BBT-7270 open 110d · +3 more.",
       "diffs": [
         {
           "type": "new",
