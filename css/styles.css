@@ -36,8 +36,11 @@
   #pc-AIQUA{background:#185FA5!important;border-color:#185FA5!important;}
   #pc-BotBonnie{background:#534AB7!important;border-color:#534AB7!important;}
   #pc-AIRIS{background:#0B5E4A!important;border-color:#0B5E4A!important;}
-  #pc-AIQUA .pc-icon,#pc-BotBonnie .pc-icon,#pc-AIRIS .pc-icon{display:none!important;}
-  #pc-AIQUA .pc-name,#pc-BotBonnie .pc-name,#pc-AIRIS .pc-name{color:#fff!important;font-size:1.5rem!important;font-weight:700!important;letter-spacing:.04em!important;text-transform:uppercase!important;}
+  #pc-AIXON{background:#2D1B6E!important;border-color:#2D1B6E!important;}
+  #pc-AIQUA .pc-icon img,#pc-BotBonnie .pc-icon img,#pc-AIRIS .pc-icon img,#pc-AIXON .pc-icon img{display:none!important;}
+  #pc-AIQUA .pc-icon,#pc-BotBonnie .pc-icon,#pc-AIRIS .pc-icon,#pc-AIXON .pc-icon{height:auto!important;min-height:0!important;margin-bottom:0!important;color:#fff!important;font-size:1.4rem!important;font-weight:700!important;letter-spacing:.04em!important;text-transform:uppercase!important;}
+  #pc-AIQUA .pc-name,#pc-BotBonnie .pc-name,#pc-AIRIS .pc-name{color:#fff!important;font-size:1.4rem!important;font-weight:700!important;letter-spacing:.04em!important;text-transform:uppercase!important;display:block!important;visibility:visible!important;}
+  #pc-AIXON .pc-name{color:rgba(255,255,255,.7)!important;font-size:1.4rem!important;font-weight:700!important;letter-spacing:.04em!important;text-transform:uppercase!important;display:block!important;visibility:visible!important;}
   #pc-AIQUA:hover:not(.disabled),#pc-BotBonnie:hover:not(.disabled),#pc-AIRIS:hover:not(.disabled){filter:brightness(1.12);}
   #pc-AIQUA.selected,#pc-BotBonnie.selected,#pc-AIRIS.selected{box-shadow:0 0 0 3px rgba(255,255,255,.45);}
   .btn-theme{background:transparent;border:1px solid var(--border);color:var(--muted2);padding:5px 11px;border-radius:6px;font-family:'DM Mono',monospace;font-size:12px;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:6px;white-space:nowrap;}
