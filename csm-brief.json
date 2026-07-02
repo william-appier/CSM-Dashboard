@@ -1,12 +1,16 @@
 {
-  "generatedAt": "2026-07-02T09:00:54.085+08:00",
+  "generatedAt": "2026-07-02T10:28:54.827+08:00",
   "accounts": [
     {
       "id": "mannings",
       "name": "Mannings",
       "health": "yellow",
-      "insight": "ETS-4446 in-progress 2d · +12 more · Appier x Mannings Bi-weekly Meeting Jul 9 · renewal due Jun 2026.",
+      "insight": "ETS-4593 open 0d · +12 more · Appier x Mannings Bi-weekly Meeting Jul 9 · renewal due Jun 2026.",
       "diffs": [
+        {
+          "type": "new",
+          "text": "ETS-4593 [Mannings] Mannings coupon API calling error investigation"
+        },
         {
           "type": "new",
           "text": "ETS-4446 [Mannings] App push test on p8 integration"
@@ -54,10 +58,6 @@
         {
           "type": "new",
           "text": "QGWL-21895 [Mannings] S2S event investigation"
-        },
-        {
-          "type": "new",
-          "text": "CAM-349747 OMNET_Mannings_Sale 7 Summar Campaign_2025"
         }
       ],
       "riskTags": [
