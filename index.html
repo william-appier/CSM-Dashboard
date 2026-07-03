@@ -893,6 +893,7 @@
     const btn = document.getElementById('tab-brief');
     const sBtn = document.getElementById('snav-brief');
     if (!btn || !sBtn) return;
+    sBtn.style.display = btn.style.display || ''; // sync immediately (fixes refresh timing)
     const obs = new MutationObserver(() => {
       sBtn.style.display = btn.style.display || '';
     });
