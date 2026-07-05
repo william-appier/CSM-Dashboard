@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-07-05T09:00:52.817+08:00",
+  "generatedAt": "2026-07-05T16:47:08.248+08:00",
   "accounts": [
     {
       "id": "mannings",
       "name": "Mannings",
       "health": "yellow",
-      "insight": "ETS-4593 in-progress 1d · +12 more · Appier x Mannings Bi-weekly Meeting Jul 9 · renewal due Jun 2026.",
+      "insight": "ETS-4593 in-progress 2d · +12 more · Appier x Mannings Bi-weekly Meeting Jul 9 · renewal due Jun 2026.",
       "diffs": [
         {
           "type": "new",
@@ -171,7 +171,7 @@
       "id": "luxgen",
       "name": "Luxgen",
       "health": "yellow",
-      "insight": "LEG-16090 open 1d · +8 more.",
+      "insight": "LEG-16090 open 2d · +8 more.",
       "diffs": [
         {
           "type": "new",
@@ -229,7 +229,7 @@
       "id": "55688",
       "name": "55688",
       "health": "red",
-      "insight": "AIQ-1343 open 227d · +11 more · 55688代駕CDP討論會議 Jul 7.",
+      "insight": "AIQ-1343 open 228d · +11 more · 55688代駕CDP討論會議 Jul 7.",
       "diffs": [
         {
           "type": "new",
@@ -485,7 +485,7 @@
       "id": "xindongli",
       "name": "行動力國際",
       "health": "yellow",
-      "insight": "BBT-7270 open 116d · +3 more.",
+      "insight": "BBT-7270 open 117d · +3 more.",
       "diffs": [
         {
           "type": "new",
