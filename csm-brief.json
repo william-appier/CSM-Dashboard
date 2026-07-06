@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-05T16:47:08.248+08:00",
+  "generatedAt": "2026-07-06T09:00:52.475+08:00",
   "accounts": [
     {
       "id": "mannings",
@@ -102,7 +102,7 @@
       "id": "scmp",
       "name": "SCMP",
       "health": "yellow",
-      "insight": "LEG-16265 open 3d · +1 more · renewal due Jun 2026.",
+      "insight": "LEG-16265 open 4d · +1 more · renewal due Jun 2026.",
       "diffs": [
         {
           "type": "new",
@@ -317,7 +317,7 @@
       "id": "tiangyuanxiang",
       "name": "田原香",
       "health": "yellow",
-      "insight": "APC-697 open 24d · +12 more.",
+      "insight": "APC-697 open 25d · +12 more.",
       "diffs": [
         {
           "type": "new",
@@ -391,7 +391,7 @@
       "id": "momax",
       "name": "Momax",
       "health": "yellow",
-      "insight": "CAM-350143 open 416d · +1 more.",
+      "insight": "CAM-350143 open 417d · +1 more.",
       "diffs": [
         {
           "type": "new",
@@ -416,7 +416,7 @@
       "id": "citysuper",
       "name": "City Super",
       "health": "yellow",
-      "insight": "LEG-16086 open 44d · +12 more.",
+      "insight": "LEG-16086 open 45d · +12 more.",
       "diffs": [
         {
           "type": "new",
