@@ -5,7 +5,7 @@
       "id": "mannings",
       "name": "Mannings",
       "health": "yellow",
-      "insight": "⚠️ CONTRACT EXPIRED 7 days ago (2026-06-30). ETS-4593 coupon API error investigation in progress (hazel.wang) — the Jul 9 bi-weekly is your venue to close the renewal.",
+      "insight": "✅ Renewed — contract extended to 2026-09-30. ETS-4593 coupon API investigation in progress (hazel.wang); bi-weekly meeting Jul 9 at 11:00 HKT.",
       "diffs": [],
       "riskTags": [
         "ticket",
@@ -35,18 +35,13 @@
       "suggestions": [
         {
           "priority": "high",
-          "label": "Renewal · High",
-          "text": "Contract expired 2026-06-30 (7 days overdue). Escalate renewal signature immediately — confirm paperwork status with Rola Chung before the Jul 9 bi-weekly; AIQUA/AIRIS service continuity is at risk."
-        },
-        {
-          "priority": "high",
           "label": "Meeting · High",
-          "text": "Bi-weekly meeting Jul 9, 11:00–12:00 HKT (Rola Chung). Prepare renewal status plus an update on ETS-4593 coupon API investigation (hazel.wang, in progress 3d)."
+          "text": "Bi-weekly meeting Jul 9, 11:00–12:00 HKT (Rola Chung). Bring update on ETS-4593 coupon API investigation (hazel.wang) — renewal is closed, so shift focus to delivery."
         },
         {
           "priority": "medium",
           "label": "Project · Medium",
-          "text": "AIXON→AIRIS upgrade (Q4): confirm migration scope during the renewal discussion so it is contractually covered."
+          "text": "AIXON→AIRIS upgrade (Q4): with renewal secured to 2026-09-30, confirm the upgrade timeline and scope with the client."
         }
       ]
     },
@@ -54,7 +49,7 @@
       "id": "scmp",
       "name": "SCMP",
       "health": "yellow",
-      "insight": "⚠️ CONTRACT EXPIRED 7 days ago (2026-06-30). LEG-16265 open 5d (emily.cheng) and no renewal meeting booked — account otherwise silent.",
+      "insight": "⏳ Renewal contract sent — waiting for client to sign back (previous term ended 2026-06-30). LEG-16265 open 5d (emily.cheng).",
       "diffs": [],
       "riskTags": [
         "ticket",
@@ -78,17 +73,12 @@
         {
           "priority": "high",
           "label": "Renewal · High",
-          "text": "Contract expired 2026-06-30 (7 days overdue). Book a renewal meeting with SCMP this week and chase LEG-16265 with emily.cheng — no meeting on the calendar is a red flag."
+          "text": "Contract is with the client for signature — chase for the signed copy this week since the previous term ended 2026-06-30; keep LEG-16265 moving with emily.cheng in parallel."
         },
         {
           "priority": "medium",
           "label": "Ticket · Medium",
-          "text": "AIQ-1465 is open under your name — resolve or update it before renewal talks so open items don't stall signature."
-        },
-        {
-          "priority": "low",
-          "label": "Project · Low",
-          "text": "Package Segments Enablement progress as value evidence for the renewal conversation."
+          "text": "AIQ-1465 is open under your name — resolve or update it so nothing blocks countersigning."
         }
       ]
     },
@@ -129,7 +119,7 @@
       "id": "luxgen",
       "name": "Luxgen",
       "health": "yellow",
-      "insight": "No meetings on the calendar — engagement risk. LEG-16090 BB contract (2026/5/24–11/23) active with Shao Zhang; AIQ-1200 open under your name.",
+      "insight": "✅ Renewed — BB contract extended to 2026-11-22. No meetings on calendar; AIQ-1200 open under your name.",
       "diffs": [],
       "riskTags": [
         "ticket",
@@ -146,14 +136,14 @@
       "recentNotes": [],
       "suggestions": [
         {
-          "priority": "high",
-          "label": "Engagement · High",
-          "text": "No client meetings scheduled — book a check-in with Luxgen this week to keep the active BB contract (LEG-16090, runs to 2026-11-23) relationship warm."
+          "priority": "medium",
+          "label": "Engagement · Medium",
+          "text": "Renewal closed (to 2026-11-22) but no client meetings booked — schedule a check-in and keep the monthly quotation cadence going."
         },
         {
           "priority": "medium",
           "label": "Ticket · Medium",
-          "text": "AIQ-1200 is assigned to you — update or close it, and triage the stale BBT backlog tickets while you're in there."
+          "text": "AIQ-1200 is assigned to you — update or close it, and triage the stale BBT backlog tickets."
         }
       ]
     },
