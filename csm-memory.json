@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-07T09:37:12.916+08:00",
+  "lastUpdated": "2026-07-07T13:53:13.358+08:00",
   "rules": [
     {
       "id": "okr-consolidate",
@@ -131,22 +131,22 @@
       "account": "Luxgen",
       "platform": "BB",
       "startDate": "2026-05-24",
-      "endDate": "2026-11-23",
-      "note": "BB contract 2026/5/24-11/23, NTD 50,000/mo ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ LEG-16090 approved"
+      "endDate": "2026-11-22",
+      "note": "Renewed BB, extended to 2026-11-22 (confirmed 2026-07-07)"
     },
     {
       "account": "SCMP",
       "platform": "AIQUA",
       "startDate": "2025-07-01",
       "endDate": "2026-06-30",
-      "note": "Renewal target June 2026 ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ arrange meeting after client feedback."
+      "note": "Contract sent - waiting for client to sign back (as of 2026-07-07)"
     },
     {
       "account": "Mannings",
       "platform": "AIQUA/AIRIS",
       "startDate": null,
-      "endDate": "2026-06-30",
-      "note": "Renewed AQ & AX to 2026-06-30 (Q1)"
+      "endDate": "2026-09-30",
+      "note": "Renewed AQ & AX, extended to 2026-09-30 (confirmed 2026-07-07)"
     },
     {
       "account": "10/10Hope",
@@ -473,6 +473,18 @@
       "category": "onboard",
       "client": "SCMP",
       "description": "AIRIS onboarding in approval â expected week of 2026-08-04"
+    },
+    {
+      "date": "2026-07-07",
+      "category": "Renewal",
+      "client": "Mannings",
+      "description": "Renewed AIQUA & AIRIS, contract extended to 2026-09-30"
+    },
+    {
+      "date": "2026-07-07",
+      "category": "Renewal",
+      "client": "Luxgen",
+      "description": "Renewed BB, contract extended to 2026-11-22"
     }
   ],
   "feedbackLog": [],
