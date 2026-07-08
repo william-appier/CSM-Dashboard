@@ -382,3 +382,8 @@ html:not(.light) .sync-label {
 .tix-hidden .brief-ticket-info {
   pointer-events: none;
 }
+
+
+/* ── Onboarding progress card: light-theme + expanded layout fixes (2026-07-08) ── */
+.ob-card-header:hover{ background: var(--surface2) !important; }
+.ob-card-body.open{ overflow-x: auto; }
