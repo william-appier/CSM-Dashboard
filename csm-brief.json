@@ -26,10 +26,6 @@
       "mtgCount": 0,
       "projects": [
         {
-          "name": "Q3 Renewal Contract",
-          "status": "progress"
-        },
-        {
           "name": "AIXON → AIRIS Upgrade (Q4)",
           "status": "progress"
         }
@@ -140,12 +136,7 @@
         "stale"
       ],
       "mtgCount": 0,
-      "projects": [
-        {
-          "name": "Contract Renewal 2026 (BB)",
-          "status": "progress"
-        }
-      ],
+      "projects": [],
       "meetings": [],
       "recentNotes": [],
       "suggestions": [
