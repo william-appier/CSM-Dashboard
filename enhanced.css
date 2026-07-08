@@ -387,3 +387,6 @@ html:not(.light) .sync-label {
 /* ── Onboarding progress card: light-theme + expanded layout fixes (2026-07-08) ── */
 .ob-card-header:hover{ background: var(--surface2) !important; }
 .ob-card-body.open{ overflow-x: auto; }
+
+/* ── Wizard modal: clip progress bar to rounded corners (2026-07-08) ── */
+.wiz-modal{ overflow: hidden; }

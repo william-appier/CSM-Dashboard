@@ -14,7 +14,7 @@
 
   <!-- Existing CSS (keep for JS-rendered content) -->
   <link rel="stylesheet" href="css/styles.css?v=20260708b">
-  <link rel="stylesheet" href="enhanced.css?v=20260708b">
+  <link rel="stylesheet" href="enhanced.css?v=20260708c">
 
   <style>
     /* ===== DESIGN SYSTEM TOKENS ===== */
@@ -781,13 +781,13 @@
 .fe-badge-manual{font-size:.7rem;padding:2px 8px;border-radius:4px;background:rgba(245,158,11,.15);color:#f59e0b;border:1px solid rgba(245,158,11,.3);flex-shrink:0}
 .fe-preview-feat-row{display:flex;align-items:center;justify-content:space-between;padding:8px 12px;border-radius:6px;border:1px solid var(--border)}
 </style>
-<div id="feOverlay" class="wiz-overlay" style="display:none" onclick="if(event.target===this)closeFEWizard()">
+<div id="feOverlay" class="wiz-overlay" style="display:none" onclick="if(event.target===this)closeFeWizard()">
   <div class="wiz-modal" id="feModal" onclick="event.stopPropagation()">
     <div class="wiz-progress"><div class="wiz-progress-bar" id="feProgressBar" style="width:0%"></div></div>
     <div class="wiz-header">
       <span class="wiz-title" id="feTitle">Feature Enable</span>
       <span class="wiz-step-indicator" id="feStepInd"></span>
-      <button class="wiz-close" onclick="closeFEWizard()">✕</button>
+      <button class="wiz-close" onclick="closeFeWizard()">✕</button>
     </div>
     <div class="wiz-body" id="feBody"></div>
     <div class="wiz-footer" id="feFooter"></div>
@@ -817,7 +817,7 @@
 })();
 </script>
 <script src="js/onboarding.js?v=20260708b"></script>
-<script src="feature-enable.js?v=20260708b"></script>
+<script src="feature-enable.js?v=20260708c"></script>
 <script src="js/brief.js?v=20260708b"></script>
 <script src="js/app.js?v=20260708b"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js?v=20260622l"></script>

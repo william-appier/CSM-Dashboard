@@ -132,6 +132,7 @@
   window.closeFeWizard = function () {
     document.getElementById('feOverlay').style.display = 'none';
   };
+  window.closeFEWizard = window.closeFeWizard; // alias — some markup used the FE casing
 
   window.fePickPlatform = function (p) {
     feW.platform = p;
