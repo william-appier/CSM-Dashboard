@@ -1264,7 +1264,21 @@ async function wizCreateAllTickets(){
         if(cleaned.content) cleaned.content = cleaned.content.map(stripLocalIds);
         return cleaned;
       };
-      const cleanCloned = clonedContent.map(stripLocalIds);
+      // Media nodes cloned from the sample reference the SAMPLE issue's attachment
+// collection — Jira rejects new issues containing them (400). Strip them and
+// leave a pointer to the sample ticket instead.
+const MEDIA_BLOCK = ['media','mediaSingle','mediaGroup'];
+const stripMedia = nodes => (nodes||[]).map(n => {
+  if(!n || typeof n !== 'object') return n;
+  if(MEDIA_BLOCK.includes(n.type))
+    return {type:'paragraph',content:[{type:'text',text:`[image omitted — see sample ${feat.sample}]`}]};
+  if(n.type === 'mediaInline')
+    return {type:'text',text:`[image omitted — see sample ${feat.sample}]`};
+  const copy = {...n};
+  if(copy.content) copy.content = stripMedia(copy.content);
+  return copy;
+});
+const cleanCloned = stripMedia(clonedContent.map(stripLocalIds));
 
       // crossBoardTask: sample is Sub-task but we must create as Task (different board than parent)
       const isSubtask      = sf.issuetype?.subtask === true && !feat.crossBoardTask;

@@ -43,11 +43,19 @@ async function apiFetch(url, opts={}){
   }
   if(!resp.ok){
     let body = null;
-    try{ body = await resp.json(); }catch(_){}
-    throw new Error(body?.message || body?.errorMessages?.[0] || body?.detail || `HTTP ${resp.status}`);
+try{ const _t = await resp.text(); body = _t ? JSON.parse(_t) : null; }catch(_){}
+// Jira create-issue 400s put details in body.errors {field: message} — surface them
+const _fieldErrs = body?.errors && Object.keys(body.errors).length
+? Object.entries(body.errors).map(([k,v])=>k+': '+v).join('; ')
+: '';
+throw new Error(body?.message || body?.errorMessages?.[0] || _fieldErrs || body?.detail || `HTTP ${resp.status}`);
   }
   if(resp.status===204) return null;
-  return resp.json();
+// Some Jira endpoints (e.g. POST /issueLink) return 200/201 with an EMPTY body.
+// resp.json() would throw "Unexpected end of JSON input" — parse defensively.
+const _text = await resp.text();
+if(!_text) return null;
+try{ return JSON.parse(_text); }catch(_){ return null; }
 }
 
 async function fetchMe(){
