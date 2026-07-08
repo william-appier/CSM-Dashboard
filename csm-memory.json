@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-08T09:27:22.353+08:00",
+  "lastUpdated": "2026-07-08T09:32:52.703+08:00",
   "rules": [
     {
       "id": "okr-consolidate",
@@ -485,6 +485,12 @@
       "category": "Renewal",
       "client": "Luxgen",
       "description": "Renewed BB, contract extended to 2026-11-22"
+    },
+    {
+      "date": "2026-07-07",
+      "category": "renewal",
+      "client": "Mannings",
+      "description": "Renewed AQ & AX, extended to 2026-09-30"
     }
   ],
   "feedbackLog": [],
@@ -687,6 +693,22 @@
         "BBT-7270",
         "BBT-7024"
       ]
+    }
+  },
+  "projectOverrides": {
+    "mannings": {
+      "remove": [
+        "Q3 Renewal Contract"
+      ],
+      "reason": "Renewal completed — AQ & AX extended to 2026-09-30",
+      "updated": "2026-07-08"
+    },
+    "luxgen": {
+      "remove": [
+        "Contract Renewal 2026 (BB)"
+      ],
+      "reason": "Renewal completed — BB extended to 2026-11-22 (LEG-16090)",
+      "updated": "2026-07-08"
     }
   }
 }
