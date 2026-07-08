@@ -950,7 +950,23 @@ async function wizCreateOnboardTicket(){
 
     const created = await apiFetch(`${base}/rest/api/3/issue`,{method:'POST',body:JSON.stringify(payload)});
     wiz.onboardTicketKey = created.key;
-    renderWizStep(); // re-render step 2 (Assign TS) to show success banner + Enter IDs button
+    // Track this onboarding on the dashboard immediately (features append later)
+if(!loadOnboardings().find(o=>o.onboardTicketKey===created.key)){
+  addOnboarding({
+    id: 'ob_'+Date.now(),
+    platform: wiz.platform,
+    clientName: wiz.clientName,
+    legalTicket: wiz.legalTicket,
+    opportunityLink: wiz.opportunityLink,
+    onboardTicketKey: created.key,
+    appId: wiz.appId||'', projectId: wiz.projectId||'', organizationId: wiz.organizationId||'',
+    assignee: wiz.assignee,
+    createdAt: new Date().toISOString().slice(0,10),
+    features: [],
+  });
+  renderOnboardingProgress();
+}
+wizNext(); // advance to the next step automatically
     toast('success', `\u2713 Onboard ticket created: ${created.key}`);
   }catch(e){
     if(err){ err.textContent='Failed: '+e.message; err.style.display='block'; }
@@ -1355,9 +1371,20 @@ const cleanCloned = stripMedia(clonedContent.map(stripLocalIds));
     };
     // If adding features to existing onboarding, append; otherwise create new record
     if(!finalizeAddObFeatures(created)){
-      addOnboarding(ob);
-      deleteDraft('draft_'+wiz.onboardTicketKey);
-    }
+  // Upsert — the record may already exist (created when the onboard ticket was made)
+  const _list = loadOnboardings();
+  const _ex = _list.find(o=>o.onboardTicketKey===wiz.onboardTicketKey);
+  if(_ex){
+    _ex.appId = wiz.appId; _ex.projectId = wiz.projectId; _ex.organizationId = wiz.organizationId;
+    _ex.assignee = wiz.assignee;
+    const _have = new Set((_ex.features||[]).map(f=>f.ticketKey));
+    _ex.features = [...(_ex.features||[]), ...created.filter(f=>!_have.has(f.ticketKey))];
+    saveOnboardings(_list);
+  } else {
+    addOnboarding(ob);
+  }
+  deleteDraft('draft_'+wiz.onboardTicketKey);
+}
     toast('success', `\u2713 Created ${created.length} feature ticket${created.length===1?'':'s'}!`);
     closeWizard();
     renderOnboardingProgress();
@@ -1752,7 +1779,11 @@ async function scanAppIdForOb(obId, ticketKey){
 
 function toggleObCard(gid){
   const body = document.getElementById(gid+'_body');
-  if(body) body.classList.toggle('open');
+  if(!body) return;
+  body.classList.toggle('open');
+  // When expanded, span the full grid width so the feature table isn't squeezed
+  const card = document.getElementById(gid);
+  if(card) card.style.gridColumn = body.classList.contains('open') ? '1 / -1' : '';
 }
 
 // \u2500\u2500 ADD FEATURES TO EXISTING ONBOARDING \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
