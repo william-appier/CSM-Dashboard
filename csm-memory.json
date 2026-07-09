@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-08T09:32:52.703+08:00",
+  "lastUpdated": "2026-07-09T10:38:30.048+08:00",
   "rules": [
     {
       "id": "okr-consolidate",
@@ -613,86 +613,19 @@
     }
   ],
   "ticketSnapshot": {
-    "generatedAt": "2026-07-08T01:27:22.321Z",
+    "generatedAt": "2026-07-09T02:38:30.139Z",
     "keys": {
-      "55688": [
-        "QGWL-19925",
-        "AIQ-1343",
-        "BBT-5597",
-        "BBT-4897",
-        "BBT-5346",
-        "BBT-5368",
-        "BBT-4854",
-        "BBT-5292",
-        "BBT-5191",
-        "QGWL-19924"
-      ],
-      "mannings": [
-        "QGWL-24671",
-        "PHXX-1559",
-        "QGWL-18384",
-        "QGWL-14560",
-        "ETS-4713",
-        "ETS-4593",
-        "QGWL-20748",
-        "ETS-4446",
-        "QGWL-25598",
-        "ETS-4145",
-        "ETS-4130",
-        "AIQ-1045",
-        "QGWL-18833",
-        "QGWL-17197",
-        "QGWL-21825",
-        "QGWL-21895",
-        "QGWL-16671",
-        "QGWL-21706",
-        "QGWL-21578",
-        "QGWL-19030"
-      ],
-      "scmp": [
-        "LEG-16265",
-        "AIQ-1465",
-        "AID-8880"
-      ],
+      "55688": [],
+      "mannings": [],
+      "scmp": [],
       "1010hope": [],
-      "luxgen": [
-        "BBT-2905",
-        "LEG-16090",
-        "AIQ-1200",
-        "BBT-3692",
-        "BBT-1061",
-        "QGWL-11820",
-        "QGWL-10821",
-        "EAM-227",
-        "BBT-5953"
-      ],
-      "tiangyuanxiang": [
-        "APC-697",
-        "APC-698",
-        "QGWL-25930",
-        "QGWL-25627",
-        "AEP-6091",
-        "AEP-6090",
-        "QGWL-24972",
-        "AEP-6089",
-        "AIQ-1389",
-        "QGWL-23645",
-        "QGWL-22084",
-        "QGWL-22014",
-        "QGWL-21289"
-      ],
+      "luxgen": [],
+      "tiangyuanxiang": [],
       "momax": [],
       "citysuper": [
-        "LEG-15992",
-        "LEG-16086"
+        "LEG-15992"
       ],
-      "xindongli": [
-        "BBT-5747",
-        "BBT-5599",
-        "BBT-4660",
-        "BBT-7270",
-        "BBT-7024"
-      ]
+      "xindongli": []
     }
   },
   "projectOverrides": {
