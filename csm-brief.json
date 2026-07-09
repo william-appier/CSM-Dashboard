@@ -1,28 +1,14 @@
 {
-  "generatedAt": "2026-07-08T09:25:00.796+08:00",
+  "generatedAt": "2026-07-09T09:00:26.926+08:00",
   "accounts": [
     {
       "id": "mannings",
       "name": "Mannings",
-      "health": "yellow",
-      "insight": "ETS-4713 (Android/iOS push certificate verification) opened today needs ETS action; renewal secured through 2026-09-30, so focus shifts to the Q4 AIXON→AIRIS upgrade.",
-      "diffs": [
-        {
-          "type": "new",
-          "key": "ETS-4713",
-          "text": "ETS-4713 [Mannings] Verify & enable Android/iOS push certificates"
-        },
-        {
-          "type": "removed",
-          "key": "QGWL-21234",
-          "text": "QGWL-21234 (closed/removed)"
-        }
-      ],
-      "riskTags": [
-        "ticket",
-        "renewal",
-        "stale"
-      ],
+      "health": "green",
+      "insight": "No active tickets — all clear.",
+      "diffs": [],
+      "riskTags": [],
+      "ticketCount": 0,
       "mtgCount": 0,
       "projects": [
         {
@@ -31,36 +17,25 @@
         }
       ],
       "meetings": [],
-      "recentNotes": [],
+      "tickets": [],
       "suggestions": [
         {
-          "priority": "high",
-          "label": "Ticket · High",
-          "text": "ETS-4713 push certificate verification opened today — confirm ETS owner and target date so Mannings push campaigns aren't blocked."
-        },
-        {
-          "priority": "medium",
-          "label": "Project · Medium",
-          "text": "AQ/AX renewal confirmed through 2026-09-30 — kick off AIXON→AIRIS upgrade scoping with client now to hit the Q4 window."
-        },
-        {
           "priority": "low",
-          "label": "Hygiene · Low",
-          "text": "QGWL-21234 closed since last run — confirm resolution was communicated to Mannings and note learnings."
+          "label": "Check-in · Low",
+          "text": "No active tickets — send a check-in to Mannings"
         }
       ]
     },
     {
       "id": "scmp",
       "name": "SCMP",
-      "health": "yellow",
-      "insight": "⚠️ CONTRACT EXPIRED 8 days ago (2026-06-30) — signed contract still not returned by client. LEG-16265 AIRIS Sales Order open 6d and no renewal meeting booked.",
+      "health": "red",
+      "insight": "⚠️ contract EXPIRED 2026-06-30.",
       "diffs": [],
       "riskTags": [
-        "ticket",
-        "renewal",
-        "stale"
+        "renewal"
       ],
+      "ticketCount": 0,
       "mtgCount": 0,
       "projects": [
         {
@@ -73,22 +48,12 @@
         }
       ],
       "meetings": [],
-      "recentNotes": [],
+      "tickets": [],
       "suggestions": [
         {
           "priority": "high",
           "label": "Renewal · High",
-          "text": "Contract expired 2026-06-30 (8 days overdue) — chase SCMP today for the signed contract; escalate internally if not returned by end of week."
-        },
-        {
-          "priority": "high",
-          "label": "Ticket · High",
-          "text": "LEG-16265 AIRIS Sales Order open 6d — align with Legal so the order form executes the moment the client signs back."
-        },
-        {
-          "priority": "medium",
-          "label": "Meeting · Medium",
-          "text": "No meeting booked — schedule a short call with SCMP to close the signature loop rather than waiting on email."
+          "text": "SCMP contract EXPIRED 9d ago (2026-06-30) — confirm status now"
         }
       ]
     },
@@ -96,9 +61,10 @@
       "id": "1010hope",
       "name": "10/10Hope",
       "health": "green",
-      "insight": "No open tickets or meetings — confirm with Mark Liu that the klickngo API integration and AIQUA onboarding are still progressing.",
+      "insight": "No active tickets — all clear.",
       "diffs": [],
       "riskTags": [],
+      "ticketCount": 0,
       "mtgCount": 0,
       "projects": [
         {
@@ -111,63 +77,45 @@
         }
       ],
       "meetings": [],
-      "recentNotes": [],
+      "tickets": [],
       "suggestions": [
-        {
-          "priority": "medium",
-          "label": "Project · Medium",
-          "text": "Ping Mark Liu for status on klickngo API integration and AIQUA onboarding — no tickets could mean smooth sailing or stalled work."
-        },
         {
           "priority": "low",
           "label": "Check-in · Low",
-          "text": "Send a light check-in to 10/10Hope to keep momentum while integration work is in flight."
+          "text": "No active tickets — send a check-in to 10/10Hope"
         }
       ]
     },
     {
       "id": "luxgen",
       "name": "Luxgen",
-      "health": "yellow",
-      "insight": "BB renewal secured through 2026-11-22 via LEG-16090, but zero meetings in calendar — engagement gap is now the main risk.",
+      "health": "green",
+      "insight": "No active tickets — all clear.",
       "diffs": [],
-      "riskTags": [
-        "ticket",
-        "stale"
-      ],
+      "riskTags": [],
+      "ticketCount": 0,
       "mtgCount": 0,
       "projects": [],
       "meetings": [],
-      "recentNotes": [],
+      "tickets": [],
       "suggestions": [
         {
-          "priority": "high",
-          "label": "Engagement · High",
-          "text": "No meetings booked with Luxgen — schedule a cadence call this month to protect the freshly renewed BB relationship."
-        },
-        {
-          "priority": "medium",
-          "label": "Ticket · Medium",
-          "text": "BBT-5953 (share-to-LINE-friends not blocked despite setting) — check with BB product whether a fix is planned and update client."
-        },
-        {
           "priority": "low",
-          "label": "Housekeeping · Low",
-          "text": "EAM-227 offboard request (keep BB; AQ/AX/EDP remaining) — confirm the final scope is settled and documented."
+          "label": "Check-in · Low",
+          "text": "No active tickets — send a check-in to Luxgen"
         }
       ]
     },
     {
       "id": "55688",
       "name": "55688",
-      "health": "red",
-      "insight": "AIQ-1343 stale at 230 days is driving red health; Service Agent RFQ (BBT-5428, Brian Tsai) is the active priority ahead of the 潔衣家 LON sync on Jul 16.",
+      "health": "yellow",
+      "insight": "55688 潔衣家 LON 三月一次 Jul 16.",
       "diffs": [],
       "riskTags": [
-        "ticket",
-        "stale",
         "mtg"
       ],
+      "ticketCount": 0,
       "mtgCount": 1,
       "projects": [
         {
@@ -182,35 +130,23 @@
           "meta": "09:00–10:00 HKT · william.wt.lin@appier.com"
         }
       ],
-      "recentNotes": [],
+      "tickets": [],
       "suggestions": [
-        {
-          "priority": "high",
-          "label": "Ticket · High",
-          "text": "AIQ-1343 open 230 days — get an owner and a close-out plan this week, or formally descope it; it's the anchor dragging health to red."
-        },
-        {
-          "priority": "high",
-          "label": "RFQ · High",
-          "text": "Follow up with Brian Tsai on Service Agent RFQ (BBT-5428) — confirm quote status and next step with the client."
-        },
         {
           "priority": "medium",
           "label": "Meeting · Medium",
-          "text": "Prep for 55688 潔衣家 LON quarterly sync Jul 16 09:00 HKT — bring RFQ status and AIQ-1343 resolution plan."
+          "text": "Prep for 55688 潔衣家 LON 三月一次 on Jul 16 (09:00–10:00 HKT · william.wt.lin@appier.com)"
         }
       ]
     },
     {
       "id": "tiangyuanxiang",
       "name": "田原香",
-      "health": "yellow",
-      "insight": "APC-697 template-creation bug open 27 days is the current blocker for new use case development; next weekly sync Tue Jul 14 09:30 HKT.",
+      "health": "green",
+      "insight": "No active tickets — all clear.",
       "diffs": [],
-      "riskTags": [
-        "ticket",
-        "stale"
-      ],
+      "riskTags": [],
+      "ticketCount": 0,
       "mtgCount": 0,
       "projects": [
         {
@@ -219,49 +155,32 @@
         }
       ],
       "meetings": [],
-      "recentNotes": [],
+      "tickets": [],
       "suggestions": [
         {
-          "priority": "high",
-          "label": "Ticket · High",
-          "text": "APC-697/698 (create-template-from-scratch not clickable) open 27d — chase product for a fix ETA before the Jul 14 Tuesday sync."
-        },
-        {
-          "priority": "medium",
-          "label": "Project · Medium",
-          "text": "Bring 1–2 new use case proposals to the Jul 14 weekly meeting — use case development is the account's current focus."
-        },
-        {
           "priority": "low",
-          "label": "Hygiene · Low",
-          "text": "QGWL-25627 send-time optimization enablement — verify it's live and show impact at the weekly sync."
+          "label": "Check-in · Low",
+          "text": "No active tickets — send a check-in to 田原香"
         }
       ]
     },
     {
       "id": "momax",
       "name": "Momax",
-      "health": "yellow",
-      "insight": "Account effectively dormant — only two long-stale campaign tickets (CAM-350143 at 419d), no meetings, no active projects.",
+      "health": "green",
+      "insight": "No active tickets — all clear.",
       "diffs": [],
-      "riskTags": [
-        "ticket",
-        "stale"
-      ],
+      "riskTags": [],
+      "ticketCount": 0,
       "mtgCount": 0,
       "projects": [],
       "meetings": [],
-      "recentNotes": [],
+      "tickets": [],
       "suggestions": [
-        {
-          "priority": "medium",
-          "label": "Hygiene · Medium",
-          "text": "CAM-350143 (419d) and CAM-257353 (2023) are stale — close or archive them to clean the queue."
-        },
         {
           "priority": "low",
           "label": "Check-in · Low",
-          "text": "Decide whether Momax is worth re-engagement this quarter; if yes, book an intro call, if not, mark as maintenance-only."
+          "text": "No active tickets — send a check-in to Momax"
         }
       ]
     },
@@ -269,39 +188,39 @@
       "id": "citysuper",
       "name": "City Super",
       "health": "yellow",
-      "insight": "LEG-16086 AIQUA HK contract paperwork open 47 days is the longest-running blocker; Prizm AIBID campaigns otherwise running routinely.",
-      "diffs": [],
-      "riskTags": [
-        "ticket",
-        "stale"
+      "insight": "LEG-15992 open 9d.",
+      "diffs": [
+        {
+          "type": "new",
+          "text": "LEG-15992 Legend World Technology Development Limited_AIQUA_HK_Order F"
+        }
       ],
+      "riskTags": [
+        "ticket"
+      ],
+      "ticketCount": 1,
       "mtgCount": 0,
       "projects": [],
       "meetings": [],
-      "recentNotes": [],
-      "suggestions": [
+      "tickets": [
         {
-          "priority": "high",
-          "label": "Ticket · High",
-          "text": "LEG-16086 open 47d — check with Legal what's blocking the AIQUA HK order form and give the client a timeline."
-        },
-        {
-          "priority": "low",
-          "label": "Campaign · Low",
-          "text": "Prizm AIBID launches and budget adjustments are routine — monitor only, no action needed."
+          "key": "LEG-15992",
+          "title": "Legend World Technology Development Limited_AIQUA_HK_Order Form(User: CitySuper) ",
+          "status": "open",
+          "assignee": "emily.cheng",
+          "pinned": true
         }
-      ]
+      ],
+      "suggestions": []
     },
     {
       "id": "xindongli",
       "name": "行動力國際",
-      "health": "yellow",
-      "insight": "BBT-7270 Service Agent returning wrong custom answers, open 119 days — needs resolution before the account handover can complete cleanly.",
+      "health": "green",
+      "insight": "No active tickets — all clear.",
       "diffs": [],
-      "riskTags": [
-        "ticket",
-        "stale"
-      ],
+      "riskTags": [],
+      "ticketCount": 0,
       "mtgCount": 0,
       "projects": [
         {
@@ -310,20 +229,14 @@
         }
       ],
       "meetings": [],
-      "recentNotes": [],
+      "tickets": [],
       "suggestions": [
         {
-          "priority": "high",
-          "label": "Ticket · High",
-          "text": "BBT-7270 open 119d — escalate to BB engineering for a fix; wrong custom answers directly hurt the client's bot quality."
-        },
-        {
-          "priority": "medium",
-          "label": "Handover · Medium",
-          "text": "Account handover in progress — document open items (incl. BBT-4660 Phoenix migration) so nothing drops during transition."
+          "priority": "low",
+          "label": "Check-in · Low",
+          "text": "No active tickets — send a check-in to 行動力國際"
         }
       ]
     }
-  ],
-  "enhancedAt": "2026-07-08T01:27:01.131Z"
+  ]
 }
