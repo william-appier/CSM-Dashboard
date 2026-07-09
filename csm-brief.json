@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-09T09:00:26.926+08:00",
+  "generatedAt": "2026-07-09T10:32:42.592+08:00",
   "accounts": [
     {
       "id": "mannings",
@@ -189,12 +189,7 @@
       "name": "City Super",
       "health": "yellow",
       "insight": "LEG-15992 open 9d.",
-      "diffs": [
-        {
-          "type": "new",
-          "text": "LEG-15992 Legend World Technology Development Limited_AIQUA_HK_Order F"
-        }
-      ],
+      "diffs": [],
       "riskTags": [
         "ticket"
       ],
