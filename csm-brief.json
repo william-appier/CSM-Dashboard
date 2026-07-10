@@ -1,134 +1,36 @@
 {
-  "generatedAt": "2026-07-09T10:32:42.592+08:00",
+  "generatedAt": "2026-07-10T09:00:15.369+08:00",
   "accounts": [
     {
       "id": "mannings",
       "name": "Mannings",
-      "health": "green",
-      "insight": "AQ/AX renewal confirmed through 2026-09-30 (per 2026-07-07 note); 20 legacy tickets closed — AIXON→AIRIS upgrade (Q4) is now the only open workstream.",
-      "diffs": [
-        {
-          "type": "removed",
-          "key": "QGWL-24671",
-          "text": "QGWL-24671 (closed/removed)"
-        },
-        {
-          "type": "removed",
-          "key": "PHXX-1559",
-          "text": "PHXX-1559 (closed/removed)"
-        },
-        {
-          "type": "removed",
-          "key": "QGWL-18384",
-          "text": "QGWL-18384 (closed/removed)"
-        },
-        {
-          "type": "removed",
-          "key": "QGWL-14560",
-          "text": "QGWL-14560 (closed/removed)"
-        },
-        {
-          "type": "removed",
-          "key": "ETS-4713",
-          "text": "ETS-4713 (closed/removed)"
-        },
-        {
-          "type": "removed",
-          "key": "ETS-4593",
-          "text": "ETS-4593 (closed/removed)"
-        },
-        {
-          "type": "removed",
-          "key": "QGWL-20748",
-          "text": "QGWL-20748 (closed/removed)"
-        },
-        {
-          "type": "removed",
-          "key": "ETS-4446",
-          "text": "ETS-4446 (closed/removed)"
-        },
-        {
-          "type": "removed",
-          "key": "QGWL-25598",
-          "text": "QGWL-25598 (closed/removed)"
-        },
-        {
-          "type": "removed",
-          "key": "ETS-4145",
-          "text": "ETS-4145 (closed/removed)"
-        },
-        {
-          "type": "removed",
-          "key": "ETS-4130",
-          "text": "ETS-4130 (closed/removed)"
-        },
-        {
-          "type": "removed",
-          "key": "AIQ-1045",
-          "text": "AIQ-1045 (closed/removed)"
-        },
-        {
-          "type": "removed",
-          "key": "QGWL-18833",
-          "text": "QGWL-18833 (closed/removed)"
-        },
-        {
-          "type": "removed",
-          "key": "QGWL-17197",
-          "text": "QGWL-17197 (closed/removed)"
-        },
-        {
-          "type": "removed",
-          "key": "QGWL-21825",
-          "text": "QGWL-21825 (closed/removed)"
-        },
-        {
-          "type": "removed",
-          "key": "QGWL-21895",
-          "text": "QGWL-21895 (closed/removed)"
-        },
-        {
-          "type": "removed",
-          "key": "QGWL-16671",
-          "text": "QGWL-16671 (closed/removed)"
-        },
-        {
-          "type": "removed",
-          "key": "QGWL-21706",
-          "text": "QGWL-21706 (closed/removed)"
-        },
-        {
-          "type": "removed",
-          "key": "QGWL-21578",
-          "text": "QGWL-21578 (closed/removed)"
-        },
-        {
-          "type": "removed",
-          "key": "QGWL-19030",
-          "text": "QGWL-19030 (closed/removed)"
-        }
+      "health": "yellow",
+      "insight": "Appier x Mannings Bi-weekly Meeting Jul 23.",
+      "diffs": [],
+      "riskTags": [
+        "mtg"
       ],
-      "riskTags": [],
       "ticketCount": 0,
-      "mtgCount": 0,
+      "mtgCount": 1,
       "projects": [
         {
           "name": "AIXON → AIRIS Upgrade (Q4)",
           "status": "progress"
         }
       ],
-      "meetings": [],
+      "meetings": [
+        {
+          "date": "Jul 23",
+          "title": "Appier x Mannings Bi-weekly Meeting",
+          "meta": "11:00–12:00 HKT · Rola Chung"
+        }
+      ],
       "tickets": [],
       "suggestions": [
         {
           "priority": "medium",
-          "label": "Project · Medium",
-          "text": "Confirm AIXON→AIRIS upgrade (Q4) timeline with Mannings now that the AQ/AX renewal is locked in through 2026-09-30."
-        },
-        {
-          "priority": "low",
-          "label": "Check-in · Low",
-          "text": "No open tickets — send a routine check-in to Mannings."
+          "label": "Meeting · Medium",
+          "text": "Prep for Appier x Mannings Bi-weekly Meeting on Jul 23 (11:00–12:00 HKT · Rola Chung)"
         }
       ]
     },
@@ -136,24 +38,8 @@
       "id": "scmp",
       "name": "SCMP",
       "health": "red",
-      "insight": "⚠️ CONTRACT EXPIRED 9 days ago (2026-06-30). Contract was sent 2026-07-07 and is still awaiting client signature; 3 legacy tickets closed, no meetings booked.",
-      "diffs": [
-        {
-          "type": "removed",
-          "key": "LEG-16265",
-          "text": "LEG-16265 (closed/removed)"
-        },
-        {
-          "type": "removed",
-          "key": "AIQ-1465",
-          "text": "AIQ-1465 (closed/removed)"
-        },
-        {
-          "type": "removed",
-          "key": "AID-8880",
-          "text": "AID-8880 (closed/removed)"
-        }
-      ],
+      "insight": "⚠️ contract EXPIRED 2026-06-30.",
+      "diffs": [],
       "riskTags": [
         "renewal"
       ],
@@ -175,12 +61,7 @@
         {
           "priority": "high",
           "label": "Renewal · High",
-          "text": "Contract expired 2026-06-30 (9 days). Sent for signature 2026-07-07 but not yet returned — escalate with SCMP to get it signed now."
-        },
-        {
-          "priority": "medium",
-          "label": "Meeting · Medium",
-          "text": "No renewal call is booked — schedule one with SCMP this week given the expired contract."
+          "text": "SCMP contract EXPIRED 10d ago (2026-06-30) — confirm status now"
         }
       ]
     },
@@ -188,7 +69,7 @@
       "id": "1010hope",
       "name": "10/10Hope",
       "health": "green",
-      "insight": "AIQUA onboarding and klickngo API integration both progressing under Mark Liu — no tickets or meetings currently open.",
+      "insight": "No active tickets — all clear.",
       "diffs": [],
       "riskTags": [],
       "ticketCount": 0,
@@ -207,14 +88,9 @@
       "tickets": [],
       "suggestions": [
         {
-          "priority": "medium",
-          "label": "Project · Medium",
-          "text": "Check in with Mark Liu on klickngo API integration progress."
-        },
-        {
           "priority": "low",
-          "label": "Project · Low",
-          "text": "Confirm AIQUA onboarding milestones with 10/10Hope."
+          "label": "Check-in · Low",
+          "text": "No active tickets — send a check-in to 10/10Hope"
         }
       ]
     },
@@ -222,54 +98,8 @@
       "id": "luxgen",
       "name": "Luxgen",
       "health": "green",
-      "insight": "LEG-16090 (BB renewal ticket) closed — BB contract confirmed through 2026-11-22, but no meetings are booked, which is a risk signal.",
-      "diffs": [
-        {
-          "type": "removed",
-          "key": "BBT-2905",
-          "text": "BBT-2905 (closed/removed)"
-        },
-        {
-          "type": "removed",
-          "key": "LEG-16090",
-          "text": "LEG-16090 (closed/removed)"
-        },
-        {
-          "type": "removed",
-          "key": "AIQ-1200",
-          "text": "AIQ-1200 (closed/removed)"
-        },
-        {
-          "type": "removed",
-          "key": "BBT-3692",
-          "text": "BBT-3692 (closed/removed)"
-        },
-        {
-          "type": "removed",
-          "key": "BBT-1061",
-          "text": "BBT-1061 (closed/removed)"
-        },
-        {
-          "type": "removed",
-          "key": "QGWL-11820",
-          "text": "QGWL-11820 (closed/removed)"
-        },
-        {
-          "type": "removed",
-          "key": "QGWL-10821",
-          "text": "QGWL-10821 (closed/removed)"
-        },
-        {
-          "type": "removed",
-          "key": "EAM-227",
-          "text": "EAM-227 (closed/removed)"
-        },
-        {
-          "type": "removed",
-          "key": "BBT-5953",
-          "text": "BBT-5953 (closed/removed)"
-        }
-      ],
+      "insight": "No active tickets — all clear.",
+      "diffs": [],
       "riskTags": [],
       "ticketCount": 0,
       "mtgCount": 0,
@@ -278,14 +108,9 @@
       "tickets": [],
       "suggestions": [
         {
-          "priority": "medium",
-          "label": "Meeting · Medium",
-          "text": "No meetings booked with Luxgen — schedule a check-in given the BB contract just renewed through 2026-11-22."
-        },
-        {
           "priority": "low",
           "label": "Check-in · Low",
-          "text": "Confirm the client is aware the BB renewal (LEG-16090) is closed and aligned on next steps."
+          "text": "No active tickets — send a check-in to Luxgen"
         }
       ]
     },
@@ -293,59 +118,8 @@
       "id": "55688",
       "name": "55688",
       "health": "yellow",
-      "insight": "Meeting with 潔衣家 booked Jul 16 (09:00–10:00 HKT) — prep Service Agent RFQ (BBT-5428, Brian Tsai) status; the Jun 2 renewal check appears overdue and 10 legacy tickets closed.",
-      "diffs": [
-        {
-          "type": "removed",
-          "key": "QGWL-19925",
-          "text": "QGWL-19925 (closed/removed)"
-        },
-        {
-          "type": "removed",
-          "key": "AIQ-1343",
-          "text": "AIQ-1343 (closed/removed)"
-        },
-        {
-          "type": "removed",
-          "key": "BBT-5597",
-          "text": "BBT-5597 (closed/removed)"
-        },
-        {
-          "type": "removed",
-          "key": "BBT-4897",
-          "text": "BBT-4897 (closed/removed)"
-        },
-        {
-          "type": "removed",
-          "key": "BBT-5346",
-          "text": "BBT-5346 (closed/removed)"
-        },
-        {
-          "type": "removed",
-          "key": "BBT-5368",
-          "text": "BBT-5368 (closed/removed)"
-        },
-        {
-          "type": "removed",
-          "key": "BBT-4854",
-          "text": "BBT-4854 (closed/removed)"
-        },
-        {
-          "type": "removed",
-          "key": "BBT-5292",
-          "text": "BBT-5292 (closed/removed)"
-        },
-        {
-          "type": "removed",
-          "key": "BBT-5191",
-          "text": "BBT-5191 (closed/removed)"
-        },
-        {
-          "type": "removed",
-          "key": "QGWL-19924",
-          "text": "QGWL-19924 (closed/removed)"
-        }
-      ],
+      "insight": "55688 潔衣家 LON 三月一次 Jul 16.",
+      "diffs": [],
       "riskTags": [
         "mtg"
       ],
@@ -369,12 +143,7 @@
         {
           "priority": "medium",
           "label": "Meeting · Medium",
-          "text": "Prep Service Agent RFQ (BBT-5428, Brian Tsai) status ahead of the Jul 16 09:00–10:00 HKT call."
-        },
-        {
-          "priority": "medium",
-          "label": "Renewal · Medium",
-          "text": "The Jun 2 renewal check for 55688 looks overdue (today is Jul 9) — confirm status with the client."
+          "text": "Prep for 55688 潔衣家 LON 三月一次 on Jul 16 (09:00–10:00 HKT · william.wt.lin@appier.com)"
         }
       ]
     },
@@ -382,74 +151,8 @@
       "id": "tiangyuanxiang",
       "name": "田原香",
       "health": "green",
-      "insight": "13 legacy tickets closed; account has moved fully into new use-case development, with nothing pending before Tuesday's 09:30 HKT tracking meeting.",
-      "diffs": [
-        {
-          "type": "removed",
-          "key": "APC-697",
-          "text": "APC-697 (closed/removed)"
-        },
-        {
-          "type": "removed",
-          "key": "APC-698",
-          "text": "APC-698 (closed/removed)"
-        },
-        {
-          "type": "removed",
-          "key": "QGWL-25930",
-          "text": "QGWL-25930 (closed/removed)"
-        },
-        {
-          "type": "removed",
-          "key": "QGWL-25627",
-          "text": "QGWL-25627 (closed/removed)"
-        },
-        {
-          "type": "removed",
-          "key": "AEP-6091",
-          "text": "AEP-6091 (closed/removed)"
-        },
-        {
-          "type": "removed",
-          "key": "AEP-6090",
-          "text": "AEP-6090 (closed/removed)"
-        },
-        {
-          "type": "removed",
-          "key": "QGWL-24972",
-          "text": "QGWL-24972 (closed/removed)"
-        },
-        {
-          "type": "removed",
-          "key": "AEP-6089",
-          "text": "AEP-6089 (closed/removed)"
-        },
-        {
-          "type": "removed",
-          "key": "AIQ-1389",
-          "text": "AIQ-1389 (closed/removed)"
-        },
-        {
-          "type": "removed",
-          "key": "QGWL-23645",
-          "text": "QGWL-23645 (closed/removed)"
-        },
-        {
-          "type": "removed",
-          "key": "QGWL-22084",
-          "text": "QGWL-22084 (closed/removed)"
-        },
-        {
-          "type": "removed",
-          "key": "QGWL-22014",
-          "text": "QGWL-22014 (closed/removed)"
-        },
-        {
-          "type": "removed",
-          "key": "QGWL-21289",
-          "text": "QGWL-21289 (closed/removed)"
-        }
-      ],
+      "insight": "No active tickets — all clear.",
+      "diffs": [],
       "riskTags": [],
       "ticketCount": 0,
       "mtgCount": 0,
@@ -463,14 +166,9 @@
       "tickets": [],
       "suggestions": [
         {
-          "priority": "medium",
-          "label": "Meeting · Medium",
-          "text": "Prep new use-case ideas ahead of the weekly Tuesday 09:30 HKT tracking meeting with 田原香."
-        },
-        {
           "priority": "low",
           "label": "Check-in · Low",
-          "text": "No open tickets — confirm EUU Onboarding and Campaign Agent Feature remain fully closed out."
+          "text": "No active tickets — send a check-in to 田原香"
         }
       ]
     },
@@ -478,7 +176,7 @@
       "id": "momax",
       "name": "Momax",
       "health": "green",
-      "insight": "Fully silent account — no tickets, meetings, or projects currently tracked.",
+      "insight": "No active tickets — all clear.",
       "diffs": [],
       "riskTags": [],
       "ticketCount": 0,
@@ -490,7 +188,7 @@
         {
           "priority": "low",
           "label": "Check-in · Low",
-          "text": "No activity on record — send a check-in to Momax to confirm account status."
+          "text": "No active tickets — send a check-in to Momax"
         }
       ]
     },
@@ -498,14 +196,8 @@
       "id": "citysuper",
       "name": "City Super",
       "health": "yellow",
-      "insight": "LEG-15992 (AIQUA HK Order Form, pinned) open 9 days with emily.cheng — LEG-16086 closed in the meantime, leaving this as the only outstanding item.",
-      "diffs": [
-        {
-          "type": "removed",
-          "key": "LEG-16086",
-          "text": "LEG-16086 (closed/removed)"
-        }
-      ],
+      "insight": "LEG-15992 open 10d.",
+      "diffs": [],
       "riskTags": [
         "ticket"
       ],
@@ -522,51 +214,14 @@
           "pinned": true
         }
       ],
-      "suggestions": [
-        {
-          "priority": "high",
-          "label": "Ticket · High",
-          "text": "Follow up with emily.cheng on LEG-15992 (AIQUA HK Order Form) — open 9 days and pinned as priority."
-        },
-        {
-          "priority": "low",
-          "label": "Meeting · Low",
-          "text": "No meetings booked — consider scheduling a check-in with City Super."
-        }
-      ]
+      "suggestions": []
     },
     {
       "id": "xindongli",
       "name": "行動力國際",
       "health": "green",
-      "insight": "5 legacy tickets closed; Account Handover remains the only active workstream, with no blockers.",
-      "diffs": [
-        {
-          "type": "removed",
-          "key": "BBT-5747",
-          "text": "BBT-5747 (closed/removed)"
-        },
-        {
-          "type": "removed",
-          "key": "BBT-5599",
-          "text": "BBT-5599 (closed/removed)"
-        },
-        {
-          "type": "removed",
-          "key": "BBT-4660",
-          "text": "BBT-4660 (closed/removed)"
-        },
-        {
-          "type": "removed",
-          "key": "BBT-7270",
-          "text": "BBT-7270 (closed/removed)"
-        },
-        {
-          "type": "removed",
-          "key": "BBT-7024",
-          "text": "BBT-7024 (closed/removed)"
-        }
-      ],
+      "insight": "No active tickets — all clear.",
+      "diffs": [],
       "riskTags": [],
       "ticketCount": 0,
       "mtgCount": 0,
@@ -580,14 +235,9 @@
       "tickets": [],
       "suggestions": [
         {
-          "priority": "medium",
-          "label": "Project · Medium",
-          "text": "Confirm Account Handover status and timeline with 行動力國際."
-        },
-        {
           "priority": "low",
           "label": "Check-in · Low",
-          "text": "No open tickets — routine check-in recommended."
+          "text": "No active tickets — send a check-in to 行動力國際"
         }
       ]
     }
