@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-14T09:00:40.991+08:00",
+  "generatedAt": "2026-07-15T09:00:44.433+08:00",
   "accounts": [
     {
       "id": "mannings",
@@ -38,13 +38,14 @@
       "id": "scmp",
       "name": "SCMP",
       "health": "red",
-      "insight": "⚠️ contract EXPIRED 2026-06-30.",
+      "insight": "⚠️ contract EXPIRED 2026-06-30 · 1010學習，伴手禮，scmp 合約，MN invoice，MN 需求 Jul 16.",
       "diffs": [],
       "riskTags": [
-        "renewal"
+        "renewal",
+        "mtg"
       ],
       "ticketCount": 0,
-      "mtgCount": 0,
+      "mtgCount": 1,
       "projects": [
         {
           "name": "Segments Enablement",
@@ -55,13 +56,24 @@
           "status": "progress"
         }
       ],
-      "meetings": [],
+      "meetings": [
+        {
+          "date": "Jul 16",
+          "title": "1010學習，伴手禮，scmp 合約，MN invoice，MN 需求",
+          "meta": "16:00–17:00 HKT · william.wt.lin@appier.com"
+        }
+      ],
       "tickets": [],
       "suggestions": [
         {
           "priority": "high",
           "label": "Renewal · High",
-          "text": "SCMP contract EXPIRED 14d ago (2026-06-30) — confirm status now"
+          "text": "SCMP contract EXPIRED 15d ago (2026-06-30) — confirm status now"
+        },
+        {
+          "priority": "medium",
+          "label": "Meeting · Medium",
+          "text": "Prep for 1010學習，伴手禮，scmp 合約，MN invoice，MN 需求 on Jul 16 (16:00–17:00 HKT · william.wt.lin@appier.com)"
         }
       ]
     },
@@ -196,10 +208,11 @@
       "id": "citysuper",
       "name": "City Super",
       "health": "yellow",
-      "insight": "LEG-15992 open 14d.",
+      "insight": "LEG-15992 open 15d.",
       "diffs": [],
       "riskTags": [
-        "ticket"
+        "ticket",
+        "stale"
       ],
       "ticketCount": 1,
       "mtgCount": 0,
