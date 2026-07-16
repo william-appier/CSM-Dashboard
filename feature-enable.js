@@ -206,7 +206,7 @@
             var summary = '[Feature Enable] ' + feW.clientName + ' \u00b7 ' + feW.platform + ' \u00b7 ' + f.name;
             var body = {
               fields: {
-                project: { key: 'LEG' },
+                project: { key: 'ETS' },
                 summary: summary,
                 description: {
                   type: 'doc', version: 1,
@@ -220,7 +220,7 @@
                         + '\n\nRequested via CSM Dashboard.'
                   }] }]
                 },
-                issuetype: { name: 'Task' }
+                issuetype: { name: 'Service Request' }
               }
             };
             return fetch('https://api.atlassian.com/ex/jira/' + cloudId + '/rest/api/3/issue', {
