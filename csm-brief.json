@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-15T09:00:44.433+08:00",
+  "generatedAt": "2026-07-16T09:00:44.329+08:00",
   "accounts": [
     {
       "id": "mannings",
@@ -68,7 +68,7 @@
         {
           "priority": "high",
           "label": "Renewal · High",
-          "text": "SCMP contract EXPIRED 15d ago (2026-06-30) — confirm status now"
+          "text": "SCMP contract EXPIRED 16d ago (2026-06-30) — confirm status now"
         },
         {
           "priority": "medium",
@@ -208,7 +208,7 @@
       "id": "citysuper",
       "name": "City Super",
       "health": "yellow",
-      "insight": "LEG-15992 open 15d.",
+      "insight": "LEG-15992 open 16d.",
       "diffs": [],
       "riskTags": [
         "ticket",
