@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-16T09:00:44.329+08:00",
+  "generatedAt": "2026-07-16T10:04:35.402+08:00",
   "accounts": [
     {
       "id": "mannings",
@@ -129,33 +129,25 @@
     {
       "id": "55688",
       "name": "55688",
-      "health": "yellow",
-      "insight": "55688 潔衣家 LON 三月一次 Jul 16.",
+      "health": "green",
+      "insight": "No active tickets — all clear.",
       "diffs": [],
-      "riskTags": [
-        "mtg"
-      ],
+      "riskTags": [],
       "ticketCount": 0,
-      "mtgCount": 1,
+      "mtgCount": 0,
       "projects": [
         {
           "name": "Service Agent RFQ",
           "status": "progress"
         }
       ],
-      "meetings": [
-        {
-          "date": "Jul 16",
-          "title": "55688 潔衣家 LON 三月一次",
-          "meta": "09:00–10:00 HKT · william.wt.lin@appier.com"
-        }
-      ],
+      "meetings": [],
       "tickets": [],
       "suggestions": [
         {
-          "priority": "medium",
-          "label": "Meeting · Medium",
-          "text": "Prep for 55688 潔衣家 LON 三月一次 on Jul 16 (09:00–10:00 HKT · william.wt.lin@appier.com)"
+          "priority": "low",
+          "label": "Check-in · Low",
+          "text": "No active tickets — send a check-in to 55688"
         }
       ]
     },
