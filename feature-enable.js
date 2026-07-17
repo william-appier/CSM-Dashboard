@@ -113,7 +113,12 @@
     .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
     .then(function (cat) {
       if (cat && cat.AIQUA && cat.AIQUA.length) {
-        FE_CATALOG.AIQUA = cat.AIQUA;
+        var byId = {};
+        cat.AIQUA.forEach(function (c) { (c.items || []).forEach(function (f) { byId[f.id] = 1; }); });
+        var keepCats = (FE_CATALOG.AIQUA || []).map(function (c) {
+          return { cat: c.cat, items: (c.items || []).filter(function (f) { return !byId[f.id]; }) };
+        }).filter(function (c) { return c.items.length; });
+        FE_CATALOG.AIQUA = cat.AIQUA.concat(keepCats);
         FE_CATALOG_SOURCE = 'feature-catalog.json';
         console.log('[feature-enable] AIQUA catalog loaded (' + cat.AIQUA.reduce(function (t, c) { return t + c.items.length; }, 0) + ' features)');
       }
@@ -153,7 +158,7 @@
     var m = users.filter(function (u) { return !ql || (u.displayName || '').toLowerCase().indexOf(ql) > -1; }).slice(0, 15);
     list.innerHTML = m.map(function (u) {
       var on = feW.assignee && feW.assignee.accountId === u.accountId;
-      return '<div style="padding:5px 8px;cursor:pointer;border-radius:6px;font-size:.8rem;' + (on ? 'background:rgba(99,102,241,.18);' : '') + '" data-aid="' + esc(u.accountId) + '" onclick="feAsnPick(this.getAttribute(' + String.fromCharCode(39,92,39,97,105,100,92,39,39) + '))">' + esc(u.displayName) + '</div>';
+      return '<div style="padding:5px 8px;cursor:pointer;border-radius:6px;font-size:.8rem;' + (on ? 'background:rgba(99,102,241,.18);' : '') + '" data-aid="' + esc(u.accountId) + '" onclick="feAsnPick(this.dataset.aid)">' + esc(u.displayName) + '</div>';
     }).join('') || '<div style="font-size:.75rem;color:var(--muted);padding:4px;">No match</div>';
   }
   function feAsnServerSearch(q) {
@@ -186,7 +191,10 @@
     feW.assignee = u ? { accountId: u.accountId, displayName: u.displayName } : null;
     var selEl = document.getElementById('feAsnSel');
     if (selEl) selEl.textContent = u ? '\u2713 Assignee: ' + u.displayName : '';
-    window.feAsnFilter((document.getElementById('feAsnSearch') || {}).value || '');
+    var inpEl = document.getElementById('feAsnSearch');
+    if (inpEl && u) inpEl.value = u.displayName;
+    var listEl = document.getElementById('feAsnList');
+    if (listEl && u) listEl.innerHTML = '';
   };
 
 
