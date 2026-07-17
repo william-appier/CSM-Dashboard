@@ -825,6 +825,9 @@ async function toggleWizAsnDropdown(e){
   /* ---- AIXON onboarding mirrors AIRIS (shared catalog) ---- */
   if (CATALOGS.AIRIS && !CATALOGS.AIXON) {
     CATALOGS.AIXON = JSON.parse(JSON.stringify(CATALOGS.AIRIS).replace(/AIRIS/g, 'AIXON'));
+    CATALOGS.AIXON.board = 'PROJ';
+    if (CATALOGS.AIXON.onboardTicket) CATALOGS.AIXON.onboardTicket.sampleKey = 'PROJ-31693';
+    (CATALOGS.AIXON.features || []).forEach(function (f) { if (f.id === 'airis_onboard') { f.sample = 'PROJ-31693'; f.board = 'PROJ'; f.name = 'Onboard AIXON'; } });
   }
 
   /* ---- Merge repo-managed AIQUA feature catalog into wizard ---- */
