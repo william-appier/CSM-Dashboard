@@ -140,17 +140,48 @@
         if (l2) l2.innerHTML = '<div style="font-size:.75rem;color:#dc2626;padding:4px;">' + esc(e.message) + '</div>';
       });
   };
-  window.feAsnFilter = function (q) {
+  var feAsnTimer = null;
+  function feAsnAuth() {
+    return Promise.resolve()
+      .then(function () { return window.getAccessToken(); })
+      .then(function (tok) { return window.fetchAccessibleResources(tok).then(function (res) { return { tok: tok, cloudId: res[0].id }; }); });
+  }
+  function feAsnRender(users, q) {
     var list = document.getElementById('feAsnList');
-    if (!list || !feAsnUsers) return;
-    q = (q || '').toLowerCase();
-    var m = feAsnUsers.filter(function (u) { return !q || (u.displayName || '').toLowerCase().indexOf(q) > -1; }).slice(0, 12);
+    if (!list) return;
+    var ql = (q || '').toLowerCase();
+    var m = users.filter(function (u) { return !ql || (u.displayName || '').toLowerCase().indexOf(ql) > -1; }).slice(0, 15);
     list.innerHTML = m.map(function (u) {
       var on = feW.assignee && feW.assignee.accountId === u.accountId;
       return '<div style="padding:5px 8px;cursor:pointer;border-radius:6px;font-size:.8rem;' + (on ? 'background:rgba(99,102,241,.18);' : '') + '" data-aid="' + esc(u.accountId) + '" onclick="feAsnPick(this.getAttribute(' + String.fromCharCode(39,92,39,97,105,100,92,39,39) + '))">' + esc(u.displayName) + '</div>';
     }).join('') || '<div style="font-size:.75rem;color:var(--muted);padding:4px;">No match</div>';
+  }
+  function feAsnServerSearch(q) {
+    var list = document.getElementById('feAsnList');
+    if (list) list.innerHTML = '<div style="font-size:.75rem;color:var(--muted);padding:4px;">Searching\u2026</div>';
+    feAsnAuth()
+      .then(function (auth) {
+        return fetch('https://api.atlassian.com/ex/jira/' + auth.cloudId + '/rest/api/3/user/search?query=' + encodeURIComponent(q) + '&maxResults=50', { headers: { Authorization: 'Bearer ' + auth.tok, Accept: 'application/json' } }).then(function (r) { return r.json(); });
+      })
+      .then(function (data) {
+        var users = (Array.isArray(data) ? data : []).filter(function (u) { return u.accountType === 'atlassian' && u.active !== false; });
+        feAsnUsers = feAsnUsers || [];
+        users.forEach(function (u) { if (!feAsnUsers.some(function (x) { return x.accountId === u.accountId; })) feAsnUsers.push(u); });
+        feAsnRender(users, '');
+      })
+      .catch(function (e) { var l2 = document.getElementById('feAsnList'); if (l2) l2.innerHTML = '<div style="font-size:.75rem;color:#dc2626;padding:4px;">' + esc(e.message) + '</div>'; });
+  }
+  window.feAsnFilter = function (q) {
+    q = (q || '').trim();
+    if (q.length >= 2) {
+      clearTimeout(feAsnTimer);
+      feAsnTimer = setTimeout(function () { feAsnServerSearch(q); }, 250);
+      return;
+    }
+    clearTimeout(feAsnTimer);
+    feAsnRender(feAsnUsers || [], q);
   };
-  window.feAsnPick = function (aid) {
+    window.feAsnPick = function (aid) {
     var u = (feAsnUsers || []).filter(function (x) { return x.accountId === aid; })[0];
     feW.assignee = u ? { accountId: u.accountId, displayName: u.displayName } : null;
     var selEl = document.getElementById('feAsnSel');
