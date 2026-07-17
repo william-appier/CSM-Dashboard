@@ -4,8 +4,8 @@
     {
       "id": "mannings",
       "name": "Mannings",
-      "health": "yellow",
-      "insight": "Bi-weekly meeting Jul 23 (11:00 HKT, Rola Chung) — follow up on Q3 renewal contract scope before then, with AIXON→AIRIS Q4 upgrade on the agenda.",
+      "health": "green",
+      "insight": "Q3 renewal SIGNED - contract runs to 2026-09-30. Bi-weekly Jul 23 (11:00 HKT, Rola Chung): shift focus to the AIXON-to-AIRIS Q4 upgrade plan.",
       "diffs": [],
       "riskTags": [
         "mtg"
@@ -14,7 +14,11 @@
       "mtgCount": 2,
       "projects": [
         {
-          "name": "AIXON → AIRIS Upgrade (Q4)",
+          "name": "Q3 Renewal Contract",
+          "status": "done"
+        },
+        {
+          "name": "AIXON - AIRIS Upgrade (Q4)",
           "status": "progress"
         }
       ],
@@ -33,40 +37,39 @@
       "tickets": [],
       "suggestions": [
         {
-          "priority": "high",
-          "label": "Renewal · High",
-          "text": "Follow up on Q3 renewal contract — confirm scope and timeline with the client before the Jul 23 bi-weekly so signing isn't pushed past quarter-end."
-        },
-        {
           "priority": "medium",
-          "label": "Meeting · Medium",
-          "text": "Prep for the Jul 23 bi-weekly (11:00–12:00 HKT, Rola Chung): renewal status first, then AIXON→AIRIS Q4 upgrade plan and milestones."
+          "label": "Meeting - Medium",
+          "text": "Jul 23 bi-weekly (11:00-12:00 HKT, Rola Chung): open with renewal confirmation, then walk through AIRIS Q4 upgrade milestones and owners."
         },
         {
           "priority": "low",
-          "label": "Planning · Low",
-          "text": "Draft the Jul 30 monthly meeting agenda early — reuse renewal + upgrade updates from the bi-weekly."
+          "label": "Admin - Low",
+          "text": "Update Salesforce / internal records with the new end date 2026-09-30 so renewal alerts reset correctly."
         }
       ]
     },
     {
       "id": "scmp",
       "name": "SCMP",
-      "health": "red",
-      "insight": "⚠️ CONTRACT EXPIRED 17 days ago (2026-06-30). Account is completely silent — no tickets, no meetings booked — renewal is unresolved and needs immediate escalation.",
+      "health": "yellow",
+      "insight": "AIRIS contract SIGNED (2026-07-25 to 2027-07-24); AIXON will churn - book an AIRIS kickoff before the Jul 25 start and plan the AIXON offboarding.",
       "diffs": [],
       "riskTags": [
-        "renewal"
+        "mtg"
       ],
       "ticketCount": 0,
       "mtgCount": 0,
       "projects": [
         {
-          "name": "Segments Enablement",
+          "name": "Renewal (June 2026)",
+          "status": "done"
+        },
+        {
+          "name": "AIRIS Onboarding (starts 2026-07-25)",
           "status": "progress"
         },
         {
-          "name": "Renewal (June 2026)",
+          "name": "AIXON Churn / Offboarding",
           "status": "progress"
         }
       ],
@@ -75,18 +78,18 @@
       "suggestions": [
         {
           "priority": "high",
-          "label": "Renewal · High",
-          "text": "Contract expired 2026-06-30 (17 days overdue). Confirm renewal status with the client today and escalate internally if the AIQUA renewal is still unsigned."
-        },
-        {
-          "priority": "high",
-          "label": "Meeting · High",
-          "text": "No renewal meeting is on the calendar — book one with the SCMP stakeholders this week to force a decision point."
+          "label": "Kickoff - High",
+          "text": "AIRIS starts Jul 25 (next week) and no kickoff is booked - schedule the onboarding meeting with SCMP stakeholders this week."
         },
         {
           "priority": "medium",
-          "label": "Value · Medium",
-          "text": "Package Segments Enablement results into a one-pager as renewal leverage for the conversation."
+          "label": "Churn - Medium",
+          "text": "Plan AIXON offboarding: confirm churn date, data export needs, and notify internal teams / update Salesforce."
+        },
+        {
+          "priority": "low",
+          "label": "Value - Low",
+          "text": "Carry Segments Enablement results into the AIRIS success plan as the baseline for year-one value."
         }
       ]
     },
