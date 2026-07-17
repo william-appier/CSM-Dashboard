@@ -144,7 +144,6 @@
       .then(function () { return window.getAccessToken(); })
       .then(function (tok) { return window.fetchAccessibleResources(tok).then(function (res) { return { tok: tok, cloudId: res[0].id }; }); })
       .then(function (auth) {
-        if (feW.assignee) { body.fields.assignee = { accountId: feW.assignee.accountId }; }
         return fetch('https://api.atlassian.com/ex/jira/' + auth.cloudId + '/rest/api/3/user/search?query=&maxResults=100', { headers: { Authorization: 'Bearer ' + auth.tok, Accept: 'application/json' } }).then(function (r) { return r.json(); });
       })
       .then(function (data) {
@@ -329,6 +328,7 @@
                 issuetype: { name: 'Service Request' }
               }
             };
+            if (feW.assignee) { body.fields.assignee = { accountId: feW.assignee.accountId }; }
             return fetch('https://api.atlassian.com/ex/jira/' + cloudId + '/rest/api/3/issue', {
               method: 'POST',
               headers: { Authorization: 'Bearer ' + tok, 'Content-Type': 'application/json', Accept: 'application/json' },
