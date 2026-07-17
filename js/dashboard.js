@@ -1421,16 +1421,8 @@ async function refresh(){
       fetchAllIssues(user),
       fetchAssignedIssues(user),
     ]);
-    // Filter Issue Tracking to CSM Brief tickets only
-    let _bIssues = reported;
-    try {
-      const _bR = await fetch('./csm-brief.json?' + Date.now());
-      const _bD = await _bR.json();
-      const _bK = new Set((_bD.accounts||[]).flatMap(function(a){return (a.tickets||[]).map(function(t){return t.key;});}));
-      if (_bK.size > 0) _bIssues = reported.filter(function(i){return _bK.has(i.key);});
-    } catch(_e) {}
-    renderDashboard(_bIssues);
-    saveCsmTracked(_bIssues);
+    renderDashboard(reported);
+    saveCsmTracked(reported);
     renderTbd(assigned);
     toast('success',`\u2713 ${reported.length} reported \u00b7 ${assigned.length} assigned`);
   }catch(e){
