@@ -266,7 +266,7 @@
   };
 
   window.feNext = function () {
-    if (feW.step === 1 && (!feW.clientName.trim() || !feW.appId.trim())) {
+    if (feW.step === 1 && (!feW.clientName.trim() || (feW.platform !== 'BB' && !feW.appId.trim()))) {
       alert('Please fill in Client Name and App ID.');
       return;
     }
