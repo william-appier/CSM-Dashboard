@@ -14,7 +14,7 @@
     '.fe-feat-cb.fe-cb-on{background:var(--accent);border-color:var(--accent)}',
     '.fe-feat-name{flex:1;font-size:.88rem;font-weight:500;color:var(--text)}',
     '.fe-badge-clone{font-size:.7rem;padding:2px 8px;border-radius:4px;border:1px solid var(--border);color:var(--muted);flex-shrink:0;font-family:"DM Mono",monospace}',
-    '.fe-badge-manual{font-size:.7rem;padding:2px 8px;border-radius:4px;background:rgba(245,158,11,.15);color:#f59e0b;border:1px solid rgba(245,158,11,.3);flex-shrink:0;font-family:"DM Mono",monospace}',
+    '.fe-badge-manual{font-size:.7rem;padding:2px 8px;border-radius:4px;background:rgba(245,158,11,.15);color:#f59e0b;border:1px solid rgba(245,158,11,.3);flex-shrink:0;font-family:"DM Mono",monospace}.fe-badge-mat{font-size:.62rem;padding:2px 6px;border-radius:8px;background:rgba(245,158,11,.15);color:#b45309;margin-left:4px;white-space:nowrap}.fe-badge-pm{font-size:.62rem;padding:2px 6px;border-radius:8px;background:rgba(239,68,68,.12);color:#dc2626;margin-left:4px;white-space:nowrap}.fe-badge-paid{font-size:.62rem;padding:2px 6px;border-radius:8px;background:rgba(99,102,241,.12);color:#818cf8;margin-left:4px;white-space:nowrap}.fe-warn-box{margin:8px 0;padding:8px 12px;border:1px solid rgba(245,158,11,.4);border-radius:8px;background:rgba(245,158,11,.08);font-size:.72rem;line-height:1.6}',
     '.fe-feat-extra{display:none;flex-direction:column;gap:10px;padding:2px 14px 14px 42px}',
     '.fe-feat-item.fe-row-on .fe-feat-extra{display:flex}',
     '.fe-hint{font-size:.75rem;color:var(--muted);line-height:1.5;margin:0}',
@@ -107,6 +107,19 @@
   };
 
   var feW = {};
+  /* ---- Repo-managed catalog: AIQUA is loaded from feature-catalog.json ---- */
+  var FE_CATALOG_SOURCE = 'built-in';
+  fetch('feature-catalog.json?v=' + Date.now())
+    .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+    .then(function (cat) {
+      if (cat && cat.AIQUA && cat.AIQUA.length) {
+        FE_CATALOG.AIQUA = cat.AIQUA;
+        FE_CATALOG_SOURCE = 'feature-catalog.json';
+        console.log('[feature-enable] AIQUA catalog loaded (' + cat.AIQUA.reduce(function (t, c) { return t + c.items.length; }, 0) + ' features)');
+      }
+    })
+    .catch(function (e) { console.warn('[feature-enable] catalog json not loaded, using built-in:', e.message); });
+
 
   function esc(s) {
     return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
@@ -216,7 +229,10 @@
                         + '\nPlatform: ' + feW.platform
                         + '\nFeature: ' + f.name
                         + (f.sample ? '\nSample ticket: ' + f.sample : '')
-                        + (extraLines ? '\n\n' + extraLines : '')
+                        +
+                  (f.maturity ? '\nMaturity: ' + f.maturity : '') +
+                  (f.pmApproval ? '\nPM approval: required (get PM sign-off)' : '') +
+                  (f.paid ? '\nPaid module: confirm contract scope' : '') + (extraLines ? '\n\n' + extraLines : '')
                         + '\n\nRequested via CSM Dashboard.'
                   }] }]
                 },
@@ -304,6 +320,9 @@
     var badge    = isManual
       ? '<span class="fe-badge-manual">\u26a0 manual</span>'
       : '<span class="fe-badge-clone">clone</span>';
+    if (f.maturity && !/^production$/i.test(f.maturity)) badge += '<span class="fe-badge-mat">' + esc(f.maturity) + '</span>';
+    if (f.pmApproval) badge += '<span class="fe-badge-pm">PM</span>';
+    if (f.paid) badge += '<span class="fe-badge-paid">$</span>';
 
     var extraHtml = '';
     if (f.extra && f.extra.length) {
@@ -330,6 +349,9 @@
     if (f.suggestedAssignee) {
       hintHtml += '<p class="fe-hint" style="color:var(--accent)">\u{1f4a1} Suggested assignee: <strong>' + esc(f.suggestedAssignee) + '</strong></p>';
     }
+    if (f.maturity && !/^production$/i.test(f.maturity)) hintHtml += '<p class="fe-hint" style="color:#b45309;">\u26a0 ' + esc(f.maturity) + ' \u2014 \u63d0\u9192\uff1a\u5efa\u7968\u524d\u5148\u53d6\u5f97 PM \u540c\u610f</p>';
+    else if (f.pmApproval) hintHtml += '<p class="fe-hint" style="color:#b45309;">\u26a0 \u9700 PM \u6838\u51c6 \u2014 \u63d0\u9192\uff1a\u5efa\u7968\u524d\u5148\u77e5\u6703 PM</p>';
+    if (f.paid) hintHtml += '<p class="fe-hint" style="color:#818cf8;">$ \u4ed8\u8cbb\u6a21\u7d44 \u2014 \u63d0\u9192\uff1a\u78ba\u8a8d\u5408\u7d04\u7bc4\u570d\u5305\u542b\u6b64\u529f\u80fd</p>';
 
     var hasExtra = !!(extraHtml || hintHtml);
 
@@ -374,6 +396,16 @@
         + (extraLines ? '<div class="fe-preview-feat-extra">' + extraLines + '</div>' : '')
         + '</div>';
     }).join('');
+  var warnItems = selected.filter(function (f) { return f.pmApproval || f.paid || (f.maturity && !/^production$/i.test(f.maturity)); });
+  if (warnItems.length) {
+    featRows = '<div class="fe-warn-box">\u26a0 \u5efa\u7968\u524d\u63d0\u9192\uff1a' + warnItems.map(function (f) {
+      var tags = [];
+      if (f.maturity && !/^production$/i.test(f.maturity)) tags.push(f.maturity);
+      if (f.pmApproval) tags.push('\u9700 PM \u6838\u51c6');
+      if (f.paid) tags.push('\u4ed8\u8cbb\u6a21\u7d44\uff0c\u78ba\u8a8d\u5408\u7d04');
+      return esc(f.name) + '\uff08' + tags.join('\u3001') + '\uff09';
+    }).join('\uff1b') + '</div>' + featRows;
+  }
     document.getElementById('feBody').innerHTML =
       '<div class="fe-preview-card">'
       + '<div class="fe-preview-row"><span class="fe-preview-label">Platform</span><span class="fe-preview-val">' + esc(feW.platform) + '</span></div>'

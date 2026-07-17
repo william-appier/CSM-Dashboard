@@ -1,0 +1,456 @@
+{
+  "_meta": {
+    "updated": "2026-07-17",
+    "source": "ESS Feature Maturity List 2.0 + Feature onboarding (with Jira) + real ETS tickets",
+    "products": [
+      "AIQUA"
+    ],
+    "note": "Segment Agent / OJM / AIRIS / BotBonnie still served by built-in catalog in feature-enable.js"
+  },
+  "AIQUA": [
+    {
+      "cat": "Channels",
+      "items": [
+        {
+          "id": "sms",
+          "name": "Enable SMS",
+          "mode": "clone",
+          "sample": "QGWL-25618",
+          "maturity": "Production",
+          "extra": [
+            {
+              "id": "smsQuantity",
+              "label": "SMS Quantity",
+              "placeholder": "e.g. 10000",
+              "type": "number"
+            },
+            {
+              "id": "smsValidPeriod",
+              "label": "Valid Period",
+              "placeholder": "e.g. 12 months"
+            }
+          ]
+        },
+        {
+          "id": "edm",
+          "name": "Enable EDM Channel",
+          "mode": "clone",
+          "sample": "QGWL-25619",
+          "maturity": "Production",
+          "extra": [
+            {
+              "id": "email",
+              "label": "Email / Domain",
+              "placeholder": "e.g. noreply@client.com"
+            }
+          ]
+        },
+        {
+          "id": "onsite",
+          "name": "On-site Experience",
+          "mode": "clone",
+          "sample": "QGWL-25620",
+          "maturity": "Production",
+          "extra": []
+        },
+        {
+          "id": "product_feed",
+          "name": "Onboard Product Feed",
+          "mode": "manual",
+          "sample": "QGWL-25675",
+          "maturity": "Production",
+          "extra": [
+            {
+              "id": "productFeedUrl",
+              "label": "Product Feed URL",
+              "placeholder": "https://example.com/feed.xml"
+            }
+          ]
+        },
+        {
+          "id": "multi_email_sender",
+          "name": "Multiple Email Sender Domain",
+          "mode": "clone",
+          "sample": "QGWL-13420",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false,
+          "extra": [
+            {
+              "id": "senderDomains",
+              "label": "Sender Domains",
+              "placeholder": "e.g. news.client.com, promo.client.com"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cat": "Audience",
+      "items": [
+        {
+          "id": "seg_split",
+          "name": "Segment Split",
+          "mode": "clone",
+          "sample": "QGWL-25620",
+          "maturity": "Production",
+          "extra": []
+        },
+        {
+          "id": "new_seg",
+          "name": "New Segment UI",
+          "mode": "clone",
+          "sample": "QGWL-25621",
+          "maturity": "Production",
+          "extra": []
+        },
+        {
+          "id": "event_count_cond",
+          "name": "Event Count Condition",
+          "mode": "clone",
+          "sample": "ETS-2926",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "datetime_seg",
+          "name": "Datetime Segmentation",
+          "mode": "clone",
+          "sample": "QGWL-17237",
+          "maturity": "Closed Beta",
+          "pmApproval": true,
+          "paid": false
+        },
+        {
+          "id": "cross_device",
+          "name": "Include Cross-device Users (Push)",
+          "mode": "clone",
+          "sample": "QGWL-11579",
+          "maturity": "Closed Beta",
+          "pmApproval": true,
+          "paid": false
+        }
+      ]
+    },
+    {
+      "cat": "Campaign",
+      "items": [
+        {
+          "id": "creative",
+          "name": "Creative Studio",
+          "mode": "clone",
+          "sample": "QGWL-25620",
+          "maturity": "Production",
+          "extra": []
+        },
+        {
+          "id": "inapp",
+          "name": "In-app Creative Studio",
+          "mode": "clone",
+          "sample": "QGWL-25620",
+          "maturity": "Production",
+          "extra": []
+        },
+        {
+          "id": "content_asst",
+          "name": "Content Assistant",
+          "mode": "clone",
+          "sample": "QGWL-25620",
+          "maturity": "Production",
+          "extra": []
+        },
+        {
+          "id": "feed_trigger",
+          "name": "Feed Trigger",
+          "mode": "manual",
+          "sample": "QGWL-25674",
+          "maturity": "Production",
+          "extra": []
+        },
+        {
+          "id": "sto",
+          "name": "Send Time Optimization (STO)",
+          "mode": "clone",
+          "sample": "QGWL-12795",
+          "maturity": "Closed Beta",
+          "pmApproval": true,
+          "paid": false
+        },
+        {
+          "id": "merge_push",
+          "name": "Merge Push Campaign",
+          "mode": "clone",
+          "sample": "QGWL-18743",
+          "maturity": "Open Beta",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "sending_cap",
+          "name": "Sending Cap (Email/SMS)",
+          "mode": "clone",
+          "sample": "QGWL-22220",
+          "maturity": "Closed Beta",
+          "pmApproval": true,
+          "paid": false
+        },
+        {
+          "id": "inapp_priority",
+          "name": "In-app Campaign Priority",
+          "mode": "clone",
+          "sample": "QGWL-12114",
+          "maturity": "Closed Beta",
+          "pmApproval": true,
+          "paid": false
+        },
+        {
+          "id": "inapp_addl_cond",
+          "name": "In-app Additional Audience Conditions",
+          "mode": "clone",
+          "sample": "QGWL-14047",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "control_group",
+          "name": "Control Group Testing",
+          "mode": "clone",
+          "sample": "QGWL-17738",
+          "maturity": "Closed Beta",
+          "pmApproval": true,
+          "paid": false
+        },
+        {
+          "id": "est_reach",
+          "name": "Estimated Reachable Users",
+          "mode": "clone",
+          "sample": "QGWL-12796",
+          "maturity": "Open Beta",
+          "pmApproval": false,
+          "paid": false
+        }
+      ]
+    },
+    {
+      "cat": "Analytics",
+      "items": [
+        {
+          "id": "analytics_studio",
+          "name": "Analytics Studio",
+          "mode": "clone",
+          "sample": "QGWL-12950",
+          "maturity": "Open Beta",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "omo_conversion",
+          "name": "Online Merge Offline Conversion",
+          "mode": "clone",
+          "sample": "QGRAPH-24772",
+          "maturity": "Closed Beta",
+          "pmApproval": true,
+          "paid": false
+        },
+        {
+          "id": "analytics_reco",
+          "name": "Recommendation (Analytics)",
+          "mode": "clone",
+          "sample": "QGWL-21442",
+          "maturity": "Closed Beta",
+          "pmApproval": true,
+          "paid": false
+        }
+      ]
+    },
+    {
+      "cat": "Recommendation 2.0",
+      "items": [
+        {
+          "id": "reco_purchased_filter",
+          "name": "Purchased Product Filtering",
+          "mode": "clone",
+          "sample": "QGWL-10340",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": true
+        },
+        {
+          "id": "reco_purchased_lifetime",
+          "name": "Purchased Product Filtering (Lifetime)",
+          "mode": "clone",
+          "sample": "QGWL-10340",
+          "maturity": "Closed Beta",
+          "pmApproval": true,
+          "paid": true
+        },
+        {
+          "id": "reco_filter_training",
+          "name": "Filter in Training",
+          "mode": "clone",
+          "sample": "QGWL-18443",
+          "maturity": "Closed Beta",
+          "pmApproval": true,
+          "paid": false
+        },
+        {
+          "id": "reco_omo",
+          "name": "OMO Mode",
+          "mode": "clone",
+          "sample": "QGWL-20408",
+          "maturity": "Closed Beta",
+          "pmApproval": true,
+          "paid": false
+        }
+      ]
+    },
+    {
+      "cat": "Account",
+      "items": [
+        {
+          "id": "usage_info",
+          "name": "Usage Information (Email/SMS)",
+          "mode": "clone",
+          "sample": "QGWL-14936",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "blackout",
+          "name": "Blackout Window",
+          "mode": "clone",
+          "sample": "QGWL-11925",
+          "maturity": "Closed Beta",
+          "pmApproval": true,
+          "paid": false
+        },
+        {
+          "id": "night_push",
+          "name": "Night Push (Bypass Blackout)",
+          "mode": "clone",
+          "sample": "QGWL-14667",
+          "maturity": "Closed Beta",
+          "pmApproval": true,
+          "paid": false
+        },
+        {
+          "id": "datetime_conv",
+          "name": "Datetime Converter",
+          "mode": "clone",
+          "sample": "QGWL-6605",
+          "maturity": "Closed Beta",
+          "pmApproval": true,
+          "paid": false
+        },
+        {
+          "id": "data_retention",
+          "name": "Longer Data Retention",
+          "mode": "clone",
+          "sample": "QGWL-16103",
+          "maturity": "Closed Beta",
+          "pmApproval": true,
+          "paid": true
+        },
+        {
+          "id": "short_url_domain",
+          "name": "Short URL with Custom Brand Domain",
+          "mode": "clone",
+          "sample": "QGWL-15677",
+          "maturity": "Closed Beta",
+          "pmApproval": true,
+          "paid": false
+        }
+      ]
+    },
+    {
+      "cat": "Security",
+      "items": [
+        {
+          "id": "pii_disable",
+          "name": "Disable PII Columns in Segment",
+          "mode": "clone",
+          "sample": "QGWL-17651",
+          "maturity": "Closed Beta",
+          "pmApproval": true,
+          "paid": false
+        },
+        {
+          "id": "twofa",
+          "name": "2FA",
+          "mode": "clone",
+          "sample": "QGWL-11389",
+          "maturity": "Closed Beta",
+          "pmApproval": true,
+          "paid": false
+        }
+      ]
+    },
+    {
+      "cat": "Data Integration",
+      "items": [
+        {
+          "id": "edp_ki",
+          "name": "EDP K/I for Accounts",
+          "mode": "clone",
+          "sample": "QGWL-12143",
+          "maturity": "Closed Beta",
+          "pmApproval": true,
+          "paid": false
+        },
+        {
+          "id": "edp_count",
+          "name": "EDP Count / Lifetime Count",
+          "mode": "clone",
+          "sample": "QGWL-20530",
+          "maturity": "Closed Beta",
+          "pmApproval": true,
+          "paid": false
+        },
+        {
+          "id": "event_param_sum",
+          "name": "Event Parameter Summation",
+          "mode": "clone",
+          "sample": "QGWL-13155",
+          "maturity": "Closed Beta",
+          "pmApproval": true,
+          "paid": false
+        }
+      ]
+    },
+    {
+      "cat": "Others",
+      "items": [
+        {
+          "id": "campaign_calendar",
+          "name": "Campaign Calendar",
+          "mode": "clone",
+          "sample": "QGWL-16787",
+          "maturity": "Alpha",
+          "pmApproval": true,
+          "paid": false
+        },
+        {
+          "id": "geofence",
+          "name": "Geofence",
+          "mode": "clone",
+          "sample": "QGWL-16198",
+          "maturity": "Closed Beta",
+          "pmApproval": true,
+          "paid": false
+        },
+        {
+          "id": "dnd_custom_font",
+          "name": "Drag & Drop Editor - Custom Font",
+          "mode": "clone",
+          "sample": "QGWL-12336",
+          "maturity": "Closed Beta",
+          "pmApproval": true,
+          "paid": false
+        }
+      ]
+    }
+  ]
+}
