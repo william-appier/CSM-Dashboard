@@ -360,7 +360,14 @@
             if (window.loadTickets) window.loadTickets();
           } catch (e) { console.warn('[feature-enable] tracking record failed:', e.message); }
         }
-        feShowResult(created, failed);
+        if (feW.platform === 'BB' && created.length && !failed.length) {
+          closeFeWizard();
+          if (window.switchTab) window.switchTab('tracking');
+          if (window.renderOnboardingProgress) window.renderOnboardingProgress();
+          if (typeof window.toast === 'function') window.toast('success', '\u2713 Created ' + created.join(' \u00b7 '));
+        } else {
+          feShowResult(created, failed);
+        }
       })
       .catch(function(err){
         document.getElementById('feBody').innerHTML =
@@ -415,10 +422,11 @@
       + '<label class="wiz-label">Client Name <span style="color:var(--red)">*</span></label>'
       + '<input class="wiz-input" id="feClientName" placeholder="e.g. Mannings HK" value="' + esc(feW.clientName) + '" oninput="window.feSetClientName(this.value)">'
       + '</div>'
-      + '<div class="wiz-field-group">'
-      + '<label class="wiz-label">App ID <span style="color:var(--red)">*</span></label>'
-      + '<input class="wiz-input" id="feAppId" placeholder="e.g. 12345" value="' + esc(feW.appId) + '" oninput="window.feSetAppId(this.value)">'
-      + '</div>';
+      + (feW.platform === 'BB' ? '' :
+        '<div class="wiz-field-group">'
+        + '<label class="wiz-label">App ID <span style="color:var(--red)">*</span></label>'
+        + '<input class="wiz-input" id="feAppId" placeholder="e.g. 12345" value="' + esc(feW.appId) + '" oninput="window.feSetAppId(this.value)">'
+        + '</div>');
     document.getElementById('feBody').innerHTML += '' +
       '<label class="wiz-label" style="display:block;margin-top:14px;">Assignee (optional)</label>' +
       '<input class="wiz-input" type="text" id="feAsnSearch" placeholder="Search assignee\u2026" autocomplete="off" oninput="feAsnFilter(this.value)" onfocus="feAsnEnsure()">' +
