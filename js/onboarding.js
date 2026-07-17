@@ -572,6 +572,15 @@ async function createBotBonnieTicket(){
     switchTab('tracking');
     renderOnboardingProgress();
     toast('success',`\u2713 Created ${created.key} \u2014 BotBonnie onboarding started`);
+      setTimeout(function () {
+        if (window.openFeatureEnableWizard && window.fePickPlatform) {
+          window.openFeatureEnableWizard();
+          window.fePickPlatform('BB');
+          if (window.feSetClientName) window.feSetClientName(clientName);
+          if (window.feNext) window.feNext();
+          if (typeof toast === 'function') toast('info', 'Pick BotBonnie features to enable \u2014 or close if not needed');
+        }
+      }, 700);
   }catch(e){
     if(err){ err.textContent='Failed: '+e.message; err.style.display='block'; }
     if(btn){ btn.disabled=false; btn.textContent='Create Onboard Ticket \u2192'; }
