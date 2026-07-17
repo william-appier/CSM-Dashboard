@@ -3,9 +3,10 @@
     "updated": "2026-07-17",
     "source": "ESS Feature Maturity List 2.0 + Feature onboarding (with Jira) + real ETS tickets",
     "products": [
-      "AIQUA"
+      "AIQUA",
+      "BB"
     ],
-    "note": "Segment Agent / OJM / AIRIS / BotBonnie still served by built-in catalog in feature-enable.js"
+    "note": "AIQUA includes OJM category. Segment Agent / AIRIS still built-in (AIRIS pending PM sample tickets)."
   },
   "AIQUA": [
     {
@@ -448,6 +449,206 @@
           "sample": "QGWL-12336",
           "maturity": "Closed Beta",
           "pmApproval": true,
+          "paid": false
+        }
+      ]
+    },
+    {
+      "cat": "OJM",
+      "items": [
+        {
+          "id": "ojm_enable",
+          "name": "Enable OJM",
+          "mode": "manual",
+          "sample": "PHXX-6251",
+          "board": "PHXX",
+          "suggestedAssignee": "Shiv",
+          "maturity": "Production",
+          "extra": [
+            {
+              "id": "botId",
+              "label": "Bot ID",
+              "placeholder": "Provided by client"
+            }
+          ]
+        },
+        {
+          "id": "ojm_feat",
+          "name": "OJM Feature Enablement",
+          "mode": "clone",
+          "sample": "PHXX-6252",
+          "board": "PHXX",
+          "maturity": "Production",
+          "extra": []
+        },
+        {
+          "id": "ojm_ch_line",
+          "name": "Channel - LINE",
+          "mode": "clone",
+          "sample": "PHXX-4079",
+          "maturity": "Production",
+          "pmApproval": true,
+          "paid": false
+        },
+        {
+          "id": "ojm_ch_fbm",
+          "name": "Channel - Facebook Messenger",
+          "mode": "clone",
+          "sample": "PHXX-4079",
+          "maturity": "Production",
+          "pmApproval": true,
+          "paid": false
+        },
+        {
+          "id": "ojm_ch_ig",
+          "name": "Channel - Instagram",
+          "mode": "clone",
+          "sample": "PHXX-4079",
+          "maturity": "Production",
+          "pmApproval": true,
+          "paid": false
+        },
+        {
+          "id": "ojm_ch_webchat",
+          "name": "Channel - WebChat",
+          "mode": "clone",
+          "sample": "PHXX-4079",
+          "maturity": "Production",
+          "pmApproval": true,
+          "paid": false
+        },
+        {
+          "id": "ojm_ch_whatsapp",
+          "name": "Channel - WhatsApp",
+          "mode": "clone",
+          "sample": "PHXX-4079",
+          "maturity": "Production",
+          "pmApproval": true,
+          "paid": false
+        },
+        {
+          "id": "ojm_ch_zalo",
+          "name": "Channel - Zalo",
+          "mode": "clone",
+          "sample": "PHXX-4079",
+          "maturity": "Production",
+          "pmApproval": true,
+          "paid": false
+        },
+        {
+          "id": "ojm_ch_viber",
+          "name": "Channel - Viber",
+          "mode": "clone",
+          "sample": "PHXX-4079",
+          "maturity": "Production",
+          "pmApproval": true,
+          "paid": false
+        },
+        {
+          "id": "ojm_integration_check",
+          "name": "Integration Check",
+          "mode": "clone",
+          "sample": "PHXX-3337",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ojm_aq_line_click",
+          "name": "Enable Bind to AQ for qg_line_click",
+          "mode": "clone",
+          "sample": "BBT-5009",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ojm_webhook",
+          "name": "Enable Webhook for OJM",
+          "mode": "clone",
+          "sample": "ETS-2011",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        }
+      ]
+    }
+  ],
+  "BB": [
+    {
+      "cat": "Conversation",
+      "items": [
+        {
+          "id": "bb_knowledge_bot",
+          "name": "Knowledge Bot",
+          "mode": "clone",
+          "sample": "BBT-5176",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": true
+        }
+      ]
+    },
+    {
+      "cat": "EC-Platform",
+      "items": [
+        {
+          "id": "bb_shopify_restock",
+          "name": "Shopify Restock Notification",
+          "mode": "clone",
+          "sample": "BBT-5176",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": true
+        },
+        {
+          "id": "bb_shopify",
+          "name": "Shopify Integration",
+          "mode": "clone",
+          "sample": "BBT-5176",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": true
+        },
+        {
+          "id": "bb_shopline",
+          "name": "Shopline Integration",
+          "mode": "clone",
+          "sample": "BBT-5176",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": true
+        },
+        {
+          "id": "bb_91app",
+          "name": "91App Integration",
+          "mode": "clone",
+          "sample": "BBT-5176",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": true
+        },
+        {
+          "id": "bb_cyberbiz",
+          "name": "Cyberbiz Integration",
+          "mode": "clone",
+          "sample": "BBT-5176",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": true
+        }
+      ]
+    },
+    {
+      "cat": "API",
+      "items": [
+        {
+          "id": "bb_open_api",
+          "name": "Open API",
+          "mode": "clone",
+          "sample": "BBT-5364",
+          "maturity": "Production",
+          "pmApproval": false,
           "paid": false
         }
       ]
