@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-17T11:56:52.531+08:00",
+  "lastUpdated": "2026-07-17T13:29:15.771+08:00",
   "rules": [
     {
       "id": "okr-consolidate",
@@ -136,17 +136,17 @@
     },
     {
       "account": "SCMP",
-      "platform": "AIQUA",
-      "startDate": "2025-07-01",
-      "endDate": "2026-06-30",
-      "note": "Contract sent - waiting for client to sign back (as of 2026-07-07)"
+      "platform": "AIRIS",
+      "startDate": "2026-07-25",
+      "endDate": "2027-07-24",
+      "note": "AIRIS contract SIGNED (confirmed 2026-07-17). Previous AIQUA contract ended 2026-06-30. AIXON will churn."
     },
     {
       "account": "Mannings",
       "platform": "AIQUA/AIRIS",
       "startDate": null,
       "endDate": "2026-09-30",
-      "note": "Renewed AQ & AX, extended to 2026-09-30 (confirmed 2026-07-07)"
+      "note": "Q3 renewal COMPLETED - AQ & AX extended to 2026-09-30 (re-confirmed 2026-07-17)"
     },
     {
       "account": "10/10Hope",
@@ -491,6 +491,18 @@
       "category": "renewal",
       "client": "Mannings",
       "description": "Renewed AQ & AX, extended to 2026-09-30"
+    },
+    {
+      "date": "2026-07-17",
+      "category": "Renewal",
+      "client": "SCMP",
+      "description": "AIRIS contract signed, 2026-07-25 to 2027-07-24"
+    },
+    {
+      "date": "2026-07-17",
+      "category": "Renewal",
+      "client": "SCMP",
+      "description": "AIXON churned (client moving to AIRIS only)"
     }
   ],
   "feedbackLog": [],
