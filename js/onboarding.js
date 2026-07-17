@@ -484,6 +484,10 @@ function openBotBonnieModal(){
         <label class="wiz-label">Client Name <span class="wiz-req">*</span></label>
         <input class="wiz-input" id="bbClientName" placeholder="e.g. Mannings" autofocus/>
       </div>
+      <div class="wiz-field">
+        <label class="wiz-label">Bot ID</label>
+        <input class="wiz-input" id="bbBotId" placeholder="e.g. bot-xxx"/>
+      </div>
       <div class="wiz-err" id="bbErr" style="display:none;margin-bottom:10px"></div>
       <div style="display:flex;gap:10px;margin-top:18px;justify-content:flex-end">
         <button class="btn-wiz-back" onclick="document.getElementById('bbModal').remove()">Cancel</button>
@@ -496,6 +500,7 @@ function openBotBonnieModal(){
 
 async function createBotBonnieTicket(){
   const clientName = document.getElementById('bbClientName')?.value?.trim();
+  const botId = (document.getElementById('bbBotId')?.value || '').trim();
   const err = document.getElementById('bbErr');
   if(!clientName){ err.textContent='Client name is required'; err.style.display='block'; return; }
   err.style.display='none';
@@ -550,6 +555,7 @@ async function createBotBonnieTicket(){
     const bbDesc = sf.fields?.description
       ? { type:'doc', version:1, content:(sf.fields.description.content||[]).map(sanitizeAdf).filter(Boolean) }
       : { type:'doc', version:1, content:[{ type:'paragraph', content:[{ type:'text', text:'BotBonnie onboarding for '+clientName+'. Please refer to BBT-7539 for the full configuration template.' }] }] };
+    if (botId && bbDesc && bbDesc.content) { bbDesc.content.unshift({ type: 'paragraph', content: [{ type: 'text', text: 'Bot ID: ' + botId }] }); }
     const payload = {
       fields:{
         project:    { key:'ETS' },
@@ -562,7 +568,7 @@ async function createBotBonnieTicket(){
     };
     const created = await apiFetch(`${base}/rest/api/3/issue`,{method:'POST',body:JSON.stringify(payload)});
     addOnboarding({
-      id:'ob_bb_'+Date.now(), platform:'BotBonnie', clientName,
+      id:'ob_bb_'+Date.now(), platform:'BotBonnie', clientName, botId: botId,
       onboardTicketKey:created.key, createdAt:new Date().toISOString().slice(0,10),
       appId:'', projectId:'', organizationId:'',
       features:[{ name:'BotBonnie Onboard', featureId:'bb_onboard', ticketKey:created.key,
@@ -577,7 +583,7 @@ async function createBotBonnieTicket(){
           window.openFeatureEnableWizard();
           window.fePickPlatform('BB');
           if (window.feSetClientName) window.feSetClientName(clientName);
-          if (window.feNext) window.feNext();
+          if (window.feNext) { window.feNext(); window.feNext(); }
           if (typeof toast === 'function') toast('info', 'Pick BotBonnie features to enable \u2014 or close if not needed');
         }
       }, 700);
