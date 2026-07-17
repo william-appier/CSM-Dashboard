@@ -4,9 +4,10 @@
     "source": "ESS Feature Maturity List 2.0 + Feature onboarding (with Jira) + real ETS tickets",
     "products": [
       "AIQUA",
-      "BB"
+      "BB",
+      "AIRIS"
     ],
-    "note": "AIQUA includes OJM category. Segment Agent / AIRIS still built-in (AIRIS pending PM sample tickets)."
+    "note": "AIQUA includes OJM category. AIRIS features from ESS Maturity List (AIRIS & AIXON tab) - no sample tickets in source, mode=manual; Deprecated/Roadmap/DEV excluded. Segment Agent still built-in."
   },
   "AIQUA": [
     {
@@ -648,6 +649,982 @@
           "mode": "clone",
           "sample": "BBT-5364",
           "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        }
+      ]
+    }
+  ],
+  "AIRIS": [
+    {
+      "cat": "Data Foundation",
+      "items": [
+        {
+          "id": "ar_data_management_data_quality_booster",
+          "name": "Data Management - Data Quality Booster",
+          "mode": "manual",
+          "maturity": "Closed Beta",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_data_management_offline_data_upload_via_",
+          "name": "Data Management - Offline Data Upload via Offline Event API",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_tracking_tracking_using_sdk",
+          "name": "Tracking - Tracking-Using SDK",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_tracking_tracking_using_api_airis_apis",
+          "name": "Tracking - Tracking-Using API (AIRIS APIs)",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_tracking_cross_domain_tracking",
+          "name": "Tracking - Cross Domain Tracking",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_tracking_campaign_tracking_web_utm",
+          "name": "Tracking - Campaign Tracking (Web UTM)",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_tracking_automated_data_capture",
+          "name": "Tracking - Automated Data Capture",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_schema_creation_auto_schema_inference",
+          "name": "Schema creation - Auto Schema Inference",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_schema_creation_manaul_schema_creation",
+          "name": "Schema creation - Manaul Schema Creation",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_schema_creation_copy_and_paste_schema_ac",
+          "name": "Schema creation - Copy and Paste Schema across Projects",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_data_import_create_connections",
+          "name": "Data Import - Create Connections",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_data_import_create_data_loader_tasks",
+          "name": "Data Import - Create Data loader Tasks",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_data_import_s3_incremental_data_import",
+          "name": "Data Import - S3 Incremental Data Import",
+          "mode": "manual",
+          "maturity": "Closed Beta",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_data_import_csv_loader",
+          "name": "Data Import - CSV loader",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_user_unification_id_hierarchy_setup",
+          "name": "User unification - ID Hierarchy Setup",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_user_unification_user_unification_with_m",
+          "name": "User unification - User unification with multiple identifiers",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_customer_360_profile_event_property",
+          "name": "Customer 360 - Profile / Event Property",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_customer_360_behavioral_timeline_profile",
+          "name": "Customer 360 - Behavioral Timeline (Profile History)",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_customer_360_deleting_a_customer_profile",
+          "name": "Customer 360 - Deleting a customer Profile",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_customer_360_bulk_updating_deleting",
+          "name": "Customer 360 - Bulk updating / deleting",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_customer_360_edit_profile_layout",
+          "name": "Customer 360 - Edit profile layout",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_aiqua_integration_campaign_configuration",
+          "name": "AIQUA Integration - Campaign Configuration Info",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_aiqua_integration_1sdk_integration",
+          "name": "AIQUA Integration - 1SDK Integration",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_aiqua_integration_offline_event_profile_",
+          "name": "AIQUA Integration - Offline Event/Profile Sync",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_botbonnie_integration_botbonnie_tags_imp",
+          "name": "BotBonnie Integration - BotBonnie Tags import",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_botbonnie_integration_botbonnie_account_",
+          "name": "BotBonnie Integration - BotBonnie Account Status",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        }
+      ]
+    },
+    {
+      "cat": "Insights & Intelligence",
+      "items": [
+        {
+          "id": "ar_ai_gen_keywords_ai_gen_keywords_jp_kr",
+          "name": "AI-Gen Keywords - AI-Gen Keywords - JP, KR",
+          "mode": "manual",
+          "maturity": "Closed Beta",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_ai_gen_keywords_ai_gen_keywords_gcr_sea",
+          "name": "AI-Gen Keywords - AI-Gen Keywords - GCR, SEA",
+          "mode": "manual",
+          "maturity": "Closed Beta",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_prediction_smart_segments_for_real_time_",
+          "name": "Prediction - Smart Segments for Real-Time Prediction",
+          "mode": "manual",
+          "maturity": "Closed Beta",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_prediction_churn_prediction_for_offline_",
+          "name": "Prediction - Churn Prediction for Offline Conversions",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_copilot_analytics_copilot",
+          "name": "Copilot - Analytics Copilot",
+          "mode": "manual",
+          "maturity": "Closed Beta",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_copilot_keyword_suggestion_copilot",
+          "name": "Copilot - Keyword Suggestion Copilot",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_contextual_ai_llm_interest_tagging",
+          "name": "Contextual AI - LLM Interest Tagging",
+          "mode": "manual",
+          "maturity": "Alpha",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_attribution_omo_attribution_report",
+          "name": "Attribution - OMO Attribution Report",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_data_analytics_activity_report",
+          "name": "Data Analytics - Activity Report",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_data_analytics_profiles_report",
+          "name": "Data Analytics - Profiles  Report",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_data_analytics_journey_report",
+          "name": "Data Analytics - Journey  Report",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_data_analytics_trends_report",
+          "name": "Data Analytics - Trends  Report",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_data_analytics_retention_report",
+          "name": "Data Analytics - Retention  Report",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_data_analytics_cohort_report",
+          "name": "Data Analytics - Cohort  Report",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_data_analytics_attribution_report",
+          "name": "Data Analytics - Attribution  Report",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_data_analytics_correlational_report",
+          "name": "Data Analytics - Correlational Report",
+          "mode": "manual",
+          "maturity": "Closed Beta",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_segmentation_segment_creation",
+          "name": "Segmentation - Segment Creation",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_segmentation_export_segment_audience_syn",
+          "name": "Segmentation - Export Segment (Audience Sync)",
+          "mode": "manual",
+          "maturity": "Closed Beta",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_segmentation_live_segment",
+          "name": "Segmentation - Live Segment",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_segmentation_enterprise_segment",
+          "name": "Segmentation - Enterprise Segment",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_reporting_global_filter_events",
+          "name": "Reporting - Global Filter - Events",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_reporting_export_download_report",
+          "name": "Reporting - Export - Download Report",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_reporting_export_upload_report",
+          "name": "Reporting - Export - Upload Report",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_reporting_export_google_sheets",
+          "name": "Reporting - Export - Google Sheets",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_reporting_export_amazon_s3",
+          "name": "Reporting - Export - Amazon S3",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_reporting_export_sftp",
+          "name": "Reporting - Export - SFTP",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_reporting_sync_bulk_webhooks",
+          "name": "Reporting - Sync -  Bulk Webhooks",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_reporting_sync_bulk_update_properties",
+          "name": "Reporting - Sync -  Bulk update properties",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_reporting_sync_aiqua_create_segment",
+          "name": "Reporting - Sync -  AIQUA Create Segment",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_reporting_sync_botbonnie_create_segment",
+          "name": "Reporting - Sync -  BotBonnie Create Segment",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_reporting_sync_salesforce_upsert_table_p",
+          "name": "Reporting - Sync - Salesforce Upsert Table (Profile report only)",
+          "mode": "manual",
+          "maturity": "Alpha",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_reporting_share_report",
+          "name": "Reporting - Share Report",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_reporting_pin_to_dashboard",
+          "name": "Reporting - Pin to Dashboard",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_reporting_email_subscription",
+          "name": "Reporting - Email Subscription",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_reporting_report_copy_paste_file",
+          "name": "Reporting - Report Copy-Paste File",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_reporting_report_snapshot",
+          "name": "Reporting - Report Snapshot",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_formula_read_only",
+          "name": "Formula - Read-only",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_formula_trend_reports_formulas",
+          "name": "Formula - Trend reports formulas",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_prediction_conversion_score",
+          "name": "Prediction - Conversion score",
+          "mode": "manual",
+          "maturity": "Closed Beta",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_prediction_campaign_engagement_score",
+          "name": "Prediction - Campaign engagement score",
+          "mode": "manual",
+          "maturity": "Closed Beta",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_prediction_uplift_score",
+          "name": "Prediction - Uplift score",
+          "mode": "manual",
+          "maturity": "Closed Beta",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_interest_keyword_external_interest_keywo",
+          "name": "Interest Keyword - External Interest Keyword (via events)",
+          "mode": "manual",
+          "maturity": "Open Beta",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_interest_keyword_external_interest_keywo_2",
+          "name": "Interest Keyword - External Interest Keyword analysis",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_copilot_conversation_based_analytics_bot",
+          "name": "Copilot - Conversation-based analytics bot",
+          "mode": "manual",
+          "maturity": "Alpha",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_copilot_auto_suggest_analytics_report_qu",
+          "name": "Copilot - Auto suggest analytics report questions",
+          "mode": "manual",
+          "maturity": "Alpha",
+          "pmApproval": false,
+          "paid": false
+        }
+      ]
+    },
+    {
+      "cat": "Unified Activation",
+      "items": [
+        {
+          "id": "ar_new_connectors_meta_audience_sync",
+          "name": "New Connectors - Meta Audience Sync",
+          "mode": "manual",
+          "maturity": "Closed Beta",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_new_connectors_meta_conversion_api",
+          "name": "New Connectors - Meta Conversion API",
+          "mode": "manual",
+          "maturity": "Closed Beta",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_new_connectors_google_ads_audience_sync",
+          "name": "New Connectors - Google Ads Audience Sync",
+          "mode": "manual",
+          "maturity": "Closed Beta",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_new_connectors_google_ads_conversion_api",
+          "name": "New Connectors - Google Ads Conversion API",
+          "mode": "manual",
+          "maturity": "Closed Beta",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_new_connectors_tiktok_audience_sync",
+          "name": "New Connectors - Tiktok Audience Sync",
+          "mode": "manual",
+          "maturity": "Closed Beta",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_new_connectors_x_com_twitter_audience_sy",
+          "name": "New Connectors - X.com (Twitter) Audience Sync",
+          "mode": "manual",
+          "maturity": "Closed Beta",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_generic_data_export_export_task_to_cloud",
+          "name": "Generic Data Export - Export Task to Cloud Data Warehouse",
+          "mode": "manual",
+          "maturity": "Closed Beta",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_data_security_updates_pii_masking_in_aud",
+          "name": "Data Security Updates - PII Masking in Audience Sync & Exports",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_automate_profile_reports_formulas",
+          "name": "Automate - Profile reports formulas",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_automate_trigger_update_profile_property",
+          "name": "Automate - Trigger - Update Profile Property",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_automate_trigger_inject_script",
+          "name": "Automate - Trigger - Inject Script",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_automate_trigger_webhook",
+          "name": "Automate - Trigger - Webhook",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_automate_trigger_google_ads_event_based_",
+          "name": "Automate - Trigger - Google Ads event-based retargeting",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_automate_trigger_meta_custom_audience_re",
+          "name": "Automate - Trigger - Meta custom audience retargeting",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_automate_trigger_meta_conversion_api_int",
+          "name": "Automate - Trigger - Meta conversion API integration",
+          "mode": "manual",
+          "maturity": "Closed Beta",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_automate_trigger_meta_pixel_integration",
+          "name": "Automate - Trigger - Meta Pixel integration",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_automate_trigger_botbonnie_webchat_start",
+          "name": "Automate - Trigger - BotBonnie WebChat Start",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_automate_trigger_active_campaign",
+          "name": "Automate - Trigger - Active Campaign",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_automate_schedule_batches_download_repor",
+          "name": "Automate - Schedule batches - Download Report",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_automate_schedule_batches_bulk_webhooks",
+          "name": "Automate - Schedule batches - Bulk Webhooks",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_automate_schedule_batches_bulk_delete_vi",
+          "name": "Automate - Schedule batches - Bulk delete visitors",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_automate_schedule_batches_bulk_update_pr",
+          "name": "Automate - Schedule batches - Bulk update properties",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_automate_schedule_batches_aiqua_create_s",
+          "name": "Automate - Schedule batches - AIQUA Create Segment",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_automate_schedule_batches_botbonnie_crea",
+          "name": "Automate - Schedule batches - BotBonnie Create Segment",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_automate_schedule_batches_google_sheets_",
+          "name": "Automate - Schedule batches - Google Sheets Export",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_automate_schedule_batches_amazon_s3_expo",
+          "name": "Automate - Schedule batches - Amazon S3 Export",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_automate_schedule_batches_sftp_export",
+          "name": "Automate - Schedule batches - SFTP Export",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        }
+      ]
+    },
+    {
+      "cat": "Enterprise Platform",
+      "items": [
+        {
+          "id": "ar_segmentation_unified_segments_aka_enterp",
+          "name": "Segmentation - Unified Segments (aka \"Enterprise Segments\")",
+          "mode": "manual",
+          "maturity": "Closed Beta",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_segmentation_unified_segment_hub",
+          "name": "Segmentation - Unified Segment Hub",
+          "mode": "manual",
+          "maturity": "Closed Beta",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_enterprise_console_airis_integrated_to_u",
+          "name": "Enterprise Console - AIRIS Integrated to Unified UX (Partner Integrations)",
+          "mode": "manual",
+          "maturity": "Closed Beta",
+          "pmApproval": false,
+          "paid": false
+        }
+      ]
+    },
+    {
+      "cat": "Others",
+      "items": [
+        {
+          "id": "ar_sso_sso_with_client_s_ad_account",
+          "name": "SSO - SSO with client's AD account",
+          "mode": "manual",
+          "maturity": "Closed Beta",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_sso_sso_across_appier_products",
+          "name": "SSO - SSO across Appier products",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        }
+      ]
+    },
+    {
+      "cat": "Data Governance & Operation",
+      "items": [
+        {
+          "id": "ar_data_governance_manage_access_to_users_g",
+          "name": "Data Governance - Manage access to Users & Groups",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_data_governance_control_over_data_export",
+          "name": "Data Governance - Control over Data export",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_data_governance_define_pii_properties",
+          "name": "Data Governance - Define PII properties",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_data_governance_control_over_pii_visibil",
+          "name": "Data Governance - Control over PII visibility",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_data_governance_product_history",
+          "name": "Data Governance - Product History",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_data_governance_download_audit_log",
+          "name": "Data Governance - Download audit log",
+          "mode": "manual",
+          "maturity": "Closed Beta",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_data_operation_export_task",
+          "name": "Data Operation - Export Task",
+          "mode": "manual",
+          "maturity": "Closed Beta",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_data_operation_import_api",
+          "name": "Data Operation - Import API",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_data_operation_export_api",
+          "name": "Data Operation - Export API",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_data_operation_profile_api",
+          "name": "Data Operation - Profile API",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_data_operation_report_api",
+          "name": "Data Operation - Report API",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_data_operation_upsert_dedup_for_transact",
+          "name": "Data Operation - Upsert (dedup) for transactional data",
+          "mode": "manual",
+          "maturity": "Production",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_data_limit_increase_increase_data_limit_",
+          "name": "Data limit increase - Increase Data Limit in Schedule batch",
+          "mode": "manual",
+          "maturity": "Closed Beta",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_data_limit_increase_increase_report_quer",
+          "name": "Data limit increase - Increase Report query duration",
+          "mode": "manual",
+          "maturity": "Closed Beta",
+          "pmApproval": false,
+          "paid": false
+        },
+        {
+          "id": "ar_data_limit_increase_bu_to_master_data_in",
+          "name": "Data limit increase - BU-to-Master Data integration",
+          "mode": "manual",
+          "maturity": "Closed Beta",
           "pmApproval": false,
           "paid": false
         }
