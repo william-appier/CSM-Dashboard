@@ -132,6 +132,7 @@
           FE_CATALOG_SOURCE = 'feature-catalog.json';
           console.log('[feature-enable] ' + pk + ' catalog loaded (' + cat[pk].reduce(function (t, c) { return t + (c.items || []).length; }, 0) + ' features)');
         });
+        if (!cat.AIXON && FE_CATALOG.AIRIS) { FE_CATALOG.AIXON = FE_CATALOG.AIRIS; }
       }
     })
     .catch(function (e) { console.warn('[feature-enable] catalog json not loaded, using built-in:', e.message); });
@@ -395,7 +396,7 @@
       ['AIQUA', 'Customer Engagement',   '\u{1f3af}', false],
       ['AIRIS', 'Customer Data Platform', '\u{1f52e}', false],
       ['BB', 'BotBonnie', '\u{1f916}', false],
-      ['AIXON', 'Enterprise AI', '\ud83e\udde0', true]
+      ['AIXON', 'Enterprise AI', '\ud83e\udde0', false]
     ];
     var cards = platforms.map(function(p) {
       var dis = p[3];
