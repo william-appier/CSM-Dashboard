@@ -601,3 +601,29 @@ function saveEntry(){
 // ════════════════════════════════════════════════════════════════════════════
 // END CSM BRIEF
 // ════════════════════════════════════════════════════════════════════════════
+
+
+/* ---- CSM brief visibility: owner only ---- */
+(function () {
+  var BRIEF_OWNER = 'william.wt.lin@appier.com';
+  function applyBriefVisibility() {
+    var u = null;
+    try { u = (typeof getUser === 'function') ? getUser() : (window.getUser ? window.getUser() : null); } catch (e) {}
+    var loggedIn = !!(u && u.email);
+    var allowed = loggedIn && u.email.toLowerCase() === BRIEF_OWNER;
+    ['snav-brief', 'tab-brief'].forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) el.style.display = (!loggedIn || allowed) ? '' : 'none';
+    });
+    if (loggedIn && !allowed) {
+      var pane = document.getElementById('pane-brief');
+      if (pane && pane.classList.contains('active') && window.switchTab) {
+        try { window.switchTab('tickets'); } catch (e) {}
+      }
+    }
+  }
+  window.applyBriefVisibility = applyBriefVisibility;
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', applyBriefVisibility);
+  else applyBriefVisibility();
+  setInterval(applyBriefVisibility, 4000);
+})();
