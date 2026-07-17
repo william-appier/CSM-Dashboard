@@ -119,6 +119,45 @@
       }
     })
     .catch(function (e) { console.warn('[feature-enable] catalog json not loaded, using built-in:', e.message); });
+  var feAsnUsers = null;
+  window.feAsnEnsure = function () {
+    if (feAsnUsers) return;
+    var list = document.getElementById('feAsnList');
+    if (list) list.innerHTML = '<div style="font-size:.75rem;color:var(--muted);padding:4px;">Loading users\u2026</div>';
+    Promise.resolve()
+      .then(function () { return window.getAccessToken(); })
+      .then(function (tok) { return window.fetchAccessibleResources(tok).then(function (res) { return { tok: tok, cloudId: res[0].id }; }); })
+      .then(function (auth) {
+        if (feW.assignee) { body.fields.assignee = { accountId: feW.assignee.accountId }; }
+        return fetch('https://api.atlassian.com/ex/jira/' + auth.cloudId + '/rest/api/3/user/search?query=&maxResults=100', { headers: { Authorization: 'Bearer ' + auth.tok, Accept: 'application/json' } }).then(function (r) { return r.json(); });
+      })
+      .then(function (data) {
+        feAsnUsers = (Array.isArray(data) ? data : []).filter(function (u) { return u.accountType === 'atlassian' && u.active !== false; });
+        window.feAsnFilter((document.getElementById('feAsnSearch') || {}).value || '');
+      })
+      .catch(function (e) {
+        var l2 = document.getElementById('feAsnList');
+        if (l2) l2.innerHTML = '<div style="font-size:.75rem;color:#dc2626;padding:4px;">' + esc(e.message) + '</div>';
+      });
+  };
+  window.feAsnFilter = function (q) {
+    var list = document.getElementById('feAsnList');
+    if (!list || !feAsnUsers) return;
+    q = (q || '').toLowerCase();
+    var m = feAsnUsers.filter(function (u) { return !q || (u.displayName || '').toLowerCase().indexOf(q) > -1; }).slice(0, 12);
+    list.innerHTML = m.map(function (u) {
+      var on = feW.assignee && feW.assignee.accountId === u.accountId;
+      return '<div style="padding:5px 8px;cursor:pointer;border-radius:6px;font-size:.8rem;' + (on ? 'background:rgba(99,102,241,.18);' : '') + '" data-aid="' + esc(u.accountId) + '" onclick="feAsnPick(this.getAttribute(' + String.fromCharCode(39,92,39,97,105,100,92,39,39) + '))">' + esc(u.displayName) + '</div>';
+    }).join('') || '<div style="font-size:.75rem;color:var(--muted);padding:4px;">No match</div>';
+  };
+  window.feAsnPick = function (aid) {
+    var u = (feAsnUsers || []).filter(function (x) { return x.accountId === aid; })[0];
+    feW.assignee = u ? { accountId: u.accountId, displayName: u.displayName } : null;
+    var selEl = document.getElementById('feAsnSel');
+    if (selEl) selEl.textContent = u ? '\u2713 Assignee: ' + u.displayName : '';
+    window.feAsnFilter((document.getElementById('feAsnSearch') || {}).value || '');
+  };
+
 
 
   function esc(s) {
@@ -149,6 +188,7 @@
 
   window.fePickPlatform = function (p) {
     feW.platform = p;
+    feW.assignee = null; feAsnUsers = null;
     document.querySelectorAll('.fe-platform-card').forEach(function(c){
       c.classList.toggle('fe-selected', c.dataset.p === p);
     });
@@ -167,7 +207,7 @@
     var cb = item.querySelector('.fe-feat-cb');
     if (cb) {
       cb.classList.toggle('fe-cb-on', !!feW.sel[id]);
-      cb.textContent = feW.sel[id] ? '\u2713' : '';
+      cb.textContent = '';
     }
   };
 
@@ -245,13 +285,33 @@
               body: JSON.stringify(body)
             })
             .then(function(r){ return r.json(); })
-            .then(function(d){ if (d.key) { created.push(d.key); } else { failed.push(f.name); } })
+            .then(function(d){ if (d.key) { created.push(d.key); f._ticketKey = d.key; } else { failed.push(f.name); } })
             .catch(function(){ failed.push(f.name); });
           });
         });
         return chain;
       })
-      .then(function(){ feShowResult(created, failed); })
+      .then(function () {
+        if (created.length && window.addOnboarding) {
+          try {
+            window.addOnboarding({
+              id: 'fe_' + Date.now(),
+              platform: feW.platform,
+              clientName: feW.clientName,
+              type: 'feature-enable',
+              onboardTicketKey: created[0],
+              createdAt: new Date().toISOString().slice(0, 10),
+              appId: feW.appId,
+              features: selected.filter(function (f) { return f._ticketKey; }).map(function (f) {
+                return { name: f.name, featureId: f.id, ticketKey: f._ticketKey, board: 'ETS', mode: f.mode || 'clone', manual: (f.mode === 'manual' || f.mode === 'manual_clone'), status: 'Backlog' };
+              })
+            });
+            if (window.renderOnboardingProgress) window.renderOnboardingProgress();
+            if (window.loadTickets) window.loadTickets();
+          } catch (e) { console.warn('[feature-enable] tracking record failed:', e.message); }
+        }
+        feShowResult(created, failed);
+      })
       .catch(function(err){
         document.getElementById('feBody').innerHTML =
           '<div style="text-align:center;padding:20px;color:var(--red)">\u26a0\ufe0f Auth error: ' + esc(err.message) + '</div>';
@@ -308,6 +368,11 @@
       + '<label class="wiz-label">App ID <span style="color:var(--red)">*</span></label>'
       + '<input class="wiz-input" id="feAppId" placeholder="e.g. 12345" value="' + esc(feW.appId) + '" oninput="window.feSetAppId(this.value)">'
       + '</div>';
+    document.getElementById('feBody').innerHTML += '' +
+      '<label class="wiz-label" style="display:block;margin-top:14px;">Assignee (optional)</label>' +
+      '<input class="wiz-input" type="text" id="feAsnSearch" placeholder="Search assignee\u2026" autocomplete="off" oninput="feAsnFilter(this.value)" onfocus="feAsnEnsure()">' +
+      '<div id="feAsnList" style="max-height:150px;overflow-y:auto;margin-top:4px;"></div>' +
+      '<div id="feAsnSel" style="font-size:.75rem;margin-top:4px;color:var(--accent);">' + (feW.assignee ? '\u2713 Assignee: ' + esc(feW.assignee.displayName) : '') + '</div>';
     document.getElementById('feFooter').innerHTML =
       '<button class="wiz-btn-sec" onclick="feBack()">\u2190 Back</button>'
       + '<button class="wiz-btn-pri" onclick="feNext()">Next \u2192</button>';
@@ -357,7 +422,7 @@
 
     return '<div class="fe-feat-item' + (sel ? ' fe-row-on' : '') + '" data-id="' + f.id + '">'
       + '<div class="fe-feat-row" onclick="window.feToggleFeat(\'' + f.id + '\')">'
-      + '<div class="fe-feat-cb' + (sel ? ' fe-cb-on' : '') + '">' + (sel ? '\u2713' : '') + '</div>'
+      + '<div class="fe-feat-cb' + (sel ? ' fe-cb-on' : '') + '">' + '' + '</div>'
       + '<span class="fe-feat-name">' + esc(f.name) + '</span>'
       + badge
       + '</div>'
@@ -429,14 +494,14 @@
       + '<div style="font-weight:700;font-size:1.05rem;margin-bottom:8px">'
       + created.length + ' ticket' + (created.length !== 1 ? 's' : '') + ' created'
       + (failed.length ? ' \u00b7 ' + failed.length + ' failed' : '') + '</div>'
-      + '<div style="color:var(--accent);font-weight:600;margin-bottom:16px">' + created.join(' \u00b7 ') + '</div>'
+      + '<div style="color:var(--accent);font-weight:600;margin-bottom:16px">' + created.map(function (k) { return '<a href="https://appier.atlassian.net/browse/' + k + '" target="_blank" style="color:inherit;">' + k + '</a>'; }).join(' \u00b7 ') + '</div>'
       + (failed.length ? '<div style="color:var(--red);font-size:.8rem;margin-bottom:12px">Failed: ' + failed.join(', ') + '</div>' : '')
       + '<div style="color:var(--muted);font-size:.82rem">Track progress for <strong>'
       + esc(feW.clientName) + '</strong> in the Issue Tracking tab.</div>'
       + '</div>';
     document.getElementById('feFooter').innerHTML =
       '<button class="wiz-btn-sec" onclick="closeFeWizard()">Close</button>'
-      + '<button class="wiz-btn-pri" onclick="closeFeWizard();var t=document.getElementById(\'tab-tracking\');if(t)t.click()">\u{1f4cb} Go to Tracking</button>';
+      + '<button class="wiz-btn-pri" onclick="closeFeWizard();if(window.switchTab)window.switchTab(\'tracking\');if(window.renderOnboardingProgress)window.renderOnboardingProgress()">\u{1f4cb} Go to Tracking</button>';
     if (window.loadTickets) window.loadTickets();
   }
 
