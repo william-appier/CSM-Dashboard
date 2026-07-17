@@ -305,7 +305,7 @@
             var extraLines = (f.extra || []).map(function(ex){
               return ex.label + ': ' + (extras[ex.id] || '\u2014');
             }).join('\n');
-            var summary = '[Feature Enable] ' + feW.clientName + ' \u00b7 ' + feW.platform + ' \u00b7 ' + f.name;
+            var summary = '[' + feW.clientName + '] ' + feW.platform + ' \u00b7 ' + f.name;
             var body = {
               fields: {
                 project: { key: 'ETS' },
