@@ -1,17 +1,17 @@
 {
-  "generatedAt": "2026-07-16T10:04:35.402+08:00",
+  "generatedAt": "2026-07-17T09:00:00.261+08:00",
   "accounts": [
     {
       "id": "mannings",
       "name": "Mannings",
       "health": "yellow",
-      "insight": "Bi-weekly meeting Jul 23 at 11:00 HKT with Rola Chung — Q3 renewal contract scope and timeline still unconfirmed with client.",
+      "insight": "Appier x Mannings Bi-weekly Meeting Jul 23.",
       "diffs": [],
       "riskTags": [
         "mtg"
       ],
       "ticketCount": 0,
-      "mtgCount": 1,
+      "mtgCount": 2,
       "projects": [
         {
           "name": "AIXON → AIRIS Upgrade (Q4)",
@@ -23,19 +23,19 @@
           "date": "Jul 23",
           "title": "Appier x Mannings Bi-weekly Meeting",
           "meta": "11:00–12:00 HKT · Rola Chung"
+        },
+        {
+          "date": "Jul 30",
+          "title": "Appier x Mannings Monthly Meeting",
+          "meta": "11:00–12:00 HKT · Rola Chung"
         }
       ],
       "tickets": [],
       "suggestions": [
         {
-          "priority": "high",
-          "label": "Renewal · High",
-          "text": "Follow up with client on the Q3 renewal contract (Jun 2026) — confirm scope and timeline before the Jul 23 bi-weekly."
-        },
-        {
           "priority": "medium",
           "label": "Meeting · Medium",
-          "text": "Prep Jul 23 bi-weekly agenda (11:00 HKT, Rola Chung): renewal status + AIXON→AIRIS Q4 upgrade progress."
+          "text": "Prep for Appier x Mannings Bi-weekly Meeting on Jul 23 (11:00–12:00 HKT · Rola Chung)"
         }
       ]
     },
@@ -43,14 +43,13 @@
       "id": "scmp",
       "name": "SCMP",
       "health": "red",
-      "insight": "⚠️ CONTRACT EXPIRED 16 days ago (2026-06-30). Meeting TODAY at 16:00 HKT covers the SCMP contract — bring the renewal proposal ready to close.",
+      "insight": "⚠️ contract EXPIRED 2026-06-30.",
       "diffs": [],
       "riskTags": [
-        "renewal",
-        "mtg"
+        "renewal"
       ],
       "ticketCount": 0,
-      "mtgCount": 1,
+      "mtgCount": 0,
       "projects": [
         {
           "name": "Segments Enablement",
@@ -61,29 +60,13 @@
           "status": "progress"
         }
       ],
-      "meetings": [
-        {
-          "date": "Jul 16",
-          "title": "1010學習，伴手禮，scmp 合約，MN invoice，MN 需求",
-          "meta": "16:00–17:00 HKT · william.wt.lin@appier.com"
-        }
-      ],
+      "meetings": [],
       "tickets": [],
       "suggestions": [
         {
           "priority": "high",
           "label": "Renewal · High",
-          "text": "Contract expired 2026-06-30 (16 days ago) — finalize AIQUA renewal terms and push for signature; use TODAY's 16:00 HKT meeting to close."
-        },
-        {
-          "priority": "high",
-          "label": "Meeting · High",
-          "text": "Meeting TODAY 16:00–17:00 HKT includes the SCMP contract — prepare contract status summary and renewal paperwork before joining."
-        },
-        {
-          "priority": "medium",
-          "label": "Risk · Medium",
-          "text": "If renewal can't be signed this week, escalate internally — account has been running without contract coverage since Jun 30."
+          "text": "SCMP contract EXPIRED 17d ago (2026-06-30) — confirm status now"
         }
       ]
     },
@@ -91,7 +74,7 @@
       "id": "1010hope",
       "name": "10/10Hope",
       "health": "green",
-      "insight": "No tickets or meetings, but two active workstreams — klickngo API integration and AIQUA onboarding — are both running through Mark Liu.",
+      "insight": "No active tickets — all clear.",
       "diffs": [],
       "riskTags": [],
       "ticketCount": 0,
@@ -110,14 +93,9 @@
       "tickets": [],
       "suggestions": [
         {
-          "priority": "medium",
-          "label": "Integration · Medium",
-          "text": "Ping Mark Liu for status on klickngo API integration and AIQUA onboarding — both depend on him and neither has visible activity."
-        },
-        {
           "priority": "low",
           "label": "Check-in · Low",
-          "text": "Send client a short onboarding progress note once Mark confirms status."
+          "text": "No active tickets — send a check-in to 10/10Hope"
         }
       ]
     },
@@ -125,7 +103,7 @@
       "id": "luxgen",
       "name": "Luxgen",
       "health": "green",
-      "insight": "No tickets and no meetings booked — a risk signal given the active BB contract (2026/5/24–11/23, LEG-16090).",
+      "insight": "No active tickets — all clear.",
       "diffs": [],
       "riskTags": [],
       "ticketCount": 0,
@@ -135,14 +113,9 @@
       "tickets": [],
       "suggestions": [
         {
-          "priority": "medium",
-          "label": "Engagement · Medium",
-          "text": "Book a touchpoint with Luxgen — no calendar contact despite the active BB contract (LEG-16090, runs to Nov 23)."
-        },
-        {
           "priority": "low",
-          "label": "Prep · Low",
-          "text": "Pull BB usage/adoption data to bring to that touchpoint."
+          "label": "Check-in · Low",
+          "text": "No active tickets — send a check-in to Luxgen"
         }
       ]
     },
@@ -150,7 +123,7 @@
       "id": "55688",
       "name": "55688",
       "health": "green",
-      "insight": "No open tickets or meetings — active focus is the Service Agent RFQ (BBT-5428) with Brian Tsai.",
+      "insight": "No active tickets — all clear.",
       "diffs": [],
       "riskTags": [],
       "ticketCount": 0,
@@ -165,44 +138,42 @@
       "tickets": [],
       "suggestions": [
         {
-          "priority": "medium",
-          "label": "RFQ · Medium",
-          "text": "Follow up with Brian Tsai on Service Agent RFQ (BBT-5428) progress and next milestone."
-        },
-        {
           "priority": "low",
-          "label": "Renewal · Low",
-          "text": "Confirm the outcome of the Jun 2 renewal check and log next steps."
+          "label": "Check-in · Low",
+          "text": "No active tickets — send a check-in to 55688"
         }
       ]
     },
     {
       "id": "tiangyuanxiang",
       "name": "田原香",
-      "health": "green",
-      "insight": "Quiet week — no tickets; current focus is developing new use cases ahead of the weekly tracking meeting (Tuesdays 09:30 HKT, next Jul 21).",
+      "health": "yellow",
+      "insight": "推田原香ojm Jul 17.",
       "diffs": [],
-      "riskTags": [],
+      "riskTags": [
+        "mtg"
+      ],
       "ticketCount": 0,
-      "mtgCount": 0,
+      "mtgCount": 1,
       "projects": [
         {
           "name": "Use Case Development",
           "status": "progress"
         }
       ],
-      "meetings": [],
+      "meetings": [
+        {
+          "date": "Jul 17",
+          "title": "推田原香ojm",
+          "meta": "12:15–12:45 HKT · william.wt.lin@appier.com"
+        }
+      ],
       "tickets": [],
       "suggestions": [
         {
           "priority": "medium",
           "label": "Meeting · Medium",
-          "text": "Prepare 1–2 new use case proposals for the Jul 21 weekly tracking meeting (09:30 HKT)."
-        },
-        {
-          "priority": "low",
-          "label": "Check-in · Low",
-          "text": "Review adoption of the completed EUU onboarding and Campaign Agent features to seed new use case ideas."
+          "text": "Prep for 推田原香ojm on Jul 17 (12:15–12:45 HKT · william.wt.lin@appier.com)"
         }
       ]
     },
@@ -210,7 +181,7 @@
       "id": "momax",
       "name": "Momax",
       "health": "green",
-      "insight": "Silent account — no tickets, no meetings, and no active projects on record.",
+      "insight": "No active tickets — all clear.",
       "diffs": [],
       "riskTags": [],
       "ticketCount": 0,
@@ -222,7 +193,7 @@
         {
           "priority": "low",
           "label": "Check-in · Low",
-          "text": "Send a light check-in to Momax to confirm status and surface any needs."
+          "text": "No active tickets — send a check-in to Momax"
         }
       ]
     },
@@ -230,7 +201,7 @@
       "id": "citysuper",
       "name": "City Super",
       "health": "yellow",
-      "insight": "LEG-15992 AIQUA Order Form (User: City Super) has been open 16 days with emily.cheng — the commercial paperwork is the current bottleneck.",
+      "insight": "LEG-15992 open 17d.",
       "diffs": [],
       "riskTags": [
         "ticket",
@@ -249,24 +220,13 @@
           "pinned": true
         }
       ],
-      "suggestions": [
-        {
-          "priority": "high",
-          "label": "Ticket · High",
-          "text": "Ping emily.cheng on LEG-15992 (AIQUA Order Form) — open 16 days with no movement; ask for blocker and ETA."
-        },
-        {
-          "priority": "medium",
-          "label": "Escalation · Medium",
-          "text": "If LEG-15992 stays stuck this week, escalate through Legend World / deal desk to unblock the order form."
-        }
-      ]
+      "suggestions": []
     },
     {
       "id": "xindongli",
       "name": "行動力國際",
       "health": "green",
-      "insight": "No tickets or meetings — the account handover is the only active workstream.",
+      "insight": "No active tickets — all clear.",
       "diffs": [],
       "riskTags": [],
       "ticketCount": 0,
@@ -281,14 +241,9 @@
       "tickets": [],
       "suggestions": [
         {
-          "priority": "medium",
-          "label": "Handover · Medium",
-          "text": "Confirm handover checklist status and who owns each outstanding item."
-        },
-        {
           "priority": "low",
-          "label": "Relationship · Low",
-          "text": "Book an intro call with the client's key contacts to complete the handover."
+          "label": "Check-in · Low",
+          "text": "No active tickets — send a check-in to 行動力國際"
         }
       ]
     }
