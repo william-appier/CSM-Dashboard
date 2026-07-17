@@ -807,6 +807,26 @@ async function toggleWizAsnDropdown(e){
     if(!wizAsnAllUsers.length) await loadWizAsnUsers();
   }
 }
+  /* ---- Merge repo-managed AIQUA feature catalog into wizard ---- */
+  fetch('feature-catalog.json?v=' + Date.now())
+    .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+    .then(function (cat) {
+      if (!(cat && cat.AIQUA && cat.AIQUA.length) || !CATALOGS || !CATALOGS.AIQUA) return;
+      var flat = [];
+      cat.AIQUA.forEach(function (c) {
+        (c.items || []).forEach(function (f) {
+          flat.push({ id: f.id, category: c.cat, name: f.name, sample: f.sample, mode: f.mode || 'clone', extra: f.extra || [], maturity: f.maturity, pmApproval: f.pmApproval, paid: f.paid });
+        });
+      });
+      if (!flat.length) return;
+      var inCat = {};
+      flat.forEach(function (f) { inCat[f.id] = 1; });
+      var keep = (CATALOGS.AIQUA.features || []).filter(function (f) { return !inCat[f.id]; });
+      CATALOGS.AIQUA.features = flat.concat(keep);
+      console.log('[onboarding] AIQUA features merged from feature-catalog.json (' + flat.length + ' items)');
+    })
+    .catch(function (e) { console.warn('[onboarding] feature-catalog.json not loaded:', e.message); });
+
 
 async function loadWizAsnUsers(){
   const list = document.getElementById('wizAsnList');
