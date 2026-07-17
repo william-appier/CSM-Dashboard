@@ -96,6 +96,14 @@
         { id: 'ojm_feat',   name: 'OJM Feature Enablement', mode: 'clone',  sample: 'PHXX-6252', board: 'PHXX', extra: [] }
       ]}
     ],
+    BB: [
+      { cat: 'Compulsory', items: [
+        { id: 'bb_onboard', name: 'BotBonnie Onboard Ticket', mode: 'manual_clone', sample: 'BBT-7539', extra: [
+          { id: 'organizationId', label: 'Organization ID', placeholder: 'e.g. org-xxx' },
+          { id: 'botId', label: 'Bot ID', placeholder: 'e.g. bot-xxx' }
+        ] }
+      ] }
+    ],
     AIRIS: [
       { cat: 'Compulsory', items: [
         { id: 'airis_onboard', name: 'Onboard AIRIS', mode: 'manual', sample: 'AR-1000', extra: [] }
@@ -112,15 +120,18 @@
   fetch('feature-catalog.json?v=' + Date.now())
     .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
     .then(function (cat) {
-      if (cat && cat.AIQUA && cat.AIQUA.length) {
-        var byId = {};
-        cat.AIQUA.forEach(function (c) { (c.items || []).forEach(function (f) { byId[f.id] = 1; }); });
-        var keepCats = (FE_CATALOG.AIQUA || []).map(function (c) {
-          return { cat: c.cat, items: (c.items || []).filter(function (f) { return !byId[f.id]; }) };
-        }).filter(function (c) { return c.items.length; });
-        FE_CATALOG.AIQUA = cat.AIQUA.concat(keepCats);
-        FE_CATALOG_SOURCE = 'feature-catalog.json';
-        console.log('[feature-enable] AIQUA catalog loaded (' + cat.AIQUA.reduce(function (t, c) { return t + c.items.length; }, 0) + ' features)');
+      if (cat) {
+        Object.keys(cat).forEach(function (pk) {
+          if (pk === '_meta' || !Array.isArray(cat[pk]) || !cat[pk].length) return;
+          var byId = {};
+          cat[pk].forEach(function (c) { (c.items || []).forEach(function (f) { byId[f.id] = 1; }); });
+          var keepCats = (FE_CATALOG[pk] || []).map(function (c) {
+            return { cat: c.cat, items: (c.items || []).filter(function (f) { return !byId[f.id]; }) };
+          }).filter(function (c) { return c.items.length; });
+          FE_CATALOG[pk] = cat[pk].concat(keepCats);
+          FE_CATALOG_SOURCE = 'feature-catalog.json';
+          console.log('[feature-enable] ' + pk + ' catalog loaded (' + cat[pk].reduce(function (t, c) { return t + (c.items || []).length; }, 0) + ' features)');
+        });
       }
     })
     .catch(function (e) { console.warn('[feature-enable] catalog json not loaded, using built-in:', e.message); });
@@ -376,7 +387,8 @@
     var platforms = [
       ['AIQUA', 'Customer Engagement',   '\u{1f3af}', false],
       ['AIRIS', 'Customer Data Platform', '\u{1f52e}', false],
-      ['BB',    'BotBonnie',              '\u{1f916}', true ]
+      ['BB', 'BotBonnie', '\u{1f916}', false],
+      ['AIXON', 'Enterprise AI', '\ud83e\udde0', true]
     ];
     var cards = platforms.map(function(p) {
       var dis = p[3];
