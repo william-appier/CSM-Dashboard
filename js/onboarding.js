@@ -15,7 +15,7 @@ const PLATFORMS = [
   { id:'AIQUA',      icon:'\u{1f3af}', active:true,  note:'Includes Segment Agent & OJM features' },
   { id:'BotBonnie',  icon:'\u{1f916}', active:true,  noWizard:true },
   { id:'AIRIS',      icon:'\u{1f441}\ufe0f',  active:true,  note:'Onboard AIRIS + Enterprise Console link' },
-  { id:'AIXON',      icon:'\u{1f9e0}', active:false },
+  { id:'AIXON',      icon:'\u{1f9e0}', active:true },
 ];
 
 const CATALOGS = {
@@ -822,6 +822,11 @@ async function toggleWizAsnDropdown(e){
     if(!wizAsnAllUsers.length) await loadWizAsnUsers();
   }
 }
+  /* ---- AIXON onboarding mirrors AIRIS (shared catalog) ---- */
+  if (CATALOGS.AIRIS && !CATALOGS.AIXON) {
+    CATALOGS.AIXON = JSON.parse(JSON.stringify(CATALOGS.AIRIS).replace(/AIRIS/g, 'AIXON'));
+  }
+
   /* ---- Merge repo-managed AIQUA feature catalog into wizard ---- */
   fetch('feature-catalog.json?v=' + Date.now())
     .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
