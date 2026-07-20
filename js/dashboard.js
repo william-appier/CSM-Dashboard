@@ -743,7 +743,7 @@ async function selectAssignee(accountId, displayName, el){
 let tbdData = [];
 
 function switchTab(name){
-  ['tracking','tbd','brief','ar'].forEach(t=>{
+  ['tracking','tbd','brief','ar','faq'].forEach(t=>{
     document.getElementById('tab-'+t).classList.toggle('active', t===name);
     document.getElementById('pane-'+t).classList.toggle('active', t===name);
   });
