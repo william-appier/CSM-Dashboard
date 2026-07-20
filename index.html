@@ -359,6 +359,7 @@
         <span style="flex:1">CSM brief</span>
         <span class="csm-nav-count" id="snc-brief">—</span>
       </button>
+      <button class="csm-nav-btn" id="snav-faq" onclick="snavSwitch('faq')"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg><span>CSM FAQ</span><span class="csm-nav-count" id="snc-faq">–</span></button>
 
     </div>
 
@@ -422,6 +423,7 @@
           <button class="tab-btn" id="tab-tbd" onclick="switchTab('tbd')">To Be Done <span class="tab-count" id="tc-tbd">—</span></button>
           <button class="tab-btn" id="tab-ar" onclick="switchTab('ar')">CSM AR Status <span class="tab-count" id="tc-ar">—</span></button>
           <button class="tab-btn" id="tab-brief" onclick="switchTab('brief')" style="display:none">CSM Brief <span class="tab-count" id="tc-brief">—</span></button>
+        <button class="tab-btn" id="tab-faq" onclick="switchTab('faq')">CSM FAQ <span class="tab-count" id="tc-faq">–</span></button>
         </div>
 
         <!-- ════ TAB: ISSUE TRACKING ════ -->
@@ -543,7 +545,8 @@
         </div>
 
         <!-- ════ TAB: CSM BRIEF ════ -->
-        <div class="tab-pane" id="pane-brief">
+        <div class="tab-pane" id="pane-faq"><div id="faqRoot" style="max-width:960px"></div></div>
+      <div class="tab-pane" id="pane-brief">
           <div style="margin-bottom:20px">
             <h1 style="margin:0;font:600 24px/32px var(--font-en)">CSM brief</h1>
             <p style="margin:4px 0 0;font:400 14px/20px var(--font-en);color:var(--c-low)">Account health and quarterly OKR log.</p>
@@ -819,6 +822,7 @@
 <script src="js/onboarding.js?v=20260717j"></script>
 <script src="feature-enable.js?v=20260717j"></script>
 <script src="js/brief.js?v=20260717a"></script>
+  <script src="js/faq.js?v=20260720a"></script>
 <script src="js/app.js?v=20260708b"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js?v=20260622l"></script>
 <script src="js/activity-report.js?v=20260708b"></script>
