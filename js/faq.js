@@ -124,14 +124,14 @@
     var recentEl = document.getElementById('faqRecent');
     if (recentEl) {
       var ref = st.meta.updated ? new Date(st.meta.updated) : new Date();
-      var cutoff = new Date(ref.getTime() - 14 * 86400000).toISOString().slice(0, 10);
+      var cutoff = new Date(ref.getTime() - 7 * 86400000).toISOString().slice(0, 10);
       var recent = st.entries
         .filter(function (e) { return e.status === 'active' && (e.last_verified || '') >= cutoff; })
         .sort(function (a, b) { return (b.last_verified || '').localeCompare(a.last_verified || ''); })
         .slice(0, 8);
       if (recent.length && !st.q && st.cat === 'all') {
         recentEl.style.display = '';
-        recentEl.innerHTML = '<div class="faq-recent-title">最近動態（近 14 天更新）</div><div class="faq-recent-items">'
+        recentEl.innerHTML = '<div class="faq-recent-title">最近動態（近 7 天更新）</div><div class="faq-recent-items">'
           + recent.map(function (e) {
             return '<span class="faq-recent-item" data-id="' + esc(e.id) + '" onclick="faqJump(this.getAttribute(&quot;data-id&quot;))">' + esc(e.id) + ' ' + esc(e.q.length > 24 ? e.q.substring(0, 24) + '…' : e.q) + '</span>';
           }).join('') + '</div>';
