@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-17T13:29:15.771+08:00",
+  "lastUpdated": "2026-07-20T10:39:54.504+08:00",
   "rules": [
     {
       "id": "okr-consolidate",
@@ -625,7 +625,7 @@
     }
   ],
   "ticketSnapshot": {
-    "generatedAt": "2026-07-17T03:56:52.488Z",
+    "generatedAt": "2026-07-20T02:39:51.776Z",
     "keys": {
       "55688": [],
       "mannings": [],
