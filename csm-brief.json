@@ -5,12 +5,12 @@
       "id": "mannings",
       "name": "Mannings",
       "health": "yellow",
-      "insight": "Bi-weekly meeting Thu Jul 23 at 11:00 HKT with Rola Chung — align on AIXON→AIRIS Q4 upgrade; AQ/AX contract runs to 2026-09-30.",
+      "insight": "5 active tickets — ETS-4593 coupon API errors (hazel.wang, 19d) is the client-facing risk; bi-weekly meeting Thu Jul 23 11:00 HKT with Rola Chung.",
       "diffs": [],
       "riskTags": [
         "mtg"
       ],
-      "ticketCount": 0,
+      "ticketCount": 5,
       "mtgCount": 2,
       "projects": [
         {
@@ -30,22 +30,58 @@
           "meta": "11:00–12:00 HKT · Rola Chung"
         }
       ],
-      "tickets": [],
+      "tickets": [
+        {
+          "key": "ETS-4713",
+          "summary": "Verify and enable Android & iOS push channel",
+          "status": "In Progress",
+          "assignee": "hazel.wang",
+          "created": "2026-07-07"
+        },
+        {
+          "key": "ETS-4593",
+          "summary": "Mannings coupon API calling error investigation",
+          "status": "In Progress",
+          "assignee": "hazel.wang",
+          "created": "2026-07-02"
+        },
+        {
+          "key": "ETS-4446",
+          "summary": "App push test on p8 integration",
+          "status": "In Progress",
+          "assignee": "hazel.wang",
+          "created": "2026-06-29"
+        },
+        {
+          "key": "ETS-4130",
+          "summary": "Initiate customized project discussion (upsell items)",
+          "status": "To Do",
+          "assignee": "Sherry Chen",
+          "created": "2026-06-09"
+        },
+        {
+          "key": "QGWL-24671",
+          "summary": "Resolving Content Security Policy (CSP) limitation",
+          "status": "CSM Backlog",
+          "assignee": "zebbie.tran",
+          "created": "2026-01-09"
+        }
+      ],
       "suggestions": [
         {
           "priority": "high",
+          "label": "Ticket · High",
+          "text": "ETS-4593 coupon API errors open 19 days with hazel.wang — get root cause before the next monthly coupon campaign; Magento is watching this."
+        },
+        {
+          "priority": "high",
           "label": "Meeting · High",
-          "text": "Prep agenda for Jul 23 bi-weekly (11:00 HKT, Rola Chung): AIXON→AIRIS Q4 upgrade milestones and post-Sep-30 renewal direction."
+          "text": "Jul 23 bi-weekly (11:00 HKT, Rola Chung): bring status on push testing ETS-4713/ETS-4446 and the AIXON→AIRIS Q4 upgrade plan."
         },
         {
           "priority": "medium",
-          "label": "Renewal · Medium",
-          "text": "AQ/AX extended only to 2026-09-30 (71 days out) — confirm scope and timeline for the next renewal cycle with the client before the Jul 30 monthly meeting."
-        },
-        {
-          "priority": "low",
-          "label": "Project · Low",
-          "text": "Draft the AIXON→AIRIS migration checklist so it's ready to walk through at the Jul 30 monthly meeting."
+          "label": "Upsell · Medium",
+          "text": "ETS-4130 customized project discussion sits with Sherry Chen since Jun 9 — follow up so pricing is ready for the Jul 30 monthly meeting. QGWL-24671 CSP fix (193d backlog) still blocks on-site editor."
         }
       ]
     },
@@ -53,10 +89,10 @@
       "id": "scmp",
       "name": "SCMP",
       "health": "green",
-      "insight": "New AIRIS contract goes live Fri Jul 25 (4 days) — no kickoff meeting booked yet; account otherwise silent.",
+      "insight": "ETS-5008 AIRIS enablement (vivian.yang) in To Do — contract goes live Fri Jul 25 (4 days); no kickoff meeting booked.",
       "diffs": [],
       "riskTags": [],
-      "ticketCount": 0,
+      "ticketCount": 1,
       "mtgCount": 0,
       "projects": [
         {
@@ -69,22 +105,30 @@
         }
       ],
       "meetings": [],
-      "tickets": [],
+      "tickets": [
+        {
+          "key": "ETS-5008",
+          "summary": "AIRIS enablement",
+          "status": "To Do",
+          "assignee": "vivian.yang",
+          "created": "2026-07-16"
+        }
+      ],
       "suggestions": [
         {
           "priority": "high",
           "label": "Onboarding · High",
-          "text": "AIRIS contract starts 2026-07-25 — schedule the kickoff with SCMP this week and confirm Segments Enablement scope."
+          "text": "ETS-5008 AIRIS enablement must move before go-live 2026-07-25 — ping vivian.yang for setup status and blockers today."
+        },
+        {
+          "priority": "high",
+          "label": "Meeting · High",
+          "text": "Schedule the AIRIS kickoff with SCMP (Jennifer Tsang / Ada Wong) this week; confirm Segments Enablement scope."
         },
         {
           "priority": "medium",
           "label": "Migration · Medium",
-          "text": "AIXON is churning — confirm the segment/data migration plan to AIRIS before legacy workflows lapse."
-        },
-        {
-          "priority": "low",
-          "label": "Check-in · Low",
-          "text": "No tickets or meetings — send a light touch-base alongside the kickoff invite."
+          "text": "AIXON is churning — confirm segment/data migration to AIRIS before legacy workflows lapse."
         }
       ]
     },
@@ -92,10 +136,10 @@
       "id": "1010hope",
       "name": "10/10Hope",
       "health": "green",
-      "insight": "No tickets or meetings — klickngo API integration and AIQUA onboarding (both Mark Liu) in progress with no visible movement this week.",
+      "insight": "2 active tickets with Mark Liu — QGWL-24745 AIQUA onboarding (open since Jan 16) and QGWL-25317 klickngo API integration (Apr 1); no meetings booked.",
       "diffs": [],
       "riskTags": [],
-      "ticketCount": 0,
+      "ticketCount": 2,
       "mtgCount": 0,
       "projects": [
         {
@@ -108,17 +152,32 @@
         }
       ],
       "meetings": [],
-      "tickets": [],
+      "tickets": [
+        {
+          "key": "QGWL-25317",
+          "summary": "klickngo API Integration",
+          "status": "In Progress",
+          "assignee": "Mark Liu",
+          "created": "2026-04-01"
+        },
+        {
+          "key": "QGWL-24745",
+          "summary": "Onboarding new AIQUA account",
+          "status": "In Progress",
+          "assignee": "Mark Liu",
+          "created": "2026-01-16"
+        }
+      ],
       "suggestions": [
+        {
+          "priority": "high",
+          "label": "Integration · High",
+          "text": "QGWL-24745 onboarding has been in progress 6 months — ask Mark Liu for a concrete completion date and remaining blockers."
+        },
         {
           "priority": "medium",
           "label": "Integration · Medium",
-          "text": "Ping Mark Liu for status on the klickngo API integration and AIQUA onboarding — no updates surfaced this week."
-        },
-        {
-          "priority": "low",
-          "label": "Check-in · Low",
-          "text": "If onboarding is nearing UAT, book a short sync with 10/10Hope to lock the test window."
+          "text": "QGWL-25317 klickngo API integration in progress since Apr 1 — confirm data is flowing and set a UAT window with the client."
         }
       ]
     },
@@ -293,5 +352,12 @@
         }
       ]
     }
-  ]
+  ],
+  "credits": {
+    "tickets": "Jira — CSM Dashboard tracked list (done & ignored excluded)",
+    "calendar": "Google Calendar via csm-brief-worker",
+    "memory": "csm-memory.json (contracts, snapshots)",
+    "generatedBy": "Claude daily brief enhancement",
+    "updatedAt": "2026-07-21T03:37:24.188Z"
+  }
 }
