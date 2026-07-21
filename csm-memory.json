@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-21T11:08:17.990+08:00",
+  "lastUpdated": "2026-07-21T11:37:35.123+08:00",
   "rules": [
     {
       "id": "okr-consolidate",
@@ -654,6 +654,122 @@
       ],
       "reason": "Renewal completed — BB extended to 2026-11-22 (LEG-16090)",
       "updated": "2026-07-08"
+    }
+  },
+  "trackedTickets": {
+    "generatedAt": "2026-07-21T03:37:24.188Z",
+    "source": "CSM Dashboard tracked list minus done/ignored/tbd-ignored",
+    "byAccount": {
+      "mannings": [
+        "ETS-4713",
+        "ETS-4593",
+        "ETS-4446",
+        "ETS-4130",
+        "QGWL-24671"
+      ],
+      "scmp": [
+        "ETS-5008"
+      ],
+      "1010hope": [
+        "QGWL-25317",
+        "QGWL-24745"
+      ]
+    },
+    "featureEnable": [
+      "ETS-5057",
+      "ETS-5056",
+      "ETS-5049",
+      "ETS-5048"
+    ],
+    "detail": {
+      "mannings": [
+        {
+          "key": "ETS-4713",
+          "summary": "Verify and enable Android & iOS push channel",
+          "status": "In Progress",
+          "assignee": "hazel.wang",
+          "created": "2026-07-07"
+        },
+        {
+          "key": "ETS-4593",
+          "summary": "Mannings coupon API calling error investigation",
+          "status": "In Progress",
+          "assignee": "hazel.wang",
+          "created": "2026-07-02"
+        },
+        {
+          "key": "ETS-4446",
+          "summary": "App push test on p8 integration",
+          "status": "In Progress",
+          "assignee": "hazel.wang",
+          "created": "2026-06-29"
+        },
+        {
+          "key": "ETS-4130",
+          "summary": "Initiate customized project discussion (upsell items)",
+          "status": "To Do",
+          "assignee": "Sherry Chen",
+          "created": "2026-06-09"
+        },
+        {
+          "key": "QGWL-24671",
+          "summary": "Resolving Content Security Policy (CSP) limitation",
+          "status": "CSM Backlog",
+          "assignee": "zebbie.tran",
+          "created": "2026-01-09"
+        }
+      ],
+      "scmp": [
+        {
+          "key": "ETS-5008",
+          "summary": "AIRIS enablement",
+          "status": "To Do",
+          "assignee": "vivian.yang",
+          "created": "2026-07-16"
+        }
+      ],
+      "1010hope": [
+        {
+          "key": "QGWL-25317",
+          "summary": "klickngo API Integration",
+          "status": "In Progress",
+          "assignee": "Mark Liu",
+          "created": "2026-04-01"
+        },
+        {
+          "key": "QGWL-24745",
+          "summary": "Onboarding new AIQUA account",
+          "status": "In Progress",
+          "assignee": "Mark Liu",
+          "created": "2026-01-16"
+        }
+      ],
+      "featureEnable": [
+        {
+          "key": "ETS-5057",
+          "summary": "[Feature Enable] test · AIQUA · Send Time Optimization",
+          "status": "To Do",
+          "created": "2026-07-17"
+        },
+        {
+          "key": "ETS-5056",
+          "summary": "[Feature Enable] test · AIQUA · Feed Trigger",
+          "status": "To Do",
+          "created": "2026-07-17"
+        },
+        {
+          "key": "ETS-5049",
+          "summary": "[Feature Enable] test · AIQUA · Geofence",
+          "status": "To Do",
+          "created": "2026-07-17"
+        },
+        {
+          "key": "ETS-5048",
+          "summary": "[Feature Enable] test · AIQUA · Campaign Calendar",
+          "status": "To Do",
+          "created": "2026-07-17"
+        }
+      ]
     }
   }
 }
