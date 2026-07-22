@@ -9,23 +9,33 @@
       "diffs": [
         {
           "type": "close",
-          "text": "ETS-4713 closed"
+          "text": "Enable Android & iOS push channel",
+          "key": "ETS-4713",
+          "title": "Enable Android & iOS push channel"
         },
         {
           "type": "close",
-          "text": "ETS-4593 closed"
+          "text": "Coupon API calling error investigation",
+          "key": "ETS-4593",
+          "title": "Coupon API calling error investigation"
         },
         {
           "type": "close",
-          "text": "ETS-4446 closed"
+          "text": "App push test on p8 integration",
+          "key": "ETS-4446",
+          "title": "App push test on p8 integration"
         },
         {
           "type": "close",
-          "text": "ETS-4130 closed"
+          "text": "Initiate customized project discussion",
+          "key": "ETS-4130",
+          "title": "Initiate customized project discussion"
         },
         {
           "type": "close",
-          "text": "QGWL-24671 closed"
+          "text": "Resolving CSP limitation",
+          "key": "QGWL-24671",
+          "title": "Resolving CSP limitation"
         }
       ],
       "riskTags": [
@@ -68,7 +78,9 @@
       "diffs": [
         {
           "type": "close",
-          "text": "ETS-5008 closed"
+          "text": "AIRIS enablement",
+          "key": "ETS-5008",
+          "title": "AIRIS enablement"
         }
       ],
       "riskTags": [],
@@ -102,11 +114,15 @@
       "diffs": [
         {
           "type": "close",
-          "text": "QGWL-25317 closed"
+          "text": "klickngo API Integration",
+          "key": "QGWL-25317",
+          "title": "klickngo API Integration"
         },
         {
           "type": "close",
-          "text": "QGWL-24745 closed"
+          "text": "Onboarding new AIQUA account",
+          "key": "QGWL-24745",
+          "title": "Onboarding new AIQUA account"
         }
       ],
       "riskTags": [],
@@ -226,7 +242,7 @@
       "id": "citysuper",
       "name": "City Super",
       "health": "yellow",
-      "insight": "LEG-15992 open 22d.",
+      "insight": "AIQUA HK Order Form (CitySuper) open 22d.",
       "diffs": [],
       "riskTags": [
         "ticket",
