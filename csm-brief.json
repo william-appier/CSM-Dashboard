@@ -1,16 +1,37 @@
 {
-  "generatedAt": "2026-07-21T11:06:00.282+08:00",
+  "generatedAt": "2026-07-22T09:00:04.878+08:00",
   "accounts": [
     {
       "id": "mannings",
       "name": "Mannings",
       "health": "yellow",
-      "insight": "5 active tickets — ETS-4593 coupon API errors (hazel.wang, 19d) is the client-facing risk; bi-weekly meeting Thu Jul 23 11:00 HKT with Rola Chung.",
-      "diffs": [],
+      "insight": "Appier x Mannings Bi-weekly Meeting Jul 23.",
+      "diffs": [
+        {
+          "type": "close",
+          "text": "ETS-4713 closed"
+        },
+        {
+          "type": "close",
+          "text": "ETS-4593 closed"
+        },
+        {
+          "type": "close",
+          "text": "ETS-4446 closed"
+        },
+        {
+          "type": "close",
+          "text": "ETS-4130 closed"
+        },
+        {
+          "type": "close",
+          "text": "QGWL-24671 closed"
+        }
+      ],
       "riskTags": [
         "mtg"
       ],
-      "ticketCount": 5,
+      "ticketCount": 0,
       "mtgCount": 2,
       "projects": [
         {
@@ -30,58 +51,12 @@
           "meta": "11:00–12:00 HKT · Rola Chung"
         }
       ],
-      "tickets": [
-        {
-          "key": "ETS-4713",
-          "summary": "Verify and enable Android & iOS push channel",
-          "status": "In Progress",
-          "assignee": "hazel.wang",
-          "created": "2026-07-07"
-        },
-        {
-          "key": "ETS-4593",
-          "summary": "Mannings coupon API calling error investigation",
-          "status": "In Progress",
-          "assignee": "hazel.wang",
-          "created": "2026-07-02"
-        },
-        {
-          "key": "ETS-4446",
-          "summary": "App push test on p8 integration",
-          "status": "In Progress",
-          "assignee": "hazel.wang",
-          "created": "2026-06-29"
-        },
-        {
-          "key": "ETS-4130",
-          "summary": "Initiate customized project discussion (upsell items)",
-          "status": "To Do",
-          "assignee": "Sherry Chen",
-          "created": "2026-06-09"
-        },
-        {
-          "key": "QGWL-24671",
-          "summary": "Resolving Content Security Policy (CSP) limitation",
-          "status": "CSM Backlog",
-          "assignee": "zebbie.tran",
-          "created": "2026-01-09"
-        }
-      ],
+      "tickets": [],
       "suggestions": [
         {
-          "priority": "high",
-          "label": "Ticket · High",
-          "text": "ETS-4593 coupon API errors open 19 days with hazel.wang — get root cause before the next monthly coupon campaign; Magento is watching this."
-        },
-        {
-          "priority": "high",
-          "label": "Meeting · High",
-          "text": "Jul 23 bi-weekly (11:00 HKT, Rola Chung): bring status on push testing ETS-4713/ETS-4446 and the AIXON→AIRIS Q4 upgrade plan."
-        },
-        {
           "priority": "medium",
-          "label": "Upsell · Medium",
-          "text": "ETS-4130 customized project discussion sits with Sherry Chen since Jun 9 — follow up so pricing is ready for the Jul 30 monthly meeting. QGWL-24671 CSP fix (193d backlog) still blocks on-site editor."
+          "label": "Meeting · Medium",
+          "text": "Prep for Appier x Mannings Bi-weekly Meeting on Jul 23 (11:00–12:00 HKT · Rola Chung)"
         }
       ]
     },
@@ -89,10 +64,15 @@
       "id": "scmp",
       "name": "SCMP",
       "health": "green",
-      "insight": "ETS-5008 AIRIS enablement (vivian.yang) in To Do — contract goes live Fri Jul 25 (4 days); no kickoff meeting booked.",
-      "diffs": [],
+      "insight": "No active tickets — all clear.",
+      "diffs": [
+        {
+          "type": "close",
+          "text": "ETS-5008 closed"
+        }
+      ],
       "riskTags": [],
-      "ticketCount": 1,
+      "ticketCount": 0,
       "mtgCount": 0,
       "projects": [
         {
@@ -105,30 +85,12 @@
         }
       ],
       "meetings": [],
-      "tickets": [
-        {
-          "key": "ETS-5008",
-          "summary": "AIRIS enablement",
-          "status": "To Do",
-          "assignee": "vivian.yang",
-          "created": "2026-07-16"
-        }
-      ],
+      "tickets": [],
       "suggestions": [
         {
-          "priority": "high",
-          "label": "Onboarding · High",
-          "text": "ETS-5008 AIRIS enablement must move before go-live 2026-07-25 — ping vivian.yang for setup status and blockers today."
-        },
-        {
-          "priority": "high",
-          "label": "Meeting · High",
-          "text": "Schedule the AIRIS kickoff with SCMP (Jennifer Tsang / Ada Wong) this week; confirm Segments Enablement scope."
-        },
-        {
-          "priority": "medium",
-          "label": "Migration · Medium",
-          "text": "AIXON is churning — confirm segment/data migration to AIRIS before legacy workflows lapse."
+          "priority": "low",
+          "label": "Check-in · Low",
+          "text": "No active tickets — send a check-in to SCMP"
         }
       ]
     },
@@ -136,10 +98,19 @@
       "id": "1010hope",
       "name": "10/10Hope",
       "health": "green",
-      "insight": "2 active tickets with Mark Liu — QGWL-24745 AIQUA onboarding (open since Jan 16) and QGWL-25317 klickngo API integration (Apr 1); no meetings booked.",
-      "diffs": [],
+      "insight": "No active tickets — all clear.",
+      "diffs": [
+        {
+          "type": "close",
+          "text": "QGWL-25317 closed"
+        },
+        {
+          "type": "close",
+          "text": "QGWL-24745 closed"
+        }
+      ],
       "riskTags": [],
-      "ticketCount": 2,
+      "ticketCount": 0,
       "mtgCount": 0,
       "projects": [
         {
@@ -152,32 +123,12 @@
         }
       ],
       "meetings": [],
-      "tickets": [
-        {
-          "key": "QGWL-25317",
-          "summary": "klickngo API Integration",
-          "status": "In Progress",
-          "assignee": "Mark Liu",
-          "created": "2026-04-01"
-        },
-        {
-          "key": "QGWL-24745",
-          "summary": "Onboarding new AIQUA account",
-          "status": "In Progress",
-          "assignee": "Mark Liu",
-          "created": "2026-01-16"
-        }
-      ],
+      "tickets": [],
       "suggestions": [
         {
-          "priority": "high",
-          "label": "Integration · High",
-          "text": "QGWL-24745 onboarding has been in progress 6 months — ask Mark Liu for a concrete completion date and remaining blockers."
-        },
-        {
-          "priority": "medium",
-          "label": "Integration · Medium",
-          "text": "QGWL-25317 klickngo API integration in progress since Apr 1 — confirm data is flowing and set a UAT window with the client."
+          "priority": "low",
+          "label": "Check-in · Low",
+          "text": "No active tickets — send a check-in to 10/10Hope"
         }
       ]
     },
@@ -185,7 +136,7 @@
       "id": "luxgen",
       "name": "Luxgen",
       "health": "green",
-      "insight": "No meetings on the calendar despite an active BB contract (to 2026-11-22, LEG-16090) — engagement gap is a risk signal.",
+      "insight": "No active tickets — all clear.",
       "diffs": [],
       "riskTags": [],
       "ticketCount": 0,
@@ -195,14 +146,9 @@
       "tickets": [],
       "suggestions": [
         {
-          "priority": "high",
-          "label": "Engagement · High",
-          "text": "No meetings booked — propose a check-in with Luxgen to review BB usage under the renewed contract (LEG-16090)."
-        },
-        {
           "priority": "low",
-          "label": "Adoption · Low",
-          "text": "Pull BB usage/adoption stats beforehand to anchor the conversation in data."
+          "label": "Check-in · Low",
+          "text": "No active tickets — send a check-in to Luxgen"
         }
       ]
     },
@@ -210,7 +156,7 @@
       "id": "55688",
       "name": "55688",
       "health": "green",
-      "insight": "Quiet account — Service Agent RFQ (BBT-5428, Brian Tsai) is the active thread; no tickets or meetings this week.",
+      "insight": "No active tickets — all clear.",
       "diffs": [],
       "riskTags": [],
       "ticketCount": 0,
@@ -225,14 +171,9 @@
       "tickets": [],
       "suggestions": [
         {
-          "priority": "medium",
-          "label": "RFQ · Medium",
-          "text": "Follow up with Brian Tsai on BBT-5428 Service Agent RFQ — no visible movement this week; confirm next milestone."
-        },
-        {
           "priority": "low",
           "label": "Check-in · Low",
-          "text": "Send a light check-in to keep momentum while the RFQ is pending."
+          "text": "No active tickets — send a check-in to 55688"
         }
       ]
     },
@@ -240,7 +181,7 @@
       "id": "tiangyuanxiang",
       "name": "田原香",
       "health": "green",
-      "insight": "Weekly tracking meeting falls TODAY (Tue 09:30 HKT) but isn't on the calendar — confirm it ran; current focus is new use-case development.",
+      "insight": "No active tickets — all clear.",
       "diffs": [],
       "riskTags": [],
       "ticketCount": 0,
@@ -255,14 +196,9 @@
       "tickets": [],
       "suggestions": [
         {
-          "priority": "high",
-          "label": "Meeting · High",
-          "text": "Weekly tracking sync is every Tuesday 09:30 HKT — confirm today's session was held/booked and capture use-case progress notes."
-        },
-        {
-          "priority": "medium",
-          "label": "Use cases · Medium",
-          "text": "Bring 1–2 concrete new use-case proposals to the weekly cadence — onboarding and Campaign Agent items are complete and off tracking."
+          "priority": "low",
+          "label": "Check-in · Low",
+          "text": "No active tickets — send a check-in to 田原香"
         }
       ]
     },
@@ -270,7 +206,7 @@
       "id": "momax",
       "name": "Momax",
       "health": "green",
-      "insight": "Silent account — no tickets, meetings, or active projects.",
+      "insight": "No active tickets — all clear.",
       "diffs": [],
       "riskTags": [],
       "ticketCount": 0,
@@ -282,7 +218,7 @@
         {
           "priority": "low",
           "label": "Check-in · Low",
-          "text": "Send a brief check-in to Momax to confirm nothing is pending on their side."
+          "text": "No active tickets — send a check-in to Momax"
         }
       ]
     },
@@ -290,7 +226,7 @@
       "id": "citysuper",
       "name": "City Super",
       "health": "yellow",
-      "insight": "LEG-15992 AIQUA HK Order Form (Legend World) stalled 21 days with Emily Cheng — unblock this week.",
+      "insight": "LEG-15992 open 22d.",
       "diffs": [],
       "riskTags": [
         "ticket",
@@ -309,24 +245,13 @@
           "pinned": true
         }
       ],
-      "suggestions": [
-        {
-          "priority": "high",
-          "label": "Ticket · High",
-          "text": "LEG-15992 (AIQUA HK Order Form) has sat open 21 days with Emily Cheng — ping her for the blocker and a target close date."
-        },
-        {
-          "priority": "medium",
-          "label": "Follow-up · Medium",
-          "text": "If the order form is waiting on client signature, escalate to the City Super contact directly rather than waiting on the queue."
-        }
-      ]
+      "suggestions": []
     },
     {
       "id": "xindongli",
       "name": "行動力國際",
       "health": "green",
-      "insight": "No tickets or meetings — Account Handover still in progress; confirm remaining checklist items.",
+      "insight": "No active tickets — all clear.",
       "diffs": [],
       "riskTags": [],
       "ticketCount": 0,
@@ -341,23 +266,11 @@
       "tickets": [],
       "suggestions": [
         {
-          "priority": "medium",
-          "label": "Handover · Medium",
-          "text": "Confirm the handover checklist owner and remaining items; book a short wrap-up sync to close it out."
-        },
-        {
           "priority": "low",
           "label": "Check-in · Low",
-          "text": "Light touch-base with 行動力國際 to keep continuity during handover."
+          "text": "No active tickets — send a check-in to 行動力國際"
         }
       ]
     }
-  ],
-  "credits": {
-    "tickets": "Jira — CSM Dashboard tracked list (done & ignored excluded)",
-    "calendar": "Google Calendar via csm-brief-worker",
-    "memory": "csm-memory.json (contracts, snapshots)",
-    "generatedBy": "Claude daily brief enhancement",
-    "updatedAt": "2026-07-21T03:37:24.188Z"
-  }
+  ]
 }
