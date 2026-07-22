@@ -327,7 +327,7 @@ function renderBriefCards(){
   });
   grid.innerHTML = sorted.map(acct=>{
     const hBadge={red:'\u{1f534} Critical',yellow:'\u{1f7e1} At Risk',green:'\u{1f7e2} On Track',gray:'⚪ Unclear'}[acct.health]||'⚪';
-    const diffHTML = acct.diffs.map(d=>`<div class="diff-line diff-${esc(d.type)}">${d.type==='new'?'↗':d.type==='close'?'↘':'⚠'} ${esc(d.text)}</div>`).join('');
+    const diffHTML = acct.diffs.map(d=>`<div class="diff-line diff-${esc(d.type)}"${d.key?` title="${esc(d.key)}"`:''}>${d.type==='new'?'↗':d.type==='close'?'↘':'⚠'} ${esc(d.title||d.text)}</div>`).join('');
     const riskHTML = acct.riskTags.map(t=>`<span class="risk-tag ${esc(t)}">${RISK_LABELS[t]||t}</span>`).join('');
     // EDIT 4: use getAccountTix to get live tickets if available
     return `
