@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-21T11:37:35.123+08:00",
+  "lastUpdated": "2026-07-23T10:16:11.370+08:00",
   "rules": [
     {
       "id": "okr-consolidate",
@@ -625,7 +625,7 @@
     }
   ],
   "ticketSnapshot": {
-    "generatedAt": "2026-07-21T03:08:17.953Z",
+    "generatedAt": "2026-07-23T02:16:11.285Z",
     "keys": {
       "55688": [],
       "mannings": [],
@@ -638,6 +638,9 @@
         "LEG-15992"
       ],
       "xindongli": []
+    },
+    "titles": {
+      "LEG-15992": "Legend World Technology Development Limited_AIQUA_HK_Order Form(User: CitySuper) "
     }
   },
   "projectOverrides": {
