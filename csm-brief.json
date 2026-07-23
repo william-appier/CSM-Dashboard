@@ -1,48 +1,17 @@
 {
-  "generatedAt": "2026-07-22T09:00:04.878+08:00",
+  "generatedAt": "2026-07-23T09:00:04.879+08:00",
   "accounts": [
     {
       "id": "mannings",
       "name": "Mannings",
       "health": "yellow",
       "insight": "Appier x Mannings Bi-weekly Meeting Jul 23.",
-      "diffs": [
-        {
-          "type": "close",
-          "text": "Enable Android & iOS push channel",
-          "key": "ETS-4713",
-          "title": "Enable Android & iOS push channel"
-        },
-        {
-          "type": "close",
-          "text": "Coupon API calling error investigation",
-          "key": "ETS-4593",
-          "title": "Coupon API calling error investigation"
-        },
-        {
-          "type": "close",
-          "text": "App push test on p8 integration",
-          "key": "ETS-4446",
-          "title": "App push test on p8 integration"
-        },
-        {
-          "type": "close",
-          "text": "Initiate customized project discussion",
-          "key": "ETS-4130",
-          "title": "Initiate customized project discussion"
-        },
-        {
-          "type": "close",
-          "text": "Resolving CSP limitation",
-          "key": "QGWL-24671",
-          "title": "Resolving CSP limitation"
-        }
-      ],
+      "diffs": [],
       "riskTags": [
         "mtg"
       ],
       "ticketCount": 0,
-      "mtgCount": 2,
+      "mtgCount": 3,
       "projects": [
         {
           "name": "AIXON → AIRIS Upgrade (Q4)",
@@ -54,6 +23,11 @@
           "date": "Jul 23",
           "title": "Appier x Mannings Bi-weekly Meeting",
           "meta": "11:00–12:00 HKT · Rola Chung"
+        },
+        {
+          "date": "Jul 24",
+          "title": "mannings meeting",
+          "meta": "15:00–16:00 HKT · william.wt.lin@appier.com"
         },
         {
           "date": "Jul 30",
@@ -73,19 +47,14 @@
     {
       "id": "scmp",
       "name": "SCMP",
-      "health": "green",
-      "insight": "No active tickets — all clear.",
-      "diffs": [
-        {
-          "type": "close",
-          "text": "AIRIS enablement",
-          "key": "ETS-5008",
-          "title": "AIRIS enablement"
-        }
+      "health": "yellow",
+      "insight": "(online) Appier x SCMP HK  Jul 27.",
+      "diffs": [],
+      "riskTags": [
+        "mtg"
       ],
-      "riskTags": [],
       "ticketCount": 0,
-      "mtgCount": 0,
+      "mtgCount": 1,
       "projects": [
         {
           "name": "Segments Enablement",
@@ -96,13 +65,19 @@
           "status": "progress"
         }
       ],
-      "meetings": [],
+      "meetings": [
+        {
+          "date": "Jul 27",
+          "title": "(online) Appier x SCMP HK ",
+          "meta": "15:00–15:45 HKT · emily.cheng@appier.com"
+        }
+      ],
       "tickets": [],
       "suggestions": [
         {
-          "priority": "low",
-          "label": "Check-in · Low",
-          "text": "No active tickets — send a check-in to SCMP"
+          "priority": "medium",
+          "label": "Meeting · Medium",
+          "text": "Prep for (online) Appier x SCMP HK  on Jul 27 (15:00–15:45 HKT · emily.cheng@appier.com)"
         }
       ]
     },
@@ -111,20 +86,7 @@
       "name": "10/10Hope",
       "health": "green",
       "insight": "No active tickets — all clear.",
-      "diffs": [
-        {
-          "type": "close",
-          "text": "klickngo API Integration",
-          "key": "QGWL-25317",
-          "title": "klickngo API Integration"
-        },
-        {
-          "type": "close",
-          "text": "Onboarding new AIQUA account",
-          "key": "QGWL-24745",
-          "title": "Onboarding new AIQUA account"
-        }
-      ],
+      "diffs": [],
       "riskTags": [],
       "ticketCount": 0,
       "mtgCount": 0,
@@ -242,7 +204,7 @@
       "id": "citysuper",
       "name": "City Super",
       "health": "yellow",
-      "insight": "AIQUA HK Order Form (CitySuper) open 22d.",
+      "insight": "LEG-15992 open 23d.",
       "diffs": [],
       "riskTags": [
         "ticket",
