@@ -191,26 +191,6 @@
       ]
     },
     {
-      "id": "momax",
-      "name": "Momax",
-      "health": "green",
-      "insight": "No active tickets or meetings — account is quiet.",
-      "diffs": [],
-      "riskTags": [],
-      "ticketCount": 0,
-      "mtgCount": 0,
-      "projects": [],
-      "meetings": [],
-      "tickets": [],
-      "suggestions": [
-        {
-          "priority": "low",
-          "label": "Check-in · Low",
-          "text": "Account is quiet — send Momax a light check-in to surface any needs or upcoming plans."
-        }
-      ]
-    },
-    {
       "id": "citysuper",
       "name": "City Super",
       "health": "yellow",
