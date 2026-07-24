@@ -1,9 +1,13 @@
 {
-  "lastUpdated": "2026-07-24T13:58:25.256+08:00",
+  "lastUpdated": "2026-07-24T14:05:58.246+08:00",
   "rules": [
     {
       "id": "okr-consolidate",
       "rule": "OKR entries: consolidate by theme, never log individual ticket keys"
+    },
+    {
+      "id": "client-name-case-insensitive",
+      "rule": "All client/account name matching is case-insensitive (momax = Momax = MOMAX)."
     }
   ],
   "ignoreTickets": [
@@ -633,7 +637,6 @@
       "1010hope": [],
       "luxgen": [],
       "tiangyuanxiang": [],
-      "momax": [],
       "citysuper": [
         "LEG-15992"
       ],
@@ -774,5 +777,13 @@
         }
       ]
     }
-  }
+  },
+  "removedAccounts": [
+    {
+      "id": "momax",
+      "name": "Momax",
+      "removedOn": "2026-07-24",
+      "reason": "CSM requested removal"
+    }
+  ]
 }
