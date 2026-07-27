@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-27T09:00:55.808+08:00",
+  "generatedAt": "2026-07-27T18:08:27.045+08:00",
   "accounts": [
     {
       "id": "mannings",
@@ -42,14 +42,12 @@
     {
       "id": "scmp",
       "name": "SCMP",
-      "health": "yellow",
-      "insight": "(online) Appier x SCMP HK  Jul 27.",
+      "health": "green",
+      "insight": "No active tickets — all clear.",
       "diffs": [],
-      "riskTags": [
-        "mtg"
-      ],
+      "riskTags": [],
       "ticketCount": 0,
-      "mtgCount": 1,
+      "mtgCount": 0,
       "projects": [
         {
           "name": "Segments Enablement",
@@ -60,19 +58,13 @@
           "status": "progress"
         }
       ],
-      "meetings": [
-        {
-          "date": "Jul 27",
-          "title": "(online) Appier x SCMP HK ",
-          "meta": "15:00–15:45 HKT · emily.cheng@appier.com"
-        }
-      ],
+      "meetings": [],
       "tickets": [],
       "suggestions": [
         {
-          "priority": "medium",
-          "label": "Meeting · Medium",
-          "text": "Prep for (online) Appier x SCMP HK  on Jul 27 (15:00–15:45 HKT · emily.cheng@appier.com)"
+          "priority": "low",
+          "label": "Check-in · Low",
+          "text": "No active tickets — send a check-in to SCMP"
         }
       ]
     },
