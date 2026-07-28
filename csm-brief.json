@@ -5,7 +5,7 @@
       "id": "mannings",
       "name": "Mannings",
       "health": "yellow",
-      "insight": "Appier x Mannings Monthly Meeting Jul 30.",
+      "insight": "Monthly Meeting Jul 30 at 11:00 HKT (Rola Chung) — Q3 renewal is already locked to 2026-09-30, so steer the agenda toward the Q4 AIXON→AIRIS upgrade.",
       "diffs": [],
       "riskTags": [
         "mtg"
@@ -33,9 +33,19 @@
       "tickets": [],
       "suggestions": [
         {
+          "priority": "high",
+          "label": "Meeting · High",
+          "text": "Prep for the Monthly Meeting on Jul 30 (11:00 HKT · Rola Chung); build the agenda around Q4 AIXON→AIRIS upgrade next steps."
+        },
+        {
           "priority": "medium",
-          "label": "Meeting · Medium",
-          "text": "Prep for Appier x Mannings Monthly Meeting on Jul 30 (11:00–12:00 HKT · Rola Chung)"
+          "label": "Project · Medium",
+          "text": "Confirm AIXON→AIRIS upgrade scope and Q4 timeline with the client — renewal is secured to 2026-09-30, so focus on migration readiness."
+        },
+        {
+          "priority": "low",
+          "label": "Meeting · Low",
+          "text": "Note the follow-up Bi-weekly on Aug 6 (11:00 HKT) to review upgrade progress."
         }
       ]
     },
@@ -43,7 +53,7 @@
       "id": "scmp",
       "name": "SCMP",
       "health": "green",
-      "insight": "No active tickets — all clear.",
+      "insight": "Silent — no tickets or meetings; AIRIS renewal is already signed through 2027-07-24, though AIXON is expected to churn.",
       "diffs": [],
       "riskTags": [],
       "ticketCount": 0,
@@ -62,9 +72,14 @@
       "tickets": [],
       "suggestions": [
         {
+          "priority": "medium",
+          "label": "Check-in · Medium",
+          "text": "Send a check-in to SCMP — no meeting is booked despite the recent AIRIS signing."
+        },
+        {
           "priority": "low",
-          "label": "Check-in · Low",
-          "text": "No active tickets — send a check-in to SCMP"
+          "label": "Project · Low",
+          "text": "Advance Segments Enablement and confirm the AIXON churn timeline so it does not surprise the account."
         }
       ]
     },
@@ -72,7 +87,7 @@
       "id": "1010hope",
       "name": "10/10Hope",
       "health": "green",
-      "insight": "No active tickets — all clear.",
+      "insight": "No tickets or meetings, but klickngo API integration and AIQUA onboarding are both active under Mark Liu.",
       "diffs": [],
       "riskTags": [],
       "ticketCount": 0,
@@ -91,9 +106,14 @@
       "tickets": [],
       "suggestions": [
         {
+          "priority": "medium",
+          "label": "Project · Medium",
+          "text": "Check in with Mark Liu on klickngo API integration and AIQUA onboarding progress — nothing is on the calendar."
+        },
+        {
           "priority": "low",
           "label": "Check-in · Low",
-          "text": "No active tickets — send a check-in to 10/10Hope"
+          "text": "Confirm 10/10Hope contract dates with the client (currently unknown in memory)."
         }
       ]
     },
@@ -101,7 +121,7 @@
       "id": "luxgen",
       "name": "Luxgen",
       "health": "green",
-      "insight": "No active tickets — all clear.",
+      "insight": "No meetings on the calendar — a risk signal; the BB contract (LEG-16090) is active through 2026-11-22.",
       "diffs": [],
       "riskTags": [],
       "ticketCount": 0,
@@ -111,9 +131,14 @@
       "tickets": [],
       "suggestions": [
         {
+          "priority": "medium",
+          "label": "Check-in · Medium",
+          "text": "Book a touchpoint with Luxgen — the absence of any scheduled meeting is a risk signal for an active BB account (contract to 2026-11-22)."
+        },
+        {
           "priority": "low",
-          "label": "Check-in · Low",
-          "text": "No active tickets — send a check-in to Luxgen"
+          "label": "Project · Low",
+          "text": "Confirm BB usage and health via LEG-16090 ahead of the Nov renewal window."
         }
       ]
     },
@@ -121,7 +146,7 @@
       "id": "55688",
       "name": "55688",
       "health": "green",
-      "insight": "No active tickets — all clear.",
+      "insight": "No tickets or meetings; the open thread is the Service Agent RFQ (BBT-5428, Brian Tsai).",
       "diffs": [],
       "riskTags": [],
       "ticketCount": 0,
@@ -136,9 +161,14 @@
       "tickets": [],
       "suggestions": [
         {
+          "priority": "medium",
+          "label": "Project · Medium",
+          "text": "Follow up with Brian Tsai on the Service Agent RFQ (BBT-5428); confirm scope and the next milestone."
+        },
+        {
           "priority": "low",
           "label": "Check-in · Low",
-          "text": "No active tickets — send a check-in to 55688"
+          "text": "Send a check-in to 55688 — no meeting is currently scheduled."
         }
       ]
     },
@@ -146,7 +176,7 @@
       "id": "tiangyuanxiang",
       "name": "田原香",
       "health": "green",
-      "insight": "No active tickets — all clear.",
+      "insight": "No open tickets; focus is new use-case development (EUU Onboarding and Campaign Agent Feature are both complete), tracked in the weekly Tuesday 09:30 HKT sync.",
       "diffs": [],
       "riskTags": [],
       "ticketCount": 0,
@@ -161,9 +191,14 @@
       "tickets": [],
       "suggestions": [
         {
+          "priority": "medium",
+          "label": "Project · Medium",
+          "text": "Prepare new use-case proposals for the weekly Tuesday 09:30 HKT tracking sync — the two prior deliverables are done."
+        },
+        {
           "priority": "low",
           "label": "Check-in · Low",
-          "text": "No active tickets — send a check-in to 田原香"
+          "text": "Confirm today's Tuesday sync happened and capture the next use-case actions."
         }
       ]
     },
@@ -171,7 +206,7 @@
       "id": "momax",
       "name": "Momax",
       "health": "green",
-      "insight": "No active tickets — all clear.",
+      "insight": "Silent — no tickets, meetings, or active projects on record.",
       "diffs": [],
       "riskTags": [],
       "ticketCount": 0,
@@ -181,9 +216,14 @@
       "tickets": [],
       "suggestions": [
         {
+          "priority": "medium",
+          "label": "Check-in · Medium",
+          "text": "Send a check-in to Momax to re-establish contact — nothing is currently tracked."
+        },
+        {
           "priority": "low",
           "label": "Check-in · Low",
-          "text": "No active tickets — send a check-in to Momax"
+          "text": "Confirm account status and log any active projects in the tracker."
         }
       ]
     },
@@ -191,7 +231,7 @@
       "id": "citysuper",
       "name": "City Super",
       "health": "yellow",
-      "insight": "LEG-15992 open 28d.",
+      "insight": "AIQUA HK Order Form (LEG-15992) has been open 28 days with emily.cheng — stale, and the only active item on this account.",
       "diffs": [],
       "riskTags": [
         "ticket",
@@ -210,13 +250,24 @@
           "pinned": true
         }
       ],
-      "suggestions": []
+      "suggestions": [
+        {
+          "priority": "high",
+          "label": "Ticket · High",
+          "text": "Chase emily.cheng on the AIQUA HK Order Form (LEG-15992), open 28 days; confirm what is blocking sign-off and set a close date."
+        },
+        {
+          "priority": "low",
+          "label": "Check-in · Low",
+          "text": "No meetings are booked with City Super — schedule a touchpoint once the order form clears."
+        }
+      ]
     },
     {
       "id": "xindongli",
       "name": "行動力國際",
       "health": "green",
-      "insight": "No active tickets — all clear.",
+      "insight": "No tickets or meetings; the account is mid Account Handover.",
       "diffs": [],
       "riskTags": [],
       "ticketCount": 0,
@@ -231,9 +282,14 @@
       "tickets": [],
       "suggestions": [
         {
+          "priority": "medium",
+          "label": "Project · Medium",
+          "text": "Progress the Account Handover for 行動力國際 — confirm the receiving owner and outstanding items."
+        },
+        {
           "priority": "low",
           "label": "Check-in · Low",
-          "text": "No active tickets — send a check-in to 行動力國際"
+          "text": "Send a handover status check-in to 行動力國際."
         }
       ]
     }
