@@ -78,6 +78,19 @@
       });
   }
 
+  function faqFreshnessSuffix() {
+    var lvs = (st.entries||[]).map(function(e){return e.last_verified;}).filter(Boolean).sort();
+    if (!lvs.length) return '';
+    var newest = lvs[lvs.length-1];
+    var upd = (st.meta && st.meta.updated) ? st.meta.updated : newest;
+    var wk = new Date(new Date(upd+'T00:00:00Z').getTime() - 7*86400000).toISOString().slice(0,10);
+    var weekNew = (st.entries||[]).filter(function(e){return e.last_verified && e.last_verified >= wk;}).length;
+    var lagDays = Math.round((new Date(upd+'T00:00:00Z').getTime() - new Date(newest+'T00:00:00Z').getTime())/86400000);
+    var s = ' \u00b7 最新條目 ' + esc(newest) + ' \u00b7 近 7 天新增 ' + weekNew + ' 條';
+    if (lagDays > 8) s += ' <span style="color:var(--danger,#e5484d)">⚠️ 內容可能落後 ' + lagDays + ' 天</span>';
+    return s;
+  }
+
   function renderShell() {
     var root = document.getElementById('faqRoot');
     if (!root) return;
@@ -93,7 +106,7 @@
       + '</div></div>'
       + '<div class="faq-recent" id="faqRecent" style="display:none"></div>'
       + '<div class="faq-list" id="faqList"></div>'
-      + '<div class="faq-footer"><span>資料快取於 ' + esc(st.meta.updated || '?') + ' · 共 ' + st.entries.length + ' 條</span>'
+      + '<div class="faq-footer"><span>資料快取於 ' + esc(st.meta.updated || '?') + ' · 共 ' + st.entries.length + ' 條' + faqFreshnessSuffix() + '</span>'
       + '<a href="' + esc(st.meta.indexUrl || '#') + '" target="_blank" style="color:var(--accent)">在 Confluence 開啟 FAQ INDEX ↗</a></div>';
   }
 
