@@ -1,10 +1,16 @@
 {
   "_meta": {
-    "updated": "2026-07-28",
+    "updated": "2026-07-29",
     "source": "Confluence CSM FAQ (AI 維護)",
     "indexUrl": "https://appier.atlassian.net/wiki/spaces/~712020045fe11d77e649819f2b2a67a185fdf0/pages/5232100110",
     "note": "由排程從 Confluence 五個分類頁自動重新生成之快取。urgency 未標者預設 medium。",
-    "categories": ["AIQUA", "AIRIS", "BotBonnie", "AdCreative", "OPS"]
+    "categories": [
+      "AIQUA",
+      "AIRIS",
+      "BotBonnie",
+      "AdCreative",
+      "OPS"
+    ]
   },
   "entries": [
     {
@@ -12,11 +18,11 @@
       "category": "AIQUA",
       "q": "客戶 console 帳號疑似被盜、被用來發釣魚 EDM 時,處理 SOP 是什麼?",
       "product": "AIQUA",
-      "last_verified": "2026-07-16",
+      "last_verified": "2026-07-27",
       "source": "https://appier.slack.com/archives/G01137M30B1/p1784170135715249",
       "status": "active",
       "urgency": "medium",
-      "a": "(1) 請 TS 查該帳號登入 log(帳密 vs Google SSO、IP、下載紀錄),AIRIS 側看 project history。(2) 立即 deactivate 該帳號(log 不會因停用消失)。(3) 開票請 TS 設 2FA + IP whitelist(2FA 會套用到 AIRIS;純 BB user 不納入)。(4) 分項開票:AQ log、AR log、API token 取用紀錄、TS internal action item。(5) 進行中 Journey 會掉 not delivered,先人工停止。"
+      "a": "(1) 請 TS 查該帳號登入 log(帳密 vs Google SSO、IP、下載紀錄),AIRIS 側看 project history。(2) 立即 deactivate 該帳號(log 不會因停用消失)。(3) 開票請 TS 設 2FA + IP whitelist(2FA 會套用到 AIRIS;純 BB user 不納入)。(4) 分項開票:AQ log、AR log、API token 取用紀錄、TS internal action item。(5) 進行中 Journey 會掉 not delivered,先人工停止。(6) 帳號需重新啟用時:確認為客戶本人操作後,協助將密碼 reset 成一組隨機字串 → 解封帳號 → 請客戶自行 reset password 後登入。"
     },
     {
       "id": "AQ-002",
@@ -102,7 +108,7 @@
       "product": "AIQUA",
       "last_verified": "2026-04-29",
       "source": "https://appier.slack.com/archives/G01137M30B1/p1777447627922859",
-      "status": "active",
+      "status": "stale",
       "urgency": "medium",
       "a": "多客戶(HOLA、鮮乳坊、佳格)回報之已知現象;「從 AQ 進 OJM 卡、從 BB 進不會」。已有 ETS-3068 追蹤,新案例把客戶 case 連到該票 +1 或到 L2 留言,協助拉高優先級。"
     },
@@ -215,6 +221,17 @@
       "status": "active",
       "urgency": "medium",
       "a": "舊 legacy consent 在此路徑不再套用,改走 EUU realtime filter (RTDM)。需在 EAM Dashboard 對該 project 加兩個 config:`aiqua_consent_attribute_mappings` 與 `aiqua_consent_filter_settings`,兩個都存在才啟用,約 5 分鐘生效。user-scope consent 擋該 user 全部裝置、device-scope 只擋該裝置。已上線 project 的歷史 consent 需從 EUU lakehouse backfill 到 RTDM,聯繫 AIQUA CD team。"
+    },
+    {
+      "id": "AQ-021",
+      "category": "AIQUA",
+      "q": "REC business package 續約 / tier 升降級,CSM 要設定什麼?",
+      "product": "AIQUA",
+      "last_verified": "2026-07-27",
+      "source": "https://appier.atlassian.net/wiki/pages/viewpage.action?pageId=3426550001",
+      "status": "active",
+      "urgency": "medium",
+      "a": "tier(legacy/lite/core/extended)只存在 EAM Org 的 `recommendation_service.tier`,不要再改 internal dashboard(該欄位已無服務讀取)。續約/升降級流程:(1) 依 tier 對照表(pageId 5103452317)重新 onboard 用量單位 `rec_exposure` 與 `rec_sku`;(2) 確認 active scenario 數符合新 tier 上限,超過請客戶封存,或依加購定價於 EAM Project 的 `active_scenario_limit` 覆寫上限;(3) 最後調整 Org 的 `tier`。用量查詢:2026/7 起 CSM 與客戶可直接從 Enterprise Console 的 Usage dashboard 自查(先前需開票給 TSTC)。"
     },
     {
       "id": "AR-001",
