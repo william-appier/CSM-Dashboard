@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-31T10:50:29.518+08:00",
+  "lastUpdated": "2026-07-31T17:57:25.156+08:00",
   "rules": [
     {
       "id": "okr-consolidate",
@@ -786,5 +786,6 @@
       "removedOn": "2026-07-24",
       "reason": "CSM requested removal"
     }
-  ]
+  ],
+  "commitments": []
 }
