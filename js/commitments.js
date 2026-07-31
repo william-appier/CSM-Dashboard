@@ -58,13 +58,38 @@ function cmtDaysOverdue(c) {
 // ── DURABLE WRITE-BACK ───────────────────────────────────────────────────────
 // Read-modify-write csm-memory.json through the worker. Best effort: the
 // localStorage flag already updated the UI, so a network failure is non-fatal.
-async function cmtPersist(id, patch) {
+//
+// IMPORTANT: raw.githubusercontent.com serves the main branch from a CDN that
+// lags roughly 5 minutes behind the commit. Re-reading it right after a write
+// returns the PRE-write copy, so two clicks inside that window would silently
+// clobber the first one. We therefore keep the object we last wrote in memory
+// and use it as the base for subsequent writes in the same session.
+var _cmtMemCache = null;      // last successfully written memory object
+var _cmtMemCacheAt = 0;       // epoch ms of that write
+var _cmtQueue = Promise.resolve();  // serialise writes so clicks can't interleave
+const CMT_CACHE_TTL_MS = 10 * 60 * 1000;
+
+async function cmtLoadMemory() {
+  if (_cmtMemCache && (Date.now() - _cmtMemCacheAt) < CMT_CACHE_TTL_MS) {
+    return JSON.parse(JSON.stringify(_cmtMemCache));
+  }
+  var mr = await fetch(CMT_MEMORY_URL + '?t=' + Date.now());
+  if (!mr.ok) throw new Error('HTTP ' + mr.status);
+  return await mr.json();
+}
+
+function cmtPersist(id, patch) {
+  // Chain onto the queue so concurrent clicks apply in order, not in parallel.
+  _cmtQueue = _cmtQueue.then(function () { return cmtPersistInner(id, patch); })
+                       .catch(function () { /* already logged */ });
+  return _cmtQueue;
+}
+
+async function cmtPersistInner(id, patch) {
   var badge = document.getElementById('cmt-sync-' + id);
   if (badge) { badge.textContent = 'saving…'; badge.className = 'cmt-sync spin'; }
   try {
-    var mr = await fetch(CMT_MEMORY_URL + '?t=' + Date.now());
-    if (!mr.ok) throw new Error('HTTP ' + mr.status);
-    var mem = await mr.json();
+    var mem = await cmtLoadMemory();
     mem.commitments = mem.commitments || [];
     var hit = mem.commitments.find(function (c) { return c.id === id; });
     if (hit) {
@@ -80,6 +105,9 @@ async function cmtPersist(id, patch) {
       body: JSON.stringify(mem)
     });
     if (!wr.ok) throw new Error('HTTP ' + wr.status);
+    // Cache what we just wrote — the CDN copy will be stale for ~5 minutes.
+    _cmtMemCache = mem;
+    _cmtMemCacheAt = Date.now();
     if (badge) { badge.textContent = 'saved'; badge.className = 'cmt-sync ok'; }
   } catch (e) {
     console.warn('[CSM] commitment write-back failed:', e.message);
