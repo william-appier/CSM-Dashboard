@@ -5,7 +5,7 @@
       "id": "mannings",
       "name": "Mannings",
       "health": "yellow",
-      "insight": "Appier x Mannings Bi-weekly Meeting Aug 6.",
+      "insight": "Two items owed to DFI's Karen since Jul 27 — send Adjust the updated mobile device ID, and confirm the interactive creative CPM. Bi-weekly with Rola Chung Aug 6, 11:00 HKT.",
       "diffs": [],
       "riskTags": [
         "mtg"
@@ -28,9 +28,47 @@
       "tickets": [],
       "suggestions": [
         {
+          "priority": "high",
+          "label": "Commitment · High",
+          "text": "Send Adjust the updated mobile device ID (owed to Karen Fu since Jul 27) — Eric is blocked on this for the SDK×Adjust forced update on Aug 10."
+        },
+        {
+          "priority": "medium",
+          "label": "Commitment · Medium",
+          "text": "Confirm the interactive creative CPM back to Karen (Monday Special Creative, pending since the Jul 27 recap)."
+        },
+        {
           "priority": "medium",
           "label": "Meeting · Medium",
-          "text": "Prep for Appier x Mannings Bi-weekly Meeting on Aug 6 (11:00–12:00 HKT · Rola Chung)"
+          "text": "Prep the Appier x Mannings bi-weekly on Aug 6 (11:00–12:00 HKT · Rola Chung); bring AIXON→AIRIS Q4 upgrade status."
+        }
+      ],
+      "commitments": [
+        {
+          "id": "cmt-mannings-20260727-adj",
+          "account": "mannings",
+          "text": "Share updated mobile device ID to Adjust",
+          "owner": "me",
+          "counterpart": "Karen Fu",
+          "due": null,
+          "source": "gmail",
+          "sourceUrl": "https://mail.google.com/mail/u/0/#inbox/19fa20563f4422e1",
+          "created": "2026-07-27",
+          "status": "open",
+          "snoozedUntil": null
+        },
+        {
+          "id": "cmt-mannings-20260727-cpm",
+          "account": "mannings",
+          "text": "Confirm interactive creative CPM to Karen",
+          "owner": "me",
+          "counterpart": "Karen Fu",
+          "due": null,
+          "source": "gmail",
+          "sourceUrl": "https://mail.google.com/mail/u/0/#inbox/19fa20563f4422e1",
+          "created": "2026-07-27",
+          "status": "open",
+          "snoozedUntil": null
         }
       ]
     },
@@ -38,7 +76,7 @@
       "id": "scmp",
       "name": "SCMP",
       "health": "yellow",
-      "insight": "SCMP AR training Aug 10.",
+      "insight": "AIRIS onboarding underway (data migration kicked off Jul 27); AR training Aug 10, 16:30 HKT. Watch for the AIXON offboard request once onboarding is confirmed complete.",
       "diffs": [],
       "riskTags": [
         "mtg"
@@ -67,15 +105,21 @@
         {
           "priority": "medium",
           "label": "Meeting · Medium",
-          "text": "Prep for SCMP AR training on Aug 10 (16:30–17:30 HKT · william.wt.lin@appier.com)"
+          "text": "Prep the SCMP AR training on Aug 10 (16:30–17:30 HKT) — confirm segments enablement is ready to demo."
+        },
+        {
+          "priority": "medium",
+          "label": "Project · Medium",
+          "text": "Track AIRIS onboarding to completion; be ready to action the AIXON offboard request as soon as the client confirms onboarding is done."
         }
-      ]
+      ],
+      "commitments": []
     },
     {
       "id": "1010hope",
       "name": "10/10Hope",
       "health": "green",
-      "insight": "No active tickets — all clear.",
+      "insight": "No tickets or meetings. AIQUA onboarding and klickngo API integration both in progress with Mark Liu.",
       "diffs": [],
       "riskTags": [],
       "ticketCount": 0,
@@ -96,15 +140,16 @@
         {
           "priority": "low",
           "label": "Check-in · Low",
-          "text": "No active tickets — send a check-in to 10/10Hope"
+          "text": "Ping Mark Liu for a status update on the klickngo API integration and AIQUA onboarding."
         }
-      ]
+      ],
+      "commitments": []
     },
     {
       "id": "luxgen",
       "name": "Luxgen",
       "health": "green",
-      "insight": "No active tickets — all clear.",
+      "insight": "BB contract active through Nov 23 (LEG-16090). No meetings on the calendar — a silent account worth a touchpoint.",
       "diffs": [],
       "riskTags": [],
       "ticketCount": 0,
@@ -114,17 +159,18 @@
       "tickets": [],
       "suggestions": [
         {
-          "priority": "low",
-          "label": "Check-in · Low",
-          "text": "No active tickets — send a check-in to Luxgen"
+          "priority": "medium",
+          "label": "Check-in · Medium",
+          "text": "No meetings scheduled — book a Luxgen touchpoint to keep BB engagement warm ahead of the Nov 23 renewal."
         }
-      ]
+      ],
+      "commitments": []
     },
     {
       "id": "55688",
       "name": "55688",
       "health": "green",
-      "insight": "No active tickets — all clear.",
+      "insight": "No tickets or meetings. Focus remains the Service Agent RFQ (BBT-5428) with Brian Tsai.",
       "diffs": [],
       "riskTags": [],
       "ticketCount": 0,
@@ -141,15 +187,16 @@
         {
           "priority": "low",
           "label": "Check-in · Low",
-          "text": "No active tickets — send a check-in to 55688"
+          "text": "Follow up with Brian Tsai on the Service Agent RFQ (BBT-5428) to keep it moving."
         }
-      ]
+      ],
+      "commitments": []
     },
     {
       "id": "tiangyuanxiang",
       "name": "田原香",
       "health": "green",
-      "insight": "No active tickets — all clear.",
+      "insight": "EUU onboarding and Campaign Agent feature both complete; now developing new use cases. Weekly tracking meeting every Tue 09:30 HKT.",
       "diffs": [],
       "riskTags": [],
       "ticketCount": 0,
@@ -165,16 +212,17 @@
       "suggestions": [
         {
           "priority": "low",
-          "label": "Check-in · Low",
-          "text": "No active tickets — send a check-in to 田原香"
+          "label": "Meeting · Low",
+          "text": "Prep the Tuesday 09:30 HKT weekly tracking sync — bring new use-case ideas to keep momentum."
         }
-      ]
+      ],
+      "commitments": []
     },
     {
       "id": "momax",
       "name": "Momax",
       "health": "green",
-      "insight": "No active tickets — all clear.",
+      "insight": "Silent — no tickets, meetings, or active projects.",
       "diffs": [],
       "riskTags": [],
       "ticketCount": 0,
@@ -186,15 +234,16 @@
         {
           "priority": "low",
           "label": "Check-in · Low",
-          "text": "No active tickets — send a check-in to Momax"
+          "text": "Send Momax a light check-in to confirm there are no open needs."
         }
-      ]
+      ],
+      "commitments": []
     },
     {
       "id": "citysuper",
       "name": "City Super",
       "health": "yellow",
-      "insight": "LEG-15992 open 0d.",
+      "insight": "AIQUA HK Order Form (LEG-15992) open with Link Nie. Push-quota deal pending — Lambert offered 40% off (HKD 2,844/mo) against the client's free-4M ask.",
       "diffs": [],
       "riskTags": [
         "ticket"
@@ -212,13 +261,25 @@
           "pinned": true
         }
       ],
-      "suggestions": []
+      "suggestions": [
+        {
+          "priority": "medium",
+          "label": "Ticket · Medium",
+          "text": "Follow up with Link Nie to finalize the AIQUA HK Order Form (LEG-15992)."
+        },
+        {
+          "priority": "medium",
+          "label": "Deal · Medium",
+          "text": "Relay Lambert's counter on push quota (40% discount, HKD 2,844/mo) to CitySuper — client had asked for 4M pushes at no cost."
+        }
+      ],
+      "commitments": []
     },
     {
       "id": "xindongli",
       "name": "行動力國際",
       "health": "green",
-      "insight": "No active tickets — all clear.",
+      "insight": "Silent — no tickets, meetings, or active projects.",
       "diffs": [],
       "riskTags": [],
       "ticketCount": 0,
@@ -235,9 +296,10 @@
         {
           "priority": "low",
           "label": "Check-in · Low",
-          "text": "No active tickets — send a check-in to 行動力國際"
+          "text": "Send 行動力國際 a light check-in to confirm there are no open needs."
         }
-      ]
+      ],
+      "commitments": []
     }
   ]
 }
