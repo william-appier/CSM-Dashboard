@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-31T18:06:40.522+08:00",
+  "lastUpdated": "2026-07-31T18:49:43.189+08:00",
   "rules": [
     {
       "id": "okr-consolidate",
@@ -629,7 +629,7 @@
     }
   ],
   "ticketSnapshot": {
-    "generatedAt": "2026-07-31T09:59:17.151Z",
+    "generatedAt": "2026-07-31T10:49:42.904Z",
     "keys": {
       "55688": [],
       "mannings": [],
@@ -787,5 +787,32 @@
       "reason": "CSM requested removal"
     }
   ],
-  "commitments": []
+  "commitments": [
+    {
+      "id": "cmt-mannings-20260727-adj",
+      "account": "mannings",
+      "text": "Share updated mobile device ID to Adjust",
+      "owner": "me",
+      "counterpart": "Karen Fu",
+      "due": null,
+      "source": "gmail",
+      "sourceUrl": "https://mail.google.com/mail/u/0/#inbox/19fa20563f4422e1",
+      "created": "2026-07-27",
+      "status": "open",
+      "snoozedUntil": null
+    },
+    {
+      "id": "cmt-mannings-20260727-cpm",
+      "account": "mannings",
+      "text": "Confirm interactive creative CPM to Karen",
+      "owner": "me",
+      "counterpart": "Karen Fu",
+      "due": null,
+      "source": "gmail",
+      "sourceUrl": "https://mail.google.com/mail/u/0/#inbox/19fa20563f4422e1",
+      "created": "2026-07-27",
+      "status": "open",
+      "snoozedUntil": null
+    }
+  ]
 }
