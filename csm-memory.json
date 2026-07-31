@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-31T18:06:05.200+08:00",
+  "lastUpdated": "2026-07-31T18:06:40.522+08:00",
   "rules": [
     {
       "id": "okr-consolidate",
@@ -787,17 +787,5 @@
       "reason": "CSM requested removal"
     }
   ],
-  "commitments": [
-    {
-      "id": "cmt-e2e-test",
-      "status": "done",
-      "snoozedUntil": null,
-      "closedAt": "2026-07-31"
-    },
-    {
-      "id": "cmt-e2e-test2",
-      "status": "open",
-      "snoozedUntil": "2026-08-02"
-    }
-  ]
+  "commitments": []
 }
