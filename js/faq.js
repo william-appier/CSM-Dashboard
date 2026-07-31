@@ -145,10 +145,20 @@
     if (!a) return '';
     // Strip a leading "(1)" / "1." style enumerator so the summary reads cleanly
     a = a.replace(/^[\(\[]?\s*\d+\s*[\)\].、]\s*/, '');
-    var m = a.match(/^[\s\S]{0,110}?(?:[。！？!?]|\n|$)/);
-    var s = (m ? m[0] : a.slice(0, 110)).replace(/\s+/g, ' ').trim();
-    if (s.length > 110) s = s.slice(0, 108) + '…';
-    else if (a.length > s.length) s = s.replace(/[。]$/, '。');
+    // Take whole sentences until we have something actually informative.
+    // A bare first sentence is often useless on its own ("有限制。"), so keep
+    // pulling the next one until we clear ~24 chars or hit the 110 cap.
+    var flat = a.replace(/\s+/g, ' ').trim();
+    var parts = flat.split(/(?<=[。！？!?])/);
+    var s = '';
+    for (var i = 0; i < parts.length; i++) {
+      if (s && (s.length >= 24 || (s + parts[i]).length > 110)) break;
+      s += parts[i];
+    }
+    s = s.trim();
+    if (!s) s = flat.slice(0, 110);
+    if (s.length > 112) s = s.slice(0, 110) + '…';
+    else if (flat.length > s.length && !/[。！？!?]$/.test(s)) s += '…';
     return s;
   }
 
