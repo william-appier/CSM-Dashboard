@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-08-01T09:00:52.256+08:00",
+  "generatedAt": "2026-08-02T09:00:59.170+08:00",
   "accounts": [
     {
       "id": "mannings",
       "name": "Mannings",
       "health": "yellow",
-      "insight": "Appier x Mannings Bi-weekly Meeting Aug 6 · renewal due 2026-09-30 (60d).",
+      "insight": "Appier x Mannings Bi-weekly Meeting Aug 6 · renewal due 2026-09-30 (59d).",
       "diffs": [],
       "riskTags": [
         "renewal",
@@ -31,7 +31,7 @@
         {
           "priority": "high",
           "label": "Renewal · High",
-          "text": "Mannings contract due 2026-09-30 (60d left) — confirm status now"
+          "text": "Mannings contract due 2026-09-30 (59d left) — confirm status now"
         },
         {
           "priority": "medium",
@@ -200,7 +200,7 @@
       "id": "citysuper",
       "name": "City Super",
       "health": "yellow",
-      "insight": "LEG-15992 open 0d.",
+      "insight": "LEG-15992 open 1d.",
       "diffs": [],
       "riskTags": [
         "ticket"
