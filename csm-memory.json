@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-03T10:41:21.688+08:00",
+  "lastUpdated": "2026-08-03T10:46:45.095+08:00",
   "rules": [
     {
       "id": "okr-consolidate",
@@ -629,7 +629,7 @@
     }
   ],
   "ticketSnapshot": {
-    "generatedAt": "2026-08-03T02:41:18.116Z",
+    "generatedAt": "2026-08-03T02:46:41.563Z",
     "keys": {
       "55688": [],
       "mannings": [],
@@ -804,7 +804,7 @@
     {
       "id": "cmt-mannings-20260727-cpm",
       "account": "mannings",
-      "text": "Confirm interactive creative CPM to Karen",
+      "text": "Confirm interactive-creative CPM to Karen",
       "owner": "me",
       "counterpart": "Karen Fu",
       "due": null,
