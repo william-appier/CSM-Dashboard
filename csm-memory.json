@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-03T10:46:45.095+08:00",
+  "lastUpdated": "2026-08-03T10:51:22.178+08:00",
   "rules": [
     {
       "id": "okr-consolidate",
@@ -811,6 +811,19 @@
       "source": "gmail",
       "sourceUrl": "https://mail.google.com/mail/u/0/#inbox/19fa20563f4422e1",
       "created": "2026-07-27",
+      "status": "open",
+      "snoozedUntil": null
+    },
+    {
+      "id": "cmt-scmp-20260731-axo",
+      "account": "scmp",
+      "text": "Request AIXON offboard (onboarding confirmed complete)",
+      "owner": "me",
+      "counterpart": "Michael Palmer / AEP team",
+      "due": null,
+      "source": "slack",
+      "sourceUrl": "https://appier.slack.com/archives/C0A22L6ES4E/p1785490434438379?thread_ts=1784084193.395059&cid=C0A22L6ES4E",
+      "created": "2026-07-31",
       "status": "open",
       "snoozedUntil": null
     }
