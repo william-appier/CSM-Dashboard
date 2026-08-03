@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-03T10:51:22.178+08:00",
+  "lastUpdated": "2026-08-03T14:17:48.102+08:00",
   "rules": [
     {
       "id": "okr-consolidate",
@@ -789,7 +789,7 @@
   ],
   "commitments": [
     {
-      "id": "cmt-mannings-20260727-adj",
+      "id": "cmt-mannings-share-updated-mobile",
       "account": "mannings",
       "text": "Share updated mobile device ID to Adjust",
       "owner": "me",
@@ -799,10 +799,11 @@
       "sourceUrl": "https://mail.google.com/mail/u/0/#inbox/19fa20563f4422e1",
       "created": "2026-07-27",
       "status": "open",
-      "snoozedUntil": null
+      "snoozedUntil": null,
+      "lastSeen": "2026-07-27"
     },
     {
-      "id": "cmt-mannings-20260727-cpm",
+      "id": "cmt-mannings-confirm-interactive-creative",
       "account": "mannings",
       "text": "Confirm interactive-creative CPM to Karen",
       "owner": "me",
@@ -812,10 +813,11 @@
       "sourceUrl": "https://mail.google.com/mail/u/0/#inbox/19fa20563f4422e1",
       "created": "2026-07-27",
       "status": "open",
-      "snoozedUntil": null
+      "snoozedUntil": null,
+      "lastSeen": "2026-07-27"
     },
     {
-      "id": "cmt-scmp-20260731-axo",
+      "id": "cmt-scmp-request-aixon-offboard",
       "account": "scmp",
       "text": "Request AIXON offboard (onboarding confirmed complete)",
       "owner": "me",
@@ -825,7 +827,8 @@
       "sourceUrl": "https://appier.slack.com/archives/C0A22L6ES4E/p1785490434438379?thread_ts=1784084193.395059&cid=C0A22L6ES4E",
       "created": "2026-07-31",
       "status": "open",
-      "snoozedUntil": null
+      "snoozedUntil": null,
+      "lastSeen": "2026-07-31"
     }
   ]
 }
