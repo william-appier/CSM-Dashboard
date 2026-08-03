@@ -77,7 +77,7 @@
       "id": "scmp",
       "name": "SCMP",
       "health": "yellow",
-      "insight": "AR training on Aug 10 (16:30 HKT); AIRIS signed through 2027-07-24 — watch for the expected AIXON offboard request once onboarding is confirmed complete.",
+      "insight": "AIRIS onboarding confirmed complete (keyword backfill done Jul 31) — the AIXON offboard request is now owed and not yet filed. AIRIS contract runs to 2027-07-24.",
       "diffs": [],
       "riskTags": [
         "mtg"
@@ -104,6 +104,11 @@
       "tickets": [],
       "suggestions": [
         {
+          "priority": "high",
+          "label": "Commitment · High",
+          "text": "File the AIXON offboard request with Michael Palmer — you said you would once onboarding completed, and Yung-Hsiu confirmed it is done. Client will rebuild segments on AR, so nothing blocks it."
+        },
+        {
           "priority": "medium",
           "label": "Meeting · Medium",
           "text": "Prep the Aug 10 AR training (16:30 HKT) — walk through segments enablement so the team can self-serve."
@@ -114,7 +119,21 @@
           "text": "Confirm AIRIS onboarding completion, then be ready to action the anticipated AIXON (AX) offboard request promptly."
         }
       ],
-      "commitments": []
+      "commitments": [
+        {
+          "id": "cmt-scmp-20260731-axo",
+          "account": "scmp",
+          "text": "Request AIXON offboard (onboarding confirmed complete)",
+          "owner": "me",
+          "counterpart": "Michael Palmer / AEP team",
+          "due": null,
+          "source": "slack",
+          "sourceUrl": "https://appier.slack.com/archives/C0A22L6ES4E/p1785490434438379?thread_ts=1784084193.395059&cid=C0A22L6ES4E",
+          "created": "2026-07-31",
+          "status": "open",
+          "snoozedUntil": null
+        }
+      ]
     },
     {
       "id": "1010hope",
