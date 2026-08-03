@@ -55,6 +55,19 @@ function cmtDaysOverdue(c) {
   return Math.round((cmtToday() - new Date(c.due)) / 86400000);
 }
 
+// Look a commitment up across all accounts in the loaded brief, so a write-back
+// can persist the whole record rather than just its id.
+function cmtFindInAccounts(id) {
+  if (typeof ACCOUNTS === 'undefined') return null;
+  for (var i = 0; i < ACCOUNTS.length; i++) {
+    var list = ACCOUNTS[i].commitments || [];
+    for (var j = 0; j < list.length; j++) {
+      if (list[j].id === id) return JSON.parse(JSON.stringify(list[j]));
+    }
+  }
+  return null;
+}
+
 // ── DURABLE WRITE-BACK ───────────────────────────────────────────────────────
 // Read-modify-write csm-memory.json through the worker. Best effort: the
 // localStorage flag already updated the UI, so a network failure is non-fatal.
@@ -95,9 +108,16 @@ async function cmtPersistInner(id, patch) {
     if (hit) {
       Object.assign(hit, patch);
     } else {
-      // Commitment exists in the brief but not yet in memory — record the state
-      // so the next daily run does not resurrect it.
-      mem.commitments.push(Object.assign({ id: id, status: 'open', snoozedUntil: null }, patch));
+      // Commitment is in the brief but not yet in memory (e.g. an earlier write
+      // failed). Write the FULL record, not a bare {id,status} stub — a stub
+      // would leave memory with an entry that has no account or text, which the
+      // daily scan cannot reconcile or report on.
+      var full = cmtFindInAccounts(id);
+      mem.commitments.push(Object.assign(
+        { id: id, status: 'open', snoozedUntil: null },
+        full || {},
+        patch
+      ));
     }
     var wr = await fetch(CMT_WORKER_URL, {
       method: 'POST',
