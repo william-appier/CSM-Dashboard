@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "updated": "2026-07-29",
+    "updated": "2026-08-05",
     "source": "Confluence CSM FAQ (AI 維護)",
     "indexUrl": "https://appier.atlassian.net/wiki/spaces/~712020045fe11d77e649819f2b2a67a185fdf0/pages/5232100110",
     "note": "由排程從 Confluence 五個分類頁自動重新生成之快取。urgency 未標者預設 medium。",
@@ -97,7 +97,7 @@
       "product": "AIQUA",
       "last_verified": "2026-05-05",
       "source": "https://appier.slack.com/archives/G01137M30B1/p1777976360485119",
-      "status": "active",
+      "status": "stale",
       "urgency": "medium",
       "a": "部分可行。Journey node 無編輯紀錄,campaign 有;Email template 層修改無紀錄。用 node 對應 campaign id + 用戶 notification_sent 時間戳推算版本先後,無法還原當時實際內容。"
     },
@@ -779,7 +779,7 @@
       "product": "AdCreative",
       "last_verified": "2026-05-06",
       "source": "https://appier.slack.com/archives/C08RGLRNX3R/p1778066816927789",
-      "status": "active",
+      "status": "stale",
       "urgency": "medium",
       "a": "正常。(1) 只有 admin 帳號看得到 credit usage;(2) 功能 2026 年 4 月底才 release,數字從上線日起累積、不回溯。"
     },
@@ -858,7 +858,7 @@
       "source": "https://appier.slack.com/archives/C08RGLRNX3R/p1782702921589449",
       "status": "active",
       "urgency": "medium",
-      "a": "內部 prompt 收集網站 aaprompt-site.netlify.app(後台密碼詢問團隊),可新增情境指令或 AI 生成;建議實測成功後再放入,圖片需先上傳取得網址。僅內部使用、勿給客戶。prompt 用中文寫、體驗較好。"
+      "a": "內部 prompt 收集網站 aaprompt-site.netlify.app(後台密碼 AAprompt),可新增情境指令或 AI 生成;建議實測成功後再放入,圖片需先上傳取得網址。僅內部使用、勿給客戶。prompt 用中文寫、體驗較好。"
     },
     {
       "id": "OPS-001",
