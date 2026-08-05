@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-03T14:17:48.102+08:00",
+  "lastUpdated": "2026-08-05T10:36:11.420+08:00",
   "rules": [
     {
       "id": "okr-consolidate",
@@ -629,7 +629,7 @@
     }
   ],
   "ticketSnapshot": {
-    "generatedAt": "2026-08-03T02:46:41.563Z",
+    "generatedAt": "2026-08-05T02:36:10.513Z",
     "keys": {
       "55688": [],
       "mannings": [],
@@ -800,7 +800,7 @@
       "created": "2026-07-27",
       "status": "open",
       "snoozedUntil": null,
-      "lastSeen": "2026-07-27"
+      "lastSeen": "2026-08-05"
     },
     {
       "id": "cmt-mannings-confirm-interactive-creative",
@@ -814,7 +814,7 @@
       "created": "2026-07-27",
       "status": "open",
       "snoozedUntil": null,
-      "lastSeen": "2026-07-27"
+      "lastSeen": "2026-08-05"
     },
     {
       "id": "cmt-scmp-request-aixon-offboard",
@@ -828,7 +828,21 @@
       "created": "2026-07-31",
       "status": "open",
       "snoozedUntil": null,
-      "lastSeen": "2026-07-31"
+      "lastSeen": "2026-08-05"
+    },
+    {
+      "id": "cmt-tiangyuanxiang-check-segmentedcampaign-numbers",
+      "account": "tiangyuanxiang",
+      "text": "Check segmented-campaign numbers post-migration for anomalies (per Ted)",
+      "owner": "me",
+      "counterpart": "Ted Wu",
+      "due": "2026-08-07",
+      "source": "slack",
+      "sourceUrl": "https://appier.slack.com/archives/G01137M30B1/p1785743294120839",
+      "created": "2026-08-03",
+      "lastSeen": "2026-08-05",
+      "status": "open",
+      "snoozedUntil": null
     }
   ]
 }
