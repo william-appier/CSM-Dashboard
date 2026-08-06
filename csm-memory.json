@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-05T10:36:11.420+08:00",
+  "lastUpdated": "2026-08-06T10:35:40.584+08:00",
   "rules": [
     {
       "id": "okr-consolidate",
@@ -629,7 +629,7 @@
     }
   ],
   "ticketSnapshot": {
-    "generatedAt": "2026-08-05T02:36:10.513Z",
+    "generatedAt": "2026-08-06T02:35:39.492Z",
     "keys": {
       "55688": [],
       "mannings": [],
@@ -840,7 +840,7 @@
       "source": "slack",
       "sourceUrl": "https://appier.slack.com/archives/G01137M30B1/p1785743294120839",
       "created": "2026-08-03",
-      "lastSeen": "2026-08-05",
+      "lastSeen": "2026-08-06",
       "status": "open",
       "snoozedUntil": null
     }
