@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-07T15:06:45.884+08:00",
+  "lastUpdated": "2026-08-07T16:47:59.926+08:00",
   "rules": [
     {
       "id": "okr-consolidate",
@@ -170,9 +170,9 @@
       "account": "55688",
       "bot": "北區聯合服務中心",
       "platform": "BotBonnie",
-      "startDate": null,
-      "endDate": "2026-08-24",
-      "note": "Client (Robetta Chu) agreed 2026-08-06 to renew 1 year to 2027-08-24. Platform extension request to BB team still PENDING — see commitment cmt-55688-request-botbonnie-platform. Source: https://appier.slack.com/archives/C0B1W677KGU (William 2026-08-06 bot End date list, per SF IR)"
+      "startDate": "2026-08-25",
+      "endDate": "2027-08-24",
+      "note": "Renewal CONFIRMED by CSM 2026-08-07 — 1 year, 2026-08-25 to 2027-08-24. Client contact Robetta Chu agreed 2026-08-06. NOTE: the BotBonnie platform extension must be filed before the old term lapses on 2026-08-24 or service stops regardless of the signed renewal — tracked as commitment cmt-55688-request-botbonnie-platform (due 2026-08-24). Source: https://appier.slack.com/archives/C0B1W677KGU (William 2026-08-06 bot End date list, per SF IR)"
     },
     {
       "account": "55688",
@@ -896,9 +896,9 @@
     {
       "id": "cmt-55688-request-botbonnie-platform",
       "account": "55688",
-      "text": "Request BotBonnie platform extension for 55688 renewal",
+      "text": "Request BotBonnie platform extension for 55688 北區 (renewal signed)",
       "owner": "me",
-      "counterpart": "Robetta Chu",
+      "counterpart": "BotBonnie platform team (for Robetta Chu / 北區)",
       "due": "2026-08-24",
       "source": "gmail",
       "sourceUrl": "https://mail.google.com/mail/u/0/#inbox/19fd5f3dfd450695",
