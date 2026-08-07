@@ -39,11 +39,16 @@
       multi: true,
       cap: 2,
       rules: [
-        ['billing',     '計費',   /計費|帳單|費用|報價|付款|請款|發票|billing|invoice|quotation|credit|quota|訂單|order\s*form/i],
+        ['billing',     '計費',   /計費|帳單|費用|報價|付款|請款|發票|billing|invoice|quotation|credit|quota|訂單|order\s*form|點數|扣點|儲值|credits?|倒數/i],
+        ['compliance',  '法遵/證明', /證明文件|證明|合規|合法|授權書|著作權|版權|隱私|條款|compliance|certificat|gdpr|\bnda\b|商業使用/i],
         ['access',      '權限帳號', /停權|停用|被盜|釣魚|登入|\bsso\b|2fa|whitelist|permission|權限|帳號密碼|重設密碼|reset\s*password|加開帳號|帳號數/i],
         ['enablement',  '功能開通', /開通|啟用|開啟|申請開|enable|enabling|toggle|白名單|上線申請/i],
         ['integration', '資料串接', /串接|整合|對接|\bapi\b|\bsdk\b|webhook|integration|匯入|import|同步|sync|streaming/i],
-        ['limitation',  '產品限制', /限制|不支援|不支持|無法支援|上限|\bcap\b|limitation|not supported|受限/i],
+        ['export',      '資料匯出', /匯出|下載|export|download|報表下載/i],
+        ['metric',      '數據定義', /怎麼算|如何計算|計算方式|計算邏輯|統計口徑|口徑|扣除|不準確|不準|對不起來|對不上|是否即時|即時更新|數字.{0,8}即時|calculat|metric\s*definition/i],
+        ['spec',        '規格/行為', /差異|差別|相較|比較|優先順序|優先權|priority|衝突|同時符合|動態參數|預設值|顯示什麼|會顯示|規格|spec|\bvs\b|\bv2\b|\bv3\b/i],
+        ['limitation',  '產品限制', /限制|不支援|不支持|無法支援|上限|\bcap\b|limitation|not supported|受限|多張|幾張|幾個|最多|一次(能|可以|領|發)/i],
+        ['resource',    '文件資源', /參考資源|參考文件|內部文件|手冊|教學|範本|範例|懶人包|reference|guide|template|playbook|哪裡查|哪裡看|哪裡找/i],
         ['troubleshoot','排錯',   /錯誤|失敗|異常|無法|不能|沒有收到|沒收到|沒有產出|沒出現|掉了|延遲|排查|debug|bug|error|fail|issue|不一致|對不起來|落差/i],
         ['howto',       '設定 how-to', /如何|怎麼|該怎麼|設定|配置|步驟|流程|how\s*to|setup|configure/i]
       ]
@@ -52,25 +57,29 @@
       label: '通道',
       multi: true,
       rules: [
-        ['ios',     'iOS',      /\bios\b|iphone|apns|\.p8\b|\.p12\b|apple/i],
-        ['android', 'Android',  /android|\bfcm\b|\bgcm\b/i],
-        ['web',     'Web',      /web\s*push|webpush|瀏覽器|browser|網頁推播/i],
-        ['line',    'LINE',     /\bline\b|line\s*oa|line\s*uid/i],
-        ['meta',    'FB / IG',  /facebook|messenger|\bfb\b|instagram|\big\b/i],
-        ['edm',     'EDM',      /\bedm\b|email|sendgrid|郵件|信件|電子報|mail/i],
-        ['sms',     'SMS',      /\bsms\b|簡訊/i],
-        ['inapp',   'In-App',   /in\s*-?\s*app|inapp|站內|app\s*inbox|pop\s*-?\s*up/i],
-        ['push',    'App Push', /推播|push/i]
+        ['ios',      'iOS',                /\bios\b|iphone|apns|\.p8\b|\.p12\b|apple/i],
+        ['android',  'Android',            /android|\bfcm\b|\bgcm\b/i],
+        ['web',      'Web',                /web\s*push|webpush|瀏覽器|browser|網頁推播/i],
+        ['line',     'LINE',               /\bline\b|line\s*oa|line\s*uid/i],
+        ['meta',     'FB / IG',            /facebook|messenger|\bfb\b|instagram|\big\b/i],
+        ['whatsapp', 'WhatsApp',           /whatsapp|\bwaba\b|wa\s*business/i],
+        ['telegram', 'Telegram',           /telegram/i],
+        ['webchat',  'WebChat / LiveChat', /webchat|web\s*chat|livechat|live\s*chat|即時訊息|線上客服|網頁聊天/i],
+        ['edm',      'EDM',                /\bedm\b|email|sendgrid|郵件|信件|電子報|mail/i],
+        ['sms',      'SMS',                /\bsms\b|簡訊/i],
+        ['inapp',    'In-App',             /in\s*-?\s*app|inapp|站內|app\s*inbox|pop\s*-?\s*up|inweb|in\s*-?\s*web|onsite|on\s*-?\s*site/i],
+        ['push',     'App Push',           /推播|push/i]
       ]
     },
     stage: {
       label: '階段',
       multi: true,
       rules: [
-        ['onboarding', 'Onboarding', /onboard|導入|建置|初始設定|kick\s*-?off|新帳號|開站/i],
-        ['prelaunch',  '上線前檢查', /測試|驗證|檢查|前置|pre\s*-?launch|dry\s*run|sandbox|uat/i],
-        ['renewal',    '續約',      /續約|renew|合約|contract|order\s*form|到期/i],
-        ['change',     '帳號異動',   /轉移|移轉|migrat|異動|換人|離職|接手|合併帳號/i]
+        ['onboarding','Onboarding',  /onboard|導入|建置|初始設定|kick\s*-?off|新帳號|開站|開通流程|新客|首次|上線申請/i],
+        ['prelaunch', '上線前檢查',   /測試|驗證|檢查|前置|pre\s*-?launch|dry\s*run|sandbox|uat|試用|trial|demo|\bpoc\b/i],
+        ['renewal',   '續約',        /續約|renew|合約|contract|order\s*form|到期|展延|延長|extension|churn|流失|offboard|下架|退租/i],
+        ['change',    '帳號異動',     /轉移|移轉|migrat|異動|換人|離職|接手|合併帳號|搬移|複製|clone|duplicate|轉讓|搬到/i],
+        ['daily',     '日常操作',     /日常|例行|每月|每週|每日|定期|routine|regular|常見情境/i]
       ]
     },
     owner: {
