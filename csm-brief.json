@@ -287,27 +287,6 @@
       ]
     },
     {
-      "id": "momax",
-      "name": "Momax",
-      "health": "green",
-      "insight": "Silent — no tickets, meetings, or open commitments on record.",
-      "diffs": [],
-      "riskTags": [],
-      "ticketCount": 0,
-      "mtgCount": 0,
-      "projects": [],
-      "meetings": [],
-      "tickets": [],
-      "suggestions": [
-        {
-          "priority": "low",
-          "label": "Check-in · Low",
-          "text": "Reach out to Momax for a status check; there is no recent activity tracked."
-        }
-      ],
-      "commitments": []
-    },
-    {
       "id": "citysuper",
       "name": "City Super",
       "health": "yellow",
