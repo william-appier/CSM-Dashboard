@@ -1,0 +1,22 @@
+{
+  "_format": {
+    "note": "Alias map that turns messy Opportunity-name 'account cores' into clean accounts. The sync matches each opportunity's core (case-insensitive 'contains') against every string in matchAliases, assigns it to the account id, and attributes it to the CSM via the report's CSM Email column. Fill/adjust and send back.",
+    "fields": {
+      "id": "short stable key used by the dashboard/brief",
+      "name": "friendly display name",
+      "csm": "owning CSM email (from the report); leave as-is or correct",
+      "matchAliases": "substrings to match against the opportunity 'core' (lowercased). Add every variant you see.",
+      "products": "auto-derived from the AQ/AR/AX/BB/AA prefixes; informational",
+      "keep": "false = ignore this account in the roster"
+    }
+  },
+
+  "accounts": [
+    { "id": "mannings",       "name": "Mannings",   "csm": "william.wt.lin@appier.com", "matchAliases": ["dairy farm", "mannings"],            "products": ["AQ","AX"], "keep": true },
+    { "id": "scmp",           "name": "SCMP",       "csm": "william.wt.lin@appier.com", "matchAliases": ["scmp", "south china morning post"], "products": ["AR","AX"], "keep": true },
+    { "id": "55688",          "name": "55688 (台灣智慧生活網)", "csm": "william.wt.lin@appier.com", "matchAliases": ["55688", "台灣大車隊", "台灣智慧生活網"], "products": ["BB"], "keep": true },
+    { "id": "tiangyuanxiang", "name": "田原香",     "csm": "william.wt.lin@appier.com", "matchAliases": ["田原香", "qchicken"],                "products": ["AQ"], "keep": true },
+    { "id": "luxgen",         "name": "Luxgen",     "csm": "william.wt.lin@appier.com", "matchAliases": ["納智捷", "luxgen"],                   "products": ["BB"], "keep": true },
+    { "id": "vitel",          "name": "VITEL",      "csm": "william.wt.lin@appier.com", "matchAliases": ["瑋德", "vitel"],                     "products": ["AQ"], "keep": true, "_note": "internally 10/10Hope; tracked as VITEL per your instruction" }
+  ]
+}
