@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-11T15:18:35.084+08:00",
+  "lastUpdated": "2026-08-11T15:18:37.438+08:00",
   "rules": [
     {
       "id": "okr-consolidate",
@@ -862,9 +862,10 @@
       "source": "gmail",
       "sourceUrl": "https://mail.google.com/mail/u/0/#inbox/19fa20563f4422e1",
       "created": "2026-07-27",
-      "status": "open",
+      "status": "done",
       "snoozedUntil": null,
-      "lastSeen": "2026-08-07"
+      "lastSeen": "2026-08-07",
+      "closedAt": "2026-08-11"
     },
     {
       "id": "cmt-scmp-request-aixon-offboard",
