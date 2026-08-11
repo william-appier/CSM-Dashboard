@@ -1,3 +1,15 @@
+function cmtSuggestionVisible(s){
+  if(!s||!s.commitmentId)return true;
+  try{
+    var flags=(typeof cmtGetFlags==='function')?cmtGetFlags():{};
+    var f=flags[s.commitmentId];
+    if(!f)return true;
+    if(f.status==='done'||f.status==='dropped')return false;
+    var todayStr=(typeof cmtToday==='function')?cmtToday():new Date().toISOString().slice(0,10);
+    if(f.snoozedUntil&&f.snoozedUntil>todayStr)return false;
+    return true;
+  }catch(_){return true;}
+}
 'use strict';
 // CSM BRIEF — DATA, STATE & FUNCTIONS
 // ════════════════════════════════════════════════════════════════════════════
@@ -428,7 +440,7 @@ const tickHTML = _buildTickHTML();
           <div class="proj-status ${esc(p.status)}">${{progress:'\u{1f7e1} In Progress',ok:'\u{1f7e2} On Track',blocked:'\u{1f534} Blocked'}[p.status]||p.status}</div>
         </div>`).join('')
     : '';
-  const sugHTML = acct.suggestions.map((s,i)=>`
+  const sugHTML = acct.suggestions.filter(cmtSuggestionVisible).map((s,i)=>`
     <div class="suggestion-row ${esc(s.priority)}">
       <div class="sug-label"><span>${i+1}</span><span>${esc(s.label)}</span></div>
       <div class="sug-text">${esc(s.text)}</div>
