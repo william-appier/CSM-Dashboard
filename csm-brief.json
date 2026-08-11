@@ -31,17 +31,20 @@
         {
           "priority": "high",
           "label": "Commitment · High",
-          "text": "Promised to share updated mobile device ID to Adjust to Karen Fu on 2026-07-27 — send today or reset expectations."
+          "text": "Promised to share updated mobile device ID to Adjust to Karen Fu on 2026-07-27 — send today or reset expectations.",
+          "commitmentId": "cmt-mannings-share-updated-mobile"
         },
         {
           "priority": "high",
           "label": "Commitment · High",
-          "text": "Promised interactive-creative CPM to Karen Fu on 2026-07-27 — confirm the number or update her."
+          "text": "Promised interactive-creative CPM to Karen Fu on 2026-07-27 — confirm the number or update her.",
+          "commitmentId": "cmt-mannings-confirm-interactive-creative"
         },
         {
           "priority": "medium",
           "label": "Meeting · Medium",
-          "text": "Prep for Appier x Mannings Bi-weekly on Aug 20 (11:00 HKT, Rola Chung): AIXON→AIRIS upgrade status."
+          "text": "Prep for Appier x Mannings Bi-weekly on Aug 20 (11:00 HKT, Rola Chung): AIXON→AIRIS upgrade status.",
+          "commitmentId": null
         }
       ],
       "commitments": [
@@ -108,12 +111,14 @@
         {
           "priority": "medium",
           "label": "Commitment · Medium",
-          "text": "Confirm with the AEP team whether SCMP AIRIS onboarding is complete, then file the AIXON offboard request (open since Jul 31)."
+          "text": "Confirm with the AEP team whether SCMP AIRIS onboarding is complete, then file the AIXON offboard request (open since Jul 31).",
+          "commitmentId": "cmt-scmp-request-aixon-offboard"
         },
         {
           "priority": "low",
           "label": "Watch · Low",
-          "text": "No tickets or firm meetings; keep the AIRIS onboarding moving so the AX offboard can proceed."
+          "text": "No tickets or firm meetings; keep the AIRIS onboarding moving so the AX offboard can proceed.",
+          "commitmentId": null
         }
       ],
       "commitments": [
@@ -158,12 +163,14 @@
         {
           "priority": "medium",
           "label": "Data · Medium",
-          "text": "Confirm 10/10Hope contract end date and add it to memory — renewal tracking is currently blind for this account."
+          "text": "Confirm 10/10Hope contract end date and add it to memory — renewal tracking is currently blind for this account.",
+          "commitmentId": null
         },
         {
           "priority": "low",
           "label": "Progress · Low",
-          "text": "Check AIQUA onboarding and klickngo API integration progress with Mark Liu."
+          "text": "Check AIQUA onboarding and klickngo API integration progress with Mark Liu.",
+          "commitmentId": null
         }
       ],
       "commitments": []
@@ -184,12 +191,14 @@
         {
           "priority": "medium",
           "label": "Engagement · Medium",
-          "text": "No meetings on calendar — schedule a Luxgen check-in to keep engagement visible ahead of the Nov 22 BB renewal."
+          "text": "No meetings on calendar — schedule a Luxgen check-in to keep engagement visible ahead of the Nov 22 BB renewal.",
+          "commitmentId": null
         },
         {
           "priority": "low",
           "label": "Report · Low",
-          "text": "Confirm the monthly service-delivery report (服務交付報告) to Kevin Hsu is on track (Finance tickets, e.g. FIN-2672)."
+          "text": "Confirm the monthly service-delivery report (服務交付報告) to Kevin Hsu is on track (Finance tickets, e.g. FIN-2672).",
+          "commitmentId": null
         }
       ],
       "commitments": []
@@ -215,17 +224,20 @@
         {
           "priority": "high",
           "label": "Commitment · High",
-          "text": "Promised to request the BotBonnie platform extension for 55688 北區 (due 2026-08-24, 13 days) — file it now; the signed renewal does not extend service on its own."
+          "text": "Promised to request the BotBonnie platform extension for 55688 北區 (due 2026-08-24, 13 days) — file it now; the signed renewal does not extend service on its own.",
+          "commitmentId": "cmt-55688-request-botbonnie-platform"
         },
         {
           "priority": "high",
           "label": "Churn · High",
-          "text": "Confirm with the client which of 代駕 / 招募 (both lapsed 2026-07-31) actually churned before treating either bot as lost."
+          "text": "Confirm with the client which of 代駕 / 招募 (both lapsed 2026-07-31) actually churned before treating either bot as lost.",
+          "commitmentId": null
         },
         {
           "priority": "medium",
           "label": "RFQ · Medium",
-          "text": "Progress the Service Agent RFQ (BBT-5428) with Brian Tsai."
+          "text": "Progress the Service Agent RFQ (BBT-5428) with Brian Tsai.",
+          "commitmentId": null
         }
       ],
       "commitments": [
@@ -266,12 +278,14 @@
         {
           "priority": "high",
           "label": "Commitment · High",
-          "text": "Overdue (due Aug 7): check 田原香 segmented-campaign numbers post-migration for anomalies, per Ted Wu — close it out."
+          "text": "Overdue (due Aug 7): check 田原香 segmented-campaign numbers post-migration for anomalies, per Ted Wu — close it out.",
+          "commitmentId": "cmt-tiangyuanxiang-check-segmentedcampaign-numbers"
         },
         {
           "priority": "low",
           "label": "Progress · Low",
-          "text": "Continue new use-case development; EUU onboarding and Campaign Agent feature are already complete."
+          "text": "Continue new use-case development; EUU onboarding and Campaign Agent feature are already complete.",
+          "commitmentId": null
         }
       ],
       "commitments": [
@@ -317,12 +331,14 @@
         {
           "priority": "high",
           "label": "Ticket · High",
-          "text": "Chase LEG-15992 (AIQUA HK Order Form, open 10d) with Link Nie to unblock."
+          "text": "Chase LEG-15992 (AIQUA HK Order Form, open 10d) with Link Nie to unblock.",
+          "commitmentId": null
         },
         {
           "priority": "low",
           "label": "Data · Low",
-          "text": "Add City Super's contract end date and current project to memory — background is currently missing."
+          "text": "Add City Super's contract end date and current project to memory — background is currently missing.",
+          "commitmentId": null
         }
       ],
       "commitments": []
@@ -348,12 +364,14 @@
         {
           "priority": "medium",
           "label": "Onboarding · Medium",
-          "text": "Schedule the 行動力國際 handover meeting to formally kick off the account."
+          "text": "Schedule the 行動力國際 handover meeting to formally kick off the account.",
+          "commitmentId": null
         },
         {
           "priority": "low",
           "label": "Watch · Low",
-          "text": "No activity yet — monitor for the first tickets or meetings."
+          "text": "No activity yet — monitor for the first tickets or meetings.",
+          "commitmentId": null
         }
       ],
       "commitments": []
