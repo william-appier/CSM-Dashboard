@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "updated": "2026-08-05",
+    "updated": "2026-08-12",
     "source": "Confluence CSM FAQ (AI 維護)",
     "indexUrl": "https://appier.atlassian.net/wiki/spaces/~712020045fe11d77e649819f2b2a67a185fdf0/pages/5232100110",
     "note": "由排程從 Confluence 五個分類頁自動重新生成之快取。urgency 未標者預設 medium。",
@@ -234,6 +234,17 @@
       "a": "tier(legacy/lite/core/extended)只存在 EAM Org 的 `recommendation_service.tier`,不要再改 internal dashboard(該欄位已無服務讀取)。續約/升降級流程:(1) 依 tier 對照表(pageId 5103452317)重新 onboard 用量單位 `rec_exposure` 與 `rec_sku`;(2) 確認 active scenario 數符合新 tier 上限,超過請客戶封存,或依加購定價於 EAM Project 的 `active_scenario_limit` 覆寫上限;(3) 最後調整 Org 的 `tier`。用量查詢:2026/7 起 CSM 與客戶可直接從 Enterprise Console 的 Usage dashboard 自查(先前需開票給 TSTC)。"
     },
     {
+      "id": "AQ-022",
+      "category": "AIQUA",
+      "q": "客戶問「OJM 能做到多即時?」怎麼回答?",
+      "product": "AIQUA",
+      "last_verified": "2026-08-03",
+      "source": "https://appier.atlassian.net/wiki/pages/viewpage.action?pageId=4169465861",
+      "status": "active",
+      "urgency": "medium",
+      "a": "OJM 非嚴格 real-time,end-to-end 有多段延遲、非零秒觸發。以 OJM In-Web/In-App with AiDeal 為例,流程為 SDK 收集資料傳 server → data pipeline 過濾/轉換/forward → OJM 收 event 做 condition check → 發 campaign request 給 AIQUA → AIQUA 從 queue 取出並啟動 campaign → 製作 creative → 送 AiDeal → AiDeal 從 queue 取出顯示,每段都有 queue/處理延遲。與 AQ-009(OJM 後台操作卡頓)不同,此題是端到端投遞延遲。給客戶精確延遲數字前請以來源文件為準。"
+    },
+    {
       "id": "AR-001",
       "category": "AIRIS",
       "q": "segment join/leave 功能 sunset 後,如何追蹤用戶進入/退出受眾?",
@@ -331,6 +342,61 @@
       "status": "stale",
       "urgency": "medium",
       "a": "有前例:Yamaha,但只打 event 進來;RC 無文件。CSM 想自行測試可用 Supabase(supabase.com)快速架 PostgreSQL 環境驗證。"
+    },
+    {
+      "id": "AR-012",
+      "category": "AIRIS",
+      "q": "一個 AIRIS 客戶有多個 AIQUA appid,如何對應到 AIRIS project?project 命名有限制嗎?",
+      "product": "AIRIS",
+      "last_verified": "2026-08-03",
+      "source": "https://appier.atlassian.net/browse/ETS-5008",
+      "status": "active",
+      "urgency": "medium",
+      "a": "可以把多個 appid 合併到同一個 AIRIS project(用一個 merge scope),達到跨站台單一 segment 的 AIXON-like 使用情境(前例:SCMP 5 個 appid)。但 project name 不能填任意字串(例如 \"SCMP\" 會被擋),必須是 domain 格式(如 scmp.com、elle.com.hk),建議用客戶主要流量站的 domain。每個 appid 各自 onboard 一份 SDK。注意:ID hierarchy / mapping 只有 Appier(TS)能改,日後要調整務必先通知 TS。此為開通設定,需與 TS(David Li)確認、走 ETS ticket。"
+    },
+    {
+      "id": "AR-013",
+      "category": "AIRIS",
+      "q": "BB 資料 backfill 到 AIRIS 時,需要做欄位 transformation(enrich)嗎?",
+      "product": "AIRIS",
+      "last_verified": "2026-08-03",
+      "source": "https://appier.slack.com/archives/G01137M30B1/p1785396025113859",
+      "status": "active",
+      "urgency": "medium",
+      "a": "視客戶產品組合而定。沒有 AR 的客戶 default 不做轉換;有 AR+BB(或 AQ+AR+BB)的客戶,才會在 backfill 時與 CSM 討論是否需要欄位轉換對應(例如 Sony 把 BB `account_link` → `user_id`)。接下來要繼續 backfill 的客戶皆走此判斷。"
+    },
+    {
+      "id": "AR-014",
+      "category": "AIRIS",
+      "q": "客戶想把 user profile 與 log-level events 匯出到自家 DW,各產品組合支援到什麼程度?",
+      "product": "AIRIS",
+      "last_verified": "2026-08-11",
+      "source": "https://appier.slack.com/archives/C04B0CZ0MUL/p1786099574540999",
+      "status": "active",
+      "urgency": "low",
+      "a": "要匯出 log-level events 必須有 AR。AQ:不支援(可透過 PS 客製);AQ+CB:只能用 API 匯出 profile,無法用 activity report API 匯出 log-level events;AQ+AR:可用 API 匯出 profile 與 activity report。售前若客戶要匯 log-level event 進自家 DW,需有 AR 才做得到。註:來源為售前確認訊息,寫入前建議再與產品/TS 覆核一次。"
+    },
+    {
+      "id": "AR-015",
+      "category": "AIRIS",
+      "q": "C360 有資料保存(data retention)期限嗎?",
+      "product": "AIRIS",
+      "last_verified": "2026-08-11",
+      "source": "https://appier.slack.com/archives/C0A22L6ES4E/p1785986752722429",
+      "status": "active",
+      "urgency": "low",
+      "a": "沒有,C360 無 data retention 限制(產品 Ariel Lin 確認)。客戶問 profile/資料會不會過期被清除時可據此回覆。"
+    },
+    {
+      "id": "AR-016",
+      "category": "AIRIS",
+      "q": "AIRIS trend report 的 keyword tagging,最近 1~2 天為何沒有 keyword 資料?",
+      "product": "AIRIS",
+      "last_verified": "2026-08-11",
+      "source": "https://appier.slack.com/archives/C04B0CZ0MUL/p1786420404696159",
+      "status": "active",
+      "urgency": "low",
+      "a": "屬預期行為,非 bug。keyword pipeline 使用 t-2 的流量資料(刻意等上游 pipeline 跑完),所以最新一天通常當天稍晚才生成、前一天也可能還沒好。每一天的 keyword 仍代表「該日自己流量」產生的 keyword,不是把前幾天加總。客戶反映 trend report keyword 近日無資料,先確認是否落在 t-2 視窗內、再稍等即可(前例:SCMP p_2f48newz 8/9 資料當天尚未生成,Yung-Hsiu Chen 確認)。"
     },
     {
       "id": "AR-010",
@@ -685,6 +751,17 @@
       "a": "在「BotBonnie chatbot upgrade」sheet 填客戶資料並開 leg ticket,由窗口審核後升級;SF start/end date 須與 sheet 的 activation/downgrade date 一致。客戶已回簽、只差內部流程可提前 approve 爭取時間。升級後 console 仍顯示免費版先清快取。"
     },
     {
+      "id": "BB-031",
+      "category": "BotBonnie",
+      "q": "用 BotBonnie 排/發 LINE broadcast,月額度用完會怎樣?報表看得出來嗎?",
+      "product": "BotBonnie",
+      "last_verified": "2026-08-11",
+      "source": "https://appier.atlassian.net/browse/ETS-5292",
+      "status": "active",
+      "urgency": "medium",
+      "a": "額度不足時 broadcast 報表目前不會顯示錯誤,屬已知問題,勿誤判為 bug。舊行為:narrow-cast 不報錯、看似部分送達;近期已改為額度不足的 narrow-cast 一律送 0 人(不再部分送達),但報表仍不顯示錯誤。完整的「額度不足應擋下排程/發送」尚未在此票修完,將另開 epic 處理。遇客戶反映漏發、發不出去,先確認是否 LINE 月額度(push limit)用罄(相關案例:MAZDA、Carches)。需 RD、追蹤中。"
+    },
+    {
       "id": "AA-001",
       "category": "AdCreative",
       "q": "Enterprise 客戶每月補點日被鎖付款頁(paywall)、credit 數字錯誤,怎麼處理?",
@@ -819,13 +896,13 @@
     {
       "id": "AA-013",
       "category": "AdCreative",
-      "q": "V1 遷移 V2,試用與 migrate 的機制差異?",
+      "q": "V1 遷移 V2,試用與 migrate 的機制差異?migrate 按鈕在哪?",
       "product": "AdCreative",
-      "last_verified": "2026-07-03",
+      "last_verified": "2026-08-03",
       "source": "https://appier.slack.com/archives/C08RGLRNX3R/p1783075082247249",
       "status": "active",
       "urgency": "medium",
-      "a": "(1)「試用 V2」可切回 V1;migrate 不可逆——遷移後仍可登入 V1 但內容不同步。(2) 試用按鈕明顯,migrate 僅管理員可見。(3) V1/V2 目前不同網址。建議:既有客戶先試用 V2;新客戶教育訓練直接用 V2;業態特殊(多站台、接近續約)可請 AA team 先不開放該帳號 V2 按鈕。"
+      "a": "(1)「試用 V2」可切回 V1;migrate 不可逆——遷移後仍可登入 V1 但內容不同步。(2) 試用按鈕明顯,migrate 僅管理員可見。找不到 migrate 按鈕:試用/migrate 入口都要「先進入 V2 後」才會出現在畫面右上角,通常是還沒進到 V2。(3) V1/V2 目前不同網址。建議:既有客戶先試用 V2;新客戶教育訓練直接用 V2;業態特殊(多站台、接近續約)可請 AA team 先不開放該帳號 V2 按鈕。"
     },
     {
       "id": "AA-014",
@@ -859,6 +936,28 @@
       "status": "active",
       "urgency": "medium",
       "a": "內部 prompt 收集網站 aaprompt-site.netlify.app(後台密碼 AAprompt),可新增情境指令或 AI 生成;建議實測成功後再放入,圖片需先上傳取得網址。僅內部使用、勿給客戶。prompt 用中文寫、體驗較好。"
+    },
+    {
+      "id": "AA-017",
+      "category": "AdCreative",
+      "q": "幫客戶啟動 AdCreative 影片製作,SOW 與協作流程怎麼走?續約時影片沒做完怎麼辦?",
+      "product": "Process/內部流程",
+      "last_verified": "2026-08-03",
+      "source": "https://appier.slack.com/archives/C08RGLRNX3R/p1785125341760089",
+      "status": "active",
+      "urgency": "medium",
+      "a": "影片需求走 SOW + 影片協作表:請客戶先填影片協作表(細節找 Brendan 較清楚),SOW 可參考範本。續約 SOW 會把影片完成期限綁定合約期間、要求期限內完成以防客戶一直拖;若客戶不續約則不執行。合約沒規定完成期限時較難管控,建議先口頭讓客戶知道須在合約期內完成。"
+    },
+    {
+      "id": "AA-018",
+      "category": "AdCreative",
+      "q": "AdCreative V1 遷移到 V2,哪些內容會轉、哪些不會?會自動同步嗎?",
+      "product": "AdCreative",
+      "last_verified": "2026-08-11",
+      "source": "https://appier.slack.com/archives/C08QZD38FEG/p1785754356524179",
+      "status": "active",
+      "urgency": "medium",
+      "a": "遷移由客戶點「Try New Version」觸發,單向 V1→V2、不會持續自動同步(只在點按當下跑一次)。會轉:企業帳號的 brand-projects-library。延後轉:Template Builder 模板(預計本月開發完再轉)。不轉:SVG-based 功能(ad creatives、instant ads、ad videos、ads package)與舊技術功能(CTV、Blog、Storytelling Videos),要保留須手動從 V1 下載。遷移後在 V1 新增子帳號、或在 Settings 團隊管理改設定,不會反映到 V2,須手動在 V2 重做;已遷移內容與 V1 共用同一資料庫,在 V1 刪除、V2 也會同步消失。與 AA-013(migrate 按鈕位置與不可逆)互補。"
     },
     {
       "id": "OPS-001",
@@ -914,6 +1013,39 @@
       "status": "active",
       "urgency": "medium",
       "a": "Web/iOS/Android SDK 都沒有 IP Blocking。SDK 團隊評估中(需累積客戶案例);GCR 僅 2020 Readmoo 有類似 bot traffic 案例。客戶提出時回報 SDK 團隊累積 use case。"
+    },
+    {
+      "id": "OPS-006",
+      "category": "OPS",
+      "q": "各站台(AQ/BB/AR/AiDeal/AA)offboard 有沒有標準 sample ticket / SOP?",
+      "product": "Process/內部流程",
+      "last_verified": "2026-08-03",
+      "source": "https://appier.slack.com/archives/G01137M30B1/p1785320592130389",
+      "status": "active",
+      "urgency": "medium",
+      "a": "有,照現成 SOP 開票即可,CSM 可自解。ESS 帳號 offboard SOP 見 CSM Depot(sites.google.com/appier.com/csmdepot → operation-processes → tech-onboard/offboard → ess-account-offboarding);sample ticket 參考 QGWL-14754。產品行為:BB 到期會自動關閉,AQ/AR 未來也會改成到期自動關閉;AA 不需手動「關」,會自動降版。提醒:過去痛點是開票後沒指定 owner 就沒人追,開票時務必指定負責人。"
+    },
+    {
+      "id": "OPS-007",
+      "category": "OPS",
+      "q": "AQ-only vs AQ+AR 客戶上 AEP(Plan B → Plan A)的 onboarding 差異與 SOP?",
+      "product": "Process/內部流程",
+      "last_verified": "2026-08-03",
+      "source": "https://appier.atlassian.net/wiki/pages/viewpage.action?pageId=5246681479",
+      "status": "active",
+      "urgency": "medium",
+      "a": "有整合 SOP(併入 AEP New Client Onboarding、AIRIS on AEP plan A/B、EUU Onboarding Steps),依客戶是 AQ-only 或 AQ+AR 走不同 onboarding 路徑。CSM 面向:先確認客戶走哪條 plan、對應前置條件與負責團隊(EUU 相關找 AEP #ask-product-aep / #ask-data-euu)。此頁主要為 TS/AEP 執行面,CSM 參考用;細節與最新步驟以來源文件為準。"
+    },
+    {
+      "id": "OPS-008",
+      "category": "OPS",
+      "q": "客戶或 CSM 在舊 console 看不到用量(usage)資訊,怎麼辦?",
+      "product": "Process/內部流程",
+      "last_verified": "2026-08-11",
+      "source": "https://appier.atlassian.net/browse/ETS-5486",
+      "status": "active",
+      "urgency": "medium",
+      "a": "需開 ETS 票請 TSTC 把該 app 帳號搬到 enterprise console,CSM 無法自解。舊 console 已不再顯示用量(usage)資訊;搬到 enterprise console 後若仍看不到,是該帳號的「usage information」設定被關閉,需再請 TSTC 開啟(兩步都做才會顯示)。前例 ETS-5486(staging appid 搬到 organization-x6n9VNChY,指派 hazel.wang)。"
     }
   ]
 }
