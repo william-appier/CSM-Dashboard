@@ -8,7 +8,6 @@
       "insight": "Next DFI bi-weekly is Aug 20 (11:00 HKT); AQ/AX renewal already secured to 2026-09-30. EUU onboarding ticket AEP-8055 just opened — AIXON→AIRIS Q4 upgrade is the live workstream.",
       "diffs": [],
       "riskTags": [
-        "renewal",
         "mtg"
       ],
       "ticketCount": 0,
@@ -149,7 +148,9 @@
       "health": "green",
       "insight": "⚠️ 代駕 and 招募 BotBonnie terms both lapsed 2026-07-31 — only one actually churned, ownership still unconfirmed. 北區 renewal is signed (to 2027-08-24) but the platform extension must be filed before the 2026-08-24 cutoff or service stops.",
       "diffs": [],
-      "riskTags": [],
+      "riskTags": [
+        "renewal"
+      ],
       "ticketCount": 0,
       "mtgCount": 0,
       "projects": [
