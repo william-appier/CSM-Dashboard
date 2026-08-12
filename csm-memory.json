@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-11T15:18:37.438+08:00",
+  "lastUpdated": "2026-08-12T10:19:28.971+08:00",
   "rules": [
     {
       "id": "okr-consolidate",
@@ -678,7 +678,7 @@
     }
   ],
   "ticketSnapshot": {
-    "generatedAt": "2026-08-11T01:51:22.211Z",
+    "generatedAt": "2026-08-12T02:19:28.668Z",
     "keys": {
       "55688": [],
       "mannings": [],
@@ -879,7 +879,7 @@
       "created": "2026-07-31",
       "status": "open",
       "snoozedUntil": null,
-      "lastSeen": "2026-08-07"
+      "lastSeen": "2026-08-12"
     },
     {
       "id": "cmt-tiangyuanxiang-check-segmentedcampaign-numbers",
@@ -891,7 +891,7 @@
       "source": "slack",
       "sourceUrl": "https://appier.slack.com/archives/G01137M30B1/p1785743294120839",
       "created": "2026-08-03",
-      "lastSeen": "2026-08-10",
+      "lastSeen": "2026-08-12",
       "status": "open",
       "snoozedUntil": null
     },
@@ -905,7 +905,7 @@
       "source": "gmail",
       "sourceUrl": "https://mail.google.com/mail/u/0/#inbox/19fd5f3dfd450695",
       "created": "2026-08-06",
-      "lastSeen": "2026-08-07",
+      "lastSeen": "2026-08-12",
       "status": "open",
       "snoozedUntil": null
     }
