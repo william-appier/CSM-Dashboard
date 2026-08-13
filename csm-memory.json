@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-13T10:19:19.358+08:00",
+  "lastUpdated": "2026-08-13T13:16:18.640+08:00",
   "rules": [
     {
       "id": "okr-consolidate",
@@ -906,8 +906,9 @@
       "sourceUrl": "https://mail.google.com/mail/u/0/#inbox/19fd5f3dfd450695",
       "created": "2026-08-06",
       "lastSeen": "2026-08-13",
-      "status": "open",
-      "snoozedUntil": null
+      "status": "done",
+      "snoozedUntil": null,
+      "closedAt": "2026-08-13"
     }
   ]
 }
