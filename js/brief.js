@@ -270,10 +270,64 @@ async function loadTickets() {
     console.warn('[CSM] live tickets unavailable, using brief data:', e.message);
   }
 }
+// ── MULTI-CSM ── other CSMs load their own accounts from the Worker /mapping endpoint
+const MULTICSM_WORKER  = 'https://csm-brief-worker.williamlin12.workers.dev';
+const BRIEF_OWNER_EMAIL = 'william.wt.lin@appier.com';
+function currentUserEmail(){
+  try { var u = (typeof getUser==='function') ? getUser() : (window.getUser?window.getUser():null);
+        return (u && u.email) ? u.email.toLowerCase() : ''; }
+  catch(_){ return ''; }
+}
+function _daysToDate(d){ if(!d) return null; var t=new Date(d); if(isNaN(t)) return null; return Math.round((t-Date.now())/86400000); }
+async function loadMappingBrief(email){
+  _setSyncUI('spin','Loading your accounts…');
+  try {
+    var res = await fetch(MULTICSM_WORKER + '/mapping?_=' + Date.now());
+    if(!res.ok) throw new Error('HTTP ' + res.status);
+    var map  = await res.json();
+    var mine = map[email] || [];
+    ACCOUNTS = mine.map(function(a){
+      var d = _daysToDate(a.endDate), soon = (d!=null && d<=60);
+      var opps = (a.opportunities||[]).map(function(o){
+        var nm = (typeof o==='string') ? o : (o.name||'');
+        var dt = (o && o.endDate) ? o.endDate : '';
+        return { name: nm + (dt ? ('  ·  '+dt) : ''), status:'ok' };
+      });
+      var n = (a.opportunities||[]).length;
+      return {
+        id: a.id || a.account,
+        name: a.account,
+        health: (d!=null && d<=14) ? 'red' : (soon ? 'yellow' : 'green'),
+        insight: 'Contract end: ' + (a.endDate||'—')
+               + (d!=null ? (d<0 ? (' · EXPIRED '+(-d)+'d') : (' · '+d+'d')) : '')
+               + ' · ' + n + ' opportunit' + (n===1?'y':'ies'),
+        diffs: [],
+        riskTags: soon ? ['renewal'] : ['ok'],
+        ticketCount: 0,
+        mtgCount: 0,
+        projects: opps,          // ← opportunities = 2nd layer in the side panel
+        meetings: [],
+        tickets: [],
+        suggestions: soon
+          ? [{priority:'high',label:'Renewal · High',text:a.account+' contract ends '+(a.endDate||'?')+' — confirm renewal status.'}]
+          : [],
+        opportunities: a.opportunities||[],
+      };
+    });
+    renderBriefCards(); renderBriefStats(); briefUpdateTabCounts();
+    _setSyncUI('ok', mine.length + ' accounts · account → opportunity (from sheet)');
+  } catch(e){ _setSyncUI('err', e.message || 'Could not load your accounts'); }
+}
+
 function initBrief(){
-  loadBriefFromGitHub();
-  // EDIT 3: fetch live tickets in parallel with brief
-  loadTickets();
+  // ── MULTI-CSM ── William keeps the full enhanced brief; other CSMs load /mapping.
+  var _email = currentUserEmail();
+  if (!_email || _email === BRIEF_OWNER_EMAIL) {
+    loadBriefFromGitHub();
+    loadTickets();
+  } else {
+    loadMappingBrief(_email);
+  }
   logEntries = loadLog();
   briefNextId = Math.max(briefNextId, ...logEntries.map(e=>e.id||0)) + 1;
   renderBriefCards();
@@ -622,7 +676,7 @@ function saveEntry(){
     var u = null;
     try { u = (typeof getUser === 'function') ? getUser() : (window.getUser ? window.getUser() : null); } catch (e) {}
     var loggedIn = !!(u && u.email);
-    var allowed = loggedIn && u.email.toLowerCase() === BRIEF_OWNER;
+    var allowed = loggedIn;   // ── MULTI-CSM ── every logged-in CSM sees the brief (their own accounts);
     ['snav-brief', 'tab-brief'].forEach(function (id) {
       var el = document.getElementById(id);
       if (el) el.style.display = (!loggedIn || allowed) ? '' : 'none';
