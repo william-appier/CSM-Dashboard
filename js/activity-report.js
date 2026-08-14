@@ -88,7 +88,7 @@
 
   window.arLoadData = async function(){
     var savedUrl = arGetSavedUrl();
-    if(!savedUrl){ arShowConnect(); return; }
+    if(!savedUrl){ setTimeout(window.arLoadData, 300); return; }  // wait for login; never prompt for a link
     arSetStatus('spin', 'Loading\u2026');
     var btn = document.getElementById('arRefreshBtn');
     if(btn) btn.disabled = true;
@@ -329,7 +329,7 @@
 
   window.arTabActivated = function(){
     var saved = arGetSavedUrl();
-    if(!saved){ arShowConnect(); return; }
+    if(!saved){ setTimeout(window.arTabActivated, 300); return; }  // wait for login; never prompt for a link
     arShowData();
     if(arRawData.length === 0) arLoadData();
     else arRender();
