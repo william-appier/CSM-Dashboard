@@ -11,6 +11,7 @@
 (function () {
   'use strict';
   var WORKER = 'https://csm-brief-worker.williamlin12.workers.dev';
+  var SUMMARIES = {};   // account AI summaries (daily sync), keyed by account id
 
   function ready(fn) {
     if (document.readyState !== 'loading') fn();
@@ -97,6 +98,11 @@
       var tr = await fetch(WORKER + '/tickets?csm=' + encodeURIComponent(email) + '&t=' + Date.now());
       if (tr.ok) tix = await tr.json();
     } catch (_) { tix = {}; }
+    // AI summaries from the daily sync (best-effort — cards render without them)
+    try {
+      var sr = await fetch('accountSummaries.json?t=' + Date.now());
+      if (sr.ok) SUMMARIES = await sr.json();
+    } catch (_) { SUMMARIES = {}; }
 
     var list = mine.map(function (a) {
       var d = daysTo(a.endDate);
@@ -135,6 +141,12 @@
     var chips = a.products.map(function (p) {
       return '<span style="display:inline-block;font-size:11px;font-weight:600;background:#eef2ff;color:#4338ca;border-radius:5px;padding:1px 7px;margin-right:4px">' + esc(p) + '</span>';
     }).join('');
+    var s = SUMMARIES[a.id] || null;
+    var summaryHtml = (s && (s.summary || s.followUp)) ?
+      '<div style="background:#f8fafc;border-left:3px solid #6366f1;border-radius:6px;padding:9px 11px;margin:10px 0 4px;font-size:13px;line-height:1.5;color:#334155">' +
+        (s.summary ? '<div>' + esc(s.summary) + '</div>' : '') +
+        (s.followUp ? '<div style="margin-top:5px;color:#4338ca"><b>Follow up:</b> ' + esc(s.followUp) + '</div>' : '') +
+      '</div>' : '';
     var tk = a.tickets || [];
     var ticketsHtml = tk.length
       ? tk.slice(0, 8).map(ticketRow).join('') + (tk.length > 8 ? '<div style="font-size:11px;color:#94a3b8;padding-top:3px">+' + (tk.length - 8) + ' more</div>' : '')
@@ -150,6 +162,7 @@
           '<span style="font-size:12px;color:#94a3b8;margin-left:4px">' +
             tk.length + ' open ticket' + (tk.length === 1 ? '' : 's') + ' · ' + a.opps.length + ' opportunit' + (a.opps.length === 1 ? 'y' : 'ies') +
           '</span></div>' +
+        summaryHtml +
         '<div style="margin-top:8px">' + ticketsHtml + '</div>' +
       '</div>';
   }
