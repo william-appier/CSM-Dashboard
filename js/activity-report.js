@@ -1,11 +1,15 @@
 (function(){
   'use strict';
 
-  const AR_URL_KEY = 'ar_sheet_url';
+  const AR_WORKER = 'https://csm-brief-worker.williamlin12.workers.dev';
+  function arDefaultUrl(){
+    var e = (typeof arGetCurrentEmail === 'function') ? arGetCurrentEmail() : '';
+    return e ? (AR_WORKER + '/ar-csv?csm=' + encodeURIComponent(e)) : '';
+  }
   let arRawData = [];
   let _arSortBy = 'date', _arSortAsc = false;
 
-  function arGetSavedUrl(){ return localStorage.getItem(AR_URL_KEY) || ''; }
+  function arGetSavedUrl(){ return arDefaultUrl() || localStorage.getItem(AR_URL_KEY) || ''; }
   function arClearUrl(){ localStorage.removeItem(AR_URL_KEY); }
 
   function arToCsvUrl(rawUrl){
