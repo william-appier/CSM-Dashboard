@@ -259,9 +259,10 @@ function getActiveTix(tickets) {
 function getAccountTix(acct) {
   return ticketsLoaded ? (TICKETS[acct.id] || []) : (acct.tickets || []);
 }
-async function loadTickets() {
+async function loadTickets(csmEmail) {
   try {
-    const r = await fetch('https://csm-brief-worker.williamlin12.workers.dev/tickets?_=' + Date.now());
+    const _csm = csmEmail ? ('&csm=' + encodeURIComponent(csmEmail)) : '';
+    const r = await fetch('https://csm-brief-worker.williamlin12.workers.dev/tickets?_=' + Date.now() + _csm);
     if (!r.ok) throw new Error('HTTP ' + r.status);
     TICKETS = await r.json();
     ticketsLoaded = true;
@@ -315,7 +316,8 @@ async function loadMappingBrief(email){
       };
     });
     renderBriefCards(); renderBriefStats(); briefUpdateTabCounts();
-    _setSyncUI('ok', mine.length + ' accounts · account → opportunity (from sheet)');
+    loadTickets(email);   // ── JIRA LAYER ── live tickets for this CSM's accounts (re-renders when done)
+    _setSyncUI('ok', mine.length + ' accounts · account → opportunity + live Jira');
   } catch(e){ _setSyncUI('err', e.message || 'Could not load your accounts'); }
 }
 
@@ -324,7 +326,7 @@ function initBrief(){
   var _email = currentUserEmail();
   if (!_email || _email === BRIEF_OWNER_EMAIL) {
     loadBriefFromGitHub();
-    loadTickets();
+    loadTickets(BRIEF_OWNER_EMAIL);
   } else {
     loadMappingBrief(_email);
   }
