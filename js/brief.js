@@ -678,7 +678,7 @@ function saveEntry(){
     var u = null;
     try { u = (typeof getUser === 'function') ? getUser() : (window.getUser ? window.getUser() : null); } catch (e) {}
     var loggedIn = !!(u && u.email);
-    var allowed = loggedIn;   // ── MULTI-CSM ── every logged-in CSM sees the brief (their own accounts);
+    var allowed = loggedIn && u.email.toLowerCase() === BRIEF_OWNER;   // brief = owner only; other CSMs use "My Accounts"
     ['snav-brief', 'tab-brief'].forEach(function (id) {
       var el = document.getElementById(id);
       if (el) el.style.display = (!loggedIn || allowed) ? '' : 'none';
