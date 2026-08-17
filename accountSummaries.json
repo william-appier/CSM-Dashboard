@@ -1,1184 +1,1184 @@
 {
   "55688": {
-    "summary": "15 open tickets, mostly bugs & errors; 1 blocked. Oldest CAM-265444 (961d, maruko.chung). Renews in 375d.",
-    "followUp": "Chase QGWL-19924 (blocked, Shiv Raj) — Timeout limitation in AQ JM should be shorten.",
+    "summary": "15 open tickets (mostly BBT, in backlog). 1 blocked. Renews in 372d. Oldest open: CAM-265444, 963d.",
+    "followUp": "Chase QGWL-19924 (blocked, Shiv Raj) — 【55688】Timeout limitation in AQ JM should be shorten.",
     "health": "red",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
+    "generatedAt": "2026-08-17T02:54:55.282Z"
+  },
+  "caco-加州椰子": {
+    "summary": "No open Jira tickets. Renews in 133d.",
+    "followUp": "",
+    "health": "green",
+    "generatedAt": "2026-08-17T02:54:55.282Z"
+  },
+  "南一書局": {
+    "summary": "15 open tickets (mostly QGRAPH line, in open). 2 blocked. Renews in 317d.",
+    "followUp": "Chase QGRAPH-39053 (blocked, auberon.chen) — Line Follower Optimization: mutual-exclusive cronjob togg...",
+    "health": "red",
+    "generatedAt": "2026-08-17T02:54:55.283Z"
+  },
+  "居家先生": {
+    "summary": "6 open tickets (mostly speedy-related, in open). Renews in 470d. Oldest open: ACE-3099, 2167d.",
+    "followUp": "Chase ACE-3099 (in progress, James Liu) — Mr. Speedy_ PH_AND_CPI",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.283Z"
+  },
+  "美而快實業": {
+    "summary": "15 open tickets (mostly PROJ pazzo, in backlog). Renews in 94d. Oldest open: XAI-95, 2187d.",
+    "followUp": "Chase QGWL-4294 (in progress, Johnson Chiang) — [Pazzo] Displays campaigns updated before 180 days ago",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.284Z"
+  },
+  "至晟貿易股份有限公司": {
+    "summary": "1 open ticket (in backlog). Renews in 168d. Oldest open: BBT-6520, 192d.",
+    "followUp": "Chase BBT-6520 (oldest, 192d, Unassigned) — 【RFQ】至晟貿易_串接客戶方 API 回傳結果",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.284Z"
+  },
+  "葡萄王生技": {
+    "summary": "4 open tickets (mostly CAM grape, in open). Renews in 449d. Oldest open: BBB-1717, 1010d.",
+    "followUp": "Chase BBB-1717 (oldest, 1010d, Samuel Chiang) — [CSM Check] 葡萄王生技",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.284Z"
+  },
+  "asia-living-hk": {
+    "summary": "2 open tickets (in backlog). Renews in 75d.",
+    "followUp": "Chase GPMM-300 (oldest, 3d, Brendan Kuang) — [Creative Package] UR Living - Signed AA Platform",
+    "health": "green",
+    "generatedAt": "2026-08-17T02:54:55.284Z"
+  },
+  "v-tex": {
+    "summary": "15 open tickets (in open). Renews in 347d. Oldest open: BBT-6602, 298d.",
+    "followUp": "Chase BBT-6602 (oldest, 298d, Unassigned) — [Vtex] Support the display of \"interested product informa...",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.284Z"
+  },
+  "台灣彪馬": {
+    "summary": "15 open tickets (mostly AEP puma, in backlog). Renews in 133d. Oldest open: QGWL-22943, 388d.",
+    "followUp": "Chase QGWL-13175 (in progress, Kim Lu) — [Puma] Add URL scheme for client",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.284Z"
+  },
+  "安永生活": {
+    "summary": "4 open tickets (mostly demo-related, in backlog). Contract ended 17d ago. Oldest open: AIQ-388, 2384d.",
+    "followUp": "Chase CAM-70752 (in progress, Lucinda Liu) — Mobiinsight_安永投資_Banner Resize",
+    "health": "red",
+    "generatedAt": "2026-08-17T02:54:55.284Z"
+  },
+  "新光三越百貨": {
+    "summary": "15 open tickets (mostly botbonnie-related, in open). Renews in 287d.",
+    "followUp": "Chase AGNT-1687 (in progress, mia.chu) — [SKM HQ] Audience creation returns text only, no card shown",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.285Z"
+  },
+  "杏豐實業": {
+    "summary": "15 open tickets (mostly CAM aibid, in open). Contract ended 59d ago. Oldest open: CD-516, 2174d.",
+    "followUp": "Chase CD-516 (oldest, 2174d, Wan-Ling Lee) — Tina Sun OOO 9/11 9/14 15",
+    "health": "red",
+    "generatedAt": "2026-08-17T02:54:55.285Z"
+  },
+  "維康醫療": {
+    "summary": "5 open tickets (mostly BBT, in backlog). Renews in 470d. Oldest open: BUF-91, 1838d.",
+    "followUp": "Chase BUF-91 (oldest, 1838d, Unassigned) — 維康醫療在問: 我們現在用戶掃碼加入 LINE 都會被收一次推播費，有可能設計只加好友不回應訊息的用法，減少推播費嗎?",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.285Z"
   },
   "mannings": {
-    "summary": "13 open tickets, mostly onboarding / data backfill; 1 in progress. Oldest AEP-8055 (1d, Ann Huang). Renews in 47d.",
-    "followUp": "Chase ETS-5788 (in progress, David Li) — Mannings app event data retrieval by order_id.",
+    "summary": "13 open tickets (mostly AEP mannings, in backlog). Renews in 44d.",
+    "followUp": "Chase ETS-5788 (in progress, David Li) — Mannings app event data retrieval by order_id",
     "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
+    "generatedAt": "2026-08-17T02:54:55.285Z"
   },
   "scmp": {
-    "summary": "2 open tickets, mostly mixed PROJ/AID items. Oldest AID-8880 (1472d, Eric Tung). Renews in 344d.",
-    "followUp": "Chase AID-8880 (open 1472d, Eric Tung) — SCMP_Letzshop_AiDeal Lite_Jun 2022.",
+    "summary": "2 open tickets (in backlog). Renews in 341d. Oldest open: AID-8880, 1474d.",
+    "followUp": "Chase AID-8880 (oldest, 1474d, Eric Tung) — SCMP_Letzshop_AiDeal Lite_Jun 2022",
     "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
+    "generatedAt": "2026-08-17T02:54:55.285Z"
   },
   "1010hope": {
     "summary": "No open Jira tickets. No contract end date on file.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
+    "generatedAt": "2026-08-17T02:54:55.285Z"
   },
   "luxgen": {
-    "summary": "14 open tickets, mostly API / SDK integration; 3 in progress. Oldest BBB-876 (1547d, Samuel Chiang). Renews in 100d.",
-    "followUp": "Chase PROJ-22175 (in progress, Mark Liu) — Data Column of Customer360 - Location / Language.",
+    "summary": "14 open tickets (mostly luxgen-related). Renews in 97d. Oldest open: BBB-876, 1549d.",
+    "followUp": "Chase BBB-876 (in progress, Samuel Chiang) — [CSM Check] Luxgen",
     "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
+    "generatedAt": "2026-08-17T02:54:55.285Z"
   },
   "tiangyuanxiang": {
-    "summary": "12 open tickets, mostly campaign & message delivery; 2 in progress. Oldest QGWL-21289 (534d, vivian.yang). Renews in 186d.",
-    "followUp": "Chase CAM-347922 (in progress, cherry.lin) — 田原香_Display_SG_0505-0511.",
+    "summary": "12 open tickets (mostly QGWL, in backlog). Renews in 183d. Oldest open: QGWL-21289, 536d.",
+    "followUp": "Chase CAM-346249 (in progress, cherry.lin) — [Resize] 田原香_Display+Video_HK_0411-0421",
     "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
+    "generatedAt": "2026-08-17T02:54:55.286Z"
   },
   "momax": {
-    "summary": "2 open tickets, mostly CAM items; 1 in progress. Oldest CAM-257353 (1023d, Mandy Tsai). No contract end date on file.",
-    "followUp": "Chase CAM-257353 (in progress, Mandy Tsai) — Momax Q1 Ecom 2023 (FB 歸因).",
+    "summary": "2 open tickets (mostly CAM momax, in open). No contract end date on file. Oldest open: CAM-257353, 1026d.",
+    "followUp": "Chase CAM-257353 (in progress, Mandy Tsai) — Momax Q1 Ecom 2023 (FB 歸因)",
     "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
+    "generatedAt": "2026-08-17T02:54:55.286Z"
   },
   "citysuper": {
-    "summary": "13 open tickets, mostly campaign & message delivery; 1 in progress. Oldest CAM-379738 (213d, Forrest Hung). No contract end date on file.",
-    "followUp": "Chase CAM-379802 (in progress, ivy.kan) — Prizm_AIBID_Adaptation for Standard Banner_Garden_Lucky Draw_260114.",
+    "summary": "13 open tickets (mostly CAM aibid, in open). No contract end date on file. Oldest open: CAM-379776, 215d.",
+    "followUp": "Chase CAM-379802 (in progress, ivy.kan) — [Resize]Prizm_AIBID_Adaptation for Standard Banner_Garden...",
     "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
+    "generatedAt": "2026-08-17T02:54:55.286Z"
   },
   "xindongli": {
-    "summary": "4 open tickets, mostly bot / LINE flows. Oldest BBT-4660 (539d, Salem Chen). No contract end date on file.",
-    "followUp": "Chase BBT-4660 (open 539d, Salem Chen) — BotBonnie to Phoenix Account Migration / Knowledge Bot Feature Activation.",
+    "summary": "4 open tickets (mostly BBT feature, in open). No contract end date on file. Oldest open: BBT-4660, 541d.",
+    "followUp": "Chase BBT-4660 (oldest, 541d, Salem Chen) — [行動力國際] BotBonnie to Phoenix Account Migration / Knowledg...",
     "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
+    "generatedAt": "2026-08-17T02:54:55.286Z"
   },
   "85度c": {
-    "summary": "7 open tickets, mostly audience & segmentation; 2 in progress. Oldest AIQ-390 (1919d, Kuan-Huei Lin). Renews in 198d.",
-    "followUp": "Chase QGWL-5998 (in progress, Lucas Hsieh) — When Client edit the creative,  we can detect the payload size and alert if message size is too big.",
+    "summary": "7 open tickets (mostly QGWL, in open). Renews in 195d. Oldest open: AIQ-390, 1921d.",
+    "followUp": "Chase QGWL-11409 (in progress, Mark Liu) — [85 cafe] SMS Issues Part2",
     "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
+    "generatedAt": "2026-08-17T02:54:55.286Z"
   },
   "中國信託商業銀行": {
-    "summary": "7 open tickets, mostly mixed CAM/BBT items; 2 in progress. Oldest ACE-3152 (2158d, Judy Liu). Renews in 251d.",
-    "followUp": "Chase CAM-196005 (in progress, maruko.chung) — 中國信託_Q4英雄卡211105-211215_$450,000.",
+    "summary": "7 open tickets (mostly CAM, in open). Renews in 248d. Oldest open: ACE-3152, 2160d.",
+    "followUp": "Chase ACE-3152 (in progress, Judy Liu) — 中國信託信貸CPL<$600煩請評估, 感謝",
     "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
+    "generatedAt": "2026-08-17T02:54:55.286Z"
   },
   "健康力": {
-    "summary": "5 open tickets, mostly mixed AID/BBT items. Oldest AID-11552 (1094d, Eric Tung). Renews in 27d.",
-    "followUp": "Chase AID-11552 (open 1094d, Eric Tung) — AiDeal 健康力.",
+    "summary": "5 open tickets (mostly AID aideal, in open). Renews in 24d. Oldest open: AID-11552, 1096d.",
+    "followUp": "Chase AID-11552 (oldest, 1096d, Eric Tung) — AiDeal 健康力",
     "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
+    "generatedAt": "2026-08-17T02:54:55.287Z"
   },
   "凌網知識股份有限公司": {
-    "summary": "1 open ticket, mostly AIQ items. Oldest AIQ-472 (39d, Unassigned). Renews in 656d.",
-    "followUp": "Chase AIQ-472 (open 39d, Unassigned) — HyRead 凌網科技.",
+    "summary": "1 open ticket (in open). Renews in 653d. Oldest open: AIQ-472, 42d.",
+    "followUp": "Chase AIQ-472 (oldest, 42d, Unassigned) — [AIQUA] HyRead 凌網科技",
     "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
+    "generatedAt": "2026-08-17T02:54:55.287Z"
   },
   "奧美廣告": {
-    "summary": "7 open tickets, mostly mixed CAM/BBT items; 1 in progress. Oldest BBB-1671 (1059d, Eric.hung). Renews in 320d.",
-    "followUp": "Chase BBB-2213 (in progress, Mia Li) — 2/28 百揚資訊、好日子、迪凱科技；TBD：Ogilvy_Hill done.",
+    "summary": "7 open tickets (mostly CAM ogilvy, in open). Renews in 317d. Oldest open: BBB-1671, 1061d.",
+    "followUp": "Chase BBB-2213 (in progress, Mia Li) — 2/28 百揚資訊、好日子、迪凱科技；TBD：Ogilvy_Hill done",
     "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
+    "generatedAt": "2026-08-17T02:54:55.287Z"
   },
   "拍貼生活": {
-    "summary": "4 open tickets, mostly mixed BBT/BBB items. Oldest BBB-1433 (1234d, Eric.hung). Renews in 252d.",
-    "followUp": "Chase BBB-1433 (open 1234d, Eric.hung) — 拍貼生活 AUO club.",
+    "summary": "4 open tickets (mostly BBT, in open). Renews in 249d. Oldest open: BBB-1433, 1236d.",
+    "followUp": "Chase BBB-1433 (oldest, 1236d, Eric.hung) — [CSM Check] 拍貼生活 AUO club",
     "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
+    "generatedAt": "2026-08-17T02:54:55.287Z"
   },
   "杰德創意影音": {
-    "summary": "1 open ticket, mostly BBT items. Oldest BBT-7245 (92d, Brian Tsai). Renews in 572d.",
-    "followUp": "Chase BBT-7245 (open 92d, Brian Tsai) — RFQ_杰德影音_Webchat 抓取已登入客戶 CRM 資料BB欄位.",
+    "summary": "1 open ticket (in open). Renews in 569d. Oldest open: BBT-7245, 95d.",
+    "followUp": "Chase BBT-7245 (oldest, 95d, Brian Tsai) — RFQ_杰德影音_Webchat 抓取已登入客戶 CRM 資料BB欄位",
     "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
+    "generatedAt": "2026-08-17T02:54:55.287Z"
   },
   "貳樓餐廳": {
-    "summary": "3 open tickets, mostly mixed BBT/BBB items. Oldest BBB-1271 (1338d, Eric.hung). Renews in 625d.",
-    "followUp": "Chase BBB-1271 (open 1338d, Eric.hung) — 貳樓餐廳.",
+    "summary": "3 open tickets (mostly BBT, in backlog). Renews in 622d. Oldest open: BBB-1271, 1340d.",
+    "followUp": "Chase BBB-1271 (oldest, 1340d, Eric.hung) — [CSM Check] 貳樓餐廳",
     "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
+    "generatedAt": "2026-08-17T02:54:55.287Z"
   },
   "鮮乳坊": {
-    "summary": "15 open tickets, mostly onboarding / data backfill; 2 in progress. Oldest BBT-7841 (31d, Brian Tsai). Renews in 678d.",
-    "followUp": "Chase AID-9237 (in progress, Patrick Lee) — 鮮乳坊 Internal Kick-off.",
+    "summary": "15 open tickets (mostly AEP, in backlog). Renews in 675d. Oldest open: BBT-7841, 33d.",
+    "followUp": "Chase BBT-7841 (in progress, Brian Tsai) — [BetterMilk] Add exclusive key word for receipt registrat...",
     "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
+    "generatedAt": "2026-08-17T02:54:55.287Z"
   },
   "achilles-sorbo": {
-    "summary": "No open Jira tickets. Renews in 297d.",
+    "summary": "No open Jira tickets. Renews in 294d.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
+    "generatedAt": "2026-08-17T02:54:55.287Z"
   },
   "aracer-塞席爾商岱沛-台灣": {
-    "summary": "No open Jira tickets. Renews in 201d.",
+    "summary": "No open Jira tickets. Renews in 198d.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
+    "generatedAt": "2026-08-17T02:54:55.287Z"
   },
   "bop-taipei-商明國際": {
-    "summary": "No open Jira tickets. Renews in 88d.",
+    "summary": "No open Jira tickets. Renews in 85d.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
+    "generatedAt": "2026-08-17T02:54:55.287Z"
   },
   "capsule-inc": {
-    "summary": "1 open ticket, mostly CAM items; 1 in progress. Oldest CAM-345936 (499d, sammi.ng). Renews in 245d.",
-    "followUp": "Chase CAM-345936 (in progress, sammi.ng) — OMD/MS/20250660_OMNET_Nescafe Soluble and SBUX NDG Capsules Campaign_Apr 2025.",
+    "summary": "1 open ticket (in progress). Renews in 242d. Oldest open: CAM-345936, 501d.",
+    "followUp": "Chase CAM-345936 (in progress, sammi.ng) — [Resize]OMD/MS/20250660_OMNET_Nescafe Soluble and SBUX ND...",
     "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
+    "generatedAt": "2026-08-17T02:54:55.287Z"
   },
   "cold-stone": {
-    "summary": "15 open tickets, mostly feature & enhancement requests; 2 in progress. Oldest BBT-4974 (213d, Unassigned). Renews in 501d.",
-    "followUp": "Chase AIRIS-9274 (in progress, Unassigned) — ST-04.8 — Publish per-node cold-fill budgets.",
+    "summary": "15 open tickets (mostly CAM water, in open). Renews in 498d. Oldest open: BBT-4974, 216d.",
+    "followUp": "Chase PROJ-33473 (in progress, Li-Wei Chang) — [ClickHouse] GCS cold-tier storage (keep PVC < 160Gi, ret...",
     "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
+    "generatedAt": "2026-08-17T02:54:55.288Z"
   },
   "love-dear-太子天一": {
-    "summary": "15 open tickets, mostly feature & enhancement requests; 2 in progress. Oldest CAM-340575 (402d, Mayu Ogura). Renews in 243d.",
-    "followUp": "Chase CAM-366783 (in progress, Mayu Ogura) — Love and Deepspace AIBID_Creative Resize Request_20250930.",
+    "summary": "15 open tickets (mostly CAM aibid, in open). Renews in 240d. Oldest open: CAM-340575, 404d.",
+    "followUp": "Chase CAM-340575 (in progress, Mayu Ogura) — Love and Deepspace AIBID_Creative Resize Request_20250217",
     "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
+    "generatedAt": "2026-08-17T02:54:55.288Z"
   },
   "nespresso-tw": {
-    "summary": "15 open tickets, mostly campaign & message delivery. Oldest CAM-310391 (816d, Jane Liu). Renews in 139d.",
-    "followUp": "Chase CAM-310391 (open 816d, Jane Liu) — OMNET_Nespresso_Summer Campaign_Jun 2024.",
+    "summary": "15 open tickets (mostly BBT nespresso, in open). Renews in 136d. Oldest open: CAM-310391, 818d.",
+    "followUp": "Chase CAM-310391 (oldest, 818d, Jane Liu) — OMNET_Nespresso_Summer Campaign_Jun 2024",
     "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
+    "generatedAt": "2026-08-17T02:54:55.290Z"
   },
   "不來梅": {
-    "summary": "7 open tickets, mostly mixed BBT/BBB items; 1 in progress. Oldest BBB-504 (1738d, Unassigned). Renews in 140d.",
-    "followUp": "Chase BBB-504 (in progress, Unassigned) — 不來梅股份有限公司（Bremen） (續約2022-01-01).",
+    "summary": "7 open tickets (mostly BBT, in open). Renews in 137d. Oldest open: BBB-504, 1740d.",
+    "followUp": "Chase BBB-504 (in progress, Unassigned) — 不來梅股份有限公司（Bremen） (續約2022-01-01)",
     "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
+    "generatedAt": "2026-08-17T02:54:55.290Z"
   },
   "亞洲安視達": {
-    "summary": "No open Jira tickets. Renews in 200d.",
+    "summary": "No open Jira tickets. Renews in 197d.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
+    "generatedAt": "2026-08-17T02:54:55.290Z"
   },
   "凱基人壽": {
-    "summary": "15 open tickets, mostly bot / LINE flows; 1 in progress. Oldest BBT-6489 (309d, jack.yt.lin). Renews in 249d.",
-    "followUp": "Chase CS-1306 (in progress, Salem Chen) — 凱基人壽_雲端檢核_2025_續約.",
+    "summary": "15 open tickets (mostly BBT, in open). Renews in 246d. Oldest open: BBT-6489, 311d.",
+    "followUp": "Chase CS-1306 (in progress, Salem Chen) — 凱基人壽_雲端檢核_2025_續約",
     "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
+    "generatedAt": "2026-08-17T02:54:55.290Z"
   },
   "安麗-amway": {
-    "summary": "15 open tickets, mostly bot / LINE flows; 4 in progress. Oldest AIQ-1281 (4d, ShiYee). Renews in 138d.",
-    "followUp": "Chase AIR-2921 (in progress, hazel.wang) — BotBonnie <> AIRIS.",
+    "summary": "15 open tickets (mostly botbonnie-related, in open). Renews in 135d.",
+    "followUp": "Chase SO-3004 (in progress, Willy Huang) — Update Pricing Calculator for existing rule and add new B...",
     "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
+    "generatedAt": "2026-08-17T02:54:55.291Z"
   },
   "新加坡商犀牛盾科技股份有限公司台灣分公司": {
-    "summary": "15 open tickets, mostly feature & enhancement requests; 4 in progress. Oldest SOE-389 (0d, Andy Wu). Renews in 285d.",
-    "followUp": "Chase SOE-389 (in progress, Andy Wu) — Prof. Service_OWNDAYS New AQ. JP/TH/TW_implementation and maintenance Custom Product 26Q1.",
+    "summary": "15 open tickets (mostly CAM, in open). Renews in 282d.",
+    "followUp": "Chase SOE-389 (in progress, Andy Wu) — Prof. Service_OWNDAYS New AQ. JP/TH/TW_implementation and...",
     "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
+    "generatedAt": "2026-08-17T02:54:55.291Z"
   },
   "明台產物保險-mingtai": {
-    "summary": "15 open tickets, mostly campaign & message delivery; 4 in progress. Oldest ETS-5390 (16d, Andy Wu). Renews in 229d.",
-    "followUp": "Chase ETS-5760 (in progress, mia.chu) — Agent applied the requested 主標 (EDM body headline) change to the email subject line instead; the body headline was unc.",
+    "summary": "15 open tickets (mostly AGNT agent, in open). Renews in 226d.",
+    "followUp": "Chase AGNT-1614 (in progress, Yi-Fu Fu) — [Mingtai] Marketing Agent Fails to Apply Marketing Rules...",
     "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
+    "generatedAt": "2026-08-17T02:54:55.291Z"
   },
   "東禾生物科技股份有限公司": {
-    "summary": "12 open tickets, mostly feature & enhancement requests; 2 in progress. Oldest BBT-7863 (20d, christine.ma). Renews in 229d.",
-    "followUp": "Chase CAMD-27312 (in progress, Jenny Liang) — 改用 source 區分 category/country 並移除 advanced targeting enhance_rules 的 _ui reads.",
+    "summary": "12 open tickets (mostly advanced-related, in open). Renews in 226d.",
+    "followUp": "Chase ETS-5258 (in progress, adam.chen) — [VitaDairy] Can't entry Lucky Wheel many times (Advanced...",
     "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
+    "generatedAt": "2026-08-17T02:54:55.292Z"
   },
   "犀牛盾": {
-    "summary": "15 open tickets, mostly bot / LINE flows; 4 in progress. Oldest AIQ-1281 (4d, ShiYee). Contract ended 80d ago.",
-    "followUp": "Chase AIR-2921 (in progress, hazel.wang) — BotBonnie <> AIRIS.",
+    "summary": "15 open tickets (mostly botbonnie-related, in open). Contract ended 83d ago.",
+    "followUp": "Chase SO-3004 (in progress, Willy Huang) — Update Pricing Calculator for existing rule and add new B...",
     "health": "red",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
+    "generatedAt": "2026-08-17T02:54:55.293Z"
   },
   "社群埠": {
-    "summary": "4 open tickets, mostly BBB items; 1 in progress. Oldest BBB-510 (1744d, Unassigned). Renews in 78d.",
-    "followUp": "Chase BBB-510 (in progress, Unassigned) — 社群埠數位媒體顧問股份有限公司 (續約2021-10-17).",
+    "summary": "4 open tickets (mostly BBB, in open). Renews in 75d. Oldest open: BBB-510, 1746d.",
+    "followUp": "Chase BBB-510 (in progress, Unassigned) — 社群埠數位媒體顧問股份有限公司 (續約2021-10-17)",
     "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
+    "generatedAt": "2026-08-17T02:54:55.293Z"
   },
   "臺理實業股份有限公司": {
-    "summary": "No open Jira tickets. Renews in 199d.",
+    "summary": "No open Jira tickets. Renews in 196d.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
+    "generatedAt": "2026-08-17T02:54:55.293Z"
   },
   "赫斯特媒體": {
-    "summary": "12 open tickets, mostly audience & segmentation; 1 blocked. Oldest PMP-2971 (2850d, Albert Tseng). Contract ended 167d ago.",
-    "followUp": "Chase QGWL-13517 (blocked, Tien Yu (Jason) Chang) — duplicated sent of STO.",
+    "summary": "12 open tickets (mostly PROJ, in backlog). 1 blocked. Contract ended 170d ago. Oldest open: PMP-2971, 2852d.",
+    "followUp": "Chase QGWL-13517 (blocked, Tien Yu (Jason) Chang) — [Hearst Taiwan] duplicated sent of STO",
     "health": "red",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "asia-living-hk": {
-    "summary": "1 open ticket, mostly GPMM items. Oldest GPMM-300 (1d, Brendan Kuang). Renews in 78d.",
-    "followUp": "Chase GPMM-300 (open 1d, Brendan Kuang) — UR Living - Signed AA Platform.",
-    "health": "green",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "v-tex": {
-    "summary": "15 open tickets, mostly onboarding / data backfill. Oldest BBT-6602 (296d, Unassigned). Renews in 350d.",
-    "followUp": "Chase BBT-6602 (open 296d, Unassigned) — Support the display of \"interested product information\" from Meta messaging ads.",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "台灣彪馬": {
-    "summary": "15 open tickets, mostly onboarding / data backfill; 1 in progress. Oldest QGWL-22943 (386d, Annie Peng). Renews in 136d.",
-    "followUp": "Chase QGWL-13175 (in progress, Kim Lu) — Add URL scheme for client.",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "安永生活": {
-    "summary": "4 open tickets, mostly mixed AGNT/CS items; 1 in progress. Oldest AIQ-388 (2382d, Unassigned). Contract ended 14d ago.",
-    "followUp": "Chase CAM-70752 (in progress, Lucinda Liu) — Mobiinsight_安永投資_Banner Resize.",
-    "health": "red",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "新光三越百貨": {
-    "summary": "15 open tickets, mostly bot / LINE flows; 2 in progress. Oldest AGNT-1687 (2d, mia.chu). Renews in 290d.",
-    "followUp": "Chase AIR-2921 (in progress, hazel.wang) — BotBonnie <> AIRIS.",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "杏豐實業": {
-    "summary": "15 open tickets, mostly feature & enhancement requests. Oldest CD-516 (2172d, Wan-Ling Lee). Contract ended 56d ago.",
-    "followUp": "Chase CD-516 (open 2172d, Wan-Ling Lee) — Tina Sun OOO 9/11 9/14 15.",
-    "health": "red",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "維康醫療": {
-    "summary": "5 open tickets, mostly mixed BBT/QGWL items. Oldest BUF-91 (1836d, Unassigned). Renews in 473d.",
-    "followUp": "Chase BUF-91 (open 1836d, Unassigned) — 維康醫療在問: 我們現在用戶掃碼加入 LINE 都會被收一次推播費，有可能設計只加好友不回應訊息的用法，減少推播費嗎?.",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "caco-加州椰子": {
-    "summary": "No open Jira tickets. Renews in 136d.",
-    "followUp": "",
-    "health": "green",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "南一書局": {
-    "summary": "15 open tickets, mostly bot / LINE flows; 2 blocked. Oldest AI-30450 (1d, Laureen Chang). Renews in 320d.",
-    "followUp": "Chase QGRAPH-39053 (blocked, auberon.chen) — Line Follower Optimization: mutual-exclusive cronjob toggle (crunner).",
-    "health": "red",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "居家先生": {
-    "summary": "6 open tickets, mostly mixed AEP/QGRAPH items; 1 in progress. Oldest ACE-3099 (2165d, James Liu). Renews in 473d.",
-    "followUp": "Chase ACE-3099 (in progress, James Liu) — Mr. Speedy_ PH_AND_CPI.",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "美而快實業": {
-    "summary": "15 open tickets, mostly mixed PROJ/XAI items; 1 in progress. Oldest XAI-95 (2185d, Chiwei Hsiao). Renews in 97d.",
-    "followUp": "Chase QGWL-4294 (in progress, Johnson Chiang) — Displays campaigns updated before 180 days ago.",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "至晟貿易股份有限公司": {
-    "summary": "1 open ticket, mostly BBT items. Oldest BBT-6520 (190d, Unassigned). Renews in 171d.",
-    "followUp": "Chase BBT-6520 (open 190d, Unassigned) — 至晟貿易_串接客戶方 API 回傳結果.",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "葡萄王生技": {
-    "summary": "4 open tickets, mostly feature & enhancement requests. Oldest BBB-1717 (1007d, Samuel Chiang). Renews in 452d.",
-    "followUp": "Chase BBB-1717 (open 1007d, Samuel Chiang) — 葡萄王生技.",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
+    "generatedAt": "2026-08-17T02:54:55.293Z"
   },
   "chenyu辰昱": {
-    "summary": "No open Jira tickets. Contract ended 95d ago.",
-    "followUp": "Contract ended 95d ago — confirm renewal status with CHENYU辰昱.",
+    "summary": "No open Jira tickets. Contract ended 98d ago.",
+    "followUp": "Contract ended 98d ago — confirm renewal status with the client.",
     "health": "red",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
+    "generatedAt": "2026-08-17T02:54:55.293Z"
   },
   "全國麗園大飯店": {
-    "summary": "1 open ticket, mostly BBB items; 1 in progress. Oldest BBB-2261 (1d, Mia Li). Renews in 248d.",
-    "followUp": "Chase BBB-2261 (in progress, Mia Li) — 8/15 三創、豐馥資產、全國麗園大飯店、貝立德、迪捷國際.",
-    "health": "green",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "友達光電": {
-    "summary": "No open Jira tickets. Renews in 146d.",
-    "followUp": "",
-    "health": "green",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "台灣移動資產管理租賃有限公司": {
-    "summary": "No open Jira tickets. Renews in 320d.",
-    "followUp": "",
-    "health": "green",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "吹毛求吃": {
-    "summary": "2 open tickets, mostly BBT items. Oldest BBT-6655 (283d, Unassigned). Renews in 839d.",
-    "followUp": "Chase BBT-6655 (open 283d, Unassigned) — BB-吹毛求吃-Omnichat 會員轉移資料匯入.",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "大學入學考試中心": {
-    "summary": "1 open ticket, mostly BUF items. Oldest BUF-83 (1836d, Unassigned). Renews in 351d.",
-    "followUp": "Chase BUF-83 (open 1836d, Unassigned) — 大考中心針對關鍵字回覆列了需求並希望我們優化\n感覺建議滿不錯的~~我還要回應他們的需求，如果有可能比較近期內可以優化的功能再麻煩讓我知道了.",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "大師課業股份有限公司": {
-    "summary": "1 open ticket, mostly FIN items; 1 in progress. Oldest FIN-2690 (3d, Tina Lee (finance)). Renews in 695d.",
-    "followUp": "Chase FIN-2690 (in progress, Tina Lee (finance)) — BotBonnie＿用戶退款申請＿大師課業.",
-    "health": "green",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "天賦夢想家顧問": {
-    "summary": "No open Jira tickets. Renews in 30d.",
-    "followUp": "Renewal in 30d — start the renewal conversation with 天賦夢想家顧問.",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "好日子行銷有限公司": {
-    "summary": "No open Jira tickets. Contract ended 36d ago.",
-    "followUp": "Contract ended 36d ago — confirm renewal status with 好日子行銷有限公司.",
-    "health": "red",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "安源資訊": {
-    "summary": "3 open tickets, mostly BBT items. Oldest BBT-5649 (477d, Unassigned). Contract ended 58d ago.",
-    "followUp": "Chase BBT-5649 (open 477d, Unassigned) — LINE 列印功能客製化.",
-    "health": "red",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "寓意居家生活有限公司": {
-    "summary": "No open Jira tickets. Contract ended 81d ago.",
-    "followUp": "Contract ended 81d ago — confirm renewal status with 寓意居家生活有限公司.",
-    "health": "red",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "尚進教育訓練有限公司": {
-    "summary": "12 open tickets, mostly campaign & message delivery; 2 in progress. Oldest BSR-175 (2715d, James Liu). Renews in 172d.",
-    "followUp": "Chase ACE-479 (in progress, Y Pham) — Chin Media - Video Inventory Vietnam.",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "巧兒宜國際": {
-    "summary": "No open Jira tickets. Renews in 115d.",
-    "followUp": "",
-    "health": "green",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "幸衍醫美診所": {
-    "summary": "9 open tickets, mostly BBT items. Oldest BBT-6443 (317d, Brian Tsai). Contract ended 3d ago.",
-    "followUp": "Chase BBT-6443 (open 317d, Brian Tsai) — 醫療系統廠商的療程訂單資訊分享至 BB.",
-    "health": "red",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "悅己情趣": {
-    "summary": "No open Jira tickets. Renews in 87d.",
-    "followUp": "",
-    "health": "green",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "新衣精緻洗衣": {
-    "summary": "No open Jira tickets. Renews in 46d.",
-    "followUp": "Renewal in 46d — start the renewal conversation with 新衣精緻洗衣.",
-    "health": "green",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "有你共創數位": {
-    "summary": "No open Jira tickets. Contract ended 84d ago.",
-    "followUp": "Contract ended 84d ago — confirm renewal status with 有你共創數位.",
-    "health": "red",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "期天資訊有限公司": {
-    "summary": "No open Jira tickets. Renews in 320d.",
-    "followUp": "",
-    "health": "green",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "未來方舟跨界行銷有限公司": {
-    "summary": "No open Jira tickets. Renews in 171d.",
-    "followUp": "",
-    "health": "green",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "泛科知識股份有限公司": {
-    "summary": "2 open tickets, mostly mixed CS/BBT items. Oldest BBT-7372 (136d, rick.lee). Renews in 228d.",
-    "followUp": "Chase BBT-7372 (open 136d, rick.lee) — Onboard 泛科知識股份-食藥署專案.",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "滙駿旅遊": {
-    "summary": "15 open tickets, mostly feature & enhancement requests; 2 in progress. Oldest CAM-123547 (2387d, Ivy Cheng). Renews in 47d.",
-    "followUp": "Chase CS-1358 (in progress, Jimmy Hsiao) — KKday 資訊安全相關問題.",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "灝翔有限公司": {
-    "summary": "No open Jira tickets. Renews in 242d.",
-    "followUp": "",
-    "health": "green",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "無比整合行銷": {
-    "summary": "1 open ticket, mostly BBB items. Oldest BBB-2262 (0d, Mia Li). Renews in 132d.",
-    "followUp": "Chase BBB-2262 (open 0d, Mia Li) — 8/25 益普索、貝殼放大、無比整合行銷.",
-    "health": "green",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "無限全球通移動通信": {
-    "summary": "15 open tickets, mostly feature & enhancement requests; 2 in progress. Oldest CAM-398881 (44d, Ryo Nakanishi). Renews in 3d.",
-    "followUp": "Chase CAM-403971 (in progress, Dayoon Shin) — Mapelstory world_KR_AIBID_btv request_0814.",
-    "health": "red",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "玩點互動": {
-    "summary": "1 open ticket, mostly ETS items. Oldest ETS-5567 (8d, christine.ma). Renews in 360d.",
-    "followUp": "Chase ETS-5567 (open 8d, christine.ma) — BB_Client Configuration Request.",
-    "health": "green",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "百揚資訊科技有限公司": {
-    "summary": "1 open ticket, mostly BBB items; 1 in progress. Oldest BBB-2213 (170d, Mia Li). Contract ended 53d ago.",
-    "followUp": "Chase BBB-2213 (in progress, Mia Li) — 2/28 百揚資訊、好日子、迪凱科技；TBD：Ogilvy_Hill done.",
-    "health": "red",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "租領移動科技股份有限公司": {
-    "summary": "No open Jira tickets. Renews in 229d.",
-    "followUp": "",
-    "health": "green",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "精華光學": {
-    "summary": "No open Jira tickets. Renews in 273d.",
-    "followUp": "",
-    "health": "green",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "翊棨-優迷": {
-    "summary": "No open Jira tickets. Contract ended 23d ago.",
-    "followUp": "Contract ended 23d ago — confirm renewal status with 翊棨 (優迷).",
-    "health": "red",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "華泰開發投資有限公司": {
-    "summary": "No open Jira tickets. Renews in 273d.",
-    "followUp": "",
-    "health": "green",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "豐馥資產管理股份有限公司": {
-    "summary": "1 open ticket, mostly BBB items; 1 in progress. Oldest BBB-2261 (1d, Mia Li). Renews in 206d.",
-    "followUp": "Chase BBB-2261 (in progress, Mia Li) — 8/15 三創、豐馥資產、全國麗園大飯店、貝立德、迪捷國際.",
-    "health": "green",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "酷訊搜索": {
-    "summary": "No open Jira tickets. Renews in 47d.",
-    "followUp": "Renewal in 47d — start the renewal conversation with 酷訊搜索.",
-    "health": "green",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "dac-tw": {
-    "summary": "4 open tickets, mostly mixed CAM/ACE items; 2 in progress. Oldest CAM-34409 (2573d, Max Lee). Renews in 290d.",
-    "followUp": "Chase ACE-1381 (in progress, James Liu) — Glico_CPCV_Premium publishers.",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "igs": {
-    "summary": "8 open tickets, mostly CAM items. Oldest CAM-395463 (74d, james.yeh). Renews in 170d.",
-    "followUp": "Chase CAM-395463 (open 74d, james.yeh) — IGS_滿貫大亨 TW iOS/AOS (AIBID) 260531 結束.",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "信誼基金會": {
-    "summary": "2 open tickets, mostly mixed BBT/BBB items. Oldest BBB-1272 (1338d, Eric.hung). Renews in 259d.",
-    "followUp": "Chase BBB-1272 (open 1338d, Eric.hung) — 信誼基金會.",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "台灣三住": {
-    "summary": "12 open tickets, mostly bot / LINE flows; 2 in progress. Oldest BBB-1888 (828d, ling.chou). Renews in 656d.",
-    "followUp": "Chase ETS-5786 (in progress, adam.chen) — Bot Pause Log Investigation — Operator Message in Done Folder (2026-08-13).",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "台灣小米通訊": {
-    "summary": "No open Jira tickets. Renews in 143d.",
-    "followUp": "",
-    "health": "green",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "台灣希爾思": {
-    "summary": "15 open tickets, mostly campaign & message delivery; 1 in progress. Oldest ASQ-1598 (143d, pinghan.chiang). Renews in 198d.",
-    "followUp": "Chase CAM-397528 (in progress, ingrid.mao) — Naver shopping_Reen_Pet(Promotion)_Campaign launch request_260619.",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "大魯閣實業": {
-    "summary": "No open Jira tickets. Contract ended 109d ago.",
-    "followUp": "Contract ended 109d ago — confirm renewal status with 大魯閣實業.",
-    "health": "red",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "悠雅科技": {
-    "summary": "6 open tickets, mostly campaign & message delivery; 2 in progress. Oldest ACE-2850 (2174d, James Liu). Renews in 122d.",
-    "followUp": "Chase ACE-4149 (in progress, James Liu) — MVN_Zenyum_CPO_2021.",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "未來親子": {
-    "summary": "15 open tickets, mostly feature & enhancement requests; 2 in progress. Oldest BBT-3462 (812d, Unassigned). Contract ended 106d ago.",
-    "followUp": "Chase AIR-4040 (in progress, Duncan Ho) — Add prefix _fp for BB to AR data.",
-    "health": "red",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "海昌隱形眼鏡": {
-    "summary": "No open Jira tickets. Renews in 504d.",
-    "followUp": "",
-    "health": "green",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "漢堡王": {
-    "summary": "15 open tickets, mostly feature & enhancement requests; 4 in progress. Oldest QGWL-10268 (1585d, Mark Liu). Renews in 736d.",
-    "followUp": "Chase ETS-5759 (in progress, adam.chen) — Keyword Configuration Change Log Request.",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "益普索市場研究股份有限公司": {
-    "summary": "2 open tickets, mostly mixed CS/BBT items; 1 in progress. Oldest BBT-5764 (452d, Unassigned). Renews in 643d.",
-    "followUp": "Chase CS-2813 (in progress, chengyu.yu) — 益普索市場研究股份有限公司＿Ipsos Global Security Request.",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "維肯媒體": {
-    "summary": "14 open tickets, mostly feature & enhancement requests; 2 in progress. Oldest CAM-12686 (3627d, Hsuan-Tien Lin). Renews in 273d.",
-    "followUp": "Chase BBT-7799 (in progress, Brian Tsai) — 維肯-台灣愛麗斯和奧莉維亞有限公司_第二階段 下拉選單調整.",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "聯創整合行銷": {
-    "summary": "11 open tickets, mostly API / SDK integration; 1 in progress. Oldest BBB-1476 (1205d, Eric.hung). Renews in 362d.",
-    "followUp": "Chase BBT-7885 (in progress, Brian Tsai) — 7-ELEVEN 統一超商_用戶綁定由 BB 進行判斷 GID 只能綁一次.",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "豐傑生醫": {
-    "summary": "8 open tickets, mostly feature & enhancement requests. Oldest BBT-5751 (459d, jack.yt.lin). Renews in 473d.",
-    "followUp": "Chase BBT-5751 (open 459d, jack.yt.lin) — 豐傑生醫 onboard member card image.",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "dk-shoes": {
-    "summary": "15 open tickets, mostly onboarding / data backfill; 1 in progress. Oldest PROJ-33659 (16d, Mei-Cih Yeh). Renews in 221d.",
-    "followUp": "Chase AGNT-1700 (in progress, Mei-Cih Yeh) — [Onboard] Enable campaign agent for DR.CiNK.",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "innisfree-tw": {
-    "summary": "15 open tickets, mostly campaign & message delivery; 7 in progress. Oldest CAM-382218 (109d, jaehan.ji). Renews in 27d.",
-    "followUp": "Chase QGWL-26104 (in progress, jerry.kim) — enable OJM for PROD account.",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "匯姿": {
-    "summary": "No open Jira tickets. Renews in 213d.",
-    "followUp": "",
-    "health": "green",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "永悅健康": {
-    "summary": "15 open tickets, mostly audience & segmentation; 1 in progress. Oldest PHXX-5674 (255d, cyy.yang). Renews in 92d.",
-    "followUp": "Chase AGNT-474 (in progress, Mei-Cih Yeh) — Disable ESS AI agent for H2U.",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "社團法人台灣職業籃球聯盟": {
-    "summary": "No open Jira tickets. Renews in 17d.",
-    "followUp": "Renewal in 17d — start the renewal conversation with 社團法人台灣職業籃球聯盟.",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "giloo-紀實影音": {
-    "summary": "13 open tickets, mostly onboarding / data backfill; 1 in progress. Oldest MT-891 (1912d, Cedric Shih). Renews in 290d.",
-    "followUp": "Chase AEP-8177 (in progress, vivian.yang) — Giloo.",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "中華民國對外貿易發展協會": {
-    "summary": "No open Jira tickets. Renews in 62d.",
-    "followUp": "",
-    "health": "green",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "全曜財經資訊": {
-    "summary": "15 open tickets, mostly campaign & message delivery; 1 in progress. Oldest CAM-306372 (848d, jean.liu). Renews in 304d.",
-    "followUp": "Chase GCR-22 (in progress, Ted Wu) — Huge events quotation proposal (PXMart / CMoney / CW / CWGV / SKM / ezTravel).",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "寰宇家庭": {
-    "summary": "2 open tickets, mostly mixed ETS/CAM items. Oldest CAM-8056 (3734d, Iris Huang). Renews in 399d.",
-    "followUp": "Chase CAM-8056 (open 3734d, Iris Huang) — 加碼：寰宇家庭.",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "肯驛國際": {
-    "summary": "4 open tickets, mostly mixed AID/EWC items. Oldest AID-12224 (939d, Jarvis Kan). Renews in 161d.",
-    "followUp": "Chase AID-12224 (open 939d, Jarvis Kan) — AiDeal 肯驛 8折優惠.",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "藝康企業股份有限公司": {
-    "summary": "5 open tickets, mostly mixed BBT/BP items; 2 in progress. Oldest BBT-7001 (219d, Unassigned). Renews in 930d.",
-    "followUp": "Chase BBT-7883 (in progress, Brian Tsai) — 🍔 [藝康 Ecolab] Custom booking flow — invalid date/time format not caught immediately, and unknown location error oc.",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "guardian-health-beauty": {
-    "summary": "15 open tickets, mostly campaign & message delivery; 3 blocked. Oldest QGWL-19559 (262d, medet.kanmaz). Contract ended 129d ago.",
-    "followUp": "Chase QGRAPH-37916 (blocked, caitlyn wu) — [s3] clean out-of-date files under aiqua-prd-qgraph-back-singapore/data-streamer/enterprise-*.",
-    "health": "red",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "haleon": {
-    "summary": "4 open tickets, mostly feature & enhancement requests; 1 in progress. Oldest BBT-4294 (746d, Unassigned). Renews in 154d.",
-    "followUp": "Chase CS-1191 (in progress, david.tai) — BB 客戶 Haleon requesting us (DS team) to fill responsible AI agreement form.",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "jgb-smart-property": {
-    "summary": "4 open tickets, mostly mixed BBT/BBB items; 1 in progress. Oldest BBB-1955 (778d, Mia Li). Renews in 639d.",
-    "followUp": "Chase BBB-1955 (in progress, Mia Li) — 6/30 鮮乳坊、Cofit_脂研；6/27 JGB（富喬物業）.",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "三創數位": {
-    "summary": "1 open ticket, mostly BBT items. Oldest BBT-4331 (735d, Unassigned). Renews in 139d.",
-    "followUp": "Chase BBT-4331 (open 735d, Unassigned) — 三創數位 (Syntrend)_ 客製化簽到套件報表.",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "佑全保健藥妝": {
-    "summary": "1 open ticket, mostly QGWL items. Oldest QGWL-25099 (155d, Ray Lin). Renews in 93d.",
-    "followUp": "Chase QGWL-25099 (open 155d, Ray Lin) — [backfill offline event] Prepare for the backfill event (adjust rate limit).",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "冰宇科技": {
-    "summary": "9 open tickets, mostly feature & enhancement requests; 1 in progress. Oldest BBB-1143 (1421d, Eric.hung). Renews in 443d.",
-    "followUp": "Chase BBB-1143 (in progress, Eric.hung) — 冰宇科技.",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "台茂購物中心": {
-    "summary": "15 open tickets, mostly bot / LINE flows; 4 in progress. Oldest AIQ-1281 (4d, ShiYee). Renews in 198d.",
-    "followUp": "Chase AIR-2921 (in progress, hazel.wang) — BotBonnie <> AIRIS.",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "嘉里大榮": {
-    "summary": "4 open tickets, mostly BBT items; 1 in progress. Oldest BBT-7481 (34d, Unassigned). Renews in 1064d.",
-    "followUp": "Chase BBT-7479 (in progress, Brian Tsai) — RFQ_嘉里大榮_通知型訊息串接與好友訊息通知.",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "大方藝彩行銷顧問股份有限公司": {
-    "summary": "No open Jira tickets. Renews in 587d.",
-    "followUp": "",
-    "health": "green",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "學吧": {
-    "summary": "3 open tickets, mostly BBT items. Oldest BBT-1844 (973d, Unassigned). Renews in 485d.",
-    "followUp": "Chase BBT-1844 (open 973d, Unassigned) — Function to turn on Bot for all or part of the audience.",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "富味鄉食品": {
-    "summary": "8 open tickets, mostly mixed BBT/BBB items. Oldest BBB-1032 (1478d, Samuel Chiang). Renews in 259d.",
-    "followUp": "Chase BBB-1032 (open 1478d, Samuel Chiang) — 富味鄉 芝初_標籤/參數記錄總人數秀給用戶查看.",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "我的專屬營養師": {
-    "summary": "15 open tickets, mostly feature & enhancement requests. Oldest BBT-6814 (116d, Brian Tsai). Renews in 548d.",
-    "followUp": "Chase BBT-6814 (open 116d, Brian Tsai) — botbonnie system performance optimization.",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "玉山銀行": {
-    "summary": "5 open tickets, mostly mixed CAM/BBT items. Oldest CAM-233255 (1450d, Mason Chiu). Renews in 229d.",
-    "followUp": "Chase CAM-233255 (open 1450d, Mason Chiu) — 凱絡_玉山銀數位e卡_立即辦卡 event.",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "統一數網": {
-    "summary": "13 open tickets, mostly mixed CAM/BBT items; 1 in progress. Oldest BBT-7589 (91d, Guiguan). Renews in 646d.",
-    "followUp": "Chase BBT-7885 (in progress, Brian Tsai) — 7-ELEVEN 統一超商_用戶綁定由 BB 進行判斷 GID 只能綁一次.",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "緯育": {
-    "summary": "4 open tickets, mostly mixed BBT/BBB items. Oldest BBB-927 (1521d, Samuel Chiang). Renews in 351d.",
-    "followUp": "Chase BBB-927 (open 1521d, Samuel Chiang) — 緯育.",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "聚財課": {
-    "summary": "5 open tickets, mostly mixed AID/CAM items; 1 in progress. Oldest AID-9646 (1422d, Eric Tung). Renews in 485d.",
-    "followUp": "Chase CAM-237543 (in progress, Jane Liu) — 聚財課-202209.26-CPL(名單)-LCCV_20220927.",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "芝麻開門電子商務股份有限公司": {
-    "summary": "No open Jira tickets. Renews in 170d.",
-    "followUp": "",
-    "health": "green",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "萊爾富": {
-    "summary": "2 open tickets, mostly mixed CAM/BBB items; 1 in progress. Oldest BBB-506 (1738d, Unassigned). Renews in 717d.",
-    "followUp": "Chase BBB-506 (in progress, Unassigned) — 萊爾富國際股份有限公司 (續約(no contract)).",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "錦明集團": {
-    "summary": "No open Jira tickets. Renews in 443d.",
-    "followUp": "",
-    "health": "green",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "hola-特力和樂": {
-    "summary": "14 open tickets, mostly audience & segmentation; 3 in progress. Oldest AGNT-1799 (0d, Mark Chu). Renews in 139d.",
-    "followUp": "Chase AGNT-1799 (in progress, Mark Chu) — Campaign Agent returns 503 during pod turnover — add HA settings (minReplicas / PDB / preStop / startupProbe).",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "讀墨電子書": {
-    "summary": "15 open tickets, mostly bugs & errors; 1 blocked. Oldest QGRAPH-38446 (72d, irene.hsieh). Renews in 504d.",
-    "followUp": "Chase QGRAPH-38446 (blocked, irene.hsieh) — readmoo.",
-    "health": "red",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "錨點影音": {
-    "summary": "15 open tickets, mostly onboarding / data backfill; 1 blocked. Oldest ADCR-227 (6d, Unassigned). Contract ended 75d ago.",
-    "followUp": "Chase ETS-1937 (blocked, shinsuke.adachi) — Trustpilot Review Ratings – Automation Status & Next Steps (MIS Datamart + Looker).",
-    "health": "red",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "inlook": {
-    "summary": "15 open tickets, mostly campaign & message delivery. Oldest AIR-3980 (220d, liyeh.hung). Renews in 308d.",
-    "followUp": "Chase AIR-3980 (open 220d, liyeh.hung) — Most of the AIRIS Tracking API responded with connect EHOSTUNREACH 91.134.9.58:80.",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "國泰人壽": {
-    "summary": "15 open tickets, mostly onboarding / data backfill. Oldest CAM-316417 (764d, Wei Wang). Renews in 229d.",
-    "followUp": "Chase CAM-316417 (open 764d, Wei Wang) — Cathay Pacific_Branding_KR_Q32024.",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "國泰金控": {
-    "summary": "4 open tickets, mostly mixed CS/AIQ items; 1 in progress. Oldest ACE-3804 (2074d, Phil Hsu). Renews in 170d.",
-    "followUp": "Chase ACE-3804 (in progress, Phil Hsu) — 國泰金控_享出門.",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "城企國際有限公司": {
-    "summary": "15 open tickets, mostly campaign & message delivery. Oldest AIR-3980 (220d, liyeh.hung). Renews in 283d.",
-    "followUp": "Chase AIR-3980 (open 220d, liyeh.hung) — Most of the AIRIS Tracking API responded with connect EHOSTUNREACH 91.134.9.58:80.",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "天幕國際": {
-    "summary": "15 open tickets, mostly onboarding / data backfill; 1 in progress. Oldest DP-1911 (18d, Unassigned). Renews in 132d.",
-    "followUp": "Chase AGNT-1700 (in progress, Mei-Cih Yeh) — [Onboard] Enable campaign agent for DR.CiNK.",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "微風": {
-    "summary": "15 open tickets, mostly API / SDK integration; 2 blocked. Oldest ADQA-1879 (0d, Pineapple Wu). Renews in 315d.",
-    "followUp": "Chase QGRAPH-32812 (blocked, morris.wang) — [KRDC] Deploy Analytic Backend Mongo for REC.",
-    "health": "red",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "爭鮮": {
-    "summary": "6 open tickets, mostly mixed CAM/BBT items; 1 in progress. Oldest CAM-240640 (1352d, Yiru Chen). Renews in 693d.",
-    "followUp": "Chase CAM-288907 (in progress, Mandy Tsai) — 爭鮮-壽司台味季_231116.",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "維那斯有限公司": {
-    "summary": "15 open tickets, mostly campaign & message delivery. Oldest AIR-3980 (220d, liyeh.hung). Renews in 308d.",
-    "followUp": "Chase AIR-3980 (open 220d, liyeh.hung) — Most of the AIRIS Tracking API responded with connect EHOSTUNREACH 91.134.9.58:80.",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "達特聖克國際股份有限公司": {
-    "summary": "5 open tickets, mostly onboarding / data backfill. Oldest ADCR-315 (309d, steven.za.chen). Renews in 73d.",
-    "followUp": "Chase ADCR-315 (open 309d, steven.za.chen) — DR.CiNK達特聖克_2025.10.09.",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "invani": {
-    "summary": "1 open ticket, mostly BBT items. Oldest BBT-3966 (770d, Unassigned). Renews in 366d.",
-    "followUp": "Chase BBT-3966 (open 770d, Unassigned) — 美商怡發明有限公司 Invani_客服對話紀錄同步至 BotBonnie.",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "uuulab-co": {
-    "summary": "No open Jira tickets. Renews in 135d.",
-    "followUp": "",
-    "health": "green",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "優派國際": {
-    "summary": "No open Jira tickets. Renews in 201d.",
-    "followUp": "",
-    "health": "green",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "國立暨南國際大學": {
-    "summary": "No open Jira tickets. Renews in 139d.",
-    "followUp": "",
-    "health": "green",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "宇峻奧汀科技": {
     "summary": "No open Jira tickets. Renews in 245d.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
+    "generatedAt": "2026-08-17T02:54:55.293Z"
   },
-  "摩奇創意": {
-    "summary": "No open Jira tickets. Renews in 219d.",
+  "友達光電": {
+    "summary": "No open Jira tickets. Renews in 143d.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
+    "generatedAt": "2026-08-17T02:54:55.293Z"
   },
-  "橋陽設計工作室": {
-    "summary": "14 open tickets, mostly campaign & message delivery; 9 in progress. Oldest CAM-67593 (2934d, Katie Chen). Renews in 229d.",
-    "followUp": "Chase CAM-174607 (in progress, Jane Liu) — 雅詩蘭黛_無敵霜_母親節_20210407.",
+  "台灣移動資產管理租賃有限公司": {
+    "summary": "No open Jira tickets. Renews in 317d.",
+    "followUp": "",
+    "health": "green",
+    "generatedAt": "2026-08-17T02:54:55.293Z"
+  },
+  "吹毛求吃": {
+    "summary": "2 open tickets (mostly BBT, in open). Renews in 836d. Oldest open: BBT-6655, 285d.",
+    "followUp": "Chase BBT-6655 (oldest, 285d, Unassigned) — BB-吹毛求吃-Omnichat 會員轉移資料匯入",
     "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
+    "generatedAt": "2026-08-17T02:54:55.293Z"
   },
-  "貝殼放大": {
-    "summary": "1 open ticket, mostly BBB items. Oldest BBB-2262 (0d, Mia Li). Renews in 6d.",
-    "followUp": "Chase BBB-2262 (open 0d, Mia Li) — 8/25 益普索、貝殼放大、無比整合行銷.",
+  "大學入學考試中心": {
+    "summary": "1 open ticket (in open). Renews in 348d. Oldest open: BUF-83, 1838d.",
+    "followUp": "Chase BUF-83 (oldest, 1838d, Unassigned) — 大考中心針對關鍵字回覆列了需求並希望我們優化\n感覺建議滿不錯的~~我還要回應他們的需求，如果有可能比較近期內可以優...",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.293Z"
+  },
+  "大師課業股份有限公司": {
+    "summary": "1 open ticket (in progress). Renews in 692d.",
+    "followUp": "Chase FIN-2690 (in progress, Tina Lee (finance)) — BotBonnie＿用戶退款申請＿大師課業",
+    "health": "green",
+    "generatedAt": "2026-08-17T02:54:55.293Z"
+  },
+  "天賦夢想家顧問": {
+    "summary": "No open Jira tickets. Renews in 27d.",
+    "followUp": "Renewal in 27d — start the renewal conversation with the client.",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.293Z"
+  },
+  "好日子行銷有限公司": {
+    "summary": "No open Jira tickets. Contract ended 39d ago.",
+    "followUp": "Contract ended 39d ago — confirm renewal status with the client.",
     "health": "red",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
+    "generatedAt": "2026-08-17T02:54:55.293Z"
   },
-  "貝立德股份有限公司": {
-    "summary": "15 open tickets, mostly campaign & message delivery; 4 in progress. Oldest CAM-368576 (53d, Gary Huang). Renews in 250d.",
-    "followUp": "Chase CAM-401822 (in progress, daniel.su) — Branding_貝立德-黑松C&C-SP活動哇放假啦-IP聯名_20260819-0901_New.",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
+  "安源資訊": {
+    "summary": "3 open tickets (mostly BBT, in open). Contract ended 61d ago. Oldest open: BBT-5649, 480d.",
+    "followUp": "Chase BBT-5649 (oldest, 480d, Unassigned) — 【ibon】LINE 列印功能客製化",
+    "health": "red",
+    "generatedAt": "2026-08-17T02:54:55.293Z"
   },
-  "迪凱科技": {
-    "summary": "1 open ticket, mostly BBB items; 1 in progress. Oldest BBB-2213 (170d, Mia Li). Renews in 198d.",
-    "followUp": "Chase BBB-2213 (in progress, Mia Li) — 2/28 百揚資訊、好日子、迪凱科技；TBD：Ogilvy_Hill done.",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
+  "寓意居家生活有限公司": {
+    "summary": "No open Jira tickets. Contract ended 84d ago.",
+    "followUp": "Contract ended 84d ago — confirm renewal status with the client.",
+    "health": "red",
+    "generatedAt": "2026-08-17T02:54:55.293Z"
   },
-  "高雄萬豪酒店": {
-    "summary": "15 open tickets, mostly onboarding / data backfill; 2 in progress. Oldest CAM-331209 (197d, yoko.wang). Renews in 296d.",
-    "followUp": "Chase ETS-5568 (in progress, hazel.wang) — Frequent errors and screen freeze when saving EDM templates; templates not saved and My Templates appear empty.",
+  "尚進教育訓練有限公司": {
+    "summary": "12 open tickets (mostly chin-related, in backlog). Renews in 169d. Oldest open: BSR-175, 2718d.",
+    "followUp": "Chase ACE-485 (in progress, James Liu) — Chin Media - Inventory of App AOG - Đấu Trường Vinh Quang",
     "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
+    "generatedAt": "2026-08-17T02:54:55.293Z"
+  },
+  "巧兒宜國際": {
+    "summary": "No open Jira tickets. Renews in 112d.",
+    "followUp": "",
+    "health": "green",
+    "generatedAt": "2026-08-17T02:54:55.293Z"
+  },
+  "幸衍醫美診所": {
+    "summary": "9 open tickets (mostly BBT live, in backlog). Contract ended 6d ago. Oldest open: BBT-6443, 320d.",
+    "followUp": "Chase BBT-6443 (oldest, 320d, Brian Tsai) — [MM-BB-幸衍醫美診所]  醫療系統廠商的療程訂單資訊分享至 BB",
+    "health": "red",
+    "generatedAt": "2026-08-17T02:54:55.293Z"
+  },
+  "悅己情趣": {
+    "summary": "No open Jira tickets. Renews in 84d.",
+    "followUp": "",
+    "health": "green",
+    "generatedAt": "2026-08-17T02:54:55.293Z"
+  },
+  "新衣精緻洗衣": {
+    "summary": "No open Jira tickets. Renews in 43d.",
+    "followUp": "Renewal in 43d — start the renewal conversation with the client.",
+    "health": "green",
+    "generatedAt": "2026-08-17T02:54:55.293Z"
+  },
+  "有你共創數位": {
+    "summary": "No open Jira tickets. Contract ended 87d ago.",
+    "followUp": "Contract ended 87d ago — confirm renewal status with the client.",
+    "health": "red",
+    "generatedAt": "2026-08-17T02:54:55.293Z"
+  },
+  "期天資訊有限公司": {
+    "summary": "No open Jira tickets. Renews in 317d.",
+    "followUp": "",
+    "health": "green",
+    "generatedAt": "2026-08-17T02:54:55.293Z"
+  },
+  "未來方舟跨界行銷有限公司": {
+    "summary": "No open Jira tickets. Renews in 168d.",
+    "followUp": "",
+    "health": "green",
+    "generatedAt": "2026-08-17T02:54:55.293Z"
+  },
+  "泛科知識股份有限公司": {
+    "summary": "2 open tickets (in backlog). Renews in 225d. Oldest open: BBT-7372, 138d.",
+    "followUp": "Chase BBT-7372 (oldest, 138d, rick.lee) — [Service Agent] Onboard 泛科知識股份-食藥署專案",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.293Z"
+  },
+  "滙駿旅遊": {
+    "summary": "15 open tickets (mostly CAM kkday, in open). Renews in 44d. Oldest open: CAM-123547, 2389d.",
+    "followUp": "Chase ACE-3788 (in progress, Yan Lin) — KKday_HK Web Campaign",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.294Z"
+  },
+  "灝翔有限公司": {
+    "summary": "No open Jira tickets. Renews in 239d.",
+    "followUp": "",
+    "health": "green",
+    "generatedAt": "2026-08-17T02:54:55.294Z"
+  },
+  "無比整合行銷": {
+    "summary": "1 open ticket (in progress). Renews in 129d.",
+    "followUp": "Chase BBB-2262 (in progress, Mia Li) — 8/25 益普索、貝殼放大、無比整合行銷",
+    "health": "green",
+    "generatedAt": "2026-08-17T02:54:55.294Z"
+  },
+  "無限全球通移動通信": {
+    "summary": "15 open tickets (mostly CAM world, in open). Contract ends today. Oldest open: CAM-398881, 46d.",
+    "followUp": "Chase CAM-398881 (in progress, Ryo Nakanishi) — Aic_Shadowverse:Worlds Beyond_Creative Resize Request_202...",
+    "health": "red",
+    "generatedAt": "2026-08-17T02:54:55.294Z"
+  },
+  "玩點互動": {
+    "summary": "1 open ticket (in open). Renews in 357d.",
+    "followUp": "Chase ETS-5567 (oldest, 10d, christine.ma) — [bitplay] BB_Client Configuration Request",
+    "health": "green",
+    "generatedAt": "2026-08-17T02:54:55.294Z"
+  },
+  "百揚資訊科技有限公司": {
+    "summary": "1 open ticket (in progress). Contract ended 56d ago. Oldest open: BBB-2213, 173d.",
+    "followUp": "Chase BBB-2213 (in progress, Mia Li) — 2/28 百揚資訊、好日子、迪凱科技；TBD：Ogilvy_Hill done",
+    "health": "red",
+    "generatedAt": "2026-08-17T02:54:55.294Z"
+  },
+  "租領移動科技股份有限公司": {
+    "summary": "No open Jira tickets. Renews in 226d.",
+    "followUp": "",
+    "health": "green",
+    "generatedAt": "2026-08-17T02:54:55.294Z"
+  },
+  "精華光學": {
+    "summary": "No open Jira tickets. Renews in 270d.",
+    "followUp": "",
+    "health": "green",
+    "generatedAt": "2026-08-17T02:54:55.294Z"
+  },
+  "翊棨-優迷": {
+    "summary": "No open Jira tickets. Contract ended 26d ago.",
+    "followUp": "Contract ended 26d ago — confirm renewal status with the client.",
+    "health": "red",
+    "generatedAt": "2026-08-17T02:54:55.294Z"
+  },
+  "華泰開發投資有限公司": {
+    "summary": "No open Jira tickets. Renews in 270d.",
+    "followUp": "",
+    "health": "green",
+    "generatedAt": "2026-08-17T02:54:55.294Z"
+  },
+  "豐馥資產管理股份有限公司": {
+    "summary": "No open Jira tickets. Renews in 203d.",
+    "followUp": "",
+    "health": "green",
+    "generatedAt": "2026-08-17T02:54:55.294Z"
+  },
+  "酷訊搜索": {
+    "summary": "No open Jira tickets. Renews in 44d.",
+    "followUp": "Renewal in 44d — start the renewal conversation with the client.",
+    "health": "green",
+    "generatedAt": "2026-08-17T02:54:55.294Z"
+  },
+  "guardian-health-beauty": {
+    "summary": "15 open tickets (mostly singapore-related). 3 blocked. Contract ended 132d ago. Oldest open: QGWL-19559, 264d.",
+    "followUp": "Chase QGRAPH-37830 (blocked, caitlyn wu) — [cost][s3] clean out-of-date files under aiqua-prd-qgraph...",
+    "health": "red",
+    "generatedAt": "2026-08-17T02:54:55.294Z"
+  },
+  "giloo-紀實影音": {
+    "summary": "13 open tickets (mostly AEP giloo, in backlog). Renews in 287d. Oldest open: MT-891, 1914d.",
+    "followUp": "Chase AEP-8177 (in progress, vivian.yang) — [EAM setup + Schema backfill] Giloo",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.294Z"
+  },
+  "中華民國對外貿易發展協會": {
+    "summary": "No open Jira tickets. Renews in 59d.",
+    "followUp": "Renewal in 59d — start the renewal conversation with the client.",
+    "health": "green",
+    "generatedAt": "2026-08-17T02:54:55.294Z"
+  },
+  "全曜財經資訊": {
+    "summary": "15 open tickets (mostly QGWL, in backlog). Renews in 301d. Oldest open: CAM-306372, 850d.",
+    "followUp": "Chase GCR-22 (in progress, Ted Wu) — Huge events quotation proposal (PXMart / CMoney / CW / CW...",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.294Z"
+  },
+  "寰宇家庭": {
+    "summary": "2 open tickets (in open). Renews in 396d. Oldest open: CAM-8056, 3736d.",
+    "followUp": "Chase CAM-8056 (oldest, 3736d, Iris Huang) — 加碼：寰宇家庭",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.294Z"
+  },
+  "肯驛國際": {
+    "summary": "4 open tickets (mostly AID point, in open). Renews in 158d. Oldest open: AID-12224, 941d.",
+    "followUp": "Chase AID-12224 (oldest, 941d, Jarvis Kan) — AiDeal 肯驛 8折優惠",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.294Z"
+  },
+  "藝康企業股份有限公司": {
+    "summary": "5 open tickets (mostly BBT pending). Renews in 927d. Oldest open: BBT-7001, 221d.",
+    "followUp": "Chase BBT-7779 (in progress, Brian Tsai) — 🍔 [藝康 Ecolab] User stuck in previous loop when order rem...",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.295Z"
+  },
+  "dk-shoes": {
+    "summary": "15 open tickets (mostly AGNT enable, in backlog). Renews in 218d.",
+    "followUp": "Chase AGNT-1700 (in progress, Mei-Cih Yeh) — [DR.CiNK] [Onboard] Enable campaign agent for DR.CiNK",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.295Z"
+  },
+  "innisfree-tw": {
+    "summary": "15 open tickets (mostly ETS). Renews in 24d. Oldest open: CAM-382218, 111d.",
+    "followUp": "Chase CAM-382218 (in progress, jaehan.ji) — [Resize]Innisfree_Reen_Resize request_0202",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.295Z"
+  },
+  "匯姿": {
+    "summary": "No open Jira tickets. Renews in 210d.",
+    "followUp": "",
+    "health": "green",
+    "generatedAt": "2026-08-17T02:54:55.295Z"
+  },
+  "永悅健康": {
+    "summary": "15 open tickets (mostly agent-related, in open). Renews in 89d. Oldest open: PHXX-5674, 257d.",
+    "followUp": "Chase AGNT-474 (in progress, Mei-Cih Yeh) — [Offboard] Disable ESS AI agent for H2U",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.296Z"
+  },
+  "社團法人台灣職業籃球聯盟": {
+    "summary": "No open Jira tickets. Renews in 14d.",
+    "followUp": "Renewal in 14d — start the renewal conversation with the client.",
+    "health": "red",
+    "generatedAt": "2026-08-17T02:54:55.296Z"
+  },
+  "hola-特力和樂": {
+    "summary": "10 open tickets (mostly audience-related, in open). Renews in 136d.",
+    "followUp": "Chase AGNT-1799 (in progress, Mark Chu) — [PRD] Campaign Agent returns 503 during pod turnover — ad...",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.296Z"
+  },
+  "讀墨電子書": {
+    "summary": "15 open tickets (in open). 1 blocked. Renews in 501d. Oldest open: QGRAPH-38446, 75d.",
+    "followUp": "Chase QGRAPH-38446 (blocked, irene.hsieh) — [migration] readmoo",
+    "health": "red",
+    "generatedAt": "2026-08-17T02:54:55.296Z"
+  },
+  "錨點影音": {
+    "summary": "15 open tickets (mostly adcreative-related, in open). 1 blocked. Contract ended 78d ago.",
+    "followUp": "Chase ETS-1937 (blocked, shinsuke.adachi) — [adCreative] Trustpilot Review Ratings – Automation Statu...",
+    "health": "red",
+    "generatedAt": "2026-08-17T02:54:55.296Z"
+  },
+  "dac-tw": {
+    "summary": "4 open tickets (mostly CAM hitachi, in open). Renews in 287d. Oldest open: CAM-34409, 2575d.",
+    "followUp": "Chase CAM-34409 (in progress, Max Lee) — Glico_Make Tag Doc_20170905",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.296Z"
+  },
+  "igs": {
+    "summary": "8 open tickets (mostly CAM golden, in open). Renews in 167d. Oldest open: CAM-395463, 76d.",
+    "followUp": "Chase CAM-395463 (oldest, 76d, james.yeh) — [Pause] IGS_滿貫大亨 TW iOS/AOS (AIBID) 260531 結束",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.296Z"
+  },
+  "信誼基金會": {
+    "summary": "2 open tickets (in backlog). Renews in 256d. Oldest open: BBB-1272, 1340d.",
+    "followUp": "Chase BBB-1272 (oldest, 1340d, Eric.hung) — [CSM Check] 信誼基金會",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.296Z"
+  },
+  "台灣三住": {
+    "summary": "12 open tickets (mostly BBT misumi). Renews in 653d. Oldest open: BBB-1888, 831d.",
+    "followUp": "Chase CS-932 (in progress, chengyu.yu) — 【BB】2024.5.3 MISUMI Account binding",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.297Z"
+  },
+  "台灣小米通訊": {
+    "summary": "No open Jira tickets. Renews in 140d.",
+    "followUp": "",
+    "health": "green",
+    "generatedAt": "2026-08-17T02:54:55.297Z"
+  },
+  "台灣希爾思": {
+    "summary": "15 open tickets (mostly BBT hill, in open). Renews in 195d. Oldest open: ASQ-1598, 146d.",
+    "followUp": "Chase CAM-397528 (in progress, ingrid.mao) — [Launch] Naver shopping_Reen_Pet(Promotion)_Campaign laun...",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.297Z"
+  },
+  "大魯閣實業": {
+    "summary": "No open Jira tickets. Contract ended 112d ago.",
+    "followUp": "Contract ended 112d ago — confirm renewal status with the client.",
+    "health": "red",
+    "generatedAt": "2026-08-17T02:54:55.297Z"
+  },
+  "悠雅科技": {
+    "summary": "6 open tickets (mostly BBT zenyum). Renews in 119d. Oldest open: ACE-2850, 2176d.",
+    "followUp": "Chase ACE-2850 (in progress, James Liu) — Dat Viet - Zenyum - Gillnet",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.297Z"
+  },
+  "未來親子": {
+    "summary": "15 open tickets (mostly BBT, in backlog). Contract ended 109d ago. Oldest open: BBT-3462, 814d.",
+    "followUp": "Chase QGWL-25017 (in progress, Mark Liu) — [遠見天下-未來親子] EDM Open Rate Check & DNS / Email Warm-up Sta...",
+    "health": "red",
+    "generatedAt": "2026-08-17T02:54:55.297Z"
+  },
+  "海昌隱形眼鏡": {
+    "summary": "No open Jira tickets. Renews in 501d.",
+    "followUp": "",
+    "health": "green",
+    "generatedAt": "2026-08-17T02:54:55.297Z"
+  },
+  "漢堡王": {
+    "summary": "15 open tickets (mostly QGWL burger). Renews in 733d. Oldest open: QGWL-10268, 1587d.",
+    "followUp": "Chase QGWL-10306 (in progress, Mark Liu) — [Burger King] Enable Journey Map function",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.297Z"
+  },
+  "益普索市場研究股份有限公司": {
+    "summary": "2 open tickets (in progress). Renews in 640d. Oldest open: BBT-5764, 454d.",
+    "followUp": "Chase CS-2813 (in progress, chengyu.yu) — 益普索市場研究股份有限公司＿Ipsos Global Security Request",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.297Z"
+  },
+  "維肯媒體": {
+    "summary": "14 open tickets (mostly BBT, in open). Renews in 270d. Oldest open: CAM-12686, 3629d.",
+    "followUp": "Chase BBT-7290 (in progress, Brian Tsai) — 【RFQ】維肯-台灣愛麗斯和奧莉維亞有限公司_POS綁定＆會員卡",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.298Z"
+  },
+  "聯創整合行銷": {
+    "summary": "11 open tickets (mostly BBT). Renews in 359d. Oldest open: BBB-1476, 1207d.",
+    "followUp": "Chase BBT-7885 (in progress, Brian Tsai) — 【RFQ】7-ELEVEN 統一超商_用戶綁定由 BB 進行判斷 GID 只能綁一次",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.298Z"
+  },
+  "豐傑生醫": {
+    "summary": "8 open tickets (mostly BBT, in open). Renews in 470d. Oldest open: BBT-5751, 461d.",
+    "followUp": "Chase BBT-5751 (oldest, 461d, jack.yt.lin) — [EC] 豐傑生醫 onboard member card image",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.298Z"
+  },
+  "haleon": {
+    "summary": "4 open tickets (mostly CAM haleon, in open). Renews in 151d. Oldest open: BBT-4294, 748d.",
+    "followUp": "Chase CS-1191 (in progress, david.tai) — BB 客戶 Haleon requesting us (DS team) to fill responsible...",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.298Z"
+  },
+  "jgb-smart-property": {
+    "summary": "4 open tickets (mostly BBT waba, in open). Renews in 636d. Oldest open: BBB-1955, 780d.",
+    "followUp": "Chase BBB-1955 (in progress, Mia Li) — 6/30 鮮乳坊、Cofit_脂研；6/27 JGB（富喬物業）",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.298Z"
+  },
+  "三創數位": {
+    "summary": "1 open ticket (in open). Renews in 136d. Oldest open: BBT-4331, 738d.",
+    "followUp": "Chase BBT-4331 (oldest, 738d, Unassigned) — 【RFQ】 三創數位 (Syntrend)_ 客製化簽到套件報表",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.298Z"
+  },
+  "佑全保健藥妝": {
+    "summary": "1 open ticket (in backlog). Renews in 90d. Oldest open: QGWL-25099, 158d.",
+    "followUp": "Chase QGWL-25099 (oldest, 158d, Ray Lin) — [yourchance][backfill offline event] Prepare for the back...",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.298Z"
+  },
+  "冰宇科技": {
+    "summary": "9 open tickets (mostly BBT agent, in backlog). Renews in 440d. Oldest open: BBB-1143, 1423d.",
+    "followUp": "Chase BBB-1143 (in progress, Eric.hung) — [CSM Check] 冰宇科技",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.298Z"
+  },
+  "台茂購物中心": {
+    "summary": "15 open tickets (mostly botbonnie-related, in open). Renews in 195d.",
+    "followUp": "Chase SO-3004 (in progress, Willy Huang) — Update Pricing Calculator for existing rule and add new B...",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.298Z"
+  },
+  "嘉里大榮": {
+    "summary": "4 open tickets (mostly BBT, in backlog). Renews in 1061d. Oldest open: BBT-7481, 37d.",
+    "followUp": "Chase BBT-7479 (in progress, Brian Tsai) — RFQ_嘉里大榮_通知型訊息串接與好友訊息通知",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.298Z"
+  },
+  "大方藝彩行銷顧問股份有限公司": {
+    "summary": "No open Jira tickets. Renews in 584d.",
+    "followUp": "",
+    "health": "green",
+    "generatedAt": "2026-08-17T02:54:55.298Z"
+  },
+  "學吧": {
+    "summary": "3 open tickets (mostly BBT customer, in open). Renews in 482d. Oldest open: BBT-1844, 976d.",
+    "followUp": "Chase BBT-1844 (oldest, 976d, Unassigned) — [學吧 LearningPa] Function to turn on Bot for all or part o...",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.298Z"
+  },
+  "富味鄉食品": {
+    "summary": "8 open tickets (mostly BBT, in open). Renews in 256d. Oldest open: BBB-1032, 1480d.",
+    "followUp": "Chase BBB-1032 (oldest, 1480d, Samuel Chiang) — 【RFQ】富味鄉 芝初_標籤/參數記錄總人數秀給用戶查看",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.298Z"
+  },
+  "我的專屬營養師": {
+    "summary": "15 open tickets (mostly BBT, in open). Renews in 545d. Oldest open: BBT-6814, 118d.",
+    "followUp": "Chase BBT-6814 (oldest, 118d, Brian Tsai) — [Amway /Cofit /CTBC] botbonnie system performance optimiz...",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.299Z"
+  },
+  "玉山銀行": {
+    "summary": "5 open tickets (mostly CAM, in open). Renews in 226d. Oldest open: CAM-233255, 1452d.",
+    "followUp": "Chase CAM-233255 (oldest, 1452d, Mason Chiu) — [Investigation] 凱絡_玉山銀數位e卡_立即辦卡 event",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.299Z"
+  },
+  "統一數網": {
+    "summary": "13 open tickets (mostly CAM, in open). Renews in 643d. Oldest open: BBT-7589, 94d.",
+    "followUp": "Chase BBT-7885 (in progress, Brian Tsai) — 【RFQ】7-ELEVEN 統一超商_用戶綁定由 BB 進行判斷 GID 只能綁一次",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.299Z"
+  },
+  "緯育": {
+    "summary": "4 open tickets (mostly BBT, in open). Renews in 348d. Oldest open: BBB-927, 1523d.",
+    "followUp": "Chase BBB-927 (oldest, 1523d, Samuel Chiang) — [CSM Check] 緯育",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.299Z"
+  },
+  "聚財課": {
+    "summary": "5 open tickets (mostly AID aideal, in open). Renews in 482d. Oldest open: AID-9646, 1424d.",
+    "followUp": "Chase CAM-237543 (in progress, Jane Liu) — [CIR] 聚財課-202209.26-CPL(名單)-LCCV_20220927",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.299Z"
+  },
+  "芝麻開門電子商務股份有限公司": {
+    "summary": "No open Jira tickets. Renews in 167d.",
+    "followUp": "",
+    "health": "green",
+    "generatedAt": "2026-08-17T02:54:55.299Z"
+  },
+  "萊爾富": {
+    "summary": "2 open tickets (in open). Renews in 714d. Oldest open: BBB-506, 1740d.",
+    "followUp": "Chase BBB-506 (in progress, Unassigned) — 萊爾富國際股份有限公司 (續約(no contract))",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.299Z"
+  },
+  "錦明集團": {
+    "summary": "No open Jira tickets. Renews in 440d.",
+    "followUp": "",
+    "health": "green",
+    "generatedAt": "2026-08-17T02:54:55.299Z"
   },
   "mis-test": {
-    "summary": "15 open tickets, mostly feature & enhancement requests; 1 blocked. Oldest CS-2707 (18d, Unassigned). Contract ended 123d ago.",
-    "followUp": "Chase ETS-1937 (blocked, shinsuke.adachi) — Trustpilot Review Ratings – Automation Status & Next Steps (MIS Datamart + Looker).",
+    "summary": "15 open tickets (mostly CS, in backlog). 1 blocked. Contract ended 126d ago.",
+    "followUp": "Chase ETS-1937 (blocked, shinsuke.adachi) — [adCreative] Trustpilot Review Ratings – Automation Statu...",
     "health": "red",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "renishaw": {
-    "summary": "No open Jira tickets. Renews in 276d.",
-    "followUp": "",
-    "health": "green",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "易遊網股份有限公司": {
-    "summary": "13 open tickets, mostly onboarding / data backfill; 4 in progress. Oldest GPMM-194 (9d, Brendan Kuang). Renews in 929d.",
-    "followUp": "Chase CS-2936 (in progress, Tarık İnce) — <Security Vulnerability><External researcher> High: AdCreative.ai -  https://hangfire-test.adcreative.ai/hangfire ex.",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "robinmay薇恩": {
-    "summary": "12 open tickets, mostly reporting & tracking; 4 in progress. Oldest CAM-284242 (1037d, Unassigned). Renews in 243d.",
-    "followUp": "Chase ETS-5779 (in progress, Mark Liu) — Confirm Receipt of 康德 Test Data via SFTP.",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "佳格食品": {
-    "summary": "15 open tickets, mostly bugs & errors. Oldest CAM-356354 (380d, cherry.lin). Renews in 405d.",
-    "followUp": "Chase CAM-356354 (open 380d, cherry.lin) — 佳格_天地合補葡萄糖胺_250704.",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "太平洋崇光百貨": {
-    "summary": "10 open tickets, mostly bugs & errors. Oldest QGWL-21538 (484d, gordon.sung). Renews in 186d.",
-    "followUp": "Chase QGWL-21538 (open 484d, gordon.sung) — Unable to scroll down the website home page in Onsite Editor.",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "星宇航空": {
-    "summary": "14 open tickets, mostly onboarding / data backfill; 1 blocked. Oldest AM-6 (102d, Unassigned). Renews in 160d.",
-    "followUp": "Chase QGRAPH-39115 (blocked, Unassigned) — Backfill STARLUX Airlines (organization-starlux)(need BB).",
-    "health": "red",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
+    "generatedAt": "2026-08-17T02:54:55.300Z"
   },
   "wemo": {
-    "summary": "15 open tickets, mostly campaign & message delivery; 2 in progress. Oldest QGWL-12029 (153d, Mark Liu). Contract ended 14d ago.",
-    "followUp": "Chase HR-99 (in progress, amanda liu) — Mango_WeMo_CrossX.",
+    "summary": "15 open tickets (in open). Contract ended 17d ago. Oldest open: QGWL-12029, 156d.",
+    "followUp": "Chase QGWL-12029 (in progress, Mark Liu) — [Wemo] Irregular trigger campaign delivered number",
     "health": "red",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
+    "generatedAt": "2026-08-17T02:54:55.300Z"
   },
   "世邦旅遊": {
-    "summary": "6 open tickets, mostly mixed BBT/AID items. Oldest AID-12878 (536d, Eric Tung). Renews in 193d.",
-    "followUp": "Chase AID-12878 (open 536d, Eric Tung) — AiDeal_世邦旅遊 (MM Client).",
+    "summary": "6 open tickets (mostly BBT console, in open). Renews in 190d. Oldest open: AID-12878, 538d.",
+    "followUp": "Chase AID-12878 (oldest, 538d, Eric Tung) — AiDeal_世邦旅遊 (MM Client)",
     "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
+    "generatedAt": "2026-08-17T02:54:55.300Z"
   },
   "小川日和有限公司": {
-    "summary": "8 open tickets, mostly mixed ASQ/BBT items. Oldest BBT-6542 (298d, vivian.yang). Renews in 5d.",
-    "followUp": "Chase BBT-6542 (open 298d, vivian.yang) — Line Menu can't select module in KB.",
+    "summary": "8 open tickets (mostly ASQ, in open). Renews in 2d. Oldest open: BBT-6542, 301d.",
+    "followUp": "Chase BBT-6542 (oldest, 301d, vivian.yang) — [BB-小川職人] Line Menu can't select module in KB",
     "health": "red",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
+    "generatedAt": "2026-08-17T02:54:55.300Z"
   },
   "展碁國際股份有限公司": {
-    "summary": "5 open tickets, mostly mixed BBT/CS items. Oldest BBT-6144 (385d, Salem Chen). Contract ended 25d ago.",
-    "followUp": "Chase BBT-6144 (open 385d, Salem Chen) — Phoenix Console Upgrade & KB Activation.",
+    "summary": "5 open tickets (mostly BBT, in open). Contract ended 28d ago. Oldest open: BBT-6144, 387d.",
+    "followUp": "Chase BBT-6144 (oldest, 387d, Salem Chen) — 【展碁國際股份有限公司】Phoenix Console Upgrade & KB Activation",
     "health": "red",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
+    "generatedAt": "2026-08-17T02:54:55.300Z"
   },
   "數匯智控股份有限公司": {
-    "summary": "2 open tickets, mostly mixed BBT/CS items. Oldest CS-1373 (456d, Salem Chen). Contract ended 30d ago.",
-    "followUp": "Chase CS-1373 (open 456d, Salem Chen) — SBIR 系統文件提供.",
+    "summary": "2 open tickets (in open). Contract ended 33d ago. Oldest open: CS-1373, 458d.",
+    "followUp": "Chase CS-1373 (oldest, 458d, Salem Chen) — 【BB - 數匯 - 便利帶】SBIR 系統文件提供",
     "health": "red",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
+    "generatedAt": "2026-08-17T02:54:55.300Z"
   },
   "景華生技": {
-    "summary": "2 open tickets, mostly mixed AIQ/AID items. Oldest AID-12833 (588d, Eric Tung). Renews in 245d.",
-    "followUp": "Chase AID-12833 (open 588d, Eric Tung) — AiD_你滋美得.",
+    "summary": "2 open tickets (in open). Renews in 242d. Oldest open: AID-12833, 590d.",
+    "followUp": "Chase AID-12833 (oldest, 590d, Eric Tung) — AiD_你滋美得",
     "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
+    "generatedAt": "2026-08-17T02:54:55.300Z"
   },
   "橘子蘋果orangeapple": {
-    "summary": "No open Jira tickets. Renews in 151d.",
+    "summary": "No open Jira tickets. Renews in 148d.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
+    "generatedAt": "2026-08-17T02:54:55.300Z"
   },
   "雪坊志業": {
-    "summary": "No open Jira tickets. Renews in 78d.",
+    "summary": "No open Jira tickets. Renews in 75d.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
+    "generatedAt": "2026-08-17T02:54:55.300Z"
+  },
+  "robinmay薇恩": {
+    "summary": "12 open tickets (mostly robinmay-related, in open). Renews in 240d. Oldest open: CAM-284242, 1040d.",
+    "followUp": "Chase CAM-354102 (in progress, lucie.hsieh) — [Resize] Robinmay-貓貓與狗狗_infeed Still",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.301Z"
+  },
+  "佳格食品": {
+    "summary": "15 open tickets (mostly BBT, in open). Renews in 402d. Oldest open: CAM-356354, 382d.",
+    "followUp": "Chase CAM-356354 (oldest, 382d, cherry.lin) — [Code Doc]佳格_天地合補葡萄糖胺_250704",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.301Z"
+  },
+  "太平洋崇光百貨": {
+    "summary": "10 open tickets (mostly QGWL onsite, in backlog). Renews in 183d. Oldest open: QGWL-21538, 486d.",
+    "followUp": "Chase QGWL-21538 (oldest, 486d, gordon.sung) — [SOGO] Unable to scroll down the website home page in Ons...",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.301Z"
+  },
+  "星宇航空": {
+    "summary": "14 open tickets (mostly QGRAPH starlux, in backlog). 1 blocked. Renews in 157d. Oldest open: AM-6, 105d.",
+    "followUp": "Chase QGRAPH-39115 (blocked, Unassigned) — Backfill STARLUX Airlines (organization-starlux)(need BB)",
+    "health": "red",
+    "generatedAt": "2026-08-17T02:54:55.301Z"
   },
   "佳聖媒體行銷": {
-    "summary": "8 open tickets, mostly mixed AID/CAM items; 1 in progress. Oldest CAM-291439 (954d, Chelsea Wang). Renews in 198d.",
-    "followUp": "Chase ADCR-224 (in progress, Brendan Kuang) — 興富發_demo製作_0808.",
+    "summary": "8 open tickets (in open). Renews in 195d. Oldest open: CAM-291439, 956d.",
+    "followUp": "Chase ADCR-224 (in progress, Brendan Kuang) — 興富發_demo製作_0808",
     "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
+    "generatedAt": "2026-08-17T02:54:55.301Z"
   },
   "保聯企業股份有限公司": {
-    "summary": "2 open tickets, mostly BBT items. Oldest BBT-6404 (337d, Unassigned). Renews in 97d.",
-    "followUp": "Chase BBT-6404 (open 337d, Unassigned) — 保聯企業股份有限公司_附近店家.",
+    "summary": "2 open tickets (mostly BBT, in open). Renews in 94d. Oldest open: BBT-6404, 339d.",
+    "followUp": "Chase BBT-6404 (oldest, 339d, Unassigned) — 【RFQ】保聯企業股份有限公司_附近店家",
     "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
+    "generatedAt": "2026-08-17T02:54:55.301Z"
   },
   "嘉丹妮爾": {
-    "summary": "15 open tickets, mostly campaign & message delivery. Oldest AID-5648 (1837d, Peiru Shih). Renews in 669d.",
-    "followUp": "Chase AID-5648 (open 1837d, Peiru Shih) — AiDeal_嘉丹妮爾_2021/07.",
+    "summary": "15 open tickets (mostly AID aideal, in open). Renews in 666d. Oldest open: AID-5648, 1839d.",
+    "followUp": "Chase AID-5648 (oldest, 1839d, Peiru Shih) — [Invoice] AiDeal_嘉丹妮爾_2021/07",
     "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
+    "generatedAt": "2026-08-17T02:54:55.303Z"
   },
   "富川創造": {
-    "summary": "12 open tickets, mostly feature & enhancement requests; 2 in progress. Oldest BBT-7863 (20d, christine.ma). Renews in 525d.",
-    "followUp": "Chase CAMD-27312 (in progress, Jenny Liang) — 改用 source 區分 category/country 並移除 advanced targeting enhance_rules 的 _ui reads.",
+    "summary": "12 open tickets (mostly advanced-related, in open). Renews in 522d.",
+    "followUp": "Chase ETS-5258 (in progress, adam.chen) — [VitaDairy] Can't entry Lucky Wheel many times (Advanced...",
     "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
+    "generatedAt": "2026-08-17T02:54:55.303Z"
   },
   "朵墨": {
-    "summary": "No open Jira tickets. Renews in 588d.",
+    "summary": "No open Jira tickets. Renews in 585d.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
+    "generatedAt": "2026-08-17T02:54:55.303Z"
   },
   "林莉國際股份有限公司": {
-    "summary": "1 open ticket, mostly BBT items. Oldest BBT-6200 (354d, vivian.yang). Renews in 139d.",
-    "followUp": "Chase BBT-6200 (open 354d, vivian.yang) — [MM-BB-林莉婚紗].",
+    "summary": "1 open ticket (in open). Renews in 136d. Oldest open: BBT-6200, 356d.",
+    "followUp": "Chase BBT-6200 (oldest, 356d, vivian.yang) — [MM-BB-林莉婚紗]",
     "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
+    "generatedAt": "2026-08-17T02:54:55.303Z"
   },
   "狼窩網紅行銷國際": {
-    "summary": "2 open tickets, mostly mixed BBT/AID items. Oldest AID-12940 (469d, vivian.yang). Renews in 290d.",
-    "followUp": "Chase AID-12940 (open 469d, vivian.yang) — AiDeal_藍光盾（代理商：狼窩網紅）.",
+    "summary": "2 open tickets (in open). Renews in 287d. Oldest open: AID-12940, 472d.",
+    "followUp": "Chase AID-12940 (oldest, 472d, vivian.yang) — [Initial Setting] AiDeal_藍光盾（代理商：狼窩網紅）",
     "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
+    "generatedAt": "2026-08-17T02:54:55.303Z"
   },
   "秝驎國際": {
-    "summary": "No open Jira tickets. Renews in 59d.",
-    "followUp": "Renewal in 59d — start the renewal conversation with 秝驎國際.",
+    "summary": "No open Jira tickets. Renews in 56d.",
+    "followUp": "Renewal in 56d — start the renewal conversation with the client.",
     "health": "green",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
+    "generatedAt": "2026-08-17T02:54:55.303Z"
   },
   "美藍雷": {
-    "summary": "15 open tickets, mostly mixed BBT/BP items; 3 in progress. Oldest BBT-7526 (13d, Brian Tsai). Renews in 229d.",
-    "followUp": "Chase BBT-7479 (in progress, Brian Tsai) — RFQ_嘉里大榮_通知型訊息串接與好友訊息通知.",
+    "summary": "15 open tickets (mostly BBT). Renews in 226d.",
+    "followUp": "Chase BP-9864 (in progress, Guiguan) — 🟤 Follow-Up Mazda BBT, Read Line upToRemainingQuota Spec",
     "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
+    "generatedAt": "2026-08-17T02:54:55.303Z"
   },
   "華南金資產管理": {
-    "summary": "1 open ticket, mostly BP items. Oldest BP-9185 (211d, kyle.kc.wang). Renews in 139d.",
-    "followUp": "Chase BP-9185 (open 211d, kyle.kc.wang) — Enable open API v2.",
+    "summary": "1 open ticket (in open). Renews in 136d. Oldest open: BP-9185, 213d.",
+    "followUp": "Chase BP-9185 (oldest, 213d, kyle.kc.wang) — [華南金資產管理] Enable open API v2",
     "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
+    "generatedAt": "2026-08-17T02:54:55.303Z"
   },
-  "全聯": {
-    "summary": "15 open tickets, mostly audience & segmentation; 1 blocked. Oldest AIRIS-8853 (8d, sans.jung). Renews in 229d.",
-    "followUp": "Chase AIRIS-8853 (blocked, sans.jung) — User360 page not working for some profiles.",
+  "inlook": {
+    "summary": "15 open tickets (in open). Renews in 305d. Oldest open: AIR-3980, 222d.",
+    "followUp": "Chase AIR-3980 (oldest, 222d, liyeh.hung) — [INLook] Most of the AIRIS Tracking API responded with co...",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.304Z"
+  },
+  "國泰人壽": {
+    "summary": "15 open tickets (mostly cathay-related, in open). Renews in 226d. Oldest open: CAM-316417, 766d.",
+    "followUp": "Chase CAM-316417 (oldest, 766d, Wei Wang) — Cathay Pacific_Branding_KR_Q32024",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.304Z"
+  },
+  "國泰金控": {
+    "summary": "4 open tickets (mostly CS, in backlog). Renews in 167d. Oldest open: ACE-3804, 2076d.",
+    "followUp": "Chase ACE-3804 (in progress, Phil Hsu) — 國泰金控_享出門",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.304Z"
+  },
+  "城企國際有限公司": {
+    "summary": "15 open tickets (in open). Renews in 280d. Oldest open: AIR-3980, 222d.",
+    "followUp": "Chase AIR-3980 (oldest, 222d, liyeh.hung) — [INLook] Most of the AIRIS Tracking API responded with co...",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.304Z"
+  },
+  "天幕國際": {
+    "summary": "15 open tickets (mostly AGNT enable, in backlog). Renews in 129d.",
+    "followUp": "Chase AGNT-1700 (in progress, Mei-Cih Yeh) — [DR.CiNK] [Onboard] Enable campaign agent for DR.CiNK",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.304Z"
+  },
+  "微風": {
+    "summary": "15 open tickets (mostly QGRAPH datafeed, in open). Renews in 312d.",
+    "followUp": "Chase AGNT-1738 (oldest, 2d, Leo Wang) — [BE][CA] Forward token usage over A2A and signal REC-lite...",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.305Z"
+  },
+  "爭鮮": {
+    "summary": "6 open tickets (mostly CAM, in open). Renews in 690d. Oldest open: CAM-240640, 1354d.",
+    "followUp": "Chase CAM-288907 (in progress, Mandy Tsai) — [resize]爭鮮-壽司台味季_231116",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.305Z"
+  },
+  "維那斯有限公司": {
+    "summary": "15 open tickets (in open). Renews in 305d. Oldest open: AIR-3980, 222d.",
+    "followUp": "Chase AIR-3980 (oldest, 222d, liyeh.hung) — [INLook] Most of the AIRIS Tracking API responded with co...",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.305Z"
+  },
+  "達特聖克國際股份有限公司": {
+    "summary": "5 open tickets (mostly AGNT cink, in open). Renews in 70d. Oldest open: ADCR-315, 311d.",
+    "followUp": "Chase ADCR-315 (oldest, 311d, steven.za.chen) — [Custom Template] DR.CiNK達特聖克_2025.10.09",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.305Z"
+  },
+  "renishaw": {
+    "summary": "No open Jira tickets. Renews in 273d.",
+    "followUp": "",
+    "health": "green",
+    "generatedAt": "2026-08-17T02:54:55.305Z"
+  },
+  "易遊網股份有限公司": {
+    "summary": "13 open tickets (mostly adcreative-related, in open). Renews in 926d.",
+    "followUp": "Chase EC-117 (in progress, Xinhe Hsu) — [ESLite/Sony/CW/CWGV/ezTravel/Formosa] AEP version UX ver...",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.305Z"
+  },
+  "invani": {
+    "summary": "1 open ticket (in backlog). Renews in 363d. Oldest open: BBT-3966, 772d.",
+    "followUp": "Chase BBT-3966 (oldest, 772d, Unassigned) — 【RFQ】美商怡發明有限公司 Invani_客服對話紀錄同步至 BotBonnie",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.305Z"
+  },
+  "uuulab-co": {
+    "summary": "No open Jira tickets. Renews in 132d.",
+    "followUp": "",
+    "health": "green",
+    "generatedAt": "2026-08-17T02:54:55.305Z"
+  },
+  "優派國際": {
+    "summary": "No open Jira tickets. Renews in 198d.",
+    "followUp": "",
+    "health": "green",
+    "generatedAt": "2026-08-17T02:54:55.305Z"
+  },
+  "國立暨南國際大學": {
+    "summary": "No open Jira tickets. Renews in 136d.",
+    "followUp": "",
+    "health": "green",
+    "generatedAt": "2026-08-17T02:54:55.305Z"
+  },
+  "宇峻奧汀科技": {
+    "summary": "No open Jira tickets. Renews in 242d.",
+    "followUp": "",
+    "health": "green",
+    "generatedAt": "2026-08-17T02:54:55.305Z"
+  },
+  "摩奇創意": {
+    "summary": "No open Jira tickets. Renews in 216d.",
+    "followUp": "",
+    "health": "green",
+    "generatedAt": "2026-08-17T02:54:55.305Z"
+  },
+  "橋陽設計工作室": {
+    "summary": "14 open tickets (mostly CAM, in progress). Renews in 226d. Oldest open: CAM-67593, 2936d.",
+    "followUp": "Chase CAM-145734 (in progress, Amber Chang) — Estee Lauder_雅詩蘭黛_ANR X5_客戶回傳轉換數",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.305Z"
+  },
+  "貝殼放大": {
+    "summary": "1 open ticket (in progress). Renews in 3d.",
+    "followUp": "Chase BBB-2262 (in progress, Mia Li) — 8/25 益普索、貝殼放大、無比整合行銷",
     "health": "red",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
+    "generatedAt": "2026-08-17T02:54:55.305Z"
   },
-  "永豐商業銀行": {
-    "summary": "15 open tickets, mostly feature & enhancement requests; 2 in progress. Oldest CAM-403390 (6d, howard.wh.wang). Renews in 139d.",
-    "followUp": "Chase CAM-388133 (in progress, Dabin Jung) — Saving Bank(AIBID)_banner to video request_260330.",
+  "貝立德股份有限公司": {
+    "summary": "15 open tickets (mostly CAM branding, in open). Renews in 247d. Oldest open: CAM-368576, 55d.",
+    "followUp": "Chase CAM-403362 (in progress, Tessa Tang) — [Additional udget] Branding_momo小商家-貝立德-TEMPO衛生紙88節超優惠Cam...",
     "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
+    "generatedAt": "2026-08-17T02:54:55.305Z"
   },
-  "千山淨水": {
-    "summary": "7 open tickets, mostly mixed AIR/SOE items; 1 blocked. Oldest AIR-3003 (431d, esther.liu). Renews in 272d.",
-    "followUp": "Chase AIR-3003 (blocked, esther.liu) — check reason why referrer show abnormal.",
-    "health": "red",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "南山人壽": {
-    "summary": "11 open tickets, mostly bot / LINE flows; 2 in progress. Oldest CAM-1588 (3888d, Unassigned). Contract ended 14d ago.",
-    "followUp": "Chase PROJ-31739 (in progress, Mark Liu) — check AIXON Robot status details_250725.",
-    "health": "red",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "味全龍職業棒球隊": {
-    "summary": "2 open tickets, mostly feature & enhancement requests. Oldest PERM-269 (1529d, henry.yang). Renews in 412d.",
-    "followUp": "Chase PERM-269 (open 1529d, henry.yang) — Authorization request for iDash_Wei-Wei Du.",
+  "迪凱科技": {
+    "summary": "1 open ticket (in progress). Renews in 195d. Oldest open: BBB-2213, 173d.",
+    "followUp": "Chase BBB-2213 (in progress, Mia Li) — 2/28 百揚資訊、好日子、迪凱科技；TBD：Ogilvy_Hill done",
     "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
+    "generatedAt": "2026-08-17T02:54:55.305Z"
   },
-  "天下雜誌": {
-    "summary": "15 open tickets, mostly onboarding / data backfill; 1 in progress. Oldest CAM-46208 (3165d, Magic Tu). Renews in 995d.",
-    "followUp": "Chase QGRAPH-39270 (in progress, Unassigned) — CommonWealth.",
+  "高雄萬豪酒店": {
+    "summary": "15 open tickets (mostly CAM hotel, in open). Renews in 293d. Oldest open: CAM-331209, 199d.",
+    "followUp": "Chase CAM-400163 (in progress, sammi.ng) — 20260710_Creative Resize_COD_[Reengagement]Trip.com_Theme...",
     "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "台灣山葉機車": {
-    "summary": "15 open tickets, mostly onboarding / data backfill; 1 in progress. Oldest CAM-373638 (248d, lucie.hsieh). Renews in 139d.",
-    "followUp": "Chase CAM-373638 (in progress, lucie.hsieh) — YAMAHA Y-Connect Q4活動數位行銷.",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "巨匠電腦": {
-    "summary": "15 open tickets, mostly onboarding / data backfill; 2 in progress. Oldest CAM-241839 (1362d, Harry Ling). Renews in 953d.",
-    "followUp": "Chase AIQ-1608 (in progress, alvin.yh.wu) — AIQUA <> AIRIS backfill discussion.",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "益富實業": {
-    "summary": "11 open tickets, mostly mixed BBT/AIQ items; 1 in progress. Oldest BBT-3832 (847d, Unassigned). Renews in 497d.",
-    "followUp": "Chase BBT-7828 (in progress, Brian Tsai) — Cyberbiz Order Payment Information Appears Incomplete.",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "台灣索尼": {
-    "summary": "15 open tickets, mostly audience & segmentation; 2 in progress. Oldest AEP-8172 (1d, Pinchun Wang). Renews in 351d.",
-    "followUp": "Chase CAM-403990 (in progress, yujin.kim) — Finda_Aictivate_Audience manager Detarget list replace request_0814.",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "悠勢科技": {
-    "summary": "15 open tickets, mostly bugs & errors; 2 in progress. Oldest QGWL-21077 (552d, gordon.sung). Contract ended 8d ago.",
-    "followUp": "Chase AIR-2197 (in progress, vivian.yang) — Enable AIRIS Predicted Scores.",
-    "health": "red",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "遠見天下文化事業群": {
-    "summary": "15 open tickets, mostly bugs & errors; 1 blocked. Oldest APC-719 (64d, Unassigned). Renews in 321d.",
-    "followUp": "Chase AIR-3748 (blocked, Laura Yang) — filter timestamp \"does not exist\" and \"exist\", the result is incorrect.",
-    "health": "red",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "鵬泰顧問": {
-    "summary": "2 open tickets, mostly mixed BBT/CAM items. Oldest CAM-352254 (438d, Gary Huang). Contract ended 136d ago.",
-    "followUp": "Chase CAM-352254 (open 438d, Gary Huang) — Cheil_CK Hotel Pitching_2025.",
-    "health": "red",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "台灣蓋璞": {
-    "summary": "15 open tickets, mostly audience & segmentation; 2 in progress. Oldest AIRIS-9262 (7d, Po-Chou Kung). Renews in 309d.",
-    "followUp": "Chase AIRIS-9076 (in progress, Po-Chou Kung) — Sample ZUS segments to investigate channel user gaps.",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "宏璟建設股份有限公司-日月光廣場": {
-    "summary": "5 open tickets, mostly mixed BBT/AIQ items. Oldest AIQ-1547 (204d, grace.li). Renews in 985d.",
-    "followUp": "Chase AIQ-1547 (open 204d, grace.li) — 宏璟建設 - 土城日月光廣場.",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "寶島眼鏡": {
-    "summary": "15 open tickets, mostly bot / LINE flows; 4 in progress. Oldest SO-3004 (3d, Willy Huang). Renews in 139d.",
-    "followUp": "Chase AIR-2921 (in progress, hazel.wang) — BotBonnie <> AIRIS.",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "日日行銷廣告": {
-    "summary": "4 open tickets, mostly mixed AIQ/BBT items. Oldest AIQ-184 (2047d, Kuan-Huei Lin). Contract ended 92d ago.",
-    "followUp": "Chase AIQ-184 (open 2047d, Kuan-Huei Lin) — appedu 赫綵設計學院.",
-    "health": "red",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "日藥本舖": {
-    "summary": "4 open tickets, mostly mixed AID/AIQ items; 1 in progress. Oldest AID-3730 (1964d, Wenyi Chou). Renews in 38d.",
-    "followUp": "Chase AID-3731 (in progress, Wenyi Chou) — 日藥本舖_Aideal Estimation.",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "衣芙": {
-    "summary": "10 open tickets, mostly mixed BBT/APS items. Oldest APS-1847 (193d, Allen CL Yang). Renews in 139d.",
-    "followUp": "Chase APS-1847 (open 193d, Allen CL Yang) — Migrate t2i response (Readmoo, Efshop, ASO).",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "味全食品": {
-    "summary": "15 open tickets, mostly API / SDK integration; 1 blocked. Oldest AIQ-1382 (569d, luke.chien). Contract ended 132d ago.",
-    "followUp": "Chase PHXX-6209 (blocked, Unassigned) — Please Enable 'LINE' on OJM.",
-    "health": "red",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "慈濟基金會": {
-    "summary": "9 open tickets, mostly mixed BBT/AIQ items; 1 in progress. Oldest SCI-2239 (668d, tzuhan.lin). Renews in 139d.",
-    "followUp": "Chase SCI-2239 (in progress, tzuhan.lin) — Tzu-Han Handover.",
-    "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
-  },
-  "誠品生活": {
-    "summary": "14 open tickets, mostly campaign & message delivery; 1 blocked. Oldest QGWL-25078 (162d, Mark Liu). Renews in 960d.",
-    "followUp": "Chase ETS-3677 (blocked, Unassigned) — AR → AQ Profile Sync Pipeline.",
-    "health": "red",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
+    "generatedAt": "2026-08-17T02:54:55.306Z"
   },
   "揚秦國際企業股份有限公司-麥味登": {
-    "summary": "15 open tickets, mostly onboarding / data backfill; 2 in progress. Oldest CAM-394130 (84d, Yiru Chen). Renews in 334d.",
-    "followUp": "Chase ETS-5516 (in progress, pawat.chunhachatrachai) — Create GCP environment.",
+    "summary": "15 open tickets (mostly ETS, in open). Renews in 331d. Oldest open: CAM-394130, 87d.",
+    "followUp": "Chase ETS-4767 (in progress, Mark Liu) — [麥味登] New Segment UI",
     "health": "yellow",
-    "generatedAt": "2026-08-14T10:46:42.617Z"
+    "generatedAt": "2026-08-17T02:54:55.306Z"
+  },
+  "台灣山葉機車": {
+    "summary": "15 open tickets (mostly AEP yamaha, in backlog). Renews in 136d. Oldest open: CAM-373638, 251d.",
+    "followUp": "Chase CAM-373638 (in progress, lucie.hsieh) — [Resize] YAMAHA Y-Connect Q4活動數位行銷",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.306Z"
+  },
+  "巨匠電腦": {
+    "summary": "15 open tickets (in open). Renews in 950d. Oldest open: CAM-241839, 1364d.",
+    "followUp": "Chase CAM-267343 (in progress, Jocelyn Lan) — [AIXPERT_Branding] 巨匠電腦1 - 程式類課程帳戶_廣告關閉原因",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.306Z"
+  },
+  "益富實業": {
+    "summary": "11 open tickets (mostly BBT cyberbiz, in backlog). Renews in 494d. Oldest open: BBT-3832, 849d.",
+    "followUp": "Chase BBT-7828 (in progress, Brian Tsai) — [益富] Cyberbiz Order Payment Information Appears Incomplete",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.306Z"
+  },
+  "味全食品": {
+    "summary": "15 open tickets (in open). 1 blocked. Contract ended 135d ago. Oldest open: AIQ-1382, 571d.",
+    "followUp": "Chase PHXX-6209 (blocked, Unassigned) — [味全食品] Please Enable 'LINE' on OJM",
+    "health": "red",
+    "generatedAt": "2026-08-17T02:54:55.306Z"
+  },
+  "慈濟基金會": {
+    "summary": "9 open tickets (mostly BBT, in open). Renews in 136d. Oldest open: SCI-2239, 670d.",
+    "followUp": "Chase SCI-2239 (in progress, tzuhan.lin) — Tzu-Han Handover",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.306Z"
+  },
+  "誠品生活": {
+    "summary": "15 open tickets (in backlog). 1 blocked. Renews in 957d. Oldest open: QGWL-25078, 164d.",
+    "followUp": "Chase ETS-3677 (blocked, Unassigned) — [誠品生活] AR → AQ Profile Sync Pipeline",
+    "health": "red",
+    "generatedAt": "2026-08-17T02:54:55.306Z"
+  },
+  "台灣蓋璞": {
+    "summary": "15 open tickets (in open). Renews in 306d.",
+    "followUp": "Chase AIRIS-9076 (in progress, Po-Chou Kung) — [ZUS] Sample ZUS segments to investigate channel user gaps",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.307Z"
+  },
+  "宏璟建設股份有限公司-日月光廣場": {
+    "summary": "5 open tickets (mostly BBT, in open). Renews in 982d. Oldest open: AIQ-1547, 206d.",
+    "followUp": "Chase AIQ-1547 (oldest, 206d, grace.li) — 宏璟建設 - 土城日月光廣場",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.307Z"
+  },
+  "寶島眼鏡": {
+    "summary": "15 open tickets (mostly botbonnie-related). Renews in 136d.",
+    "followUp": "Chase SO-3004 (in progress, Willy Huang) — Update Pricing Calculator for existing rule and add new B...",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.307Z"
+  },
+  "日日行銷廣告": {
+    "summary": "4 open tickets (mostly AIQ appedu, in open). Contract ended 95d ago. Oldest open: AIQ-184, 2049d.",
+    "followUp": "Chase AIQ-184 (oldest, 2049d, Kuan-Huei Lin) — [AIQUA] appedu 赫綵設計學院",
+    "health": "red",
+    "generatedAt": "2026-08-17T02:54:55.307Z"
+  },
+  "日藥本舖": {
+    "summary": "4 open tickets (mostly AID aideal, in open). Renews in 35d. Oldest open: AID-3730, 1966d.",
+    "followUp": "Chase AID-3731 (in progress, Wenyi Chou) — 日藥本舖_Aideal Estimation",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.307Z"
+  },
+  "衣芙": {
+    "summary": "10 open tickets (mostly efshop-related, in open). Renews in 136d. Oldest open: APS-1847, 195d.",
+    "followUp": "Chase APS-1847 (oldest, 195d, Allen CL Yang) — Migrate t2i response (Readmoo, Efshop, ASO)",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.307Z"
+  },
+  "千山淨水": {
+    "summary": "7 open tickets (mostly AIR). 1 blocked. Renews in 269d. Oldest open: AIR-3003, 433d.",
+    "followUp": "Chase AIR-3003 (blocked, esther.liu) — [千山淨水] check reason why referrer show abnormal",
+    "health": "red",
+    "generatedAt": "2026-08-17T02:54:55.307Z"
+  },
+  "南山人壽": {
+    "summary": "11 open tickets (in backlog). Contract ended 17d ago. Oldest open: CAM-1588, 3890d.",
+    "followUp": "Chase AIQ-1424 (in progress, Mark Liu) — [南山人壽]AIQUA In-web campaign preview fail_250421",
+    "health": "red",
+    "generatedAt": "2026-08-17T02:54:55.307Z"
+  },
+  "味全龍職業棒球隊": {
+    "summary": "2 open tickets (in open). Renews in 409d. Oldest open: PERM-269, 1531d.",
+    "followUp": "Chase PERM-269 (oldest, 1531d, henry.yang) — Authorization request for iDash_Wei-Wei Du",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.307Z"
+  },
+  "天下雜誌": {
+    "summary": "15 open tickets (mostly CAM, in open). Renews in 992d. Oldest open: CAM-46208, 3167d.",
+    "followUp": "Chase QGRAPH-39270 (in progress, Unassigned) — [AEP Adoption] CommonWealth",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.307Z"
+  },
+  "台灣索尼": {
+    "summary": "15 open tickets (mostly audience-related, in backlog). Renews in 348d.",
+    "followUp": "Chase AIRIS-9260 (in progress, yiling.lee) — Teardown one-time audience sync connector",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.307Z"
+  },
+  "悠勢科技": {
+    "summary": "15 open tickets (mostly QGWL, in backlog). Contract ended 11d ago. Oldest open: QGWL-21077, 554d.",
+    "followUp": "Chase AIR-2579 (in progress, gordon.sung) — [USPACE] Request for Integrating AQ API Data Source into...",
+    "health": "red",
+    "generatedAt": "2026-08-17T02:54:55.308Z"
+  },
+  "遠見天下文化事業群": {
+    "summary": "15 open tickets (mostly APC, in open). 1 blocked. Renews in 318d. Oldest open: APC-719, 67d.",
+    "followUp": "Chase AIR-3748 (blocked, Laura Yang) — [CWGV-天下文化]filter timestamp \"does not exist\" and \"exist\",...",
+    "health": "red",
+    "generatedAt": "2026-08-17T02:54:55.308Z"
+  },
+  "鵬泰顧問": {
+    "summary": "2 open tickets (in open). Contract ended 139d ago. Oldest open: CAM-352254, 440d.",
+    "followUp": "Chase CAM-352254 (oldest, 440d, Gary Huang) — Cheil_CK Hotel Pitching_2025",
+    "health": "red",
+    "generatedAt": "2026-08-17T02:54:55.308Z"
+  },
+  "全聯": {
+    "summary": "15 open tickets (mostly pxmart-related). 1 blocked. Renews in 226d.",
+    "followUp": "Chase AIRIS-8853 (blocked, sans.jung) — [PXMart] User360 page not working for some profiles",
+    "health": "red",
+    "generatedAt": "2026-08-17T02:54:55.308Z"
+  },
+  "永豐商業銀行": {
+    "summary": "15 open tickets (mostly CAM bank, in open). Renews in 136d.",
+    "followUp": "Chase FG-152 (in progress, Sherry Lin) — Cash reporting automation-Bank Statement Converter",
+    "health": "yellow",
+    "generatedAt": "2026-08-17T02:54:55.308Z"
   }
 }
