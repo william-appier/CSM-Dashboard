@@ -1,17 +1,72 @@
 {
-  "generatedAt": "2026-08-14T09:50:14.109+08:00",
+  "generatedAt": "2026-08-17T09:00:44.319+08:00",
   "accounts": [
     {
       "id": "mannings",
       "name": "Mannings",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "Next bi-weekly meeting Aug 20 (Monthly Aug 27); EUU→AEP onboarding ticket AEP-8055 opened Aug 11 — track backfill. No open tickets; both prior commitments completed.",
-      "diffs": [],
+      "insight": "ETS-5788 in-progress 2d · +12 more · Appier x Mannings Bi-weekly Meeting Aug 20 · renewal due 2026-09-30 (44d).",
+      "diffs": [
+        {
+          "type": "new",
+          "text": "ETS-5788 Mannings app event data retrieval by order_id"
+        },
+        {
+          "type": "new",
+          "text": "SPJ-1356 Mannings onboarding preparation test & investigation"
+        },
+        {
+          "type": "new",
+          "text": "AEP-8055 [EUU] Mannings onboarding"
+        },
+        {
+          "type": "new",
+          "text": "AEP-8064 [AR mirror project] Mannings"
+        },
+        {
+          "type": "new",
+          "text": "AEP-8063 [UUID / EUID dedup + bucket deletion] Mannings"
+        },
+        {
+          "type": "new",
+          "text": "AEP-8062 [Data backfill] Mannings"
+        },
+        {
+          "type": "new",
+          "text": "AEP-8061 [EUU streaming] Mannings"
+        },
+        {
+          "type": "new",
+          "text": "AEP-8060 [Data pre-ingest] Mannings"
+        },
+        {
+          "type": "new",
+          "text": "AEP-8059 [Schema backfill] Mannings"
+        },
+        {
+          "type": "new",
+          "text": "AEP-8058 [EAM setup] Mannings"
+        },
+        {
+          "type": "new",
+          "text": "AEP-8057 [EAM config] Mannings"
+        },
+        {
+          "type": "new",
+          "text": "AEP-8056 [Event retention review] Mannings"
+        },
+        {
+          "type": "new",
+          "text": "ETS-5741 Mannings app event investigation"
+        }
+      ],
       "riskTags": [
+        "ticket",
+        "renewal",
         "mtg"
       ],
-      "ticketCount": 0,
+      "ticketCount": 13,
       "mtgCount": 2,
       "projects": [
         {
@@ -31,30 +86,133 @@
           "meta": "11:00–12:00 HKT · Rola Chung"
         }
       ],
-      "tickets": [],
-      "suggestions": [
+      "tickets": [
         {
-          "priority": "Medium",
-          "label": "Meeting",
-          "text": "Prep for Appier x Mannings bi-weekly (Aug 20): bring GCP data-integration status (Alvin Chan / Karen Fu) and AEP backfill update."
+          "key": "ETS-5788",
+          "title": "Mannings app event data retrieval by order_id",
+          "status": "in-progress",
+          "assignee": "David Li",
+          "pinned": false
         },
         {
-          "priority": "Low",
-          "label": "Backfill",
-          "text": "Mannings EUU onboarding (AEP-8055) filed Aug 11 — verify Mannings' app_ids and backfill length are correct in the AEP migration review sheet."
+          "key": "SPJ-1356",
+          "title": "Mannings onboarding preparation test & investigation",
+          "status": "backlog",
+          "assignee": "Jaron Tsai",
+          "pinned": false
+        },
+        {
+          "key": "AEP-8055",
+          "title": "[EUU] Mannings onboarding",
+          "status": "backlog",
+          "assignee": "Ann Huang",
+          "pinned": false
+        },
+        {
+          "key": "AEP-8064",
+          "title": "[AR mirror project] Mannings",
+          "status": "backlog",
+          "assignee": "Po-Chou Kung",
+          "pinned": false
+        },
+        {
+          "key": "AEP-8063",
+          "title": "[UUID / EUID dedup + bucket deletion] Mannings",
+          "status": "backlog",
+          "assignee": "Ann Huang",
+          "pinned": false
+        },
+        {
+          "key": "AEP-8062",
+          "title": "[Data backfill] Mannings",
+          "status": "backlog",
+          "assignee": "Ann Huang",
+          "pinned": false
+        },
+        {
+          "key": "AEP-8061",
+          "title": "[EUU streaming] Mannings",
+          "status": "backlog",
+          "assignee": "Ann Huang",
+          "pinned": false
+        },
+        {
+          "key": "AEP-8060",
+          "title": "[Data pre-ingest] Mannings",
+          "status": "backlog",
+          "assignee": "Ann Huang",
+          "pinned": false
+        },
+        {
+          "key": "AEP-8059",
+          "title": "[Schema backfill] Mannings",
+          "status": "backlog",
+          "assignee": "Ann Huang",
+          "pinned": false
+        },
+        {
+          "key": "AEP-8058",
+          "title": "[EAM setup] Mannings",
+          "status": "backlog",
+          "assignee": "Ann Huang",
+          "pinned": false
+        },
+        {
+          "key": "AEP-8057",
+          "title": "[EAM config] Mannings",
+          "status": "backlog",
+          "assignee": "Ann Huang",
+          "pinned": false
+        },
+        {
+          "key": "AEP-8056",
+          "title": "[Event retention review] Mannings",
+          "status": "backlog",
+          "assignee": "Ann Huang",
+          "pinned": false
+        },
+        {
+          "key": "ETS-5741",
+          "title": "Mannings app event investigation",
+          "status": "open",
+          "assignee": "David Li",
+          "pinned": false
         }
       ],
-      "commitments": []
+      "suggestions": [
+        {
+          "priority": "high",
+          "label": "Renewal · High",
+          "text": "Mannings contract due 2026-09-30 (44d left) — confirm status now"
+        },
+        {
+          "priority": "medium",
+          "label": "Meeting · Medium",
+          "text": "Prep for Appier x Mannings Bi-weekly Meeting on Aug 20 (11:00–12:00 HKT · Rola Chung)"
+        }
+      ]
     },
     {
       "id": "scmp",
       "name": "SCMP",
       "csmOwner": "william.wt.lin@appier.com",
-      "health": "green",
-      "insight": "AIRIS onboarding progressing (AIRIS/AR training Aug 10–11); AIXON offboard request promised to AEP team still open after 14 days.",
-      "diffs": [],
-      "riskTags": [],
-      "ticketCount": 0,
+      "health": "yellow",
+      "insight": "PROJ-33694 backlog 5d · +1 more.",
+      "diffs": [
+        {
+          "type": "new",
+          "text": "PROJ-33694 [SCMP] Feature request on keyword dashboard"
+        },
+        {
+          "type": "new",
+          "text": "AID-8880 SCMP_Letzshop_AiDeal Lite_Jun 2022"
+        }
+      ],
+      "riskTags": [
+        "ticket",
+        "stale"
+      ],
+      "ticketCount": 2,
       "mtgCount": 0,
       "projects": [
         {
@@ -67,43 +225,30 @@
         }
       ],
       "meetings": [],
-      "tickets": [],
-      "suggestions": [
+      "tickets": [
         {
-          "priority": "High",
-          "label": "Commitment",
-          "text": "Promised to request AIXON offboard (pending SCMP onboarding confirmation) on Jul 31. Confirm AIRIS onboarding is complete, then file the offboard request or reset expectations.",
-          "commitmentId": "cmt-scmp-request-aixon-offboard"
+          "key": "PROJ-33694",
+          "title": "[SCMP] Feature request on keyword dashboard",
+          "status": "backlog",
+          "assignee": "Michael Palmer",
+          "pinned": false
         },
         {
-          "priority": "Medium",
-          "label": "Onboarding",
-          "text": "SCMP keyword/trend data confirmed on expected t-2 pipeline (Aug 11) — verify reporting fully populates before closing onboarding."
+          "key": "AID-8880",
+          "title": "SCMP_Letzshop_AiDeal Lite_Jun 2022",
+          "status": "open",
+          "assignee": "Eric Tung",
+          "pinned": false
         }
       ],
-      "commitments": [
-        {
-          "id": "cmt-scmp-request-aixon-offboard",
-          "account": "scmp",
-          "text": "Request AIXON offboard (onboarding confirmed complete)",
-          "owner": "me",
-          "counterpart": "Michael Palmer / AEP team",
-          "due": null,
-          "source": "slack",
-          "sourceUrl": "https://appier.slack.com/archives/C0A22L6ES4E/p1785490434438379?thread_ts=1784084193.395059&cid=C0A22L6ES4E",
-          "created": "2026-07-31",
-          "status": "open",
-          "snoozedUntil": null,
-          "lastSeen": "2026-08-14"
-        }
-      ]
+      "suggestions": []
     },
     {
       "id": "1010hope",
       "name": "10/10Hope",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "green",
-      "insight": "Silent this week — no tickets or meetings. klickngo API + AIQUA onboarding (Mark Liu) is the active workstream; contract end date still missing from records.",
+      "insight": "No active tickets — all clear.",
       "diffs": [],
       "riskTags": [],
       "ticketCount": 0,
@@ -122,56 +267,259 @@
       "tickets": [],
       "suggestions": [
         {
-          "priority": "Medium",
-          "label": "Onboarding",
-          "text": "Check in with Mark Liu on klickngo API + AIQUA onboarding progress."
-        },
-        {
-          "priority": "Medium",
-          "label": "Data",
-          "text": "Add 10/10Hope's contract end date to records so renewal alerts can fire."
+          "priority": "low",
+          "label": "Check-in · Low",
+          "text": "No active tickets — send a check-in to 10/10Hope"
         }
-      ],
-      "commitments": []
+      ]
     },
     {
       "id": "luxgen",
       "name": "Luxgen",
       "csmOwner": "william.wt.lin@appier.com",
-      "health": "green",
-      "insight": "No meetings on calendar (risk signal); BB contract runs to Nov 22. Monthly 服務交付報告 to Kevin Hsu is the main recurring deliverable.",
-      "diffs": [],
-      "riskTags": [],
-      "ticketCount": 0,
+      "health": "yellow",
+      "insight": "BBT-5953 backlog 433d · +13 more.",
+      "diffs": [
+        {
+          "type": "new",
+          "text": "BBT-5953 [Luxgen] BB didn't block share to LINE friends even though m"
+        },
+        {
+          "type": "new",
+          "text": "AIQ-1200 Luxgen"
+        },
+        {
+          "type": "new",
+          "text": "EAM-227 [Remaining: AQ, AX, EDP, and keep BB] Offboard Request - Lux"
+        },
+        {
+          "type": "new",
+          "text": "BBT-3692 [Luxgen] User Feedback on Agent Analytics Dashboard: groupin"
+        },
+        {
+          "type": "new",
+          "text": "BBT-2905 [Luxgen] Copying imagemap modules inside a folder will rende"
+        },
+        {
+          "type": "new",
+          "text": "BBT-1061 [Luxgen] Timer for AI Rules"
+        },
+        {
+          "type": "new",
+          "text": "PROJ-22175 [Luxgen]  Data Column of Customer360 - Location / Language"
+        },
+        {
+          "type": "new",
+          "text": "PROJ-22178 [CW][Senheng][Luxgen] export BB tags import to AIXON "
+        },
+        {
+          "type": "new",
+          "text": "QGWL-11820 [Luxgen] Please help to check online/offline table name of L"
+        },
+        {
+          "type": "new",
+          "text": "BBB-1064 【RFQ】Luxgen_預約日期事先提醒"
+        },
+        {
+          "type": "new",
+          "text": "PROJ-21319 [Luxgen] AX segment anonymous user number looks suspicious"
+        },
+        {
+          "type": "new",
+          "text": "BBB-1011 【RFQ】LUXGEN_推導流工具數據 API 新增欄位"
+        },
+        {
+          "type": "new",
+          "text": "QGWL-10821 [Luxgen]Luxgen AIQUA Web SDK embedded BB Web Chat SDK"
+        },
+        {
+          "type": "new",
+          "text": "BBB-876 [CSM Check] Luxgen"
+        }
+      ],
+      "riskTags": [
+        "ticket",
+        "stale"
+      ],
+      "ticketCount": 14,
       "mtgCount": 0,
       "projects": [],
       "meetings": [],
-      "tickets": [],
-      "suggestions": [
+      "tickets": [
         {
-          "priority": "Medium",
-          "label": "Cadence",
-          "text": "No Luxgen meeting scheduled — set up a touchpoint with Kevin Hsu."
+          "key": "BBT-5953",
+          "title": "[Luxgen] BB didn't block share to LINE friends even though module contains \"share\" action",
+          "status": "backlog",
+          "assignee": "vivian.yang",
+          "pinned": false
         },
         {
-          "priority": "Low",
-          "label": "Report",
-          "text": "Confirm the monthly 服務交付報告 (Finance ticket, e.g. FIN-2672) is on track."
+          "key": "AIQ-1200",
+          "title": "Luxgen",
+          "status": "open",
+          "assignee": "william.wt.lin",
+          "pinned": false
+        },
+        {
+          "key": "EAM-227",
+          "title": "[Remaining: AQ, AX, EDP, and keep BB] Offboard Request - Luxgen",
+          "status": "open",
+          "assignee": "Roland Wang",
+          "pinned": false
+        },
+        {
+          "key": "BBT-3692",
+          "title": "[Luxgen] User Feedback on Agent Analytics Dashboard: grouping & time & type",
+          "status": "backlog",
+          "assignee": "Unassigned",
+          "pinned": false
+        },
+        {
+          "key": "BBT-2905",
+          "title": "[Luxgen] Copying imagemap modules inside a folder will render broken images",
+          "status": "backlog",
+          "assignee": "Unassigned",
+          "pinned": false
+        },
+        {
+          "key": "BBT-1061",
+          "title": "[Luxgen] Timer for AI Rules",
+          "status": "backlog",
+          "assignee": "Unassigned",
+          "pinned": false
+        },
+        {
+          "key": "PROJ-22175",
+          "title": "[Luxgen]  Data Column of Customer360 - Location / Language",
+          "status": "in-progress",
+          "assignee": "Mark Liu",
+          "pinned": false
+        },
+        {
+          "key": "PROJ-22178",
+          "title": "[CW][Senheng][Luxgen] export BB tags import to AIXON ",
+          "status": "backlog",
+          "assignee": "Ben (Teng-Yuan) Chang",
+          "pinned": false
+        },
+        {
+          "key": "QGWL-11820",
+          "title": "[Luxgen] Please help to check online/offline table name of Luxgen ",
+          "status": "backlog",
+          "assignee": "Mark Liu",
+          "pinned": false
+        },
+        {
+          "key": "BBB-1064",
+          "title": "【RFQ】Luxgen_預約日期事先提醒",
+          "status": "open",
+          "assignee": "Samuel Chiang",
+          "pinned": false
+        },
+        {
+          "key": "PROJ-21319",
+          "title": "[Luxgen] AX segment anonymous user number looks suspicious",
+          "status": "open",
+          "assignee": "I-Ting Fang",
+          "pinned": false
+        },
+        {
+          "key": "BBB-1011",
+          "title": "【RFQ】LUXGEN_推導流工具數據 API 新增欄位",
+          "status": "open",
+          "assignee": "Chloe Wong",
+          "pinned": false
+        },
+        {
+          "key": "QGWL-10821",
+          "title": "[Luxgen]Luxgen AIQUA Web SDK embedded BB Web Chat SDK",
+          "status": "in-progress",
+          "assignee": "Mark Liu",
+          "pinned": false
+        },
+        {
+          "key": "BBB-876",
+          "title": "[CSM Check] Luxgen",
+          "status": "in-progress",
+          "assignee": "Samuel Chiang",
+          "pinned": false
         }
       ],
-      "commitments": []
+      "suggestions": []
     },
     {
       "id": "55688",
       "name": "55688",
       "csmOwner": "william.wt.lin@appier.com",
-      "health": "green",
-      "insight": "⚠️ 代駕 & 招募 bots both lapsed Jul 31 (14 days ago) — only one actually churned, ownership still unconfirmed. 北區 platform extension now filed. Service Agent RFQ (BBT-5428) is the active workstream.",
-      "diffs": [],
-      "riskTags": [
-        "renewal"
+      "health": "red",
+      "insight": "AIQ-1343 open 270d · +14 more.",
+      "diffs": [
+        {
+          "type": "new",
+          "text": "AIQ-1343 55688"
+        },
+        {
+          "type": "new",
+          "text": "BBT-5597 [55688 / Cofit / TibaMe / Sealand] Quoted and handle Quoted "
+        },
+        {
+          "type": "new",
+          "text": "BBT-4897 [55688-潔衣家] 從用戶位置推薦附近可寄件超商"
+        },
+        {
+          "type": "new",
+          "text": "QGWL-19924 【55688】Timeout limitation in AQ JM should be shorten."
+        },
+        {
+          "type": "new",
+          "text": "BBT-5346 [55688] Rename menu section for link action"
+        },
+        {
+          "type": "new",
+          "text": "BBT-5368 [55688] Client would like to have more details condition for"
+        },
+        {
+          "type": "new",
+          "text": "BBT-4854 [55688-潔衣家] 在 Line 中完成會員綁定及訂單查詢"
+        },
+        {
+          "type": "new",
+          "text": "BBT-5275 [55688] Emoji cannot be searched"
+        },
+        {
+          "type": "new",
+          "text": "BBT-5292 [55688] Request for retargeting to messages read users"
+        },
+        {
+          "type": "new",
+          "text": "BBT-5191 [55688商城] 預估 Shopline 資料轉換可行性及成本"
+        },
+        {
+          "type": "new",
+          "text": "PHXX-3312 【55688】Timeout limitation in AQ JM should be shorten."
+        },
+        {
+          "type": "new",
+          "text": "QGWL-19925 CLONE - 【55688】Timeout limitation in AQ JM should be shorten"
+        },
+        {
+          "type": "new",
+          "text": "PSOPPTY-118 55688"
+        },
+        {
+          "type": "new",
+          "text": "CAM-262292 台灣大車隊55688 AIBID"
+        },
+        {
+          "type": "new",
+          "text": "CAM-265444 55688台灣大車隊AAS"
+        }
       ],
-      "ticketCount": 0,
+      "riskTags": [
+        "ticket",
+        "stale"
+      ],
+      "ticketCount": 15,
       "mtgCount": 0,
       "projects": [
         {
@@ -180,30 +528,176 @@
         }
       ],
       "meetings": [],
-      "tickets": [],
-      "suggestions": [
+      "tickets": [
         {
-          "priority": "High",
-          "label": "Renewal",
-          "text": "55688 代駕/招募 bots expired Jul 31 (14 days ago). Confirm with client which bot actually churned and whether either should renew — do not assume."
+          "key": "AIQ-1343",
+          "title": "55688",
+          "status": "open",
+          "assignee": "william.wt.lin",
+          "pinned": false
         },
         {
-          "priority": "Medium",
-          "label": "RFQ",
-          "text": "Progress Service Agent RFQ (BBT-5428) with Brian Tsai — weekly RFQ meetings ongoing."
+          "key": "BBT-5597",
+          "title": "[55688 / Cofit / TibaMe / Sealand] Quoted and handle Quoted message",
+          "status": "backlog",
+          "assignee": "Unassigned",
+          "pinned": false
+        },
+        {
+          "key": "BBT-4897",
+          "title": "[55688-潔衣家] 從用戶位置推薦附近可寄件超商",
+          "status": "backlog",
+          "assignee": "Unassigned",
+          "pinned": false
+        },
+        {
+          "key": "QGWL-19924",
+          "title": "【55688】Timeout limitation in AQ JM should be shorten.",
+          "status": "blocked",
+          "assignee": "Shiv Raj",
+          "pinned": false
+        },
+        {
+          "key": "BBT-5346",
+          "title": "[55688] Rename menu section for link action",
+          "status": "backlog",
+          "assignee": "Unassigned",
+          "pinned": false
+        },
+        {
+          "key": "BBT-5368",
+          "title": "[55688] Client would like to have more details condition for line push",
+          "status": "backlog",
+          "assignee": "Unassigned",
+          "pinned": false
+        },
+        {
+          "key": "BBT-4854",
+          "title": "[55688-潔衣家] 在 Line 中完成會員綁定及訂單查詢",
+          "status": "backlog",
+          "assignee": "Brian Tsai",
+          "pinned": false
+        },
+        {
+          "key": "BBT-5275",
+          "title": "[55688] Emoji cannot be searched",
+          "status": "open",
+          "assignee": "willy.liao",
+          "pinned": false
+        },
+        {
+          "key": "BBT-5292",
+          "title": "[55688] Request for retargeting to messages read users",
+          "status": "backlog",
+          "assignee": "Unassigned",
+          "pinned": false
+        },
+        {
+          "key": "BBT-5191",
+          "title": "[55688商城] 預估 Shopline 資料轉換可行性及成本",
+          "status": "open",
+          "assignee": "Unassigned",
+          "pinned": false
+        },
+        {
+          "key": "PHXX-3312",
+          "title": "【55688】Timeout limitation in AQ JM should be shorten.",
+          "status": "backlog",
+          "assignee": "cifong.kang",
+          "pinned": false
+        },
+        {
+          "key": "QGWL-19925",
+          "title": "CLONE - 【55688】Timeout limitation in AQ JM should be shorten.",
+          "status": "backlog",
+          "assignee": "Unassigned",
+          "pinned": false
+        },
+        {
+          "key": "PSOPPTY-118",
+          "title": "55688",
+          "status": "open",
+          "assignee": "Tammy Chang",
+          "pinned": false
+        },
+        {
+          "key": "CAM-262292",
+          "title": "台灣大車隊55688 AIBID",
+          "status": "open",
+          "assignee": "bernie.chang",
+          "pinned": false
+        },
+        {
+          "key": "CAM-265444",
+          "title": "55688台灣大車隊AAS",
+          "status": "open",
+          "assignee": "maruko.chung",
+          "pinned": false
         }
       ],
-      "commitments": []
+      "suggestions": []
     },
     {
       "id": "tiangyuanxiang",
       "name": "田原香",
       "csmOwner": "william.wt.lin@appier.com",
-      "health": "green",
-      "insight": "Segmented-campaign post-migration data check (per Ted Wu) overdue since Aug 7 — still open. Weekly tracking meeting continues Tuesdays 09:30.",
-      "diffs": [],
-      "riskTags": [],
-      "ticketCount": 0,
+      "health": "yellow",
+      "insight": "ETS-5507 open 13d · +11 more.",
+      "diffs": [
+        {
+          "type": "new",
+          "text": "ETS-5507 [田原香] Onboard Dummy AIRIS & Segment hub"
+        },
+        {
+          "type": "new",
+          "text": "APC-697 [田原香]  create your own template from scratch cannot be click"
+        },
+        {
+          "type": "new",
+          "text": "APC-698 [田原香]  create your own template from scratch cannot be click"
+        },
+        {
+          "type": "new",
+          "text": "QGWL-25930 [田原香] Request to allow to save template for on-site editor"
+        },
+        {
+          "type": "new",
+          "text": "QGWL-25627 [田原香] Enable send time optimization"
+        },
+        {
+          "type": "new",
+          "text": "AIQ-1389 田原香"
+        },
+        {
+          "type": "new",
+          "text": "QGWL-23645 [田原香] Creative studio button will always shows an unexpected"
+        },
+        {
+          "type": "new",
+          "text": "QGWL-22084 [田原香] Wishlist for segmentation request"
+        },
+        {
+          "type": "new",
+          "text": "QGWL-22014 [田原香] On-site experience leading platform abnormal behavior"
+        },
+        {
+          "type": "new",
+          "text": "CAM-347922 [Resize]田原香_Display_SG_0505-0511"
+        },
+        {
+          "type": "new",
+          "text": "CAM-346249 [Resize] 田原香_Display+Video_HK_0411-0421"
+        },
+        {
+          "type": "new",
+          "text": "QGWL-21289 [田原香] Onboard Product Feed"
+        }
+      ],
+      "riskTags": [
+        "ticket",
+        "stale"
+      ],
+      "ticketCount": 12,
       "mtgCount": 0,
       "projects": [
         {
@@ -212,83 +706,323 @@
         }
       ],
       "meetings": [],
-      "tickets": [],
-      "suggestions": [
+      "tickets": [
         {
-          "priority": "High",
-          "label": "Commitment",
-          "text": "Overdue since Aug 7: check segmented-campaign numbers post-migration for anomalies (per Ted Wu). Review today and report back.",
-          "commitmentId": "cmt-tiangyuanxiang-check-segmentedcampaign-numbers"
+          "key": "ETS-5507",
+          "title": "[田原香] Onboard Dummy AIRIS & Segment hub",
+          "status": "open",
+          "assignee": "vivian.yang",
+          "pinned": false
         },
         {
-          "priority": "Low",
-          "label": "Meeting",
-          "text": "Cover the campaign-migration check at the Tuesday 09:30 weekly tracking meeting."
+          "key": "APC-697",
+          "title": "[田原香]  create your own template from scratch cannot be clicked under campaign set up",
+          "status": "open",
+          "assignee": "Unassigned",
+          "pinned": false
+        },
+        {
+          "key": "APC-698",
+          "title": "[田原香]  create your own template from scratch cannot be clicked under campaign set up",
+          "status": "open",
+          "assignee": "Unassigned",
+          "pinned": false
+        },
+        {
+          "key": "QGWL-25930",
+          "title": "[田原香] Request to allow to save template for on-site editor",
+          "status": "backlog",
+          "assignee": "luke.chien",
+          "pinned": false
+        },
+        {
+          "key": "QGWL-25627",
+          "title": "[田原香] Enable send time optimization",
+          "status": "backlog",
+          "assignee": "vivian.yang",
+          "pinned": false
+        },
+        {
+          "key": "AIQ-1389",
+          "title": "田原香",
+          "status": "open",
+          "assignee": "william.wt.lin",
+          "pinned": false
+        },
+        {
+          "key": "QGWL-23645",
+          "title": "[田原香] Creative studio button will always shows an unexpected gray area",
+          "status": "backlog",
+          "assignee": "vivian.yang",
+          "pinned": false
+        },
+        {
+          "key": "QGWL-22084",
+          "title": "[田原香] Wishlist for segmentation request",
+          "status": "backlog",
+          "assignee": "luke.chien",
+          "pinned": false
+        },
+        {
+          "key": "QGWL-22014",
+          "title": "[田原香] On-site experience leading platform abnormal behavior",
+          "status": "backlog",
+          "assignee": "Unassigned",
+          "pinned": false
+        },
+        {
+          "key": "CAM-347922",
+          "title": "[Resize]田原香_Display_SG_0505-0511",
+          "status": "in-progress",
+          "assignee": "cherry.lin",
+          "pinned": false
+        },
+        {
+          "key": "CAM-346249",
+          "title": "[Resize] 田原香_Display+Video_HK_0411-0421",
+          "status": "in-progress",
+          "assignee": "cherry.lin",
+          "pinned": false
+        },
+        {
+          "key": "QGWL-21289",
+          "title": "[田原香] Onboard Product Feed",
+          "status": "backlog",
+          "assignee": "vivian.yang",
+          "pinned": false
         }
       ],
-      "commitments": [
+      "suggestions": []
+    },
+    {
+      "id": "momax",
+      "name": "Momax",
+      "csmOwner": "william.wt.lin@appier.com",
+      "health": "yellow",
+      "insight": "CAM-350143 open 459d · +1 more.",
+      "diffs": [],
+      "riskTags": [
+        "ticket",
+        "stale"
+      ],
+      "ticketCount": 2,
+      "mtgCount": 0,
+      "projects": [],
+      "meetings": [],
+      "tickets": [
         {
-          "id": "cmt-tiangyuanxiang-check-segmentedcampaign-numbers",
-          "account": "tiangyuanxiang",
-          "text": "Check segmented-campaign numbers post-migration for anomalies (per Ted)",
-          "owner": "me",
-          "counterpart": "Ted Wu",
-          "due": "2026-08-07",
-          "source": "slack",
-          "sourceUrl": "https://appier.slack.com/archives/G01137M30B1/p1785743294120839",
-          "created": "2026-08-03",
-          "lastSeen": "2026-08-14",
+          "key": "CAM-350143",
+          "title": "Momax_CPV_Mulit Geo_2025",
           "status": "open",
-          "snoozedUntil": null
+          "assignee": "Gary Huang",
+          "pinned": false
+        },
+        {
+          "key": "CAM-257353",
+          "title": "Momax Q1 Ecom 2023 (FB 歸因)",
+          "status": "in-progress",
+          "assignee": "Mandy Tsai",
+          "pinned": false
         }
-      ]
+      ],
+      "suggestions": []
     },
     {
       "id": "citysuper",
       "name": "City Super",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "AIQUA HK Order Form (LEG-15992) open 13 days — the only active item. No contract end date or project background on record.",
-      "diffs": [],
-      "riskTags": [
-        "ticket"
+      "insight": "LEG-16086 open 87d · +12 more.",
+      "diffs": [
+        {
+          "type": "new",
+          "text": "LEG-16086 CLONE - Legend World Technology Development Limited_AIQUA_HK"
+        },
+        {
+          "type": "new",
+          "text": "CAM-384613 [Campaign續跑] Prizm_AIBID_App Installation Campaign_AOS_20260"
+        },
+        {
+          "type": "new",
+          "text": "CAM-382749 [CIR]Prizm_AIBID_Lucky Draw Campaign_Video Playable Endcard_"
+        },
+        {
+          "type": "new",
+          "text": "CAM-382624 [預算調整] Prizm_AIBID_Lucky Draw Campaign_Playable Merge Game_C"
+        },
+        {
+          "type": "new",
+          "text": "CAM-382623 [預算調整]Prizm_AIBID_App Installation Campaign_IOS & AOS_260204"
+        },
+        {
+          "type": "new",
+          "text": "CAM-382210 [預算調整]Prizm_AIBID_App Installation Campaign_IOS & AOS"
+        },
+        {
+          "type": "new",
+          "text": "CAM-379802 [Resize]Prizm_AIBID_Adaptation for Standard Banner_Garden_Lu"
+        },
+        {
+          "type": "new",
+          "text": "CAM-381638 [CIR]Prizm_AIBID_Standard Banner_Garden_Lucky Draw_IOS_26012"
+        },
+        {
+          "type": "new",
+          "text": "CAM-381637 [CIR]Prizm_AIBID_Standard Banner_Garden_Lucky Draw_AOS_26012"
+        },
+        {
+          "type": "new",
+          "text": "CAM-380560 [Launch] Prizm_AIBID_Lucky Draw Campaign_Playable Merge Game"
+        },
+        {
+          "type": "new",
+          "text": "CAM-380564 [Launch] Prizm_AIBID_Lucky Draw Campaign_Playable Merge Game"
+        },
+        {
+          "type": "new",
+          "text": "CAM-379776 [Launch] Prizm_AIBID_App Installation Campaign_Jan 2026 (AIB"
+        },
+        {
+          "type": "new",
+          "text": "CAM-379738 [Launch] Prizm_AIBID_App Installation Campaign_Jan 2026 (AIB"
+        },
+        {
+          "type": "close",
+          "text": "LEG-15992 closed"
+        }
       ],
-      "ticketCount": 1,
+      "riskTags": [
+        "ticket",
+        "stale"
+      ],
+      "ticketCount": 13,
       "mtgCount": 0,
       "projects": [],
       "meetings": [],
       "tickets": [
         {
-          "key": "LEG-15992",
-          "title": "Legend World Technology Development Limited_AIQUA_HK_Order Form(User: CitySuper) ",
+          "key": "LEG-16086",
+          "title": "CLONE - Legend World Technology Development Limited_AIQUA_HK_Order Form(User: CitySuper)",
           "status": "open",
-          "assignee": "Link Nie",
-          "pinned": true
-        }
-      ],
-      "suggestions": [
-        {
-          "priority": "Medium",
-          "label": "Ticket",
-          "text": "Chase LEG-15992 (AIQUA HK Order Form, assignee Link Nie) — open 13 days."
+          "assignee": "Unassigned",
+          "pinned": false
         },
         {
-          "priority": "Medium",
-          "label": "Data",
-          "text": "Fill in City Super's contract end date and current project — context is missing."
+          "key": "CAM-384613",
+          "title": "[Campaign續跑] Prizm_AIBID_App Installation Campaign_AOS_20260226",
+          "status": "open",
+          "assignee": "Forrest Hung",
+          "pinned": false
+        },
+        {
+          "key": "CAM-382749",
+          "title": "[CIR]Prizm_AIBID_Lucky Draw Campaign_Video Playable Endcard_CPM_AOS_260211-0213",
+          "status": "open",
+          "assignee": "Forrest Hung",
+          "pinned": false
+        },
+        {
+          "key": "CAM-382624",
+          "title": "[預算調整] Prizm_AIBID_Lucky Draw Campaign_Playable Merge Game_CPM_AOS&IOS_260204",
+          "status": "open",
+          "assignee": "Forrest Hung",
+          "pinned": false
+        },
+        {
+          "key": "CAM-382623",
+          "title": "[預算調整]Prizm_AIBID_App Installation Campaign_IOS & AOS_260204",
+          "status": "open",
+          "assignee": "Forrest Hung",
+          "pinned": false
+        },
+        {
+          "key": "CAM-382210",
+          "title": "[預算調整]Prizm_AIBID_App Installation Campaign_IOS & AOS",
+          "status": "open",
+          "assignee": "Forrest Hung",
+          "pinned": false
+        },
+        {
+          "key": "CAM-379802",
+          "title": "[Resize]Prizm_AIBID_Adaptation for Standard Banner_Garden_Lucky Draw_260114",
+          "status": "in-progress",
+          "assignee": "ivy.kan",
+          "pinned": false
+        },
+        {
+          "key": "CAM-381638",
+          "title": "[CIR]Prizm_AIBID_Standard Banner_Garden_Lucky Draw_IOS_260129",
+          "status": "open",
+          "assignee": "Forrest Hung",
+          "pinned": false
+        },
+        {
+          "key": "CAM-381637",
+          "title": "[CIR]Prizm_AIBID_Standard Banner_Garden_Lucky Draw_AOS_260129",
+          "status": "open",
+          "assignee": "Forrest Hung",
+          "pinned": false
+        },
+        {
+          "key": "CAM-380560",
+          "title": "[Launch] Prizm_AIBID_Lucky Draw Campaign_Playable Merge Game_CPM_AOS_260120-0213",
+          "status": "open",
+          "assignee": "Forrest Hung",
+          "pinned": false
+        },
+        {
+          "key": "CAM-380564",
+          "title": "[Launch] Prizm_AIBID_Lucky Draw Campaign_Playable Merge Game_CPM_iOS_260120-0213",
+          "status": "open",
+          "assignee": "Forrest Hung",
+          "pinned": false
+        },
+        {
+          "key": "CAM-379776",
+          "title": "[Launch] Prizm_AIBID_App Installation Campaign_Jan 2026 (AIBID)_ (Garden Club) CPC_AOS",
+          "status": "open",
+          "assignee": "Forrest Hung",
+          "pinned": false
+        },
+        {
+          "key": "CAM-379738",
+          "title": "[Launch] Prizm_AIBID_App Installation Campaign_Jan 2026 (AIBID) (嘉友會) CPC_IOS",
+          "status": "open",
+          "assignee": "Forrest Hung",
+          "pinned": false
         }
       ],
-      "commitments": []
+      "suggestions": []
     },
     {
       "id": "xindongli",
       "name": "行動力國際",
       "csmOwner": "william.wt.lin@appier.com",
-      "health": "green",
-      "insight": "Silent this week — no tickets, meetings, or commitments on record.",
-      "diffs": [],
-      "riskTags": [],
-      "ticketCount": 0,
+      "health": "yellow",
+      "insight": "BBT-7270 open 159d · +3 more.",
+      "diffs": [
+        {
+          "type": "new",
+          "text": "BBT-7270 [行動力國際 - Service Agent] Can't get the right custom answers"
+        },
+        {
+          "type": "new",
+          "text": "BBT-7024 [行動力國際 ACT Power] triggered wrong reply module when keyword "
+        },
+        {
+          "type": "new",
+          "text": "BBT-5599 [行動力國際 ACT POWER] Enable sales bot feature for 行動力國際"
+        },
+        {
+          "type": "new",
+          "text": "BBT-4660 [行動力國際] BotBonnie to Phoenix Account Migration / Knowledge B"
+        }
+      ],
+      "riskTags": [
+        "ticket",
+        "stale"
+      ],
+      "ticketCount": 4,
       "mtgCount": 0,
       "projects": [
         {
@@ -297,15 +1031,37 @@
         }
       ],
       "meetings": [],
-      "tickets": [],
-      "suggestions": [
+      "tickets": [
         {
-          "priority": "Low",
-          "label": "Cadence",
-          "text": "No activity for 行動力國際 — consider a check-in to confirm project status."
+          "key": "BBT-7270",
+          "title": "[行動力國際 - Service Agent] Can't get the right custom answers",
+          "status": "open",
+          "assignee": "vivian.yang",
+          "pinned": false
+        },
+        {
+          "key": "BBT-7024",
+          "title": "[行動力國際 ACT Power] triggered wrong reply module when keyword wasn't included",
+          "status": "backlog",
+          "assignee": "Guiguan",
+          "pinned": false
+        },
+        {
+          "key": "BBT-5599",
+          "title": "[行動力國際 ACT POWER] Enable sales bot feature for 行動力國際",
+          "status": "open",
+          "assignee": "kyle.kc.wang",
+          "pinned": false
+        },
+        {
+          "key": "BBT-4660",
+          "title": "[行動力國際] BotBonnie to Phoenix Account Migration / Knowledge Bot Feature Activation",
+          "status": "open",
+          "assignee": "Salem Chen",
+          "pinned": false
         }
       ],
-      "commitments": []
+      "suggestions": []
     }
   ]
 }
