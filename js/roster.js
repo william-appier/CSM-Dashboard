@@ -138,32 +138,36 @@
       '<span style="white-space:nowrap;color:#64748b">' + st + (t.assignee ? ' · ' + esc(t.assignee) : '') + '</span></div>';
   }
   function card(a) {
+    var s = SUMMARIES[a.id] || null;
+    var hcol = s && s.health === 'red' ? '#dc2626' : (s && s.health === 'yellow' ? '#d97706' : '#16a34a');
     var chips = a.products.map(function (p) {
       return '<span style="display:inline-block;font-size:11px;font-weight:600;background:#eef2ff;color:#4338ca;border-radius:5px;padding:1px 7px;margin-right:4px">' + esc(p) + '</span>';
     }).join('');
-    var s = SUMMARIES[a.id] || null;
-    var summaryHtml = (s && (s.summary || s.followUp)) ?
-      '<div style="background:#f8fafc;border-left:3px solid #6366f1;border-radius:6px;padding:9px 11px;margin:10px 0 4px;font-size:13px;line-height:1.5;color:#334155">' +
-        (s.summary ? '<div>' + esc(s.summary) + '</div>' : '') +
-        (s.followUp ? '<div style="margin-top:5px;color:#4338ca"><b>Follow up:</b> ' + esc(s.followUp) + '</div>' : '') +
-      '</div>' : '';
+    // summary-first: the digest is the content; tickets are tucked away.
+    var summaryHtml = (s && s.summary)
+      ? '<div style="font-size:14px;color:#1e293b;line-height:1.55;margin-top:8px">' + esc(s.summary) + '</div>'
+      : '<div style="font-size:13px;color:#94a3b8;margin-top:8px">Daily summary not generated yet — it publishes each morning.</div>';
+    var followHtml = (s && s.followUp)
+      ? '<div style="margin-top:9px;background:#eef2ff;border-radius:8px;padding:9px 12px;font-size:13px;color:#3730a3;line-height:1.5"><b>▶ Follow up:</b> ' + esc(s.followUp) + '</div>'
+      : '';
     var tk = a.tickets || [];
-    var ticketsHtml = tk.length
-      ? tk.slice(0, 8).map(ticketRow).join('') + (tk.length > 8 ? '<div style="font-size:11px;color:#94a3b8;padding-top:3px">+' + (tk.length - 8) + ' more</div>' : '')
-      : '<div style="font-size:12px;color:#94a3b8;padding-top:4px">No open Jira tickets</div>';
+    var ticketsHtml = tk.length ? tk.map(ticketRow).join('') : '<div style="font-size:12px;color:#94a3b8;padding:4px 0">No open Jira tickets</div>';
     return '' +
-      '<div style="border:1px solid #e2e8f0;border-radius:12px;padding:14px 16px;margin-bottom:12px;background:#fff">' +
+      '<div style="border:1px solid #e2e8f0;border-left:4px solid ' + hcol + ';border-radius:12px;padding:14px 16px;margin-bottom:12px;background:#fff">' +
         '<div style="display:flex;align-items:center;justify-content:space-between;gap:12px">' +
           '<div style="font-size:16px;font-weight:700;color:#0f172a">' + esc(a.name) + '</div>' +
           '<div style="text-align:right">' + renewChip(a.days, a.upcoming) +
             '<div style="font-size:12px;color:#64748b">contract end ' + esc(a.endDate || '—') + '</div></div>' +
         '</div>' +
-        '<div style="margin-top:8px">' + chips +
-          '<span style="font-size:12px;color:#94a3b8;margin-left:4px">' +
-            tk.length + ' open ticket' + (tk.length === 1 ? '' : 's') + ' · ' + a.opps.length + ' opportunit' + (a.opps.length === 1 ? 'y' : 'ies') +
-          '</span></div>' +
+        (chips ? '<div style="margin-top:8px">' + chips + '</div>' : '') +
         summaryHtml +
-        '<div style="margin-top:8px">' + ticketsHtml + '</div>' +
+        followHtml +
+        '<details style="margin-top:10px">' +
+          '<summary style="cursor:pointer;font-size:12px;color:#64748b;outline:none">' +
+            tk.length + ' open ticket' + (tk.length === 1 ? '' : 's') + ' · ' + a.opps.length + ' opportunit' + (a.opps.length === 1 ? 'y' : 'ies') + ' — show' +
+          '</summary>' +
+          '<div style="margin-top:6px">' + ticketsHtml + '</div>' +
+        '</details>' +
       '</div>';
   }
   function header(email, n) {
