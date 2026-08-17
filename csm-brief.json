@@ -1,64 +1,20 @@
 {
-  "generatedAt": "2026-08-17T09:00:44.319+08:00",
+  "generatedAt": "2026-08-17T10:57:25.411+08:00",
   "accounts": [
     {
       "id": "mannings",
       "name": "Mannings",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "ETS-5788 in-progress 2d · +12 more · Appier x Mannings Bi-weekly Meeting Aug 20 · renewal due 2026-09-30 (44d).",
+      "insight": "PROJ-33713 backlog 0d · +12 more · Appier x Mannings Bi-weekly Meeting Aug 20 · renewal due 2026-09-30 (44d).",
       "diffs": [
         {
           "type": "new",
-          "text": "ETS-5788 Mannings app event data retrieval by order_id"
+          "text": "PROJ-33713 [Demo HK] Offboard Mannings data for demo account"
         },
         {
-          "type": "new",
-          "text": "SPJ-1356 Mannings onboarding preparation test & investigation"
-        },
-        {
-          "type": "new",
-          "text": "AEP-8055 [EUU] Mannings onboarding"
-        },
-        {
-          "type": "new",
-          "text": "AEP-8064 [AR mirror project] Mannings"
-        },
-        {
-          "type": "new",
-          "text": "AEP-8063 [UUID / EUID dedup + bucket deletion] Mannings"
-        },
-        {
-          "type": "new",
-          "text": "AEP-8062 [Data backfill] Mannings"
-        },
-        {
-          "type": "new",
-          "text": "AEP-8061 [EUU streaming] Mannings"
-        },
-        {
-          "type": "new",
-          "text": "AEP-8060 [Data pre-ingest] Mannings"
-        },
-        {
-          "type": "new",
-          "text": "AEP-8059 [Schema backfill] Mannings"
-        },
-        {
-          "type": "new",
-          "text": "AEP-8058 [EAM setup] Mannings"
-        },
-        {
-          "type": "new",
-          "text": "AEP-8057 [EAM config] Mannings"
-        },
-        {
-          "type": "new",
-          "text": "AEP-8056 [Event retention review] Mannings"
-        },
-        {
-          "type": "new",
-          "text": "ETS-5741 Mannings app event investigation"
+          "type": "close",
+          "text": "ETS-5741 closed"
         }
       ],
       "riskTags": [
@@ -87,6 +43,13 @@
         }
       ],
       "tickets": [
+        {
+          "key": "PROJ-33713",
+          "title": "[Demo HK] Offboard Mannings data for demo account",
+          "status": "backlog",
+          "assignee": "Mei-Cih Yeh",
+          "pinned": false
+        },
         {
           "key": "ETS-5788",
           "title": "Mannings app event data retrieval by order_id",
@@ -170,13 +133,6 @@
           "status": "backlog",
           "assignee": "Ann Huang",
           "pinned": false
-        },
-        {
-          "key": "ETS-5741",
-          "title": "Mannings app event investigation",
-          "status": "open",
-          "assignee": "David Li",
-          "pinned": false
         }
       ],
       "suggestions": [
@@ -198,16 +154,7 @@
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
       "insight": "PROJ-33694 backlog 5d · +1 more.",
-      "diffs": [
-        {
-          "type": "new",
-          "text": "PROJ-33694 [SCMP] Feature request on keyword dashboard"
-        },
-        {
-          "type": "new",
-          "text": "AID-8880 SCMP_Letzshop_AiDeal Lite_Jun 2022"
-        }
-      ],
+      "diffs": [],
       "riskTags": [
         "ticket",
         "stale"
@@ -279,64 +226,7 @@
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
       "insight": "BBT-5953 backlog 433d · +13 more.",
-      "diffs": [
-        {
-          "type": "new",
-          "text": "BBT-5953 [Luxgen] BB didn't block share to LINE friends even though m"
-        },
-        {
-          "type": "new",
-          "text": "AIQ-1200 Luxgen"
-        },
-        {
-          "type": "new",
-          "text": "EAM-227 [Remaining: AQ, AX, EDP, and keep BB] Offboard Request - Lux"
-        },
-        {
-          "type": "new",
-          "text": "BBT-3692 [Luxgen] User Feedback on Agent Analytics Dashboard: groupin"
-        },
-        {
-          "type": "new",
-          "text": "BBT-2905 [Luxgen] Copying imagemap modules inside a folder will rende"
-        },
-        {
-          "type": "new",
-          "text": "BBT-1061 [Luxgen] Timer for AI Rules"
-        },
-        {
-          "type": "new",
-          "text": "PROJ-22175 [Luxgen]  Data Column of Customer360 - Location / Language"
-        },
-        {
-          "type": "new",
-          "text": "PROJ-22178 [CW][Senheng][Luxgen] export BB tags import to AIXON "
-        },
-        {
-          "type": "new",
-          "text": "QGWL-11820 [Luxgen] Please help to check online/offline table name of L"
-        },
-        {
-          "type": "new",
-          "text": "BBB-1064 【RFQ】Luxgen_預約日期事先提醒"
-        },
-        {
-          "type": "new",
-          "text": "PROJ-21319 [Luxgen] AX segment anonymous user number looks suspicious"
-        },
-        {
-          "type": "new",
-          "text": "BBB-1011 【RFQ】LUXGEN_推導流工具數據 API 新增欄位"
-        },
-        {
-          "type": "new",
-          "text": "QGWL-10821 [Luxgen]Luxgen AIQUA Web SDK embedded BB Web Chat SDK"
-        },
-        {
-          "type": "new",
-          "text": "BBB-876 [CSM Check] Luxgen"
-        }
-      ],
+      "diffs": [],
       "riskTags": [
         "ticket",
         "stale"
@@ -452,69 +342,8 @@
       "name": "55688",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "red",
-      "insight": "AIQ-1343 open 270d · +14 more.",
-      "diffs": [
-        {
-          "type": "new",
-          "text": "AIQ-1343 55688"
-        },
-        {
-          "type": "new",
-          "text": "BBT-5597 [55688 / Cofit / TibaMe / Sealand] Quoted and handle Quoted "
-        },
-        {
-          "type": "new",
-          "text": "BBT-4897 [55688-潔衣家] 從用戶位置推薦附近可寄件超商"
-        },
-        {
-          "type": "new",
-          "text": "QGWL-19924 【55688】Timeout limitation in AQ JM should be shorten."
-        },
-        {
-          "type": "new",
-          "text": "BBT-5346 [55688] Rename menu section for link action"
-        },
-        {
-          "type": "new",
-          "text": "BBT-5368 [55688] Client would like to have more details condition for"
-        },
-        {
-          "type": "new",
-          "text": "BBT-4854 [55688-潔衣家] 在 Line 中完成會員綁定及訂單查詢"
-        },
-        {
-          "type": "new",
-          "text": "BBT-5275 [55688] Emoji cannot be searched"
-        },
-        {
-          "type": "new",
-          "text": "BBT-5292 [55688] Request for retargeting to messages read users"
-        },
-        {
-          "type": "new",
-          "text": "BBT-5191 [55688商城] 預估 Shopline 資料轉換可行性及成本"
-        },
-        {
-          "type": "new",
-          "text": "PHXX-3312 【55688】Timeout limitation in AQ JM should be shorten."
-        },
-        {
-          "type": "new",
-          "text": "QGWL-19925 CLONE - 【55688】Timeout limitation in AQ JM should be shorten"
-        },
-        {
-          "type": "new",
-          "text": "PSOPPTY-118 55688"
-        },
-        {
-          "type": "new",
-          "text": "CAM-262292 台灣大車隊55688 AIBID"
-        },
-        {
-          "type": "new",
-          "text": "CAM-265444 55688台灣大車隊AAS"
-        }
-      ],
+      "insight": "AIQ-1343 open 271d · +14 more.",
+      "diffs": [],
       "riskTags": [
         "ticket",
         "stale"
@@ -643,56 +472,7 @@
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
       "insight": "ETS-5507 open 13d · +11 more.",
-      "diffs": [
-        {
-          "type": "new",
-          "text": "ETS-5507 [田原香] Onboard Dummy AIRIS & Segment hub"
-        },
-        {
-          "type": "new",
-          "text": "APC-697 [田原香]  create your own template from scratch cannot be click"
-        },
-        {
-          "type": "new",
-          "text": "APC-698 [田原香]  create your own template from scratch cannot be click"
-        },
-        {
-          "type": "new",
-          "text": "QGWL-25930 [田原香] Request to allow to save template for on-site editor"
-        },
-        {
-          "type": "new",
-          "text": "QGWL-25627 [田原香] Enable send time optimization"
-        },
-        {
-          "type": "new",
-          "text": "AIQ-1389 田原香"
-        },
-        {
-          "type": "new",
-          "text": "QGWL-23645 [田原香] Creative studio button will always shows an unexpected"
-        },
-        {
-          "type": "new",
-          "text": "QGWL-22084 [田原香] Wishlist for segmentation request"
-        },
-        {
-          "type": "new",
-          "text": "QGWL-22014 [田原香] On-site experience leading platform abnormal behavior"
-        },
-        {
-          "type": "new",
-          "text": "CAM-347922 [Resize]田原香_Display_SG_0505-0511"
-        },
-        {
-          "type": "new",
-          "text": "CAM-346249 [Resize] 田原香_Display+Video_HK_0411-0421"
-        },
-        {
-          "type": "new",
-          "text": "QGWL-21289 [田原香] Onboard Product Feed"
-        }
-      ],
+      "diffs": [],
       "riskTags": [
         "ticket",
         "stale"
@@ -833,64 +613,7 @@
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
       "insight": "LEG-16086 open 87d · +12 more.",
-      "diffs": [
-        {
-          "type": "new",
-          "text": "LEG-16086 CLONE - Legend World Technology Development Limited_AIQUA_HK"
-        },
-        {
-          "type": "new",
-          "text": "CAM-384613 [Campaign續跑] Prizm_AIBID_App Installation Campaign_AOS_20260"
-        },
-        {
-          "type": "new",
-          "text": "CAM-382749 [CIR]Prizm_AIBID_Lucky Draw Campaign_Video Playable Endcard_"
-        },
-        {
-          "type": "new",
-          "text": "CAM-382624 [預算調整] Prizm_AIBID_Lucky Draw Campaign_Playable Merge Game_C"
-        },
-        {
-          "type": "new",
-          "text": "CAM-382623 [預算調整]Prizm_AIBID_App Installation Campaign_IOS & AOS_260204"
-        },
-        {
-          "type": "new",
-          "text": "CAM-382210 [預算調整]Prizm_AIBID_App Installation Campaign_IOS & AOS"
-        },
-        {
-          "type": "new",
-          "text": "CAM-379802 [Resize]Prizm_AIBID_Adaptation for Standard Banner_Garden_Lu"
-        },
-        {
-          "type": "new",
-          "text": "CAM-381638 [CIR]Prizm_AIBID_Standard Banner_Garden_Lucky Draw_IOS_26012"
-        },
-        {
-          "type": "new",
-          "text": "CAM-381637 [CIR]Prizm_AIBID_Standard Banner_Garden_Lucky Draw_AOS_26012"
-        },
-        {
-          "type": "new",
-          "text": "CAM-380560 [Launch] Prizm_AIBID_Lucky Draw Campaign_Playable Merge Game"
-        },
-        {
-          "type": "new",
-          "text": "CAM-380564 [Launch] Prizm_AIBID_Lucky Draw Campaign_Playable Merge Game"
-        },
-        {
-          "type": "new",
-          "text": "CAM-379776 [Launch] Prizm_AIBID_App Installation Campaign_Jan 2026 (AIB"
-        },
-        {
-          "type": "new",
-          "text": "CAM-379738 [Launch] Prizm_AIBID_App Installation Campaign_Jan 2026 (AIB"
-        },
-        {
-          "type": "close",
-          "text": "LEG-15992 closed"
-        }
-      ],
+      "diffs": [],
       "riskTags": [
         "ticket",
         "stale"
@@ -1000,24 +723,7 @@
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
       "insight": "BBT-7270 open 159d · +3 more.",
-      "diffs": [
-        {
-          "type": "new",
-          "text": "BBT-7270 [行動力國際 - Service Agent] Can't get the right custom answers"
-        },
-        {
-          "type": "new",
-          "text": "BBT-7024 [行動力國際 ACT Power] triggered wrong reply module when keyword "
-        },
-        {
-          "type": "new",
-          "text": "BBT-5599 [行動力國際 ACT POWER] Enable sales bot feature for 行動力國際"
-        },
-        {
-          "type": "new",
-          "text": "BBT-4660 [行動力國際] BotBonnie to Phoenix Account Migration / Knowledge B"
-        }
-      ],
+      "diffs": [],
       "riskTags": [
         "ticket",
         "stale"
