@@ -2,6 +2,7 @@
   'use strict';
 
   const AR_WORKER = 'https://csm-brief-worker.williamlin12.workers.dev';
+  const AR_URL_KEY = 'ar_sheet_url';
   function arDefaultUrl(){
     var e = (typeof arGetCurrentEmail === 'function') ? arGetCurrentEmail() : '';
     return e ? (AR_WORKER + '/ar-csv?csm=' + encodeURIComponent(e)) : '';
