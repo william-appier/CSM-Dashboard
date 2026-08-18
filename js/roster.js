@@ -110,7 +110,7 @@
       var prods = {}; opps.forEach(function (o) { prods[product(o && o.name ? o.name : o)] = 1; });
       var tickets = tix[a.id] || [];
       return {
-        name: a.account, endDate: a.endDate || '', days: d, upcoming: (d != null && d >= 0),
+        id: a.id, name: a.account, endDate: a.endDate || '', days: d, upcoming: (d != null && d >= 0),
         products: Object.keys(prods).sort(), opps: opps, tickets: tickets
       };
     }).sort(function (a, b) {
