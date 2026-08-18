@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-18T09:00:44.686+08:00",
+  "generatedAt": "2026-08-18T09:36:06.485+08:00",
   "accounts": [
     {
       "id": "mannings",
@@ -7,16 +7,7 @@
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
       "insight": "PROJ-33713 backlog 0d · +12 more · Appier x Mannings Bi-weekly Meeting Aug 20 · renewal due 2026-09-30 (43d).",
-      "diffs": [
-        {
-          "type": "new",
-          "text": "QGWL-26114 [Mannings] OJM node will gone after adding wait for conditio"
-        },
-        {
-          "type": "close",
-          "text": "ETS-5788 closed"
-        }
-      ],
+      "diffs": [],
       "riskTags": [
         "ticket",
         "renewal",
