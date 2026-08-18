@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-17T11:05:11.376+08:00",
+  "lastUpdated": "2026-08-18T09:44:54.215+08:00",
   "rules": [
     {
       "id": "okr-consolidate",
@@ -678,7 +678,7 @@
     }
   ],
   "ticketSnapshot": {
-    "generatedAt": "2026-08-17T03:05:08.896Z",
+    "generatedAt": "2026-08-18T01:44:53.810Z",
     "keys": {
       "55688": [
         "AIQ-1343",
@@ -699,7 +699,6 @@
       ],
       "mannings": [
         "PROJ-33713",
-        "ETS-5788",
         "SPJ-1356",
         "AEP-8055",
         "AEP-8064",
@@ -710,7 +709,8 @@
         "AEP-8059",
         "AEP-8058",
         "AEP-8057",
-        "AEP-8056"
+        "AEP-8056",
+        "QGWL-26114"
       ],
       "scmp": [
         "PROJ-33694",
@@ -774,8 +774,22 @@
       ]
     },
     "titles": {
+      "AIQ-1343": "55688",
+      "BBT-5597": "[55688 / Cofit / TibaMe / Sealand] Quoted and handle Quoted message",
+      "BBT-4897": "[55688-潔衣家] 從用戶位置推薦附近可寄件超商",
+      "QGWL-19924": "【55688】Timeout limitation in AQ JM should be shorten.",
+      "BBT-5346": "[55688] Rename menu section for link action",
+      "BBT-5368": "[55688] Client would like to have more details condition for line push",
+      "BBT-4854": "[55688-潔衣家] 在 Line 中完成會員綁定及訂單查詢",
+      "BBT-5275": "[55688] Emoji cannot be searched",
+      "BBT-5292": "[55688] Request for retargeting to messages read users",
+      "BBT-5191": "[55688商城] 預估 Shopline 資料轉換可行性及成本",
+      "PHXX-3312": "【55688】Timeout limitation in AQ JM should be shorten.",
+      "QGWL-19925": "CLONE - 【55688】Timeout limitation in AQ JM should be shorten.",
+      "PSOPPTY-118": "55688",
+      "CAM-262292": "台灣大車隊55688 AIBID",
+      "CAM-265444": "55688台灣大車隊AAS",
       "PROJ-33713": "[Demo HK] Offboard Mannings data for demo account",
-      "ETS-5788": "Mannings app event data retrieval by order_id",
       "SPJ-1356": "Mannings onboarding preparation test & investigation",
       "AEP-8055": "[EUU] Mannings onboarding",
       "AEP-8064": "[AR mirror project] Mannings",
@@ -787,6 +801,7 @@
       "AEP-8058": "[EAM setup] Mannings",
       "AEP-8057": "[EAM config] Mannings",
       "AEP-8056": "[Event retention review] Mannings",
+      "QGWL-26114": "[Mannings] OJM node will gone after adding wait for condition node at the front",
       "PROJ-33694": "[SCMP] Feature request on keyword dashboard",
       "AID-8880": "SCMP_Letzshop_AiDeal Lite_Jun 2022",
       "BBT-5953": "[Luxgen] BB didn't block share to LINE friends even though module contains \"share\" action",
@@ -803,21 +818,6 @@
       "BBB-1011": "【RFQ】LUXGEN_推導流工具數據 API 新增欄位",
       "QGWL-10821": "[Luxgen]Luxgen AIQUA Web SDK embedded BB Web Chat SDK",
       "BBB-876": "[CSM Check] Luxgen",
-      "AIQ-1343": "55688",
-      "BBT-5597": "[55688 / Cofit / TibaMe / Sealand] Quoted and handle Quoted message",
-      "BBT-4897": "[55688-潔衣家] 從用戶位置推薦附近可寄件超商",
-      "QGWL-19924": "【55688】Timeout limitation in AQ JM should be shorten.",
-      "BBT-5346": "[55688] Rename menu section for link action",
-      "BBT-5368": "[55688] Client would like to have more details condition for line push",
-      "BBT-4854": "[55688-潔衣家] 在 Line 中完成會員綁定及訂單查詢",
-      "BBT-5275": "[55688] Emoji cannot be searched",
-      "BBT-5292": "[55688] Request for retargeting to messages read users",
-      "BBT-5191": "[55688商城] 預估 Shopline 資料轉換可行性及成本",
-      "PHXX-3312": "【55688】Timeout limitation in AQ JM should be shorten.",
-      "QGWL-19925": "CLONE - 【55688】Timeout limitation in AQ JM should be shorten.",
-      "PSOPPTY-118": "55688",
-      "CAM-262292": "台灣大車隊55688 AIBID",
-      "CAM-265444": "55688台灣大車隊AAS",
       "ETS-5507": "[田原香] Onboard Dummy AIRIS & Segment hub",
       "APC-697": "[田原香]  create your own template from scratch cannot be clicked under campaign set up",
       "APC-698": "[田原香]  create your own template from scratch cannot be clicked under campaign set up",
@@ -1034,7 +1034,7 @@
       "created": "2026-07-31",
       "status": "open",
       "snoozedUntil": null,
-      "lastSeen": "2026-08-17"
+      "lastSeen": "2026-08-18"
     },
     {
       "id": "cmt-tiangyuanxiang-check-segmentedcampaign-numbers",
@@ -1046,7 +1046,7 @@
       "source": "slack",
       "sourceUrl": "https://appier.slack.com/archives/G01137M30B1/p1785743294120839",
       "created": "2026-08-03",
-      "lastSeen": "2026-08-17",
+      "lastSeen": "2026-08-18",
       "status": "open",
       "snoozedUntil": null
     },
