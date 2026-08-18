@@ -1,39 +1,39 @@
 {
   "55688": {
-    "summary": "15 open tickets, 1 blocked. Renews in 371d. Oldest open: CAM-265444, 964d.",
-    "followUp": "Unblock QGWL-19924 (Shiv Raj) — Timeout limitation in AQ JM should be shorten.",
+    "summary": "Red. Two bots (代駕 / 招募) lapsed 2026-07-31 and only one truly churned — ownership still unconfirmed. 北區 is renewed to 2027 with its platform extension already filed. Active work is the Service Agent RFQ and a 商城 Shopline data-migration feasibility estimate.",
+    "followUp": "Confirm with the client which of 代駕 / 招募 actually churned, and whether the other renews or offboards.",
     "health": "red",
-    "generatedAt": "2026-08-18T01:48:24.536Z"
+    "generatedAt": "2026-08-18T02:37:08.852Z"
   },
   "mannings": {
-    "summary": "13 open tickets. Renews in 43d.",
-    "followUp": "Follow up QGWL-26114 (6d, luke.chien) — OJM node will gone after adding wait for condition node at the front",
+    "summary": "Steady bi-weekly cadence with Rola Chung; the AIXON→AIRIS Q4 upgrade is the main workstream. Open work is mostly AEP data-pipeline backlog (EUU streaming, backfill, dedup) plus a newly surfaced OJM journey-node bug. Renewal (43d) is already signed — no action needed.",
+    "followUp": "Prep the Aug 20 bi-weekly: bring AIRIS upgrade status and escalate the new OJM node bug (QGWL-26114) to product.",
     "health": "yellow",
-    "generatedAt": "2026-08-18T01:48:24.536Z"
+    "generatedAt": "2026-08-18T02:37:08.852Z"
   },
   "scmp": {
-    "summary": "2 open tickets. Renews in 340d. Oldest open: AID-8880, 1475d.",
-    "followUp": "Follow up AID-8880 (1475d, Eric Tung) — SCMP_Letzshop_AiDeal Lite_Jun 2022",
+    "summary": "Quiet account, but the AIXON offboard you promised on Jul 31 is still unfiled, pending AIRIS onboarding sign-off. AIRIS is contracted to 2027, so churn is limited to AX. A keyword-dashboard feature request is sitting in backlog.",
+    "followUp": "Confirm SCMP AIRIS onboarding is complete, then file the AX offboard request — open 18 days now.",
     "health": "yellow",
-    "generatedAt": "2026-08-18T01:48:24.536Z"
+    "generatedAt": "2026-08-18T02:37:08.852Z"
   },
   "1010hope": {
-    "summary": "No open Jira tickets. No contract end date on file.",
-    "followUp": "",
+    "summary": "Healthy — no open tickets. AIQUA onboarding and the klickngo API integration are the live workstreams, both with Mark Liu (OOO Aug 17–25). Blind spot: no contract end date on file, so renewal tracking can't fire.",
+    "followUp": "Get the contract end date on record; sync with Mark Liu on onboarding when he's back Aug 25.",
     "health": "green",
-    "generatedAt": "2026-08-18T01:48:24.536Z"
+    "generatedAt": "2026-08-18T02:37:08.852Z"
   },
   "luxgen": {
-    "summary": "14 open tickets. Renews in 96d. Oldest open: BBB-876, 1550d.",
-    "followUp": "Chase PROJ-22175 (in progress, Mark Liu) — Data Column of Customer360 - Location / Language",
+    "summary": "BB-only account carrying a large stale defect backlog (LINE-share block, imagemap copy, AI-rules timer) and a partial offboard in flight (keep BB; drop AQ/AX/EDP). No meetings on the calendar — the standing risk signal here.",
+    "followUp": "Book a Luxgen sync (none scheduled) and push offboard request EAM-227 to closure.",
     "health": "yellow",
-    "generatedAt": "2026-08-18T01:48:24.536Z"
+    "generatedAt": "2026-08-18T02:37:08.852Z"
   },
   "tiangyuanxiang": {
-    "summary": "12 open tickets. Renews in 182d. Oldest open: QGWL-21289, 537d.",
-    "followUp": "Chase CAM-347922 (in progress, cherry.lin) — 田原香_Display_SG_0505-0511",
+    "summary": "Post-migration monitoring phase with a weekly Tuesday sync; focus is new use-case development (EUU onboarding and Campaign Agent are done). You owe Ted a segmented-campaign anomaly check that was due Aug 7 and is now overdue.",
+    "followUp": "Overdue: run the post-migration segmented-campaign number check for Ted and report back today.",
     "health": "yellow",
-    "generatedAt": "2026-08-18T01:48:24.536Z"
+    "generatedAt": "2026-08-18T02:37:08.852Z"
   },
   "momax": {
     "summary": "2 open tickets. No contract end date on file. Oldest open: CAM-257353, 1027d.",
@@ -42,16 +42,16 @@
     "generatedAt": "2026-08-18T01:48:24.536Z"
   },
   "citysuper": {
-    "summary": "13 open tickets, mostly prizm_aibid_app-related. No contract end date on file. Oldest open: CAM-379776, 216d.",
-    "followUp": "Chase CAM-379802 (in progress, ivy.kan) — Prizm_AIBID_Adaptation for Standard Banner_Garden_Lucky Draw_260114",
+    "summary": "Context gap — no contract end date or project background on file. Workload is almost entirely Prizm AIBID ad-campaign operations (budget adjustments, resizes, CIR) plus a long-open AIQUA HK Order Form.",
+    "followUp": "Ask William for City Super's contract date and project scope; close the 88-day AIQUA HK Order Form (LEG-16086).",
     "health": "yellow",
-    "generatedAt": "2026-08-18T01:48:24.536Z"
+    "generatedAt": "2026-08-18T02:37:08.852Z"
   },
   "xindongli": {
-    "summary": "4 open tickets, mostly bot-related. No contract end date on file. Oldest open: BBT-4660, 542d.",
-    "followUp": "Follow up BBT-4660 (542d, Salem Chen) — BotBonnie to Phoenix Account Migration / Knowledge Bot Feature Activation",
+    "summary": "In account handover. The open threads are the BotBonnie→Phoenix migration and Knowledge Bot / sales-bot activation, alongside a long-standing Service Agent custom-answer bug (~160 days).",
+    "followUp": "Drive BBT-4660 (BB→Phoenix migration + Knowledge Bot) and clear the 160-day custom-answer bug BBT-7270.",
     "health": "yellow",
-    "generatedAt": "2026-08-18T01:48:24.536Z"
+    "generatedAt": "2026-08-18T02:37:08.852Z"
   },
   "caco-加州椰子": {
     "summary": "No open Jira tickets. Renews in 132d.",
