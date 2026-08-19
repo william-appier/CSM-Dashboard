@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-18T10:35:11.645+08:00",
+  "generatedAt": "2026-08-19T09:00:43.953+08:00",
   "accounts": [
     {
       "id": "mannings",
       "name": "Mannings",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "PROJ-33713 backlog 1d · +12 more · Appier x Mannings Bi-weekly Meeting Aug 20 · renewal due 2026-09-30 (43d).",
+      "insight": "PROJ-33713 backlog 1d · +12 more · Appier x Mannings Bi-weekly Meeting Aug 20 · renewal due 2026-09-30 (42d).",
       "diffs": [],
       "riskTags": [
         "ticket",
@@ -130,7 +130,7 @@
         {
           "priority": "high",
           "label": "Renewal · High",
-          "text": "Mannings contract due 2026-09-30 (43d left) — confirm status now"
+          "text": "Mannings contract due 2026-09-30 (42d left) — confirm status now"
         },
         {
           "priority": "medium",
@@ -144,7 +144,7 @@
       "name": "SCMP",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "PROJ-33694 backlog 6d · +1 more.",
+      "insight": "PROJ-33694 backlog 7d · +1 more.",
       "diffs": [],
       "riskTags": [
         "ticket",
@@ -216,7 +216,7 @@
       "name": "Luxgen",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "BBT-5953 backlog 434d · +13 more.",
+      "insight": "BBT-5953 backlog 435d · +13 more.",
       "diffs": [],
       "riskTags": [
         "ticket",
@@ -333,7 +333,7 @@
       "name": "55688",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "red",
-      "insight": "AIQ-1343 open 271d · +14 more.",
+      "insight": "AIQ-1343 open 272d · +14 more.",
       "diffs": [],
       "riskTags": [
         "ticket",
@@ -462,7 +462,7 @@
       "name": "田原香",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "ETS-5507 open 14d · +11 more.",
+      "insight": "ETS-5507 open 15d · +11 more.",
       "diffs": [],
       "riskTags": [
         "ticket",
@@ -570,7 +570,7 @@
       "name": "Momax",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "CAM-350143 open 460d · +1 more.",
+      "insight": "CAM-350143 open 461d · +1 more.",
       "diffs": [],
       "riskTags": [
         "ticket",
@@ -603,7 +603,7 @@
       "name": "City Super",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "LEG-16086 open 88d · +12 more.",
+      "insight": "LEG-16086 open 89d · +12 more.",
       "diffs": [],
       "riskTags": [
         "ticket",
@@ -713,7 +713,7 @@
       "name": "行動力國際",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "BBT-7270 open 160d · +3 more.",
+      "insight": "BBT-7270 open 161d · +3 more.",
       "diffs": [],
       "riskTags": [
         "ticket",
