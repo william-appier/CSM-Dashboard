@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "updated": "2026-08-12",
+    "updated": "2026-08-19",
     "source": "Confluence CSM FAQ (AI 維護)",
     "indexUrl": "https://appier.atlassian.net/wiki/spaces/~712020045fe11d77e649819f2b2a67a185fdf0/pages/5232100110",
     "note": "由排程從 Confluence 五個分類頁自動重新生成之快取。urgency 未標者預設 medium。",
@@ -86,7 +86,7 @@
       "product": "AIQUA",
       "last_verified": "2026-05-20",
       "source": "https://appier.slack.com/archives/G01137M30B1/p1779275016822799",
-      "status": "active",
+      "status": "stale",
       "urgency": "medium",
       "a": "PHX(regular inweb)+ Journey → PHX 先跳。兩條都是 Journey 同時到 inweb node → 前端一起 fetch、誰先顯示隨機,與活動建立先後無關(實測結論)。"
     },
@@ -122,6 +122,50 @@
       "status": "stale",
       "urgency": "medium",
       "a": "condition 篩選 `bb_tag_names_line` 可行;add tag 不能直接當 condition,但可用於「等待條件」或「旅程進入即時條件」。OJM 要先發過 LINE 訊息(有 LINE identify)後續貼標才有效,或改用 API 貼標。"
+    },
+    {
+      "id": "AQ-023",
+      "category": "AIQUA",
+      "q": "客戶從 FCM 切換到 p8(APNs)整合後,測試 app push 收不到,怎麼排查?",
+      "product": "AIQUA",
+      "last_verified": "2026-08-17",
+      "source": "https://appier.atlassian.net/browse/ETS-4446",
+      "status": "active",
+      "urgency": "medium",
+      "a": "先確認裝置註冊的是 APNs token 而非 FCM token——最常見根因是裝置送到 APNs 的仍是 FCM registration token,APNs 以 `BadDeviceToken`(HTTP 400) 拒收。判斷:APNs token 是 64 字元 hex;若 `profiles_gcm_id` 仍是 FCM 格式即代表未更新。解法:(1) 確認測試機已更新為 p8 版 SDK;(2) 請使用者重開 App 觸發重新註冊、覆蓋掉舊 FCM token;(3) 重送測試。個別 user 仍收不到再查該 user 手機通知權限(`profiles_aiq_push_enabled` 為 false 代表關通知)。SDK 更新、重開 App、通知權限 CSM 可先請客戶自查;後台 token 狀態需 RD/TSTC 協助查。channel:iOS app push;stage:上線前測試。"
+    },
+    {
+      "id": "AQ-024",
+      "category": "AIQUA",
+      "q": "客戶要在 AIQUA 帳號做 PII 遮罩,有哪些設定選項?",
+      "product": "AIQUA",
+      "last_verified": "2026-08-17",
+      "source": "https://appier.atlassian.net/browse/ETS-5698",
+      "status": "active",
+      "urgency": "medium",
+      "a": "有兩個獨立設定,可擇一或並用,任何欄位(含客戶自訂欄位)只要給精確欄位名都能遮。(1) UI 遮罩(`piiDataMaskingRuleByRole`):依角色遮,選定角色登入看 Recent/Sample Users 時該欄位顯示 *****;只對選到的角色生效,Admin 除非也勾選否則仍看得到(不建議勾 Admin)。(2) 報表下載遮罩(`piiDataDisabledInReports`):把欄位整欄從 CSV 匯出(Segment/Campaign Report)移除,對所有人含 Admin 生效、無分角色。提醒:Developer 角色預設就不能發送 campaign 或下載報表,所以只想擋下載時,設定 (1) 給 Developer 通常就夠。需開票給 TSTC/RD 設定,CSM 無法自解。stage:導入/需求異動。"
+    },
+    {
+      "id": "AQ-025",
+      "category": "AIQUA",
+      "q": "AIQUA Recommendation 曝光正常但 CTR 突然大幅下滑,先查什麼?",
+      "product": "AIQUA",
+      "last_verified": "2026-08-17",
+      "source": "https://appier.atlassian.net/browse/QGWL-18384",
+      "status": "active",
+      "urgency": "medium",
+      "a": "先確認客戶前端有沒有用 API 回傳的 URL——最常見根因是客戶沒使用 API 回傳的網址,導致 `recommendation_clicked` 事件沒被自動送出、CTR 看起來下滑。Appier 的「自動送出 click 事件」機制綁在 API 回傳的 URL 上,客戶自行改用別的連結就不會觸發。解法:請客戶端工程師改用 API 回傳的 URL(或依 recommendation 埋點文件補送 clicked 事件)。屬客戶端埋點問題,CSM 可先自行比對再請客戶開發修正。channel:web/recommendation;stage:上線後追蹤。"
+    },
+    {
+      "id": "AQ-026",
+      "category": "AIQUA",
+      "q": "AIQUA 對 Kakao 各渠道(Chingu Talk / Brand Message / Kakao Moment)目前支援狀態?會受 Kakao 政策變更影響嗎?",
+      "product": "AIQUA",
+      "last_verified": "2026-08-17",
+      "source": "https://appier.slack.com/archives/CBNCZT3LJ/p1786407699653439",
+      "status": "active",
+      "urgency": "medium",
+      "a": "目前都還能正常發送,但兩個 Kakao 渠道走不同整合、受影響程度不同。Kakao Chingu Talk 走 Infobip:Chingu Talk 已於 2026/1/1 停用,Infobip 提供暫時轉換為 Brand Talk 的機制、Appier 已完成串接,所以現在仍全功能運作;Infobip 預計 2026 年底關閉此轉換支援,屆時 Appier 會重新與 Infobip 整合 Brand Talk。Kakao Moment 是 Appier 與 Kakao 直接整合(與 Infobip 無關),不在此次停用範圍、持續支援;但 Moment 支援一般圖片、不支援動態內容(dynamic content)的圖片(僅支援動態文字),因 Kakao 圖片 API 設計成本過高。受眾限制:即使轉為 Brand Message,仍只能發給訂閱者(chingu),非訂閱者收不到。channel:Kakao;stage:售前/需求評估。"
     },
     {
       "id": "AQ-011",
@@ -172,11 +216,11 @@
       "category": "AIQUA",
       "q": "客戶啟用 EUU 後,原本的 AQ Segment 會怎樣?campaign 條件用到 AQ segment 會如何?",
       "product": "AIQUA",
-      "last_verified": "2026-07-22",
+      "last_verified": "2026-08-17",
       "source": "https://appier.atlassian.net/wiki/pages/viewpage.action?pageId=5231083629",
       "status": "active",
       "urgency": "medium",
-      "a": "Segment Hub 啟用後 AQ Segments 變唯讀,需與 TSTC 合作把 campaign 遷移到 Unified Segments。注意 FallbackMode:campaign 條件含任何 AQ segment 就會進 FallbackMode 走 Legacy AQ path 而非 EUU。新客戶直接啟用 Segment Hub;既有客戶需啟用 Segment Hub + Enterprise Segment M3 再用工具遷移(遷移工具 TBD)。"
+      "a": "Segment Hub 啟用後 AQ Segments 變唯讀,需與 TSTC 合作把 campaign 遷移到 Unified Segments。注意 FallbackMode:campaign 條件含任何 AQ segment 就會進 FallbackMode 走 Legacy AQ path 而非 EUU。新客戶直接啟用 Segment Hub;既有客戶需啟用 Segment Hub + Enterprise Segment M3 再用工具遷移(遷移工具已上線:見 [Handbook] AQ to Unified Segment Migration Tool,pageId 5256872022;需 git clone + 向工程團隊索取 secret config,屬工程/TS 執行,非 CSM 自助)。"
     },
     {
       "id": "AQ-016",
@@ -328,7 +372,7 @@
       "product": "AIRIS",
       "last_verified": "2026-05-14",
       "source": "https://appier.slack.com/archives/G01137M30B1/p1778759221247689",
-      "status": "active",
+      "status": "stale",
       "urgency": "medium",
       "a": "(1) 請客戶提供最重視報表(≤10 個)前後比對;必查:總使用者數、總事件數(by event name)、常用報表。(2) 有 k/i 客戶注意:ki 邏輯改變會使圈受眾人數激增(付費 channel 尤其小心);舊 ki 是 event、新 ki 是 profile,不支援 compare by ki,只能 segment/perform by 篩選。(3) 有用 property update 者需在 backfill 完成時 toggle on。(4) AEP 解掉 profile 未 merge 問題 → 上線後總使用者數會下降,務必事先與客戶溝通。可參考南一書局比對 sheet 模板(差異 >±5% 標色)。"
     },
@@ -397,6 +441,17 @@
       "status": "active",
       "urgency": "low",
       "a": "屬預期行為,非 bug。keyword pipeline 使用 t-2 的流量資料(刻意等上游 pipeline 跑完),所以最新一天通常當天稍晚才生成、前一天也可能還沒好。每一天的 keyword 仍代表「該日自己流量」產生的 keyword,不是把前幾天加總。客戶反映 trend report keyword 近日無資料,先確認是否落在 t-2 視窗內、再稍等即可(前例:SCMP p_2f48newz 8/9 資料當天尚未生成,Yung-Hsiu Chen 確認)。"
+    },
+    {
+      "id": "AR-017",
+      "category": "AIRIS",
+      "q": "BB 的 product tag / 一般標籤能匯入 AIRIS 並用於分眾嗎?",
+      "product": "AIRIS",
+      "last_verified": "2026-08-17",
+      "source": "https://appier.slack.com/archives/C078AMBHEAV/p1786332462464479",
+      "status": "active",
+      "urgency": "low",
+      "a": "可以,一般 BB tags(如 `bb_tags_line`)會進 AIRIS,和其他 tag 一樣可在 AIRIS 分眾選用。客戶若之後採購 BB Service Agent 開始用 product tag,這些走一般 BB tag 機制即會流入 AIRIS。與 AQ-010(把 BB add-tag 當 AIQUA Journey 觸發/條件)為不同情境:此題著重「BB 標籤能否進 AIRIS 供分眾」。stage:售前/需求評估。"
     },
     {
       "id": "AR-010",
@@ -762,6 +817,61 @@
       "a": "額度不足時 broadcast 報表目前不會顯示錯誤,屬已知問題,勿誤判為 bug。舊行為:narrow-cast 不報錯、看似部分送達;近期已改為額度不足的 narrow-cast 一律送 0 人(不再部分送達),但報表仍不顯示錯誤。完整的「額度不足應擋下排程/發送」尚未在此票修完,將另開 epic 處理。遇客戶反映漏發、發不出去,先確認是否 LINE 月額度(push limit)用罄(相關案例:MAZDA、Carches)。需 RD、追蹤中。"
     },
     {
+      "id": "BB-032",
+      "category": "BotBonnie",
+      "q": "BB 在 OJM 可選的 click 類事件(click / url_click / open_click / click_referral_url)定義怎麼區分?LINE 智能連結要選哪個?",
+      "product": "BotBonnie",
+      "last_verified": "2026-08-17",
+      "source": "https://appier.slack.com/archives/C078AMBHEAV/p1786508664521219",
+      "status": "active",
+      "urgency": "medium",
+      "a": "依「進入方式」與「按鈕動作類型」決定;LINE 智能連結是 `open_click`、LINE 短網址開啟對話是 `click_referral_url`。細節:QR code 掃描與 LINE 短網址開啟對話算 `click_referral_url`;LINE 智能連結算 `open_click`;訊息內按鈕動作設「開啟 URL」記為 `url_click`,設「前往對話模組」記為 `click`。若把智能連結放進「開啟 URL」按鈕,`url_click` 與 `open_click` 會同時產生(依 Salem 文件 `open_click` 會 merge 成 `url_click`)。要在 OJM 用 BB event 當即時觸發(Real time trigger,非 Past condition),該 event 需是 BB 有送到 ESS/AEP 的(如 follow、add_tag 等)。channel:LINE;處理方:CSM 自解(定義類)。"
+    },
+    {
+      "id": "BB-033",
+      "category": "BotBonnie",
+      "q": "客戶活動需要大量使用者的機器人為開啟狀態,可以批次開啟 bot status 嗎?",
+      "product": "BotBonnie",
+      "last_verified": "2026-08-17",
+      "source": "https://appier.slack.com/archives/C078AMBHEAV/p1786531054214579",
+      "status": "active",
+      "urgency": "medium",
+      "a": "目前沒有批次開啟功能,需開 BBT 票請 PM 做一次性 operation(如 BBT-7900)。但先釐清是否真的需要:若機器人設定為「暫停到對話結束」,由按鈕觸發 postback 模組的流程在暫停狀態下仍會運作;只有需要使用者「直接打字」輸入的流程,暫停時不會回覆,這種才需恢復 bot。建議客戶盡量用按鈕/postback 設計流程即可免恢復;真的需要批次恢復再開票,產品端會排入後續優化。channel:LINE;處理方:開票 (BBT)。"
+    },
+    {
+      "id": "BB-034",
+      "category": "BotBonnie",
+      "q": "設定好 Service Agent 後按 Deploy Bot 卻無法發布/設定沒存下來,怎麼辦?",
+      "product": "BotBonnie",
+      "last_verified": "2026-08-17",
+      "source": "https://appier.slack.com/archives/C078AMBHEAV/p1786694521994229",
+      "status": "active",
+      "urgency": "medium",
+      "a": "先檢查初始設定(initial setup)模組是否留空——最常見原因是該模組沒有任何 configuration,導致無法發布。補上 initial setup 模組設定後即可正常 Deploy。多位同事在初次設定 Service Agent 時遇到同樣問題。channel:LINE;處理方:CSM 自解;stage:導入/onboarding。"
+    },
+    {
+      "id": "BB-035",
+      "category": "BotBonnie",
+      "q": "BB 群發(broadcast)/分眾(narrow-cast)的開封率/已讀定義是誰決定的?",
+      "product": "BotBonnie",
+      "last_verified": "2026-08-17",
+      "source": "https://appier.slack.com/archives/C078AMBHEAV/p1786414785499979",
+      "status": "active",
+      "urgency": "low",
+      "a": "開封/已讀數字來自 LINE,定義由 LINE 決定,非 Appier 計算。報表數字取自 LINE API(unit-based statistics);LINE 文件未明列「是否需完整捲到底才算開封」時 Appier 無法額外定義,建議請客戶直接向 LINE 確認。channel:LINE;處理方:CSM 自解。"
+    },
+    {
+      "id": "BB-036",
+      "category": "BotBonnie",
+      "q": "大型現場活動(展會)BB 系統可承載多少同時使用者?",
+      "product": "BotBonnie",
+      "last_verified": "2026-08-17",
+      "source": "https://appier.slack.com/archives/C078AMBHEAV/p1786419811605479",
+      "status": "active",
+      "urgency": "low",
+      "a": "一般展會等級流量(如尖峰約 250 人同時、每日約千人)不會有承載問題。目前無官方精確上限數字,但以抽獎為例每秒約 100 抽都撐得住,前述現場活動流量完全沒問題。若客戶要正式書面上限,需再向產品/RD 確認。channel:LINE;stage:上線前測試。"
+    },
+    {
       "id": "AA-001",
       "category": "AdCreative",
       "q": "Enterprise 客戶每月補點日被鎖付款頁(paywall)、credit 數字錯誤,怎麼處理?",
@@ -1010,7 +1120,7 @@
       "product": "Other",
       "last_verified": "2026-05-20",
       "source": "https://appier.slack.com/archives/G01137M30B1/p1779261458215949",
-      "status": "active",
+      "status": "stale",
       "urgency": "medium",
       "a": "Web/iOS/Android SDK 都沒有 IP Blocking。SDK 團隊評估中(需累積客戶案例);GCR 僅 2020 Readmoo 有類似 bot traffic 案例。客戶提出時回報 SDK 團隊累積 use case。"
     },
