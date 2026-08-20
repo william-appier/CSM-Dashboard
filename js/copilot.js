@@ -18,7 +18,8 @@
 (function () {
   "use strict";
 
-  var COPILOT_ENDPOINT = "https://csm-brief-worker.williamlin12.workers.dev/copilot";
+  var WORKER = "https://csm-brief-worker.williamlin12.workers.dev";
+  var COPILOT_ENDPOINT = WORKER + "/copilot";
   var DEMO_MODE = true; // ← 後端 /copilot 上線後改為 false
 
   /* --------------------------- helpers --------------------------- */
@@ -39,7 +40,7 @@
   /* =========================================================================
    * 1) scrapeDashboardData — 讀畫面 data-cop-* → 結構化 JSON
    * ========================================================================= */
-  function scrapeDashboardData() {
+  async function scrapeDashboardData() {
     var out = { csm: currentEmail(), date: todayStr(), modules: {}, counts: {} };
     var mods = document.querySelectorAll("[data-cop-module]");
     for (var i = 0; i < mods.length; i++) {
@@ -61,11 +62,42 @@
         if (Object.keys(rec).length) rows.push(rec);
       }
       out.modules[modName] = rows;
-      out.counts[modName] = rows.length;
     }
+    // 後備：面板可從任何分頁開啟，而 My Accounts / 任務管理 是延遲渲染的——若畫面上
+    // 還沒有這些模組的 data-cop 資料，直接向來源抓一份，達成「全局每日洞察」。
+    if (!(out.modules.accounts && out.modules.accounts.length)) {
+      try { out.modules.accounts = await fetchAccountsData(); } catch (e) {}
+    }
+    if (!(out.modules.tasks && out.modules.tasks.length)) {
+      try { out.modules.tasks = await fetchTasksData(); } catch (e) {}
+    }
+    Object.keys(out.modules).forEach(function (m) { out.counts[m] = (out.modules[m] || []).length; });
     return out;
   }
   window.scrapeDashboardData = scrapeDashboardData; // 方便 console 測試
+
+  function fetchJSON(url, fallback) {
+    return fetch(url, { cache: "no-store" })
+      .then(function (r) { return r.ok ? r.json() : fallback; })
+      .catch(function () { return fallback; });
+  }
+  async function fetchAccountsData() {
+    var email = currentEmail(); if (!email) return [];
+    var map = await fetchJSON(WORKER + "/mapping?t=" + Date.now(), {});
+    var summ = await fetchJSON("accountSummaries.json?t=" + Date.now(), {});
+    var mine = (map && map[email]) || [];
+    return mine.map(function (a) {
+      var s = summ[a.id] || {};
+      var d = a.endDate ? Math.round((new Date(a.endDate) - Date.now()) / 86400000) : null;
+      return { name: a.account, health: s.health || "", renewDays: (d == null ? "" : String(d)), summary: s.summary || "" };
+    });
+  }
+  async function fetchTasksData() {
+    var d = await fetchJSON(WORKER + "/tasks?t=" + Date.now(), { tasks: [] });
+    return (d.tasks || []).map(function (t) {
+      return { name: t.Task_Name, status: String(t.Status || "").toLowerCase(), due: String(t.Due_Date || "").slice(0, 10), reminder: t.Reminder_Freq || "" };
+    });
+  }
 
   /* =========================================================================
    * 2) fetchCopilotInsight — 呼叫後端（或 DEMO 本地產生）
@@ -115,12 +147,11 @@
     var red = acc.filter(function (a) { return a.health === "red"; });
     var yellow = acc.filter(function (a) { return a.health === "yellow"; });
     var expired = acc.filter(function (a) { return Number(a.renewDays) < 0; });
-    var ticketSum = acc.reduce(function (s, a) { return s + (Number(a.tickets) || 0); }, 0);
     var overdueTasks = tasks.filter(function (t) { return t.status === "overdue"; });
     var unpaid = ar.filter(function (r) { return r.status === "unpaid"; });
 
     if (red.length) insights.push("<b>" + red.length + " 個帳戶亮紅燈</b>:" + red.map(function (a) { return esc(a.name); }).join("、") + "——建議今日優先處理。");
-    if (yellow.length) insights.push(yellow.length + " 個帳戶亮黃燈,合計約 <b>" + ticketSum + " 張工單</b>待清,主要是老化工單。");
+    if (yellow.length) insights.push("<b>" + yellow.length + " 個帳戶亮黃燈</b>:" + yellow.map(function (a) { return esc(a.name); }).join("、") + "——留意老化工單。");
     if (expired.length) insights.push("<b>" + expired.length + " 筆合約已到期</b>未確認續約:" + expired.map(function (a) { return esc(a.name); }).join("、") + "。");
     if (overdueTasks.length) insights.push("有 <b>" + overdueTasks.length + " 筆逾期任務</b>:" + overdueTasks.slice(0, 3).map(function (t) { return esc(t.name); }).join("、") + (overdueTasks.length > 3 ? " 等" : "") + "。");
     if (unpaid.length) insights.push("<b>" + unpaid.length + " 筆 AR 未收款</b>,建議寄出催款提醒。");
@@ -258,10 +289,10 @@
   }
 
   /* --- 主流程 --- */
-  function generateInsights() {
+  async function generateInsights() {
     setThreadLoading("洞察生成中…");
     setActions([]);
-    var ctx = scrapeDashboardData();
+    var ctx = await scrapeDashboardData();
     fetchCopilotInsight({ mode: "insights", context: ctx })
       .then(function (d) {
         renderInsightsBlock(d.insights || []);
@@ -272,9 +303,9 @@
       });
   }
 
-  function runAction(id, label) {
+  async function runAction(id, label) {
     var box = appendActionLoading(label);
-    var ctx = scrapeDashboardData();
+    var ctx = await scrapeDashboardData();
     fetchCopilotInsight({ mode: "action", action: id, context: ctx })
       .then(function (d) {
         box.querySelector(".cop-action-body").innerHTML = esc(d.result || "").replace(/\n/g, "<br>");
