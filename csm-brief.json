@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-20T09:00:31.548+08:00",
+  "generatedAt": "2026-08-20T10:32:03.745+08:00",
   "accounts": [
     {
       "id": "mannings",
       "name": "Mannings",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "PROJ-33713 backlog 2d · +12 more · Appier x Mannings Bi-weekly Meeting Aug 20 · renewal due 2026-09-30 (41d).",
+      "insight": "PROJ-33713 backlog 2d · +12 more · Appier x Mannings Monthly Meeting Aug 27 · renewal due 2026-09-30 (41d).",
       "diffs": [],
       "riskTags": [
         "ticket",
@@ -14,7 +14,7 @@
         "mtg"
       ],
       "ticketCount": 13,
-      "mtgCount": 2,
+      "mtgCount": 1,
       "projects": [
         {
           "name": "AIXON → AIRIS Upgrade (Q4)",
@@ -22,11 +22,6 @@
         }
       ],
       "meetings": [
-        {
-          "date": "Aug 20",
-          "title": "Appier x Mannings Bi-weekly Meeting",
-          "meta": "11:00–12:00 HKT · Rola Chung"
-        },
         {
           "date": "Aug 27",
           "title": "Appier x Mannings Monthly Meeting",
@@ -135,7 +130,7 @@
         {
           "priority": "medium",
           "label": "Meeting · Medium",
-          "text": "Prep for Appier x Mannings Bi-weekly Meeting on Aug 20 (11:00–12:00 HKT · Rola Chung)"
+          "text": "Prep for Appier x Mannings Monthly Meeting on Aug 27 (11:00–12:00 HKT · Rola Chung)"
         }
       ]
     },
