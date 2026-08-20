@@ -287,7 +287,11 @@
         var isDone = String(t.Status).toLowerCase() === "done";
         var marking = state.marking === t.Task_ID;
         html +=
-          '<li class="tm-row">' +
+          '<li class="tm-row" data-cop-item' +
+          ' data-cop-name="' + esc(t.Task_Name) + '"' +
+          ' data-cop-status="' + esc(String(t.Status || "").toLowerCase()) + '"' +
+          ' data-cop-due="' + esc(formatDate(t.Due_Date)) + '"' +
+          ' data-cop-reminder="' + esc(t.Reminder_Freq || "") + '">' +
           '<div class="tm-row-main">' +
           '<div class="tm-task-name">' +
           esc(t.Task_Name) +
@@ -356,6 +360,7 @@
     var pane = document.createElement("div");
     pane.className = "tab-pane";
     pane.id = "pane-tasks";
+    pane.setAttribute("data-cop-module", "tasks"); // Copilot 抓取用
     pane.innerHTML = paneHTML();
     paneAnchor.parentNode.appendChild(pane);
 
