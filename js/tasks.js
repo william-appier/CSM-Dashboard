@@ -180,6 +180,11 @@
     if (row) row.style.display = mode === "custom" ? "flex" : "none";
   };
 
+  TM.onTypeChange = function (type) {
+    var row = document.getElementById("tm-recur-row");
+    if (row) row.style.display = type === "Recurring" ? "" : "none";
+  };
+
   TM.submit = function (ev) {
     if (ev && ev.preventDefault) ev.preventDefault();
     var elName = document.getElementById("tm-name");
@@ -193,6 +198,9 @@
     var name = (elName.value || "").trim();
     var due = elDue.value || "";
     var days = Number(elDays ? elDays.value : 0);
+    var recurMode = (
+      document.querySelector('input[name="tm-recur"]:checked') || {}
+    ).value || "monthly";
 
     var errBox = document.getElementById("tm-form-msg");
     function showMsg(type, text) {
@@ -226,6 +234,7 @@
       Due_Date: due, // <input type="date"> 已是 YYYY-MM-DD
       Reminder_Freq: reminderFreq,
       Owner_Email: currentEmail(), // 多使用者：把任務綁定給當前登入者
+      Recur_Interval: elType.value === "Recurring" ? recurMode : "", // 週期任務的重複頻率(monthly/weekly)
     })
       .then(function () {
         state.submitting = false;
@@ -256,6 +265,17 @@
     var f = document.getElementById("tm-form");
     if (f) f.reset();
     TM.onReminderChange("none");
+    TM.onTypeChange("Single"); // 收起重複頻率
+    // reset 後依 checked 狀態重新同步兩組 radio(提醒方式/重複頻率)的視覺選中
+    var groups = document.querySelectorAll("#tm-form .tm-radios");
+    for (var i = 0; i < groups.length; i++) {
+      var lbls = groups[i].querySelectorAll(".tm-radio");
+      for (var j = 0; j < lbls.length; j++) {
+        var inp = lbls[j].querySelector("input[type=radio]");
+        if (inp && inp.checked) lbls[j].classList.add("tm-radio-on");
+        else lbls[j].classList.remove("tm-radio-on");
+      }
+    }
   }
 
   function updateNavCount() {
@@ -398,10 +418,18 @@
       field("任務名稱 (Task Name)",
         '<input class="tm-input" id="tm-name" type="text" placeholder="例如：Mannings 每月發票上傳">') +
       field("任務類型 (Task Type)",
-        '<select class="tm-input" id="tm-type">' +
+        '<select class="tm-input" id="tm-type" onchange="TM.onTypeChange(this.value)">' +
           '<option value="Single">Single（單次）</option>' +
           '<option value="Recurring">Recurring（週期）</option>' +
         "</select>") +
+      // 重複頻率：只有選 Recurring 時才顯示
+      '<div class="tm-field" id="tm-recur-row" style="display:none">' +
+        '<label class="tm-label">重複頻率 (Recurring Frequency)</label>' +
+        '<div class="tm-radios">' +
+          recurRadio("monthly", "每月", true) +
+          recurRadio("weekly", "每週", false) +
+        "</div>" +
+      "</div>" +
       field("截止日 (Due Date)",
         '<input class="tm-input" id="tm-due" type="date">') +
       field("提醒方式 (Reminder Setting)",
@@ -431,6 +459,20 @@
       "</label>" +
       inner +
       "</div>"
+    );
+  }
+  // 重複頻率 radio（每月/每週）——只切換視覺選中，無其他副作用
+  function recurRadio(value, label, checked) {
+    return (
+      '<label class="tm-radio' + (checked ? " tm-radio-on" : "") + '">' +
+      '<input type="radio" name="tm-recur" value="' + value + '"' +
+      (checked ? " checked" : "") +
+      " onchange=\"var ls=this.closest('.tm-radios').querySelectorAll('.tm-radio');" +
+      "for(var i=0;i<ls.length;i++)ls[i].classList.remove('tm-radio-on');" +
+      "this.parentNode.classList.add('tm-radio-on');\"" +
+      ' style="display:none">' +
+      label +
+      "</label>"
     );
   }
   function radio(value, label, checked) {
