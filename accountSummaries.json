@@ -1,1184 +1,1184 @@
 {
   "55688": {
-    "summary": "Work is mostly BotBonnie / LINE chatbot work plus AIQUA platform requests. Account looks steady BAU. QGWL-19924 is blocked. Carrying long-stale items (oldest 966d).",
+    "summary": "Work is mostly BotBonnie / LINE chatbot work plus AIQUA platform requests. Account looks steady BAU with a long-tail backlog. QGWL-19924 is blocked. Carrying long-stale items (oldest 880d).",
     "followUp": "Unblock QGWL-19924 (Shiv Raj) — 【55688】Timeout limitation in AQ JM should be shorten..",
     "health": "red",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "mannings": {
     "summary": "Work is mostly AEP data-pipeline work plus AIQUA onboarding & campaign setup. Account looks mid-migration. Contract ends in 41 days.",
     "followUp": "Kick off renewal for Mannings now — contract ends in 41 days.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "scmp": {
-    "summary": "Work is mostly AIRIS analytics & reporting plus AiDeal onsite. Account looks steady BAU. Carrying long-stale items (oldest 1477d).",
-    "followUp": "Clear or close AID-8880 (1477d, Eric Tung) — SCMP_Letzshop_AiDeal Lite_Jun 2022.",
+    "summary": "Work is mostly AIRIS analytics & reporting plus AiDeal onsite. Account looks steady BAU. Carrying long-stale items (oldest 1478d).",
+    "followUp": "Clear or close AID-8880 (1478d, Eric Tung) — SCMP_Letzshop_AiDeal Lite_Jun 2022.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "1010hope": {
-    "summary": "No open Jira tickets. No contract end date on file.",
+    "summary": "No open Jira tickets outside the CAM board. No contract end date on file.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "luxgen": {
-    "summary": "Work is mostly BotBonnie / LINE chatbot work plus AIQUA onboarding & campaign setup. Account looks steady BAU. Carrying long-stale items (oldest 1552d).",
+    "summary": "Work is mostly BotBonnie / LINE chatbot work plus AIQUA onboarding & campaign setup. Account looks steady BAU. Carrying long-stale items (oldest 1553d).",
     "followUp": "Chase PROJ-22175 (in progress, Mark Liu) — [Luxgen]  Data Column of Customer360 - Location / Language.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "tiangyuanxiang": {
-    "summary": "Work is mostly AIQUA onboarding & campaign setup plus BotBonnie / LINE chatbot work. Account looks still in onboarding / enablement. Carrying long-stale items (oldest 539d).",
-    "followUp": "Chase CAM-347922 (in progress, cherry.lin) — [Resize]田原香_Display_SG_0505-0511.",
+    "summary": "Work is mostly AIQUA onboarding & campaign setup plus BotBonnie / LINE chatbot work. Account looks still in onboarding / enablement. Carrying long-stale items (oldest 540d).",
+    "followUp": "Clear or close QGWL-21289 (540d, vivian.yang) — [田原香] Onboard Product Feed.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "momax": {
-    "summary": "Work is mostly campaign operations. Account looks steady BAU. No contract end date on file. Carrying long-stale items (oldest 1029d).",
-    "followUp": "Chase CAM-257353 (in progress, Mandy Tsai) — Momax Q1 Ecom 2023 (FB 歸因).",
-    "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "summary": "No open Jira tickets outside the CAM board. No contract end date on file.",
+    "followUp": "",
+    "health": "green",
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "citysuper": {
-    "summary": "Work is mostly AIBID campaign operations plus AIQUA onboarding & campaign setup. Account looks still in onboarding / enablement. No contract end date on file. Carrying long-stale items (oldest 218d).",
-    "followUp": "Chase CAM-379802 (in progress, ivy.kan) — [Resize]Prizm_AIBID_Adaptation for Standard Banner_Garden_Lucky Draw_260114.",
+    "summary": "Work is mostly AIQUA onboarding & campaign setup. Account looks steady BAU. No contract end date on file. Carrying long-stale items (oldest 91d).",
+    "followUp": "Clear or close LEG-16086 (91d, Unassigned) — CLONE - Legend World Technology Development Limited_AIQUA_HK_Order Form(User: Ci.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "xindongli": {
-    "summary": "Work is mostly AI agent enablement plus campaign operations. Account looks mid-migration. No contract end date on file. Carrying long-stale items (oldest 544d).",
-    "followUp": "Clear or close BBT-4660 (544d, Salem Chen) — [行動力國際] BotBonnie to Phoenix Account Migration / Knowledge Bot Feature Activatio.",
+    "summary": "Work is mostly AI agent enablement plus campaign operations. Account looks mid-migration. No contract end date on file. Carrying long-stale items (oldest 545d).",
+    "followUp": "Clear or close BBT-4660 (545d, Salem Chen) — [行動力國際] BotBonnie to Phoenix Account Migration / Knowledge Bot Feature Activatio.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "85度c": {
-    "summary": "Work is mostly AIQUA onboarding & campaign setup plus audience & segmentation. Account looks still in onboarding / enablement. Carrying long-stale items (oldest 1924d).",
+    "summary": "Work is mostly AIQUA onboarding & campaign setup plus audience & segmentation. Account looks still in onboarding / enablement. Carrying long-stale items (oldest 1925d).",
     "followUp": "Chase QGWL-5998 (in progress, Lucas Hsieh) — [85 cafe] When Client edit the creative,  we can detect the payload size and alert if mess.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "中國信託商業銀行": {
-    "summary": "Work is mostly campaign operations plus RFQ / quote handling. Account looks steady BAU. Carrying long-stale items (oldest 2163d).",
-    "followUp": "Chase CAM-196005 (in progress, maruko.chung) — [Add additional budget] 中國信託_Q4英雄卡211105-211215_$450,000.",
+    "summary": "Work is mostly RFQ / quote handling. Account looks steady BAU. Carrying long-stale items (oldest 2164d).",
+    "followUp": "Chase ACE-3152 (in progress, Judy Liu) — 中國信託信貸CPL<$600煩請評估, 感謝.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "健康力": {
-    "summary": "Work is mostly BotBonnie / LINE chatbot work plus AiDeal onsite. Account looks steady BAU. Contract ends in 21 days. Carrying long-stale items (oldest 1099d).",
+    "summary": "Work is mostly BotBonnie / LINE chatbot work plus AiDeal onsite. Account looks steady BAU. Contract ends in 21 days. Carrying long-stale items (oldest 1100d).",
     "followUp": "Kick off renewal for 健康力 now — contract ends in 21 days.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "凌網知識股份有限公司": {
     "summary": "Work is mostly AIQUA onboarding & campaign setup. Account looks steady BAU. Carrying long-stale items (oldest 45d).",
     "followUp": "Clear or close AIQ-472 (45d, Unassigned) — [AIQUA] HyRead 凌網科技.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "奧美廣告": {
-    "summary": "Work is mostly campaign operations plus RFQ / quote handling. Account looks steady BAU. Carrying long-stale items (oldest 1064d).",
+    "summary": "Work is mostly RFQ / quote handling plus BotBonnie / LINE chatbot work. Account looks steady BAU. Carrying long-stale items (oldest 1065d).",
     "followUp": "Chase BBB-2213 (in progress, Mia Li) — 2/28 百揚資訊、好日子、迪凱科技；TBD：Ogilvy_Hill done.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "拍貼生活": {
-    "summary": "Work is mostly BotBonnie / LINE chatbot work plus platform enablement & adoption. Account looks still in onboarding / enablement. Carrying long-stale items (oldest 1239d).",
-    "followUp": "Clear or close BBB-1433 (1239d, Eric.hung) — [CSM Check] 拍貼生活 AUO club.",
+    "summary": "Work is mostly BotBonnie / LINE chatbot work plus platform enablement & adoption. Account looks still in onboarding / enablement. Carrying long-stale items (oldest 1240d).",
+    "followUp": "Clear or close BBB-1433 (1240d, Eric.hung) — [CSM Check] 拍貼生活 AUO club.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "杰德創意影音": {
     "summary": "Work is mostly RFQ / quote handling. Account looks steady BAU. Carrying long-stale items (oldest 98d).",
     "followUp": "Clear or close BBT-7245 (98d, Brian Tsai) — RFQ_杰德影音_Webchat 抓取已登入客戶 CRM 資料BB欄位.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "貳樓餐廳": {
-    "summary": "Work is mostly RFQ / quote handling plus BotBonnie / LINE chatbot work. Account looks steady BAU with a long-tail backlog. Carrying long-stale items (oldest 1343d).",
-    "followUp": "Clear or close BBB-1271 (1343d, Eric.hung) — [CSM Check] 貳樓餐廳.",
+    "summary": "Work is mostly RFQ / quote handling plus BotBonnie / LINE chatbot work. Account looks steady BAU with a long-tail backlog. Carrying long-stale items (oldest 1344d).",
+    "followUp": "Clear or close BBB-1271 (1344d, Eric.hung) — [CSM Check] 貳樓餐廳.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "鮮乳坊": {
     "summary": "Work is mostly AEP data-pipeline work plus platform enablement & adoption. Account looks mid-migration.",
     "followUp": "Chase ETS-5815 (in progress, Tim Lin) — [BetterMilk] Custom Receipt Registration Kit triggers unexpected \"code=2\" error; invoice n.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "achilles-sorbo": {
-    "summary": "No open Jira tickets. Renewal not due for 291 days.",
+    "summary": "No open Jira tickets outside the CAM board. Renewal not due for 291 days.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "aracer-塞席爾商岱沛-台灣": {
-    "summary": "No open Jira tickets. Renewal not due for 195 days.",
+    "summary": "No open Jira tickets outside the CAM board. Renewal not due for 195 days.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "bop-taipei-商明國際": {
-    "summary": "No open Jira tickets. Renewal not due for 82 days.",
+    "summary": "No open Jira tickets outside the CAM board. Renewal not due for 82 days.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "capsule-inc": {
-    "summary": "Work is mostly ad creative production. Account looks steady BAU. Carrying long-stale items (oldest 504d).",
-    "followUp": "Chase CAM-345936 (in progress, sammi.ng) — [Resize]OMD/MS/20250660_OMNET_Nescafe Soluble and SBUX NDG Capsules Campaign_Apr 2025.",
-    "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "summary": "No open Jira tickets outside the CAM board. Renewal not due for 239 days.",
+    "followUp": "",
+    "health": "green",
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "cold-stone": {
-    "summary": "Work is mostly AIBID campaign operations plus AIRIS analytics & reporting. Account looks still in onboarding / enablement. Carrying long-stale items (oldest 219d).",
-    "followUp": "Chase AIRIS-9274 (in progress, Wilson Li) — ST-04.8 — Publish per-node cold-fill budgets.",
+    "summary": "Work is mostly ad creative production plus API / data integration. Account looks steady BAU. Carrying long-stale items (oldest 219d).",
+    "followUp": "Chase PROJ-33473 (in progress, Li-Wei Chang) — [ClickHouse] GCS cold-tier storage (keep PVC < 160Gi, retain all data).",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "love-dear-太子天一": {
-    "summary": "Work is mostly AIBID campaign operations plus audience & segmentation. Account looks still in onboarding / enablement. Carrying long-stale items (oldest 407d).",
-    "followUp": "Chase CAM-366783 (in progress, Mayu Ogura) — Love and Deepspace AIBID_Creative Resize Request_20250930.",
+    "summary": "Work is mostly BotBonnie / LINE chatbot work. Account looks steady BAU. Carrying long-stale items (oldest 84d).",
+    "followUp": "Clear or close BBT-7611 (84d, jack.yt.lin) — [Love dear] shopline ec module set up.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "nespresso-tw": {
-    "summary": "Work is mostly campaign operations plus RFQ / quote handling. Account looks still in onboarding / enablement. Carrying long-stale items (oldest 821d).",
-    "followUp": "Clear or close CAM-310391 (821d, Jane Liu) — OMNET_Nespresso_Summer Campaign_Jun 2024.",
+    "summary": "Work is mostly RFQ / quote handling plus Ad Cloud delivery & budget. Account looks still in onboarding / enablement. Carrying long-stale items (oldest 776d).",
+    "followUp": "Clear or close BBT-3347 (776d, christine.ma) — [Nespresso] Showing prize distribution kit's name in prize list.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "不來梅": {
     "summary": "Work is mostly RFQ / quote handling plus BotBonnie / LINE chatbot work. Account looks steady BAU. Carrying long-stale items (oldest 1743d).",
     "followUp": "Chase BBB-504 (in progress, Unassigned) — 不來梅股份有限公司（Bremen） (續約2022-01-01).",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "亞洲安視達": {
-    "summary": "No open Jira tickets. Renewal not due for 194 days.",
+    "summary": "No open Jira tickets outside the CAM board. Renewal not due for 194 days.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "凱基人壽": {
-    "summary": "Work is mostly BotBonnie / LINE chatbot work plus API / data integration. Account looks steady BAU. Carrying long-stale items (oldest 314d).",
+    "summary": "Work is mostly BotBonnie / LINE chatbot work plus RFQ / quote handling. Account looks steady BAU. Carrying long-stale items (oldest 371d).",
     "followUp": "Chase CS-1306 (in progress, Salem Chen) — 凱基人壽_雲端檢核_2025_續約.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "安麗-amway": {
     "summary": "Work is mostly BotBonnie / LINE chatbot work plus AIQUA onboarding & campaign setup. Account looks steady BAU.",
     "followUp": "Chase FIN-2690 (in progress, Tina Lee (finance)) — BotBonnie＿用戶退款申請＿大師課業.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "新加坡商犀牛盾科技股份有限公司台灣分公司": {
-    "summary": "Work is mostly AIBID campaign operations plus AIQUA onboarding & campaign setup. Account looks still in onboarding / enablement.",
-    "followUp": "Chase CS-2979 (in progress, Unassigned) — <SOAR> [Graylog] Claude - User/Group Account Change: ai-bidding-data-connect-jp-lwb-11|10..",
+    "summary": "Work is mostly AEP data-pipeline work plus RFQ / quote handling. Account looks mid-migration.",
+    "followUp": "Chase SOE-389 (in progress, Yungyun Cheng) — Prof. Service_OWNDAYS New AQ. JP/TH/TW_implementation and maintenance Custom Product 26Q1.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "明台產物保險-mingtai": {
     "summary": "Work is mostly AI agent enablement plus BotBonnie / LINE chatbot work. Account looks steady BAU. Carrying long-stale items (oldest 40d).",
     "followUp": "Chase AGNT-1116 (in progress, Ken-Yu Lin) — [Mingtai] agent indicated journey created successfully, but no journey actually generated .",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "東禾生物科技股份有限公司": {
     "summary": "Work is mostly campaign operations plus platform enablement & adoption. Account looks mid-migration.",
     "followUp": "Chase ETS-5258 (in progress, adam.chen) — [VitaDairy] Can't entry Lucky Wheel many times (Advanced kit).",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "犀牛盾": {
     "summary": "Work is mostly BotBonnie / LINE chatbot work plus AIQUA onboarding & campaign setup. Account looks steady BAU. Contract lapsed 86 days ago.",
     "followUp": "Renewal has lapsed — confirm status with 犀牛盾 before further delivery work.",
     "health": "red",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "社群埠": {
-    "summary": "Work is mostly BotBonnie / LINE chatbot work plus RFQ / quote handling. Account looks steady BAU. Carrying long-stale items (oldest 1749d).",
+    "summary": "Work is mostly BotBonnie / LINE chatbot work plus RFQ / quote handling. Account looks steady BAU. Carrying long-stale items (oldest 1750d).",
     "followUp": "Chase BBB-510 (in progress, Unassigned) — 社群埠數位媒體顧問股份有限公司 (續約2021-10-17).",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "臺理實業股份有限公司": {
-    "summary": "No open Jira tickets. Renewal not due for 193 days.",
+    "summary": "No open Jira tickets outside the CAM board. Renewal not due for 193 days.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "赫斯特媒體": {
-    "summary": "Work is mostly AIQUA platform requests plus AIQUA onboarding & campaign setup. Account looks steady BAU. Contract lapsed 173 days ago. QGWL-13517 is blocked. Carrying long-stale items (oldest 2855d).",
+    "summary": "Work is mostly AIQUA platform requests plus AIQUA onboarding & campaign setup. Account looks steady BAU. Contract lapsed 173 days ago. QGWL-13517 is blocked. Carrying long-stale items (oldest 2856d).",
     "followUp": "Renewal has lapsed — confirm status with 赫斯特媒體 before further delivery work.",
     "health": "red",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "asia-living-hk": {
     "summary": "Work is mostly backend / tech-services requests plus AEP data-pipeline work. Account looks steady BAU.",
     "followUp": "Clear or close GPMM-300 (6d, Brendan Kuang) — [Creative Package] UR Living - Signed AA Platform.",
     "health": "green",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "v-tex": {
-    "summary": "Work is mostly ad creative production plus AEP data-pipeline work. Account looks steady BAU. Carrying long-stale items (oldest 301d).",
-    "followUp": "Clear or close BBT-6602 (301d, Unassigned) — [Vtex] Support the display of \"interested product information\" from Meta messagi.",
+    "summary": "Work is mostly ad creative production plus AEP data-pipeline work. Account looks steady BAU. Carrying long-stale items (oldest 302d).",
+    "followUp": "Clear or close BBT-6602 (302d, Unassigned) — [Vtex] Support the display of \"interested product information\" from Meta messagi.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "台灣彪馬": {
-    "summary": "Work is mostly AEP data-pipeline work plus ad creative production. Account looks mid-migration. Carrying long-stale items (oldest 415d).",
+    "summary": "Work is mostly AEP data-pipeline work plus ad creative production. Account looks mid-migration. Carrying long-stale items (oldest 416d).",
     "followUp": "Chase ETS-5856 (in progress, vivian.yang) — [Puma] Campaign display misaligned after reopen, inconsistent with preview.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "安永生活": {
-    "summary": "Work is mostly AI agent enablement plus ad creative production. Account looks steady BAU with a long-tail backlog. Contract lapsed 20 days ago. Carrying long-stale items (oldest 2387d).",
+    "summary": "Work is mostly AI agent enablement plus AIQUA onboarding & campaign setup. Account looks steady BAU with a long-tail backlog. Contract lapsed 20 days ago. Carrying long-stale items (oldest 2388d).",
     "followUp": "Renewal has lapsed — confirm status with 安永生活 before further delivery work.",
     "health": "red",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "新光三越百貨": {
-    "summary": "Work is mostly BotBonnie / LINE chatbot work plus AI agent enablement. Account looks steady BAU.",
-    "followUp": "Chase AGNT-1687 (in progress, mia.chu) — [SKM HQ] Audience creation returns text only, no card shown.",
+    "summary": "Work is mostly BotBonnie / LINE chatbot work plus AIQUA onboarding & campaign setup. Account looks steady BAU.",
+    "followUp": "Chase FIN-2690 (in progress, Tina Lee (finance)) — BotBonnie＿用戶退款申請＿大師課業.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "杏豐實業": {
-    "summary": "Work is mostly AIBID campaign operations plus AIQUA platform requests. Account looks still in onboarding / enablement. Contract lapsed 62 days ago. Carrying long-stale items (oldest 2177d).",
+    "summary": "Work is mostly AIQUA platform requests plus BotBonnie / LINE chatbot work. Account looks steady BAU. Contract lapsed 62 days ago. Carrying long-stale items (oldest 2178d).",
     "followUp": "Renewal has lapsed — confirm status with 杏豐實業 before further delivery work.",
     "health": "red",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "維康醫療": {
     "summary": "Work is mostly RFQ / quote handling plus AIQUA platform requests. Account looks steady BAU. Carrying long-stale items (oldest 1841d).",
     "followUp": "Clear or close BUF-91 (1841d, Unassigned) — 維康醫療在問: 我們現在用戶掃碼加入 LINE 都會被收一次推播費，有可能設計只加好友不回應訊息的用法，減少推播費嗎?.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "caco-加州椰子": {
-    "summary": "No open Jira tickets. Renewal not due for 130 days.",
+    "summary": "No open Jira tickets outside the CAM board. Renewal not due for 130 days.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "南一書局": {
-    "summary": "Work is mostly BotBonnie / LINE chatbot work plus AIQUA onboarding & campaign setup. Account looks still in onboarding / enablement.",
-    "followUp": "Chase ETS-5852 (in progress, adam.chen) — [HBR] Another User's FB ID Appearing in a LINE Contact's User ID Field.",
+    "summary": "Work is mostly BotBonnie / LINE chatbot work plus AEP data-pipeline work. Account looks still in onboarding / enablement.",
+    "followUp": "Chase BP-10267 (in progress, rick.lee) — [BE] Narrowcast: Check LINE Message Quota Before Sending.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "居家先生": {
-    "summary": "Work is mostly AEP data-pipeline work plus backend / tech-services requests. Account looks steady BAU. Carrying long-stale items (oldest 2170d).",
+    "summary": "Work is mostly AEP data-pipeline work plus backend / tech-services requests. Account looks steady BAU. Carrying long-stale items (oldest 2171d).",
     "followUp": "Chase ACE-3099 (in progress, James Liu) — Mr. Speedy_ PH_AND_CPI.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "美而快實業": {
-    "summary": "Work is mostly ad creative production plus API / data integration. Account looks still in onboarding / enablement. Carrying long-stale items (oldest 2190d).",
+    "summary": "Work is mostly ad creative production plus API / data integration. Account looks still in onboarding / enablement. Carrying long-stale items (oldest 2191d).",
     "followUp": "Chase QGWL-4294 (in progress, Johnson Chiang) — [Pazzo] Displays campaigns updated before 180 days ago.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "至晟貿易股份有限公司": {
     "summary": "Work is mostly RFQ / quote handling. Account looks steady BAU with a long-tail backlog. Carrying long-stale items (oldest 195d).",
     "followUp": "Clear or close BBT-6520 (195d, Unassigned) — 【RFQ】至晟貿易_串接客戶方 API 回傳結果.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "葡萄王生技": {
-    "summary": "Work is mostly AIBID campaign operations plus AIQUA platform requests. Account looks steady BAU. Carrying long-stale items (oldest 1013d).",
+    "summary": "Work is mostly AIQUA platform requests plus BotBonnie / LINE chatbot work. Account looks steady BAU. Carrying long-stale items (oldest 1013d).",
     "followUp": "Clear or close BBB-1717 (1013d, Samuel Chiang) — [CSM Check] 葡萄王生技.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "chenyu辰昱": {
-    "summary": "No open Jira tickets. Contract lapsed 101 days ago.",
+    "summary": "No open Jira tickets outside the CAM board. Contract lapsed 101 days ago.",
     "followUp": "Start the renewal conversation for CHENYU辰昱 — contract lapsed 101 days ago.",
     "health": "red",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "全國麗園大飯店": {
-    "summary": "No open Jira tickets. Renewal not due for 242 days.",
+    "summary": "No open Jira tickets outside the CAM board. Renewal not due for 242 days.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "友達光電": {
-    "summary": "No open Jira tickets. Renewal not due for 140 days.",
+    "summary": "No open Jira tickets outside the CAM board. Renewal not due for 140 days.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "台灣移動資產管理租賃有限公司": {
-    "summary": "No open Jira tickets. Renewal not due for 314 days.",
+    "summary": "No open Jira tickets outside the CAM board. Renewal not due for 314 days.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "吹毛求吃": {
-    "summary": "Work is mostly RFQ / quote handling plus BotBonnie / LINE chatbot work. Account looks steady BAU. Carrying long-stale items (oldest 288d).",
-    "followUp": "Clear or close BBT-6655 (288d, Unassigned) — BB-吹毛求吃-Omnichat 會員轉移資料匯入.",
+    "summary": "Work is mostly RFQ / quote handling plus BotBonnie / LINE chatbot work. Account looks steady BAU. Carrying long-stale items (oldest 289d).",
+    "followUp": "Clear or close BBT-6655 (289d, Unassigned) — BB-吹毛求吃-Omnichat 會員轉移資料匯入.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "大學入學考試中心": {
     "summary": "Mixed platform requests across several products. Account looks steady BAU. Carrying long-stale items (oldest 1841d).",
     "followUp": "Clear or close BUF-83 (1841d, Unassigned) — 大考中心針對關鍵字回覆列了需求並希望我們優化\n感覺建議滿不錯的~~我還要回應他們的需求，如果有可能比較近期內可以優化的功能再麻煩讓我知道了.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "大師課業股份有限公司": {
     "summary": "Work is mostly BotBonnie / LINE chatbot work. Account looks steady BAU.",
     "followUp": "Chase FIN-2690 (in progress, Tina Lee (finance)) — BotBonnie＿用戶退款申請＿大師課業.",
     "health": "green",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "天賦夢想家顧問": {
-    "summary": "No open Jira tickets. Contract ends in 24 days.",
+    "summary": "No open Jira tickets outside the CAM board. Contract ends in 24 days.",
     "followUp": "Start the renewal conversation for 天賦夢想家顧問 — contract ends in 24 days.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "好日子行銷有限公司": {
-    "summary": "No open Jira tickets. Contract lapsed 42 days ago.",
+    "summary": "No open Jira tickets outside the CAM board. Contract lapsed 42 days ago.",
     "followUp": "Start the renewal conversation for 好日子行銷有限公司 — contract lapsed 42 days ago.",
     "health": "red",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "安源資訊": {
     "summary": "Work is mostly BotBonnie / LINE chatbot work. Account looks steady BAU. Contract lapsed 64 days ago. Carrying long-stale items (oldest 483d).",
     "followUp": "Renewal has lapsed — confirm status with 安源資訊 before further delivery work.",
     "health": "red",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "寓意居家生活有限公司": {
-    "summary": "No open Jira tickets. Contract lapsed 87 days ago.",
+    "summary": "No open Jira tickets outside the CAM board. Contract lapsed 87 days ago.",
     "followUp": "Start the renewal conversation for 寓意居家生活有限公司 — contract lapsed 87 days ago.",
     "health": "red",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "尚進教育訓練有限公司": {
-    "summary": "Work is mostly campaign operations plus AIXON data-graph work. Account looks steady BAU. Carrying long-stale items (oldest 2721d).",
+    "summary": "Work is mostly AIXON data-graph work plus AIRIS analytics & reporting. Account looks steady BAU with a long-tail backlog. Carrying long-stale items (oldest 2721d).",
     "followUp": "Chase ACE-479 (in progress, Y Pham) — Chin Media - Video Inventory Vietnam.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "巧兒宜國際": {
-    "summary": "No open Jira tickets. Renewal not due for 109 days.",
+    "summary": "No open Jira tickets outside the CAM board. Renewal not due for 109 days.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "幸衍醫美診所": {
     "summary": "Work is mostly BotBonnie / LINE chatbot work plus AI agent enablement. Account looks still in onboarding / enablement. Contract lapsed 9 days ago. Carrying long-stale items (oldest 323d).",
     "followUp": "Renewal has lapsed — confirm status with 幸衍醫美診所 before further delivery work.",
     "health": "red",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "悅己情趣": {
-    "summary": "No open Jira tickets. Renewal not due for 81 days.",
+    "summary": "No open Jira tickets outside the CAM board. Renewal not due for 81 days.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "新衣精緻洗衣": {
-    "summary": "No open Jira tickets. Contract ends in 40 days.",
+    "summary": "No open Jira tickets outside the CAM board. Contract ends in 40 days.",
     "followUp": "Start the renewal conversation for 新衣精緻洗衣 — contract ends in 40 days.",
     "health": "green",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "有你共創數位": {
-    "summary": "No open Jira tickets. Contract lapsed 90 days ago.",
+    "summary": "No open Jira tickets outside the CAM board. Contract lapsed 90 days ago.",
     "followUp": "Start the renewal conversation for 有你共創數位 — contract lapsed 90 days ago.",
     "health": "red",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "期天資訊有限公司": {
-    "summary": "No open Jira tickets. Renewal not due for 314 days.",
+    "summary": "No open Jira tickets outside the CAM board. Renewal not due for 314 days.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "未來方舟跨界行銷有限公司": {
-    "summary": "No open Jira tickets. Renewal not due for 165 days.",
+    "summary": "No open Jira tickets outside the CAM board. Renewal not due for 165 days.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "泛科知識股份有限公司": {
-    "summary": "Work is mostly BotBonnie / LINE chatbot work plus AI agent enablement. Account looks still in onboarding / enablement. Carrying long-stale items (oldest 141d).",
-    "followUp": "Clear or close BBT-7372 (141d, rick.lee) — [Service Agent] Onboard 泛科知識股份-食藥署專案.",
+    "summary": "Work is mostly BotBonnie / LINE chatbot work plus AI agent enablement. Account looks still in onboarding / enablement. Carrying long-stale items (oldest 142d).",
+    "followUp": "Clear or close BBT-7372 (142d, rick.lee) — [Service Agent] Onboard 泛科知識股份-食藥署專案.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "滙駿旅遊": {
-    "summary": "Work is mostly campaign operations plus Ad Cloud delivery & budget. Account looks steady BAU. Contract ends in 41 days. Carrying long-stale items (oldest 2392d).",
+    "summary": "Work is mostly campaign operations. Account looks steady BAU. Contract ends in 41 days. Carrying long-stale items (oldest 2085d).",
     "followUp": "Kick off renewal for 滙駿旅遊 now — contract ends in 41 days.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "灝翔有限公司": {
-    "summary": "No open Jira tickets. Renewal not due for 236 days.",
+    "summary": "No open Jira tickets outside the CAM board. Renewal not due for 236 days.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "無比整合行銷": {
     "summary": "Work is mostly BotBonnie / LINE chatbot work. Account looks steady BAU.",
-    "followUp": "Chase BBB-2262 (in progress, Mia Li) — 8/25 益普索、貝殼放大、無比整合行銷.",
+    "followUp": "Chase BBB-2262 (in progress, Mia Li) — 8/25 益普索、貝殼放大、無比整合行銷；維肯.",
     "health": "green",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "無限全球通移動通信": {
-    "summary": "Work is mostly AIBID campaign operations plus campaign operations. Account looks mid-migration. Contract lapsed 3 days ago.",
+    "summary": "Work is mostly AEP data-pipeline work plus AIQUA onboarding & campaign setup. Account looks mid-migration. Contract lapsed 3 days ago.",
     "followUp": "Renewal has lapsed — confirm status with 無限全球通移動通信 before further delivery work.",
     "health": "red",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "玩點互動": {
     "summary": "Work is mostly backend / tech-services requests. Account looks steady BAU.",
-    "followUp": "Clear or close ETS-5567 (13d, christine.ma) — [bitplay] BB_Client Configuration Request.",
+    "followUp": "Clear or close ETS-5567 (14d, christine.ma) — [bitplay] BB_Client Configuration Request.",
     "health": "green",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "百揚資訊科技有限公司": {
     "summary": "Work is mostly BotBonnie / LINE chatbot work. Account looks steady BAU. Contract lapsed 59 days ago. Carrying long-stale items (oldest 176d).",
     "followUp": "Renewal has lapsed — confirm status with 百揚資訊科技有限公司 before further delivery work.",
     "health": "red",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "秝驎國際": {
-    "summary": "No open Jira tickets. Contract ends in 53 days.",
+    "summary": "No open Jira tickets outside the CAM board. Contract ends in 53 days.",
     "followUp": "Start the renewal conversation for 秝驎國際 — contract ends in 53 days.",
     "health": "green",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "租領移動科技股份有限公司": {
-    "summary": "No open Jira tickets. Renewal not due for 223 days.",
+    "summary": "No open Jira tickets outside the CAM board. Renewal not due for 223 days.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "精華光學": {
-    "summary": "No open Jira tickets. Renewal not due for 267 days.",
+    "summary": "No open Jira tickets outside the CAM board. Renewal not due for 267 days.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "翊棨-優迷": {
-    "summary": "No open Jira tickets. Contract lapsed 29 days ago.",
+    "summary": "No open Jira tickets outside the CAM board. Contract lapsed 29 days ago.",
     "followUp": "Start the renewal conversation for 翊棨 (優迷) — contract lapsed 29 days ago.",
     "health": "red",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "華泰開發投資有限公司": {
-    "summary": "No open Jira tickets. Renewal not due for 267 days.",
+    "summary": "No open Jira tickets outside the CAM board. Renewal not due for 267 days.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "豐馥資產管理股份有限公司": {
-    "summary": "No open Jira tickets. Renewal not due for 200 days.",
+    "summary": "No open Jira tickets outside the CAM board. Renewal not due for 200 days.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "酷訊搜索": {
-    "summary": "No open Jira tickets. Contract ends in 41 days.",
+    "summary": "No open Jira tickets outside the CAM board. Contract ends in 41 days.",
     "followUp": "Start the renewal conversation for 酷訊搜索 — contract ends in 41 days.",
     "health": "green",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "dac-tw": {
-    "summary": "Work is mostly campaign operations. Account looks steady BAU. Carrying long-stale items (oldest 2578d).",
+    "summary": "Mixed platform requests across several products. Account looks steady BAU. Carrying long-stale items (oldest 2406d).",
     "followUp": "Chase ACE-1381 (in progress, James Liu) — Glico_CPCV_Premium publishers.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "igs": {
-    "summary": "Work is mostly AIBID campaign operations plus campaign operations. Account looks steady BAU. Carrying long-stale items (oldest 71d).",
-    "followUp": "Clear or close CAM-396342 (71d, james.yeh) — [Deduction] IGS-Golden HoYeah-JP_iOS (Aibid)_260609: 202605 結算.",
-    "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "summary": "No open Jira tickets outside the CAM board. Renewal not due for 164 days.",
+    "followUp": "",
+    "health": "green",
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "信誼基金會": {
-    "summary": "Work is mostly RFQ / quote handling plus BotBonnie / LINE chatbot work. Account looks steady BAU. Carrying long-stale items (oldest 1343d).",
-    "followUp": "Clear or close BBB-1272 (1343d, Eric.hung) — [CSM Check] 信誼基金會.",
+    "summary": "Work is mostly RFQ / quote handling plus BotBonnie / LINE chatbot work. Account looks steady BAU. Carrying long-stale items (oldest 1344d).",
+    "followUp": "Clear or close BBB-1272 (1344d, Eric.hung) — [CSM Check] 信誼基金會.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "台灣三住": {
     "summary": "Work is mostly AIQUA onboarding & campaign setup plus BotBonnie / LINE chatbot work. Account looks still in onboarding / enablement. Carrying long-stale items (oldest 834d).",
     "followUp": "Chase ETS-5846 (in progress, adam.chen) — [MiSUMi] Broadcast Delivery Investigation - Segmented Users Not Receiving Push Notificatio.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "台灣小米通訊": {
-    "summary": "No open Jira tickets. Renewal not due for 137 days.",
+    "summary": "No open Jira tickets outside the CAM board. Renewal not due for 137 days.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "台灣希爾思": {
-    "summary": "Work is mostly BotBonnie / LINE chatbot work plus RFQ / quote handling. Account looks still in onboarding / enablement. Carrying long-stale items (oldest 154d).",
+    "summary": "Work is mostly BotBonnie / LINE chatbot work plus RFQ / quote handling. Account looks still in onboarding / enablement. Carrying long-stale items (oldest 155d).",
     "followUp": "Chase BBT-7902 (in progress, Brian Tsai) — ［Hill's pet JP］Botbonnie tag assignment via API for newly added their retailer_20260730.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "大魯閣實業": {
-    "summary": "No open Jira tickets. Contract lapsed 115 days ago.",
+    "summary": "No open Jira tickets outside the CAM board. Contract lapsed 115 days ago.",
     "followUp": "Start the renewal conversation for 大魯閣實業 — contract lapsed 115 days ago.",
     "health": "red",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "悠雅科技": {
-    "summary": "Work is mostly RFQ / quote handling plus BotBonnie / LINE chatbot work. Account looks steady BAU. Carrying long-stale items (oldest 2179d).",
+    "summary": "Work is mostly RFQ / quote handling plus BotBonnie / LINE chatbot work. Account looks steady BAU. Carrying long-stale items (oldest 2180d).",
     "followUp": "Chase ACE-4149 (in progress, James Liu) — MVN_Zenyum_CPO_2021.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "未來親子": {
     "summary": "Work is mostly BotBonnie / LINE chatbot work plus AIQUA platform requests. Account looks still in onboarding / enablement. Contract lapsed 112 days ago. Carrying long-stale items (oldest 817d).",
     "followUp": "Renewal has lapsed — confirm status with 未來親子 before further delivery work.",
     "health": "red",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "海昌隱形眼鏡": {
-    "summary": "No open Jira tickets. Renewal not due for 498 days.",
+    "summary": "No open Jira tickets outside the CAM board. Renewal not due for 498 days.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "漢堡王": {
-    "summary": "Work is mostly campaign operations plus AIQUA onboarding & campaign setup. Account looks still in onboarding / enablement. Carrying long-stale items (oldest 1590d).",
+    "summary": "Work is mostly AIQUA onboarding & campaign setup plus AIQUA platform requests. Account looks still in onboarding / enablement. Carrying long-stale items (oldest 1591d).",
     "followUp": "Chase ETS-5759 (in progress, adam.chen) — [Burger King] Keyword Configuration Change Log Request.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "益普索市場研究股份有限公司": {
     "summary": "Work is mostly RFQ / quote handling. Account looks steady BAU. Carrying long-stale items (oldest 457d).",
     "followUp": "Chase CS-2813 (in progress, chengyu.yu) — 益普索市場研究股份有限公司＿Ipsos Global Security Request.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "維肯媒體": {
-    "summary": "Work is mostly RFQ / quote handling plus BotBonnie / LINE chatbot work. Account looks steady BAU. Carrying long-stale items (oldest 3632d).",
-    "followUp": "Chase BBT-7799 (in progress, Brian Tsai) — 維肯-台灣愛麗斯和奧莉維亞有限公司_第二階段 下拉選單調整.",
+    "summary": "Work is mostly RFQ / quote handling plus BotBonnie / LINE chatbot work. Account looks steady BAU. Carrying long-stale items (oldest 713d).",
+    "followUp": "Chase BBB-2262 (in progress, Mia Li) — 8/25 益普索、貝殼放大、無比整合行銷；維肯.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "聯創整合行銷": {
-    "summary": "Work is mostly RFQ / quote handling plus campaign operations. Account looks steady BAU. Carrying long-stale items (oldest 1210d).",
+    "summary": "Work is mostly RFQ / quote handling plus Ad Cloud delivery & budget. Account looks steady BAU. Carrying long-stale items (oldest 1211d).",
     "followUp": "Chase BBT-7885 (in progress, Brian Tsai) — 【RFQ】7-ELEVEN 統一超商_用戶綁定由 BB 進行判斷 GID 只能綁一次.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "豐傑生醫": {
-    "summary": "Work is mostly BotBonnie / LINE chatbot work plus AI agent enablement. Account looks still in onboarding / enablement. Carrying long-stale items (oldest 464d).",
-    "followUp": "Clear or close BBT-5751 (464d, jack.yt.lin) — [EC] 豐傑生醫 onboard member card image.",
+    "summary": "Work is mostly BotBonnie / LINE chatbot work plus AI agent enablement. Account looks still in onboarding / enablement. Carrying long-stale items (oldest 465d).",
+    "followUp": "Clear or close BBT-5751 (465d, jack.yt.lin) — [EC] 豐傑生醫 onboard member card image.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "dk-shoes": {
     "summary": "Work is mostly AI agent enablement plus AIQUA onboarding & campaign setup. Account looks still in onboarding / enablement.",
     "followUp": "Chase AGNT-1700 (in progress, Mei-Cih Yeh) — [DR.CiNK] [Onboard] Enable campaign agent for DR.CiNK.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "innisfree-tw": {
-    "summary": "Work is mostly AIQUA onboarding & campaign setup plus API / data integration. Account looks still in onboarding / enablement. Contract ends in 21 days. Carrying long-stale items (oldest 114d).",
+    "summary": "Work is mostly AIQUA onboarding & campaign setup plus API / data integration. Account looks still in onboarding / enablement. Contract ends in 21 days. Carrying long-stale items (oldest 110d).",
     "followUp": "Kick off renewal for INNISFREE (TW) now — contract ends in 21 days.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "匯姿": {
-    "summary": "No open Jira tickets. Renewal not due for 207 days.",
+    "summary": "No open Jira tickets outside the CAM board. Renewal not due for 207 days.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "永悅健康": {
-    "summary": "Work is mostly AI agent enablement plus BotBonnie / LINE chatbot work. Account looks still in onboarding / enablement. Carrying long-stale items (oldest 280d).",
+    "summary": "Work is mostly AI agent enablement plus BotBonnie / LINE chatbot work. Account looks still in onboarding / enablement. Carrying long-stale items (oldest 281d).",
     "followUp": "Chase AGNT-474 (in progress, Mei-Cih Yeh) — [Offboard] Disable ESS AI agent for H2U.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "社團法人台灣職業籃球聯盟": {
-    "summary": "No open Jira tickets. Contract ends in 11 days.",
+    "summary": "No open Jira tickets outside the CAM board. Contract ends in 11 days.",
     "followUp": "Start the renewal conversation for 社團法人台灣職業籃球聯盟 — contract ends in 11 days.",
     "health": "red",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "giloo-紀實影音": {
-    "summary": "Work is mostly AEP data-pipeline work plus AIQUA onboarding & campaign setup. Account looks mid-migration. Carrying long-stale items (oldest 1917d).",
-    "followUp": "Clear or close MT-891 (1917d, Cedric Shih) — [Giloo] Building app with iOS SDK 7.10.0 will present error log on 2020 M1 mac .",
+    "summary": "Work is mostly AEP data-pipeline work plus AIQUA onboarding & campaign setup. Account looks mid-migration. Carrying long-stale items (oldest 1918d).",
+    "followUp": "Clear or close MT-891 (1918d, Cedric Shih) — [Giloo] Building app with iOS SDK 7.10.0 will present error log on 2020 M1 mac.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "中華民國對外貿易發展協會": {
-    "summary": "No open Jira tickets. Contract ends in 56 days.",
+    "summary": "No open Jira tickets outside the CAM board. Contract ends in 56 days.",
     "followUp": "Start the renewal conversation for 中華民國對外貿易發展協會 — contract ends in 56 days.",
     "health": "green",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "全曜財經資訊": {
-    "summary": "Work is mostly AIQUA platform requests plus campaign operations. Account looks still in onboarding / enablement. Carrying long-stale items (oldest 853d).",
+    "summary": "Work is mostly AIQUA platform requests plus audience & segmentation. Account looks still in onboarding / enablement. Carrying long-stale items (oldest 708d).",
     "followUp": "Chase GCR-22 (in progress, Ted Wu) — Huge events quotation proposal (PXMart / CMoney / CW / CWGV / SKM / ezTravel).",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "寰宇家庭": {
-    "summary": "Work is mostly backend / tech-services requests plus campaign operations. Account looks steady BAU. Carrying long-stale items (oldest 3739d).",
-    "followUp": "Clear or close CAM-8056 (3739d, Iris Huang) — 加碼：寰宇家庭.",
-    "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "summary": "Work is mostly backend / tech-services requests. Account looks steady BAU.",
+    "followUp": "Clear or close ETS-5685 (2d, Yungyun Cheng) — [JM][WorldFamily] Confirmation of real time InWeb campagin.",
+    "health": "green",
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "肯驛國際": {
     "summary": "Work is mostly AiDeal onsite plus BotBonnie / LINE chatbot work. Account looks steady BAU. Carrying long-stale items (oldest 944d).",
     "followUp": "Clear or close AID-12224 (944d, Jarvis Kan) — AiDeal 肯驛 8折優惠.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "藝康企業股份有限公司": {
-    "summary": "Work is mostly BotBonnie / LINE chatbot work plus RFQ / quote handling. Account looks steady BAU. Carrying long-stale items (oldest 224d).",
+    "summary": "Work is mostly BotBonnie / LINE chatbot work plus RFQ / quote handling. Account looks steady BAU. Carrying long-stale items (oldest 225d).",
     "followUp": "Chase BBT-7779 (in progress, Brian Tsai) — 🍔 [藝康 Ecolab] User stuck in previous loop when order remains in Pending status — inquiry .",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "guardian-health-beauty": {
-    "summary": "Work is mostly AIQUA onboarding & campaign setup plus AIBID campaign operations. Account looks still in onboarding / enablement. Contract lapsed 135 days ago. 3 items blocked. Carrying long-stale items (oldest 334d).",
+    "summary": "Work is mostly AIQUA onboarding & campaign setup plus Ad Cloud delivery & budget. Account looks still in onboarding / enablement. Contract lapsed 135 days ago. 3 items blocked. Carrying long-stale items (oldest 267d).",
     "followUp": "Renewal has lapsed — confirm status with GUARDIAN HEALTH & BEAUTY before further delivery work.",
     "health": "red",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "haleon": {
-    "summary": "Work is mostly campaign operations plus BotBonnie / LINE chatbot work. Account looks steady BAU. Carrying long-stale items (oldest 751d).",
+    "summary": "Work is mostly BotBonnie / LINE chatbot work. Account looks steady BAU. Carrying long-stale items (oldest 752d).",
     "followUp": "Chase CS-1191 (in progress, david.tai) — BB 客戶 Haleon requesting us (DS team) to fill responsible AI agreement form.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "jgb-smart-property": {
     "summary": "Work is mostly BotBonnie / LINE chatbot work. Account looks steady BAU. Carrying long-stale items (oldest 783d).",
     "followUp": "Chase BBB-1955 (in progress, Mia Li) — 6/30 鮮乳坊、Cofit_脂研；6/27 JGB（富喬物業）.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "三創數位": {
     "summary": "Work is mostly RFQ / quote handling. Account looks steady BAU. Carrying long-stale items (oldest 741d).",
     "followUp": "Clear or close BBT-4331 (741d, Unassigned) — 【RFQ】 三創數位 (Syntrend)_ 客製化簽到套件報表.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "佑全保健藥妝": {
     "summary": "Work is mostly AEP data-pipeline work. Account looks mid-migration. Carrying long-stale items (oldest 161d).",
     "followUp": "Clear or close QGWL-25099 (161d, Ray Lin) — [yourchance][backfill offline event] Prepare for the backfill event (adjust rate.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "冰宇科技": {
     "summary": "Work is mostly BotBonnie / LINE chatbot work plus AI agent enablement. Account looks steady BAU with a long-tail backlog. Carrying long-stale items (oldest 1426d).",
     "followUp": "Chase BBB-1143 (in progress, Eric.hung) — [CSM Check] 冰宇科技.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "台茂購物中心": {
     "summary": "Work is mostly BotBonnie / LINE chatbot work plus AIQUA onboarding & campaign setup. Account looks steady BAU.",
     "followUp": "Chase FIN-2690 (in progress, Tina Lee (finance)) — BotBonnie＿用戶退款申請＿大師課業.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "嘉里大榮": {
     "summary": "Work is mostly BotBonnie / LINE chatbot work plus RFQ / quote handling. Account looks steady BAU. Carrying long-stale items (oldest 40d).",
     "followUp": "Chase BBT-7479 (in progress, Brian Tsai) — RFQ_嘉里大榮_通知型訊息串接與好友訊息通知.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "大方藝彩行銷顧問股份有限公司": {
-    "summary": "No open Jira tickets. Renewal not due for 581 days.",
+    "summary": "No open Jira tickets outside the CAM board. Renewal not due for 581 days.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "學吧": {
     "summary": "Work is mostly API / data integration plus BotBonnie / LINE chatbot work. Account looks still in onboarding / enablement. Carrying long-stale items (oldest 979d).",
     "followUp": "Clear or close BBT-1844 (979d, Unassigned) — [學吧 LearningPa] Function to turn on Bot for all or part of the audience.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "富味鄉食品": {
-    "summary": "Work is mostly RFQ / quote handling plus AIQUA onboarding & campaign setup. Account looks steady BAU. Carrying long-stale items (oldest 1483d).",
-    "followUp": "Clear or close BBB-1032 (1483d, Samuel Chiang) — 【RFQ】富味鄉 芝初_標籤/參數記錄總人數秀給用戶查看.",
+    "summary": "Work is mostly RFQ / quote handling plus AIQUA onboarding & campaign setup. Account looks steady BAU. Carrying long-stale items (oldest 1484d).",
+    "followUp": "Clear or close BBB-1032 (1484d, Samuel Chiang) — 【RFQ】富味鄉 芝初_標籤/參數記錄總人數秀給用戶查看.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "我的專屬營養師": {
-    "summary": "Work is mostly BotBonnie / LINE chatbot work plus audience & segmentation. Account looks still in onboarding / enablement. Carrying long-stale items (oldest 121d).",
-    "followUp": "Chase BP-10238 (in progress, luke.huang) — [Cofit] UID tooltip disappears on hover when displayed above channel, preventing copy.",
+    "summary": "Work is mostly BotBonnie / LINE chatbot work plus audience & segmentation. Account looks still in onboarding / enablement. Carrying long-stale items (oldest 122d).",
+    "followUp": "Clear or close BBT-6814 (122d, Brian Tsai) — [Amway /Cofit /CTBC] botbonnie system performance optimization.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "玉山銀行": {
-    "summary": "Work is mostly BotBonnie / LINE chatbot work plus campaign operations. Account looks steady BAU. Carrying long-stale items (oldest 1455d).",
-    "followUp": "Clear or close CAM-233255 (1455d, Mason Chiu) — [Investigation] 凱絡_玉山銀數位e卡_立即辦卡 event.",
+    "summary": "Work is mostly BotBonnie / LINE chatbot work. Account looks steady BAU. Carrying long-stale items (oldest 303d).",
+    "followUp": "Clear or close BBT-5499 (303d, Unassigned) — [玉山銀行] RichMenu can not be switched.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "統一數網": {
-    "summary": "Work is mostly campaign operations plus RFQ / quote handling. Account looks steady BAU. Carrying long-stale items (oldest 97d).",
+    "summary": "Work is mostly RFQ / quote handling plus ad creative production. Account looks steady BAU. Carrying long-stale items (oldest 97d).",
     "followUp": "Chase BBT-7885 (in progress, Brian Tsai) — 【RFQ】7-ELEVEN 統一超商_用戶綁定由 BB 進行判斷 GID 只能綁一次.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "緯育": {
     "summary": "Work is mostly BotBonnie / LINE chatbot work plus AI agent enablement. Account looks steady BAU. Carrying long-stale items (oldest 1526d).",
     "followUp": "Clear or close BBB-927 (1526d, Samuel Chiang) — [CSM Check] 緯育.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "聚財課": {
-    "summary": "Work is mostly AiDeal onsite plus campaign operations. Account looks steady BAU. Carrying long-stale items (oldest 1427d).",
-    "followUp": "Chase CAM-237543 (in progress, Jane Liu) — [CIR] 聚財課-202209.26-CPL(名單)-LCCV_20220927.",
+    "summary": "Work is mostly AiDeal onsite. Account looks steady BAU. Carrying long-stale items (oldest 1427d).",
+    "followUp": "Clear or close AID-9646 (1427d, Eric Tung) — Aideal-聚財課CPA.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "芝麻開門電子商務股份有限公司": {
-    "summary": "No open Jira tickets. Renewal not due for 164 days.",
+    "summary": "No open Jira tickets outside the CAM board. Renewal not due for 164 days.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "萊爾富": {
-    "summary": "Work is mostly campaign operations plus BotBonnie / LINE chatbot work. Account looks steady BAU. Carrying long-stale items (oldest 1743d).",
+    "summary": "Work is mostly BotBonnie / LINE chatbot work. Account looks steady BAU. Carrying long-stale items (oldest 1743d).",
     "followUp": "Chase BBB-506 (in progress, Unassigned) — 萊爾富國際股份有限公司 (續約(no contract)).",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "錦明集團": {
-    "summary": "No open Jira tickets. Renewal not due for 437 days.",
+    "summary": "No open Jira tickets outside the CAM board. Renewal not due for 437 days.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "hola-特力和樂": {
-    "summary": "Work is mostly AI agent enablement plus AIRIS analytics & reporting. Account looks still in onboarding / enablement.",
-    "followUp": "Chase AGNT-1687 (in progress, mia.chu) — [SKM HQ] Audience creation returns text only, no card shown.",
+    "summary": "Work is mostly AIRIS analytics & reporting plus AI agent enablement. Account looks still in onboarding / enablement.",
+    "followUp": "Chase AIRIS-9260 (in progress, yiling.lee) — Teardown one-time audience sync connector.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "讀墨電子書": {
     "summary": "Work is mostly campaign operations plus API / data integration. Account looks mid-migration. QGRAPH-38446 is blocked. Carrying long-stale items (oldest 78d).",
     "followUp": "Unblock QGRAPH-38446 (irene.hsieh) — [migration] readmoo.",
     "health": "red",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "錨點影音": {
-    "summary": "Work is mostly ad creative production plus AI agent enablement. Account looks mid-migration. Contract lapsed 81 days ago. 4 items blocked.",
+    "summary": "Work is mostly ad creative production plus AI agent enablement. Account looks mid-migration. Contract lapsed 81 days ago. 3 items blocked.",
     "followUp": "Renewal has lapsed — confirm status with 錨點影音 before further delivery work.",
     "health": "red",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "inlook": {
-    "summary": "Work is mostly AIRIS analytics & reporting plus BotBonnie / LINE chatbot work. Account looks still in onboarding / enablement. Carrying long-stale items (oldest 225d).",
-    "followUp": "Clear or close AIR-3980 (225d, liyeh.hung) — [INLook] Most of the AIRIS Tracking API responded with connect EHOSTUNREACH 91.1.",
+    "summary": "Work is mostly AIRIS analytics & reporting plus BotBonnie / LINE chatbot work. Account looks still in onboarding / enablement. Carrying long-stale items (oldest 226d).",
+    "followUp": "Clear or close AIR-3980 (226d, liyeh.hung) — [INLook] Most of the AIRIS Tracking API responded with connect EHOSTUNREACH 91.1.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "國泰人壽": {
-    "summary": "Work is mostly BotBonnie / LINE chatbot work plus campaign operations. Account looks still in onboarding / enablement. Carrying long-stale items (oldest 769d).",
-    "followUp": "Clear or close CAM-316417 (769d, Wei Wang) — Cathay Pacific_Branding_KR_Q32024.",
+    "summary": "Work is mostly BotBonnie / LINE chatbot work plus AIQUA onboarding & campaign setup. Account looks still in onboarding / enablement. Carrying long-stale items (oldest 758d).",
+    "followUp": "Clear or close BBT-4274 (758d, Unassigned) — 【RFQ】國泰人壽-教育訓練部_開發 API 將表格自動匯入至“序號認證”.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "國泰金控": {
-    "summary": "Work is mostly AIQUA onboarding & campaign setup plus ad creative production. Account looks steady BAU with a long-tail backlog. Carrying long-stale items (oldest 2079d).",
+    "summary": "Work is mostly AIQUA onboarding & campaign setup plus ad creative production. Account looks steady BAU with a long-tail backlog. Carrying long-stale items (oldest 2080d).",
     "followUp": "Chase ACE-3804 (in progress, Phil Hsu) — 國泰金控_享出門.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "城企國際有限公司": {
-    "summary": "Work is mostly AIRIS analytics & reporting plus BotBonnie / LINE chatbot work. Account looks still in onboarding / enablement. Carrying long-stale items (oldest 225d).",
-    "followUp": "Clear or close AIR-3980 (225d, liyeh.hung) — [INLook] Most of the AIRIS Tracking API responded with connect EHOSTUNREACH 91.1.",
+    "summary": "Work is mostly AIRIS analytics & reporting plus BotBonnie / LINE chatbot work. Account looks still in onboarding / enablement. Carrying long-stale items (oldest 226d).",
+    "followUp": "Clear or close AIR-3980 (226d, liyeh.hung) — [INLook] Most of the AIRIS Tracking API responded with connect EHOSTUNREACH 91.1.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "天幕國際": {
     "summary": "Work is mostly AI agent enablement plus AIQUA onboarding & campaign setup. Account looks still in onboarding / enablement.",
     "followUp": "Chase AGNT-1700 (in progress, Mei-Cih Yeh) — [DR.CiNK] [Onboard] Enable campaign agent for DR.CiNK.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "微風": {
-    "summary": "Work is mostly audience & segmentation plus API / data integration. Account looks mid-migration.",
-    "followUp": "Chase ETS-5863 (in progress, gordon.sung) — [SOGO] Rec Scenario Traffic Dropped to Near Zero Since 8/13 (Onsite Experience Not Renderi.",
+    "summary": "Work is mostly audience & segmentation plus AEP data-pipeline work. Account looks mid-migration.",
+    "followUp": "Chase QGRAPH-40125 (in progress, Sean Ho) — [Rec][audit-retention][impl] Purge stage: batched DELETE bounded by the verified id range.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "爭鮮": {
-    "summary": "Work is mostly RFQ / quote handling plus campaign operations. Account looks steady BAU. Carrying long-stale items (oldest 1357d).",
+    "summary": "Work is mostly RFQ / quote handling. Account looks steady BAU. Carrying long-stale items (oldest 65d).",
     "followUp": "Chase BBT-7725 (in progress, Brian Tsai) — [RFQ] 爭鮮_客製化遊戲Liff &  串接票券夾.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "維那斯有限公司": {
-    "summary": "Work is mostly AIRIS analytics & reporting plus BotBonnie / LINE chatbot work. Account looks still in onboarding / enablement. Carrying long-stale items (oldest 225d).",
-    "followUp": "Clear or close AIR-3980 (225d, liyeh.hung) — [INLook] Most of the AIRIS Tracking API responded with connect EHOSTUNREACH 91.1.",
+    "summary": "Work is mostly AIRIS analytics & reporting plus BotBonnie / LINE chatbot work. Account looks still in onboarding / enablement. Carrying long-stale items (oldest 226d).",
+    "followUp": "Clear or close AIR-3980 (226d, liyeh.hung) — [INLook] Most of the AIRIS Tracking API responded with connect EHOSTUNREACH 91.1.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "達特聖克國際股份有限公司": {
     "summary": "Work is mostly AI agent enablement plus AIQUA onboarding & campaign setup. Account looks still in onboarding / enablement. Carrying long-stale items (oldest 314d).",
     "followUp": "Clear or close ADCR-315 (314d, steven.za.chen) — [Custom Template] DR.CiNK達特聖克_2025.10.09.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "invani": {
-    "summary": "Work is mostly RFQ / quote handling. Account looks steady BAU with a long-tail backlog. Carrying long-stale items (oldest 775d).",
-    "followUp": "Clear or close BBT-3966 (775d, Unassigned) — 【RFQ】美商怡發明有限公司 Invani_客服對話紀錄同步至 BotBonnie.",
+    "summary": "Work is mostly RFQ / quote handling. Account looks steady BAU with a long-tail backlog. Carrying long-stale items (oldest 776d).",
+    "followUp": "Clear or close BBT-3966 (776d, Unassigned) — 【RFQ】美商怡發明有限公司 Invani_客服對話紀錄同步至 BotBonnie.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "uuulab-co": {
-    "summary": "No open Jira tickets. Renewal not due for 129 days.",
+    "summary": "No open Jira tickets outside the CAM board. Renewal not due for 129 days.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "優派國際": {
-    "summary": "No open Jira tickets. Renewal not due for 195 days.",
+    "summary": "No open Jira tickets outside the CAM board. Renewal not due for 195 days.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "國立暨南國際大學": {
-    "summary": "No open Jira tickets. Renewal not due for 133 days.",
+    "summary": "No open Jira tickets outside the CAM board. Renewal not due for 133 days.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "宇峻奧汀科技": {
-    "summary": "No open Jira tickets. Renewal not due for 239 days.",
+    "summary": "No open Jira tickets outside the CAM board. Renewal not due for 239 days.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "摩奇創意": {
-    "summary": "No open Jira tickets. Renewal not due for 213 days.",
+    "summary": "No open Jira tickets outside the CAM board. Renewal not due for 213 days.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "橋陽設計工作室": {
-    "summary": "Work is mostly campaign operations plus ad creative production. Account looks steady BAU. Carrying long-stale items (oldest 2939d).",
-    "followUp": "Chase CAM-174607 (in progress, Jane Liu) — [Resize] 雅詩蘭黛_無敵霜_母親節_20210407.",
+    "summary": "Mixed platform requests across several products. Account looks steady BAU. Carrying long-stale items (oldest 1974d).",
+    "followUp": "Chase ACE-4528 (in progress, Katie Chen) — Darphin(雅詩蘭黛集團品牌)_母親節.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "貝殼放大": {
     "summary": "Work is mostly BotBonnie / LINE chatbot work. Account looks steady BAU. Contract ends in 0 days.",
     "followUp": "Kick off renewal for 貝殼放大 now — contract ends in 0 days.",
     "health": "red",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "貝立德股份有限公司": {
-    "summary": "Work is mostly campaign operations plus Ad Cloud delivery & budget. Account looks steady BAU. Carrying long-stale items (oldest 56d).",
-    "followUp": "Chase CAM-403362 (in progress, Tessa Tang) — [Additional udget] Branding_momo小商家-貝立德-TEMPO衛生紙88節超優惠Campaign_20260809-0811_New-$27,087.",
+    "summary": "Work is mostly AIBID campaign operations. Account looks steady BAU.",
+    "followUp": "Clear or close FAQ-210 (29d, Dora Tseng) — 貝立德_KFC TW - 七月外送專法_2607_CPC opt CTR (AIBID)_Link.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "迪凱科技": {
     "summary": "Work is mostly BotBonnie / LINE chatbot work. Account looks steady BAU. Carrying long-stale items (oldest 176d).",
     "followUp": "Chase BBB-2213 (in progress, Mia Li) — 2/28 百揚資訊、好日子、迪凱科技；TBD：Ogilvy_Hill done.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "高雄萬豪酒店": {
-    "summary": "Work is mostly AIBID campaign operations plus AEP data-pipeline work. Account looks steady BAU. Carrying long-stale items (oldest 202d).",
-    "followUp": "Chase ETS-5568 (in progress, hazel.wang) — [Hotel Monterey] Frequent errors and screen freeze when saving EDM templates; templates no.",
+    "summary": "Work is mostly AEP data-pipeline work plus audience & segmentation. Account looks steady BAU with a long-tail backlog. Carrying long-stale items (oldest 191d).",
+    "followUp": "Clear or close AI-8979 (191d, Yao-Nan Chen) — Hotel recommendation using fight from and to feature.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "mis-test": {
     "summary": "Work is mostly AEP data-pipeline work plus AIRIS analytics & reporting. Account looks mid-migration. Contract lapsed 129 days ago. ETS-1937 is blocked.",
     "followUp": "Renewal has lapsed — confirm status with MIS test before further delivery work.",
     "health": "red",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "renishaw": {
-    "summary": "No open Jira tickets. Renewal not due for 270 days.",
+    "summary": "No open Jira tickets outside the CAM board. Renewal not due for 270 days.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "易遊網股份有限公司": {
-    "summary": "Work is mostly ad creative production plus AI agent enablement. Account looks still in onboarding / enablement.",
-    "followUp": "Chase ETS-5860 (in progress, jason.wu) — [ezTravel] Certain OJM node delivered unusually.",
+    "summary": "Work is mostly ad creative production plus AIRIS analytics & reporting. Account looks still in onboarding / enablement.",
+    "followUp": "Chase ADCP-1927 (in progress, Gary Wu) — High-Impact CTA layout on Adcreative.ai.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "robinmay薇恩": {
-    "summary": "Work is mostly AIRIS analytics & reporting plus ad creative production. Account looks mid-migration. Carrying long-stale items (oldest 1043d).",
+    "summary": "Work is mostly AIRIS analytics & reporting plus AiDeal onsite. Account looks mid-migration. Carrying long-stale items (oldest 436d).",
     "followUp": "Chase ETS-5779 (in progress, Mark Liu) — [ROBINMAY] Confirm Receipt of 康德 Test Data via SFTP.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "佳格食品": {
-    "summary": "Work is mostly BotBonnie / LINE chatbot work plus AI agent enablement. Account looks still in onboarding / enablement. Carrying long-stale items (oldest 385d).",
-    "followUp": "Clear or close CAM-356354 (385d, cherry.lin) — [Code Doc]佳格_天地合補葡萄糖胺_250704.",
+    "summary": "Work is mostly BotBonnie / LINE chatbot work plus AI agent enablement. Account looks still in onboarding / enablement. Carrying long-stale items (oldest 309d).",
+    "followUp": "Clear or close BBT-6554 (309d, Unassigned) — [佳格] Include Blocked/Unblocked Status in User List Upload.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "太平洋崇光百貨": {
-    "summary": "Work is mostly audience & segmentation plus AiDeal onsite. Account looks still in onboarding / enablement. Carrying long-stale items (oldest 489d).",
+    "summary": "Work is mostly AiDeal onsite plus audience & segmentation. Account looks still in onboarding / enablement. Carrying long-stale items (oldest 490d).",
     "followUp": "Chase ETS-5863 (in progress, gordon.sung) — [SOGO] Rec Scenario Traffic Dropped to Near Zero Since 8/13 (Onsite Experience Not Renderi.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "星宇航空": {
     "summary": "Work is mostly AEP data-pipeline work plus AIQUA onboarding & campaign setup. Account looks mid-migration. QGRAPH-39115 is blocked. Carrying long-stale items (oldest 108d).",
     "followUp": "Unblock QGRAPH-39115 (Unassigned) — Backfill STARLUX Airlines (organization-starlux)(need BB).",
     "health": "red",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "wemo": {
-    "summary": "Work is mostly AIQUA onboarding & campaign setup plus backend / tech-services requests. Account looks mid-migration. Contract lapsed 20 days ago. Carrying long-stale items (oldest 92d).",
+    "summary": "Work is mostly AIQUA onboarding & campaign setup plus backend / tech-services requests. Account looks mid-migration. Contract lapsed 20 days ago. Carrying long-stale items (oldest 93d).",
     "followUp": "Renewal has lapsed — confirm status with WeMo before further delivery work.",
     "health": "red",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "世邦旅遊": {
     "summary": "Work is mostly platform enablement & adoption plus AiDeal onsite. Account looks steady BAU. Carrying long-stale items (oldest 541d).",
     "followUp": "Clear or close AID-12878 (541d, Eric Tung) — AiDeal_世邦旅遊 (MM Client).",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "小川日和有限公司": {
-    "summary": "Work is mostly AI agent enablement plus BotBonnie / LINE chatbot work. Account looks mid-migration. Carrying long-stale items (oldest 303d).",
-    "followUp": "Clear or close BBT-6542 (303d, vivian.yang) — [BB-小川職人] Line Menu can't select module in KB.",
+    "summary": "Work is mostly AI agent enablement plus BotBonnie / LINE chatbot work. Account looks mid-migration. Carrying long-stale items (oldest 304d).",
+    "followUp": "Clear or close BBT-6542 (304d, vivian.yang) — [BB-小川職人] Line Menu can't select module in KB.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "展碁國際股份有限公司": {
-    "summary": "Work is mostly BotBonnie / LINE chatbot work plus AIQUA onboarding & campaign setup. Account looks mid-migration. Contract lapsed 31 days ago. Carrying long-stale items (oldest 390d).",
+    "summary": "Work is mostly BotBonnie / LINE chatbot work plus AIQUA onboarding & campaign setup. Account looks mid-migration. Contract lapsed 31 days ago. Carrying long-stale items (oldest 391d).",
     "followUp": "Renewal has lapsed — confirm status with 展碁國際股份有限公司 before further delivery work.",
     "health": "red",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "數匯智控股份有限公司": {
     "summary": "Work is mostly AIQUA onboarding & campaign setup. Account looks still in onboarding / enablement. Contract lapsed 36 days ago. Carrying long-stale items (oldest 461d).",
     "followUp": "Renewal has lapsed — confirm status with 數匯智控股份有限公司 before further delivery work.",
     "health": "red",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "景華生技": {
-    "summary": "Work is mostly AIQUA onboarding & campaign setup plus AiDeal onsite. Account looks steady BAU. Carrying long-stale items (oldest 593d).",
-    "followUp": "Clear or close AID-12833 (593d, Eric Tung) — AiD_你滋美得.",
+    "summary": "Work is mostly AIQUA onboarding & campaign setup plus AiDeal onsite. Account looks steady BAU. Carrying long-stale items (oldest 594d).",
+    "followUp": "Clear or close AID-12833 (594d, Eric Tung) — AiD_你滋美得.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "橘子蘋果orangeapple": {
-    "summary": "No open Jira tickets. Renewal not due for 145 days.",
+    "summary": "No open Jira tickets outside the CAM board. Renewal not due for 145 days.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "雪坊志業": {
-    "summary": "No open Jira tickets. Renewal not due for 72 days.",
+    "summary": "No open Jira tickets outside the CAM board. Renewal not due for 72 days.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "佳聖媒體行銷": {
-    "summary": "Work is mostly AiDeal onsite plus RFQ / quote handling. Account looks steady BAU. Carrying long-stale items (oldest 959d).",
+    "summary": "Work is mostly AiDeal onsite plus RFQ / quote handling. Account looks steady BAU. Carrying long-stale items (oldest 944d).",
     "followUp": "Chase ADCR-224 (in progress, Brendan Kuang) — 興富發_demo製作_0808.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "保聯企業股份有限公司": {
-    "summary": "Work is mostly BotBonnie / LINE chatbot work plus RFQ / quote handling. Account looks steady BAU. Carrying long-stale items (oldest 342d).",
-    "followUp": "Clear or close BBT-6404 (342d, Unassigned) — 【RFQ】保聯企業股份有限公司_附近店家.",
+    "summary": "Work is mostly BotBonnie / LINE chatbot work plus RFQ / quote handling. Account looks steady BAU. Carrying long-stale items (oldest 343d).",
+    "followUp": "Clear or close BBT-6404 (343d, Unassigned) — 【RFQ】保聯企業股份有限公司_附近店家.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "嘉丹妮爾": {
-    "summary": "Work is mostly AiDeal onsite plus BotBonnie / LINE chatbot work. Account looks steady BAU. Carrying long-stale items (oldest 1842d).",
-    "followUp": "Clear or close AID-5648 (1842d, Peiru Shih) — [Invoice] AiDeal_嘉丹妮爾_2021/07.",
+    "summary": "Work is mostly AiDeal onsite plus BotBonnie / LINE chatbot work. Account looks steady BAU. Carrying long-stale items (oldest 1843d).",
+    "followUp": "Clear or close AID-5648 (1843d, Peiru Shih) — [Invoice] AiDeal_嘉丹妮爾_2021/07.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "富川創造": {
     "summary": "Work is mostly campaign operations plus platform enablement & adoption. Account looks mid-migration.",
     "followUp": "Chase ETS-5258 (in progress, adam.chen) — [VitaDairy] Can't entry Lucky Wheel many times (Advanced kit).",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "朵墨": {
-    "summary": "No open Jira tickets. Renewal not due for 582 days.",
+    "summary": "No open Jira tickets outside the CAM board. Renewal not due for 582 days.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "林莉國際股份有限公司": {
     "summary": "Work is mostly BotBonnie / LINE chatbot work. Account looks steady BAU. Carrying long-stale items (oldest 359d).",
-    "followUp": "Clear or close BBT-6200 (359d, vivian.yang) — [MM-BB-林莉婚紗] .",
+    "followUp": "Clear or close BBT-6200 (359d, vivian.yang) — [MM-BB-林莉婚紗].",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "狼窩網紅行銷國際": {
     "summary": "Work is mostly AIQUA onboarding & campaign setup plus AiDeal onsite. Account looks still in onboarding / enablement. Carrying long-stale items (oldest 475d).",
     "followUp": "Clear or close AID-12940 (475d, vivian.yang) — [Initial Setting] AiDeal_藍光盾（代理商：狼窩網紅）.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "美藍雷": {
     "summary": "Work is mostly RFQ / quote handling plus BotBonnie / LINE chatbot work. Account looks steady BAU.",
     "followUp": "Chase BBT-7725 (in progress, Brian Tsai) — [RFQ] 爭鮮_客製化遊戲Liff &  串接票券夾.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "華南金資產管理": {
     "summary": "Work is mostly API / data integration. Account looks still in onboarding / enablement. Carrying long-stale items (oldest 216d).",
     "followUp": "Clear or close BP-9185 (216d, kyle.kc.wang) — [華南金資產管理] Enable open API v2.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "全聯": {
-    "summary": "Work is mostly campaign operations plus AIXON data-graph work. Account looks in handover.",
+    "summary": "Work is mostly AIXON data-graph work plus backend / tech-services requests. Account looks mid-migration.",
     "followUp": "Chase ETS-5812 (in progress, vivian.yang) — [PXGO] User & Event 數量統計 - by month (2025/08 - 2026/07).",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "永豐商業銀行": {
-    "summary": "Work is mostly AIBID campaign operations plus campaign operations. Account looks still in onboarding / enablement.",
-    "followUp": "Chase CAM-404023 (in progress, jaehan.ji) — [BTV] Saving Bank(AIBID)_banner to video request_260814.",
+    "summary": "Mixed platform requests across several products. Account looks steady BAU.",
+    "followUp": "Chase AI-30359 (in progress, Ryan Hsieh) — ADC Brain Question Bank Service M2.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "千山淨水": {
-    "summary": "Work is mostly AIRIS analytics & reporting plus API / data integration. Account looks steady BAU. AIR-3003 is blocked. Carrying long-stale items (oldest 436d).",
+    "summary": "Work is mostly AIRIS analytics & reporting plus API / data integration. Account looks steady BAU. AIR-3003 is blocked. Carrying long-stale items (oldest 437d).",
     "followUp": "Unblock AIR-3003 (esther.liu) — [千山淨水] check reason why referrer show abnormal.",
     "health": "red",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "南山人壽": {
-    "summary": "Work is mostly AIQUA onboarding & campaign setup plus campaign operations. Account looks steady BAU. Contract lapsed 20 days ago. Carrying long-stale items (oldest 3893d).",
+    "summary": "Work is mostly AIQUA onboarding & campaign setup plus AIQUA platform requests. Account looks steady BAU with a long-tail backlog. Contract lapsed 20 days ago. Carrying long-stale items (oldest 916d).",
     "followUp": "Renewal has lapsed — confirm status with 南山人壽 before further delivery work.",
     "health": "red",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "味全龍職業棒球隊": {
-    "summary": "Mixed platform requests across several products. Account looks steady BAU. Carrying long-stale items (oldest 1534d).",
-    "followUp": "Clear or close PERM-269 (1534d, henry.yang) — Authorization request for iDash_Wei-Wei Du.",
+    "summary": "Mixed platform requests across several products. Account looks steady BAU. Carrying long-stale items (oldest 1535d).",
+    "followUp": "Clear or close PERM-269 (1535d, henry.yang) — Authorization request for iDash_Wei-Wei Du.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "天下雜誌": {
-    "summary": "Work is mostly campaign operations plus AEP data-pipeline work. Account looks steady BAU. Carrying long-stale items (oldest 3170d).",
+    "summary": "Work is mostly AEP data-pipeline work plus AIQUA onboarding & campaign setup. Account looks steady BAU. Carrying long-stale items (oldest 2190d).",
     "followUp": "Chase QGRAPH-39270 (in progress, Unassigned) — [AEP Adoption] CommonWealth.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "台灣山葉機車": {
-    "summary": "Work is mostly AEP data-pipeline work plus AIQUA onboarding & campaign setup. Account looks mid-migration. Carrying long-stale items (oldest 253d).",
-    "followUp": "Chase CAM-373638 (in progress, lucie.hsieh) — [Resize] YAMAHA Y-Connect Q4活動數位行銷.",
+    "summary": "Work is mostly AEP data-pipeline work plus AIQUA onboarding & campaign setup. Account looks mid-migration. Carrying long-stale items (oldest 244d).",
+    "followUp": "Clear or close AIR-3910 (244d, Laura Yang) — [YAMAHA] PS pipeline modification for AEP.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "巨匠電腦": {
-    "summary": "Work is mostly AEP data-pipeline work plus campaign operations. Account looks mid-migration. Carrying long-stale items (oldest 1367d).",
+    "summary": "Work is mostly AEP data-pipeline work plus AIQUA onboarding & campaign setup. Account looks mid-migration. Carrying long-stale items (oldest 1148d).",
     "followUp": "Chase AIQ-1608 (in progress, alvin.yh.wu) — [PcSchool] AIQUA <> AIRIS backfill discussion.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "益富實業": {
     "summary": "Work is mostly BotBonnie / LINE chatbot work plus RFQ / quote handling. Account looks steady BAU with a long-tail backlog. Carrying long-stale items (oldest 852d).",
     "followUp": "Chase BBT-7828 (in progress, Brian Tsai) — [益富] Cyberbiz Order Payment Information Appears Incomplete.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "台灣索尼": {
-    "summary": "Work is mostly AI agent enablement plus AIRIS analytics & reporting. Account looks still in onboarding / enablement.",
-    "followUp": "Chase AGNT-1687 (in progress, mia.chu) — [SKM HQ] Audience creation returns text only, no card shown.",
+    "summary": "Work is mostly AIRIS analytics & reporting plus AI agent enablement. Account looks still in onboarding / enablement.",
+    "followUp": "Chase AIRIS-9260 (in progress, yiling.lee) — Teardown one-time audience sync connector.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "悠勢科技": {
-    "summary": "Work is mostly AIQUA platform requests plus API / data integration. Account looks still in onboarding / enablement. Contract lapsed 14 days ago. Carrying long-stale items (oldest 554d).",
+    "summary": "Work is mostly AIQUA platform requests plus API / data integration. Account looks still in onboarding / enablement. Contract lapsed 14 days ago. Carrying long-stale items (oldest 555d).",
     "followUp": "Renewal has lapsed — confirm status with 悠勢科技 before further delivery work.",
     "health": "red",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "遠見天下文化事業群": {
     "summary": "Work is mostly AIRIS analytics & reporting plus AIQUA onboarding & campaign setup. Account looks still in onboarding / enablement. AIR-3748 is blocked. Carrying long-stale items (oldest 70d).",
     "followUp": "Unblock AIR-3748 (Laura Yang) — [CWGV-天下文化]filter timestamp \"does not exist\" and \"exist\", the result is incorrect.",
     "health": "red",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "鵬泰顧問": {
-    "summary": "Work is mostly platform enablement & adoption plus campaign operations. Account looks steady BAU. Contract lapsed 142 days ago. Carrying long-stale items (oldest 443d).",
+    "summary": "Work is mostly platform enablement & adoption. Account looks steady BAU. Contract lapsed 142 days ago. Carrying long-stale items (oldest 129d).",
     "followUp": "Renewal has lapsed — confirm status with 鵬泰顧問 before further delivery work.",
     "health": "red",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "台灣蓋璞": {
-    "summary": "Work is mostly AI agent enablement plus AIRIS analytics & reporting. Account looks steady BAU.",
-    "followUp": "Chase AIRIS-9076 (in progress, Po-Chou Kung) — [ZUS] Sample ZUS segments to investigate channel user gaps.",
+    "summary": "Work is mostly AI agent enablement plus AEP data-pipeline work. Account looks steady BAU.",
+    "followUp": "Clear or close QGWL-26076 (12d, kamol.mavlonov) — [Yeogi] Confirm safety of iOS SDK v8.7.0+/v8.10.0 for Creative Studio getUserId .",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "宏璟建設股份有限公司-日月光廣場": {
-    "summary": "Work is mostly AIQUA onboarding & campaign setup plus BotBonnie / LINE chatbot work. Account looks still in onboarding / enablement. Carrying long-stale items (oldest 209d).",
-    "followUp": "Clear or close AIQ-1547 (209d, grace.li) — 宏璟建設 - 土城日月光廣場.",
+    "summary": "Work is mostly AIQUA onboarding & campaign setup plus BotBonnie / LINE chatbot work. Account looks still in onboarding / enablement. Carrying long-stale items (oldest 210d).",
+    "followUp": "Clear or close AIQ-1547 (210d, grace.li) — 宏璟建設 - 土城日月光廣場.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "寶島眼鏡": {
     "summary": "Work is mostly BotBonnie / LINE chatbot work plus AIQUA onboarding & campaign setup. Account looks steady BAU.",
     "followUp": "Chase FIN-2690 (in progress, Tina Lee (finance)) — BotBonnie＿用戶退款申請＿大師課業.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "日日行銷廣告": {
-    "summary": "Work is mostly AIQUA onboarding & campaign setup plus BotBonnie / LINE chatbot work. Account looks steady BAU. Contract lapsed 98 days ago. Carrying long-stale items (oldest 2052d).",
+    "summary": "Work is mostly AIQUA onboarding & campaign setup plus BotBonnie / LINE chatbot work. Account looks steady BAU. Contract lapsed 98 days ago. Carrying long-stale items (oldest 2053d).",
     "followUp": "Renewal has lapsed — confirm status with 日日行銷廣告 before further delivery work.",
     "health": "red",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "日藥本舖": {
     "summary": "Work is mostly AiDeal onsite plus AIQUA onboarding & campaign setup. Account looks steady BAU. Contract ends in 32 days. Carrying long-stale items (oldest 1969d).",
     "followUp": "Kick off renewal for 日藥本舖 now — contract ends in 32 days.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "衣芙": {
     "summary": "Work is mostly BotBonnie / LINE chatbot work plus AI agent enablement. Account looks mid-migration. Carrying long-stale items (oldest 198d).",
     "followUp": "Clear or close APS-1847 (198d, Allen CL Yang) — Migrate t2i response (Readmoo, Efshop, ASO).",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "味全食品": {
-    "summary": "Work is mostly AIQUA onboarding & campaign setup plus API / data integration. Account looks still in onboarding / enablement. Contract lapsed 138 days ago. PHXX-6209 is blocked. Carrying long-stale items (oldest 1114d).",
+    "summary": "Work is mostly AIQUA onboarding & campaign setup plus API / data integration. Account looks still in onboarding / enablement. Contract lapsed 138 days ago. PHXX-6209 is blocked. Carrying long-stale items (oldest 575d).",
     "followUp": "Renewal has lapsed — confirm status with 味全食品 before further delivery work.",
     "health": "red",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "慈濟基金會": {
-    "summary": "Work is mostly AIQUA onboarding & campaign setup plus campaign operations. Account looks in handover. Carrying long-stale items (oldest 673d).",
+    "summary": "Work is mostly AIQUA onboarding & campaign setup plus BotBonnie / LINE chatbot work. Account looks in handover. Carrying long-stale items (oldest 674d).",
     "followUp": "Chase SCI-2239 (in progress, tzuhan.lin) — Tzu-Han Handover.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "誠品生活": {
-    "summary": "Work is mostly AIRIS analytics & reporting plus audience & segmentation. Account looks still in onboarding / enablement. ETS-3677 is blocked. Carrying long-stale items (oldest 162d).",
+    "summary": "Work is mostly AIRIS analytics & reporting plus audience & segmentation. Account looks steady BAU. ETS-3677 is blocked. Carrying long-stale items (oldest 162d).",
     "followUp": "Unblock ETS-3677 (Unassigned) — [誠品生活] AR → AQ Profile Sync Pipeline.",
     "health": "red",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   },
   "揚秦國際企業股份有限公司-麥味登": {
-    "summary": "Work is mostly AIQUA onboarding & campaign setup plus backend / tech-services requests. Account looks still in onboarding / enablement. Carrying long-stale items (oldest 34d).",
+    "summary": "Work is mostly AIQUA onboarding & campaign setup plus backend / tech-services requests. Account looks still in onboarding / enablement. Carrying long-stale items (oldest 35d).",
     "followUp": "Chase ETS-5516 (in progress, pawat.chunhachatrachai) — [麥味登] Create GCP environment.",
     "health": "yellow",
-    "generatedAt": "2026-08-20T02:37:47.337Z"
+    "generatedAt": "2026-08-20T08:54:09.138Z"
   }
 }
