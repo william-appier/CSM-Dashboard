@@ -10,7 +10,7 @@
  *
  * 後端：Google Apps Script (GAS) REST API。
  *   ⚠️ 為避開 CORS preflight，所有 POST 的 Content-Type 一律用
- *      "text/plain;charset=utf-8"（simple request，不觸發 preflight）
+ *      "text/plain;charset=utf-8"（simple request，不觸發 preflight）。
  * ========================================================================== */
 (function () {
   "use strict";
@@ -146,6 +146,9 @@
     var nav = document.getElementById("snav-tasks");
     if (pane) pane.classList.add("active");
     if (nav) nav.classList.add("active");
+    // 更新上方麵包屑（原生 snavSwitch 會設，但我們是自己切，所以手動設）
+    var crumb = document.getElementById("crumbCur");
+    if (crumb) crumb.textContent = "任務管理";
     fetchTasks();
   };
 
@@ -493,6 +496,21 @@
     if (currentEmail() !== GATE_EMAIL) return; // 非本人不注入
     if (document.getElementById("snav-tasks")) return; // 避免重複
     if (!injectNav()) return;
+
+    // 切到其他 tab 時，原生 snavSwitch 不認得我們動態加的按鈕，任務管理會一直亮著。
+    // 這裡包一層：任何一次 snavSwitch（＝點了別的 tab）都先把 tasks 的高亮與畫面關掉，
+    // 再交還給原本的處理（它會正確更新麵包屑與其他分頁）。
+    if (typeof window.snavSwitch === "function" && !window.__tmSnavWrapped) {
+      var _origSnav = window.snavSwitch;
+      window.snavSwitch = function () {
+        var nb = document.getElementById("snav-tasks");
+        if (nb) nb.classList.remove("active");
+        var pn = document.getElementById("pane-tasks");
+        if (pn) pn.classList.remove("active");
+        return _origSnav.apply(this, arguments);
+      };
+      window.__tmSnavWrapped = true;
+    }
     // 預先抓一次以顯示 nav 數字（不切換畫面）
     fetch(API_URL, { cache: "no-store", redirect: "follow" })
       .then(function (r) { return r.ok ? r.json() : { tasks: [] }; })
