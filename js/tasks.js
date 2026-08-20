@@ -5,8 +5,8 @@
  *   - 左側 nav：class="csm-nav-btn" id="snav-tasks"
  *   - 內容區  ：class="tab-pane"    id="pane-tasks"（用 .active class 切換顯示）
  *
- * 權限閘門：只有 gate email（william.wt.lin@appier.com）登入時才注入這個 tab，
- *          其他 CSM 登入完全不會看到。判斷來源與其他頁一致：getUser().email。
+ * 多使用者：任何登入的 CSM 都會看到這個 tab，並只讀寫「自己的」任務——GET 帶
+ *          ?email=<登入者>、新增任務帶 Owner_Email。登入來源：getUser().email。
  *
  * 後端：Google Apps Script (GAS) REST API。
  *   ⚠️ 為避開 CORS preflight，所有 POST 的 Content-Type 一律用
@@ -15,7 +15,8 @@
 (function () {
   "use strict";
 
-  var GATE_EMAIL = "william.wt.lin@appier.com";
+  // 多使用者（2026-08-20）：不再限定單一 email。任何登入的 CSM 都能用自己的任務清單，
+  // 讀寫都以登入 email 綁定（GET 帶 ?email=、add_task 帶 Owner_Email）。
 
   // 走 worker 伺服器端代理，而不是瀏覽器直接打 GAS。
   // 原因：GAS /exec 在「已登入 Google Workspace」的瀏覽器會 302 轉址到
@@ -92,7 +93,8 @@
     state.loading = true;
     state.error = "";
     renderList();
-    return fetch(API_URL, { cache: "no-store", redirect: "follow" })
+    // 多使用者：帶上登入 email，後端只回這位 CSM 的任務
+    return fetch(API_URL + "?email=" + encodeURIComponent(currentEmail()), { cache: "no-store", redirect: "follow" })
       .then(function (r) {
         if (!r.ok) throw new Error("載入失敗 (HTTP " + r.status + ")");
         return r.json();
@@ -223,6 +225,7 @@
       Task_Type: elType.value,
       Due_Date: due, // <input type="date"> 已是 YYYY-MM-DD
       Reminder_Freq: reminderFreq,
+      Owner_Email: currentEmail(), // 多使用者：把任務綁定給當前登入者
     })
       .then(function () {
         state.submitting = false;
@@ -498,7 +501,7 @@
 
   /* --------------------------- boot --------------------------- */
   function init() {
-    if (currentEmail() !== GATE_EMAIL) return; // 非本人不注入
+    if (!currentEmail()) return; // 多使用者：未登入不注入；任何登入的 CSM 都能用
     if (document.getElementById("snav-tasks")) return; // 避免重複
     if (!injectNav()) return;
 
@@ -517,7 +520,7 @@
       window.__tmSnavWrapped = true;
     }
     // 預先抓一次以顯示 nav 數字（不切換畫面）
-    fetch(API_URL, { cache: "no-store", redirect: "follow" })
+    fetch(API_URL + "?email=" + encodeURIComponent(currentEmail()), { cache: "no-store", redirect: "follow" })
       .then(function (r) { return r.ok ? r.json() : { tasks: [] }; })
       .then(function (d) {
         state.tasks = Array.isArray(d.tasks) ? d.tasks : [];
