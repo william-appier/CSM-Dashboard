@@ -1,18 +1,21 @@
 (function(){
   'use strict';
-
   const AR_WORKER = 'https://csm-brief-worker.williamlin12.workers.dev';
   const AR_URL_KEY = 'ar_sheet_url';
+  // ── SECURITY (2026-08-20) ── 清掉殘留的自訂 sheet 網址。AR 一律走 worker 的
+  // /ar-csv?csm=<你> 伺服器端過濾路由，不再讀這個未過濾的全表來源。
+  try{ localStorage.removeItem(AR_URL_KEY); }catch(e){}
   function arDefaultUrl(){
     var e = (typeof arGetCurrentEmail === 'function') ? arGetCurrentEmail() : '';
     return e ? (AR_WORKER + '/ar-csv?csm=' + encodeURIComponent(e)) : '';
   }
   let arRawData = [];
   let _arSortBy = 'date', _arSortAsc = false;
-
-  function arGetSavedUrl(){ return arDefaultUrl() || localStorage.getItem(AR_URL_KEY) || ''; }
+  // ── SECURITY (2026-08-20) ── 只回 worker 過濾網址；永不 fallback 到 localStorage
+  // 的未過濾來源。email 還沒就緒時回 ''，呼叫端（arLoadData / arTabActivated）會自動
+  // 稍後重試，所以只會在登入就緒後載入「你自己的」資料，絕不會載到全表。
+  function arGetSavedUrl(){ return arDefaultUrl(); }
   function arClearUrl(){ localStorage.removeItem(AR_URL_KEY); }
-
   function arToCsvUrl(rawUrl){
     rawUrl = (rawUrl || '').trim();
     if(!rawUrl) return '';
@@ -25,8 +28,10 @@
     if(q) return 'https://drive.google.com/uc?export=download&id=' + q[1];
     return rawUrl;
   }
-
   function arGetCurrentEmail(){
+    // ── SECURITY (2026-08-20) ── 優先用 app 正規登入來源 getUser()，縮小「email 還
+    // 沒就緒」的空窗（race）——那個空窗正是先前會誤載全表的根因。
+    try{ if(typeof getUser === 'function'){ var g = getUser(); if(g && g.email) return String(g.email).toLowerCase(); } }catch(e){}
     try{
       var u = JSON.parse(sessionStorage.getItem('jt_user'));
       if(u && u.email) return u.email.toLowerCase();
@@ -38,12 +43,10 @@
     }
     return '';
   }
-
   function _arVis(id, show){
     var el = document.getElementById(id);
     if(el) el.style.display = show ? '' : 'none';
   }
-
   function arShowConnect(){
     _arVis('arConnectBox', true);
     _arVis('arLoadBar',    false);
@@ -54,7 +57,6 @@
     var inp = document.getElementById('arUrlInput');
     if(inp) inp.value = arGetSavedUrl();
   }
-
   function arShowData(){
     _arVis('arConnectBox', false);
     _arVis('arSetupNote',  false);
@@ -63,14 +65,12 @@
     _arVis('arCtrlBar',    true);
     _arVis('arTableWrap',  true);
   }
-
   function arSetStatus(dot, label){
     var d = document.getElementById('arDot');
     var l = document.getElementById('arLoadLabel');
     if(d){ d.className = 'ar-load-dot'; if(dot) d.classList.add(dot); }
     if(l) l.textContent = label;
   }
-
   window.arSaveUrl = function(){
     var inp = document.getElementById('arUrlInput');
     if(!inp) return;
@@ -80,28 +80,26 @@
     arShowData();
     arLoadData();
   };
-
   window.arDisconnect = function(){
     arClearUrl();
     arRawData = [];
     arShowConnect();
   };
-
   window.arLoadData = async function(){
     var savedUrl = arGetSavedUrl();
     if(!savedUrl){ setTimeout(window.arLoadData, 300); return; }  // wait for login; never prompt for a link
-    arSetStatus('spin', 'Loading\u2026');
+    arSetStatus('spin', 'Loading…');
     var btn = document.getElementById('arRefreshBtn');
     if(btn) btn.disabled = true;
     try{
       var isAppsScript = /script\.google\.com\/macros\/s\//i.test(savedUrl);
       if(false){ // apps script returns CSV - handled by CSV path below
-        // \u2500\u2500 Apps Script path: fetch JSON \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
+        // ── Apps Script path: fetch JSON ──────────────────────────────────────────────────────
         var myEmail = arGetCurrentEmail();
         var sep = savedUrl.includes('?') ? '&' : '?';
         var fetchUrl = savedUrl + sep + 'action=ar' + (myEmail ? '&email=' + encodeURIComponent(myEmail) : '');
         var resp = await fetch(fetchUrl, {redirect:'follow', cache:'no-store'});
-        if(!resp.ok) throw new Error('HTTP ' + resp.status + ' from Apps Script \u2014 check deployment settings.');
+        if(!resp.ok) throw new Error('HTTP ' + resp.status + ' from Apps Script — check deployment settings.');
         var json;
         try{ json = await resp.json(); }
         catch(e){ throw new Error('Apps Script did not return valid JSON. Ensure it is deployed as a web app with execute access for \'Anyone\'.'); }
@@ -114,10 +112,10 @@
         }
         arFinalize(rows, 'json');
       } else {
-        // \u2500\u2500 Direct Sheets / CSV path \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
+        // ── Direct Sheets / CSV path ────────────────────────────────────────────────────
         var fetchUrl = arToCsvUrl(savedUrl);
         var resp = await fetch(fetchUrl, {cache:'no-store'});
-        if(!resp.ok) throw new Error('HTTP ' + resp.status + ' \u2014 make sure the sheet is shared as Anyone with the link.');
+        if(!resp.ok) throw new Error('HTTP ' + resp.status + ' — make sure the sheet is shared as Anyone with the link.');
         var ct = resp.headers.get('content-type') || '';
         var buf = await resp.arrayBuffer();
         var isExcel = ct.includes('spreadsheet') || ct.includes('officedocument') ||
@@ -129,7 +127,7 @@
         } else {
           var text = new TextDecoder('utf-8').decode(buf);
           var lines = text.split('\n').filter(function(l){ return l.trim(); });
-          if(lines.length < 2) throw new Error('Empty or unreadable file \u2014 make sure the sheet is shared publicly.');
+          if(lines.length < 2) throw new Error('Empty or unreadable file — make sure the sheet is shared publicly.');
           var headerIdx=0;for(var hi=0;hi<Math.min(lines.length,30);hi++){var th=arParseCsvLine(lines[hi]);if(th.some(function(c){return c.toLowerCase().includes('account');})){headerIdx=hi;break;}}var headers=arParseCsvLine(lines[headerIdx]);
           var rows2 = [];
           for(var i = headerIdx+1; i < lines.length; i++){
@@ -153,7 +151,6 @@
       if(btn) btn.disabled = false;
     }
   };
-
   function arParseCsvLine(line){
     var result = [], cur = '', inQ = false;
     for(var i = 0; i < line.length; i++){
@@ -168,9 +165,7 @@
     result.push(cur);
     return result;
   }
-
   function arNorm(s){ return String(s).toLowerCase().replace(/[\s_\-:]+/g,''); }
-
   function arFindCol(headers){
     var candidates = Array.prototype.slice.call(arguments, 1);
     var normH = headers.map(arNorm);
@@ -188,7 +183,6 @@
     }
     return null;
   }
-
   function arFinalize(rows, fmt){
     if(!rows || !rows.length){ arRawData = []; arRender(); return; }
     var headers = Object.keys(rows[0]);
@@ -237,7 +231,6 @@
     }
     arRender();
   }
-
   window.arSort = function(col){
     if(_arSortBy === col) _arSortAsc = !_arSortAsc;
     else { _arSortBy = col; _arSortAsc = true; }
@@ -245,11 +238,10 @@
       var th = document.getElementById('arTh-' + c);
       if(!th) return;
       var arrow = th.querySelector('.sort-arrow');
-      if(arrow) arrow.textContent = (c === _arSortBy) ? (_arSortAsc ? '\u2191' : '\u2193') : '\u2195';
+      if(arrow) arrow.textContent = (c === _arSortBy) ? (_arSortAsc ? '↑' : '↓') : '↕';
     });
     arRender();
   };
-
   window.arRender = function(){
     var csmFEl = document.getElementById(`arCsmFilter`);
     var searchEl = document.getElementById(`arSearch`);
@@ -271,7 +263,7 @@
     function _set(id,v){ var el=document.getElementById(id); if(el) el.textContent=v; }
     _set(`arStatTotal`,total); _set(`arStatPaid`,paid);
     _set(`arStatUnpaid`,unpaid); _set(`arStatInvalid`,invalid);
-    _set(`tc-ar`, total||`\u2014`);
+    _set(`tc-ar`, total||`—`);
     var tbody = document.getElementById(`arTbody`);
     if(!tbody) return;
     if(!rows.length){
@@ -302,7 +294,7 @@
       html+=`<tr style="background:var(--surface2)"><td colspan="5" style="padding:8px 14px;border-top:2px solid var(--accent);border-bottom:1px solid var(--border)">`;
       html+=`<div style="display:flex;justify-content:space-between;align-items:center">`;
       html+=`<span style="font-weight:600;font-size:13px">\u{1f3e2} `+_esc(acct)+`</span>`;
-      html+=`<span style="font-family:'DM Mono',monospace;font-size:12px;color:var(--accent)">`+(aCur?_esc(aCur+` `+Math.round(aTotal).toLocaleString()):`\u2014`)+`</span>`;
+      html+=`<span style="font-family:'DM Mono',monospace;font-size:12px;color:var(--accent)">`+(aCur?_esc(aCur+` `+Math.round(aTotal).toLocaleString()):`—`)+`</span>`;
       html+=`</div></td></tr>`;
       opps.forEach(function(opp){
         var oRows=oppMap[opp], oTotal=0, oCur=``;
@@ -312,22 +304,20 @@
         html+=`<tr style="background:var(--surface)"><td colspan="5" style="padding:5px 14px 5px 28px;border-bottom:1px solid var(--border)">`;
         html+=`<div style="display:flex;justify-content:space-between;align-items:center">`;
         html+=`<span style="font-size:12px;color:var(--text)">\u{1f4cb} `+_esc(opp)+`</span>`;
-        (function(){var _ed=oRows[0]&&oRows[0].endDate||``;var _ec=`var(--muted)`;if(_ed){var _dl=Math.round((new Date(_ed)-new Date(new Date().setHours(0,0,0,0)))/86400000);if(_dl<=0)_ec=`#ef4444`;else if(_dl<=30)_ec=`#f97316`;}html+=`<span style="font-size:11px;color:var(--muted);font-family:'DM Mono',monospace;margin:0 auto;white-space:nowrap">`+(oRows[0]&&(oRows[0].startDate||oRows[0].endDate)?(oRows[0].startDate?_esc(oRows[0].startDate)+` `:``)+`\u2192`+(oRows[0].endDate?` `+`<span style="color:`+_ec+`">`+_esc(oRows[0].endDate)+`</span>`:``):``)+`</span>`;})();;
-        html+=`<span style="font-family:'DM Mono',monospace;font-size:11px;color:var(--muted2)">`+(oCur?_esc(oCur+` `+Math.round(oTotal).toLocaleString()):`\u2014`)+`</span>`;
+        (function(){var _ed=oRows[0]&&oRows[0].endDate||``;var _ec=`var(--muted)`;if(_ed){var _dl=Math.round((new Date(_ed)-new Date(new Date().setHours(0,0,0,0)))/86400000);if(_dl<=0)_ec=`#ef4444`;else if(_dl<=30)_ec=`#f97316`;}html+=`<span style="font-size:11px;color:var(--muted);font-family:'DM Mono',monospace;margin:0 auto;white-space:nowrap">`+(oRows[0]&&(oRows[0].startDate||oRows[0].endDate)?(oRows[0].startDate?_esc(oRows[0].startDate)+` `:``)+`→`+(oRows[0].endDate?` `+`<span style="color:`+_ec+`">`+_esc(oRows[0].endDate)+`</span>`:``):``)+`</span>`;})();;
+        html+=`<span style="font-family:'DM Mono',monospace;font-size:11px;color:var(--muted2)">`+(oCur?_esc(oCur+` `+Math.round(oTotal).toLocaleString()):`—`)+`</span>`;
         html+=`</div></td></tr>`;
         oRows.forEach(function(r){
           html+=`<tr style="background:var(--bg)"><td style="padding:4px 8px 4px 44px;font-family:'DM Mono',monospace;font-size:11px;color:var(--muted)">`+_esc(r.date)+`</td>`;
           html+=`<td></td><td style="padding:4px 12px;text-align:right;font-family:'DM Mono',monospace;font-size:12px">`+_esc(r.amount)+`</td>`;
-          html+=`<td style="padding:4px 8px"><span class="ar-badge `+_sc(r.status)+`">`+_esc(r.status||`\u2014`)+`</span></td>`;
+          html+=`<td style="padding:4px 8px"><span class="ar-badge `+_sc(r.status)+`">`+_esc(r.status||`—`)+`</span></td>`;
           html+=`<td style="padding:4px 12px;font-size:11px;color:var(--muted)">`+_esc(r.csmEmail.split(`@`)[0])+`</td></tr>`;
         });
       });
     });
     tbody.innerHTML = html;
   };
-
   function _esc(s){ return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
-
   window.arTabActivated = function(){
     var saved = arGetSavedUrl();
     if(!saved){ setTimeout(window.arTabActivated, 300); return; }  // wait for login; never prompt for a link
@@ -335,5 +325,4 @@
     if(arRawData.length === 0) arLoadData();
     else arRender();
   };
-
 })();
