@@ -20,7 +20,7 @@
 
   var WORKER = "https://csm-brief-worker.williamlin12.workers.dev";
   var COPILOT_ENDPOINT = WORKER + "/copilot";
-  var DEMO_MODE = true; // ← 後端 /copilot 上線後改為 false
+  var DEMO_MODE = false; // ← 後端 /copilot 上線後改為 false
 
   /* --------------------------- helpers --------------------------- */
   function esc(s) {
