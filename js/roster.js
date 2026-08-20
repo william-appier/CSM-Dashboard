@@ -7,18 +7,20 @@
  *
  * Additive module: adds a sidebar item + pane, wraps snavSwitch, touches
  * nothing else.
+ *
+ * ── Copilot data (2026-08-20) ── pane carries data-cop-module="accounts";
+ *    each card carries data-cop-item + data-cop-{name,health,tickets,renew-days}
+ *    so scrapeDashboardData() can read the roster cleanly.
  * ------------------------------------------------------------------ */
 (function () {
   'use strict';
   var WORKER = 'https://csm-brief-worker.williamlin12.workers.dev';
   var SUMMARIES = {};   // account AI summaries (daily sync), keyed by account id
-
   function ready(fn) {
     if (document.readyState !== 'loading') fn();
     else document.addEventListener('DOMContentLoaded', fn);
   }
   ready(function () { tryInit(0); });
-
   function tryInit(n) {
     var briefBtn = document.getElementById('snav-brief');
     var briefPane = document.getElementById('pane-brief');
@@ -43,6 +45,7 @@
     var p = document.createElement('div');
     p.id = 'pane-roster';
     p.className = 'tab-pane';
+    p.setAttribute('data-cop-module', 'accounts'); // Copilot 抓取用
     p.innerHTML = '<div id="rosterBody" style="padding:4px 2px"></div>';
     briefPane.parentNode.appendChild(p);
   }
@@ -64,7 +67,6 @@
     var sub = document.getElementById('headerSub'); if (sub) sub.textContent = 'Your accounts, live from Jira + the Salesforce mapping';
     render();
   };
-
   function currentEmail() {
     try { if (typeof arGetCurrentEmail === 'function') { var e = arGetCurrentEmail(); if (e) return String(e).toLowerCase(); } } catch (_) {}
     try { if (typeof getUser === 'function') { var u = getUser(); if (u && u.email) return String(u.email).toLowerCase(); } } catch (_) {}
@@ -75,18 +77,15 @@
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
   function setBody(html) { var b = document.getElementById('rosterBody'); if (b) b.innerHTML = html; }
   function note(html) { return '<div style="padding:24px;color:#475569;font-size:14px;line-height:1.5">' + html + '</div>'; }
-
   async function render() {
     var email = currentEmail();
     setBody('<p style="color:#64748b">Loading your accounts…</p>');
     if (!email) { setBody(note('Sign in to see the accounts assigned to you.')); return; }
-
     var map, tix = {};
     try {
       var mr = await fetch(WORKER + '/mapping?t=' + Date.now());
       map = await mr.json();
     } catch (e) { setBody(note('Could not load accounts. ' + esc(e.message))); return; }
-
     var mine = (map && map[email]) || [];
     if (!mine.length) {
       setBody(note('No accounts are assigned to <b>' + esc(email) + '</b> yet.<br>' +
@@ -103,7 +102,6 @@
       var sr = await fetch('accountSummaries.json?t=' + Date.now());
       if (sr.ok) SUMMARIES = await sr.json();
     } catch (_) { SUMMARIES = {}; }
-
     var list = mine.map(function (a) {
       var d = daysTo(a.endDate);
       var opps = a.opportunities || [];
@@ -118,12 +116,10 @@
       if (a.upcoming && b.upcoming) return a.days - b.days;         // soonest first
       return (b.tickets.length) - (a.tickets.length);              // else busiest first
     });
-
     var badge = document.getElementById('snc-roster');
     if (badge) { badge.textContent = list.length; badge.style.display = ''; }
     setBody(header(email, list.length) + list.map(card).join(''));
   }
-
   function renewChip(days, upcoming) {
     if (days == null) return '<span style="font-size:12px;color:#94a3b8">no contract date</span>';
     if (!upcoming) return '<span style="font-size:12px;font-weight:600;color:#94a3b8">expired ' + (-days) + 'd ago</span>';
@@ -152,8 +148,14 @@
       : '';
     var tk = a.tickets || [];
     var ticketsHtml = tk.length ? tk.map(ticketRow).join('') : '<div style="font-size:12px;color:#94a3b8;padding:4px 0">No open Jira tickets</div>';
+    // ── Copilot data-* (2026-08-20) ── clean machine values for scrapeDashboardData()
+    var copAttrs = ' data-cop-item' +
+      ' data-cop-name="' + esc(a.name) + '"' +
+      ' data-cop-health="' + ((s && s.health) ? esc(s.health) : '') + '"' +
+      ' data-cop-tickets="' + tk.length + '"' +
+      ' data-cop-renew-days="' + (a.days != null ? a.days : '') + '"';
     return '' +
-      '<div style="border:1px solid #e2e8f0;border-left:4px solid ' + hcol + ';border-radius:12px;padding:14px 16px;margin-bottom:12px;background:#fff">' +
+      '<div' + copAttrs + ' style="border:1px solid #e2e8f0;border-left:4px solid ' + hcol + ';border-radius:12px;padding:14px 16px;margin-bottom:12px;background:#fff">' +
         '<div style="display:flex;align-items:center;justify-content:space-between;gap:12px">' +
           '<div style="font-size:16px;font-weight:700;color:#0f172a">' + esc(a.name) + '</div>' +
           '<div style="text-align:right">' + renewChip(a.days, a.upcoming) +
