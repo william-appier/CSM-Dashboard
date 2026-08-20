@@ -10,7 +10,7 @@
  *
  * 後端：Google Apps Script (GAS) REST API。
  *   ⚠️ 為避開 CORS preflight，所有 POST 的 Content-Type 一律用
- *      "text/plain;charset=utf-8"（simple request，不觸發 preflight）。
+ *      "text/plain;charset=utf-8"（simple request，不觸發 preflight）
  * ========================================================================== */
 (function () {
   "use strict";
