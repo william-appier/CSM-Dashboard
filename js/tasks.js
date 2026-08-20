@@ -16,8 +16,14 @@
   "use strict";
 
   var GATE_EMAIL = "william.wt.lin@appier.com";
-  var API_URL =
-    "https://script.google.com/macros/s/AKfycbyUVe7gFWChf7JTY4jL3eeDr_IMY7-s8K3ukve0GD5gvVF-GuRjzIAiizK281AxXC3U/exec";
+
+  // 走 worker 伺服器端代理，而不是瀏覽器直接打 GAS。
+  // 原因：GAS /exec 在「已登入 Google Workspace」的瀏覽器會 302 轉址到
+  //       googleusercontent.com/echo 並回 404（登出/無痕則正常）；且該端點對
+  //       URL 極敏感（加任何 query 參數也會壞），用戶端 fetch 無法修。
+  //       由 worker 伺服器端（無 Google session）代抓即可穩定拿到 JSON——
+  //       與 AR 頁的 /ar-csv 完全同一套做法。worker 內含真正的 GAS 網址。
+  var API_URL = "https://csm-brief-worker.williamlin12.workers.dev/tasks";
 
   /* --------------------------- state --------------------------- */
   var state = {
