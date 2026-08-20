@@ -79,7 +79,7 @@
   .preview-badge button{background:transparent;border:none;color:var(--yellow);cursor:pointer;font-size:13px;padding:0;line-height:1;}
 
   /* ── MAIN APP ── */
-  .container{max-width:1440px;margin:0 auto;padding:28px 24px;position:relative;z-index:1;}
+  .container { max-width: none; }
   header{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid var(--border);flex-wrap:wrap;gap:14px;}
   .header-left h1{font-size:20px;font-weight:700;color:var(--text);letter-spacing:-.3px;}
   .header-left p{font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);margin-top:3px;}
