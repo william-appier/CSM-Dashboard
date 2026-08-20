@@ -175,6 +175,23 @@
       });
   };
 
+  // 真的刪除：從後端(試算表)移除該列，之後不再顯示、不再提醒、不再週期產生。
+  TM.deleteTask = function (taskId) {
+    var t = null;
+    for (var i = 0; i < state.tasks.length; i++) {
+      if (state.tasks[i].Task_ID === taskId) { t = state.tasks[i]; break; }
+    }
+    var nm = t ? (t.Task_Name || "") : "";
+    if (!window.confirm("確定要刪除「" + nm + "」？此動作無法復原。")) return;
+    state.error = "";
+    postAction({ action: "delete_task", Task_ID: taskId })
+      .then(function () { return fetchTasks(); }) // 成功後重新抓取刷新
+      .catch(function (e) {
+        state.error = e.message || "刪除失敗";
+        renderList();
+      });
+  };
+
   TM.onReminderChange = function (mode) {
     var row = document.getElementById("tm-custom-row");
     if (row) row.style.display = mode === "custom" ? "flex" : "none";
@@ -331,6 +348,7 @@
           '<span class="tm-chip">🔔 ' + esc(formatReminder(t.Reminder_Freq)) + "</span>" +
           "</div>" +
           "</div>" +
+          '<div class="tm-row-end">' +
           '<div class="tm-row-side">' +
           '<span class="tm-badge" style="background:' + meta.bg + ";color:" + meta.fg + '">' +
           '<span class="tm-dot" style="background:' + meta.dot + '"></span>' +
@@ -343,6 +361,9 @@
               " onclick=\"TM.markDone('" + esc(t.Task_ID) + "')\">" +
               (marking ? "更新中…" : "標記完成") +
               "</button>") +
+          "</div>" +
+          '<button class="tm-del" title="刪除此任務" aria-label="刪除此任務"' +
+          " onclick=\"TM.deleteTask('" + esc(t.Task_ID) + "')\">&times;</button>" +
           "</div>" +
           "</li>";
       });
@@ -512,7 +533,10 @@
       ".tm-task-name{font-weight:600;font-size:15px;margin-bottom:6px;}",
       ".tm-meta{display:flex;flex-wrap:wrap;gap:6px;}",
       ".tm-chip{font-size:12px;color:#475569;background:#f1f5f9;border-radius:999px;padding:3px 10px;white-space:nowrap;}",
+      ".tm-row-end{display:flex;align-items:center;gap:10px;flex-shrink:0;}",
       ".tm-row-side{display:flex;flex-direction:column;align-items:flex-end;flex-shrink:0;gap:8px;}",
+      ".tm-del{flex-shrink:0;width:26px;height:26px;border-radius:8px;border:1px solid transparent;background:none;color:#cbd5e1;font-size:18px;line-height:1;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:all .15s;}",
+      ".tm-del:hover{background:#fef2f2;color:#dc2626;border-color:#fecaca;}",
       ".tm-badge{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;border-radius:999px;padding:5px 12px;}",
       ".tm-dot{width:7px;height:7px;border-radius:50%;display:inline-block;}",
       ".tm-field{display:grid;gap:7px;margin-bottom:16px;}",
