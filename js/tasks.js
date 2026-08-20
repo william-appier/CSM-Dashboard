@@ -278,14 +278,20 @@
     if (state.error)
       html += '<div class="tm-banner tm-banner-error">' + esc(state.error) + "</div>";
 
+    // 顯示規則：已完成(Done)任務一律從列表隱藏——單次與週期皆然。週期完成的舊月份
+    // 會自動消失（monthlyRecurringJob 會寫入下個月的新列，屆時以「待處理」出現）。
+    var visible = state.tasks.filter(function (t) {
+      return String(t.Status || "").toLowerCase() !== "done";
+    });
+
     if (state.loading) {
       html +=
         '<div class="tm-center"><span class="tm-spinner tm-spinner-dark"></span> <span class="tm-muted">載入任務中…</span></div>';
-    } else if (state.tasks.length === 0) {
-      html += '<div class="tm-empty">目前沒有任務，於右側新增一筆吧。</div>';
+    } else if (visible.length === 0) {
+      html += '<div class="tm-empty">目前沒有進行中的任務，於右側新增一筆吧。</div>';
     } else {
       html += '<ul class="tm-ul">';
-      state.tasks.forEach(function (t) {
+      visible.forEach(function (t) {
         var meta = statusMeta(t.Status);
         var isDone = String(t.Status).toLowerCase() === "done";
         var marking = state.marking === t.Task_ID;
