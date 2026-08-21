@@ -460,7 +460,7 @@ const _renderTixRow = function(t, active) {
     actions = '<button class="tix-flag-btn tix-restore" data-k="' + esc(t.key) + '" onclick="unflagTicket(this.dataset.k)" title="Restore">↩</button>';
   }
   return '<div class="brief-ticket-row' + (active ? '' : ' tix-hidden') + '">'
-    + '<div class="brief-ticket-key" style="' + dimStyle + '">' + esc(t.key) + '</div>'
+    + '<div class="brief-ticket-key" style="' + dimStyle + '">' + '<a href="https://appier.atlassian.net/browse/' + esc(t.key) + '" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="color:inherit;text-decoration:none;border-bottom:1px dotted currentColor">' + esc(t.key) + '</a>' + '</div>'
     + '<div class="brief-ticket-info" style="' + strikeStyle + '">'
     +   '<div class="title">' + esc(t.title) + pinBadge + '</div>'
     +   '<div class="meta">'
