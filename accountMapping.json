@@ -600,6 +600,10 @@
       {
         "name": "AQ - WeMo (WeMo) - Renewal - 2024",
         "endDate": "2026-07-31"
+      },
+      {
+        "name": "AQ - WeMo (WeMo) - Renewal - 2026",
+        "endDate": "2028-07-31"
       }
     ]
   },
@@ -3325,6 +3329,10 @@
       {
         "name": "Wenk_Deposit72_25Q3",
         "endDate": "2026-09-21"
+      },
+      {
+        "name": "Wenk_Deposit84_New - 26Q2",
+        "endDate": "2027-06-18"
       }
     ]
   },
@@ -3423,6 +3431,23 @@
       {
         "name": "MM-翊棨股份有限公司",
         "endDate": "2026-07-22"
+      }
+    ]
+  },
+  {
+    "id": "耐嘉-kinyo",
+    "account": "耐嘉 Kinyo",
+    "csmOwner": "jill.chang@appier.com",
+    "endDate": "2028-08-15",
+    "keywords": [
+      "耐嘉 Kinyo",
+      "耐嘉股份有限公司",
+      "KINYO"
+    ],
+    "opportunities": [
+      {
+        "name": "BB - KINYO(耐嘉股份有限公司) - Renewal - 2026",
+        "endDate": "2028-08-15"
       }
     ]
   },
