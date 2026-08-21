@@ -1,1190 +1,1190 @@
 {
   "55688": {
-    "summary": "Workload centres on BotBonnie chatbot/LINE operations plus QGraph/Prizm audience & data work. Account looks to be in steady BAU with an open defect queue. The work is mostly campaign/messaging ops and defect follow-ups. 1 item blocked (QGWL-19924). Carrying long-stale items (oldest 881d).",
-    "followUp": "Unblock QGWL-19924 (Shiv Raj) — 【55688】Timeout limitation in AQ JM should be shorten..",
+    "summary": "Workload centres on BotBonnie chatbot/LINE operations plus AIQUA/QGraph platform requests. Account looks to be in steady BAU. The work is mostly defect follow-ups. 1 item blocked (QGWL-19924). Carrying long-stale items (oldest 635d).",
+    "followUp": "Unblock QGWL-19924 (Shiv Raj) — 【55688】Timeout limitation in AQ JM should be shorten.",
     "health": "red",
-    "generatedAt": "2026-08-21T02:27:35.503Z"
+    "generatedAt": "2026-08-21T05:58:57.522Z"
   },
   "mannings": {
-    "summary": "Workload centres on AEP data-pipeline work plus project-delivery items. Account looks to be in migration and post-migration monitoring. The work is mostly onboarding & enablement and data backfill/migration. Renewal in 40d.",
-    "followUp": "Kick off renewal now (ends in 40d) while 12 items are still open.",
-    "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.504Z"
+    "summary": "Workload centres on project-delivery items. Account looks to be in steady BAU. Renewal in 40d.",
+    "followUp": "Kick off renewal now (ends in 40d) while 1 assigned item is still open.",
+    "health": "green",
+    "generatedAt": "2026-08-21T05:58:57.523Z"
   },
   "scmp": {
-    "summary": "Workload centres on project-delivery items plus AiDeal work. Account looks to be in steady BAU. Carrying long-stale items (oldest 1478d).",
-    "followUp": "Review the oldest open item AID-8880 (Eric Tung) (1478d) — SCMP_Letzshop_AiDeal Lite_Jun 2022",
-    "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.504Z"
+    "summary": "Workload centres on project-delivery items. Account looks to be in steady BAU.",
+    "followUp": "Review the oldest open item PROJ-33694 (Michael Palmer) (10d) — [SCMP] Feature request on keyword dashboard",
+    "health": "green",
+    "generatedAt": "2026-08-21T05:58:57.523Z"
   },
   "1010hope": {
-    "summary": "No open Jira tickets outside the CAM boards. No contract end date on file.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. No contract end date on file.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-21T02:27:35.504Z"
+    "generatedAt": "2026-08-21T05:58:57.523Z"
   },
   "luxgen": {
-    "summary": "Workload centres on BotBonnie chatbot/LINE operations plus project-delivery items. Account looks to be in steady BAU. The work is mostly RFQ/scoping requests and API/integration. Carrying long-stale items (oldest 1553d).",
-    "followUp": "Chase BBB-876 (Samuel Chiang) (in progress 1553d) — [CSM Check] Luxgen",
+    "summary": "Workload centres on project-delivery items plus AIQUA/QGraph platform requests. Account looks to be in steady BAU. The work is mostly API/integration and audience & recommendation setup. Carrying long-stale items (oldest 1526d).",
+    "followUp": "Chase QGWL-10821 (Mark Liu) (in progress 1526d) — [Luxgen]Luxgen AIQUA Web SDK embedded BB Web Chat SDK",
     "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.504Z"
+    "generatedAt": "2026-08-21T05:58:57.524Z"
   },
   "tiangyuanxiang": {
-    "summary": "Workload centres on QGraph/Prizm audience & data work plus ad campaign operations. Account looks to be in onboarding and enablement. The work is mostly onboarding & enablement and audience & recommendation setup. Carrying long-stale items (oldest 540d).",
-    "followUp": "Review the oldest open item QGWL-21289 (vivian.yang) (540d) — [田原香] Onboard Product Feed",
+    "summary": "Workload centres on AIQUA/QGraph platform requests plus ETS backend/tech-services requests. Account looks to be in onboarding and enablement. The work is mostly onboarding & enablement and audience & recommendation setup. Carrying long-stale items (oldest 541d).",
+    "followUp": "Review the oldest open item QGWL-21289 (vivian.yang) (541d) — [田原香] Onboard Product Feed",
     "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.504Z"
+    "generatedAt": "2026-08-21T05:58:57.524Z"
   },
   "momax": {
-    "summary": "No open Jira tickets outside the CAM boards. No contract end date on file.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. No contract end date on file.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-21T02:27:35.504Z"
+    "generatedAt": "2026-08-21T05:58:57.524Z"
   },
   "citysuper": {
-    "summary": "Workload centres on legal/contract items. Account looks to be in steady BAU. No contract end date on file. Carrying long-stale items (oldest 91d).",
-    "followUp": "Review the oldest open item LEG-16086 (Unassigned) (91d) — CLONE - Legend World Technology Development Limited_AIQUA_HK_Order Form(User: CitySuper)",
-    "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.504Z"
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. No contract end date on file.",
+    "followUp": "",
+    "health": "green",
+    "generatedAt": "2026-08-21T05:58:57.524Z"
   },
   "xindongli": {
     "summary": "Workload centres on BotBonnie chatbot/LINE operations. Account looks to be in migration and post-migration monitoring. The work is mostly onboarding & enablement and data backfill/migration. No contract end date on file. Carrying long-stale items (oldest 545d).",
     "followUp": "Review the oldest open item BBT-4660 (Salem Chen) (545d) — [行動力國際] BotBonnie to Phoenix Account Migration / Knowledge Bot Feature Activation",
     "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.505Z"
+    "generatedAt": "2026-08-21T05:58:57.525Z"
   },
   "85度c": {
-    "summary": "Workload centres on QGraph/Prizm audience & data work plus ETS backend/tech-services requests. Account looks to be in onboarding and enablement. The work is mostly onboarding & enablement and audience & recommendation setup. Carrying long-stale items (oldest 1925d).",
+    "summary": "Workload centres on AIQUA/QGraph platform requests plus ETS backend/tech-services requests. Account looks to be in onboarding and enablement. The work is mostly onboarding & enablement and audience & recommendation setup. Carrying long-stale items (oldest 1471d).",
     "followUp": "Chase QGWL-11409 (Mark Liu) (in progress 1471d) — [85 cafe] SMS Issues Part2",
     "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.505Z"
+    "generatedAt": "2026-08-21T05:58:57.525Z"
   },
   "中國信託商業銀行": {
-    "summary": "Workload centres on BotBonnie chatbot/LINE operations plus BUF items. Account looks to be in steady BAU. The work is mostly RFQ/scoping requests. Carrying long-stale items (oldest 2164d).",
-    "followUp": "Chase ACE-3152 (Judy Liu) (in progress 2164d) — 中國信託信貸CPL<$600煩請評估, 感謝",
-    "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.505Z"
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
+    "followUp": "",
+    "health": "green",
+    "generatedAt": "2026-08-21T05:58:57.525Z"
   },
   "健康力": {
-    "summary": "Workload centres on AiDeal work plus BotBonnie chatbot/LINE operations. Account looks to be in steady BAU. Renewal in 20d. Carrying long-stale items (oldest 1100d).",
-    "followUp": "Kick off renewal now (ends in 20d) while 5 items are still open.",
+    "summary": "Workload centres on BotBonnie chatbot/LINE operations. Account looks to be in steady BAU. Renewal in 20d. Carrying long-stale items (oldest 63d).",
+    "followUp": "Kick off renewal now (ends in 20d) while 1 assigned item is still open.",
     "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.505Z"
+    "generatedAt": "2026-08-21T05:58:57.525Z"
   },
   "凌網知識股份有限公司": {
-    "summary": "Workload centres on AIQUA campaign & push operations. Account looks to be in steady BAU. Carrying long-stale items (oldest 46d).",
-    "followUp": "Review the oldest open item AIQ-472 (Unassigned) (46d) — [AIQUA] HyRead 凌網科技",
-    "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.505Z"
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
+    "followUp": "",
+    "health": "green",
+    "generatedAt": "2026-08-21T05:58:57.525Z"
   },
   "奧美廣告": {
-    "summary": "Workload centres on BotBonnie chatbot/LINE operations plus BotBonnie platform requests. Account looks to be in steady BAU. The work is mostly RFQ/scoping requests. Carrying long-stale items (oldest 1065d).",
-    "followUp": "Chase BBB-2213 (Mia Li) (in progress 177d) — 2/28 百揚資訊、好日子、迪凱科技；TBD：Ogilvy_Hill done",
+    "summary": "Workload centres on BotBonnie chatbot/LINE operations. Account looks to be in steady BAU. The work is mostly RFQ/scoping requests. Carrying long-stale items (oldest 142d).",
+    "followUp": "Review the oldest open item BBT-7379 (Brian Tsai) (142d) — 【RFQ】Ogilvy x Diageo_Database Procurement",
     "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.505Z"
+    "generatedAt": "2026-08-21T05:58:57.525Z"
   },
   "拍貼生活": {
-    "summary": "Workload centres on BotBonnie chatbot/LINE operations plus BotBonnie platform requests. Account looks to be in onboarding and enablement. The work is mostly onboarding & enablement and defect follow-ups. Carrying long-stale items (oldest 1240d).",
-    "followUp": "Review the oldest open item BBB-1433 (Eric.hung) (1240d) — [CSM Check] 拍貼生活 AUO club",
+    "summary": "Workload centres on BotBonnie chatbot/LINE operations. Account looks to be in steady BAU. The work is mostly defect follow-ups. Carrying long-stale items (oldest 220d).",
+    "followUp": "Review the oldest open item BBT-7029 (Brian Tsai) (220d) — [AUO Club] User accounts locked due to multiple failed login attempts",
     "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.505Z"
+    "generatedAt": "2026-08-21T05:58:57.525Z"
   },
   "杰德創意影音": {
     "summary": "Workload centres on BotBonnie chatbot/LINE operations. Account looks to be in steady BAU. The work is mostly RFQ/scoping requests. Carrying long-stale items (oldest 99d).",
     "followUp": "Review the oldest open item BBT-7245 (Brian Tsai) (99d) — RFQ_杰德影音_Webchat 抓取已登入客戶 CRM 資料BB欄位",
     "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.505Z"
+    "generatedAt": "2026-08-21T05:58:57.525Z"
   },
   "貳樓餐廳": {
-    "summary": "Workload centres on BotBonnie chatbot/LINE operations plus BotBonnie platform requests. Account looks to be in steady BAU. The work is mostly RFQ/scoping requests. Carrying long-stale items (oldest 1344d).",
-    "followUp": "Review the oldest open item BBB-1271 (Eric.hung) (1344d) — [CSM Check] 貳樓餐廳",
-    "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.505Z"
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
+    "followUp": "",
+    "health": "green",
+    "generatedAt": "2026-08-21T05:58:57.525Z"
   },
   "鮮乳坊": {
-    "summary": "Workload centres on AEP data-pipeline work plus BotBonnie chatbot/LINE operations. Account looks to be in migration and post-migration monitoring. The work is mostly RFQ/scoping requests and onboarding & enablement.",
-    "followUp": "Chase ETS-5815 (Tim Lin) (in progress 1d) — [BetterMilk] Custom Receipt Registration Kit triggers unexpected \"code=2\" error; invoice not recorded in either eligible/non-eligible sheet",
+    "summary": "Workload centres on ETS backend/tech-services requests plus BotBonnie chatbot/LINE operations. Account looks to be in onboarding and enablement. The work is mostly onboarding & enablement and campaign/messaging ops.",
+    "followUp": "Chase ETS-5815 (Tim Lin) (in progress 2d) — [BetterMilk] Custom Receipt Registration Kit triggers unexpected \"code=2\" error; invoice not recorded in either eligible/non-eligible sheet",
     "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.505Z"
+    "generatedAt": "2026-08-21T05:58:57.526Z"
   },
   "achilles-sorbo": {
-    "summary": "No open Jira tickets outside the CAM boards.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-21T02:27:35.505Z"
+    "generatedAt": "2026-08-21T05:58:57.526Z"
   },
   "aracer-塞席爾商岱沛-台灣": {
-    "summary": "No open Jira tickets outside the CAM boards.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-21T02:27:35.505Z"
+    "generatedAt": "2026-08-21T05:58:57.526Z"
   },
   "bop-taipei-商明國際": {
-    "summary": "No open Jira tickets outside the CAM boards.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-21T02:27:35.505Z"
+    "generatedAt": "2026-08-21T05:58:57.526Z"
   },
   "capsule-inc": {
-    "summary": "No open Jira tickets outside the CAM boards.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-21T02:27:35.505Z"
+    "generatedAt": "2026-08-21T05:58:57.526Z"
   },
   "cold-stone": {
-    "summary": "Workload centres on AI platform requests plus MT items. Account looks to be in steady BAU. The work is mostly RFQ/scoping requests and API/integration. Carrying long-stale items (oldest 219d).",
+    "summary": "Workload centres on project-delivery items. Account looks to be in steady BAU.",
     "followUp": "Chase PROJ-33473 (Li-Wei Chang) (in progress 13d) — [ClickHouse] GCS cold-tier storage (keep PVC < 160Gi, retain all data)",
-    "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.505Z"
+    "health": "green",
+    "generatedAt": "2026-08-21T05:58:57.526Z"
   },
   "love-dear-太子天一": {
     "summary": "Workload centres on BotBonnie chatbot/LINE operations. Account looks to be in onboarding and enablement. The work is mostly onboarding & enablement. Carrying long-stale items (oldest 84d).",
     "followUp": "Review the oldest open item BBT-7611 (jack.yt.lin) (84d) — [Love dear] shopline ec module set up",
     "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.505Z"
+    "generatedAt": "2026-08-21T05:58:57.526Z"
   },
   "nespresso-tw": {
-    "summary": "Workload centres on BotBonnie chatbot/LINE operations plus AIQUA campaign & push operations. Account looks to be in onboarding and enablement. The work is mostly RFQ/scoping requests and onboarding & enablement. Carrying long-stale items (oldest 776d).",
+    "summary": "Workload centres on BotBonnie chatbot/LINE operations. Account looks to be in onboarding and enablement. The work is mostly RFQ/scoping requests and onboarding & enablement. Carrying long-stale items (oldest 776d).",
     "followUp": "Review the oldest open item BBT-3347 (christine.ma) (776d) — [Nespresso] Showing prize distribution kit's name in prize list",
     "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.505Z"
+    "generatedAt": "2026-08-21T05:58:57.526Z"
   },
   "不來梅": {
-    "summary": "Workload centres on BotBonnie chatbot/LINE operations plus BotBonnie platform requests. Account looks to be in steady BAU. The work is mostly RFQ/scoping requests. Carrying long-stale items (oldest 1744d).",
-    "followUp": "Chase BBB-504 (Unassigned) (in progress 1744d) — 不來梅股份有限公司（Bremen） (續約2022-01-01)",
+    "summary": "Workload centres on BotBonnie chatbot/LINE operations. Account looks to be in steady BAU. Carrying long-stale items (oldest 622d).",
+    "followUp": "Review the oldest open item BBT-4992 (jack.yt.lin) (622d) — [不來梅] 2024 新增用戶總數 &過去用戶減少紀錄確認",
     "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.505Z"
+    "generatedAt": "2026-08-21T05:58:57.526Z"
   },
   "亞洲安視達": {
-    "summary": "No open Jira tickets outside the CAM boards.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-21T02:27:35.505Z"
+    "generatedAt": "2026-08-21T05:58:57.526Z"
   },
   "凱基人壽": {
-    "summary": "Workload centres on BotBonnie chatbot/LINE operations plus internal CS requests. Account looks to be in steady BAU. The work is mostly RFQ/scoping requests and API/integration. Carrying long-stale items (oldest 315d).",
-    "followUp": "Chase CS-1306 (Salem Chen) (in progress 167d) — 凱基人壽_雲端檢核_2025_續約",
+    "summary": "Workload centres on BotBonnie chatbot/LINE operations plus ETS backend/tech-services requests. Account looks to be in steady BAU. The work is mostly API/integration and audience & recommendation setup. Carrying long-stale items (oldest 315d).",
+    "followUp": "Review the oldest open item BBT-6489 (jack.yt.lin) (315d) — 🍔 [KGI_Life] customized composite image is not stable",
     "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.505Z"
+    "generatedAt": "2026-08-21T05:58:57.526Z"
   },
   "安麗-amway": {
-    "summary": "Workload centres on sales-ops items plus business-platform requests. Account looks to be in steady BAU. The work is mostly API/integration and campaign/messaging ops.",
-    "followUp": "Chase SO-3004 (Willy Huang) (in progress 2d) — Update Pricing Calculator for existing rule and add new Botbonnie API",
-    "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.506Z"
+    "summary": "Workload centres on ETS backend/tech-services requests plus BotBonnie chatbot/LINE operations. Account looks to be in steady BAU. The work is mostly API/integration.",
+    "followUp": "Chase BBT-7902 (Brian Tsai) (in progress 2d) — ［Hill's pet JP］Botbonnie tag assignment via API for newly added their retailer_20260730",
+    "health": "green",
+    "generatedAt": "2026-08-21T05:58:57.526Z"
   },
   "新加坡商犀牛盾科技股份有限公司台灣分公司": {
-    "summary": "Workload centres on ETS backend/tech-services requests plus ESL items. Account looks to be in migration and post-migration monitoring. The work is mostly RFQ/scoping requests and API/integration.",
-    "followUp": "Chase SOE-434 (Shiv Raj) (in progress 0d) — JP - PROTO - Goonet Renewal: Spec & Cost Assessment",
-    "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.506Z"
+    "summary": "Workload centres on ETS backend/tech-services requests. Account looks to be in steady BAU. The work is mostly defect follow-ups.",
+    "followUp": "Chase ETS-5565 (Rewat Nungsue (Joe)) (in progress 0d) — [Amore Pacific TH - Sulwhasoo] By store account binding tracking method",
+    "health": "green",
+    "generatedAt": "2026-08-21T05:58:57.526Z"
   },
   "明台產物保險-mingtai": {
-    "summary": "Workload centres on AIXPERT/agent enablement plus ETS backend/tech-services requests. Account looks to be in steady BAU with an open defect queue. The work is mostly audience & recommendation setup and campaign/messaging ops. Carrying long-stale items (oldest 41d).",
-    "followUp": "Chase AGNT-1489 (Leo Wang) (in progress 41d) — [Mingtai] Investigate and fix Segment ID matching and format inconsistency in Agent",
+    "summary": "Workload centres on ETS backend/tech-services requests. Account looks to be in steady BAU. The work is mostly audience & recommendation setup and defect follow-ups.",
+    "followUp": "Review the oldest open item ETS-5390 (Andy Wu) (22d) — [Mingtai] First Journey Email Applies Wrong Template Despite Assigned Template",
     "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.506Z"
+    "generatedAt": "2026-08-21T05:58:57.526Z"
   },
   "東禾生物科技股份有限公司": {
-    "summary": "Workload centres on attribution items plus BotBonnie chatbot/LINE operations. Account looks to be in onboarding and enablement. The work is mostly onboarding & enablement and security/permission reviews.",
-    "followUp": "Chase ETS-5258 (adam.chen) (in progress 23d) — [VitaDairy] Can't entry Lucky Wheel many times (Advanced kit)",
+    "summary": "Workload centres on BotBonnie chatbot/LINE operations. Account looks to be in onboarding and enablement. The work is mostly onboarding & enablement.",
+    "followUp": "Review the oldest open item BBT-7863 (christine.ma) (27d) — [VitaDairy] Advanced kit Vietnamese UI/UX",
     "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.506Z"
+    "generatedAt": "2026-08-21T05:58:57.526Z"
   },
   "犀牛盾": {
-    "summary": "Workload centres on BotBonnie chatbot/LINE operations plus sales-ops items. Account looks to be in steady BAU. The work is mostly RFQ/scoping requests and API/integration. Contract lapsed 87d ago.",
+    "summary": "Workload centres on ETS backend/tech-services requests plus BotBonnie chatbot/LINE operations. Account looks to be in steady BAU. The work is mostly API/integration. Contract lapsed 87d ago.",
     "followUp": "Contract lapsed 87d ago — confirm renewal or churn status before further delivery work.",
     "health": "red",
-    "generatedAt": "2026-08-21T02:27:35.506Z"
+    "generatedAt": "2026-08-21T05:58:57.526Z"
   },
   "社群埠": {
-    "summary": "Workload centres on BotBonnie platform requests. Account looks to be in steady BAU. The work is mostly RFQ/scoping requests. Carrying long-stale items (oldest 1750d).",
-    "followUp": "Chase BBB-510 (Unassigned) (in progress 1750d) — 社群埠數位媒體顧問股份有限公司 (續約2021-10-17)",
-    "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.506Z"
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
+    "followUp": "",
+    "health": "green",
+    "generatedAt": "2026-08-21T05:58:57.526Z"
   },
   "耐嘉-kinyo": {
-    "summary": "Workload centres on BotBonnie chatbot/LINE operations. Account looks to be in onboarding and enablement. The work is mostly RFQ/scoping requests and onboarding & enablement. Carrying long-stale items (oldest 647d).",
+    "summary": "Workload centres on BotBonnie chatbot/LINE operations. Account looks to be in onboarding and enablement. The work is mostly onboarding & enablement and campaign/messaging ops. Carrying long-stale items (oldest 647d).",
     "followUp": "Chase BBT-5782 (Shiv Raj) (in progress 448d) — [Kinyo, RT Mart, Rhinoshield] display actual number of real-time live chat on icon",
     "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.506Z"
+    "generatedAt": "2026-08-21T05:58:57.527Z"
   },
   "臺理實業股份有限公司": {
-    "summary": "No open Jira tickets outside the CAM boards.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-21T02:27:35.506Z"
+    "generatedAt": "2026-08-21T05:58:57.527Z"
   },
   "赫斯特媒體": {
-    "summary": "Workload centres on project-delivery items plus QGraph/Prizm audience & data work. Account looks to be in steady BAU with an open defect queue. The work is mostly API/integration and audience & recommendation setup. 1 item blocked (QGWL-13517). Contract lapsed 174d ago. Carrying long-stale items (oldest 2856d).",
+    "summary": "Workload centres on project-delivery items plus AIQUA/QGraph platform requests. Account looks to be in steady BAU with an open defect queue. The work is mostly API/integration and audience & recommendation setup. 1 item blocked (QGWL-13517). Contract lapsed 174d ago. Carrying long-stale items (oldest 1537d).",
     "followUp": "Contract lapsed 174d ago — confirm renewal or churn status before further delivery work.",
     "health": "red",
-    "generatedAt": "2026-08-21T02:27:35.506Z"
+    "generatedAt": "2026-08-21T05:58:57.527Z"
   },
   "asia-living-hk": {
-    "summary": "Workload centres on AEP data-pipeline work plus GPMM items. Account looks to be in steady BAU. The work is mostly defect follow-ups.",
-    "followUp": "Review the oldest open item GPMM-300 (Brendan Kuang) (7d) — [Creative Package] UR Living - Signed AA Platform",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
+    "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-21T02:27:35.506Z"
+    "generatedAt": "2026-08-21T05:58:57.527Z"
   },
   "v-tex": {
-    "summary": "Workload centres on QGraph/Prizm audience & data work plus ad-creative production. Account looks to be in steady BAU. The work is mostly audience & recommendation setup and commercial/handover items. Carrying long-stale items (oldest 302d).",
-    "followUp": "Review the oldest open item BBT-6602 (Unassigned) (302d) — [Vtex] Support the display of \"interested product information\" from Meta messaging ads",
+    "summary": "Workload centres on BotBonnie chatbot/LINE operations. Account looks to be in steady BAU. Carrying long-stale items (oldest 261d).",
+    "followUp": "Review the oldest open item BBT-6779 (vivian.yang) (261d) — [Vtex] No response when client click on module in AI rule/ chat flow",
     "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.506Z"
+    "generatedAt": "2026-08-21T05:58:57.527Z"
   },
   "台灣彪馬": {
-    "summary": "Workload centres on AEP data-pipeline work plus QGraph/Prizm audience & data work. Account looks to be in migration and post-migration monitoring. The work is mostly onboarding & enablement and API/integration. Carrying long-stale items (oldest 416d).",
+    "summary": "Workload centres on AIQUA/QGraph platform requests plus ETS backend/tech-services requests. Account looks to be in steady BAU. The work is mostly API/integration and campaign/messaging ops. Carrying long-stale items (oldest 417d).",
     "followUp": "Chase QGWL-13175 (Kim Lu) (in progress 160d) — [Puma] Add URL scheme for client",
     "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.507Z"
+    "generatedAt": "2026-08-21T05:58:57.527Z"
   },
   "安永生活": {
-    "summary": "Workload centres on AIXPERT/agent enablement plus internal CS requests. Account looks to be in steady BAU. Contract lapsed 21d ago. Carrying long-stale items (oldest 2388d).",
-    "followUp": "Contract lapsed 21d ago — confirm renewal or churn status before further delivery work.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract lapsed 21d ago.",
+    "followUp": "Contract lapsed — confirm renewal or churn status with the client.",
     "health": "red",
-    "generatedAt": "2026-08-21T02:27:35.507Z"
+    "generatedAt": "2026-08-21T05:58:57.527Z"
   },
   "新光三越百貨": {
-    "summary": "Workload centres on sales-ops items plus ETS backend/tech-services requests. Account looks to be in steady BAU with an open defect queue. The work is mostly API/integration and audience & recommendation setup.",
+    "summary": "Workload centres on ETS backend/tech-services requests plus BotBonnie chatbot/LINE operations. Account looks to be in steady BAU. The work is mostly API/integration and audience & recommendation setup.",
     "followUp": "Chase ETS-5825 (vivian.yang) (in progress 3d) — [SKM HQ] Audience built via Agent cannot be resolved to user list/profiles in AIRIS",
-    "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.507Z"
+    "health": "green",
+    "generatedAt": "2026-08-21T05:58:57.527Z"
   },
   "杏豐實業": {
-    "summary": "Workload centres on QGraph/Prizm audience & data work plus CD items. Account looks to be in onboarding and enablement. Contract lapsed 63d ago. Carrying long-stale items (oldest 2178d).",
+    "summary": "Workload centres on AIQUA/QGraph platform requests. Account looks to be in onboarding and enablement. Contract lapsed 63d ago. Carrying long-stale items (oldest 843d).",
     "followUp": "Contract lapsed 63d ago — confirm renewal or churn status before further delivery work.",
     "health": "red",
-    "generatedAt": "2026-08-21T02:27:35.507Z"
+    "generatedAt": "2026-08-21T05:58:57.527Z"
   },
   "維康醫療": {
-    "summary": "Workload centres on BotBonnie chatbot/LINE operations plus QGraph/Prizm audience & data work. Account looks to be in steady BAU. The work is mostly RFQ/scoping requests and security/permission reviews. Carrying long-stale items (oldest 1842d).",
-    "followUp": "Review the oldest open item BUF-91 (Unassigned) (1842d) — 維康醫療在問: 我們現在用戶掃碼加入 LINE 都會被收一次推播費，有可能設計只加好友不回應訊息的用法，減少推播費嗎?",
-    "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.507Z"
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
+    "followUp": "",
+    "health": "green",
+    "generatedAt": "2026-08-21T05:58:57.527Z"
   },
   "caco-加州椰子": {
-    "summary": "No open Jira tickets outside the CAM boards.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-21T02:27:35.507Z"
+    "generatedAt": "2026-08-21T05:58:57.527Z"
   },
   "南一書局": {
-    "summary": "Workload centres on business-platform requests plus ETS backend/tech-services requests. Account looks to be in handover/commercial wind-down. The work is mostly RFQ/scoping requests and onboarding & enablement. 1 item blocked (ETS-5880).",
-    "followUp": "Unblock ETS-5880 (gordon.sung) — [麥味登] Enable OJM Channels (App Push/In-App/Web Push/In-Web/LINE/Email).",
+    "summary": "Workload centres on ETS backend/tech-services requests plus project-delivery items. Account looks to be in handover/commercial wind-down. The work is mostly onboarding & enablement and campaign/messaging ops. 1 item blocked (ETS-5880).",
+    "followUp": "Unblock ETS-5880 (gordon.sung) — [麥味登] Enable OJM Channels (App Push/In-App/Web Push/In-Web/LINE/Email)",
     "health": "red",
-    "generatedAt": "2026-08-21T02:27:35.507Z"
+    "generatedAt": "2026-08-21T05:58:57.527Z"
   },
   "居家先生": {
-    "summary": "Workload centres on AEP data-pipeline work plus QGraph/Prizm audience & data work. Account looks to be in steady BAU with an open defect queue. The work is mostly defect follow-ups. Carrying long-stale items (oldest 2171d).",
-    "followUp": "Chase ACE-3099 (James Liu) (in progress 2171d) — Mr. Speedy_ PH_AND_CPI",
-    "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.507Z"
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
+    "followUp": "",
+    "health": "green",
+    "generatedAt": "2026-08-21T05:58:57.527Z"
   },
   "美而快實業": {
-    "summary": "Workload centres on project-delivery items plus XAI items. Account looks to be in onboarding and enablement. The work is mostly onboarding & enablement and API/integration. Carrying long-stale items (oldest 2191d).",
-    "followUp": "Chase QGWL-4294 (Johnson Chiang) (in progress 1840d) — [Pazzo] Displays campaigns updated before 180 days ago",
+    "summary": "Workload centres on project-delivery items plus AIQUA/QGraph platform requests. Account looks to be in steady BAU with an open defect queue. The work is mostly API/integration and campaign/messaging ops. Carrying long-stale items (oldest 1978d).",
+    "followUp": "Chase QGWL-4294 (Johnson Chiang) (in progress 1841d) — [Pazzo] Displays campaigns updated before 180 days ago",
     "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.507Z"
+    "generatedAt": "2026-08-21T05:58:57.527Z"
   },
   "至晟貿易股份有限公司": {
-    "summary": "Workload centres on BotBonnie chatbot/LINE operations. Account looks to be in steady BAU. The work is mostly RFQ/scoping requests and API/integration. Carrying long-stale items (oldest 196d).",
-    "followUp": "Review the oldest open item BBT-6520 (Unassigned) (196d) — 【RFQ】至晟貿易_串接客戶方 API 回傳結果",
-    "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.507Z"
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
+    "followUp": "",
+    "health": "green",
+    "generatedAt": "2026-08-21T05:58:57.527Z"
   },
   "葡萄王生技": {
-    "summary": "Workload centres on QGraph/Prizm audience & data work plus BotBonnie platform requests. Account looks to be in steady BAU. The work is mostly security/permission reviews. Carrying long-stale items (oldest 1014d).",
-    "followUp": "Review the oldest open item BBB-1717 (Samuel Chiang) (1014d) — [CSM Check] 葡萄王生技",
-    "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.507Z"
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
+    "followUp": "",
+    "health": "green",
+    "generatedAt": "2026-08-21T05:58:57.527Z"
   },
   "chenyu辰昱": {
-    "summary": "No open Jira tickets outside the CAM boards. Contract lapsed 102d ago.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract lapsed 102d ago.",
     "followUp": "Contract lapsed — confirm renewal or churn status with the client.",
     "health": "red",
-    "generatedAt": "2026-08-21T02:27:35.507Z"
+    "generatedAt": "2026-08-21T05:58:57.528Z"
   },
   "全國麗園大飯店": {
-    "summary": "No open Jira tickets outside the CAM boards.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-21T02:27:35.507Z"
+    "generatedAt": "2026-08-21T05:58:57.528Z"
   },
   "友達光電": {
-    "summary": "No open Jira tickets outside the CAM boards.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-21T02:27:35.507Z"
+    "generatedAt": "2026-08-21T05:58:57.528Z"
   },
   "台灣移動資產管理租賃有限公司": {
-    "summary": "No open Jira tickets outside the CAM boards.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-21T02:27:35.507Z"
+    "generatedAt": "2026-08-21T05:58:57.528Z"
   },
   "吹毛求吃": {
-    "summary": "Workload centres on BotBonnie chatbot/LINE operations. Account looks to be in steady BAU. The work is mostly RFQ/scoping requests and API/integration. Carrying long-stale items (oldest 289d).",
-    "followUp": "Review the oldest open item BBT-6655 (Unassigned) (289d) — BB-吹毛求吃-Omnichat 會員轉移資料匯入",
+    "summary": "Workload centres on BotBonnie chatbot/LINE operations. Account looks to be in steady BAU. The work is mostly RFQ/scoping requests and API/integration. Carrying long-stale items (oldest 142d).",
+    "followUp": "Review the oldest open item BBT-6699 (Brian Tsai) (142d) — [RFQ] 吹毛求吃＿ webhook 轉拋至 91APP",
     "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.507Z"
+    "generatedAt": "2026-08-21T05:58:57.528Z"
   },
   "大學入學考試中心": {
-    "summary": "Workload centres on BUF items. Account looks to be in steady BAU. Carrying long-stale items (oldest 1842d).",
-    "followUp": "Review the oldest open item BUF-83 (Unassigned) (1842d) — 大考中心針對關鍵字回覆列了需求並希望我們優化\n感覺建議滿不錯的~~我還要回應他們的需求，如果有可能比較近期內可以優化的功能再麻煩讓我知道了",
-    "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.507Z"
-  },
-  "大師課業股份有限公司": {
-    "summary": "Workload centres on finance/billing items. Account looks to be in steady BAU.",
-    "followUp": "Chase FIN-2690 (Tina Lee (finance)) (in progress 0d) — BotBonnie＿用戶退款申請＿大師課業",
-    "health": "green",
-    "generatedAt": "2026-08-21T02:27:35.507Z"
-  },
-  "天賦夢想家顧問": {
-    "summary": "No open Jira tickets outside the CAM boards. Renewal in 23d.",
-    "followUp": "Start the renewal conversation — contract ends in 23 days.",
-    "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.507Z"
-  },
-  "好日子行銷有限公司": {
-    "summary": "No open Jira tickets outside the CAM boards. Contract lapsed 43d ago.",
-    "followUp": "Contract lapsed — confirm renewal or churn status with the client.",
-    "health": "red",
-    "generatedAt": "2026-08-21T02:27:35.507Z"
-  },
-  "安源資訊": {
-    "summary": "Workload centres on BotBonnie chatbot/LINE operations. Account looks to be in steady BAU. Contract lapsed 65d ago. Carrying long-stale items (oldest 483d).",
-    "followUp": "Contract lapsed 65d ago — confirm renewal or churn status before further delivery work.",
-    "health": "red",
-    "generatedAt": "2026-08-21T02:27:35.507Z"
-  },
-  "寓意居家生活有限公司": {
-    "summary": "No open Jira tickets outside the CAM boards. Contract lapsed 88d ago.",
-    "followUp": "Contract lapsed — confirm renewal or churn status with the client.",
-    "health": "red",
-    "generatedAt": "2026-08-21T02:27:35.507Z"
-  },
-  "尚進教育訓練有限公司": {
-    "summary": "Workload centres on ad-creative enablement plus ESTAT items. Account looks to be in steady BAU. The work is mostly campaign/messaging ops and security/permission reviews. Carrying long-stale items (oldest 2722d).",
-    "followUp": "Chase ACE-485 (James Liu) (in progress 2208d) — Chin Media - Inventory of App AOG - Đấu Trường Vinh Quang",
-    "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.507Z"
-  },
-  "巧兒宜國際": {
-    "summary": "No open Jira tickets outside the CAM boards.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-21T02:27:35.507Z"
+    "generatedAt": "2026-08-21T05:58:57.528Z"
+  },
+  "大師課業股份有限公司": {
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
+    "followUp": "",
+    "health": "green",
+    "generatedAt": "2026-08-21T05:58:57.528Z"
+  },
+  "天賦夢想家顧問": {
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Renewal in 23d.",
+    "followUp": "Start the renewal conversation — contract ends in 23 days.",
+    "health": "yellow",
+    "generatedAt": "2026-08-21T05:58:57.528Z"
+  },
+  "好日子行銷有限公司": {
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract lapsed 43d ago.",
+    "followUp": "Contract lapsed — confirm renewal or churn status with the client.",
+    "health": "red",
+    "generatedAt": "2026-08-21T05:58:57.528Z"
+  },
+  "安源資訊": {
+    "summary": "Workload centres on BotBonnie chatbot/LINE operations. Account looks to be in steady BAU. Contract lapsed 65d ago. Carrying long-stale items (oldest 81d).",
+    "followUp": "Contract lapsed 65d ago — confirm renewal or churn status before further delivery work.",
+    "health": "red",
+    "generatedAt": "2026-08-21T05:58:57.528Z"
+  },
+  "寓意居家生活有限公司": {
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract lapsed 88d ago.",
+    "followUp": "Contract lapsed — confirm renewal or churn status with the client.",
+    "health": "red",
+    "generatedAt": "2026-08-21T05:58:57.528Z"
+  },
+  "尚進教育訓練有限公司": {
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
+    "followUp": "",
+    "health": "green",
+    "generatedAt": "2026-08-21T05:58:57.528Z"
+  },
+  "巧兒宜國際": {
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
+    "followUp": "",
+    "health": "green",
+    "generatedAt": "2026-08-21T05:58:57.528Z"
   },
   "幸衍醫美診所": {
     "summary": "Workload centres on BotBonnie chatbot/LINE operations. Account looks to be in onboarding and enablement. The work is mostly onboarding & enablement and defect follow-ups. Contract lapsed 10d ago. Carrying long-stale items (oldest 324d).",
     "followUp": "Contract lapsed 10d ago — confirm renewal or churn status before further delivery work.",
     "health": "red",
-    "generatedAt": "2026-08-21T02:27:35.508Z"
+    "generatedAt": "2026-08-21T05:58:57.528Z"
   },
   "悅己情趣": {
-    "summary": "No open Jira tickets outside the CAM boards.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-21T02:27:35.508Z"
+    "generatedAt": "2026-08-21T05:58:57.528Z"
   },
   "新衣精緻洗衣": {
-    "summary": "No open Jira tickets outside the CAM boards. Renewal in 39d.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Renewal in 39d.",
     "followUp": "Start the renewal conversation — contract ends in 39 days.",
     "health": "green",
-    "generatedAt": "2026-08-21T02:27:35.508Z"
+    "generatedAt": "2026-08-21T05:58:57.528Z"
   },
   "有你共創數位": {
-    "summary": "No open Jira tickets outside the CAM boards. Contract lapsed 91d ago.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract lapsed 91d ago.",
     "followUp": "Contract lapsed — confirm renewal or churn status with the client.",
     "health": "red",
-    "generatedAt": "2026-08-21T02:27:35.508Z"
+    "generatedAt": "2026-08-21T05:58:57.528Z"
   },
   "期天資訊有限公司": {
-    "summary": "No open Jira tickets outside the CAM boards.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-21T02:27:35.508Z"
+    "generatedAt": "2026-08-21T05:58:57.528Z"
   },
   "未來方舟跨界行銷有限公司": {
-    "summary": "No open Jira tickets outside the CAM boards.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-21T02:27:35.508Z"
+    "generatedAt": "2026-08-21T05:58:57.528Z"
   },
   "泛科知識股份有限公司": {
-    "summary": "Workload centres on internal CS requests plus BotBonnie chatbot/LINE operations. Account looks to be in onboarding and enablement. The work is mostly onboarding & enablement. Carrying long-stale items (oldest 142d).",
+    "summary": "Workload centres on BotBonnie chatbot/LINE operations. Account looks to be in onboarding and enablement. The work is mostly onboarding & enablement. Carrying long-stale items (oldest 142d).",
     "followUp": "Review the oldest open item BBT-7372 (rick.lee) (142d) — [Service Agent] Onboard 泛科知識股份-食藥署專案",
     "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.508Z"
+    "generatedAt": "2026-08-21T05:58:57.528Z"
   },
   "滙駿旅遊": {
-    "summary": "Workload centres on AIXPERT requests plus internal CS requests. Account looks to be in steady BAU. The work is mostly campaign/messaging ops. Renewal in 40d. Carrying long-stale items (oldest 2086d).",
-    "followUp": "Kick off renewal now (ends in 40d) while 3 items are still open.",
-    "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.508Z"
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Renewal in 40d.",
+    "followUp": "Start the renewal conversation — contract ends in 40 days.",
+    "health": "green",
+    "generatedAt": "2026-08-21T05:58:57.528Z"
   },
   "灝翔有限公司": {
-    "summary": "No open Jira tickets outside the CAM boards.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-21T02:27:35.508Z"
+    "generatedAt": "2026-08-21T05:58:57.528Z"
   },
   "無比整合行銷": {
-    "summary": "Workload centres on BotBonnie platform requests. Account looks to be in steady BAU.",
-    "followUp": "Chase BBB-2262 (Mia Li) (in progress 0d) — 8/25 益普索、貝殼放大、無比整合行銷；維肯",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
+    "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-21T02:27:35.508Z"
+    "generatedAt": "2026-08-21T05:58:57.528Z"
   },
   "無限全球通移動通信": {
-    "summary": "Workload centres on legal/contract items plus QGraph/Prizm audience & data work. Account looks to be in migration and post-migration monitoring. The work is mostly data backfill/migration. Contract lapsed 4d ago.",
-    "followUp": "Contract lapsed 4d ago — confirm renewal or churn status before further delivery work.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract lapsed 4d ago.",
+    "followUp": "Contract lapsed — confirm renewal or churn status with the client.",
     "health": "red",
-    "generatedAt": "2026-08-21T02:27:35.508Z"
+    "generatedAt": "2026-08-21T05:58:57.528Z"
   },
   "玩點互動": {
     "summary": "Workload centres on ETS backend/tech-services requests. Account looks to be in steady BAU.",
     "followUp": "Review the oldest open item ETS-5567 (christine.ma) (14d) — [bitplay] BB_Client Configuration Request",
     "health": "green",
-    "generatedAt": "2026-08-21T02:27:35.508Z"
+    "generatedAt": "2026-08-21T05:58:57.528Z"
   },
   "百揚資訊科技有限公司": {
-    "summary": "Workload centres on BotBonnie platform requests. Account looks to be in steady BAU. Contract lapsed 60d ago. Carrying long-stale items (oldest 177d).",
-    "followUp": "Contract lapsed 60d ago — confirm renewal or churn status before further delivery work.",
-    "health": "red",
-    "generatedAt": "2026-08-21T02:27:35.508Z"
-  },
-  "秝驎國際": {
-    "summary": "No open Jira tickets outside the CAM boards. Renewal in 52d.",
-    "followUp": "Start the renewal conversation — contract ends in 52 days.",
-    "health": "green",
-    "generatedAt": "2026-08-21T02:27:35.508Z"
-  },
-  "租領移動科技股份有限公司": {
-    "summary": "No open Jira tickets outside the CAM boards.",
-    "followUp": "",
-    "health": "green",
-    "generatedAt": "2026-08-21T02:27:35.508Z"
-  },
-  "精華光學": {
-    "summary": "No open Jira tickets outside the CAM boards.",
-    "followUp": "",
-    "health": "green",
-    "generatedAt": "2026-08-21T02:27:35.508Z"
-  },
-  "翊棨-優迷": {
-    "summary": "No open Jira tickets outside the CAM boards. Contract lapsed 30d ago.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract lapsed 60d ago.",
     "followUp": "Contract lapsed — confirm renewal or churn status with the client.",
     "health": "red",
-    "generatedAt": "2026-08-21T02:27:35.508Z"
+    "generatedAt": "2026-08-21T05:58:57.528Z"
+  },
+  "秝驎國際": {
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Renewal in 52d.",
+    "followUp": "Start the renewal conversation — contract ends in 52 days.",
+    "health": "green",
+    "generatedAt": "2026-08-21T05:58:57.528Z"
+  },
+  "租領移動科技股份有限公司": {
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
+    "followUp": "",
+    "health": "green",
+    "generatedAt": "2026-08-21T05:58:57.528Z"
+  },
+  "精華光學": {
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
+    "followUp": "",
+    "health": "green",
+    "generatedAt": "2026-08-21T05:58:57.528Z"
+  },
+  "翊棨-優迷": {
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract lapsed 30d ago.",
+    "followUp": "Contract lapsed — confirm renewal or churn status with the client.",
+    "health": "red",
+    "generatedAt": "2026-08-21T05:58:57.528Z"
   },
   "華泰開發投資有限公司": {
-    "summary": "No open Jira tickets outside the CAM boards.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-21T02:27:35.508Z"
+    "generatedAt": "2026-08-21T05:58:57.528Z"
   },
   "豐馥資產管理股份有限公司": {
-    "summary": "No open Jira tickets outside the CAM boards.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-21T02:27:35.508Z"
+    "generatedAt": "2026-08-21T05:58:57.528Z"
   },
   "酷訊搜索": {
-    "summary": "No open Jira tickets outside the CAM boards. Renewal in 40d.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Renewal in 40d.",
     "followUp": "Start the renewal conversation — contract ends in 40 days.",
     "health": "green",
-    "generatedAt": "2026-08-21T02:27:35.508Z"
+    "generatedAt": "2026-08-21T05:58:57.528Z"
   },
   "dac-tw": {
-    "summary": "Workload centres on ad-creative enablement. Account looks to be in steady BAU. Carrying long-stale items (oldest 2407d).",
-    "followUp": "Chase ACE-1381 (James Liu) (in progress 2407d) — Glico_CPCV_Premium publishers",
-    "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.508Z"
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
+    "followUp": "",
+    "health": "green",
+    "generatedAt": "2026-08-21T05:58:57.528Z"
   },
   "igs": {
-    "summary": "No open Jira tickets outside the CAM boards.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-21T02:27:35.508Z"
+    "generatedAt": "2026-08-21T05:58:57.528Z"
   },
   "信誼基金會": {
-    "summary": "Workload centres on BotBonnie chatbot/LINE operations plus BotBonnie platform requests. Account looks to be in steady BAU. The work is mostly RFQ/scoping requests. Carrying long-stale items (oldest 1344d).",
-    "followUp": "Review the oldest open item BBB-1272 (Eric.hung) (1344d) — [CSM Check] 信誼基金會",
+    "summary": "Workload centres on BotBonnie chatbot/LINE operations. Account looks to be in steady BAU. The work is mostly RFQ/scoping requests. Carrying long-stale items (oldest 469d).",
+    "followUp": "Review the oldest open item BBT-5759 (Brian Tsai) (469d) — 【RFQ】信誼基金會 圖文訊息可分享給 LINE 好友",
     "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.508Z"
+    "generatedAt": "2026-08-21T05:58:57.528Z"
   },
   "台灣三住": {
-    "summary": "Workload centres on BotBonnie chatbot/LINE operations plus ETS backend/tech-services requests. Account looks to be in onboarding and enablement. The work is mostly RFQ/scoping requests and onboarding & enablement. Carrying long-stale items (oldest 835d).",
-    "followUp": "Chase CS-932 (chengyu.yu) (in progress 622d) — 【BB】2024.5.3 MISUMI Account binding",
+    "summary": "Workload centres on BotBonnie chatbot/LINE operations plus ETS backend/tech-services requests. Account looks to be in steady BAU. The work is mostly audience & recommendation setup and campaign/messaging ops. Carrying long-stale items (oldest 421d).",
+    "followUp": "Chase ETS-5786 (adam.chen) (in progress 6d) — [MiSUMi] Bot Pause Log Investigation — Operator Message in Done Folder (2026-08-13)",
     "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.508Z"
+    "generatedAt": "2026-08-21T05:58:57.528Z"
   },
   "台灣小米通訊": {
-    "summary": "No open Jira tickets outside the CAM boards.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-21T02:27:35.508Z"
+    "generatedAt": "2026-08-21T05:58:57.528Z"
   },
   "台灣希爾思": {
     "summary": "Workload centres on BotBonnie chatbot/LINE operations plus ETS backend/tech-services requests. Account looks to be in onboarding and enablement. The work is mostly RFQ/scoping requests and onboarding & enablement. Carrying long-stale items (oldest 155d).",
-    "followUp": "Chase BBT-7902 (Brian Tsai) (in progress 1d) — ［Hill's pet JP］Botbonnie tag assignment via API for newly added their retailer_20260730",
+    "followUp": "Chase BBT-7902 (Brian Tsai) (in progress 2d) — ［Hill's pet JP］Botbonnie tag assignment via API for newly added their retailer_20260730",
     "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.508Z"
+    "generatedAt": "2026-08-21T05:58:57.528Z"
   },
   "大魯閣實業": {
-    "summary": "No open Jira tickets outside the CAM boards. Contract lapsed 116d ago.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract lapsed 116d ago.",
     "followUp": "Contract lapsed — confirm renewal or churn status with the client.",
     "health": "red",
-    "generatedAt": "2026-08-21T02:27:35.508Z"
+    "generatedAt": "2026-08-21T05:58:57.528Z"
   },
   "悠雅科技": {
-    "summary": "Workload centres on BotBonnie chatbot/LINE operations plus ad-creative enablement. Account looks to be in steady BAU. The work is mostly RFQ/scoping requests. Carrying long-stale items (oldest 2180d).",
-    "followUp": "Chase ACE-2850 (James Liu) (in progress 2180d) — Dat Viet - Zenyum - Gillnet",
+    "summary": "Workload centres on BotBonnie chatbot/LINE operations. Account looks to be in steady BAU. The work is mostly RFQ/scoping requests. Carrying long-stale items (oldest 647d).",
+    "followUp": "Review the oldest open item BBT-4808 (rick.lee) (647d) — [Zenyum] request to support email got bounced – requesting to access BB payload",
     "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.508Z"
+    "generatedAt": "2026-08-21T05:58:57.528Z"
   },
   "未來親子": {
-    "summary": "Workload centres on BotBonnie chatbot/LINE operations plus QGraph/Prizm audience & data work. Account looks to be in onboarding and enablement. The work is mostly RFQ/scoping requests and onboarding & enablement. Contract lapsed 113d ago. Carrying long-stale items (oldest 818d).",
+    "summary": "Workload centres on AIQUA/QGraph platform requests plus BotBonnie chatbot/LINE operations. Account looks to be in onboarding and enablement. The work is mostly onboarding & enablement and audience & recommendation setup. Contract lapsed 113d ago. Carrying long-stale items (oldest 658d).",
     "followUp": "Contract lapsed 113d ago — confirm renewal or churn status before further delivery work.",
     "health": "red",
-    "generatedAt": "2026-08-21T02:27:35.508Z"
+    "generatedAt": "2026-08-21T05:58:57.529Z"
   },
   "海昌隱形眼鏡": {
-    "summary": "No open Jira tickets outside the CAM boards.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-21T02:27:35.508Z"
+    "generatedAt": "2026-08-21T05:58:57.529Z"
   },
   "漢堡王": {
-    "summary": "Workload centres on QGraph/Prizm audience & data work plus BotBonnie chatbot/LINE operations. Account looks to be in onboarding and enablement. The work is mostly RFQ/scoping requests and onboarding & enablement. Carrying long-stale items (oldest 1591d).",
-    "followUp": "Chase QGWL-10306 (Mark Liu) (in progress 1578d) — [Burger King] Enable Journey Map function",
+    "summary": "Workload centres on AIQUA/QGraph platform requests plus ETS backend/tech-services requests. Account looks to be in onboarding and enablement. The work is mostly onboarding & enablement and API/integration. Carrying long-stale items (oldest 1592d).",
+    "followUp": "Chase QGWL-10306 (Mark Liu) (in progress 1579d) — [Burger King] Enable Journey Map function",
     "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.508Z"
+    "generatedAt": "2026-08-21T05:58:57.529Z"
   },
   "益普索市場研究股份有限公司": {
-    "summary": "Workload centres on internal CS requests plus BotBonnie chatbot/LINE operations. Account looks to be in steady BAU. The work is mostly RFQ/scoping requests and security/permission reviews. Carrying long-stale items (oldest 458d).",
-    "followUp": "Chase CS-2813 (chengyu.yu) (in progress 14d) — 益普索市場研究股份有限公司＿Ipsos Global Security Request",
-    "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.508Z"
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
+    "followUp": "",
+    "health": "green",
+    "generatedAt": "2026-08-21T05:58:57.529Z"
   },
   "維肯媒體": {
-    "summary": "Workload centres on BotBonnie chatbot/LINE operations plus BotBonnie platform requests. Account looks to be in steady BAU. The work is mostly RFQ/scoping requests and campaign/messaging ops. Carrying long-stale items (oldest 714d).",
+    "summary": "Workload centres on BotBonnie chatbot/LINE operations. Account looks to be in steady BAU. The work is mostly RFQ/scoping requests. Carrying long-stale items (oldest 445d).",
     "followUp": "Chase BBT-7290 (Brian Tsai) (in progress 99d) — 【RFQ】維肯-台灣愛麗斯和奧莉維亞有限公司_POS綁定＆會員卡",
     "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.508Z"
+    "generatedAt": "2026-08-21T05:58:57.529Z"
   },
   "聯創整合行銷": {
-    "summary": "Workload centres on BotBonnie chatbot/LINE operations plus business-platform requests. Account looks to be in steady BAU. The work is mostly RFQ/scoping requests and API/integration. Carrying long-stale items (oldest 1211d).",
-    "followUp": "Chase BBT-7885 (Brian Tsai) (in progress 10d) — 【RFQ】7-ELEVEN 統一超商_用戶綁定由 BB 進行判斷 GID 只能綁一次",
+    "summary": "Workload centres on BotBonnie chatbot/LINE operations. Account looks to be in steady BAU. The work is mostly RFQ/scoping requests and API/integration. Carrying long-stale items (oldest 462d).",
+    "followUp": "Chase BBT-7885 (Brian Tsai) (in progress 11d) — 【RFQ】7-ELEVEN 統一超商_用戶綁定由 BB 進行判斷 GID 只能綁一次",
     "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.508Z"
+    "generatedAt": "2026-08-21T05:58:57.529Z"
   },
   "豐傑生醫": {
     "summary": "Workload centres on BotBonnie chatbot/LINE operations. Account looks to be in onboarding and enablement. The work is mostly onboarding & enablement and campaign/messaging ops. Carrying long-stale items (oldest 465d).",
     "followUp": "Review the oldest open item BBT-5751 (jack.yt.lin) (465d) — [EC] 豐傑生醫 onboard member card image",
     "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.508Z"
+    "generatedAt": "2026-08-21T05:58:57.529Z"
   },
   "dk-shoes": {
-    "summary": "Workload centres on AIXPERT/agent enablement plus AIXPERT requests. Account looks to be in onboarding and enablement. The work is mostly onboarding & enablement and audience & recommendation setup.",
-    "followUp": "Chase AGNT-1700 (Mei-Cih Yeh) (in progress 7d) — [DR.CiNK] [Onboard] Enable campaign agent for DR.CiNK",
+    "summary": "Workload centres on ETS backend/tech-services requests plus project-delivery items. Account looks to be in onboarding and enablement. The work is mostly onboarding & enablement and security/permission reviews.",
+    "followUp": "Review the oldest open item PROJ-33659 (Mei-Cih Yeh) (23d) — [Dr.Martens] Super A permission request and DQB enablement for Dr.Martens",
     "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.508Z"
+    "generatedAt": "2026-08-21T05:58:57.529Z"
   },
   "innisfree-tw": {
-    "summary": "Workload centres on ETS backend/tech-services requests plus QGraph/Prizm audience & data work. Account looks to be in onboarding and enablement. The work is mostly onboarding & enablement and API/integration. Renewal in 20d. Carrying long-stale items (oldest 110d).",
-    "followUp": "Kick off renewal now (ends in 20d) while 13 items are still open.",
+    "summary": "Workload centres on ETS backend/tech-services requests plus AIQUA/QGraph platform requests. Account looks to be in onboarding and enablement. The work is mostly onboarding & enablement and API/integration. Renewal in 20d. Carrying long-stale items (oldest 39d).",
+    "followUp": "Kick off renewal now (ends in 20d) while 10 assigned items are still open.",
     "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.509Z"
+    "generatedAt": "2026-08-21T05:58:57.529Z"
   },
   "匯姿": {
-    "summary": "No open Jira tickets outside the CAM boards.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-21T02:27:35.509Z"
+    "generatedAt": "2026-08-21T05:58:57.529Z"
   },
   "永悅健康": {
-    "summary": "Workload centres on BotBonnie chatbot/LINE operations plus AIXPERT/agent enablement. Account looks to be in onboarding and enablement. The work is mostly onboarding & enablement and API/integration. Carrying long-stale items (oldest 281d).",
-    "followUp": "Chase AGNT-474 (Mei-Cih Yeh) (in progress 66d) — [Offboard] Disable ESS AI agent for H2U",
+    "summary": "Workload centres on BotBonnie chatbot/LINE operations plus Phoenix platform items. Account looks to be in onboarding and enablement. The work is mostly onboarding & enablement and API/integration. Carrying long-stale items (oldest 281d).",
+    "followUp": "Review the oldest open item PROJ-32387 (danny.ty.lin) (281d) — [H2U] SA Failed to Create Segment",
     "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.509Z"
+    "generatedAt": "2026-08-21T05:58:57.529Z"
   },
   "社團法人台灣職業籃球聯盟": {
-    "summary": "No open Jira tickets outside the CAM boards. Renewal in 10d.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Renewal in 10d.",
     "followUp": "Start the renewal conversation — contract ends in 10 days.",
     "health": "red",
-    "generatedAt": "2026-08-21T02:27:35.509Z"
+    "generatedAt": "2026-08-21T05:58:57.529Z"
   },
   "giloo-紀實影音": {
-    "summary": "Workload centres on AEP data-pipeline work plus QGraph/Prizm audience & data work. Account looks to be in migration and post-migration monitoring. The work is mostly onboarding & enablement and API/integration. Carrying long-stale items (oldest 1918d).",
-    "followUp": "Chase AEP-8176 (boyuan.yang) (in progress 0d) — [EUU] Giloo onboarding",
+    "summary": "Workload centres on AIQUA/QGraph platform requests. Account looks to be in steady BAU. The work is mostly API/integration. Carrying long-stale items (oldest 287d).",
+    "followUp": "Review the oldest open item QGWL-11716 (Roy Lo) (287d) — [Giloo] Adding parameter \"content_availble\" in AIQUA notification API",
     "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.509Z"
+    "generatedAt": "2026-08-21T05:58:57.529Z"
   },
   "中華民國對外貿易發展協會": {
-    "summary": "No open Jira tickets outside the CAM boards. Renewal in 55d.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Renewal in 55d.",
     "followUp": "Start the renewal conversation — contract ends in 55 days.",
     "health": "green",
-    "generatedAt": "2026-08-21T02:27:35.509Z"
+    "generatedAt": "2026-08-21T05:58:57.529Z"
   },
   "全曜財經資訊": {
-    "summary": "Workload centres on QGraph/Prizm audience & data work plus ad campaign operations. Account looks to be in onboarding and enablement. The work is mostly onboarding & enablement and audience & recommendation setup. Carrying long-stale items (oldest 708d).",
-    "followUp": "Chase GCR-22 (Ted Wu) (in progress 244d) — Huge events quotation proposal (PXMart / CMoney / CW / CWGV / SKM / ezTravel)",
+    "summary": "Workload centres on AIQUA/QGraph platform requests plus Phoenix platform items. Account looks to be in steady BAU. The work is mostly campaign/messaging ops. Carrying long-stale items (oldest 532d).",
+    "followUp": "Review the oldest open item QGWL-21227 (olivia.hou) (532d) — [CMoney] Auto-generated report for \"active users\" for internal check",
     "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.509Z"
+    "generatedAt": "2026-08-21T05:58:57.529Z"
   },
   "寰宇家庭": {
     "summary": "Workload centres on ETS backend/tech-services requests. Account looks to be in steady BAU.",
     "followUp": "Review the oldest open item ETS-5685 (Yungyun Cheng) (2d) — [JM][WorldFamily] Confirmation of real time InWeb campagin",
     "health": "green",
-    "generatedAt": "2026-08-21T02:27:35.509Z"
+    "generatedAt": "2026-08-21T05:58:57.529Z"
   },
   "肯驛國際": {
-    "summary": "Workload centres on AiDeal work plus EWC items. Account looks to be in steady BAU. Carrying long-stale items (oldest 945d).",
-    "followUp": "Review the oldest open item AID-12224 (Jarvis Kan) (945d) — AiDeal 肯驛 8折優惠",
-    "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.509Z"
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
+    "followUp": "",
+    "health": "green",
+    "generatedAt": "2026-08-21T05:58:57.529Z"
   },
   "藝康企業股份有限公司": {
-    "summary": "Workload centres on BotBonnie chatbot/LINE operations. Account looks to be in steady BAU. The work is mostly RFQ/scoping requests and defect follow-ups. Carrying long-stale items (oldest 225d).",
+    "summary": "Workload centres on BotBonnie chatbot/LINE operations. Account looks to be in steady BAU. The work is mostly RFQ/scoping requests and defect follow-ups. Carrying long-stale items (oldest 39d).",
     "followUp": "Chase BBT-7779 (Brian Tsai) (in progress 11d) — 🍔 [藝康 Ecolab] User stuck in previous loop when order remains in Pending status — inquiry on closing or expiring pending orders",
     "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.509Z"
+    "generatedAt": "2026-08-21T05:58:57.529Z"
   },
   "guardian-health-beauty": {
-    "summary": "Workload centres on QGraph/Prizm audience & data work plus MT items. Account looks to be in onboarding and enablement. The work is mostly onboarding & enablement and campaign/messaging ops. 3 items blocked (QGRAPH-37916). Contract lapsed 136d ago. Carrying long-stale items (oldest 268d).",
+    "summary": "Workload centres on AIQUA/QGraph platform requests. Account looks to be in onboarding and enablement. The work is mostly onboarding & enablement. Contract lapsed 136d ago. Carrying long-stale items (oldest 268d).",
     "followUp": "Contract lapsed 136d ago — confirm renewal or churn status before further delivery work.",
     "health": "red",
-    "generatedAt": "2026-08-21T02:27:35.509Z"
+    "generatedAt": "2026-08-21T05:58:57.530Z"
   },
   "haleon": {
-    "summary": "Workload centres on internal CS requests plus BotBonnie chatbot/LINE operations. Account looks to be in steady BAU. The work is mostly campaign/messaging ops. Carrying long-stale items (oldest 752d).",
-    "followUp": "Chase CS-1191 (david.tai) (in progress 258d) — BB 客戶 Haleon requesting us (DS team) to fill responsible AI agreement form",
-    "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.509Z"
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
+    "followUp": "",
+    "health": "green",
+    "generatedAt": "2026-08-21T05:58:57.530Z"
   },
   "jgb-smart-property": {
-    "summary": "Workload centres on BotBonnie chatbot/LINE operations plus BotBonnie platform requests. Account looks to be in steady BAU. Carrying long-stale items (oldest 784d).",
-    "followUp": "Chase BBB-1955 (Mia Li) (in progress 784d) — 6/30 鮮乳坊、Cofit_脂研；6/27 JGB（富喬物業）",
+    "summary": "Workload centres on BotBonnie chatbot/LINE operations. Account looks to be in steady BAU. Carrying long-stale items (oldest 163d).",
+    "followUp": "Review the oldest open item BBT-7296 (Tim Lin) (163d) — [JGB_] Please help to apply WhatsApp in Botbonnie. ",
     "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.510Z"
+    "generatedAt": "2026-08-21T05:58:57.530Z"
   },
   "三創數位": {
-    "summary": "Workload centres on BotBonnie chatbot/LINE operations. Account looks to be in steady BAU. The work is mostly RFQ/scoping requests. Carrying long-stale items (oldest 742d).",
-    "followUp": "Review the oldest open item BBT-4331 (Unassigned) (742d) — 【RFQ】 三創數位 (Syntrend)_ 客製化簽到套件報表",
-    "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.510Z"
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
+    "followUp": "",
+    "health": "green",
+    "generatedAt": "2026-08-21T05:58:57.530Z"
   },
   "佑全保健藥妝": {
-    "summary": "Workload centres on QGraph/Prizm audience & data work. Account looks to be in migration and post-migration monitoring. The work is mostly data backfill/migration. Carrying long-stale items (oldest 162d).",
+    "summary": "Workload centres on AIQUA/QGraph platform requests. Account looks to be in migration and post-migration monitoring. The work is mostly data backfill/migration. Carrying long-stale items (oldest 162d).",
     "followUp": "Review the oldest open item QGWL-25099 (Ray Lin) (162d) — [yourchance][backfill offline event] Prepare for the backfill event (adjust rate limit)",
     "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.510Z"
+    "generatedAt": "2026-08-21T05:58:57.532Z"
   },
   "冰宇科技": {
-    "summary": "Workload centres on BotBonnie chatbot/LINE operations plus BotBonnie platform requests. Account looks to be in steady BAU. The work is mostly RFQ/scoping requests and API/integration. Carrying long-stale items (oldest 1427d).",
-    "followUp": "Chase BBB-1143 (Eric.hung) (in progress 1427d) — [CSM Check] 冰宇科技",
+    "summary": "Workload centres on BotBonnie chatbot/LINE operations. Account looks to be in steady BAU. Carrying long-stale items (oldest 386d).",
+    "followUp": "Review the oldest open item BBT-6131 (Chloe Wong) (386d) — [Sealand] 將 DB 內 uid 包含 \\n 的部分移除 ",
     "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.510Z"
+    "generatedAt": "2026-08-21T05:58:57.532Z"
   },
   "台茂購物中心": {
-    "summary": "Workload centres on sales-ops items plus business-platform requests. Account looks to be in steady BAU. The work is mostly API/integration and campaign/messaging ops.",
-    "followUp": "Chase SO-3004 (Willy Huang) (in progress 2d) — Update Pricing Calculator for existing rule and add new Botbonnie API",
-    "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.510Z"
+    "summary": "Workload centres on ETS backend/tech-services requests plus BotBonnie chatbot/LINE operations. Account looks to be in steady BAU. The work is mostly API/integration.",
+    "followUp": "Chase BBT-7902 (Brian Tsai) (in progress 2d) — ［Hill's pet JP］Botbonnie tag assignment via API for newly added their retailer_20260730",
+    "health": "green",
+    "generatedAt": "2026-08-21T05:58:57.533Z"
   },
   "嘉里大榮": {
-    "summary": "Workload centres on BotBonnie chatbot/LINE operations. Account looks to be in steady BAU. The work is mostly RFQ/scoping requests. Carrying long-stale items (oldest 41d).",
-    "followUp": "Chase BBT-7479 (Brian Tsai) (in progress 8d) — RFQ_嘉里大榮_通知型訊息串接與好友訊息通知",
-    "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.510Z"
+    "summary": "Workload centres on BotBonnie chatbot/LINE operations. Account looks to be in steady BAU. The work is mostly RFQ/scoping requests.",
+    "followUp": "Chase BBT-7479 (Brian Tsai) (in progress 9d) — RFQ_嘉里大榮_通知型訊息串接與好友訊息通知",
+    "health": "green",
+    "generatedAt": "2026-08-21T05:58:57.533Z"
   },
   "大方藝彩行銷顧問股份有限公司": {
-    "summary": "No open Jira tickets outside the CAM boards.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-21T02:27:35.510Z"
+    "generatedAt": "2026-08-21T05:58:57.533Z"
   },
   "學吧": {
-    "summary": "Workload centres on BotBonnie chatbot/LINE operations. Account looks to be in onboarding and enablement. The work is mostly onboarding & enablement and API/integration. Carrying long-stale items (oldest 980d).",
-    "followUp": "Review the oldest open item BBT-1844 (Unassigned) (980d) — [學吧 LearningPa] Function to turn on Bot for all or part of the audience",
+    "summary": "Workload centres on BotBonnie chatbot/LINE operations. Account looks to be in steady BAU. The work is mostly API/integration and defect follow-ups. Carrying long-stale items (oldest 73d).",
+    "followUp": "Review the oldest open item BBT-7711 (vivian.yang) (73d) — [學吧] API Authorization Error on Customer List and Customer Actions Endpoints",
     "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.510Z"
+    "generatedAt": "2026-08-21T05:58:57.533Z"
   },
   "富味鄉食品": {
-    "summary": "Workload centres on BotBonnie chatbot/LINE operations plus BotBonnie platform requests. Account looks to be in steady BAU. The work is mostly RFQ/scoping requests and campaign/messaging ops. Carrying long-stale items (oldest 1484d).",
-    "followUp": "Review the oldest open item BBB-1032 (Samuel Chiang) (1484d) — 【RFQ】富味鄉 芝初_標籤/參數記錄總人數秀給用戶查看",
+    "summary": "Workload centres on BotBonnie chatbot/LINE operations. Account looks to be in steady BAU. The work is mostly campaign/messaging ops. Carrying long-stale items (oldest 78d).",
+    "followUp": "Review the oldest open item BBT-7685 (Salem Chen) (78d) — [芝初] Exported Push Notification Report Contained Data from Another Client (Burger King)",
     "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.510Z"
+    "generatedAt": "2026-08-21T05:58:57.533Z"
   },
   "我的專屬營養師": {
-    "summary": "Workload centres on BotBonnie chatbot/LINE operations plus business-platform requests. Account looks to be in onboarding and enablement. The work is mostly onboarding & enablement and audience & recommendation setup. Carrying long-stale items (oldest 122d).",
-    "followUp": "Review the oldest open item BBT-6814 (Brian Tsai) (122d) — [Amway /Cofit /CTBC] botbonnie system performance optimization",
+    "summary": "Workload centres on BotBonnie chatbot/LINE operations. Account looks to be in onboarding and enablement. The work is mostly onboarding & enablement and audience & recommendation setup. Carrying long-stale items (oldest 123d).",
+    "followUp": "Review the oldest open item BBT-6814 (Brian Tsai) (123d) — [Amway /Cofit /CTBC] botbonnie system performance optimization",
     "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.510Z"
+    "generatedAt": "2026-08-21T05:58:57.533Z"
   },
   "玉山銀行": {
-    "summary": "Workload centres on BotBonnie chatbot/LINE operations. Account looks to be in steady BAU. Carrying long-stale items (oldest 304d).",
-    "followUp": "Review the oldest open item BBT-5499 (Unassigned) (304d) — [玉山銀行] RichMenu can not be switched",
-    "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.510Z"
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
+    "followUp": "",
+    "health": "green",
+    "generatedAt": "2026-08-21T05:58:57.533Z"
   },
   "統一數網": {
-    "summary": "Workload centres on BotBonnie chatbot/LINE operations plus ad-creative production. Account looks to be in steady BAU with an open defect queue. The work is mostly RFQ/scoping requests and API/integration. Carrying long-stale items (oldest 97d).",
-    "followUp": "Chase BBT-7885 (Brian Tsai) (in progress 10d) — 【RFQ】7-ELEVEN 統一超商_用戶綁定由 BB 進行判斷 GID 只能綁一次",
+    "summary": "Workload centres on BotBonnie chatbot/LINE operations. Account looks to be in steady BAU. The work is mostly RFQ/scoping requests and API/integration. Carrying long-stale items (oldest 98d).",
+    "followUp": "Chase BBT-7885 (Brian Tsai) (in progress 11d) — 【RFQ】7-ELEVEN 統一超商_用戶綁定由 BB 進行判斷 GID 只能綁一次",
     "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.511Z"
+    "generatedAt": "2026-08-21T05:58:57.533Z"
   },
   "緯育": {
-    "summary": "Workload centres on BotBonnie chatbot/LINE operations plus BotBonnie platform requests. Account looks to be in steady BAU. The work is mostly RFQ/scoping requests. Carrying long-stale items (oldest 1527d).",
-    "followUp": "Review the oldest open item BBB-927 (Samuel Chiang) (1527d) — [CSM Check] 緯育",
+    "summary": "Workload centres on BotBonnie chatbot/LINE operations. Account looks to be in steady BAU. Carrying long-stale items (oldest 72d).",
+    "followUp": "Review the oldest open item BBT-7728 (vivian.yang) (72d) — [緯育TibaMe] Unable to Remove Agent from Project",
     "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.511Z"
+    "generatedAt": "2026-08-21T05:58:57.533Z"
   },
   "聚財課": {
-    "summary": "Workload centres on AiDeal work. Account looks to be in steady BAU. The work is mostly campaign/messaging ops. Carrying long-stale items (oldest 1428d).",
-    "followUp": "Review the oldest open item AID-9646 (Eric Tung) (1428d) — Aideal-聚財課CPA",
-    "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.511Z"
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
+    "followUp": "",
+    "health": "green",
+    "generatedAt": "2026-08-21T05:58:57.533Z"
   },
   "芝麻開門電子商務股份有限公司": {
-    "summary": "No open Jira tickets outside the CAM boards.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-21T02:27:35.511Z"
+    "generatedAt": "2026-08-21T05:58:57.533Z"
   },
   "萊爾富": {
-    "summary": "Workload centres on BotBonnie platform requests. Account looks to be in steady BAU. Carrying long-stale items (oldest 1744d).",
-    "followUp": "Chase BBB-506 (Unassigned) (in progress 1744d) — 萊爾富國際股份有限公司 (續約(no contract))",
-    "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.511Z"
-  },
-  "錦明集團": {
-    "summary": "No open Jira tickets outside the CAM boards.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-21T02:27:35.511Z"
+    "generatedAt": "2026-08-21T05:58:57.533Z"
+  },
+  "錦明集團": {
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
+    "followUp": "",
+    "health": "green",
+    "generatedAt": "2026-08-21T05:58:57.533Z"
   },
   "hola-特力和樂": {
-    "summary": "Workload centres on AIRIS analytics & schema work plus ETS backend/tech-services requests. Account looks to be in onboarding and enablement. The work is mostly onboarding & enablement and API/integration.",
-    "followUp": "Chase AGNT-1675 (Mei-Cih Yeh) (in progress 0d) — [BREEZEONLINE][Onboard] Enable campaign agent for BREEZEONLINE",
-    "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.511Z"
+    "summary": "Workload centres on ETS backend/tech-services requests. Account looks to be in steady BAU. The work is mostly audience & recommendation setup.",
+    "followUp": "Review the oldest open item ETS-5905 (Andy Wu) (0d) — [SKM HQ] AI-predicted audience omits customer's required fields (yyyymm / yyyymm_new / edm/member_grade)",
+    "health": "green",
+    "generatedAt": "2026-08-21T05:58:57.533Z"
   },
   "讀墨電子書": {
-    "summary": "Workload centres on ad campaign operations plus project-delivery items. Account looks to be in migration and post-migration monitoring. The work is mostly API/integration and data backfill/migration. 1 item blocked (QGRAPH-38446). Carrying long-stale items (oldest 79d).",
-    "followUp": "Unblock QGRAPH-38446 (irene.hsieh) — [migration] readmoo.",
-    "health": "red",
-    "generatedAt": "2026-08-21T02:27:35.511Z"
+    "summary": "Workload centres on project-delivery items plus AIQUA/QGraph platform requests. Account looks to be in steady BAU. The work is mostly API/integration and campaign/messaging ops.",
+    "followUp": "Review the oldest open item PROJ-26732 (Chechun Lee) (13d) — [ReadMoo] ETA 11/13-11/20 NPP Push campaigns",
+    "health": "green",
+    "generatedAt": "2026-08-21T05:58:57.533Z"
   },
   "錨點影音": {
-    "summary": "Workload centres on ad campaign operations plus attribution items. Account looks to be in migration and post-migration monitoring. The work is mostly onboarding & enablement and API/integration. 2 items blocked (ADCP-2360). Contract lapsed 82d ago.",
+    "summary": "Workload centres on ETS backend/tech-services requests. Account looks to be in steady BAU. Contract lapsed 82d ago.",
     "followUp": "Contract lapsed 82d ago — confirm renewal or churn status before further delivery work.",
     "health": "red",
-    "generatedAt": "2026-08-21T02:27:35.511Z"
+    "generatedAt": "2026-08-21T05:58:57.533Z"
   },
   "inlook": {
     "summary": "Workload centres on ETS backend/tech-services requests plus BotBonnie chatbot/LINE operations. Account looks to be in onboarding and enablement. The work is mostly RFQ/scoping requests and onboarding & enablement. Carrying long-stale items (oldest 274d).",
     "followUp": "Review the oldest open item BBT-5088 (Brian Tsai) (274d) — 【RFQ】INLook_電商綁定 profile 打 API 回傳",
     "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.511Z"
+    "generatedAt": "2026-08-21T05:58:57.533Z"
   },
   "國泰人壽": {
-    "summary": "Workload centres on BotBonnie chatbot/LINE operations plus project-delivery items. Account looks to be in onboarding and enablement. The work is mostly RFQ/scoping requests and onboarding & enablement. Carrying long-stale items (oldest 758d).",
-    "followUp": "Review the oldest open item BBT-4274 (Unassigned) (758d) — 【RFQ】國泰人壽-教育訓練部_開發 API 將表格自動匯入至“序號認證”",
+    "summary": "Workload centres on project-delivery items plus BotBonnie chatbot/LINE operations. Account looks to be in steady BAU. The work is mostly audience & recommendation setup. Carrying long-stale items (oldest 675d).",
+    "followUp": "Review the oldest open item PROJ-29914 (Michael Palmer) (675d) — [Cathay Life] no AI-Gen k/i generated",
     "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.511Z"
+    "generatedAt": "2026-08-21T05:58:57.533Z"
   },
   "國泰金控": {
-    "summary": "Workload centres on internal CS requests plus AIQUA campaign & push operations. Account looks to be in steady BAU. Carrying long-stale items (oldest 2080d).",
-    "followUp": "Chase ACE-3804 (Phil Hsu) (in progress 2080d) — 國泰金控_享出門",
-    "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.511Z"
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
+    "followUp": "",
+    "health": "green",
+    "generatedAt": "2026-08-21T05:58:57.533Z"
   },
   "城企國際有限公司": {
     "summary": "Workload centres on ETS backend/tech-services requests plus BotBonnie chatbot/LINE operations. Account looks to be in onboarding and enablement. The work is mostly RFQ/scoping requests and onboarding & enablement. Carrying long-stale items (oldest 274d).",
     "followUp": "Review the oldest open item BBT-5088 (Brian Tsai) (274d) — 【RFQ】INLook_電商綁定 profile 打 API 回傳",
     "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.511Z"
+    "generatedAt": "2026-08-21T05:58:57.533Z"
   },
   "天幕國際": {
-    "summary": "Workload centres on AIXPERT/agent enablement plus AIXPERT requests. Account looks to be in onboarding and enablement. The work is mostly onboarding & enablement and audience & recommendation setup.",
-    "followUp": "Chase AGNT-1700 (Mei-Cih Yeh) (in progress 7d) — [DR.CiNK] [Onboard] Enable campaign agent for DR.CiNK",
+    "summary": "Workload centres on project-delivery items. Account looks to be in onboarding and enablement. The work is mostly onboarding & enablement and security/permission reviews.",
+    "followUp": "Review the oldest open item PROJ-33659 (Mei-Cih Yeh) (23d) — [Dr.Martens] Super A permission request and DQB enablement for Dr.Martens",
     "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.511Z"
+    "generatedAt": "2026-08-21T05:58:57.533Z"
   },
   "微風": {
-    "summary": "Workload centres on QGraph/Prizm audience & data work plus AI platform requests. Account looks to be in migration and post-migration monitoring. The work is mostly data backfill/migration and audience & recommendation setup.",
-    "followUp": "Chase QGRAPH-40009 (Finn Hung) (in progress 0d) — [Bub][REC] REC Usage not reflected in EAM",
-    "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.511Z"
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
+    "followUp": "",
+    "health": "green",
+    "generatedAt": "2026-08-21T05:58:57.533Z"
   },
   "爭鮮": {
     "summary": "Workload centres on BotBonnie chatbot/LINE operations. Account looks to be in steady BAU. The work is mostly RFQ/scoping requests. Carrying long-stale items (oldest 65d).",
     "followUp": "Chase BBT-7725 (Brian Tsai) (in progress 2d) — [RFQ] 爭鮮_客製化遊戲Liff &  串接票券夾",
     "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.511Z"
+    "generatedAt": "2026-08-21T05:58:57.533Z"
   },
   "維那斯有限公司": {
     "summary": "Workload centres on ETS backend/tech-services requests plus BotBonnie chatbot/LINE operations. Account looks to be in onboarding and enablement. The work is mostly RFQ/scoping requests and onboarding & enablement. Carrying long-stale items (oldest 274d).",
     "followUp": "Review the oldest open item BBT-5088 (Brian Tsai) (274d) — 【RFQ】INLook_電商綁定 profile 打 API 回傳",
     "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.511Z"
+    "generatedAt": "2026-08-21T05:58:57.533Z"
   },
   "達特聖克國際股份有限公司": {
-    "summary": "Workload centres on AIXPERT/agent enablement plus AIQUA campaign & push operations. Account looks to be in onboarding and enablement. The work is mostly onboarding & enablement. Carrying long-stale items (oldest 315d).",
-    "followUp": "Review the oldest open item ADCR-315 (steven.za.chen) (315d) — [Custom Template] DR.CiNK達特聖克_2025.10.09",
-    "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.511Z"
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
+    "followUp": "",
+    "health": "green",
+    "generatedAt": "2026-08-21T05:58:57.533Z"
   },
   "invani": {
-    "summary": "Workload centres on BotBonnie chatbot/LINE operations. Account looks to be in steady BAU. The work is mostly RFQ/scoping requests. Carrying long-stale items (oldest 776d).",
-    "followUp": "Review the oldest open item BBT-3966 (Unassigned) (776d) — 【RFQ】美商怡發明有限公司 Invani_客服對話紀錄同步至 BotBonnie",
-    "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.511Z"
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
+    "followUp": "",
+    "health": "green",
+    "generatedAt": "2026-08-21T05:58:57.533Z"
   },
   "uuulab-co": {
-    "summary": "No open Jira tickets outside the CAM boards.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-21T02:27:35.511Z"
+    "generatedAt": "2026-08-21T05:58:57.533Z"
   },
   "優派國際": {
-    "summary": "No open Jira tickets outside the CAM boards.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-21T02:27:35.511Z"
+    "generatedAt": "2026-08-21T05:58:57.533Z"
   },
   "國立暨南國際大學": {
-    "summary": "No open Jira tickets outside the CAM boards.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-21T02:27:35.511Z"
+    "generatedAt": "2026-08-21T05:58:57.533Z"
   },
   "宇峻奧汀科技": {
-    "summary": "No open Jira tickets outside the CAM boards.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-21T02:27:35.511Z"
+    "generatedAt": "2026-08-21T05:58:57.533Z"
   },
   "摩奇創意": {
-    "summary": "No open Jira tickets outside the CAM boards.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-21T02:27:35.511Z"
+    "generatedAt": "2026-08-21T05:58:57.534Z"
   },
   "橋陽設計工作室": {
-    "summary": "Workload centres on ad-creative enablement. Account looks to be in steady BAU. Carrying long-stale items (oldest 1974d).",
-    "followUp": "Chase ACE-4528 (Katie Chen) (in progress 1974d) — Darphin(雅詩蘭黛集團品牌)_母親節",
-    "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.511Z"
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
+    "followUp": "",
+    "health": "green",
+    "generatedAt": "2026-08-21T05:58:57.534Z"
   },
   "貝殼放大": {
-    "summary": "Workload centres on BotBonnie platform requests. Account looks to be in steady BAU. Contract lapsed 1d ago.",
-    "followUp": "Contract lapsed 1d ago — confirm renewal or churn status before further delivery work.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract lapsed 1d ago.",
+    "followUp": "Contract lapsed — confirm renewal or churn status with the client.",
     "health": "red",
-    "generatedAt": "2026-08-21T02:27:35.512Z"
+    "generatedAt": "2026-08-21T05:58:57.534Z"
   },
   "貝立德股份有限公司": {
-    "summary": "Workload centres on FAQ items. Account looks to be in steady BAU. Carrying long-stale items (oldest 30d).",
-    "followUp": "Review the oldest open item FAQ-210 (Dora Tseng) (30d) — 貝立德_KFC TW - 七月外送專法_2607_CPC opt CTR (AIBID)_Link",
-    "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.512Z"
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
+    "followUp": "",
+    "health": "green",
+    "generatedAt": "2026-08-21T05:58:57.534Z"
   },
   "迪凱科技": {
-    "summary": "Workload centres on BotBonnie platform requests. Account looks to be in steady BAU. Carrying long-stale items (oldest 177d).",
-    "followUp": "Chase BBB-2213 (Mia Li) (in progress 177d) — 2/28 百揚資訊、好日子、迪凱科技；TBD：Ogilvy_Hill done",
-    "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.512Z"
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
+    "followUp": "",
+    "health": "green",
+    "generatedAt": "2026-08-21T05:58:57.534Z"
   },
   "高雄萬豪酒店": {
-    "summary": "Workload centres on QGraph/Prizm audience & data work plus AI platform requests. Account looks to be in steady BAU. The work is mostly audience & recommendation setup. Carrying long-stale items (oldest 191d).",
-    "followUp": "Review the oldest open item AI-8979 (Yao-Nan Chen) (191d) — Hotel recommendation using fight from and to feature",
-    "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.512Z"
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
+    "followUp": "",
+    "health": "green",
+    "generatedAt": "2026-08-21T05:58:57.534Z"
   },
   "mis-test": {
-    "summary": "Workload centres on internal CS requests plus AEP data-pipeline work. Account looks to be in migration and post-migration monitoring. The work is mostly data backfill/migration and audience & recommendation setup. 1 item blocked (ETS-1937). Contract lapsed 130d ago.",
+    "summary": "Workload centres on ETS backend/tech-services requests. Account looks to be in steady BAU. 1 item blocked (ETS-1937). Contract lapsed 130d ago.",
     "followUp": "Contract lapsed 130d ago — confirm renewal or churn status before further delivery work.",
     "health": "red",
-    "generatedAt": "2026-08-21T02:27:35.512Z"
+    "generatedAt": "2026-08-21T05:58:57.534Z"
   },
   "renishaw": {
-    "summary": "No open Jira tickets outside the CAM boards.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-21T02:27:35.512Z"
+    "generatedAt": "2026-08-21T05:58:57.534Z"
   },
   "易遊網股份有限公司": {
-    "summary": "Workload centres on ad campaign operations plus ad-creative production. Account looks to be in onboarding and enablement. The work is mostly onboarding & enablement and API/integration.",
-    "followUp": "Chase ADCP-1923 (Gary Wu) (in progress 10d) — AI-storyline video on Adcreative.ai ",
-    "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.512Z"
+    "summary": "Workload centres on ETS backend/tech-services requests. Account looks to be in steady BAU.",
+    "followUp": "Review the oldest open item ETS-5860 (jason.wu) (1d) — [ezTravel] Certain OJM node delivered unusually",
+    "health": "green",
+    "generatedAt": "2026-08-21T05:58:57.534Z"
   },
   "robinmay薇恩": {
-    "summary": "Workload centres on QGraph/Prizm audience & data work plus AIRIS analytics & schema work. Account looks to be in onboarding and enablement. The work is mostly onboarding & enablement. Carrying long-stale items (oldest 437d).",
-    "followUp": "Chase AIR-3213 (Mark Liu) (in progress 416d) — [ROBINMAY] Sync Data from Data Loader to STG Project- to auto sync SFTP/BQ data",
+    "summary": "Workload centres on AIQUA/QGraph platform requests plus ETS backend/tech-services requests. Account looks to be in onboarding and enablement. The work is mostly onboarding & enablement. Carrying long-stale items (oldest 437d).",
+    "followUp": "Chase ETS-5779 (Mark Liu) (in progress 3d) — [ROBINMAY] Confirm Receipt of 康德 Test Data via SFTP",
     "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.512Z"
+    "generatedAt": "2026-08-21T05:58:57.534Z"
   },
   "佳格食品": {
-    "summary": "Workload centres on BotBonnie chatbot/LINE operations plus AIQUA campaign & push operations. Account looks to be in onboarding and enablement. The work is mostly RFQ/scoping requests and onboarding & enablement. Carrying long-stale items (oldest 310d).",
-    "followUp": "Review the oldest open item BBT-6554 (Unassigned) (310d) — [佳格] Include Blocked/Unblocked Status in User List Upload",
+    "summary": "Workload centres on BotBonnie chatbot/LINE operations. Account looks to be in onboarding and enablement. The work is mostly RFQ/scoping requests and onboarding & enablement. Carrying long-stale items (oldest 207d).",
+    "followUp": "Review the oldest open item BBT-7081 (vivian.yang) (207d) — [佳格] Missing \"Notify Agent\" Trigger & Delayed Appearance in Main Folder",
     "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.512Z"
+    "generatedAt": "2026-08-21T05:58:57.534Z"
   },
   "太平洋崇光百貨": {
-    "summary": "Workload centres on QGraph/Prizm audience & data work plus ETS backend/tech-services requests. Account looks to be in onboarding and enablement. The work is mostly onboarding & enablement and audience & recommendation setup. Carrying long-stale items (oldest 490d).",
-    "followUp": "Chase ETS-5863 (gordon.sung) (in progress 1d) — [SOGO] Rec Scenario Traffic Dropped to Near Zero Since 8/13 (Onsite Experience Not Rendering)",
+    "summary": "Workload centres on AIQUA/QGraph platform requests plus ETS backend/tech-services requests. Account looks to be in onboarding and enablement. The work is mostly onboarding & enablement and audience & recommendation setup. Carrying long-stale items (oldest 490d).",
+    "followUp": "Chase ETS-5863 (gordon.sung) (in progress 2d) — [SOGO] Rec Scenario Traffic Dropped to Near Zero Since 8/13 (Onsite Experience Not Rendering)",
     "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.512Z"
+    "generatedAt": "2026-08-21T05:58:57.534Z"
   },
   "星宇航空": {
-    "summary": "Workload centres on QGraph/Prizm audience & data work plus AEP data-pipeline work. Account looks to be in migration and post-migration monitoring. The work is mostly onboarding & enablement and data backfill/migration. 1 item blocked (QGRAPH-39115). Carrying long-stale items (oldest 109d).",
-    "followUp": "Unblock QGRAPH-39115 (Unassigned) — Backfill STARLUX Airlines (organization-starlux)(need BB).",
-    "health": "red",
-    "generatedAt": "2026-08-21T02:27:35.512Z"
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
+    "followUp": "",
+    "health": "green",
+    "generatedAt": "2026-08-21T05:58:57.534Z"
   },
   "wemo": {
-    "summary": "Workload centres on ad campaign operations plus ETS backend/tech-services requests. Account looks to be in migration and post-migration monitoring. The work is mostly onboarding & enablement and API/integration. Carrying long-stale items (oldest 93d).",
-    "followUp": "Chase HR-99 (amanda liu) (in progress 31d) — Mango_WeMo_CrossX",
+    "summary": "Workload centres on ETS backend/tech-services requests plus AIQUA/QGraph platform requests. Account looks to be in onboarding and enablement. The work is mostly onboarding & enablement and campaign/messaging ops. Carrying long-stale items (oldest 93d).",
+    "followUp": "Review the oldest open item QGWL-25272 (Shiv Raj) (93d) — [WeMo] Feature Request_Enable scheduling (start/end time) for Trigger Campaigns",
     "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.513Z"
+    "generatedAt": "2026-08-21T05:58:57.534Z"
   },
   "世邦旅遊": {
-    "summary": "Workload centres on BotBonnie chatbot/LINE operations plus AiDeal work. Account looks to be in steady BAU with an open defect queue. The work is mostly defect follow-ups. Carrying long-stale items (oldest 542d).",
-    "followUp": "Review the oldest open item AID-12878 (Eric Tung) (542d) — AiDeal_世邦旅遊 (MM Client)",
+    "summary": "Workload centres on BotBonnie chatbot/LINE operations. Account looks to be in steady BAU. The work is mostly defect follow-ups. Carrying long-stale items (oldest 518d).",
+    "followUp": "Review the oldest open item BBT-5553 (willy.liao) (518d) — [世邦旅遊] Mobile Device Login Console Error",
     "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.513Z"
+    "generatedAt": "2026-08-21T05:58:57.534Z"
   },
   "小川日和有限公司": {
-    "summary": "Workload centres on solution-quality items plus BotBonnie chatbot/LINE operations. Account looks to be in migration and post-migration monitoring. The work is mostly onboarding & enablement and data backfill/migration. Carrying long-stale items (oldest 304d).",
-    "followUp": "Review the oldest open item BBT-6542 (vivian.yang) (304d) — [BB-小川職人] Line Menu can't select module in KB",
+    "summary": "Workload centres on BotBonnie chatbot/LINE operations plus ETS backend/tech-services requests. Account looks to be in steady BAU. The work is mostly campaign/messaging ops. Carrying long-stale items (oldest 305d).",
+    "followUp": "Review the oldest open item BBT-6542 (vivian.yang) (305d) — [BB-小川職人] Line Menu can't select module in KB",
     "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.513Z"
+    "generatedAt": "2026-08-21T05:58:57.534Z"
   },
   "展碁國際股份有限公司": {
-    "summary": "Workload centres on BotBonnie chatbot/LINE operations plus internal CS requests. Account looks to be in migration and post-migration monitoring. The work is mostly onboarding & enablement and API/integration. Contract lapsed 32d ago. Carrying long-stale items (oldest 391d).",
+    "summary": "Workload centres on BotBonnie chatbot/LINE operations. Account looks to be in migration and post-migration monitoring. The work is mostly onboarding & enablement and API/integration. Contract lapsed 32d ago. Carrying long-stale items (oldest 391d).",
     "followUp": "Contract lapsed 32d ago — confirm renewal or churn status before further delivery work.",
     "health": "red",
-    "generatedAt": "2026-08-21T02:27:35.513Z"
+    "generatedAt": "2026-08-21T05:58:57.534Z"
   },
   "數匯智控股份有限公司": {
-    "summary": "Workload centres on BotBonnie chatbot/LINE operations plus internal CS requests. Account looks to be in onboarding and enablement. The work is mostly onboarding & enablement and API/integration. Contract lapsed 37d ago. Carrying long-stale items (oldest 462d).",
+    "summary": "Workload centres on BotBonnie chatbot/LINE operations. Account looks to be in onboarding and enablement. The work is mostly onboarding & enablement and API/integration. Contract lapsed 37d ago. Carrying long-stale items (oldest 419d).",
     "followUp": "Contract lapsed 37d ago — confirm renewal or churn status before further delivery work.",
     "health": "red",
-    "generatedAt": "2026-08-21T02:27:35.513Z"
+    "generatedAt": "2026-08-21T05:58:57.534Z"
   },
   "景華生技": {
-    "summary": "Workload centres on AIQUA campaign & push operations plus AiDeal work. Account looks to be in steady BAU. Carrying long-stale items (oldest 594d).",
-    "followUp": "Review the oldest open item AID-12833 (Eric Tung) (594d) — AiD_你滋美得",
-    "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.513Z"
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
+    "followUp": "",
+    "health": "green",
+    "generatedAt": "2026-08-21T05:58:57.534Z"
   },
   "橘子蘋果orangeapple": {
-    "summary": "No open Jira tickets outside the CAM boards.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-21T02:27:35.513Z"
+    "generatedAt": "2026-08-21T05:58:57.534Z"
   },
   "雪坊志業": {
-    "summary": "No open Jira tickets outside the CAM boards.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-21T02:27:35.513Z"
+    "generatedAt": "2026-08-21T05:58:57.534Z"
   },
   "佳聖媒體行銷": {
-    "summary": "Workload centres on AiDeal work plus BotBonnie chatbot/LINE operations. Account looks to be in steady BAU. The work is mostly RFQ/scoping requests. Carrying long-stale items (oldest 944d).",
-    "followUp": "Chase ADCR-224 (Brendan Kuang) (in progress 287d) — 興富發_demo製作_0808",
-    "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.513Z"
-  },
-  "保聯企業股份有限公司": {
-    "summary": "Workload centres on BotBonnie chatbot/LINE operations. Account looks to be in steady BAU. The work is mostly RFQ/scoping requests. Carrying long-stale items (oldest 343d).",
-    "followUp": "Review the oldest open item BBT-6404 (Unassigned) (343d) — 【RFQ】保聯企業股份有限公司_附近店家",
-    "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.513Z"
-  },
-  "嘉丹妮爾": {
-    "summary": "Workload centres on AiDeal work plus BotBonnie chatbot/LINE operations. Account looks to be in steady BAU with an open defect queue. The work is mostly RFQ/scoping requests and campaign/messaging ops. Carrying long-stale items (oldest 1843d).",
-    "followUp": "Review the oldest open item AID-5648 (Peiru Shih) (1843d) — [Invoice] AiDeal_嘉丹妮爾_2021/07",
-    "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.513Z"
-  },
-  "富川創造": {
-    "summary": "Workload centres on attribution items plus BotBonnie chatbot/LINE operations. Account looks to be in onboarding and enablement. The work is mostly onboarding & enablement and security/permission reviews.",
-    "followUp": "Chase ETS-5258 (adam.chen) (in progress 23d) — [VitaDairy] Can't entry Lucky Wheel many times (Advanced kit)",
-    "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.514Z"
-  },
-  "朵墨": {
-    "summary": "No open Jira tickets outside the CAM boards.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-21T02:27:35.514Z"
+    "generatedAt": "2026-08-21T05:58:57.534Z"
+  },
+  "保聯企業股份有限公司": {
+    "summary": "Workload centres on BotBonnie chatbot/LINE operations. Account looks to be in steady BAU. Carrying long-stale items (oldest 253d).",
+    "followUp": "Review the oldest open item BBT-6857 (Guiguan) (253d) — [aRacer /保聯 /優迷] image recognition to add",
+    "health": "yellow",
+    "generatedAt": "2026-08-21T05:58:57.534Z"
+  },
+  "嘉丹妮爾": {
+    "summary": "Workload centres on BotBonnie chatbot/LINE operations plus Phoenix platform items. Account looks to be in steady BAU with an open defect queue. The work is mostly campaign/messaging ops and defect follow-ups. Carrying long-stale items (oldest 618d).",
+    "followUp": "Review the oldest open item PHXX-3441 (lilianch) (618d) — [ MM-OJM-嘉丹妮爾 Vecs Gardenia ] Data Analysis and Computation Logic",
+    "health": "yellow",
+    "generatedAt": "2026-08-21T05:58:57.534Z"
+  },
+  "富川創造": {
+    "summary": "Workload centres on BotBonnie chatbot/LINE operations. Account looks to be in onboarding and enablement. The work is mostly onboarding & enablement.",
+    "followUp": "Review the oldest open item BBT-7863 (christine.ma) (27d) — [VitaDairy] Advanced kit Vietnamese UI/UX",
+    "health": "yellow",
+    "generatedAt": "2026-08-21T05:58:57.534Z"
+  },
+  "朵墨": {
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
+    "followUp": "",
+    "health": "green",
+    "generatedAt": "2026-08-21T05:58:57.534Z"
   },
   "林莉國際股份有限公司": {
     "summary": "Workload centres on BotBonnie chatbot/LINE operations. Account looks to be in steady BAU. Carrying long-stale items (oldest 360d).",
     "followUp": "Review the oldest open item BBT-6200 (vivian.yang) (360d) — [MM-BB-林莉婚紗] ",
     "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.514Z"
+    "generatedAt": "2026-08-21T05:58:57.534Z"
   },
   "狼窩網紅行銷國際": {
-    "summary": "Workload centres on BotBonnie chatbot/LINE operations plus AiDeal work. Account looks to be in onboarding and enablement. The work is mostly onboarding & enablement and API/integration. Carrying long-stale items (oldest 476d).",
-    "followUp": "Review the oldest open item AID-12940 (vivian.yang) (476d) — [Initial Setting] AiDeal_藍光盾（代理商：狼窩網紅）",
+    "summary": "Workload centres on BotBonnie chatbot/LINE operations. Account looks to be in onboarding and enablement. The work is mostly onboarding & enablement and API/integration. Carrying long-stale items (oldest 459d).",
+    "followUp": "Review the oldest open item BBT-5701 (rick.lee) (459d) — Client Onboarding PHX Console, EC Integration, EC Tag & Membership｜MM - 狼窩網紅 - 藍光盾",
     "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.514Z"
+    "generatedAt": "2026-08-21T05:58:57.534Z"
   },
   "美藍雷": {
-    "summary": "Workload centres on BotBonnie chatbot/LINE operations plus business-platform requests. Account looks to be in steady BAU. The work is mostly RFQ/scoping requests and API/integration.",
-    "followUp": "Chase BBT-7885 (Brian Tsai) (in progress 10d) — 【RFQ】7-ELEVEN 統一超商_用戶綁定由 BB 進行判斷 GID 只能綁一次",
+    "summary": "Workload centres on BotBonnie chatbot/LINE operations. Account looks to be in steady BAU. The work is mostly RFQ/scoping requests and API/integration.",
+    "followUp": "Chase BBT-7885 (Brian Tsai) (in progress 11d) — 【RFQ】7-ELEVEN 統一超商_用戶綁定由 BB 進行判斷 GID 只能綁一次",
     "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.514Z"
+    "generatedAt": "2026-08-21T05:58:57.535Z"
   },
   "華南金資產管理": {
-    "summary": "Workload centres on business-platform requests. Account looks to be in onboarding and enablement. The work is mostly onboarding & enablement and API/integration. Carrying long-stale items (oldest 217d).",
-    "followUp": "Review the oldest open item BP-9185 (kyle.kc.wang) (217d) — [華南金資產管理] Enable open API v2",
-    "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.514Z"
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
+    "followUp": "",
+    "health": "green",
+    "generatedAt": "2026-08-21T05:58:57.535Z"
   },
   "全聯": {
-    "summary": "Workload centres on ETS backend/tech-services requests plus QGraph/Prizm audience & data work. Account looks to be in handover/commercial wind-down. The work is mostly data backfill/migration and audience & recommendation setup.",
-    "followUp": "Chase QGRAPH-37329 (irene.hsieh) (in progress 9d) — [Incident] PXMart u2t fallback rate high",
+    "summary": "Workload centres on ETS backend/tech-services requests plus AIQUA/QGraph platform requests. Account looks to be in handover/commercial wind-down. The work is mostly audience & recommendation setup and campaign/messaging ops.",
+    "followUp": "Chase ETS-1917 (Andy Wu) (in progress 7d) — [PS handover] PXmart - 10 REC & Prediction tasks",
     "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.514Z"
+    "generatedAt": "2026-08-21T05:58:57.535Z"
   },
   "永豐商業銀行": {
-    "summary": "Workload centres on AI platform requests plus FG items. Account looks to be in steady BAU.",
-    "followUp": "Chase AI-30524 (Gavin Chang) (in progress 3d) — [QA] Create Question bank db",
-    "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.514Z"
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
+    "followUp": "",
+    "health": "green",
+    "generatedAt": "2026-08-21T05:58:57.535Z"
   },
   "千山淨水": {
-    "summary": "Workload centres on AIRIS analytics & schema work plus SOE items. Account looks to be in steady BAU. The work is mostly API/integration. 1 item blocked (AIR-3003). Carrying long-stale items (oldest 437d).",
-    "followUp": "Unblock AIR-3003 (esther.liu) — [千山淨水] check reason why referrer show abnormal.",
-    "health": "red",
-    "generatedAt": "2026-08-21T02:27:35.514Z"
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
+    "followUp": "",
+    "health": "green",
+    "generatedAt": "2026-08-21T05:58:57.535Z"
   },
   "南山人壽": {
-    "summary": "Workload centres on AIQUA campaign & push operations plus project-delivery items. Account looks to be in steady BAU with an open defect queue. The work is mostly campaign/messaging ops and defect follow-ups. Contract lapsed 21d ago. Carrying long-stale items (oldest 916d).",
+    "summary": "Workload centres on project-delivery items plus AIQUA/QGraph platform requests. Account looks to be in steady BAU with an open defect queue. The work is mostly defect follow-ups. Contract lapsed 21d ago. Carrying long-stale items (oldest 392d).",
     "followUp": "Contract lapsed 21d ago — confirm renewal or churn status before further delivery work.",
     "health": "red",
-    "generatedAt": "2026-08-21T02:27:35.514Z"
+    "generatedAt": "2026-08-21T05:58:57.535Z"
   },
   "味全龍職業棒球隊": {
-    "summary": "Workload centres on ASRF items plus PERM items. Account looks to be in steady BAU. Carrying long-stale items (oldest 1535d).",
-    "followUp": "Review the oldest open item PERM-269 (henry.yang) (1535d) — Authorization request for iDash_Wei-Wei Du",
-    "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.514Z"
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
+    "followUp": "",
+    "health": "green",
+    "generatedAt": "2026-08-21T05:58:57.535Z"
   },
   "天下雜誌": {
-    "summary": "Workload centres on QGraph/Prizm audience & data work plus AIQUA campaign & push operations. Account looks to be in steady BAU with an open defect queue. The work is mostly defect follow-ups. Carrying long-stale items (oldest 2190d).",
-    "followUp": "Chase QGRAPH-39270 (Unassigned) (in progress 42d) — [AEP Adoption] CommonWealth",
+    "summary": "Workload centres on AIQUA/QGraph platform requests plus project-delivery items. Account looks to be in steady BAU. The work is mostly defect follow-ups. Carrying long-stale items (oldest 1553d).",
+    "followUp": "Review the oldest open item PROJ-15163 (Ben (Teng-Yuan) Chang) (1553d) — [天下雜誌股份有限公司] [ROBOT] [5fcf46180a9debfe65d88365] CROSS_DEVICEintersection not supported by new type robot class",
     "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.514Z"
+    "generatedAt": "2026-08-21T05:58:57.535Z"
   },
   "台灣山葉機車": {
-    "summary": "Workload centres on AEP data-pipeline work plus QGraph/Prizm audience & data work. Account looks to be in migration and post-migration monitoring. The work is mostly onboarding & enablement and data backfill/migration. Carrying long-stale items (oldest 244d).",
-    "followUp": "Review the oldest open item AIR-3910 (Laura Yang) (244d) — [YAMAHA] PS pipeline modification for AEP",
-    "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.514Z"
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
+    "followUp": "",
+    "health": "green",
+    "generatedAt": "2026-08-21T05:58:57.535Z"
   },
   "巨匠電腦": {
-    "summary": "Workload centres on QGraph/Prizm audience & data work plus AIQUA campaign & push operations. Account looks to be in migration and post-migration monitoring. The work is mostly data backfill/migration and campaign/messaging ops. Carrying long-stale items (oldest 1148d).",
-    "followUp": "Chase AIQ-1608 (alvin.yh.wu) (in progress 30d) — [PcSchool] AIQUA <> AIRIS backfill discussion",
+    "summary": "Workload centres on AIQUA/QGraph platform requests. Account looks to be in steady BAU. The work is mostly campaign/messaging ops. Carrying long-stale items (oldest 234d).",
+    "followUp": "Review the oldest open item QGWL-22528 (luke.chien) (234d) — [SKM / PcSchool] Not able to search properly on campaign listing page",
     "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.514Z"
+    "generatedAt": "2026-08-21T05:58:57.535Z"
   },
   "益富實業": {
-    "summary": "Workload centres on BotBonnie chatbot/LINE operations plus AIQUA campaign & push operations. Account looks to be in steady BAU. The work is mostly RFQ/scoping requests and campaign/messaging ops. Carrying long-stale items (oldest 853d).",
+    "summary": "Workload centres on BotBonnie chatbot/LINE operations. Account looks to be in steady BAU. Carrying long-stale items (oldest 416d).",
     "followUp": "Chase BBT-7828 (Brian Tsai) (in progress 38d) — [益富] Cyberbiz Order Payment Information Appears Incomplete",
     "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.514Z"
+    "generatedAt": "2026-08-21T05:58:57.535Z"
   },
   "台灣索尼": {
-    "summary": "Workload centres on AIRIS analytics & schema work plus ETS backend/tech-services requests. Account looks to be in onboarding and enablement. The work is mostly onboarding & enablement and API/integration.",
-    "followUp": "Chase AIRIS-8803 (yiling.lee) (in progress 0d) — [audience-size estimation API] Write and review test cases",
-    "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.514Z"
+    "summary": "Workload centres on ETS backend/tech-services requests. Account looks to be in steady BAU. The work is mostly API/integration and audience & recommendation setup.",
+    "followUp": "Review the oldest open item ETS-5866 (Jessica Chen) (1d) — [Zus PH] Weather API – Historical Audience Condition Match Analysis",
+    "health": "green",
+    "generatedAt": "2026-08-21T05:58:57.535Z"
   },
   "悠勢科技": {
-    "summary": "Workload centres on QGraph/Prizm audience & data work plus AIRIS analytics & schema work. Account looks to be in onboarding and enablement. The work is mostly onboarding & enablement and API/integration. Contract lapsed 15d ago. Carrying long-stale items (oldest 555d).",
+    "summary": "Workload centres on AIQUA/QGraph platform requests plus ETS backend/tech-services requests. Account looks to be in onboarding and enablement. The work is mostly onboarding & enablement and API/integration. Contract lapsed 15d ago. Carrying long-stale items (oldest 513d).",
     "followUp": "Contract lapsed 15d ago — confirm renewal or churn status before further delivery work.",
     "health": "red",
-    "generatedAt": "2026-08-21T02:27:35.514Z"
+    "generatedAt": "2026-08-21T05:58:57.535Z"
   },
   "遠見天下文化事業群": {
-    "summary": "Workload centres on ETS backend/tech-services requests plus ad campaign operations. Account looks to be in onboarding and enablement. The work is mostly onboarding & enablement and API/integration. 1 item blocked (AIR-3748). Carrying long-stale items (oldest 71d).",
-    "followUp": "Unblock AIR-3748 (Laura Yang) — [CWGV-天下文化]filter timestamp \"does not exist\" and \"exist\", the result is incorrect.",
-    "health": "red",
-    "generatedAt": "2026-08-21T02:27:35.515Z"
+    "summary": "Workload centres on ETS backend/tech-services requests plus AIQUA/QGraph platform requests. Account looks to be in onboarding and enablement. The work is mostly onboarding & enablement and defect follow-ups.",
+    "followUp": "Chase ETS-5852 (adam.chen) (in progress 2d) — [HBR] Another User's FB ID Appearing in a LINE Contact's User ID Field",
+    "health": "yellow",
+    "generatedAt": "2026-08-21T05:58:57.535Z"
   },
   "鵬泰顧問": {
-    "summary": "Workload centres on BotBonnie chatbot/LINE operations. Account looks to be in steady BAU. Contract lapsed 143d ago. Carrying long-stale items (oldest 129d).",
+    "summary": "Workload centres on BotBonnie chatbot/LINE operations. Account looks to be in steady BAU. Contract lapsed 143d ago. Carrying long-stale items (oldest 130d).",
     "followUp": "Contract lapsed 143d ago — confirm renewal or churn status before further delivery work.",
     "health": "red",
-    "generatedAt": "2026-08-21T02:27:35.515Z"
+    "generatedAt": "2026-08-21T05:58:57.535Z"
   },
   "台灣蓋璞": {
-    "summary": "Workload centres on ad campaign operations plus AEP data-pipeline work. Account looks to be in steady BAU. The work is mostly API/integration.",
+    "summary": "Workload centres on ETS backend/tech-services requests plus AIQUA/QGraph platform requests. Account looks to be in steady BAU. The work is mostly API/integration.",
     "followUp": "Review the oldest open item QGWL-26076 (kamol.mavlonov) (13d) — [Yeogi] Confirm safety of iOS SDK v8.7.0+/v8.10.0 for Creative Studio getUserId — incl. Stable vs Development track gap",
-    "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.515Z"
+    "health": "green",
+    "generatedAt": "2026-08-21T05:58:57.535Z"
   },
   "宏璟建設股份有限公司-日月光廣場": {
-    "summary": "Workload centres on BotBonnie chatbot/LINE operations plus AIQUA campaign & push operations. Account looks to be in onboarding and enablement. The work is mostly RFQ/scoping requests and onboarding & enablement. Carrying long-stale items (oldest 210d).",
-    "followUp": "Review the oldest open item AIQ-1547 (grace.li) (210d) — 宏璟建設 - 土城日月光廣場",
+    "summary": "Workload centres on BotBonnie chatbot/LINE operations. Account looks to be in onboarding and enablement. The work is mostly onboarding & enablement. Carrying long-stale items (oldest 115d).",
+    "followUp": "Review the oldest open item BBT-7400 (vivian.yang) (115d) — [日月光廣場] User did not show up in BB's live chat",
     "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.515Z"
+    "generatedAt": "2026-08-21T05:58:57.536Z"
   },
   "寶島眼鏡": {
-    "summary": "Workload centres on sales-ops items plus business-platform requests. Account looks to be in steady BAU. The work is mostly API/integration and campaign/messaging ops.",
-    "followUp": "Chase SO-3004 (Willy Huang) (in progress 2d) — Update Pricing Calculator for existing rule and add new Botbonnie API",
-    "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.515Z"
+    "summary": "Workload centres on ETS backend/tech-services requests plus BotBonnie chatbot/LINE operations. Account looks to be in steady BAU. The work is mostly API/integration.",
+    "followUp": "Chase BBT-7902 (Brian Tsai) (in progress 2d) — ［Hill's pet JP］Botbonnie tag assignment via API for newly added their retailer_20260730",
+    "health": "green",
+    "generatedAt": "2026-08-21T05:58:57.536Z"
   },
   "日日行銷廣告": {
-    "summary": "Workload centres on AIQUA campaign & push operations plus BotBonnie chatbot/LINE operations. Account looks to be in steady BAU. The work is mostly defect follow-ups. Contract lapsed 99d ago. Carrying long-stale items (oldest 2053d).",
+    "summary": "Workload centres on BotBonnie chatbot/LINE operations. Account looks to be in steady BAU. The work is mostly defect follow-ups. Contract lapsed 99d ago. Carrying long-stale items (oldest 438d).",
     "followUp": "Contract lapsed 99d ago — confirm renewal or churn status before further delivery work.",
     "health": "red",
-    "generatedAt": "2026-08-21T02:27:35.515Z"
+    "generatedAt": "2026-08-21T05:58:57.536Z"
   },
   "日藥本舖": {
-    "summary": "Workload centres on AiDeal work plus AIQUA campaign & push operations. Account looks to be in steady BAU. The work is mostly RFQ/scoping requests. Renewal in 31d. Carrying long-stale items (oldest 1970d).",
-    "followUp": "Kick off renewal now (ends in 31d) while 4 items are still open.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Renewal in 31d.",
+    "followUp": "Start the renewal conversation — contract ends in 31 days.",
     "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.515Z"
+    "generatedAt": "2026-08-21T05:58:57.536Z"
   },
   "衣芙": {
-    "summary": "Workload centres on BotBonnie chatbot/LINE operations plus APS items. Account looks to be in migration and post-migration monitoring. The work is mostly data backfill/migration and campaign/messaging ops. Carrying long-stale items (oldest 199d).",
-    "followUp": "Review the oldest open item APS-1847 (Allen CL Yang) (199d) — Migrate t2i response (Readmoo, Efshop, ASO)",
+    "summary": "Workload centres on BotBonnie chatbot/LINE operations plus AIQUA/QGraph platform requests. Account looks to be in steady BAU. The work is mostly campaign/messaging ops and defect follow-ups. Carrying long-stale items (oldest 149d).",
+    "followUp": "Review the oldest open item QGWL-25239 (Shiv Raj) (149d) — [EF Shop] Email usage information can be separate by regular and trigger",
     "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.515Z"
+    "generatedAt": "2026-08-21T05:58:57.536Z"
   },
   "味全食品": {
-    "summary": "Workload centres on AIQUA campaign & push operations plus ETS backend/tech-services requests. Account looks to be in onboarding and enablement. The work is mostly RFQ/scoping requests and onboarding & enablement. 1 item blocked (PHXX-6209). Contract lapsed 139d ago. Carrying long-stale items (oldest 575d).",
+    "summary": "Workload centres on ETS backend/tech-services requests plus BotBonnie chatbot/LINE operations. Account looks to be in steady BAU. The work is mostly RFQ/scoping requests and API/integration. Contract lapsed 139d ago.",
     "followUp": "Contract lapsed 139d ago — confirm renewal or churn status before further delivery work.",
     "health": "red",
-    "generatedAt": "2026-08-21T02:27:35.515Z"
+    "generatedAt": "2026-08-21T05:58:57.536Z"
   },
   "慈濟基金會": {
-    "summary": "Workload centres on BotBonnie chatbot/LINE operations plus AIQUA campaign & push operations. Account looks to be in handover/commercial wind-down. The work is mostly RFQ/scoping requests and onboarding & enablement. Carrying long-stale items (oldest 674d).",
-    "followUp": "Chase SCI-2239 (tzuhan.lin) (in progress 674d) — Tzu-Han Handover",
+    "summary": "Workload centres on BotBonnie chatbot/LINE operations. Account looks to be in onboarding and enablement. The work is mostly RFQ/scoping requests and onboarding & enablement. Carrying long-stale items (oldest 534d).",
+    "followUp": "Review the oldest open item BBT-5406 (Chloe Wong) (534d) — 【RFQ】Tzu-chi_Line events tranfer",
     "health": "yellow",
-    "generatedAt": "2026-08-21T02:27:35.515Z"
+    "generatedAt": "2026-08-21T05:58:57.536Z"
   },
   "誠品生活": {
-    "summary": "Workload centres on ETS backend/tech-services requests plus AIRIS analytics & schema work. Account looks to be in onboarding and enablement. The work is mostly onboarding & enablement and audience & recommendation setup. 1 item blocked (ETS-3677). Carrying long-stale items (oldest 162d).",
-    "followUp": "Unblock ETS-3677 (Unassigned) — [誠品生活] AR → AQ Profile Sync Pipeline.",
-    "health": "red",
-    "generatedAt": "2026-08-21T02:27:35.515Z"
+    "summary": "Workload centres on ETS backend/tech-services requests plus AIQUA/QGraph platform requests. Account looks to be in onboarding and enablement. The work is mostly onboarding & enablement and audience & recommendation setup. Carrying long-stale items (oldest 87d).",
+    "followUp": "Chase ETS-5557 (Mark Liu) (in progress 9d) — [誠品生活] AIQUA EDM A/B Variants Issue ",
+    "health": "yellow",
+    "generatedAt": "2026-08-21T05:58:57.536Z"
   },
   "揚秦國際企業股份有限公司-麥味登": {
-    "summary": "Workload centres on ETS backend/tech-services requests plus AEP data-pipeline work. Account looks to be in onboarding and enablement. The work is mostly onboarding & enablement and audience & recommendation setup. 1 item blocked (ETS-5880). Carrying long-stale items (oldest 35d).",
-    "followUp": "Unblock ETS-5880 (gordon.sung) — [麥味登] Enable OJM Channels (App Push/In-App/Web Push/In-Web/LINE/Email).",
+    "summary": "Workload centres on ETS backend/tech-services requests. Account looks to be in onboarding and enablement. The work is mostly onboarding & enablement and audience & recommendation setup. 1 item blocked (ETS-5880).",
+    "followUp": "Unblock ETS-5880 (gordon.sung) — [麥味登] Enable OJM Channels (App Push/In-App/Web Push/In-Web/LINE/Email)",
     "health": "red",
-    "generatedAt": "2026-08-21T02:27:35.515Z"
+    "generatedAt": "2026-08-21T05:58:57.536Z"
   }
 }
