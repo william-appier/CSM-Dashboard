@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-21T09:00:46.180+08:00",
+  "generatedAt": "2026-08-21T10:25:21.386+08:00",
   "accounts": [
     {
       "id": "mannings",
@@ -7,12 +7,7 @@
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
       "insight": "PROJ-33713 backlog 3d · +11 more · Appier x Mannings Monthly Meeting Aug 27 · renewal due 2026-09-30 (40d).",
-      "diffs": [
-        {
-          "type": "close",
-          "text": "QGWL-26114 closed"
-        }
-      ],
+      "diffs": [],
       "riskTags": [
         "ticket",
         "renewal",
