@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-20T10:37:34.491+08:00",
+  "lastUpdated": "2026-08-21T10:33:09.303+08:00",
   "rules": [
     {
       "id": "okr-consolidate",
@@ -678,7 +678,7 @@
     }
   ],
   "ticketSnapshot": {
-    "generatedAt": "2026-08-20T02:37:33.776Z",
+    "generatedAt": "2026-08-21T02:33:08.524Z",
     "keys": {
       "55688": [
         "AIQ-1343",
@@ -709,8 +709,7 @@
         "AEP-8059",
         "AEP-8058",
         "AEP-8057",
-        "AEP-8056",
-        "QGWL-26114"
+        "AEP-8056"
       ],
       "scmp": [
         "PROJ-33694",
@@ -801,7 +800,6 @@
       "AEP-8058": "[EAM setup] Mannings",
       "AEP-8057": "[EAM config] Mannings",
       "AEP-8056": "[Event retention review] Mannings",
-      "QGWL-26114": "[Mannings] OJM node will gone after adding wait for condition node at the front",
       "PROJ-33694": "[SCMP] Feature request on keyword dashboard",
       "AID-8880": "SCMP_Letzshop_AiDeal Lite_Jun 2022",
       "BBT-5953": "[Luxgen] BB didn't block share to LINE friends even though module contains \"share\" action",
@@ -1004,7 +1002,7 @@
       "created": "2026-07-27",
       "status": "done",
       "snoozedUntil": null,
-      "lastSeen": "2026-08-07",
+      "lastSeen": "2026-08-21",
       "closedAt": "2026-08-11"
     },
     {
@@ -1019,7 +1017,7 @@
       "created": "2026-07-27",
       "status": "done",
       "snoozedUntil": null,
-      "lastSeen": "2026-08-07",
+      "lastSeen": "2026-08-21",
       "closedAt": "2026-08-11"
     },
     {
@@ -1034,7 +1032,7 @@
       "created": "2026-07-31",
       "status": "open",
       "snoozedUntil": null,
-      "lastSeen": "2026-08-20"
+      "lastSeen": "2026-08-21"
     },
     {
       "id": "cmt-tiangyuanxiang-check-segmentedcampaign-numbers",
@@ -1046,7 +1044,7 @@
       "source": "slack",
       "sourceUrl": "https://appier.slack.com/archives/G01137M30B1/p1785743294120839",
       "created": "2026-08-03",
-      "lastSeen": "2026-08-20",
+      "lastSeen": "2026-08-21",
       "status": "open",
       "snoozedUntil": null
     },
@@ -1060,7 +1058,7 @@
       "source": "gmail",
       "sourceUrl": "https://mail.google.com/mail/u/0/#inbox/19fd5f3dfd450695",
       "created": "2026-08-06",
-      "lastSeen": "2026-08-13",
+      "lastSeen": "2026-08-21",
       "status": "done",
       "snoozedUntil": null,
       "closedAt": "2026-08-13"
