@@ -604,6 +604,10 @@
       {
         "name": "AQ - WeMo (WeMo) - Renewal - 2026",
         "endDate": "2028-07-31"
+      },
+      {
+        "name": "AQ - WeMo (WeMo) - Renewal - 2026 - Data Core",
+        "endDate": "2028-07-31"
       }
     ]
   },
