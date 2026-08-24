@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-23T09:00:46.210+08:00",
+  "generatedAt": "2026-08-24T09:00:46.698+08:00",
   "accounts": [
     {
       "id": "mannings",
       "name": "Mannings",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "PROJ-33713 backlog 5d · +11 more · Appier x Mannings Monthly Meeting Aug 27 · renewal due 2026-09-30 (38d).",
+      "insight": "PROJ-33713 backlog 6d · +11 more · Appier x Mannings Monthly Meeting Aug 27 · renewal due 2026-09-30 (37d).",
       "diffs": [],
       "riskTags": [
         "ticket",
@@ -124,7 +124,7 @@
         {
           "priority": "high",
           "label": "Renewal · High",
-          "text": "Mannings contract due 2026-09-30 (38d left) — confirm status now"
+          "text": "Mannings contract due 2026-09-30 (37d left) — confirm status now"
         },
         {
           "priority": "medium",
@@ -138,7 +138,7 @@
       "name": "SCMP",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "PROJ-33694 backlog 11d.",
+      "insight": "PROJ-33694 backlog 12d.",
       "diffs": [],
       "riskTags": [
         "ticket"
@@ -202,7 +202,7 @@
       "name": "Luxgen",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "BBT-5953 backlog 439d · +5 more.",
+      "insight": "BBT-5953 backlog 440d · +5 more.",
       "diffs": [],
       "riskTags": [
         "ticket",
@@ -263,7 +263,7 @@
       "name": "55688",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "red",
-      "insight": "QGWL-19924 blocked 425d · +3 more.",
+      "insight": "QGWL-19924 blocked 426d · +3 more.",
       "diffs": [],
       "riskTags": [
         "ticket",
@@ -315,7 +315,7 @@
       "name": "田原香",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "ETS-5507 open 19d · +5 more.",
+      "insight": "ETS-5507 open 20d · +5 more.",
       "diffs": [],
       "riskTags": [
         "ticket",
@@ -423,7 +423,7 @@
       "name": "行動力國際",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "BBT-7270 open 165d · +3 more.",
+      "insight": "BBT-7270 open 166d · +3 more.",
       "diffs": [],
       "riskTags": [
         "ticket",
