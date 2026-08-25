@@ -510,11 +510,6 @@ const tickHTML = _buildTickHTML();
       <div class="p-section-title">\u{1f3ab} Active Tickets</div>
       ${tickHTML}
     </div>
-    ${acct.projects.length?`
-    <div class="p-section">
-      <div class="p-section-title">\u{1f5c2} Projects</div>
-      ${projHTML}
-    </div>`:''}
     <div class="p-section">
       <div class="p-section-title">\u{1f4a1} Suggestions</div>
       ${sugHTML}
