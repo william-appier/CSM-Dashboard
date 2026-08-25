@@ -6,11 +6,10 @@
       "name": "Mannings",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "PROJ-33713 backlog 7d · +11 more · Appier x Mannings Monthly Meeting Aug 27 · renewal due 2026-09-30 (36d).",
+      "insight": "12 open tickets, mostly stale in backlog (Facebook V2 upload failure PROJ-33682, OJM node bug QGWL-26114); Monthly Meeting Thu 8/27 11:00 HKT. AQ/AX already renewed to 2026-09-30.",
       "diffs": [],
       "riskTags": [
         "ticket",
-        "renewal",
         "stale",
         "mtg"
       ],
@@ -123,22 +122,28 @@
       "suggestions": [
         {
           "priority": "high",
-          "label": "Renewal · High",
-          "text": "Mannings contract due 2026-09-30 (36d left) — confirm status now"
+          "label": "Meeting · High",
+          "text": "Prep Mannings Monthly Meeting Thu 8/27 11:00 HKT (Rola Chung) — bring status on Facebook V2 upload (PROJ-33682) and OJM node bug (QGWL-26114)."
         },
         {
           "priority": "medium",
-          "label": "Meeting · Medium",
-          "text": "Prep for Appier x Mannings Monthly Meeting on Aug 27 (11:00–12:00 HKT · Rola Chung)"
+          "label": "Ticket · Medium",
+          "text": "Facebook V2 upload failure (PROJ-33682) stuck in backlog — confirm RD owner and ETA before the meeting."
+        },
+        {
+          "priority": "low",
+          "label": "Project · Low",
+          "text": "Keep AIXON→AIRIS Q4 upgrade and GCP data integration moving with Alvin Chan / Rola Chung (DFI)."
         }
-      ]
+      ],
+      "commitments": []
     },
     {
       "id": "scmp",
       "name": "SCMP",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "PROJ-33694 backlog 13d.",
+      "insight": "Promised AIXON offboard request still open 25d (since 7/31) — file once AIRIS onboarding is confirmed complete; only ticket is keyword dashboard feature request (PROJ-33694, backlog 13d).",
       "diffs": [],
       "riskTags": [
         "ticket"
@@ -165,14 +170,42 @@
           "pinned": false
         }
       ],
-      "suggestions": []
+      "suggestions": [
+        {
+          "priority": "high",
+          "label": "Commitment · High",
+          "text": "Promised AIXON offboard request to Michael Palmer/AEP on 7/31 (25d) — confirm AIRIS onboarding complete, then file it or reset expectations.",
+          "commitmentId": "cmt-scmp-request-aixon-offboard"
+        },
+        {
+          "priority": "medium",
+          "label": "Ticket · Medium",
+          "text": "Keyword dashboard feature request (PROJ-33694) in backlog 13d — get a product ETA for the client."
+        }
+      ],
+      "commitments": [
+        {
+          "id": "cmt-scmp-request-aixon-offboard",
+          "account": "scmp",
+          "text": "Request AIXON offboard (onboarding confirmed complete)",
+          "owner": "me",
+          "counterpart": "Michael Palmer / AEP team",
+          "due": null,
+          "source": "slack",
+          "sourceUrl": "https://appier.slack.com/archives/C0A22L6ES4E/p1785490434438379?thread_ts=1784084193.395059&cid=C0A22L6ES4E",
+          "created": "2026-07-31",
+          "status": "open",
+          "snoozedUntil": null,
+          "lastSeen": "2026-08-24"
+        }
+      ]
     },
     {
       "id": "1010hope",
       "name": "10/10Hope",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "green",
-      "insight": "No active tickets — all clear.",
+      "insight": "All clear — no active tickets; AIQUA onboarding + klickngo API integration in progress (Mark Liu). No contract end date on record.",
       "diffs": [],
       "riskTags": [],
       "ticketCount": 0,
@@ -191,18 +224,24 @@
       "tickets": [],
       "suggestions": [
         {
+          "priority": "medium",
+          "label": "Data · Medium",
+          "text": "Confirm and record 10/10Hope's BotBonnie contract end date — renewal alerts can't fire while it's null."
+        },
+        {
           "priority": "low",
-          "label": "Check-in · Low",
-          "text": "No active tickets — send a check-in to 10/10Hope"
+          "label": "Project · Low",
+          "text": "Keep AIQUA onboarding and klickngo API integration moving with Mark Liu."
         }
-      ]
+      ],
+      "commitments": []
     },
     {
       "id": "luxgen",
       "name": "Luxgen",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "BBT-5953 backlog 441d · +5 more.",
+      "insight": "6 stale tickets — BBT-5953 (LINE share block) in backlog 441d; no meetings on calendar, a coverage-gap risk. BB contract to 2026-11-22.",
       "diffs": [],
       "riskTags": [
         "ticket",
@@ -256,18 +295,31 @@
           "pinned": false
         }
       ],
-      "suggestions": []
+      "suggestions": [
+        {
+          "priority": "high",
+          "label": "Ticket · High",
+          "text": "BBT-5953 (LINE friend share not blocked) stale 441d — decide close or escalate with BB team."
+        },
+        {
+          "priority": "medium",
+          "label": "Meeting · Medium",
+          "text": "No Luxgen meeting on calendar — schedule a monthly sync and keep the 服務交付報告 to Kevin Hsu on track."
+        }
+      ],
+      "commitments": []
     },
     {
       "id": "55688",
       "name": "55688",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "red",
-      "insight": "QGWL-19924 blocked 427d · +3 more.",
+      "insight": "⚠️ 代駕 & 招募 bots both EXPIRED 2026-07-31 (25d ago) — only one actually churned, ownership unconfirmed; 北區 platform extension already filed. Service Agent RFQ (BBT-5428) is the active focus.",
       "diffs": [],
       "riskTags": [
         "ticket",
-        "stale"
+        "stale",
+        "renewal"
       ],
       "ticketCount": 4,
       "mtgCount": 0,
@@ -308,14 +360,26 @@
           "pinned": false
         }
       ],
-      "suggestions": []
+      "suggestions": [
+        {
+          "priority": "high",
+          "label": "Renewal · High",
+          "text": "代駕 / 招募 bots expired 2026-07-31 — confirm with client which churned vs renews, then file the extension or close it out."
+        },
+        {
+          "priority": "medium",
+          "label": "Ticket · Medium",
+          "text": "Drive Service Agent RFQ (BBT-5428) forward with Brian Tsai."
+        }
+      ],
+      "commitments": []
     },
     {
       "id": "tiangyuanxiang",
       "name": "田原香",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "ETS-5507 open 21d · +5 more.",
+      "insight": "Weekly tracking meeting TODAY 09:30 HKT; promised segmented-campaign number check to Ted is OVERDUE (due 8/7, 18d). ETS-5507 (AIRIS/Segment hub onboarding) open 21d.",
       "diffs": [],
       "riskTags": [
         "ticket",
@@ -374,26 +438,38 @@
           "pinned": false
         }
       ],
-      "suggestions": []
-    },
-    {
-      "id": "momax",
-      "name": "Momax",
-      "csmOwner": "william.wt.lin@appier.com",
-      "health": "green",
-      "insight": "No active tickets — all clear.",
-      "diffs": [],
-      "riskTags": [],
-      "ticketCount": 0,
-      "mtgCount": 0,
-      "projects": [],
-      "meetings": [],
-      "tickets": [],
       "suggestions": [
         {
-          "priority": "low",
-          "label": "Check-in · Low",
-          "text": "No active tickets — send a check-in to Momax"
+          "priority": "high",
+          "label": "Commitment · High",
+          "text": "Segmented-campaign number check (per Ted) overdue since 8/7 (18d) — run it before today's 09:30 HKT meeting or reset the expectation.",
+          "commitmentId": "cmt-tiangyuanxiang-check-segmentedcampaign-numbers"
+        },
+        {
+          "priority": "high",
+          "label": "Meeting · High",
+          "text": "Weekly tracking meeting TODAY 09:30 HKT — bring ETS-5507 onboarding status and use-case progress."
+        },
+        {
+          "priority": "medium",
+          "label": "Ticket · Medium",
+          "text": "ETS-5507 (Onboard Dummy AIRIS & Segment hub) open 21d — confirm next step."
+        }
+      ],
+      "commitments": [
+        {
+          "id": "cmt-tiangyuanxiang-check-segmentedcampaign-numbers",
+          "account": "tiangyuanxiang",
+          "text": "Check segmented-campaign numbers post-migration for anomalies (per Ted)",
+          "owner": "me",
+          "counterpart": "Ted Wu",
+          "due": "2026-08-07",
+          "source": "slack",
+          "sourceUrl": "https://appier.slack.com/archives/G01137M30B1/p1785743294120839",
+          "created": "2026-08-03",
+          "lastSeen": "2026-08-24",
+          "status": "open",
+          "snoozedUntil": null
         }
       ]
     },
@@ -402,7 +478,7 @@
       "name": "City Super",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "green",
-      "insight": "No active tickets — all clear.",
+      "insight": "No tickets and no background on record — contract end date and current project are both unknown.",
       "diffs": [],
       "riskTags": [],
       "ticketCount": 0,
@@ -412,18 +488,19 @@
       "tickets": [],
       "suggestions": [
         {
-          "priority": "low",
-          "label": "Check-in · Low",
-          "text": "No active tickets — send a check-in to City Super"
+          "priority": "medium",
+          "label": "Data · Medium",
+          "text": "Ask William for City Super's contract end date and current project so this account can be tracked."
         }
-      ]
+      ],
+      "commitments": []
     },
     {
       "id": "xindongli",
       "name": "行動力國際",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "BBT-7270 open 167d · +3 more.",
+      "insight": "Account Handover in progress; BBT-4660 (BB→Phoenix migration) and BBT-5599 (enable sales bot) open, BBT-7270 stale 167d.",
       "diffs": [],
       "riskTags": [
         "ticket",
@@ -468,7 +545,19 @@
           "pinned": false
         }
       ],
-      "suggestions": []
+      "suggestions": [
+        {
+          "priority": "high",
+          "label": "Ticket · High",
+          "text": "BBT-4660 (BotBonnie→Phoenix migration) open — confirm status and next step to complete the handover."
+        },
+        {
+          "priority": "medium",
+          "label": "Ticket · Medium",
+          "text": "BBT-7270 (wrong custom answers) stale 167d — close or escalate to BB L2."
+        }
+      ],
+      "commitments": []
     }
   ]
 }
