@@ -1842,6 +1842,10 @@
         "endDate": "2026-06-17"
       },
       {
+        "name": "BB - 安源資訊（ibon）- Renewal 2026",
+        "endDate": "2027-06-17"
+      },
+      {
         "name": "BB - 安源資訊（i 禮讚）",
         "endDate": "2026-06-17"
       }
@@ -2529,6 +2533,10 @@
     "opportunities": [
       {
         "name": "AQ - 明台產物保險 Mingtai (Mingtai Insurance) - Renewal - 2026",
+        "endDate": "2027-03-31"
+      },
+      {
+        "name": "AQ - 明台產物保險 Mingtai (Mingtai Insurance) - Upsell - 2026",
         "endDate": "2027-03-31"
       }
     ]
@@ -3871,6 +3879,22 @@
     ]
   },
   {
+    "id": "迪捷國際有限公司",
+    "account": "迪捷國際有限公司",
+    "csmOwner": "mmtw.csmca@appier.com",
+    "endDate": "2027-08-14",
+    "keywords": [
+      "迪捷國際有限公司",
+      "迪捷"
+    ],
+    "opportunities": [
+      {
+        "name": "BB-迪捷國際有限公司-Renewal-1Y",
+        "endDate": "2027-08-14"
+      }
+    ]
+  },
+  {
     "id": "達特聖克國際股份有限公司",
     "account": "達特聖克國際股份有限公司",
     "csmOwner": "leslie.chang@appier.com",
@@ -3998,6 +4022,21 @@
       {
         "name": "MM - 雪坊志業 - 2025 Renew",
         "endDate": "2026-10-31"
+      }
+    ]
+  },
+  {
+    "id": "騰戎整合行銷",
+    "account": "騰戎整合行銷",
+    "csmOwner": "mmtw.csmca@appier.com",
+    "endDate": "2027-08-31",
+    "keywords": [
+      "騰戎整合行銷"
+    ],
+    "opportunities": [
+      {
+        "name": "BB - 騰戎整合行銷_標準版_2026 年約_Renewal",
+        "endDate": "2027-08-31"
       }
     ]
   },
