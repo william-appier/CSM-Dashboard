@@ -216,7 +216,15 @@
 
   function getAllItems(platform) {
     var result = [];
-    (FE_CATALOG[platform] || []).forEach(function(c){ c.items.forEach(function(f){ result.push(f); }); });
+    (FE_CATALOG[platform] || []).forEach(function(c){
+      c.items.forEach(function(f){
+        // Carry the category down onto the item. Flattening used to drop it, and
+        // the ETS Related Product mapping needs it to tell an OJM or Segment
+        // Agent feature apart from a plain AIQUA one.
+        if (f.category == null) f.category = c.cat;
+        result.push(f);
+      });
+    });
     return result;
   }
 
@@ -226,7 +234,7 @@
 
   /* \u2500\u2500 public API \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 */
   window.openFeatureEnableWizard = function () {
-    feW = { step: 0, platform: null, clientName: '', appId: '', sel: {}, extraFields: {} };
+    feW = { step: 0, platform: null, clientName: '', appId: '', sel: {}, extraFields: {}, relatedProduct: null };
     document.getElementById('feOverlay').style.display = 'flex';
     feRender();
   };
@@ -284,6 +292,43 @@
     feRender();
   };
 
+  // /tickets on the brief worker fans out over EVERY account in
+  // accountMapping.json when no csm is given (~200 accounts, one Jira search
+  // each), which blows the Cloudflare Workers subrequest budget and returns 500.
+  // Always scope the refresh to the signed-in CSM.
+  function feCsmEmail() {
+    try {
+      var u = (typeof window.getUser === 'function') ? window.getUser() : null;
+      return (u && u.email) ? String(u.email).toLowerCase() : '';
+    } catch (e) { return ''; }
+  }
+
+  function feRefreshTickets() {
+    if (!window.loadTickets) return;
+    var email = feCsmEmail();
+    if (email) window.loadTickets(email);
+    else console.warn('[feature-enable] No signed-in email - skipping /tickets refresh to avoid an unscoped fetch.');
+  }
+
+  // Turn a Jira create-issue error body into a short human reason for the
+  // "Failed:" line, e.g. "Related Product is required." Keeps the full body in
+  // the console for debugging.
+  function feJiraReason(d) {
+    if (!d) return '';
+    var parts = [];
+    if (Array.isArray(d.errorMessages)) parts = parts.concat(d.errorMessages);
+    if (d.errors && typeof d.errors === 'object') {
+      for (var k in d.errors) {
+        if (Object.prototype.hasOwnProperty.call(d.errors, k)) parts.push(k + ': ' + d.errors[k]);
+      }
+    }
+    return parts.length ? ' (' + parts.join('; ') + ')' : '';
+  }
+
+  // Related Product override, set on the Review step. Empty/undefined means
+  // "use the automatic mapping" (see etsRelatedProduct in js/config.js).
+  window.feSetRelatedProduct = function (id) { feW.relatedProduct = id || null; };
+
   window.feCreate = function () {
     var selected = getSelected(feW.platform);
     if (!selected.length) { alert('No features selected.'); return; }
@@ -309,7 +354,9 @@
             var summary = '[' + feW.clientName + '] ' + feW.platform + ' \u00b7 ' + f.name;
             var body = {
               fields: {
-                project: { key: 'ETS' },
+                // Single source of truth is js/config.js; the literals are a fallback
+                // in case config.js failed to load, so creation still targets ETS.
+                project: { key: (window.ETS && window.ETS.PROJECT_KEY) || 'ETS' },
                 summary: summary,
                 description: {
                   type: 'doc', version: 1,
@@ -326,18 +373,37 @@
                         + '\n\nRequested via CSM Dashboard.'
                   }] }]
                 },
-                issuetype: { name: 'Service Request' }
+                issuetype: { name: (window.ETS && window.ETS.ISSUE_TYPE) || 'Service Request' }
               }
             };
             if (feW.assignee) { body.fields.assignee = { accountId: feW.assignee.accountId }; }
+            // ETS requires "Related Product" (customfield_23811). Without it Jira
+            // rejects the create with 400 and the wizard reports a bare "failed".
+            // Auto-mapped from platform + feature, overridable on the Review step.
+            if (window.etsRpField) {
+              var rp = window.etsRpField(feW.platform, f, feW.relatedProduct);
+              for (var rk in rp) { if (Object.prototype.hasOwnProperty.call(rp, rk)) body.fields[rk] = rp[rk]; }
+            }
             return fetch('https://api.atlassian.com/ex/jira/' + cloudId + '/rest/api/3/issue', {
               method: 'POST',
               headers: { Authorization: 'Bearer ' + tok, 'Content-Type': 'application/json', Accept: 'application/json' },
               body: JSON.stringify(body)
             })
-            .then(function(r){ return r.json(); })
-            .then(function(d){ if (d.key) { created.push(d.key); f._ticketKey = d.key; } else { failed.push(f.name); } })
-            .catch(function(){ failed.push(f.name); });
+            .then(function(r){ return r.json().then(function(d){ return { status: r.status, data: d }; }); })
+            .then(function(res){
+              var d = res.data;
+              if (d && d.key) { created.push(d.key); f._ticketKey = d.key; return; }
+              // Jira puts the real reason in errorMessages[] / errors{}. The old
+              // code threw the whole body away, so a required-field rejection
+              // surfaced to the CSM as an unexplained "failed".
+              console.error('[feature-enable] Jira create failed for "' + f.name + '" (HTTP ' + res.status + '):',
+                            JSON.stringify(d));
+              failed.push(f.name + feJiraReason(d));
+            })
+            .catch(function(e){
+              console.error('[feature-enable] Jira create threw for "' + f.name + '":', e);
+              failed.push(f.name + ' (' + (e && e.message ? e.message : 'network error') + ')');
+            });
           });
         });
         return chain;
@@ -358,7 +424,7 @@
               })
             });
             if (window.renderOnboardingProgress) window.renderOnboardingProgress();
-            if (window.loadTickets) window.loadTickets();
+            feRefreshTickets();
           } catch (e) { console.warn('[feature-enable] tracking record failed:', e.message); }
         }
         if (feW.platform === 'BB' && created.length && !failed.length) {
@@ -505,6 +571,29 @@
       + '<button class="wiz-btn-pri" onclick="feNext()">Review & Create \u2192</button>';
   }
 
+  // Review-step row for ETS's required "Related Product" field. Pre-selected
+  // from the automatic mapping; the CSM can override it for this batch. The
+  // per-feature mapping still applies to any feature the override is left off,
+  // so mixed batches (e.g. AIQUA + an OJM feature) stay correct by default.
+  function feRelatedProductRow() {
+    if (!window.ETS || !window.etsRelatedProduct) return '';
+    var opts = window.ETS.RP_OPTIONS;
+    var autoId = window.etsRelatedProduct(feW.platform, (getSelected(feW.platform)[0] || null));
+    var autoName = 'Others';
+    for (var n in opts) { if (opts[n] === autoId) { autoName = n; break; } }
+    var html = '<option value="">Auto (' + esc(autoName) + ')</option>';
+    for (var name in opts) {
+      if (!Object.prototype.hasOwnProperty.call(opts, name)) continue;
+      html += '<option value="' + esc(opts[name]) + '"'
+            + (feW.relatedProduct === opts[name] ? ' selected' : '') + '>' + esc(name) + '</option>';
+    }
+    return '<div class="fe-preview-row"><span class="fe-preview-label">Related Product</span>'
+      + '<span class="fe-preview-val"><select id="feRpSel" onchange="feSetRelatedProduct(this.value)" '
+      + 'style="background:var(--surface);color:var(--text);border:1px solid var(--border);'
+      + 'border-radius:5px;padding:2px 6px;font-family:DM Mono,monospace;font-size:11px">'
+      + html + '</select></span></div>';
+  }
+
   function fePreviewStep() {
     var selected = getSelected(feW.platform);
     var featRows = selected.map(function(f) {
@@ -536,6 +625,8 @@
       + '<div class="fe-preview-row"><span class="fe-preview-label">Platform</span><span class="fe-preview-val">' + esc(feW.platform) + '</span></div>'
       + '<div class="fe-preview-row"><span class="fe-preview-label">Client</span><span class="fe-preview-val">' + esc(feW.clientName) + '</span></div>'
       + '<div class="fe-preview-row"><span class="fe-preview-label">App ID</span><span class="fe-preview-val">' + esc(feW.appId) + '</span></div>'
+      + '<div class="fe-preview-row"><span class="fe-preview-label">Board</span><span class="fe-preview-val">ETS &middot; Service Request</span></div>'
+      + feRelatedProductRow()
       + '</div>'
       + '<p style="color:var(--muted);font-size:.76rem;margin:14px 0 8px"><strong>' + selected.length
       + ' feature' + (selected.length !== 1 ? 's' : '') + '</strong> selected:</p>'
@@ -562,7 +653,7 @@
     document.getElementById('feFooter').innerHTML =
       '<button class="wiz-btn-sec" onclick="closeFeWizard()">Close</button>'
       + '<button class="wiz-btn-pri" onclick="closeFeWizard();if(window.switchTab)window.switchTab(\'tracking\');if(window.renderOnboardingProgress)window.renderOnboardingProgress()">\u{1f4cb} Go to Tracking</button>';
-    if (window.loadTickets) window.loadTickets();
+    feRefreshTickets();
   }
 
 }());
