@@ -1,30 +1,13 @@
 {
-  "generatedAt": "2026-08-26T09:01:19.072+08:00",
+  "generatedAt": "2026-08-26T14:12:42.947+08:00",
   "accounts": [
     {
       "id": "mannings",
       "name": "Mannings",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "ETS-5992 open 0d · +11 more · Appier x Mannings Monthly Meeting Aug 27 · renewal due 2026-09-30 (35d).",
-      "diffs": [
-        {
-          "type": "new",
-          "text": "ETS-5992 [Mannings] Request data for checkout_complated event by OS b"
-        },
-        {
-          "type": "new",
-          "text": "ETS-5991 Mannings app event data retrieval (purchase by date from iOS"
-        },
-        {
-          "type": "close",
-          "text": "QGWL-21578 closed"
-        },
-        {
-          "type": "close",
-          "text": "QGWL-21234 closed"
-        }
-      ],
+      "insight": "ETS-5992 open 0d · +11 more · Appier x Mannings Bi-weekly Meeting Sep 3 · renewal due 2026-09-30 (35d).",
+      "diffs": [],
       "riskTags": [
         "ticket",
         "renewal",
@@ -32,7 +15,7 @@
         "mtg"
       ],
       "ticketCount": 12,
-      "mtgCount": 2,
+      "mtgCount": 1,
       "projects": [
         {
           "name": "AIXON → AIRIS Upgrade (Q4)",
@@ -40,11 +23,6 @@
         }
       ],
       "meetings": [
-        {
-          "date": "Aug 27",
-          "title": "Appier x Mannings Monthly Meeting",
-          "meta": "11:00–12:00 HKT · Rola Chung"
-        },
         {
           "date": "Sep 3",
           "title": "Appier x Mannings Bi-weekly Meeting",
@@ -146,7 +124,7 @@
         {
           "priority": "medium",
           "label": "Meeting · Medium",
-          "text": "Prep for Appier x Mannings Monthly Meeting on Aug 27 (11:00–12:00 HKT · Rola Chung)"
+          "text": "Prep for Appier x Mannings Bi-weekly Meeting on Sep 3 (11:00–12:00 HKT · Rola Chung)"
         }
       ]
     },
@@ -155,10 +133,11 @@
       "name": "SCMP",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "PROJ-33694 backlog 14d.",
+      "insight": "PROJ-33694 backlog 15d.",
       "diffs": [],
       "riskTags": [
-        "ticket"
+        "ticket",
+        "stale"
       ],
       "ticketCount": 1,
       "mtgCount": 0,
@@ -332,13 +311,18 @@
       "name": "田原香",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "ETS-5507 open 22d · +5 more.",
-      "diffs": [],
+      "insight": "ETS-6009 open 0d · +6 more.",
+      "diffs": [
+        {
+          "type": "new",
+          "text": "ETS-6009 [田原香] Study LINE <> AIQUA id sync possibility"
+        }
+      ],
       "riskTags": [
         "ticket",
         "stale"
       ],
-      "ticketCount": 6,
+      "ticketCount": 7,
       "mtgCount": 0,
       "projects": [
         {
@@ -348,6 +332,13 @@
       ],
       "meetings": [],
       "tickets": [
+        {
+          "key": "ETS-6009",
+          "title": "[田原香] Study LINE <> AIQUA id sync possibility",
+          "status": "open",
+          "assignee": "vivian.yang",
+          "pinned": false
+        },
         {
           "key": "ETS-5507",
           "title": "[田原香] Onboard Dummy AIRIS & Segment hub",
