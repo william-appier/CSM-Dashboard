@@ -400,6 +400,7 @@ let wiz = {
   legalTicket: '',
   opportunityLink: '',
   assignee: null,           // { accountId, displayName, avatarUrl }
+  relatedProductBy: {},     // ETS Related Product overrides, keyed by feature id ('_onboard' = parent)
   onboardTicketKey: null,   // set after creating the onboard ticket
   appId: '',                // auto-detected or manually entered
   projectId: '',
@@ -558,12 +559,15 @@ async function createBotBonnieTicket(){
     if (botId && bbDesc && bbDesc.content) { bbDesc.content.unshift({ type: 'paragraph', content: [{ type: 'text', text: 'Bot ID: ' + botId }] }); }
     const payload = {
       fields:{
-        project:    { key:'ETS' },
-        issuetype:  { name:'Service Request' },
+        project:    { key: ETS.PROJECT_KEY },
+        issuetype:  { name: ETS.ISSUE_TYPE },
         summary:    `[${clientName}] BotBonnie Onboarding`,
         description: bbDesc,
         labels:     [...(sf.fields.labels||[]).filter(l=>typeof l==='string'), 'onboarding-dashboard',
                      `ob-${clientName.toLowerCase().replace(/\s+/g,'-')}`],
+        // ETS requires "Related Product" (customfield_23811) — see js/config.js.
+        // BotBonnie maps unambiguously, so this modal has no override UI.
+        ...etsRpField('BotBonnie', null, null),
       }
     };
     const created = await apiFetch(`${base}/rest/api/3/issue`,{method:'POST',body:JSON.stringify(payload)});
@@ -571,8 +575,10 @@ async function createBotBonnieTicket(){
       id:'ob_bb_'+Date.now(), platform:'BotBonnie', clientName, botId: botId,
       onboardTicketKey:created.key, createdAt:new Date().toISOString().slice(0,10),
       appId:'', projectId:'', organizationId:'',
+      // board = where the ticket WAS CREATED (now always ETS), not where its
+      // sample template lives. BBT-7539 stays the clone source.
       features:[{ name:'BotBonnie Onboard', featureId:'bb_onboard', ticketKey:created.key,
-                  board:'BBT', mode:'manual_clone', manual:true, status:'Backlog' }],
+                  board:'ETS', sampleBoard:'BBT', mode:'manual_clone', manual:true, status:'Backlog' }],
     });
     document.getElementById('bbModal')?.remove();
     switchTab('tracking');
@@ -598,7 +604,8 @@ function openWizard(){
           assignee:null, onboardTicketKey:null,
           appId:'', projectId:'', organizationId:'',
           selectedFeatures:{}, extraFields:{},
-          ojmSelectedChannels:[], ojmSelectedFeatures:[], featureAssignees:{}, _addToObId:null };
+          ojmSelectedChannels:[], ojmSelectedFeatures:[], featureAssignees:{},
+          relatedProductBy:{}, _addToObId:null };
   document.getElementById('wizOverlay').style.display='flex';
   renderWizStep();
 }
@@ -959,7 +966,8 @@ async function wizCreateOnboardTicket(){
     const user = getUser();
     const base = `${CONFIG.API_BASE}/ex/jira/${user.cloudId}`;
     const cat  = CATALOGS[wiz.platform];
-    const boardKey = cat?.board || 'QGWL';
+    // NOTE: cat.board (QGWL / BBT / AIR / PROJ / PHXX) is the SAMPLE ticket's
+    // board and is only used to locate templates. Creation always targets ETS.
 
     // Fetch sample onboard ticket
     const f = await apiFetch(`${base}/rest/api/3/issue/${cat.onboardTicket.sampleKey}?fields=issuetype,description,labels,priority`);
@@ -980,11 +988,13 @@ async function wizCreateOnboardTicket(){
 
     const payload = {
       fields:{
-        project:     { key: 'ETS' },
-        issuetype:   { name:'Service Request' },
+        project:     { key: ETS.PROJECT_KEY },
+        issuetype:   { name: ETS.ISSUE_TYPE },
         summary:     resolveTemplate(`[${wiz.clientName}] ${wiz.platform} Onboarding`),
         description: { type:'doc', version:1, content:[{type:'paragraph',content:[{type:'text',text:desc}]}] },
         labels:      [...(f.fields?.labels||[]).filter(l=>typeof l==='string'), 'onboarding-dashboard'],
+        // ETS requires "Related Product" (customfield_23811) — see js/config.js.
+        ...etsRpField(wiz.platform, null, (wiz.relatedProductBy||{})._onboard),
       }
     };
     if(wiz.assignee?.accountId) payload.fields.assignee = { accountId: wiz.assignee.accountId };
@@ -1201,6 +1211,31 @@ function wizValidateIds(){
 }
 
 // \u2500\u2500 STEP 3: Review \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
+// ETS "Related Product" (customfield_23811) is a required field on the ETS
+// Service Request screen. It is resolved automatically per ticket by
+// etsRelatedProduct() (js/config.js); this renders a small per-row override on
+// the Review screen so the CSM can correct an edge case without editing code.
+function wizRpSelect(rowKey, platform, feat){
+  if(typeof ETS === 'undefined' || typeof etsRelatedProduct !== 'function') return '';
+  const opts   = ETS.RP_OPTIONS;
+  const autoId = etsRelatedProduct(platform, feat);
+  const autoNm = Object.keys(opts).find(n=>opts[n]===autoId) || 'Others';
+  const chosen = (wiz.relatedProductBy||{})[rowKey] || '';
+  const options = [`<option value="">auto \u00b7 ${esc(autoNm)}</option>`]
+    .concat(Object.keys(opts).map(n=>
+      `<option value="${esc(opts[n])}"${chosen===opts[n]?' selected':''}>${esc(n)}</option>`))
+    .join('');
+  return `<select onchange="wizSetRelatedProduct('${esc(rowKey)}',this.value)" title="ETS Related Product"
+    style="margin-left:8px;background:var(--surface);color:var(--text);border:1px solid var(--border);
+    border-radius:4px;padding:1px 4px;font-family:'DM Mono',monospace;font-size:10px">${options}</select>`;
+}
+
+function wizSetRelatedProduct(rowKey, optionId){
+  if(!wiz.relatedProductBy) wiz.relatedProductBy = {};
+  if(optionId) wiz.relatedProductBy[rowKey] = optionId;
+  else delete wiz.relatedProductBy[rowKey];
+}
+
 function renderWizReview(body, footer){
   document.getElementById('wizTitle').textContent = 'Review & Create Tickets';
   const cat      = CATALOGS[wiz.platform];
@@ -1233,17 +1268,25 @@ function renderWizReview(body, footer){
       Feature tickets will be linked to <strong>${wiz.onboardTicketKey||'the onboard ticket'}</strong>.
       Placeholders like <code style="font-family:DM Mono,monospace;background:var(--surface);padding:1px 4px;border-radius:3px">{appId}</code> in sample tickets are substituted automatically.
     </p>
+    <p style="font-size:11px;color:var(--muted);margin-bottom:8px">
+      All tickets are created on the <strong style="color:var(--text)">ETS</strong> board as
+      <strong style="color:var(--text)">Service Request</strong>. The sample keys below stay on their
+      original boards \u2014 they are only the clone source. <strong>Related Product</strong> is
+      required by ETS and is filled in automatically; override it per ticket if needed.
+    </p>
     <div class="review-list">
       <div class="review-ticket">
         <span class="rt-badge rt-compulsory">compulsory</span>
         <span class="rt-name">[${esc(wiz.clientName)}] ${wiz.platform} Onboarding</span>
         <span class="rt-ref">${wiz.onboardTicketKey||'to create'}</span>
+        ${wizRpSelect('_onboard', wiz.platform, null)}
       </div>
       ${selected.map(f=>`
         <div class="review-ticket">
           <span class="rt-badge ${f.mode==='manual_clone'?'rt-manual':'rt-clone'}">${f.mode==='manual_clone'?'manual clone':'clone'}</span>
           <span class="rt-name">[${esc(wiz.clientName)}] ${f.name}</span>
           <span class="rt-ref">from ${f.sample}</span>
+          ${wizRpSelect(f.id, wiz.platform, f)}
         </div>`).join('')}
     </div>
     ${selected.some(f=>f.mode==='manual_clone')?`
@@ -1337,21 +1380,27 @@ const stripMedia = nodes => (nodes||[]).map(n => {
 });
 const cleanCloned = stripMedia(clonedContent.map(stripLocalIds));
 
-      // All dashboard tickets are created on the ETS board as Service Request
+      // All dashboard tickets are created on the ETS board as Service Request.
+      // feat.board / cat.board describe where the SAMPLE lives (QGWL, PHXX, AEP,
+      // AGNT, ...) and are no longer part of the create payload \u2014 they only pick
+      // the template to clone. The old boardKey/boardCat locals became dead code
+      // when creation moved to ETS, so they are gone.
       const isSubtask      = false;
-      const issueTypeFinal = { name: 'Service Request' };
-      // Declare boardKey FIRST \u2014 used in both reporter check and requiredCustomFields
-      const boardKey = feat.board || cat?.board || 'QGWL';
-      const boardCat = Object.values(CATALOGS).find(c=>c.board===boardKey);
+      const issueTypeFinal = { name: ETS.ISSUE_TYPE };
 
       const payload = {
         fields:{
-          project:     { key: 'ETS' },
+          project:     { key: ETS.PROJECT_KEY },
           issuetype:   issueTypeFinal,
           summary:     resolvedSummary,
           description: { type:'doc', version:1, content:[...cleanCloned, ...appendContent] },
           labels:      [...(sf.labels||[]).filter(l=>typeof l==='string'), 'onboarding-dashboard',
                         `ob-${wiz.clientName.toLowerCase().replace(/\s+/g,'-')}`],
+          // ETS requires "Related Product" (customfield_23811). Resolved PER
+          // FEATURE so a mixed batch (AIQUA + Segment Agent + OJM) tags each
+          // ticket with its own product, with an optional per-ticket override
+          // set on the Review screen. See etsRelatedProduct in js/config.js.
+          ...etsRpField(wiz.platform, feat, (wiz.relatedProductBy||{})[feat.id]),
         }
       };
       // Sub-tasks require a parent issue key
@@ -1382,8 +1431,11 @@ const cleanCloned = stripMedia(clonedContent.map(stripLocalIds));
         }
       }
 
+      // board = where the ticket WAS CREATED (always ETS now). sampleBoard keeps
+      // the template's home board (QGWL / PHXX / AEP / AGNT / ...) for reference.
       created.push({ name:feat.name, featureId:feat.id, ticketKey:res.key, manual:feat.manual||false,
-                     mode:feat.mode, name:feat.name, status:'Backlog' });
+                     mode:feat.mode, board:'ETS', sampleBoard:(feat.board||cat?.board||null),
+                     status:'Backlog' });
 
       // Manual clone tickets show MANUAL badge on tracking board \u2014 no auto-open
     }
