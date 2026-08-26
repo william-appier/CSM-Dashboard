@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "updated": "2026-08-19",
+    "updated": "2026-08-26",
     "source": "Confluence CSM FAQ (AI 維護)",
     "indexUrl": "https://appier.atlassian.net/wiki/spaces/~712020045fe11d77e649819f2b2a67a185fdf0/pages/5232100110",
     "note": "由排程從 Confluence 五個分類頁自動重新生成之快取。urgency 未標者預設 medium。",
@@ -64,7 +64,7 @@
       "product": "AIQUA",
       "last_verified": "2026-05-27",
       "source": "https://appier.slack.com/archives/G01137M30B1/p1779879686110899",
-      "status": "active",
+      "status": "stale",
       "urgency": "medium",
       "a": "先請 TS 查後台實際發送紀錄——常見為信件已全數發出、僅 UI 狀態 bug,job 重跑後 UI 即正常。先確認「實際已發送 vs UI 顯示」,避免誤判重發。"
     },
@@ -75,7 +75,7 @@
       "product": "AIQUA",
       "last_verified": "2026-05-21",
       "source": "https://appier.slack.com/archives/G01137M30B1/p1779330439682099",
-      "status": "active",
+      "status": "stale",
       "urgency": "medium",
       "a": "先確認客戶端網路/IT 環境(案例:IT 座位有線正常、user 座位 Wi-Fi 不穩)。企業客戶需設 IP/domain 白名單,見 Confluence「Domain whitelist for AIQUA clients to access AIQUA dashboard, Enterprise Console and Agent」。Agent 必要 domain 含 console.appier.com、auth.appier.com、aixon.appier.com、botbonnie.com、langfuse.appier.net、campaign-agent-uibe.aiqua.appier.info、ec-orchestrator-agent.aixon-segment-agent-prd.appier.info、browser-intake-datadoghq.com、woopra 相關。"
     },
@@ -165,7 +165,18 @@
       "source": "https://appier.slack.com/archives/CBNCZT3LJ/p1786407699653439",
       "status": "active",
       "urgency": "medium",
-      "a": "目前都還能正常發送,但兩個 Kakao 渠道走不同整合、受影響程度不同。Kakao Chingu Talk 走 Infobip:Chingu Talk 已於 2026/1/1 停用,Infobip 提供暫時轉換為 Brand Talk 的機制、Appier 已完成串接,所以現在仍全功能運作;Infobip 預計 2026 年底關閉此轉換支援,屆時 Appier 會重新與 Infobip 整合 Brand Talk。Kakao Moment 是 Appier 與 Kakao 直接整合(與 Infobip 無關),不在此次停用範圍、持續支援;但 Moment 支援一般圖片、不支援動態內容(dynamic content)的圖片(僅支援動態文字),因 Kakao 圖片 API 設計成本過高。受眾限制:即使轉為 Brand Message,仍只能發給訂閱者(chingu),非訂閱者收不到。channel:Kakao;stage:售前/需求評估。"
+      "a": "目前都還能正常發送,但兩個 Kakao 渠道走不同整合、受影響程度不同。Kakao Chingu Talk 走 Infobip:Chingu Talk 已於 2026/1/1 停用,Infobip 提供暫時轉換為 Brand Talk 的機制、Appier 已完成串接,所以現在仍全功能運作;Infobip 預計 2026 年底關閉此轉換支援,屆時 Appier 會重新與 Infobip 整合 Brand Talk。Kakao Moment 是 Appier 與 Kakao 直接整合(與 Infobip 無關),不在此次停用範圍、持續支援;但 Moment 支援一般圖片、**不支援動態內容(dynamic content)的圖片**(僅支援動態文字),因 Kakao 圖片 API 設計成本過高。受眾限制:即使轉為 Brand Message,仍只能發給訂閱者(chingu),非訂閱者收不到。channel:Kakao;stage:售前/需求評估。"
+    },
+    {
+      "id": "AQ-027",
+      "category": "AIQUA",
+      "q": "客戶 in-app 活動在 iOS 不顯示、Android 正常,怎麼排查?",
+      "product": "AIQUA",
+      "last_verified": "2026-08-24",
+      "source": "https://appier.atlassian.net/browse/ETS-5233",
+      "status": "active",
+      "urgency": "high",
+      "a": "根因是 iOS SDK bug——precondition(前置條件,依「過去 24 小時事件」圈選)裡若含「事件屬性條件」(如 `url contains /xxx`),該屬性條件在 iOS 永遠不成立,in-app 就被抑制;Android 不受影響。已修復:Native iOS SDK `8.11.0`(最新 `8.11.1`)、React Native SDK `2.3.0`(內含 iOS 8.11.1);升級後原設定即可正常。未升級前的 workaround:iOS 上不要把屬性/URL 篩選放在 precondition,改放到「即時觸發事件」(Real-time trigger → 新增事件屬性)或用 Segment;precondition 只放「事件名稱+次數+時間窗」在 iOS 可正常運作(前例 Mannings BB Expo)。channel:iOS app;處理方:設定 workaround 與 SDK 升級 CSM 可先指導客戶,SDK 修復需 RD;stage:上線前測試。"
     },
     {
       "id": "AQ-011",
@@ -361,7 +372,7 @@
       "product": "AIRIS",
       "last_verified": "2026-05-22",
       "source": "https://appier.slack.com/archives/G01137M30B1/p1779427497083159",
-      "status": "active",
+      "status": "stale",
       "urgency": "medium",
       "a": "不會。AQ EDM reachability 不事先過濾格式錯誤 email,收到 hard bounce 後才排除;SendGrid 會擋 invalid email(仍扣錢,不扣 sender reputation)。現行做法:把 DQB 標出的髒資料擋起來不發 EDM(客戶資料不能改)。完整名單需工程師手動 export。長期方向:auto tagging 供 EDM 排除。"
     },
@@ -452,6 +463,17 @@
       "status": "active",
       "urgency": "low",
       "a": "可以,一般 BB tags(如 `bb_tags_line`)會進 AIRIS,和其他 tag 一樣可在 AIRIS 分眾選用。客戶若之後採購 BB Service Agent 開始用 product tag,這些走一般 BB tag 機制即會流入 AIRIS。與 AQ-010(把 BB add-tag 當 AIQUA Journey 觸發/條件)為不同情境:此題著重「BB 標籤能否進 AIRIS 供分眾」。stage:售前/需求評估。"
+    },
+    {
+      "id": "AR-018",
+      "category": "AIRIS",
+      "q": "BB events 要在 AIRIS/AEP 看,CSM 需要自己建連線嗎?",
+      "product": "AIRIS/BotBonnie",
+      "last_verified": "2026-08-24",
+      "source": "https://appier.slack.com/archives/C078AMBHEAV/p1787285533317549",
+      "status": "active",
+      "urgency": "low",
+      "a": "bundle 客戶不需要建任何連線,BB events 會自動流進 AIRIS;不需在 AIRIS data loader 手動設定。AR/AQ/OJM 且在 AEP 上的使用者,可在 Common Setting 的 Schema Management 頁看到 schema(含 BB 白名單事件)。若特定事件(如 click、add_tag)在 schema 找不到,附 bot ID / project ID / 事件名 / 測試時間開票請團隊查(Christine、Jack 確認)。channel:LINE;處理方:CSM 自解確認,查不到再開票;stage:導入。"
     },
     {
       "id": "AR-010",
@@ -872,15 +894,81 @@
       "a": "一般展會等級流量(如尖峰約 250 人同時、每日約千人)不會有承載問題。目前無官方精確上限數字,但以抽獎為例每秒約 100 抽都撐得住,前述現場活動流量完全沒問題。若客戶要正式書面上限,需再向產品/RD 確認。channel:LINE;stage:上線前測試。"
     },
     {
+      "id": "BB-037",
+      "category": "BotBonnie",
+      "q": "客戶想讓短網址/webview 不出現「botbonnie」字樣(白牌/自訂網域),做得到嗎?",
+      "product": "BotBonnie",
+      "last_verified": "2026-08-24",
+      "source": "https://appier.slack.com/archives/C078AMBHEAV/p1786948728487249",
+      "status": "active",
+      "urgency": "low",
+      "a": "產品原生不支援自訂網域,短連結、點擊後的轉址與最終 webview 都會帶 botbonnie,無法隱藏。若客戶堅持,需開票走 RFQ 會議評估客製(PM Guiguan 確認)。channel:LINE;處理方:客製需開票。"
+    },
+    {
+      "id": "BB-038",
+      "category": "BotBonnie",
+      "q": "用同一個 demo 帳號訓練過 A 客戶,要換訓練 B 客戶,要怎麼做?",
+      "product": "BotBonnie",
+      "last_verified": "2026-08-24",
+      "source": "https://appier.slack.com/archives/C078AMBHEAV/p1787039487795089",
+      "status": "active",
+      "urgency": "medium",
+      "a": "要把先前的訓練流程整套重做一次;一個 demo 帳號無法同時保留多客戶資料。換客戶就需重新訓練/覆蓋既有內容(Vanessa 確認)。channel:WebChat;處理方:CSM 自解;stage:導入/onboarding。"
+    },
+    {
+      "id": "BB-039",
+      "category": "BotBonnie",
+      "q": "帳號綁定(Account Binding)的「登入」一定是 webview 開啟嗎?可以改成外部瀏覽器嗎?",
+      "product": "BotBonnie",
+      "last_verified": "2026-08-24",
+      "source": "https://appier.slack.com/archives/C078AMBHEAV/p1787208523967149",
+      "status": "active",
+      "urgency": "medium",
+      "a": "預設是在對話內以 webview 開啟;要改成外部瀏覽器,客戶把「登入轉址網址」做成自家官網登入頁+參數即可,不需做成 LIFF。只有要維持在 LINE 環境內才需要做成 LIFF。提醒:外開瀏覽器理論上可行,但最後一步會導回 BB 頁面,外部瀏覽器再導轉時可能出錯,建議保守維持 webview、請客戶自行多測(Brian 確認)。channel:LINE;處理方:CSM 自解。"
+    },
+    {
+      "id": "BB-040",
+      "category": "BotBonnie",
+      "q": "WebChat 表單的「多個選項」點了沒反應,是 bug 嗎?和「下拉選單」差在哪?",
+      "product": "BotBonnie",
+      "last_verified": "2026-08-24",
+      "source": "https://appier.slack.com/archives/C078AMBHEAV/p1787110450236959",
+      "status": "active",
+      "urgency": "medium",
+      "a": "「多個選項」與「下拉選單」目前都是單選;多選點不動是已知 bug,請走 bug 回報流程給 tech support。此功能目前尚無文件(Brian、Willy 確認)。channel:WebChat;處理方:開票(bug)。"
+    },
+    {
+      "id": "BB-041",
+      "category": "BotBonnie",
+      "q": "Service Agent 只會用單一語言回覆,如何讓它依使用者輸入語言切換?",
+      "product": "BotBonnie",
+      "last_verified": "2026-08-24",
+      "source": "https://appier.slack.com/archives/C078AMBHEAV/p1787280803797399",
+      "status": "active",
+      "urgency": "medium",
+      "a": "要開「Dynamic language mode(動態語言模式)」,agent 才會依使用者輸入語言回覆。已知限制:像「你會說中文嗎?」這類問句會被歸類為 greeting intent,agent 只回開場白而沒真正回答;此點已回報產品參考競品(ChannelTalk)優化(eve 確認)。channel:WebChat;處理方:CSM 自解(設定)+ 產品追蹤。"
+    },
+    {
+      "id": "BB-042",
+      "category": "BotBonnie",
+      "q": "用「點 LINE 連結進網站」把網站 cookie ID 綁 LINE UID,連結一定要完整網址嗎?短網址可以嗎?",
+      "product": "BotBonnie",
+      "last_verified": "2026-08-24",
+      "source": "https://appier.slack.com/archives/C078AMBHEAV/p1787286410961779",
+      "status": "active",
+      "urgency": "medium",
+      "a": "要用完整網址;短網址通常會在轉址時把帶上的參數掉掉,導致綁定失敗。除非該短網址服務有保留參數(過去測試多數沒有),BB 的 Growth Tools 同理需確認參數是否被保留(Ted 確認)。channel:LINE;處理方:CSM 自解。"
+    },
+    {
       "id": "AA-001",
       "category": "AdCreative",
       "q": "Enterprise 客戶每月補點日被鎖付款頁(paywall)、credit 數字錯誤,怎麼處理?",
       "product": "AdCreative",
-      "last_verified": "2026-07-16",
+      "last_verified": "2026-08-24",
       "source": "https://appier.slack.com/archives/C08RGLRNX3R/p1784168684124029",
       "status": "active",
-      "urgency": "medium",
-      "a": "每月補點日反覆發生的已知問題(TAITRA、CACO、50% 都遇過):跳付款頁無法使用、點數被 rollover 或未新增。處理:確認補點日 → 群組回報並開 Jira bug ticket(參考 ATT-4987)由 Steven Chen 處理;根因多為 credit card 設定錯誤或過期。重複發生由 CSM 整理 email 正式回報 AA 團隊。"
+      "urgency": "high",
+      "a": "每月補點日反覆發生的已知問題(TAITRA、CACO、50%、Pazzo 都遇過):跳付款頁無法使用、點數被 rollover 或未新增,嚴重時客戶被鎖出平台。目前已升級為 P0（ADCR-615:credit 計算根本性損壞——recurring 重置失敗、出現幻影點數、客戶被鎖出）。處理:確認補點日 → 群組回報並開 Jira bug ticket(舊參考 ATT-4987,現一律連到/參照 P0 ADCR-615)由 Steven Chen 處理;根因多為 credit card 設定錯誤或過期。重複發生由 CSM 整理 email 正式回報 AA 團隊。urgency high:客戶被鎖出=服務中斷。"
     },
     {
       "id": "AA-002",
@@ -944,7 +1032,7 @@
       "product": "Process/內部流程",
       "last_verified": "2026-05-26",
       "source": "https://appier.slack.com/archives/C08RGLRNX3R/p1779781674969739",
-      "status": "active",
+      "status": "stale",
       "urgency": "medium",
       "a": "在 Jira DC ideas board 開票(appier.atlassian.net/jira/polaris/projects/DC/ideas/view/8242432),每月與 Dora 對需求。首次使用私訊 Dora 開權限;細節見團隊 Google Doc(1DxNazOi09z_Ly2-DOztWev8upbwkas_JF6hH0frLc_g)。"
     },
@@ -955,7 +1043,7 @@
       "product": "Billing",
       "last_verified": "2026-05-26",
       "source": "https://appier.slack.com/archives/C08RGLRNX3R/p1779780142535649",
-      "status": "active",
+      "status": "stale",
       "urgency": "medium",
       "a": "找 Anna Johfur 處理退費,同步告知 Steven Chen。"
     },
@@ -1012,7 +1100,7 @@
       "source": "https://appier.slack.com/archives/C08RGLRNX3R/p1783075082247249",
       "status": "active",
       "urgency": "medium",
-      "a": "(1)「試用 V2」可切回 V1;migrate 不可逆——遷移後仍可登入 V1 但內容不同步。(2) 試用按鈕明顯,migrate 僅管理員可見。找不到 migrate 按鈕:試用/migrate 入口都要「先進入 V2 後」才會出現在畫面右上角,通常是還沒進到 V2。(3) V1/V2 目前不同網址。建議:既有客戶先試用 V2;新客戶教育訓練直接用 V2;業態特殊(多站台、接近續約)可請 AA team 先不開放該帳號 V2 按鈕。"
+      "a": "(1)「試用 V2」可切回 V1;migrate 不可逆——遷移後仍可登入 V1 但內容不同步。(2) 試用按鈕明顯,migrate 僅管理員可見。**找不到 migrate 按鈕:試用/migrate 入口都要「先進入 V2 後」才會出現在畫面右上角,通常是還沒進到 V2。**(3) V1/V2 目前不同網址。建議:既有客戶先試用 V2;新客戶教育訓練直接用 V2;業態特殊(多站台、接近續約)可請 AA team 先不開放該帳號 V2 按鈕。"
     },
     {
       "id": "AA-014",
@@ -1032,7 +1120,7 @@
       "product": "AdCreative",
       "last_verified": "2026-05-21",
       "source": "https://appier.slack.com/archives/C08RGLRNX3R/p1779329926318339",
-      "status": "active",
+      "status": "stale",
       "urgency": "medium",
       "a": "一般用 Minimal Change 即足夠。Full AI Rework 只適合畫質極低、模糊、不在意細節被更動的圖;不適合臉部、細節、logo 需與原圖一致者。"
     },
@@ -1156,6 +1244,17 @@
       "status": "active",
       "urgency": "medium",
       "a": "需開 ETS 票請 TSTC 把該 app 帳號搬到 enterprise console,CSM 無法自解。舊 console 已不再顯示用量(usage)資訊;搬到 enterprise console 後若仍看不到,是該帳號的「usage information」設定被關閉,需再請 TSTC 開啟(兩步都做才會顯示)。前例 ETS-5486(staging appid 搬到 organization-x6n9VNChY,指派 hazel.wang)。"
+    },
+    {
+      "id": "OPS-009",
+      "category": "OPS",
+      "q": "客戶反映登入一直轉圈/轉不出來,第一線 SOP 是什麼?",
+      "product": "Process/內部流程",
+      "last_verified": "2026-08-24",
+      "source": "https://appier.slack.com/archives/G01137M30B1/p1787021974567339",
+      "status": "active",
+      "urgency": "medium",
+      "a": "先請 user 清瀏覽器 cache 通常可解;需提醒清 cache 會把其他網站也一起登出。若清完仍卡,附 appid + email 開 ETS 票請 TS 查卡在哪一步(Jason 確認)。處理方:CSM 先請客戶自查,無效再開票。stage:上線後/日常維運。"
     }
   ]
 }
