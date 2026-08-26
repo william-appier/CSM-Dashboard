@@ -260,15 +260,30 @@ function getAccountTix(acct) {
   return ticketsLoaded ? (TICKETS[acct.id] || []) : (acct.tickets || []);
 }
 async function loadTickets(csmEmail) {
+  // /tickets MUST be scoped to one CSM. Without ?csm= the worker expands every
+  // account in accountMapping.json (~200) and fires one Jira search per account,
+  // which exceeds the Cloudflare Workers subrequest budget and comes back as
+  // HTTP 500. Callers used to invoke loadTickets() with no argument (after
+  // creating a ticket), which is exactly how that 500 was reached.
+  const email = (csmEmail || currentUserEmail() || '').toLowerCase();
+  if (!email) {
+    console.error('[CSM] loadTickets called with no CSM email and no signed-in user — ' +
+                  'refusing an unscoped /tickets fetch (it would 500). Falling back to brief data.');
+    return;
+  }
   try {
-    const _csm = csmEmail ? ('&csm=' + encodeURIComponent(csmEmail)) : '';
-    const r = await fetch('https://csm-brief-worker.williamlin12.workers.dev/tickets?_=' + Date.now() + _csm);
-    if (!r.ok) throw new Error('HTTP ' + r.status);
+    const r = await fetch('https://csm-brief-worker.williamlin12.workers.dev/tickets?_=' + Date.now() +
+                          '&csm=' + encodeURIComponent(email));
+    if (!r.ok) {
+      let detail = '';
+      try { detail = ' ' + (await r.text()).slice(0, 300); } catch (_) {}
+      throw new Error('HTTP ' + r.status + detail);
+    }
     TICKETS = await r.json();
     ticketsLoaded = true;
     renderBriefCards();
   } catch(e) {
-    console.warn('[CSM] live tickets unavailable, using brief data:', e.message);
+    console.error('[CSM] live tickets unavailable, using brief data:', e.message);
   }
 }
 // ── MULTI-CSM ── other CSMs load their own accounts from the Worker /mapping endpoint
