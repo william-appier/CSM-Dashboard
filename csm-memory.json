@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-26T14:18:57.813+08:00",
+  "lastUpdated": "2026-08-27T09:40:50.077+08:00",
   "rules": [
     {
       "id": "okr-consolidate",
@@ -678,7 +678,7 @@
     }
   ],
   "ticketSnapshot": {
-    "generatedAt": "2026-08-26T06:18:57.107Z",
+    "generatedAt": "2026-08-27T01:40:49.476Z",
     "keys": {
       "55688": [
         "QGWL-19924",
@@ -688,7 +688,6 @@
       ],
       "mannings": [
         "ETS-5992",
-        "ETS-5991",
         "PROJ-33713",
         "QGWL-26114",
         "PROJ-25973",
@@ -698,7 +697,8 @@
         "QGWL-21895",
         "PROJ-31215",
         "QGWL-16671",
-        "QGWL-21706"
+        "QGWL-21706",
+        "QGWL-21578"
       ],
       "scmp": [
         "PROJ-33694"
@@ -736,7 +736,6 @@
       "BBT-5275": "[55688] Emoji cannot be searched",
       "PHXX-3312": "【55688】Timeout limitation in AQ JM should be shorten.",
       "ETS-5992": "[Mannings] Request data for checkout_complated event by OS by date",
-      "ETS-5991": "Mannings app event data retrieval (purchase by date from iOS/AOS)",
       "PROJ-33713": "[Demo HK] Offboard Mannings data for demo account",
       "QGWL-26114": "[Mannings] OJM node will gone after adding wait for condition node at the front",
       "PROJ-25973": "[Mannings] Request for the product category ",
@@ -747,6 +746,7 @@
       "PROJ-31215": "[Mannings] Multi Segment Model Experiment Request",
       "QGWL-16671": "[Mannings] S2S modification check",
       "QGWL-21706": "[Mannings] Request to re-enable analytics studio",
+      "QGWL-21578": "[Mannings] Investigate APP page type",
       "PROJ-33694": "[SCMP] Feature request on keyword dashboard",
       "BBT-5953": "[Luxgen] BB didn't block share to LINE friends even though module contains \"share\" action",
       "PROJ-22175": "[Luxgen]  Data Column of Customer360 - Location / Language",
@@ -950,7 +950,7 @@
       "created": "2026-07-31",
       "status": "open",
       "snoozedUntil": null,
-      "lastSeen": "2026-08-24"
+      "lastSeen": "2026-08-27"
     },
     {
       "id": "cmt-tiangyuanxiang-check-segmentedcampaign-numbers",
@@ -962,7 +962,7 @@
       "source": "slack",
       "sourceUrl": "https://appier.slack.com/archives/G01137M30B1/p1785743294120839",
       "created": "2026-08-03",
-      "lastSeen": "2026-08-24",
+      "lastSeen": "2026-08-27",
       "status": "open",
       "snoozedUntil": null
     },
