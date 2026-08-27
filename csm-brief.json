@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-27T09:00:59.471+08:00",
+  "generatedAt": "2026-08-27T09:34:38.369+08:00",
   "accounts": [
     {
       "id": "mannings",
@@ -7,16 +7,7 @@
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
       "insight": "ETS-5992 open 0d · +11 more · Appier x Mannings Bi-weekly Meeting Sep 3 · renewal due 2026-09-30 (34d).",
-      "diffs": [
-        {
-          "type": "new",
-          "text": "QGWL-21578 [Mannings] Investigate APP page type"
-        },
-        {
-          "type": "close",
-          "text": "ETS-5991 closed"
-        }
-      ],
+      "diffs": [],
       "riskTags": [
         "ticket",
         "renewal",
