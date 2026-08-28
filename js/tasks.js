@@ -317,9 +317,16 @@
 
     // 顯示規則：已完成(Done)任務一律從列表隱藏——單次與週期皆然。週期完成的舊月份
     // 會自動消失（monthlyRecurringJob 會寫入下個月的新列，屆時以「待處理」出現）。
-    var visible = state.tasks.filter(function (t) {
-      return String(t.Status || "").toLowerCase() !== "done";
-    });
+   var visible = state.tasks.filter(function (t) {
+  return String(t.Status || "").toLowerCase() !== "done";
+});
+
+// 單次任務優先排在最上方（stable sort：其餘順序不變）
+visible.sort(function (a, b) {
+  var as = String(a.Task_Type).toLowerCase() === "single" ? 0 : 1;
+  var bs = String(b.Task_Type).toLowerCase() === "single" ? 0 : 1;
+  return as - bs;
+});
 
     if (state.loading) {
       html +=
@@ -331,9 +338,10 @@
       visible.forEach(function (t) {
         var meta = statusMeta(t.Status);
         var isDone = String(t.Status).toLowerCase() === "done";
+        var isSingle = String(t.Task_Type || "").toLowerCase() === "single";
         var marking = state.marking === t.Task_ID;
         html +=
-          '<li class="tm-row" data-cop-item' +
+          '<li class="tm-row' + (isSingle ? ' tm-row-single' : '') + '" data-cop-item' +
           ' data-cop-name="' + esc(t.Task_Name) + '"' +
           ' data-cop-status="' + esc(String(t.Status || "").toLowerCase()) + '"' +
           ' data-cop-due="' + esc(formatDate(t.Due_Date)) + '"' +
@@ -343,7 +351,7 @@
           esc(t.Task_Name) +
           "</div>" +
           '<div class="tm-meta">' +
-          '<span class="tm-chip">' + esc(t.Task_Type || "—") + "</span>" +
+          '<span class="tm-chip' + (isSingle ? ' tm-chip-single' : '') + '">' + esc(t.Task_Type || "—") + "</span>" +
           '<span class="tm-chip">📅 ' + esc(formatDate(t.Due_Date)) + "</span>" +
           '<span class="tm-chip">🔔 ' + esc(formatReminder(t.Reminder_Freq)) + "</span>" +
           "</div>" +
@@ -529,6 +537,9 @@
       ".tm-ul{list-style:none;margin:0;padding:0;display:grid;gap:10px;}",
       ".tm-row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 16px;border:1px solid #eef1f6;border-radius:12px;background:#fcfcfe;transition:box-shadow .15s,border-color .15s;}",
       ".tm-row:hover{border-color:#dfe3ea;box-shadow:0 2px 8px rgba(16,24,40,.05);}",
+      ".tm-row-single{border-left:4px solid #6366f1;background:#eef2ff;}",
+      ".tm-row-single:hover{border-left-color:#6366f1;}",
+      ".tm-chip-single{background:#6366f1;color:#fff;font-weight:700;}",
       ".tm-row-main{min-width:0;}",
       ".tm-task-name{font-weight:600;font-size:15px;margin-bottom:6px;}",
       ".tm-meta{display:flex;flex-wrap:wrap;gap:6px;}",
