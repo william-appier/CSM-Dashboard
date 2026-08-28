@@ -1,1202 +1,1202 @@
 {
   "55688": {
-    "summary": "Activity sits mainly in BotBonnie chatbot/LINE operations plus AIQUA/QGraph platform requests, driven by campaign/messaging ops. The account reads as in steady BAU delivery. Watch: 1 blocked item (QGWL-19924); carrying long-stale items (oldest 640d).",
-    "followUp": "Unblock QGWL-19924 (Shiv Raj, 429d): 【55688】Timeout limitation in AQ JM should be shorten.",
+    "summary": "Work centres on BotBonnie chatbot/LINE operations, mainly defect follow-ups. Account looks to be in steady BAU. QGWL-19924 is blocked; some items have sat for months.",
+    "followUp": "Unblock QGWL-19924 (Shiv Raj) — 【55688】Timeout limitation in AQ JM should be shorten..",
     "health": "red",
-    "generatedAt": "2026-08-27T01:48:35.143Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "mannings": {
-    "summary": "Activity sits mainly in AIQUA/QGraph platform requests plus project-delivery items, driven by commercial/handover and defect follow-ups. The account reads as in steady BAU delivery. Watch: renewal due in 34d; carrying long-stale items (oldest 523d).",
-    "followUp": "Open the renewal conversation now — contract ends in 34 days.",
+    "summary": "Work centres on AIQUA/QGraph platform requests, mainly commercial/handover and data backfill/migration. Account looks to be in onboarding. Contract renews in 33 days; some items have sat for months.",
+    "followUp": "Open the renewal with the client now; contract ends in 33 days.",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.144Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "scmp": {
-    "summary": "Activity sits mainly in project-delivery items, driven by reporting & tracking. The account reads as in steady BAU delivery.",
-    "followUp": "Push the oldest open item PROJ-33694 (Michael Palmer, 15d): [SCMP] Feature request on keyword dashboard",
+    "summary": "Work centres on project-delivery items. Account looks to be in steady BAU.",
+    "followUp": "Review the oldest open item PROJ-33694 (Michael Palmer) — [SCMP] Feature request on keyword dashboard (16d old).",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.144Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "1010hope": {
     "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. No contract end date on file.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.144Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "luxgen": {
-    "summary": "Activity sits mainly in project-delivery items plus AIQUA/QGraph platform requests, driven by campaign/messaging ops and audience & recommendation setup. The account reads as in steady BAU delivery. Watch: carrying long-stale items (oldest 1532d).",
-    "followUp": "Chase QGWL-10821 (in progress, Mark Liu, 1532d): [Luxgen]Luxgen AIQUA Web SDK embedded BB Web Chat SDK",
+    "summary": "Work centres on project-delivery items, mainly data backfill/migration and audience & recommendation setup. Account looks to be in onboarding. Some items have sat for months.",
+    "followUp": "Chase QGWL-10821 (Mark Liu) — [Luxgen]Luxgen AIQUA Web SDK embedded BB Web Chat SDK.",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.144Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "tiangyuanxiang": {
-    "summary": "Activity sits mainly in AIQUA/QGraph platform requests plus ETS backend/tech-services requests, driven by onboarding & enablement and audience & recommendation setup. The account reads as still in onboarding and enablement. Watch: carrying long-stale items (oldest 546d).",
-    "followUp": "Push the oldest open item QGWL-21289 (vivian.yang, 546d): [田原香] Onboard Product Feed",
+    "summary": "Work centres on AIQUA/QGraph platform requests, mainly onboarding & enablement and audience & recommendation setup. Account looks to be in onboarding. Some items have sat for months.",
+    "followUp": "Review the oldest open item QGWL-21289 (vivian.yang) — [田原香] Onboard Product Feed (547d old).",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.144Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "momax": {
     "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. No contract end date on file.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.144Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "citysuper": {
     "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. No contract end date on file.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.144Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "xindongli": {
-    "summary": "Activity sits mainly in BotBonnie chatbot/LINE operations, driven by onboarding & enablement and data backfill/migration. The account reads as mid-migration. Watch: no contract end date on file; carrying long-stale items (oldest 551d).",
-    "followUp": "Push the oldest open item BBT-4660 (Salem Chen, 551d): [行動力國際] BotBonnie to Phoenix Account Migration / Knowledge Bot Feature Activati…",
+    "summary": "Work centres on BotBonnie chatbot/LINE operations, mainly defect follow-ups and onboarding & enablement. Account looks to be in onboarding. No contract end date on file; some items have sat for months.",
+    "followUp": "Review the oldest open item BBT-4660 (Salem Chen) — [行動力國際] BotBonnie to Phoenix Account Migration / Knowledge Bot Feature Activation (552d old).",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.145Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "85度c": {
-    "summary": "Activity sits mainly in AIQUA/QGraph platform requests plus ETS backend/tech-services requests, driven by campaign/messaging ops and defect follow-ups. The account reads as in post-launch stabilisation. Watch: carrying long-stale items (oldest 1477d).",
-    "followUp": "Chase QGWL-11409 (in progress, Mark Liu, 1477d): [85 cafe] SMS Issues Part2",
+    "summary": "Work centres on AIQUA/QGraph platform requests, mainly campaign/messaging ops and onboarding & enablement. Account looks to be in onboarding. Some items have sat for months.",
+    "followUp": "Chase QGWL-11409 (Mark Liu) — [85 cafe] SMS Issues Part2.",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.145Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "中國信託商業銀行": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract runs to 2027-04-22.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.145Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "健康力": {
-    "summary": "Activity sits mainly in BotBonnie chatbot/LINE operations, driven by campaign/messaging ops. The account reads as in steady BAU delivery. Watch: renewal due in 14d; carrying long-stale items (oldest 69d).",
-    "followUp": "Open the renewal conversation now — contract ends in 14 days.",
+    "summary": "Work centres on BotBonnie chatbot/LINE operations, mainly campaign/messaging ops. Account looks to be in steady BAU. Contract renews in 13 days.",
+    "followUp": "Open the renewal with the client now; contract ends in 13 days.",
     "health": "red",
-    "generatedAt": "2026-08-27T01:48:35.145Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "凌網知識股份有限公司": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract runs to 2028-05-31.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.145Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "奧美廣告": {
-    "summary": "Activity sits mainly in BotBonnie chatbot/LINE operations, driven by RFQ/scoping. The account reads as in scoping/pre-delivery. Watch: carrying long-stale items (oldest 148d).",
-    "followUp": "Push the oldest open item BBT-7379 (Brian Tsai, 148d): 【RFQ】Ogilvy x Diageo_Database Procurement",
+    "summary": "Work centres on BotBonnie chatbot/LINE operations, mainly RFQ/scoping and data backfill/migration. Account looks to be in migration. Some items have sat for months.",
+    "followUp": "Review the oldest open item BBT-7379 (Brian Tsai) — 【RFQ】Ogilvy x Diageo_Database Procurement (149d old).",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.145Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "拍貼生活": {
-    "summary": "Activity sits mainly in BotBonnie chatbot/LINE operations, driven by defect follow-ups. The account reads as in post-launch stabilisation. Watch: carrying long-stale items (oldest 226d).",
-    "followUp": "Push the oldest open item BBT-7029 (Brian Tsai, 226d): [AUO Club] User accounts locked due to multiple failed login attempts",
+    "summary": "Work centres on BotBonnie chatbot/LINE operations, mainly defect follow-ups. Account looks to be in steady BAU. Some items have sat for months.",
+    "followUp": "Review the oldest open item BBT-7029 (Brian Tsai) — [AUO Club] User accounts locked due to multiple failed login attempts (227d old).",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.145Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "杰德創意影音": {
-    "summary": "Activity sits mainly in BotBonnie chatbot/LINE operations, driven by RFQ/scoping. The account reads as in scoping/pre-delivery. Watch: carrying long-stale items (oldest 105d).",
-    "followUp": "Push the oldest open item BBT-7245 (Brian Tsai, 105d): RFQ_杰德影音_Webchat 抓取已登入客戶 CRM 資料BB欄位",
+    "summary": "Work centres on BotBonnie chatbot/LINE operations. Account looks to be in steady BAU. Some items have sat for months.",
+    "followUp": "Review the oldest open item BBT-7245 (Brian Tsai) — RFQ_杰德影音_Webchat 抓取已登入客戶 CRM 資料BB欄位 (106d old).",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.145Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "貳樓餐廳": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract runs to 2028-04-30.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.145Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "鮮乳坊": {
-    "summary": "Activity sits mainly in BotBonnie chatbot/LINE operations plus ETS backend/tech-services requests, driven by defect follow-ups and security/permission reviews. The account reads as in post-launch stabilisation. Watch: carrying long-stale items (oldest 317d).",
-    "followUp": "Chase BBT-7841 (in progress, Brian Tsai, 43d): [BetterMilk] Add exclusive key word for receipt registration kit",
+    "summary": "Work centres on BotBonnie chatbot/LINE operations, mainly defect follow-ups and commercial/handover. Account looks to be in steady BAU. Some items have sat for months.",
+    "followUp": "Chase BBT-7841 (Brian Tsai) — [BetterMilk] Add exclusive key word for receipt registration kit.",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.145Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "achilles-sorbo": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract runs to 2027-06-07.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.145Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "aracer-塞席爾商岱沛-台灣": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract runs to 2027-03-03.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.145Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "bop-taipei-商明國際": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract runs to 2026-11-10.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.145Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "capsule-inc": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract runs to 2027-04-16.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.145Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "cold-stone": {
-    "summary": "Activity sits mainly in project-delivery items. The account reads as in steady BAU delivery.",
-    "followUp": "Chase PROJ-33473 (in progress, Li-Wei Chang, 5d): [ClickHouse] GCS cold-tier storage (keep PVC < 160Gi, retain all data)",
+    "summary": "Work centres on project-delivery items. Account looks to be in steady BAU.",
+    "followUp": "Chase PROJ-33473 (Li-Wei Chang) — [ClickHouse] GCS cold-tier storage (keep PVC < 160Gi, retain all data).",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.145Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "love-dear-太子天一": {
-    "summary": "Activity sits mainly in BotBonnie chatbot/LINE operations, driven by campaign/messaging ops and onboarding & enablement. The account reads as still in onboarding and enablement. Watch: carrying long-stale items (oldest 90d).",
-    "followUp": "Push the oldest open item BBT-7611 (jack.yt.lin, 90d): [Love dear] shopline ec module set up",
+    "summary": "Work centres on BotBonnie chatbot/LINE operations, mainly onboarding & enablement. Account looks to be in onboarding. Some items have sat for months.",
+    "followUp": "Review the oldest open item BBT-7611 (jack.yt.lin) — [Love dear] shopline ec module set up (91d old).",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.146Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "nespresso-tw": {
-    "summary": "Activity sits mainly in BotBonnie chatbot/LINE operations, driven by security/permission reviews and RFQ/scoping. The account reads as in steady BAU delivery. Watch: carrying long-stale items (oldest 782d).",
-    "followUp": "Push the oldest open item BBT-3347 (christine.ma, 782d): [Nespresso] Showing prize distribution kit's name in prize list",
+    "summary": "Work centres on BotBonnie chatbot/LINE operations, mainly RFQ/scoping and campaign/messaging ops. Account looks to be in steady BAU. Some items have sat for months.",
+    "followUp": "Review the oldest open item BBT-3347 (christine.ma) — [Nespresso] Showing prize distribution kit's name in prize list (783d old).",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.146Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "不來梅": {
-    "summary": "Activity sits mainly in BotBonnie chatbot/LINE operations. The account reads as in steady BAU delivery. Watch: carrying long-stale items (oldest 628d).",
-    "followUp": "Push the oldest open item BBT-4992 (jack.yt.lin, 628d): [不來梅] 2024 新增用戶總數 &過去用戶減少紀錄確認",
+    "summary": "Work centres on BotBonnie chatbot/LINE operations. Account looks to be in steady BAU. Some items have sat for months.",
+    "followUp": "Review the oldest open item BBT-4992 (jack.yt.lin) — [不來梅] 2024 新增用戶總數 &過去用戶減少紀錄確認 (629d old).",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.146Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "亞洲安視達": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract runs to 2027-03-02.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.146Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "凱基人壽": {
-    "summary": "Activity sits mainly in BotBonnie chatbot/LINE operations plus ETS backend/tech-services requests, driven by campaign/messaging ops and API/integration work. The account reads as in steady BAU delivery. Watch: carrying long-stale items (oldest 383d).",
-    "followUp": "Push the oldest open item BBT-6238 (jack.yt.lin, 383d): [RFQ] KGI Life_ no response after texting out to compose greeting card ",
+    "summary": "Work centres on BotBonnie chatbot/LINE operations, mainly API/integration and audience & recommendation setup. Account looks to be in steady BAU. Some items have sat for months.",
+    "followUp": "Chase ETS-6013 (vivian.yang) — [KGI] OJM 搜尋 LINE UID 部分命中、部分查無資料.",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.146Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "安麗-amway": {
-    "summary": "Activity sits mainly in BotBonnie chatbot/LINE operations plus ETS backend/tech-services requests, driven by API/integration work and data backfill/migration. The account reads as in steady BAU delivery. Watch: carrying long-stale items (oldest 157d).",
-    "followUp": "Chase BBT-7902 (in progress, Brian Tsai, 2d): ［Hill's pet JP］Botbonnie tag assignment via API for newly added their retailer_20260…",
+    "summary": "Work centres on BotBonnie chatbot/LINE operations, mainly API/integration and campaign/messaging ops. Account looks to be in onboarding. Some items have sat for months.",
+    "followUp": "Chase BBT-7902 (Brian Tsai) — ［Hill's pet JP］Botbonnie tag assignment via API for newly added their retailer_20260730.",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.146Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "新加坡商犀牛盾科技股份有限公司台灣分公司": {
-    "summary": "Activity sits mainly in ETS backend/tech-services requests plus BotBonnie chatbot/LINE operations, driven by API/integration work and campaign/messaging ops. The account reads as in steady BAU delivery.",
-    "followUp": "Chase BBT-7902 (in progress, Brian Tsai, 2d): ［Hill's pet JP］Botbonnie tag assignment via API for newly added their retailer_20260…",
+    "summary": "Work centres on ETS backend/tech-services requests, mainly API/integration and campaign/messaging ops. Account looks to be in onboarding.",
+    "followUp": "Chase BBT-7902 (Brian Tsai) — ［Hill's pet JP］Botbonnie tag assignment via API for newly added their retailer_20260730.",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.146Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "明台產物保險-mingtai": {
-    "summary": "Activity sits mainly in AIQUA/QGraph platform requests plus ETS backend/tech-services requests, driven by campaign/messaging ops and onboarding & enablement. The account reads as in steady BAU delivery. Watch: carrying long-stale items (oldest 2082d).",
-    "followUp": "Push the oldest open item QGWL-5874 (Tien Yu (Jason) Chang, 2082d): [MingTai 明台] action button is disappeared although the campaign still have the…",
+    "summary": "Work centres on AIQUA/QGraph platform requests, mainly campaign/messaging ops and onboarding & enablement. Account looks to be in onboarding. Some items have sat for months.",
+    "followUp": "Review the oldest open item QGWL-5874 (Tien Yu (Jason) Chang) — [MingTai 明台] action button is disappeared although the campaign still have the action butt (2083d old).",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.147Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "東禾生物科技股份有限公司": {
-    "summary": "Activity sits mainly in BotBonnie chatbot/LINE operations plus project-delivery items, driven by campaign/messaging ops. The account reads as in steady BAU delivery. Watch: carrying long-stale items (oldest 1156d).",
-    "followUp": "Push the oldest open item PROJ-22217 (Andy Wu, 1156d): [JSL] advanced data mapping of online and offline users",
+    "summary": "Work centres on BotBonnie chatbot/LINE operations. Account looks to be in steady BAU. Some items have sat for months.",
+    "followUp": "Review the oldest open item PROJ-22217 (Andy Wu) — [JSL] advanced data mapping of online and offline users (1157d old).",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.147Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "犀牛盾": {
-    "summary": "Activity sits mainly in BotBonnie chatbot/LINE operations plus ETS backend/tech-services requests, driven by API/integration work and data backfill/migration. The account reads as in steady BAU delivery. Watch: contract lapsed 93d ago; carrying long-stale items (oldest 75d).",
-    "followUp": "Contract lapsed 93d ago — confirm renewal or churn before further delivery work.",
+    "summary": "Work centres on BotBonnie chatbot/LINE operations, mainly API/integration and RFQ/scoping. Account looks to be in onboarding. Contract lapsed 94 days ago.",
+    "followUp": "Confirm renewal status — contract lapsed 94 days ago — before pushing more delivery work.",
     "health": "red",
-    "generatedAt": "2026-08-27T01:48:35.147Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "社群埠": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract runs to 2026-10-31.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.147Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "耐嘉-kinyo": {
-    "summary": "Activity sits mainly in BotBonnie chatbot/LINE operations, driven by onboarding & enablement and data backfill/migration. The account reads as still in onboarding and enablement. Watch: carrying long-stale items (oldest 653d).",
-    "followUp": "Chase BBT-5782 (in progress, Shiv Raj, 454d): [Kinyo, RT Mart, Rhinoshield] display actual number of real-time live chat on icon",
+    "summary": "Work centres on BotBonnie chatbot/LINE operations, mainly onboarding & enablement and campaign/messaging ops. Account looks to be in onboarding. Some items have sat for months.",
+    "followUp": "Chase BBT-5782 (Shiv Raj) — [Kinyo, RT Mart, Rhinoshield] display actual number of real-time live chat on icon.",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.147Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "臺理實業股份有限公司": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract runs to 2027-03-01.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.147Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "赫斯特媒體": {
-    "summary": "Activity sits mainly in project-delivery items plus AIQUA/QGraph platform requests, driven by commercial/handover and API/integration work. The account reads as in steady BAU delivery. Watch: 1 blocked item (QGWL-13517); contract lapsed 180d ago; carrying long-stale items (oldest 1542d).",
-    "followUp": "Contract lapsed 180d ago — confirm renewal or churn before further delivery work.",
+    "summary": "Work centres on project-delivery items, mainly commercial/handover and defect follow-ups. Account looks to be in onboarding. QGWL-13517 is blocked; contract lapsed 181 days ago; some items have sat for months.",
+    "followUp": "Confirm renewal status — contract lapsed 181 days ago — before pushing more delivery work.",
     "health": "red",
-    "generatedAt": "2026-08-27T01:48:35.149Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "asia-living-hk": {
-    "summary": "Activity sits mainly in ETS backend/tech-services requests. The account reads as in steady BAU delivery.",
-    "followUp": "Chase ETS-5922 (in progress, gordon.sung, 2d): [Mr.Living]Clarify Reason for Phone Number Masking on Import",
+    "summary": "Work centres on ETS backend/tech-services requests, mainly data backfill/migration. Account looks to be in migration.",
+    "followUp": "Chase ETS-5922 (gordon.sung) — [Mr.Living]Clarify Reason for Phone Number Masking on Import.",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.149Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "v-tex": {
-    "summary": "Activity sits mainly in AIQUA/QGraph platform requests plus BotBonnie chatbot/LINE operations, driven by API/integration work. The account reads as in steady BAU delivery. Watch: carrying long-stale items (oldest 631d).",
-    "followUp": "Push the oldest open item QGWL-20384 (ShiYee, 631d): [Vtex] Integrate default SDK on client's new domain",
+    "summary": "Work centres on AIQUA/QGraph platform requests, mainly API/integration. Account looks to be in onboarding. Some items have sat for months.",
+    "followUp": "Review the oldest open item QGWL-20384 (ShiYee) — [Vtex] Integrate default SDK on client's new domain (632d old).",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.150Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "台灣彪馬": {
-    "summary": "Activity sits mainly in AIQUA/QGraph platform requests plus Phoenix platform items, driven by campaign/messaging ops and API/integration work. The account reads as in steady BAU delivery. Watch: carrying long-stale items (oldest 1559d).",
-    "followUp": "Chase QGWL-13175 (in progress, Kim Lu, 166d): [Puma] Add URL scheme for client",
+    "summary": "Work centres on AIQUA/QGraph platform requests, mainly campaign/messaging ops and onboarding & enablement. Account looks to be in onboarding. Some items have sat for months.",
+    "followUp": "Chase QGWL-13175 (Kim Lu) — [Puma] Add URL scheme for client.",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.150Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "安永生活": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract lapsed 27d ago.",
-    "followUp": "Contract lapsed — confirm renewal or churn status with the client.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract lapsed 28 days ago.",
+    "followUp": "Confirm renewal status — contract lapsed 28 days ago.",
     "health": "red",
-    "generatedAt": "2026-08-27T01:48:35.150Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "新光三越百貨": {
-    "summary": "Activity sits mainly in ETS backend/tech-services requests plus BotBonnie chatbot/LINE operations, driven by audience & recommendation setup and API/integration work. The account reads as in steady BAU delivery. Watch: 1 blocked item (ETS-4927); carrying long-stale items (oldest 44d).",
-    "followUp": "Unblock ETS-4927 (gordon.sung, 19d): [SKM HQ] Evaluate encryption spec update from 3DES to AES128 GCM for PII integration",
+    "summary": "Work centres on ETS backend/tech-services requests, mainly audience & recommendation setup and API/integration. Account looks to be in onboarding. ETS-4927 is blocked.",
+    "followUp": "Unblock ETS-4927 (gordon.sung) — [SKM HQ] Evaluate encryption spec update from 3DES to AES128 GCM for PII integration.",
     "health": "red",
-    "generatedAt": "2026-08-27T01:48:35.150Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "杏豐實業": {
-    "summary": "Activity sits mainly in AIQUA/QGraph platform requests, driven by campaign/messaging ops. The account reads as in steady BAU delivery. Watch: contract lapsed 69d ago; carrying long-stale items (oldest 849d).",
-    "followUp": "Contract lapsed 69d ago — confirm renewal or churn before further delivery work.",
+    "summary": "Work centres on AIQUA/QGraph platform requests. Account looks to be in steady BAU. Contract lapsed 70 days ago; some items have sat for months.",
+    "followUp": "Confirm renewal status — contract lapsed 70 days ago — before pushing more delivery work.",
     "health": "red",
-    "generatedAt": "2026-08-27T01:48:35.150Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "維康醫療": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract runs to 2027-11-30.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.150Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "caco-加州椰子": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract runs to 2026-12-28.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.150Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "南一書局": {
-    "summary": "Activity sits mainly in ETS backend/tech-services requests plus Phoenix platform items, driven by campaign/messaging ops and defect follow-ups. The account reads as in steady BAU delivery. Watch: 1 blocked item (ETS-5880).",
-    "followUp": "Unblock ETS-5880 (gordon.sung, 6d): [麥味登] Enable OJM Channels (App Push/In-App/Web Push/In-Web/LINE/Email)",
+    "summary": "Work centres on ETS backend/tech-services requests, mainly campaign/messaging ops and defect follow-ups. Account looks to be in onboarding. ETS-5880 is blocked.",
+    "followUp": "Unblock ETS-5880 (gordon.sung) — [麥味登] Enable OJM Channels (App Push/In-App/Web Push/In-Web/LINE/Email).",
     "health": "red",
-    "generatedAt": "2026-08-27T01:48:35.150Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "居家先生": {
-    "summary": "Activity sits mainly in ETS backend/tech-services requests. The account reads as in steady BAU delivery.",
-    "followUp": "Chase ETS-5922 (in progress, gordon.sung, 2d): [Mr.Living]Clarify Reason for Phone Number Masking on Import",
+    "summary": "Work centres on ETS backend/tech-services requests, mainly data backfill/migration. Account looks to be in migration.",
+    "followUp": "Chase ETS-5922 (gordon.sung) — [Mr.Living]Clarify Reason for Phone Number Masking on Import.",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.150Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "美而快實業": {
-    "summary": "Activity sits mainly in project-delivery items plus AIQUA/QGraph platform requests, driven by campaign/messaging ops and defect follow-ups. The account reads as in steady BAU delivery. Watch: carrying long-stale items (oldest 2310d).",
-    "followUp": "Chase QGWL-4294 (in progress, Johnson Chiang, 1846d): [Pazzo] Displays campaigns updated before 180 days ago",
+    "summary": "Work centres on project-delivery items, mainly campaign/messaging ops and defect follow-ups. Account looks to be in steady BAU. Some items have sat for months.",
+    "followUp": "Chase QGWL-4294 (Johnson Chiang) — [Pazzo] Displays campaigns updated before 180 days ago.",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.151Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "至晟貿易股份有限公司": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract runs to 2027-02-01.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.151Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "葡萄王生技": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract runs to 2027-11-09.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.151Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "chenyu辰昱": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract lapsed 108d ago.",
-    "followUp": "Contract lapsed — confirm renewal or churn status with the client.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract lapsed 109 days ago.",
+    "followUp": "Confirm renewal status — contract lapsed 109 days ago.",
     "health": "red",
-    "generatedAt": "2026-08-27T01:48:35.151Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "全國麗園大飯店": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract runs to 2027-04-19.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.151Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "友達光電": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract runs to 2027-01-07.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.151Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "台灣移動資產管理租賃有限公司": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract runs to 2027-06-30.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.151Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "吹毛求吃": {
-    "summary": "Activity sits mainly in BotBonnie chatbot/LINE operations, driven by API/integration work and RFQ/scoping. The account reads as in scoping/pre-delivery. Watch: carrying long-stale items (oldest 148d).",
-    "followUp": "Push the oldest open item BBT-6699 (Brian Tsai, 148d): [RFQ] 吹毛求吃＿ webhook 轉拋至 91APP",
+    "summary": "Work centres on BotBonnie chatbot/LINE operations, mainly RFQ/scoping and API/integration. Account looks to be in steady BAU. Some items have sat for months.",
+    "followUp": "Review the oldest open item BBT-6699 (Brian Tsai) — [RFQ] 吹毛求吃＿ webhook 轉拋至 91APP (149d old).",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.151Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "大學入學考試中心": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract runs to 2027-07-31.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.151Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "大師課業股份有限公司": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract runs to 2028-07-09.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.151Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "天賦夢想家顧問": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Renewal due in 17d.",
-    "followUp": "Start the renewal conversation — contract ends in 17 days.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract renews in 16 days.",
+    "followUp": "Start the renewal conversation — contract ends in 16 days.",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.151Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "好日子行銷有限公司": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract lapsed 49d ago.",
-    "followUp": "Contract lapsed — confirm renewal or churn status with the client.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract lapsed 50 days ago.",
+    "followUp": "Confirm renewal status — contract lapsed 50 days ago.",
     "health": "red",
-    "generatedAt": "2026-08-27T01:48:35.151Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "安源資訊": {
-    "summary": "Activity sits mainly in ETS backend/tech-services requests plus BotBonnie chatbot/LINE operations, driven by campaign/messaging ops. The account reads as in steady BAU delivery. Watch: carrying long-stale items (oldest 86d).",
-    "followUp": "Chase ETS-5923 (in progress, vivian.yang, 2d): [ibon (BB)] Bulk LINE user re-import exceeds auto ID-matching import limit (~3.9M)",
+    "summary": "Work centres on ETS backend/tech-services requests, mainly data backfill/migration. Account looks to be in migration.",
+    "followUp": "Chase ETS-5923 (vivian.yang) — [ibon (BB)] Bulk LINE user re-import exceeds auto ID-matching import limit (~3.9M).",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.151Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "寓意居家生活有限公司": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract lapsed 94d ago.",
-    "followUp": "Contract lapsed — confirm renewal or churn status with the client.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract lapsed 95 days ago.",
+    "followUp": "Confirm renewal status — contract lapsed 95 days ago.",
     "health": "red",
-    "generatedAt": "2026-08-27T01:48:35.151Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "尚進教育訓練有限公司": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract runs to 2027-02-02.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.151Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "巧兒宜國際": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract runs to 2026-12-07.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.151Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "幸衍醫美診所": {
-    "summary": "Activity sits mainly in BotBonnie chatbot/LINE operations, driven by campaign/messaging ops and onboarding & enablement. The account reads as in steady BAU delivery. Watch: contract lapsed 16d ago; carrying long-stale items (oldest 330d).",
-    "followUp": "Contract lapsed 16d ago — confirm renewal or churn before further delivery work.",
+    "summary": "Work centres on BotBonnie chatbot/LINE operations, mainly onboarding & enablement. Account looks to be in onboarding. Contract lapsed 17 days ago; some items have sat for months.",
+    "followUp": "Confirm renewal status — contract lapsed 17 days ago — before pushing more delivery work.",
     "health": "red",
-    "generatedAt": "2026-08-27T01:48:35.151Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "悅己情趣": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract runs to 2026-11-09.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.151Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "新衣精緻洗衣": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Renewal due in 33d.",
-    "followUp": "Start the renewal conversation — contract ends in 33 days.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract renews in 32 days.",
+    "followUp": "Start the renewal conversation — contract ends in 32 days.",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.151Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "有你共創數位": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract lapsed 97d ago.",
-    "followUp": "Contract lapsed — confirm renewal or churn status with the client.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract lapsed 98 days ago.",
+    "followUp": "Confirm renewal status — contract lapsed 98 days ago.",
     "health": "red",
-    "generatedAt": "2026-08-27T01:48:35.151Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "期天資訊有限公司": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract runs to 2027-06-30.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.151Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "未來方舟跨界行銷有限公司": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract runs to 2027-02-01.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.151Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "泛科知識股份有限公司": {
-    "summary": "Activity sits mainly in BotBonnie chatbot/LINE operations, driven by onboarding & enablement. The account reads as still in onboarding and enablement. Watch: carrying long-stale items (oldest 148d).",
-    "followUp": "Push the oldest open item BBT-7372 (rick.lee, 148d): [Service Agent] Onboard 泛科知識股份-食藥署專案",
+    "summary": "Work centres on BotBonnie chatbot/LINE operations, mainly onboarding & enablement. Account looks to be in onboarding. Some items have sat for months.",
+    "followUp": "Review the oldest open item BBT-7372 (rick.lee) — [Service Agent] Onboard 泛科知識股份-食藥署專案 (149d old).",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.151Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "滙駿旅遊": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Renewal due in 34d.",
-    "followUp": "Start the renewal conversation — contract ends in 34 days.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract renews in 33 days.",
+    "followUp": "Start the renewal conversation — contract ends in 33 days.",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.151Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "灝翔有限公司": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract runs to 2027-04-13.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.151Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "無比整合行銷": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract runs to 2026-12-24.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.151Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "無限全球通移動通信": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract lapsed 10d ago.",
-    "followUp": "Contract lapsed — confirm renewal or churn status with the client.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract lapsed 11 days ago.",
+    "followUp": "Confirm renewal status — contract lapsed 11 days ago.",
     "health": "red",
-    "generatedAt": "2026-08-27T01:48:35.151Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "玩點互動": {
-    "summary": "Activity sits mainly in ETS backend/tech-services requests. The account reads as in steady BAU delivery.",
-    "followUp": "Push the oldest open item ETS-5567 (christine.ma, 20d): [bitplay] BB_Client Configuration Request",
+    "summary": "Work centres on ETS backend/tech-services requests. Account looks to be in steady BAU.",
+    "followUp": "Review the oldest open item ETS-5567 (christine.ma) — [bitplay] BB_Client Configuration Request (21d old).",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.151Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "百揚資訊科技有限公司": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract lapsed 66d ago.",
-    "followUp": "Contract lapsed — confirm renewal or churn status with the client.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract lapsed 67 days ago.",
+    "followUp": "Confirm renewal status — contract lapsed 67 days ago.",
     "health": "red",
-    "generatedAt": "2026-08-27T01:48:35.151Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "秝驎國際": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Renewal due in 46d.",
-    "followUp": "Start the renewal conversation — contract ends in 46 days.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract renews in 45 days.",
+    "followUp": "Start the renewal conversation — contract ends in 45 days.",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.151Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "租領移動科技股份有限公司": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract runs to 2027-03-31.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.151Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "精華光學": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract runs to 2027-05-14.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.151Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "翊棨-優迷": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract lapsed 36d ago.",
-    "followUp": "Contract lapsed — confirm renewal or churn status with the client.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract lapsed 37 days ago.",
+    "followUp": "Confirm renewal status — contract lapsed 37 days ago.",
     "health": "red",
-    "generatedAt": "2026-08-27T01:48:35.151Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "華泰開發投資有限公司": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract runs to 2027-05-14.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.151Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "豐馥資產管理股份有限公司": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract runs to 2027-03-08.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.151Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "迪捷國際有限公司": {
-    "summary": "Activity sits mainly in BotBonnie chatbot/LINE operations, driven by defect follow-ups. The account reads as in post-launch stabilisation.",
-    "followUp": "Push the oldest open item BBT-7911 (Salem Chen, 7d): [BB-迪捷國際有限公司]Client Issue Investigation",
+    "summary": "Work centres on BotBonnie chatbot/LINE operations. Account looks to be in steady BAU.",
+    "followUp": "Review the oldest open item BBT-7911 (Salem Chen) — [BB-迪捷國際有限公司]Client Issue Investigation (8d old).",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.151Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "酷訊搜索": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Renewal due in 34d.",
-    "followUp": "Start the renewal conversation — contract ends in 34 days.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract renews in 33 days.",
+    "followUp": "Start the renewal conversation — contract ends in 33 days.",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.151Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "騰戎整合行銷": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract runs to 2027-08-31.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.151Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "dac-tw": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract runs to 2027-05-31.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.151Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "igs": {
-    "summary": "Activity sits mainly in BotBonnie chatbot/LINE operations. The account reads as in steady BAU delivery. Watch: carrying long-stale items (oldest 673d).",
-    "followUp": "Push the oldest open item BBT-4665 (Salem Chen, 673d): [Kurly] Inquiry of connecting multiple IGs to 1 bot",
+    "summary": "Work centres on BotBonnie chatbot/LINE operations. Account looks to be in steady BAU. Some items have sat for months.",
+    "followUp": "Review the oldest open item BBT-4665 (Salem Chen) — [Kurly] Inquiry of connecting multiple IGs to 1 bot (674d old).",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.151Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "信誼基金會": {
-    "summary": "Activity sits mainly in BotBonnie chatbot/LINE operations, driven by campaign/messaging ops and RFQ/scoping. The account reads as in scoping/pre-delivery. Watch: carrying long-stale items (oldest 475d).",
-    "followUp": "Push the oldest open item BBT-5759 (Brian Tsai, 475d): 【RFQ】信誼基金會 圖文訊息可分享給 LINE 好友",
+    "summary": "Work centres on BotBonnie chatbot/LINE operations, mainly RFQ/scoping. Account looks to be in steady BAU. Some items have sat for months.",
+    "followUp": "Review the oldest open item BBT-5759 (Brian Tsai) — 【RFQ】信誼基金會 圖文訊息可分享給 LINE 好友 (476d old).",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.151Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "台灣三住": {
-    "summary": "Activity sits mainly in BotBonnie chatbot/LINE operations, driven by reporting & tracking. The account reads as in steady BAU delivery. Watch: carrying long-stale items (oldest 426d).",
-    "followUp": "Push the oldest open item BBT-6044 (Chloe Wong, 426d): 【7-11 賣貨便＆MiSUMi】Live chat - hope to see the full conversation history, regardl…",
+    "summary": "Work centres on BotBonnie chatbot/LINE operations, mainly defect follow-ups. Account looks to be in steady BAU. Some items have sat for months.",
+    "followUp": "Review the oldest open item BBT-6044 (Chloe Wong) — 【7-11 賣貨便＆MiSUMi】Live chat - hope to see the full conversation history, regardless of whic (427d old).",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.151Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "台灣小米通訊": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract runs to 2027-01-04.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.151Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "台灣希爾思": {
-    "summary": "Activity sits mainly in BotBonnie chatbot/LINE operations plus ETS backend/tech-services requests, driven by campaign/messaging ops and API/integration work. The account reads as in steady BAU delivery. Watch: carrying long-stale items (oldest 182d).",
-    "followUp": "Chase BBT-7902 (in progress, Brian Tsai, 2d): ［Hill's pet JP］Botbonnie tag assignment via API for newly added their retailer_20260…",
+    "summary": "Work centres on BotBonnie chatbot/LINE operations, mainly RFQ/scoping and campaign/messaging ops. Account looks to be in onboarding. Some items have sat for months.",
+    "followUp": "Chase BBT-7902 (Brian Tsai) — ［Hill's pet JP］Botbonnie tag assignment via API for newly added their retailer_20260730.",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.151Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "大魯閣實業": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract lapsed 122d ago.",
-    "followUp": "Contract lapsed — confirm renewal or churn status with the client.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract lapsed 123 days ago.",
+    "followUp": "Confirm renewal status — contract lapsed 123 days ago.",
     "health": "red",
-    "generatedAt": "2026-08-27T01:48:35.151Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "悠雅科技": {
-    "summary": "Activity sits mainly in BotBonnie chatbot/LINE operations, driven by RFQ/scoping and campaign/messaging ops. The account reads as in scoping/pre-delivery. Watch: carrying long-stale items (oldest 652d).",
-    "followUp": "Push the oldest open item BBT-4808 (rick.lee, 652d): [Zenyum] request to support email got bounced – requesting to access BB payload",
+    "summary": "Work centres on BotBonnie chatbot/LINE operations, mainly RFQ/scoping and campaign/messaging ops. Account looks to be in steady BAU. Some items have sat for months.",
+    "followUp": "Review the oldest open item BBT-4808 (rick.lee) — [Zenyum] request to support email got bounced – requesting to access BB payload (653d old).",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.151Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "未來親子": {
-    "summary": "Activity sits mainly in AIQUA/QGraph platform requests plus BotBonnie chatbot/LINE operations, driven by campaign/messaging ops and onboarding & enablement. The account reads as in steady BAU delivery. Watch: contract lapsed 119d ago; carrying long-stale items (oldest 664d).",
-    "followUp": "Contract lapsed 119d ago — confirm renewal or churn before further delivery work.",
+    "summary": "Work centres on AIQUA/QGraph platform requests, mainly defect follow-ups and onboarding & enablement. Account looks to be in onboarding. Contract lapsed 120 days ago; some items have sat for months.",
+    "followUp": "Confirm renewal status — contract lapsed 120 days ago — before pushing more delivery work.",
     "health": "red",
-    "generatedAt": "2026-08-27T01:48:35.152Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "海昌隱形眼鏡": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract runs to 2027-12-31.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.152Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "漢堡王": {
-    "summary": "Activity sits mainly in AIQUA/QGraph platform requests plus BotBonnie chatbot/LINE operations, driven by campaign/messaging ops and onboarding & enablement. The account reads as still in onboarding and enablement. Watch: carrying long-stale items (oldest 1597d).",
-    "followUp": "Chase QGWL-10306 (in progress, Mark Liu, 1584d): [Burger King] Enable Journey Map function",
+    "summary": "Work centres on AIQUA/QGraph platform requests, mainly campaign/messaging ops and onboarding & enablement. Account looks to be in onboarding. Some items have sat for months.",
+    "followUp": "Chase QGWL-10306 (Mark Liu) — [Burger King] Enable Journey Map function.",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.152Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "益普索市場研究股份有限公司": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract runs to 2028-05-18.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.152Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "維肯媒體": {
-    "summary": "Activity sits mainly in BotBonnie chatbot/LINE operations, driven by RFQ/scoping. The account reads as in scoping/pre-delivery. Watch: carrying long-stale items (oldest 450d).",
-    "followUp": "Chase BBT-7290 (in progress, Brian Tsai, 105d): 【RFQ】維肯-台灣愛麗斯和奧莉維亞有限公司_POS綁定＆會員卡",
+    "summary": "Work centres on BotBonnie chatbot/LINE operations, mainly RFQ/scoping. Account looks to be in active delivery. Some items have sat for months.",
+    "followUp": "Chase BBT-7290 (Brian Tsai) — 【RFQ】維肯-台灣愛麗斯和奧莉維亞有限公司_POS綁定＆會員卡.",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.152Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "聯創整合行銷": {
-    "summary": "Activity sits mainly in BotBonnie chatbot/LINE operations, driven by RFQ/scoping and API/integration work. The account reads as in scoping/pre-delivery. Watch: carrying long-stale items (oldest 468d).",
-    "followUp": "Chase BBT-7885 (in progress, Brian Tsai, 1d): 7-ELEVEN 統一超商_用戶綁定由 BB 進行判斷 GID 只能綁一次",
+    "summary": "Work centres on BotBonnie chatbot/LINE operations, mainly RFQ/scoping and API/integration. Account looks to be in steady BAU. Some items have sat for months.",
+    "followUp": "Chase BBT-7885 (Brian Tsai) — 7-ELEVEN 統一超商_用戶綁定由 BB 進行判斷 GID 只能綁一次.",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.152Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "豐傑生醫": {
-    "summary": "Activity sits mainly in BotBonnie chatbot/LINE operations, driven by audience & recommendation setup and onboarding & enablement. The account reads as in steady BAU delivery. Watch: carrying long-stale items (oldest 471d).",
-    "followUp": "Push the oldest open item BBT-5751 (jack.yt.lin, 471d): [EC] 豐傑生醫 onboard member card image",
+    "summary": "Work centres on BotBonnie chatbot/LINE operations, mainly onboarding & enablement. Account looks to be in onboarding. Some items have sat for months.",
+    "followUp": "Review the oldest open item BBT-5751 (jack.yt.lin) — [EC] 豐傑生醫 onboard member card image (472d old).",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.152Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "dk-shoes": {
-    "summary": "Activity sits mainly in AIQUA/QGraph platform requests plus ETS backend/tech-services requests, driven by campaign/messaging ops and audience & recommendation setup. The account reads as in steady BAU delivery. Watch: 1 blocked item (QGWL-16430); carrying long-stale items (oldest 905d).",
-    "followUp": "Unblock QGWL-16430 (Xinhe Hsu, 905d): [DK Shoes] Enable Segment Creation Feature",
+    "summary": "Work centres on AIQUA/QGraph platform requests, mainly campaign/messaging ops and audience & recommendation setup. Account looks to be in onboarding. QGWL-16430 is blocked; some items have sat for months.",
+    "followUp": "Unblock QGWL-16430 (Xinhe Hsu) — [DK Shoes] Enable Segment Creation Feature.",
     "health": "red",
-    "generatedAt": "2026-08-27T01:48:35.152Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "innisfree-tw": {
-    "summary": "Activity sits mainly in ETS backend/tech-services requests plus AIQUA/QGraph platform requests, driven by campaign/messaging ops and API/integration work. The account reads as in steady BAU delivery. Watch: renewal due in 14d; carrying long-stale items (oldest 687d).",
-    "followUp": "Open the renewal conversation now — contract ends in 14 days.",
+    "summary": "Work centres on ETS backend/tech-services requests, mainly campaign/messaging ops and onboarding & enablement. Account looks to be in onboarding. Contract renews in 13 days; some items have sat for months.",
+    "followUp": "Open the renewal with the client now; contract ends in 13 days.",
     "health": "red",
-    "generatedAt": "2026-08-27T01:48:35.152Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "匯姿": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract runs to 2027-03-15.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.152Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "永悅健康": {
-    "summary": "Activity sits mainly in BotBonnie chatbot/LINE operations plus AIQUA/QGraph platform requests, driven by campaign/messaging ops and audience & recommendation setup. The account reads as in steady BAU delivery. Watch: carrying long-stale items (oldest 615d).",
-    "followUp": "Push the oldest open item BBT-4328 (Brian Tsai, 615d): [H2U] 開放電商綁定 open api",
+    "summary": "Work centres on BotBonnie chatbot/LINE operations, mainly campaign/messaging ops and audience & recommendation setup. Account looks to be in onboarding. Some items have sat for months.",
+    "followUp": "Review the oldest open item BBT-4328 (Brian Tsai) — [H2U] 開放電商綁定 open api (616d old).",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.153Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "社團法人台灣職業籃球聯盟": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Renewal due in 4d.",
-    "followUp": "Start the renewal conversation — contract ends in 4 days.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract renews in 3 days.",
+    "followUp": "Start the renewal conversation — contract ends in 3 days.",
     "health": "red",
-    "generatedAt": "2026-08-27T01:48:35.153Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "giloo-紀實影音": {
-    "summary": "Activity sits mainly in AIQUA/QGraph platform requests, driven by campaign/messaging ops and API/integration work. The account reads as in steady BAU delivery. Watch: carrying long-stale items (oldest 293d).",
-    "followUp": "Push the oldest open item QGWL-11716 (Roy Lo, 293d): [Giloo] Adding parameter \"content_availble\" in AIQUA notification API",
+    "summary": "Work centres on AIQUA/QGraph platform requests, mainly API/integration and campaign/messaging ops. Account looks to be in steady BAU. Some items have sat for months.",
+    "followUp": "Review the oldest open item QGWL-11716 (Roy Lo) — [Giloo] Adding parameter \"content_availble\" in AIQUA notification API (294d old).",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.153Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "中華民國對外貿易發展協會": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Renewal due in 49d.",
-    "followUp": "Start the renewal conversation — contract ends in 49 days.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract renews in 48 days.",
+    "followUp": "Start the renewal conversation — contract ends in 48 days.",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.153Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "全曜財經資訊": {
-    "summary": "Activity sits mainly in AIQUA/QGraph platform requests plus Phoenix platform items, driven by campaign/messaging ops and reporting & tracking. The account reads as in steady BAU delivery. Watch: carrying long-stale items (oldest 538d).",
-    "followUp": "Push the oldest open item QGWL-21227 (olivia.hou, 538d): [CMoney] Auto-generated report for \"active users\" for internal check",
+    "summary": "Work centres on AIQUA/QGraph platform requests, mainly audience & recommendation setup and campaign/messaging ops. Account looks to be in steady BAU. Some items have sat for months.",
+    "followUp": "Review the oldest open item QGWL-21227 (olivia.hou) — [CMoney] Auto-generated report for \"active users\" for internal check (539d old).",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.153Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "寰宇家庭": {
-    "summary": "Activity sits mainly in ETS backend/tech-services requests. The account reads as in steady BAU delivery.",
-    "followUp": "Push the oldest open item ETS-5685 (Yungyun Cheng, 8d): [JM][WorldFamily] Confirmation of real time InWeb campagin",
+    "summary": "Work centres on ETS backend/tech-services requests. Account looks to be in steady BAU.",
+    "followUp": "Review the oldest open item ETS-5685 (Yungyun Cheng) — [JM][WorldFamily] Confirmation of real time InWeb campagin (9d old).",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.153Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "肯驛國際": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract runs to 2027-01-22.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.153Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "藝康企業股份有限公司": {
-    "summary": "Activity sits mainly in BotBonnie chatbot/LINE operations, driven by defect follow-ups and RFQ/scoping. The account reads as in scoping/pre-delivery. Watch: carrying long-stale items (oldest 44d).",
-    "followUp": "Chase BBT-7779 (in progress, Brian Tsai, 16d): 🍔 [藝康 Ecolab] User stuck in previous loop when order remains in Pending status — in…",
+    "summary": "Work centres on BotBonnie chatbot/LINE operations, mainly defect follow-ups and RFQ/scoping. Account looks to be in steady BAU.",
+    "followUp": "Chase BBT-7779 (Brian Tsai) — 🍔 [藝康 Ecolab] User stuck in previous loop when order remains in Pending status — inquiry .",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.153Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "guardian-health-beauty": {
-    "summary": "Activity sits mainly in AIQUA/QGraph platform requests plus ETS backend/tech-services requests, driven by onboarding & enablement and reporting & tracking. The account reads as still in onboarding and enablement. Watch: contract lapsed 142d ago; carrying long-stale items (oldest 663d).",
-    "followUp": "Contract lapsed 142d ago — confirm renewal or churn before further delivery work.",
+    "summary": "Work centres on AIQUA/QGraph platform requests, mainly onboarding & enablement and campaign/messaging ops. Account looks to be in onboarding. Contract lapsed 143 days ago; some items have sat for months.",
+    "followUp": "Confirm renewal status — contract lapsed 143 days ago — before pushing more delivery work.",
     "health": "red",
-    "generatedAt": "2026-08-27T01:48:35.153Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "haleon": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract runs to 2027-01-15.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.153Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "jgb-smart-property": {
-    "summary": "Activity sits mainly in BotBonnie chatbot/LINE operations. The account reads as in steady BAU delivery. Watch: carrying long-stale items (oldest 168d).",
-    "followUp": "Push the oldest open item BBT-7296 (Tim Lin, 168d): [JGB_] Please help to apply WhatsApp in Botbonnie. ",
+    "summary": "Work centres on BotBonnie chatbot/LINE operations. Account looks to be in steady BAU. Some items have sat for months.",
+    "followUp": "Review the oldest open item BBT-7296 (Tim Lin) — [JGB_] Please help to apply WhatsApp in Botbonnie.  (169d old).",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.153Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "三創數位": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract runs to 2026-12-31.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.153Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "佑全保健藥妝": {
-    "summary": "Activity sits mainly in AIQUA/QGraph platform requests, driven by campaign/messaging ops and data backfill/migration. The account reads as mid-migration. Watch: carrying long-stale items (oldest 168d).",
-    "followUp": "Push the oldest open item QGWL-25099 (Ray Lin, 168d): [yourchance][backfill offline event] Prepare for the backfill event (adjust rat…",
+    "summary": "Work centres on ETS backend/tech-services requests, mainly data backfill/migration. Account looks to be in migration. Some items have sat for months.",
+    "followUp": "Review the oldest open item QGWL-25099 (Ray Lin) — [yourchance][backfill offline event] Prepare for the backfill event (adjust rate limit) (169d old).",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.153Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "冰宇科技": {
-    "summary": "Activity sits mainly in BotBonnie chatbot/LINE operations, driven by audience & recommendation setup. The account reads as in steady BAU delivery. Watch: carrying long-stale items (oldest 392d).",
-    "followUp": "Push the oldest open item BBT-6131 (Chloe Wong, 392d): [Sealand] 將 DB 內 uid 包含 \\n 的部分移除 ",
+    "summary": "Work centres on BotBonnie chatbot/LINE operations, mainly audience & recommendation setup. Account looks to be in steady BAU. Some items have sat for months.",
+    "followUp": "Review the oldest open item BBT-6131 (Chloe Wong) — [Sealand] 將 DB 內 uid 包含 \\n 的部分移除  (393d old).",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.153Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "台茂購物中心": {
-    "summary": "Activity sits mainly in BotBonnie chatbot/LINE operations plus ETS backend/tech-services requests, driven by API/integration work and data backfill/migration. The account reads as in steady BAU delivery. Watch: carrying long-stale items (oldest 170d).",
-    "followUp": "Chase BBT-7902 (in progress, Brian Tsai, 2d): ［Hill's pet JP］Botbonnie tag assignment via API for newly added their retailer_20260…",
+    "summary": "Work centres on BotBonnie chatbot/LINE operations, mainly API/integration and security/permission reviews. Account looks to be in onboarding. Some items have sat for months.",
+    "followUp": "Chase BBT-7902 (Brian Tsai) — ［Hill's pet JP］Botbonnie tag assignment via API for newly added their retailer_20260730.",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.153Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "嘉里大榮": {
-    "summary": "Activity sits mainly in BotBonnie chatbot/LINE operations, driven by campaign/messaging ops and API/integration work. The account reads as in scoping/pre-delivery.",
-    "followUp": "Chase BBT-7479 (in progress, Brian Tsai, 14d): RFQ_嘉里大榮_通知型訊息串接與好友訊息通知",
-    "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.153Z"
+    "summary": "Work centres on BotBonnie chatbot/LINE operations. Account looks to be in steady BAU.",
+    "followUp": "Chase BBT-7479 (Brian Tsai) — RFQ_嘉里大榮_通知型訊息串接與好友訊息通知.",
+    "health": "yellow",
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "大方藝彩行銷顧問股份有限公司": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract runs to 2028-03-23.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.153Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "學吧": {
-    "summary": "Activity sits mainly in BotBonnie chatbot/LINE operations, driven by API/integration work and defect follow-ups. The account reads as in post-launch stabilisation. Watch: carrying long-stale items (oldest 78d).",
-    "followUp": "Push the oldest open item BBT-7711 (vivian.yang, 78d): [學吧] API Authorization Error on Customer List and Customer Actions Endpoints",
+    "summary": "Work centres on ETS backend/tech-services requests, mainly API/integration and defect follow-ups. Account looks to be in steady BAU.",
+    "followUp": "Chase ETS-6055 (adam.chen) — [學吧] Clicking Growth Tool on desktop redirects to login page instead of proceeding.",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.153Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "富味鄉食品": {
-    "summary": "Activity sits mainly in BotBonnie chatbot/LINE operations, driven by campaign/messaging ops and data backfill/migration. The account reads as mid-migration. Watch: carrying long-stale items (oldest 84d).",
-    "followUp": "Push the oldest open item BBT-7685 (Salem Chen, 84d): [芝初] Exported Push Notification Report Contained Data from Another Client (Burg…",
+    "summary": "Work centres on BotBonnie chatbot/LINE operations, mainly campaign/messaging ops. Account looks to be in steady BAU.",
+    "followUp": "Review the oldest open item BBT-7685 (Salem Chen) — [芝初] Exported Push Notification Report Contained Data from Another Client (Burger King) (85d old).",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.153Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "我的專屬營養師": {
-    "summary": "Activity sits mainly in BotBonnie chatbot/LINE operations plus ETS backend/tech-services requests, driven by campaign/messaging ops and audience & recommendation setup. The account reads as in steady BAU delivery. Watch: carrying long-stale items (oldest 863d).",
-    "followUp": "Push the oldest open item BBT-3358 (hailey.yang, 863d): [Cofit] Optimize the user experience for Webchat <> LINE account binding",
+    "summary": "Work centres on BotBonnie chatbot/LINE operations, mainly defect follow-ups and campaign/messaging ops. Account looks to be in steady BAU. Some items have sat for months.",
+    "followUp": "Review the oldest open item BBT-3358 (hailey.yang) — [Cofit] Optimize the user experience for Webchat <> LINE account binding (864d old).",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.153Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "玉山銀行": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract runs to 2027-03-31.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.153Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "統一數網": {
-    "summary": "Activity sits mainly in BotBonnie chatbot/LINE operations, driven by RFQ/scoping and API/integration work. The account reads as in scoping/pre-delivery. Watch: carrying long-stale items (oldest 471d).",
-    "followUp": "Chase BBT-7885 (in progress, Brian Tsai, 1d): 7-ELEVEN 統一超商_用戶綁定由 BB 進行判斷 GID 只能綁一次",
+    "summary": "Work centres on BotBonnie chatbot/LINE operations, mainly RFQ/scoping and API/integration. Account looks to be in onboarding. Some items have sat for months.",
+    "followUp": "Chase BBT-7885 (Brian Tsai) — 7-ELEVEN 統一超商_用戶綁定由 BB 進行判斷 GID 只能綁一次.",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.154Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "緯育": {
-    "summary": "Activity sits mainly in BotBonnie chatbot/LINE operations. The account reads as in steady BAU delivery. Watch: carrying long-stale items (oldest 78d).",
-    "followUp": "Push the oldest open item BBT-7728 (vivian.yang, 78d): [緯育TibaMe] Unable to Remove Agent from Project",
+    "summary": "Work centres on BotBonnie chatbot/LINE operations. Account looks to be in steady BAU.",
+    "followUp": "Review the oldest open item BBT-7728 (vivian.yang) — [緯育TibaMe] Unable to Remove Agent from Project (79d old).",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.154Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "聚財課": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract runs to 2027-12-12.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.154Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "芝麻開門電子商務股份有限公司": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract runs to 2027-01-31.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.154Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "萊爾富": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract runs to 2028-07-31.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.154Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "錦明集團": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract runs to 2027-10-31.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.154Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "hola-特力和樂": {
-    "summary": "Activity sits mainly in ETS backend/tech-services requests plus project-delivery items, driven by audience & recommendation setup and campaign/messaging ops. The account reads as in steady BAU delivery.",
-    "followUp": "Chase ETS-5720 (in progress, vivian.yang, 14d): [南一Nani]Discrepancy between total audience count and email subscriber count",
+    "summary": "Work centres on ETS backend/tech-services requests, mainly audience & recommendation setup and campaign/messaging ops. Account looks to be in steady BAU.",
+    "followUp": "Chase ETS-5720 (vivian.yang) — [南一Nani]Discrepancy between total audience count and email subscriber count.",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.154Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "讀墨電子書": {
-    "summary": "Activity sits mainly in AIQUA/QGraph platform requests plus project-delivery items, driven by campaign/messaging ops and API/integration work. The account reads as in steady BAU delivery. Watch: carrying long-stale items (oldest 422d).",
-    "followUp": "Push the oldest open item QGWL-22633 (Laura Yang, 422d): [Readmoo] EDM performance check",
+    "summary": "Work centres on AIQUA/QGraph platform requests, mainly campaign/messaging ops and API/integration. Account looks to be in onboarding. Some items have sat for months.",
+    "followUp": "Review the oldest open item QGWL-22633 (Laura Yang) — [Readmoo] EDM performance check (423d old).",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.154Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "錨點影音": {
-    "summary": "Activity sits mainly in AIQUA/QGraph platform requests plus ETS backend/tech-services requests, driven by campaign/messaging ops and audience & recommendation setup. The account reads as in steady BAU delivery. Watch: 1 blocked item (ETS-1937); contract lapsed 88d ago; carrying long-stale items (oldest 268d).",
-    "followUp": "Contract lapsed 88d ago — confirm renewal or churn before further delivery work.",
+    "summary": "Work centres on AIQUA/QGraph platform requests, mainly campaign/messaging ops and audience & recommendation setup. Account looks to be in steady BAU. ETS-1937 is blocked; contract lapsed 89 days ago; some items have sat for months.",
+    "followUp": "Confirm renewal status — contract lapsed 89 days ago — before pushing more delivery work.",
     "health": "red",
-    "generatedAt": "2026-08-27T01:48:35.154Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "inlook": {
-    "summary": "Activity sits mainly in ETS backend/tech-services requests plus BotBonnie chatbot/LINE operations, driven by campaign/messaging ops and RFQ/scoping. The account reads as in steady BAU delivery. Watch: carrying long-stale items (oldest 861d).",
-    "followUp": "Chase PROJ-27116 (in progress, chunchia.liu, 861d): [ETA: 1/12][INLook] category prediction performance analysis",
+    "summary": "Work centres on AIQUA/QGraph platform requests, mainly data backfill/migration and API/integration. Account looks to be in onboarding. Some items have sat for months.",
+    "followUp": "Chase PROJ-27116 (chunchia.liu) — [ETA: 1/12][INLook] category prediction performance analysis.",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.154Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "國泰人壽": {
-    "summary": "Activity sits mainly in project-delivery items plus BotBonnie chatbot/LINE operations, driven by data backfill/migration and audience & recommendation setup. The account reads as mid-migration. Watch: carrying long-stale items (oldest 1559d).",
-    "followUp": "Push the oldest open item PROJ-11812 (Ben (Teng-Yuan) Chang, 1559d): [Cathay, OBank] - QA and maintain IP 54.70.44.57",
+    "summary": "Work centres on project-delivery items, mainly audience & recommendation setup and defect follow-ups. Account looks to be in onboarding. Some items have sat for months.",
+    "followUp": "Review the oldest open item PROJ-11812 (Ben (Teng-Yuan) Chang) — [Cathay, OBank] - QA and maintain IP 54.70.44.57 (1560d old).",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.154Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "國泰金控": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract runs to 2027-01-31.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.154Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "城企國際有限公司": {
-    "summary": "Activity sits mainly in ETS backend/tech-services requests plus BotBonnie chatbot/LINE operations, driven by campaign/messaging ops and RFQ/scoping. The account reads as in steady BAU delivery. Watch: carrying long-stale items (oldest 861d).",
-    "followUp": "Chase PROJ-27116 (in progress, chunchia.liu, 861d): [ETA: 1/12][INLook] category prediction performance analysis",
+    "summary": "Work centres on AIQUA/QGraph platform requests, mainly data backfill/migration and API/integration. Account looks to be in onboarding. Some items have sat for months.",
+    "followUp": "Chase PROJ-27116 (chunchia.liu) — [ETA: 1/12][INLook] category prediction performance analysis.",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.154Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "天幕國際": {
-    "summary": "Activity sits mainly in project-delivery items plus AIQUA/QGraph platform requests, driven by audience & recommendation setup and campaign/messaging ops. The account reads as in steady BAU delivery. Watch: carrying long-stale items (oldest 1559d).",
-    "followUp": "Chase QGWL-18790 (in progress, josh.hsu, 762d): [天幕國際 DR.CiNK] abandoned cart eDM content not align with actual cart items",
+    "summary": "Work centres on project-delivery items, mainly audience & recommendation setup and campaign/messaging ops. Account looks to be in onboarding. Some items have sat for months.",
+    "followUp": "Chase QGWL-18790 (josh.hsu) — [天幕國際 DR.CiNK] abandoned cart eDM content not align with actual cart items.",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.155Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "微風": {
-    "summary": "Activity sits mainly in AIQUA/QGraph platform requests plus ETS backend/tech-services requests, driven by commercial/handover and audience & recommendation setup. The account reads as moving toward handover/commercial close-out. Watch: carrying long-stale items (oldest 184d).",
-    "followUp": "Chase ETS-4667 (in progress, jerry.kim, 29d): [Yeogi] Inquiry – Support for Catalog-based Personalized Recommendation Pipeline(pro…",
+    "summary": "Work centres on AIQUA/QGraph platform requests, mainly audience & recommendation setup and commercial/handover. Account looks to be in onboarding. Some items have sat for months.",
+    "followUp": "Chase ETS-4667 (jerry.kim) — [Yeogi] Inquiry – Support for Catalog-based Personalized Recommendation Pipeline(property_.",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.155Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "爭鮮": {
-    "summary": "Activity sits mainly in BotBonnie chatbot/LINE operations, driven by RFQ/scoping and API/integration work. The account reads as in scoping/pre-delivery. Watch: carrying long-stale items (oldest 71d).",
-    "followUp": "Chase BBT-7725 (in progress, Brian Tsai, 5d): [RFQ] 爭鮮_客製化遊戲Liff &  串接票券夾",
+    "summary": "Work centres on BotBonnie chatbot/LINE operations, mainly RFQ/scoping. Account looks to be in steady BAU.",
+    "followUp": "Chase BBT-7725 (Brian Tsai) — [RFQ] 爭鮮_客製化遊戲Liff &  串接票券夾.",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.155Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "維那斯有限公司": {
-    "summary": "Activity sits mainly in ETS backend/tech-services requests plus BotBonnie chatbot/LINE operations, driven by campaign/messaging ops and RFQ/scoping. The account reads as in steady BAU delivery. Watch: carrying long-stale items (oldest 861d).",
-    "followUp": "Chase PROJ-27116 (in progress, chunchia.liu, 861d): [ETA: 1/12][INLook] category prediction performance analysis",
+    "summary": "Work centres on AIQUA/QGraph platform requests, mainly data backfill/migration and API/integration. Account looks to be in onboarding. Some items have sat for months.",
+    "followUp": "Chase PROJ-27116 (chunchia.liu) — [ETA: 1/12][INLook] category prediction performance analysis.",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.155Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "達特聖克國際股份有限公司": {
-    "summary": "Activity sits mainly in ETS backend/tech-services requests, driven by defect follow-ups. The account reads as in post-launch stabilisation. Watch: renewal due in 60d.",
-    "followUp": "Open the renewal conversation now — contract ends in 60 days.",
+    "summary": "Work centres on ETS backend/tech-services requests. Account looks to be in steady BAU. Contract renews in 59 days.",
+    "followUp": "Open the renewal with the client now; contract ends in 59 days.",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.155Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "invani": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract runs to 2027-08-15.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.155Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "uuulab-co": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract runs to 2026-12-27.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.155Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "優派國際": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract runs to 2027-03-03.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.155Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "國立暨南國際大學": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract runs to 2026-12-31.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.155Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "宇峻奧汀科技": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract runs to 2027-04-16.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.155Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "摩奇創意": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract runs to 2027-03-21.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.155Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "橋陽設計工作室": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract runs to 2027-03-31.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.155Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "貝殼放大": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract lapsed 7d ago.",
-    "followUp": "Contract lapsed — confirm renewal or churn status with the client.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract lapsed 8 days ago.",
+    "followUp": "Confirm renewal status — contract lapsed 8 days ago.",
     "health": "red",
-    "generatedAt": "2026-08-27T01:48:35.155Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "貝立德股份有限公司": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract runs to 2027-04-21.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.155Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "迪凱科技": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract runs to 2027-02-28.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.155Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "高雄萬豪酒店": {
-    "summary": "Activity sits mainly in BotBonnie chatbot/LINE operations, driven by defect follow-ups. The account reads as in post-launch stabilisation. Watch: carrying long-stale items (oldest 660d).",
-    "followUp": "Push the oldest open item BBT-4482 (Salem Chen, 660d): 【BotBonnie Bug】Marriott Hotel",
+    "summary": "Work centres on BotBonnie chatbot/LINE operations, mainly defect follow-ups. Account looks to be in steady BAU. Some items have sat for months.",
+    "followUp": "Review the oldest open item BBT-4482 (Salem Chen) — 【BotBonnie Bug】Marriott Hotel (661d old).",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.155Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "mis-test": {
-    "summary": "Activity sits mainly in ETS backend/tech-services requests plus AIQUA/QGraph platform requests, driven by campaign/messaging ops. The account reads as in steady BAU delivery. Watch: 1 blocked item (ETS-1937); contract lapsed 136d ago; carrying long-stale items (oldest 163d).",
-    "followUp": "Contract lapsed 136d ago — confirm renewal or churn before further delivery work.",
+    "summary": "Work centres on ETS backend/tech-services requests, mainly campaign/messaging ops. Account looks to be in steady BAU. ETS-1937 is blocked; contract lapsed 137 days ago; some items have sat for months.",
+    "followUp": "Confirm renewal status — contract lapsed 137 days ago — before pushing more delivery work.",
     "health": "red",
-    "generatedAt": "2026-08-27T01:48:35.155Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "renishaw": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract runs to 2027-05-17.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.155Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "易遊網股份有限公司": {
-    "summary": "Activity sits mainly in AIQUA/QGraph platform requests plus Phoenix platform items, driven by campaign/messaging ops and onboarding & enablement. The account reads as in steady BAU delivery. Watch: carrying long-stale items (oldest 905d).",
-    "followUp": "Chase PHXX-2053 (in progress, anson.ng, 782d): ezTravel_Journey got stuck in “check condition”",
+    "summary": "Work centres on AIQUA/QGraph platform requests, mainly campaign/messaging ops and onboarding & enablement. Account looks to be in onboarding. Some items have sat for months.",
+    "followUp": "Chase PHXX-2053 (anson.ng) — ezTravel_Journey got stuck in “check condition”.",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.156Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "robinmay薇恩": {
-    "summary": "Activity sits mainly in ETS backend/tech-services requests plus AIQUA/QGraph platform requests, driven by data backfill/migration and campaign/messaging ops. The account reads as mid-migration. Watch: carrying long-stale items (oldest 442d).",
-    "followUp": "Chase ETS-5779 (in progress, Mark Liu, 9d): [ROBINMAY] Confirm Receipt of 康德 Test Data via SFTP",
+    "summary": "Work centres on ETS backend/tech-services requests, mainly data backfill/migration and onboarding & enablement. Account looks to be in onboarding. Some items have sat for months.",
+    "followUp": "Chase ETS-5779 (Mark Liu) — [ROBINMAY] Confirm Receipt of 康德 Test Data via SFTP.",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.156Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "佳格食品": {
-    "summary": "Activity sits mainly in BotBonnie chatbot/LINE operations plus project-delivery items, driven by defect follow-ups and RFQ/scoping. The account reads as in steady BAU delivery. Watch: carrying long-stale items (oldest 1559d).",
-    "followUp": "Push the oldest open item PROJ-9534 (Ben (Teng-Yuan) Chang, 1559d): [Click 108, Cigna, --SFworldwide--, IM, O-Bank, MingTai] Copy and share brain /…",
+    "summary": "Work centres on BotBonnie chatbot/LINE operations, mainly defect follow-ups and RFQ/scoping. Account looks to be in onboarding. Some items have sat for months.",
+    "followUp": "Review the oldest open item PROJ-9534 (Ben (Teng-Yuan) Chang) — [Click 108, Cigna, --SFworldwide--, IM, O-Bank, MingTai] Copy and share brain / robot to d (1560d old).",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.156Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "太平洋崇光百貨": {
-    "summary": "Activity sits mainly in AIQUA/QGraph platform requests, driven by campaign/messaging ops and onboarding & enablement. The account reads as in steady BAU delivery. Watch: carrying long-stale items (oldest 496d).",
-    "followUp": "Push the oldest open item QGWL-21538 (gordon.sung, 496d): [SOGO] Unable to scroll down the website home page in Onsite Editor",
+    "summary": "Work centres on AIQUA/QGraph platform requests, mainly audience & recommendation setup and defect follow-ups. Account looks to be in onboarding. Some items have sat for months.",
+    "followUp": "Review the oldest open item QGWL-21538 (gordon.sung) — [SOGO] Unable to scroll down the website home page in Onsite Editor (497d old).",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.156Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "星宇航空": {
-    "summary": "Activity sits mainly in AIQUA/QGraph platform requests, driven by campaign/messaging ops. The account reads as in steady BAU delivery. Watch: carrying long-stale items (oldest 513d).",
-    "followUp": "Push the oldest open item QGWL-17410 (luke.chien, 513d): [Starlux] Vonage SMS multiple region support in AIQUA",
+    "summary": "Work centres on AIQUA/QGraph platform requests, mainly campaign/messaging ops. Account looks to be in steady BAU. Some items have sat for months.",
+    "followUp": "Review the oldest open item QGWL-17410 (luke.chien) — [Starlux] Vonage SMS multiple region support in AIQUA (514d old).",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.156Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "wemo": {
-    "summary": "Activity sits mainly in AIQUA/QGraph platform requests plus ETS backend/tech-services requests, driven by campaign/messaging ops and onboarding & enablement. The account reads as in steady BAU delivery. Watch: carrying long-stale items (oldest 862d).",
-    "followUp": "Chase QGWL-12029 (in progress, Mark Liu, 166d): [Wemo] Irregular trigger campaign delivered number",
+    "summary": "Work centres on AIQUA/QGraph platform requests, mainly campaign/messaging ops and onboarding & enablement. Account looks to be in onboarding. Some items have sat for months.",
+    "followUp": "Chase QGWL-12029 (Mark Liu) — [Wemo] Irregular trigger campaign delivered number.",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.157Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "世邦旅遊": {
-    "summary": "Activity sits mainly in BotBonnie chatbot/LINE operations, driven by defect follow-ups. The account reads as in steady BAU delivery. Watch: carrying long-stale items (oldest 524d).",
-    "followUp": "Push the oldest open item BBT-5553 (willy.liao, 524d): [世邦旅遊] Mobile Device Login Console Error",
+    "summary": "Work centres on BotBonnie chatbot/LINE operations, mainly defect follow-ups. Account looks to be in steady BAU. Some items have sat for months.",
+    "followUp": "Review the oldest open item BBT-5553 (willy.liao) — [世邦旅遊] Mobile Device Login Console Error (525d old).",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.157Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "小川日和有限公司": {
-    "summary": "Activity sits mainly in BotBonnie chatbot/LINE operations plus ETS backend/tech-services requests, driven by campaign/messaging ops. The account reads as in steady BAU delivery. Watch: carrying long-stale items (oldest 310d).",
-    "followUp": "Push the oldest open item BBT-6542 (vivian.yang, 310d): [BB-小川職人] Line Menu can't select module in KB",
+    "summary": "Work centres on BotBonnie chatbot/LINE operations, mainly campaign/messaging ops and defect follow-ups. Account looks to be in steady BAU. Some items have sat for months.",
+    "followUp": "Review the oldest open item BBT-6542 (vivian.yang) — [BB-小川職人] Line Menu can't select module in KB (311d old).",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.157Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "展碁國際股份有限公司": {
-    "summary": "Activity sits mainly in BotBonnie chatbot/LINE operations, driven by API/integration work and onboarding & enablement. The account reads as mid-migration. Watch: contract lapsed 38d ago; carrying long-stale items (oldest 397d).",
-    "followUp": "Contract lapsed 38d ago — confirm renewal or churn before further delivery work.",
+    "summary": "Work centres on BotBonnie chatbot/LINE operations, mainly onboarding & enablement and API/integration. Account looks to be in onboarding. Contract lapsed 39 days ago; some items have sat for months.",
+    "followUp": "Confirm renewal status — contract lapsed 39 days ago — before pushing more delivery work.",
     "health": "red",
-    "generatedAt": "2026-08-27T01:48:35.157Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "數匯智控股份有限公司": {
-    "summary": "Activity sits mainly in BotBonnie chatbot/LINE operations, driven by API/integration work and onboarding & enablement. The account reads as still in onboarding and enablement. Watch: contract lapsed 43d ago; carrying long-stale items (oldest 425d).",
-    "followUp": "Contract lapsed 43d ago — confirm renewal or churn before further delivery work.",
+    "summary": "Work centres on BotBonnie chatbot/LINE operations, mainly onboarding & enablement and API/integration. Account looks to be in onboarding. Contract lapsed 44 days ago; some items have sat for months.",
+    "followUp": "Confirm renewal status — contract lapsed 44 days ago — before pushing more delivery work.",
     "health": "red",
-    "generatedAt": "2026-08-27T01:48:35.157Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "景華生技": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract runs to 2027-04-16.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.157Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "橘子蘋果orangeapple": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract runs to 2027-01-12.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.157Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "雪坊志業": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract runs to 2026-10-31.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.157Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "佳聖媒體行銷": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract runs to 2027-02-28.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.157Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "保聯企業股份有限公司": {
-    "summary": "Activity sits mainly in BotBonnie chatbot/LINE operations. The account reads as in steady BAU delivery. Watch: carrying long-stale items (oldest 259d).",
-    "followUp": "Push the oldest open item BBT-6857 (Guiguan, 259d): [aRacer /保聯 /優迷] image recognition to add",
+    "summary": "Work centres on BotBonnie chatbot/LINE operations. Account looks to be in steady BAU. Some items have sat for months.",
+    "followUp": "Review the oldest open item BBT-6857 (Guiguan) — [aRacer /保聯 /優迷] image recognition to add (260d old).",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.157Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "嘉丹妮爾": {
-    "summary": "Activity sits mainly in BotBonnie chatbot/LINE operations plus Phoenix platform items, driven by campaign/messaging ops and data backfill/migration. The account reads as mid-migration. Watch: carrying long-stale items (oldest 624d).",
-    "followUp": "Push the oldest open item PHXX-3441 (lilianch, 624d): [ MM-OJM-嘉丹妮爾 Vecs Gardenia ] Data Analysis and Computation Logic",
+    "summary": "Work centres on BotBonnie chatbot/LINE operations, mainly campaign/messaging ops and data backfill/migration. Account looks to be in steady BAU. Some items have sat for months.",
+    "followUp": "Review the oldest open item PHXX-3441 (lilianch) — [ MM-OJM-嘉丹妮爾 Vecs Gardenia ] Data Analysis and Computation Logic (625d old).",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.157Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "富川創造": {
-    "summary": "Activity sits mainly in BotBonnie chatbot/LINE operations plus Phoenix platform items, driven by campaign/messaging ops and reporting & tracking. The account reads as in steady BAU delivery. Watch: carrying long-stale items (oldest 439d).",
-    "followUp": "Chase BBT-5463 (in progress, Chloe Wong, 249d): [MM-OJM-富川創造]   Urgent: Dynamic URL Click Event Not Captured in OJM",
+    "summary": "Work centres on BotBonnie chatbot/LINE operations, mainly campaign/messaging ops and defect follow-ups. Account looks to be in onboarding. Some items have sat for months.",
+    "followUp": "Chase BBT-5463 (Chloe Wong) — [MM-OJM-富川創造]   Urgent: Dynamic URL Click Event Not Captured in OJM.",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.157Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "朵墨": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract runs to 2028-03-24.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.157Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "林莉國際股份有限公司": {
-    "summary": "Activity sits mainly in BotBonnie chatbot/LINE operations. The account reads as in steady BAU delivery. Watch: carrying long-stale items (oldest 366d).",
-    "followUp": "Push the oldest open item BBT-6200 (vivian.yang, 366d): [MM-BB-林莉婚紗] ",
+    "summary": "Work centres on BotBonnie chatbot/LINE operations. Account looks to be in steady BAU. Some items have sat for months.",
+    "followUp": "Review the oldest open item BBT-6200 (vivian.yang) — [MM-BB-林莉婚紗]  (367d old).",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.157Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "狼窩網紅行銷國際": {
-    "summary": "Activity sits mainly in BotBonnie chatbot/LINE operations, driven by audience & recommendation setup and API/integration work. The account reads as still in onboarding and enablement. Watch: carrying long-stale items (oldest 464d).",
-    "followUp": "Push the oldest open item BBT-5701 (rick.lee, 464d): Client Onboarding PHX Console, EC Integration, EC Tag & Membership｜MM - 狼窩網紅 -…",
+    "summary": "Work centres on BotBonnie chatbot/LINE operations, mainly onboarding & enablement and API/integration. Account looks to be in onboarding. Some items have sat for months.",
+    "followUp": "Review the oldest open item BBT-5701 (rick.lee) — Client Onboarding PHX Console, EC Integration, EC Tag & Membership｜MM - 狼窩網紅 - 藍光盾 (465d old).",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.157Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "美藍雷": {
-    "summary": "Activity sits mainly in BotBonnie chatbot/LINE operations, driven by RFQ/scoping and API/integration work. The account reads as in scoping/pre-delivery. Watch: carrying long-stale items (oldest 37d).",
-    "followUp": "Chase BBT-7097 (in progress, Brian Tsai, 37d): [RFQ] Amore Pacific Thailand Customized  Binding",
+    "summary": "Work centres on BotBonnie chatbot/LINE operations, mainly RFQ/scoping and API/integration. Account looks to be in steady BAU.",
+    "followUp": "Chase BBT-7097 (Brian Tsai) — [RFQ] Amore Pacific Thailand Customized  Binding.",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.158Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "華南金資產管理": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract runs to 2026-12-31.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.158Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "全聯": {
-    "summary": "Activity sits mainly in ETS backend/tech-services requests plus AIQUA/QGraph platform requests, driven by campaign/messaging ops and data backfill/migration. The account reads as in steady BAU delivery. Watch: carrying long-stale items (oldest 54d).",
-    "followUp": "Chase ETS-1917 (in progress, Andy Wu, 13d): [PS handover] PXmart - 10 REC & Prediction tasks",
+    "summary": "Work centres on ETS backend/tech-services requests, mainly campaign/messaging ops and defect follow-ups. Account looks to be in migration.",
+    "followUp": "Chase ETS-1917 (Andy Wu) — [PS handover] PXmart - 10 REC & Prediction tasks.",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.158Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "永豐商業銀行": {
-    "summary": "Activity sits mainly in project-delivery items, driven by campaign/messaging ops and API/integration work. The account reads as in steady BAU delivery. Watch: carrying long-stale items (oldest 2177d).",
-    "followUp": "Chase PROJ-15694 (in progress, Mason Chiu, 1559d): Network Analysis for Livi Virtual Bank (HK)",
+    "summary": "Work centres on project-delivery items, mainly API/integration and data backfill/migration. Account looks to be in onboarding. Some items have sat for months.",
+    "followUp": "Chase PROJ-15694 (Mason Chiu) — Network Analysis for Livi Virtual Bank (HK).",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.158Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "千山淨水": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract runs to 2027-05-13.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.158Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "南山人壽": {
-    "summary": "Activity sits mainly in project-delivery items plus AIQUA/QGraph platform requests, driven by defect follow-ups. The account reads as in post-launch stabilisation. Watch: contract lapsed 27d ago; carrying long-stale items (oldest 397d).",
-    "followUp": "Contract lapsed 27d ago — confirm renewal or churn before further delivery work.",
+    "summary": "Work centres on project-delivery items, mainly defect follow-ups. Account looks to be in steady BAU. Contract lapsed 28 days ago; some items have sat for months.",
+    "followUp": "Confirm renewal status — contract lapsed 28 days ago — before pushing more delivery work.",
     "health": "red",
-    "generatedAt": "2026-08-27T01:48:35.158Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "味全龍職業棒球隊": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract runs to 2027-09-30.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards.",
     "followUp": "",
     "health": "green",
-    "generatedAt": "2026-08-27T01:48:35.158Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "天下雜誌": {
-    "summary": "Activity sits mainly in AIQUA/QGraph platform requests plus project-delivery items, driven by defect follow-ups. The account reads as in post-launch stabilisation. Watch: carrying long-stale items (oldest 1559d).",
-    "followUp": "Push the oldest open item PROJ-15163 (Ben (Teng-Yuan) Chang, 1559d): [天下雜誌股份有限公司] [ROBOT] [5fcf46180a9debfe65d88365] CROSS_DEVICEintersection not su…",
+    "summary": "Work centres on AIQUA/QGraph platform requests, mainly defect follow-ups. Account looks to be in steady BAU. Some items have sat for months.",
+    "followUp": "Review the oldest open item PROJ-15163 (Ben (Teng-Yuan) Chang) — [天下雜誌股份有限公司] [ROBOT] [5fcf46180a9debfe65d88365] CROSS_DEVICEintersection not supported by  (1560d old).",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.158Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "台灣山葉機車": {
-    "summary": "Activity sits mainly in AIQUA/QGraph platform requests plus Phoenix platform items, driven by onboarding & enablement and campaign/messaging ops. The account reads as still in onboarding and enablement. Watch: carrying long-stale items (oldest 490d).",
-    "followUp": "Push the oldest open item PHXX-4407 (lilianch, 490d): [YAMAHA] Enable Journey Map",
+    "summary": "Work centres on AIQUA/QGraph platform requests, mainly onboarding & enablement and campaign/messaging ops. Account looks to be in onboarding. Some items have sat for months.",
+    "followUp": "Review the oldest open item PHXX-4407 (lilianch) — [YAMAHA] Enable Journey Map (491d old).",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.158Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "巨匠電腦": {
-    "summary": "Activity sits mainly in AIQUA/QGraph platform requests, driven by campaign/messaging ops. The account reads as in steady BAU delivery. Watch: carrying long-stale items (oldest 240d).",
-    "followUp": "Push the oldest open item QGWL-22528 (luke.chien, 240d): [SKM / PcSchool] Not able to search properly on campaign listing page",
+    "summary": "Work centres on AIQUA/QGraph platform requests, mainly campaign/messaging ops. Account looks to be in steady BAU. Some items have sat for months.",
+    "followUp": "Review the oldest open item QGWL-22528 (luke.chien) — [SKM / PcSchool] Not able to search properly on campaign listing page (241d old).",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.158Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "益富實業": {
-    "summary": "Activity sits mainly in BotBonnie chatbot/LINE operations. The account reads as in steady BAU delivery. Watch: carrying long-stale items (oldest 422d).",
-    "followUp": "Chase BBT-7828 (in progress, Brian Tsai, 44d): [益富] Cyberbiz Order Payment Information Appears Incomplete",
+    "summary": "Work centres on BotBonnie chatbot/LINE operations. Account looks to be in steady BAU. Some items have sat for months.",
+    "followUp": "Chase BBT-7828 (Brian Tsai) — [益富] Cyberbiz Order Payment Information Appears Incomplete.",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.158Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "台灣索尼": {
-    "summary": "Activity sits mainly in ETS backend/tech-services requests plus project-delivery items, driven by audience & recommendation setup and campaign/messaging ops. The account reads as in steady BAU delivery.",
-    "followUp": "Chase ETS-5674 (in progress, Laura Yang, 15d):  [Sony_TW] DI BU data source confirmation",
+    "summary": "Work centres on ETS backend/tech-services requests, mainly audience & recommendation setup and defect follow-ups. Account looks to be in steady BAU.",
+    "followUp": "Chase ETS-5720 (vivian.yang) — [南一Nani]Discrepancy between total audience count and email subscriber count.",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.158Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "悠勢科技": {
-    "summary": "Activity sits mainly in AIQUA/QGraph platform requests plus ETS backend/tech-services requests, driven by campaign/messaging ops and reporting & tracking. The account reads as in steady BAU delivery. Watch: contract lapsed 21d ago; carrying long-stale items (oldest 652d).",
-    "followUp": "Contract lapsed 21d ago — confirm renewal or churn before further delivery work.",
+    "summary": "Work centres on AIQUA/QGraph platform requests, mainly campaign/messaging ops and defect follow-ups. Account looks to be in onboarding. Contract lapsed 22 days ago; some items have sat for months.",
+    "followUp": "Confirm renewal status — contract lapsed 22 days ago — before pushing more delivery work.",
     "health": "red",
-    "generatedAt": "2026-08-27T01:48:35.158Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "遠見天下文化事業群": {
-    "summary": "Activity sits mainly in AIQUA/QGraph platform requests plus ETS backend/tech-services requests, driven by defect follow-ups and campaign/messaging ops. The account reads as in steady BAU delivery. Watch: carrying long-stale items (oldest 240d).",
-    "followUp": "Chase QGWL-25017 (in progress, Mark Liu, 161d): [遠見天下-未來親子] EDM Open Rate Check & DNS / Email Warm-up Status Review",
+    "summary": "Work centres on AIQUA/QGraph platform requests, mainly defect follow-ups and campaign/messaging ops. Account looks to be in onboarding. Some items have sat for months.",
+    "followUp": "Chase QGWL-22648 (Mark Liu) — [CWGV-HBR]Set Up Offline Event Schema Table – HBR Deduction Failure Scenario.",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.159Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "鵬泰顧問": {
-    "summary": "Activity sits mainly in BotBonnie chatbot/LINE operations. The account reads as in steady BAU delivery. Watch: contract lapsed 149d ago; carrying long-stale items (oldest 135d).",
-    "followUp": "Contract lapsed 149d ago — confirm renewal or churn before further delivery work.",
+    "summary": "Work centres on BotBonnie chatbot/LINE operations. Account looks to be in steady BAU. Contract lapsed 150 days ago; some items have sat for months.",
+    "followUp": "Confirm renewal status — contract lapsed 150 days ago — before pushing more delivery work.",
     "health": "red",
-    "generatedAt": "2026-08-27T01:48:35.159Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "台灣蓋璞": {
-    "summary": "Activity sits mainly in AIQUA/QGraph platform requests plus ETS backend/tech-services requests, driven by audience & recommendation setup and campaign/messaging ops. The account reads as in steady BAU delivery. Watch: carrying long-stale items (oldest 672d).",
-    "followUp": "Chase QGWL-15419 (in progress, susan.chen, 224d): [AP PoC - LNG] Gap between LINE push sent of same segment",
+    "summary": "Work centres on AIQUA/QGraph platform requests, mainly audience & recommendation setup and campaign/messaging ops. Account looks to be in onboarding. Some items have sat for months.",
+    "followUp": "Chase QGWL-15419 (susan.chen) — [AP PoC - LNG] Gap between LINE push sent of same segment.",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.161Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "宏璟建設股份有限公司-日月光廣場": {
-    "summary": "Activity sits mainly in BotBonnie chatbot/LINE operations. The account reads as in steady BAU delivery. Watch: carrying long-stale items (oldest 120d).",
-    "followUp": "Push the oldest open item BBT-7400 (vivian.yang, 120d): [日月光廣場] User did not show up in BB's live chat",
+    "summary": "Work centres on BotBonnie chatbot/LINE operations. Account looks to be in steady BAU. Some items have sat for months.",
+    "followUp": "Review the oldest open item BBT-7400 (vivian.yang) — [日月光廣場] User did not show up in BB's live chat (121d old).",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.161Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "寶島眼鏡": {
-    "summary": "Activity sits mainly in BotBonnie chatbot/LINE operations plus ETS backend/tech-services requests, driven by API/integration work and data backfill/migration. The account reads as in steady BAU delivery. Watch: 1 blocked item (QGWL-7225); carrying long-stale items (oldest 157d).",
-    "followUp": "Unblock QGWL-7225 (kamol.mavlonov, 19d): Formosa_Please help to check the issue of someone get two notifications in the same time(…",
+    "summary": "Work centres on BotBonnie chatbot/LINE operations, mainly API/integration and campaign/messaging ops. Account looks to be in onboarding. QGWL-7225 is blocked; some items have sat for months.",
+    "followUp": "Unblock QGWL-7225 (kamol.mavlonov) — Formosa_Please help to check the issue of someone get two notifications in the same time(A.",
     "health": "red",
-    "generatedAt": "2026-08-27T01:48:35.161Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "日日行銷廣告": {
-    "summary": "Activity sits mainly in BotBonnie chatbot/LINE operations, driven by campaign/messaging ops and defect follow-ups. The account reads as in post-launch stabilisation. Watch: contract lapsed 105d ago; carrying long-stale items (oldest 443d).",
-    "followUp": "Contract lapsed 105d ago — confirm renewal or churn before further delivery work.",
+    "summary": "Work centres on BotBonnie chatbot/LINE operations, mainly campaign/messaging ops and defect follow-ups. Account looks to be in steady BAU. Contract lapsed 106 days ago; some items have sat for months.",
+    "followUp": "Confirm renewal status — contract lapsed 106 days ago — before pushing more delivery work.",
     "health": "red",
-    "generatedAt": "2026-08-27T01:48:35.161Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "日藥本舖": {
-    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Renewal due in 25d.",
-    "followUp": "Start the renewal conversation — contract ends in 25 days.",
+    "summary": "No assigned open tickets on the PROJ/ETS/QGWL/BBT/PHXX boards. Contract renews in 24 days.",
+    "followUp": "Start the renewal conversation — contract ends in 24 days.",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.161Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "衣芙": {
-    "summary": "Activity sits mainly in AIQUA/QGraph platform requests plus BotBonnie chatbot/LINE operations, driven by campaign/messaging ops and defect follow-ups. The account reads as in steady BAU delivery. Watch: carrying long-stale items (oldest 988d).",
-    "followUp": "Push the oldest open item QGWL-14855 (Stephanie Kuo, 988d): [EF Shop] sync AQ user information to BB webchat through update profile",
+    "summary": "Work centres on AIQUA/QGraph platform requests, mainly campaign/messaging ops and defect follow-ups. Account looks to be in onboarding. Some items have sat for months.",
+    "followUp": "Review the oldest open item QGWL-14855 (Stephanie Kuo) — [EF Shop] sync AQ user information to BB webchat through update profile (989d old).",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.161Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "味全食品": {
-    "summary": "Activity sits mainly in ETS backend/tech-services requests plus BotBonnie chatbot/LINE operations, driven by campaign/messaging ops and API/integration work. The account reads as in scoping/pre-delivery. Watch: contract lapsed 145d ago.",
-    "followUp": "Contract lapsed 145d ago — confirm renewal or churn before further delivery work.",
+    "summary": "Work centres on ETS backend/tech-services requests, mainly RFQ/scoping and API/integration. Account looks to be in steady BAU. Contract lapsed 146 days ago.",
+    "followUp": "Confirm renewal status — contract lapsed 146 days ago — before pushing more delivery work.",
     "health": "red",
-    "generatedAt": "2026-08-27T01:48:35.161Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "慈濟基金會": {
-    "summary": "Activity sits mainly in BotBonnie chatbot/LINE operations, driven by API/integration work and onboarding & enablement. The account reads as still in onboarding and enablement. Watch: carrying long-stale items (oldest 540d).",
-    "followUp": "Push the oldest open item BBT-5406 (Chloe Wong, 540d): 【RFQ】Tzu-chi_Line events tranfer",
+    "summary": "Work centres on BotBonnie chatbot/LINE operations, mainly defect follow-ups and onboarding & enablement. Account looks to be in onboarding. Some items have sat for months.",
+    "followUp": "Review the oldest open item BBT-5406 (Chloe Wong) — 【RFQ】Tzu-chi_Line events tranfer (541d old).",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.162Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "誠品生活": {
-    "summary": "Activity sits mainly in ETS backend/tech-services requests plus AIQUA/QGraph platform requests, driven by campaign/messaging ops and onboarding & enablement. The account reads as in steady BAU delivery. Watch: carrying long-stale items (oldest 174d).",
-    "followUp": "Chase ETS-5557 (in progress, Mark Liu, 15d): [誠品生活] AIQUA EDM A/B Variants Issue ",
+    "summary": "Work centres on ETS backend/tech-services requests, mainly campaign/messaging ops and onboarding & enablement. Account looks to be in onboarding. Some items have sat for months.",
+    "followUp": "Chase ETS-5557 (Mark Liu) — [誠品生活] AIQUA EDM A/B Variants Issue .",
     "health": "yellow",
-    "generatedAt": "2026-08-27T01:48:35.162Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   },
   "揚秦國際企業股份有限公司-麥味登": {
-    "summary": "Activity sits mainly in ETS backend/tech-services requests, driven by onboarding & enablement and campaign/messaging ops. The account reads as still in onboarding and enablement. Watch: 1 blocked item (ETS-5880).",
-    "followUp": "Unblock ETS-5880 (gordon.sung, 6d): [麥味登] Enable OJM Channels (App Push/In-App/Web Push/In-Web/LINE/Email)",
+    "summary": "Work centres on ETS backend/tech-services requests, mainly onboarding & enablement and audience & recommendation setup. Account looks to be in onboarding. ETS-5880 is blocked.",
+    "followUp": "Unblock ETS-5880 (gordon.sung) — [麥味登] Enable OJM Channels (App Push/In-App/Web Push/In-Web/LINE/Email).",
     "health": "red",
-    "generatedAt": "2026-08-27T01:48:35.162Z"
+    "generatedAt": "2026-08-28T02:03:31.890Z"
   }
 }
