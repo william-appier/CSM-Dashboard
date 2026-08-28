@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-27T09:40:50.077+08:00",
+  "lastUpdated": "2026-08-28T10:08:27.974+08:00",
   "rules": [
     {
       "id": "okr-consolidate",
@@ -678,7 +678,7 @@
     }
   ],
   "ticketSnapshot": {
-    "generatedAt": "2026-08-27T01:40:49.476Z",
+    "generatedAt": "2026-08-28T02:08:27.535Z",
     "keys": {
       "55688": [
         "QGWL-19924",
@@ -950,7 +950,7 @@
       "created": "2026-07-31",
       "status": "open",
       "snoozedUntil": null,
-      "lastSeen": "2026-08-27"
+      "lastSeen": "2026-08-28"
     },
     {
       "id": "cmt-tiangyuanxiang-check-segmentedcampaign-numbers",
@@ -962,7 +962,7 @@
       "source": "slack",
       "sourceUrl": "https://appier.slack.com/archives/G01137M30B1/p1785743294120839",
       "created": "2026-08-03",
-      "lastSeen": "2026-08-27",
+      "lastSeen": "2026-08-28",
       "status": "open",
       "snoozedUntil": null
     },
