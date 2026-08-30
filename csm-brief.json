@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-29T09:01:00.225+08:00",
+  "generatedAt": "2026-08-30T09:00:58.122+08:00",
   "accounts": [
     {
       "id": "mannings",
       "name": "Mannings",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "ETS-5992 open 2d · +11 more · Appier x Mannings Bi-weekly Meeting Sep 3 · renewal due 2026-09-30 (32d).",
+      "insight": "ETS-5992 open 3d · +11 more · Appier x Mannings Bi-weekly Meeting Sep 3 · renewal due 2026-09-30 (31d).",
       "diffs": [],
       "riskTags": [
         "ticket",
@@ -119,7 +119,7 @@
         {
           "priority": "high",
           "label": "Renewal · High",
-          "text": "Mannings contract due 2026-09-30 (32d left) — confirm status now"
+          "text": "Mannings contract due 2026-09-30 (31d left) — confirm status now"
         },
         {
           "priority": "medium",
@@ -133,7 +133,7 @@
       "name": "SCMP",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "PROJ-33694 backlog 17d.",
+      "insight": "PROJ-33694 backlog 18d.",
       "diffs": [],
       "riskTags": [
         "ticket",
@@ -198,7 +198,7 @@
       "name": "Luxgen",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "BBT-5953 backlog 445d · +5 more.",
+      "insight": "BBT-5953 backlog 446d · +5 more.",
       "diffs": [],
       "riskTags": [
         "ticket",
@@ -259,7 +259,7 @@
       "name": "55688",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "red",
-      "insight": "QGWL-19924 blocked 431d · +3 more.",
+      "insight": "QGWL-19924 blocked 432d · +3 more.",
       "diffs": [],
       "riskTags": [
         "ticket",
@@ -311,17 +311,8 @@
       "name": "田原香",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "ETS-6074 in-progress 0d · +6 more.",
-      "diffs": [
-        {
-          "type": "new",
-          "text": "ETS-6074 [田原香] Agent re-asks the user to choose a channel when invoke"
-        },
-        {
-          "type": "close",
-          "text": "ETS-6009 closed"
-        }
-      ],
+      "insight": "ETS-6074 in-progress 1d · +6 more.",
+      "diffs": [],
       "riskTags": [
         "ticket",
         "stale"
@@ -435,7 +426,7 @@
       "name": "行動力國際",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "BBT-7270 open 171d · +3 more.",
+      "insight": "BBT-7270 open 172d · +3 more.",
       "diffs": [],
       "riskTags": [
         "ticket",
