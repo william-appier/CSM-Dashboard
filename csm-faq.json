@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "updated": "2026-08-26",
+    "updated": "2026-08-31",
     "source": "Confluence CSM FAQ (AI 維護)",
     "indexUrl": "https://appier.atlassian.net/wiki/spaces/~712020045fe11d77e649819f2b2a67a185fdf0/pages/5232100110",
     "note": "由排程從 Confluence 五個分類頁自動重新生成之快取。urgency 未標者預設 medium。",
@@ -19,7 +19,7 @@
       "q": "客戶 console 帳號疑似被盜、被用來發釣魚 EDM 時,處理 SOP 是什麼?",
       "product": "AIQUA",
       "last_verified": "2026-07-27",
-      "source": "https://appier.slack.com/archives/G01137M30B1/p1784170135715249",
+      "source": "https://appier.slack.com/archives/G01137M30B1/p1784170135715249 https://appier.slack.com/archives/G01137M30B1/p1785124439353499(Sony 重新啟用案例)",
       "status": "active",
       "urgency": "medium",
       "a": "(1) 請 TS 查該帳號登入 log(帳密 vs Google SSO、IP、下載紀錄),AIRIS 側看 project history。(2) 立即 deactivate 該帳號(log 不會因停用消失)。(3) 開票請 TS 設 2FA + IP whitelist(2FA 會套用到 AIRIS;純 BB user 不納入)。(4) 分項開票:AQ log、AR log、API token 取用紀錄、TS internal action item。(5) 進行中 Journey 會掉 not delivered,先人工停止。(6) 帳號需重新啟用時:確認為客戶本人操作後,協助將密碼 reset 成一組隨機字串 → 解封帳號 → 請客戶自行 reset password 後登入。"
@@ -151,7 +151,7 @@
       "q": "AIQUA Recommendation 曝光正常但 CTR 突然大幅下滑,先查什麼?",
       "product": "AIQUA",
       "last_verified": "2026-08-17",
-      "source": "https://appier.atlassian.net/browse/QGWL-18384",
+      "source": "https://appier.atlassian.net/browse/QGWL-18384 Enable Recommendation Step by Step",
       "status": "active",
       "urgency": "medium",
       "a": "先確認客戶前端有沒有用 API 回傳的 URL——最常見根因是客戶沒使用 API 回傳的網址,導致 `recommendation_clicked` 事件沒被自動送出、CTR 看起來下滑。Appier 的「自動送出 click 事件」機制綁在 API 回傳的 URL 上,客戶自行改用別的連結就不會觸發。解法:請客戶端工程師改用 API 回傳的 URL(或依 recommendation 埋點文件補送 clicked 事件)。屬客戶端埋點問題,CSM 可先自行比對再請客戶開發修正。channel:web/recommendation;stage:上線後追蹤。"
@@ -184,7 +184,7 @@
       "q": "AIQUA 的 Campaign Frequency Capping toggle 還需要手動開嗎?",
       "product": "AIQUA",
       "last_verified": "2026-07-22",
-      "source": "https://appier.atlassian.net/wiki/pages/viewpage.action?pageId=510362064",
+      "source": "Enable Campaign Features",
       "status": "active",
       "urgency": "medium",
       "a": "不需要。`enableRegularCampaignFreqCap`、`enableIgnoreAllFrequencyCap` 兩個 toggle 自 2022/06/28 起 deprecated,功能已對所有客戶預設開放,不需在 Account Settings 手動設。若客戶要 user-level 頻率控制,改用 Pcloud Frequency Capping(見 AQ-016)。"
@@ -195,7 +195,7 @@
       "q": "要對特定帳號開啟 Send Time Optimization (STO),CSM 要注意什麼?",
       "product": "AIQUA",
       "last_verified": "2026-07-22",
-      "source": "https://appier.atlassian.net/wiki/pages/viewpage.action?pageId=510362064",
+      "source": "Enable Campaign Features",
       "status": "active",
       "urgency": "medium",
       "a": "開啟前須先取得 luke.chien 或 Shiv Raj 核准。前置:完成 EDP onboarding(setting app_id → EDP namespace id)。Push channel STO 開啟後需等 30 小時才能送;Cross-platform/Email STO 需等 24 小時。未追蹤到行為的 user 預設 UTC+0 10:00 送出,可用 `sto_optimal_hour_for_untracked_users`(0~23)調整。"
@@ -206,7 +206,7 @@
       "q": "客戶想在建 campaign 時預估可觸及人數 / 設定帳號層級預設 UTM,怎麼開?",
       "product": "AIQUA",
       "last_verified": "2026-07-22",
-      "source": "https://appier.atlassian.net/wiki/pages/viewpage.action?pageId=510362064",
+      "source": "Enable Campaign Features",
       "status": "active",
       "urgency": "medium",
       "a": "都在 Internal Dashboard > Edit Accounts > settings 加 toggle。預估可觸及人數加 `\"enableCampaignSegmentSizeEstimation\": true`。帳號層級預設 UTM 加 `\"enable-default-utm-parameters-qgraph-36078-20260116-dev\": {\"email\": true}`,目前只支援 email channel,屬 per-channel 開關。"
@@ -217,7 +217,7 @@
       "q": "開啟 AIQUA on EUU 的前置條件與第一步?找哪個團隊/channel?",
       "product": "AIQUA",
       "last_verified": "2026-07-22",
-      "source": "https://appier.atlassian.net/wiki/pages/viewpage.action?pageId=5231083629",
+      "source": "Enable AIQUA on EUU",
       "status": "active",
       "urgency": "medium",
       "a": "前置:AEP team 已完成 EUU pipeline onboarding(streaming + backfill + 按「Enable EUU Ready」)。可透過 AEP onboarding Google Sheet 或 #ask-data-euu 確認。第一步在 Internal Dashboard → Edit Account (raw) 加 `\"aiqua-on-euu-qgraph-35832-20251101-dev\": true`;之後動態內容自動從 Mongo 切到 Databricks + RTDM。Channel:EUU 資料找 #ask-data-euu、AIQUA EUU 問題找 #aq-on-enterprise-uu、RTDM 找 #rtdm-user。"
@@ -228,7 +228,7 @@
       "q": "客戶啟用 EUU 後,原本的 AQ Segment 會怎樣?campaign 條件用到 AQ segment 會如何?",
       "product": "AIQUA",
       "last_verified": "2026-08-17",
-      "source": "https://appier.atlassian.net/wiki/pages/viewpage.action?pageId=5231083629",
+      "source": "Enable AIQUA on EUU [\\[Handbook\\] AQ to Unified Segment Migration Tool](https://appier.atlassian.net/wiki/pages/viewpage.action?pageId=5256872022)",
       "status": "active",
       "urgency": "medium",
       "a": "Segment Hub 啟用後 AQ Segments 變唯讀,需與 TSTC 合作把 campaign 遷移到 Unified Segments。注意 FallbackMode:campaign 條件含任何 AQ segment 就會進 FallbackMode 走 Legacy AQ path 而非 EUU。新客戶直接啟用 Segment Hub;既有客戶需啟用 Segment Hub + Enterprise Segment M3 再用工具遷移(遷移工具已上線:見 [Handbook] AQ to Unified Segment Migration Tool,pageId 5256872022;需 git clone + 向工程團隊索取 secret config,屬工程/TS 執行,非 CSM 自助)。"
@@ -239,7 +239,7 @@
       "q": "Pcloud Frequency Capping 這個功能做什麼?支援哪些 channel?",
       "product": "AIQUA",
       "last_verified": "2026-07-22",
-      "source": "https://appier.atlassian.net/wiki/pages/viewpage.action?pageId=5194875777",
+      "source": "Frequency Capping for Pcloud feature enable",
       "status": "active",
       "urgency": "medium",
       "a": "提供 user-level(profile-based)頻率控制。開啟後每次 Pcloud channel 送出前檢查:Delivery Limit(一段時間內最多幾則)與 Minimum Interval(兩則最小間隔)。支援:app push(Android/iOS)、web push、LINE、email、SMS、MMS、Kakao。客戶可在 EC 每個 campaign 上設定規則。"
@@ -250,7 +250,7 @@
       "q": "怎麼開啟 Pcloud Frequency Capping?前置條件?",
       "product": "AIQUA",
       "last_verified": "2026-07-22",
-      "source": "https://appier.atlassian.net/wiki/pages/viewpage.action?pageId=5194875777",
+      "source": "Frequency Capping for Pcloud feature enable",
       "status": "active",
       "urgency": "medium",
       "a": "前置:帳號已啟用 EUU,且已 toggle on `aiqua-on-euu-qgraph-35832-20251101-dev` 與 new campaign backend canary(`campaign-backend-canary-qgraph-37926-20260401-dev`)。開啟:到 EAM Dashboard 找目標 EC project → featureToggles 加 `\"pcloud-freq-cap-qgraph-36776-20260430-dev\": true` → Save,立即生效。AQ 端不用動作,設定約 10 分鐘從 EC 同步。開啟後頻率設定改在 EC 的 Campaign settings → Frequency cap。"
@@ -261,7 +261,7 @@
       "q": "Pcloud Frequency Capping 可以隨時關掉 rollback 嗎?有什麼風險?",
       "product": "AIQUA",
       "last_verified": "2026-07-22",
-      "source": "https://appier.atlassian.net/wiki/pages/viewpage.action?pageId=5194875777",
+      "source": "Frequency Capping for Pcloud feature enable",
       "status": "active",
       "urgency": "medium",
       "a": "有限制。啟用後頻率資料只寫 BigTable、不更新 Redis,無 dual-write。要關回 legacy Redis capping:建議離峰或當日結束時關,Redis 計數會從 0 重新累計。Daily cap 帳號影響很小;Multi-day cap 帳號(3d、7d)在剩餘視窗會暫時 under-enforced。同一天關掉後不要再重開。"
@@ -272,7 +272,7 @@
       "q": "啟用 Pcloud Frequency Capping 後,原本的 consent filtering 還有效嗎?怎麼設?",
       "product": "AIQUA",
       "last_verified": "2026-07-22",
-      "source": "https://appier.atlassian.net/wiki/pages/viewpage.action?pageId=5194875777",
+      "source": "Frequency Capping for Pcloud feature enable",
       "status": "active",
       "urgency": "medium",
       "a": "舊 legacy consent 在此路徑不再套用,改走 EUU realtime filter (RTDM)。需在 EAM Dashboard 對該 project 加兩個 config:`aiqua_consent_attribute_mappings` 與 `aiqua_consent_filter_settings`,兩個都存在才啟用,約 5 分鐘生效。user-scope consent 擋該 user 全部裝置、device-scope 只擋該裝置。已上線 project 的歷史 consent 需從 EUU lakehouse backfill 到 RTDM,聯繫 AIQUA CD team。"
@@ -283,7 +283,7 @@
       "q": "REC business package 續約 / tier 升降級,CSM 要設定什麼?",
       "product": "AIQUA",
       "last_verified": "2026-07-27",
-      "source": "https://appier.atlassian.net/wiki/pages/viewpage.action?pageId=3426550001",
+      "source": "Enable Recommendation Step by Step",
       "status": "active",
       "urgency": "medium",
       "a": "tier(legacy/lite/core/extended)只存在 EAM Org 的 `recommendation_service.tier`,不要再改 internal dashboard(該欄位已無服務讀取)。續約/升降級流程:(1) 依 tier 對照表(pageId 5103452317)重新 onboard 用量單位 `rec_exposure` 與 `rec_sku`;(2) 確認 active scenario 數符合新 tier 上限,超過請客戶封存,或依加購定價於 EAM Project 的 `active_scenario_limit` 覆寫上限;(3) 最後調整 Org 的 `tier`。用量查詢:2026/7 起 CSM 與客戶可直接從 Enterprise Console 的 Usage dashboard 自查(先前需開票給 TSTC)。"
@@ -294,7 +294,7 @@
       "q": "客戶問「OJM 能做到多即時?」怎麼回答?",
       "product": "AIQUA",
       "last_verified": "2026-08-03",
-      "source": "https://appier.atlassian.net/wiki/pages/viewpage.action?pageId=4169465861",
+      "source": "FAQ: How realtime our OJM can do?",
       "status": "active",
       "urgency": "medium",
       "a": "OJM 非嚴格 real-time,end-to-end 有多段延遲、非零秒觸發。以 OJM In-Web/In-App with AiDeal 為例,流程為 SDK 收集資料傳 server → data pipeline 過濾/轉換/forward → OJM 收 event 做 condition check → 發 campaign request 給 AIQUA → AIQUA 從 queue 取出並啟動 campaign → 製作 creative → 送 AiDeal → AiDeal 從 queue 取出顯示,每段都有 queue/處理延遲。與 AQ-009(OJM 後台操作卡頓)不同,此題是端到端投遞延遲。給客戶精確延遲數字前請以來源文件為準。"
@@ -361,7 +361,7 @@
       "product": "AIRIS",
       "last_verified": "2026-06-01",
       "source": "https://appier.slack.com/archives/G01137M30B1/p1780309325109089",
-      "status": "active",
+      "status": "stale",
       "urgency": "medium",
       "a": "用「OJM Datastore Automation Pipeline」:第一次依文件設定,之後每次更新只要在 AIRIS task 點 Preview & Activate 即自動更新,取代 開票→撈資料→上傳 CSV→activate 手動流程。設定文件:docs.google.com/document/d/18Ps2RsW3PtvAd1qH6XFjnD2vxNH6SSc_VelhGhadpwc。"
     },
@@ -481,7 +481,7 @@
       "q": "2025/10/31 之後的新客戶要啟用 Segment Hub(Enterprise Segment),流程與需設哪些 toggle?",
       "product": "AIRIS",
       "last_verified": "2026-07-22",
-      "source": "https://appier.atlassian.net/wiki/pages/viewpage.action?pageId=4762665079",
+      "source": "[\\[Handbook\\] Enable Enterprise Segment - Segment Hub (After 2025/10/31)](https://appier.atlassian.net/wiki/pages/viewpage.action?pageId=4762665079)",
       "status": "active",
       "urgency": "medium",
       "a": "步驟:(1) 於 Enterprise Console 用 EAM 設 toggle — AIQUA only 客戶在 top level 設 `\"airisEnabled\": false`,featureToggles 下設 `\"enable-segment-hub-airis-5723-20251027-dev\": true`;AIRIS Backend 設 `\"essegment.enabled\": true` 與 `timestamps-date-condition=1`。(2) 從 AIRIS segment service 建 test segment 並用 API 標記為 test。(3) AIQUA Internal Dashboard → Edit Accounts (raw) 加 `\"enterpriseSegmentSettings\": {\"airisProjectName\": \"{AIRIS_PROJECT_NAME}\"}`。(4) 重要:到 AIQUA Internal Dashboard 同步並 override default test segment。注意:AIQUA only 客戶目前仍需建 AIRIS project。不知如何登入 EAM 聯繫 Gene Chu。"
@@ -492,7 +492,7 @@
       "q": "Segment Hub (V3) 相較舊的 Enterprise Segment (V2) 多了哪些功能?",
       "product": "AIRIS",
       "last_verified": "2026-07-22",
-      "source": "https://appier.atlassian.net/wiki/pages/viewpage.action?pageId=4762665079",
+      "source": "[\\[Handbook\\] Enable Enterprise Segment - Segment Hub (After 2025/10/31)](https://appier.atlassian.net/wiki/pages/viewpage.action?pageId=4762665079)",
       "status": "active",
       "urgency": "medium",
       "a": "V3 在 V2 基礎上新增:上傳 user list 建 segment、Split users、Export to CSV、Keyword-based segment 條件、顯示 Legacy AIQUA segment。V2/V3 都支援條件建 segment、daily refresh、campaign execution、export。使用 V3 前需先完成 EUU onboarding,進入點 console.appier.com › AIQUA/AIRIS › Create segment condition。"
@@ -833,7 +833,7 @@
       "q": "用 BotBonnie 排/發 LINE broadcast,月額度用完會怎樣?報表看得出來嗎?",
       "product": "BotBonnie",
       "last_verified": "2026-08-11",
-      "source": "https://appier.atlassian.net/browse/ETS-5292",
+      "source": "https://appier.atlassian.net/browse/ETS-5292 https://appier.atlassian.net/browse/BP-10207",
       "status": "active",
       "urgency": "medium",
       "a": "額度不足時 broadcast 報表目前不會顯示錯誤,屬已知問題,勿誤判為 bug。舊行為:narrow-cast 不報錯、看似部分送達;近期已改為額度不足的 narrow-cast 一律送 0 人(不再部分送達),但報表仍不顯示錯誤。完整的「額度不足應擋下排程/發送」尚未在此票修完,將另開 epic 處理。遇客戶反映漏發、發不出去,先確認是否 LINE 月額度(push limit)用罄(相關案例:MAZDA、Carches)。需 RD、追蹤中。"
@@ -844,7 +844,7 @@
       "q": "BB 在 OJM 可選的 click 類事件(click / url_click / open_click / click_referral_url)定義怎麼區分?LINE 智能連結要選哪個?",
       "product": "BotBonnie",
       "last_verified": "2026-08-17",
-      "source": "https://appier.slack.com/archives/C078AMBHEAV/p1786508664521219",
+      "source": "https://appier.slack.com/archives/C078AMBHEAV/p1786508664521219 Upload Profile & Event From BotBonnie (v1 v2 DIFF)",
       "status": "active",
       "urgency": "medium",
       "a": "依「進入方式」與「按鈕動作類型」決定;LINE 智能連結是 `open_click`、LINE 短網址開啟對話是 `click_referral_url`。細節:QR code 掃描與 LINE 短網址開啟對話算 `click_referral_url`;LINE 智能連結算 `open_click`;訊息內按鈕動作設「開啟 URL」記為 `url_click`,設「前往對話模組」記為 `click`。若把智能連結放進「開啟 URL」按鈕,`url_click` 與 `open_click` 會同時產生(依 Salem 文件 `open_click` 會 merge 成 `url_click`)。要在 OJM 用 BB event 當即時觸發(Real time trigger,非 Past condition),該 event 需是 BB 有送到 ESS/AEP 的(如 follow、add_tag 等)。channel:LINE;處理方:CSM 自解(定義類)。"
@@ -965,7 +965,7 @@
       "q": "Enterprise 客戶每月補點日被鎖付款頁(paywall)、credit 數字錯誤,怎麼處理?",
       "product": "AdCreative",
       "last_verified": "2026-08-24",
-      "source": "https://appier.slack.com/archives/C08RGLRNX3R/p1784168684124029",
+      "source": "https://appier.slack.com/archives/C08RGLRNX3R/p1784168684124029 https://appier.atlassian.net/browse/ADCR-615(P0:重置失敗/幻影點數/客戶被鎖出) https://appier.slack.com/archives/C08RGLRNX3R/p1787220832539459(Pazzo 2026-08 案例)",
       "status": "active",
       "urgency": "high",
       "a": "每月補點日反覆發生的已知問題(TAITRA、CACO、50%、Pazzo 都遇過):跳付款頁無法使用、點數被 rollover 或未新增,嚴重時客戶被鎖出平台。目前已升級為 P0（ADCR-615:credit 計算根本性損壞——recurring 重置失敗、出現幻影點數、客戶被鎖出）。處理:確認補點日 → 群組回報並開 Jira bug ticket(舊參考 ATT-4987,現一律連到/參照 P0 ADCR-615)由 Steven Chen 處理;根因多為 credit card 設定錯誤或過期。重複發生由 CSM 整理 email 正式回報 AA 團隊。urgency high:客戶被鎖出=服務中斷。"
@@ -1097,7 +1097,7 @@
       "q": "V1 遷移 V2,試用與 migrate 的機制差異?migrate 按鈕在哪?",
       "product": "AdCreative",
       "last_verified": "2026-08-03",
-      "source": "https://appier.slack.com/archives/C08RGLRNX3R/p1783075082247249",
+      "source": "https://appier.slack.com/archives/C08RGLRNX3R/p1783075082247249 https://appier.slack.com/archives/C08RGLRNX3R/p1785721559360209(migrate 按鈕位置)",
       "status": "active",
       "urgency": "medium",
       "a": "(1)「試用 V2」可切回 V1;migrate 不可逆——遷移後仍可登入 V1 但內容不同步。(2) 試用按鈕明顯,migrate 僅管理員可見。**找不到 migrate 按鈕:試用/migrate 入口都要「先進入 V2 後」才會出現在畫面右上角,通常是還沒進到 V2。**(3) V1/V2 目前不同網址。建議:既有客戶先試用 V2;新客戶教育訓練直接用 V2;業態特殊(多站台、接近續約)可請 AA team 先不開放該帳號 V2 按鈕。"
@@ -1229,7 +1229,7 @@
       "q": "AQ-only vs AQ+AR 客戶上 AEP(Plan B → Plan A)的 onboarding 差異與 SOP?",
       "product": "Process/內部流程",
       "last_verified": "2026-08-03",
-      "source": "https://appier.atlassian.net/wiki/pages/viewpage.action?pageId=5246681479",
+      "source": "AEP Client Onboarding SOP — AQ-only vs AQ+AR (Plan B → Plan A)",
       "status": "active",
       "urgency": "medium",
       "a": "有整合 SOP(併入 AEP New Client Onboarding、AIRIS on AEP plan A/B、EUU Onboarding Steps),依客戶是 AQ-only 或 AQ+AR 走不同 onboarding 路徑。CSM 面向:先確認客戶走哪條 plan、對應前置條件與負責團隊(EUU 相關找 AEP #ask-product-aep / #ask-data-euu)。此頁主要為 TS/AEP 執行面,CSM 參考用;細節與最新步驟以來源文件為準。"
@@ -1251,7 +1251,7 @@
       "q": "客戶反映登入一直轉圈/轉不出來,第一線 SOP 是什麼?",
       "product": "Process/內部流程",
       "last_verified": "2026-08-24",
-      "source": "https://appier.slack.com/archives/G01137M30B1/p1787021974567339",
+      "source": "https://appier.slack.com/archives/G01137M30B1/p1787021974567339 https://appier.atlassian.net/browse/ETS-5839",
       "status": "active",
       "urgency": "medium",
       "a": "先請 user 清瀏覽器 cache 通常可解;需提醒清 cache 會把其他網站也一起登出。若清完仍卡,附 appid + email 開 ETS 票請 TS 查卡在哪一步(Jason 確認)。處理方:CSM 先請客戶自查,無效再開票。stage:上線後/日常維運。"
