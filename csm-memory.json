@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-28T10:08:27.974+08:00",
+  "lastUpdated": "2026-08-31T11:08:22.805+08:00",
   "rules": [
     {
       "id": "okr-consolidate",
@@ -678,7 +678,7 @@
     }
   ],
   "ticketSnapshot": {
-    "generatedAt": "2026-08-28T02:08:27.535Z",
+    "generatedAt": "2026-08-31T03:08:19.727Z",
     "keys": {
       "55688": [
         "QGWL-19924",
@@ -713,7 +713,7 @@
         "QGWL-10821"
       ],
       "tiangyuanxiang": [
-        "ETS-6009",
+        "ETS-6074",
         "ETS-5507",
         "QGWL-25930",
         "QGWL-25627",
@@ -754,7 +754,7 @@
       "QGWL-11820": "[Luxgen] Please help to check online/offline table name of Luxgen ",
       "PROJ-21319": "[Luxgen] AX segment anonymous user number looks suspicious",
       "QGWL-10821": "[Luxgen]Luxgen AIQUA Web SDK embedded BB Web Chat SDK",
-      "ETS-6009": "[田原香] Study LINE <> AIQUA id sync possibility",
+      "ETS-6074": "[田原香] Agent re-asks the user to choose a channel when invoked from an OJM SMS campaign node (trace e5245f657670a7f4c2772dceadd35a35)",
       "ETS-5507": "[田原香] Onboard Dummy AIRIS & Segment hub",
       "QGWL-25930": "[田原香] Request to allow to save template for on-site editor",
       "QGWL-25627": "[田原香] Enable send time optimization",
@@ -948,9 +948,10 @@
       "source": "slack",
       "sourceUrl": "https://appier.slack.com/archives/C0A22L6ES4E/p1785490434438379?thread_ts=1784084193.395059&cid=C0A22L6ES4E",
       "created": "2026-07-31",
-      "status": "open",
+      "status": "dropped",
       "snoozedUntil": null,
-      "lastSeen": "2026-08-28"
+      "lastSeen": "2026-08-28",
+      "droppedReason": "stale-30d"
     },
     {
       "id": "cmt-tiangyuanxiang-check-segmentedcampaign-numbers",
