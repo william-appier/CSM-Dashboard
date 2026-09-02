@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-02T09:00:26.164+08:00",
+  "generatedAt": "2026-09-02T10:10:51.475+08:00",
   "accounts": [
     {
       "id": "mannings",
@@ -7,16 +7,7 @@
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
       "insight": "PROJ-33713 backlog 7d · +11 more · Appier x Mannings Bi-weekly Meeting Sep 3 · renewal due 2026-09-30 (28d).",
-      "diffs": [
-        {
-          "type": "new",
-          "text": "QGWL-21234 [Mannings] Creative Studio in app banner action is not stabl"
-        },
-        {
-          "type": "close",
-          "text": "ETS-5992 closed"
-        }
-      ],
+      "diffs": [],
       "riskTags": [
         "ticket",
         "renewal",
@@ -333,13 +324,8 @@
       "name": "田原香",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "ETS-6074 open 0d · +5 more.",
-      "diffs": [
-        {
-          "type": "close",
-          "text": "ETS-5507 closed"
-        }
-      ],
+      "insight": "ETS-6074 open 1d · +5 more.",
+      "diffs": [],
       "riskTags": [
         "ticket",
         "stale"
