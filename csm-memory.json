@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-31T11:08:22.805+08:00",
+  "lastUpdated": "2026-09-02T10:20:13.965+08:00",
   "rules": [
     {
       "id": "okr-consolidate",
@@ -678,7 +678,7 @@
     }
   ],
   "ticketSnapshot": {
-    "generatedAt": "2026-08-31T03:08:19.727Z",
+    "generatedAt": "2026-09-02T02:20:13.515Z",
     "keys": {
       "55688": [
         "QGWL-19924",
@@ -687,7 +687,6 @@
         "PHXX-3312"
       ],
       "mannings": [
-        "ETS-5992",
         "PROJ-33713",
         "QGWL-26114",
         "PROJ-25973",
@@ -698,7 +697,8 @@
         "PROJ-31215",
         "QGWL-16671",
         "QGWL-21706",
-        "QGWL-21578"
+        "QGWL-21578",
+        "QGWL-21234"
       ],
       "scmp": [
         "PROJ-33694"
@@ -714,7 +714,6 @@
       ],
       "tiangyuanxiang": [
         "ETS-6074",
-        "ETS-5507",
         "QGWL-25930",
         "QGWL-25627",
         "QGWL-23645",
@@ -735,7 +734,6 @@
       "BBT-4854": "[55688-潔衣家] 在 Line 中完成會員綁定及訂單查詢",
       "BBT-5275": "[55688] Emoji cannot be searched",
       "PHXX-3312": "【55688】Timeout limitation in AQ JM should be shorten.",
-      "ETS-5992": "[Mannings] Request data for checkout_complated event by OS by date",
       "PROJ-33713": "[Demo HK] Offboard Mannings data for demo account",
       "QGWL-26114": "[Mannings] OJM node will gone after adding wait for condition node at the front",
       "PROJ-25973": "[Mannings] Request for the product category ",
@@ -747,6 +745,7 @@
       "QGWL-16671": "[Mannings] S2S modification check",
       "QGWL-21706": "[Mannings] Request to re-enable analytics studio",
       "QGWL-21578": "[Mannings] Investigate APP page type",
+      "QGWL-21234": "[Mannings] Creative Studio in app banner action is not stable",
       "PROJ-33694": "[SCMP] Feature request on keyword dashboard",
       "BBT-5953": "[Luxgen] BB didn't block share to LINE friends even though module contains \"share\" action",
       "PROJ-22175": "[Luxgen]  Data Column of Customer360 - Location / Language",
@@ -755,7 +754,6 @@
       "PROJ-21319": "[Luxgen] AX segment anonymous user number looks suspicious",
       "QGWL-10821": "[Luxgen]Luxgen AIQUA Web SDK embedded BB Web Chat SDK",
       "ETS-6074": "[田原香] Agent re-asks the user to choose a channel when invoked from an OJM SMS campaign node (trace e5245f657670a7f4c2772dceadd35a35)",
-      "ETS-5507": "[田原香] Onboard Dummy AIRIS & Segment hub",
       "QGWL-25930": "[田原香] Request to allow to save template for on-site editor",
       "QGWL-25627": "[田原香] Enable send time optimization",
       "QGWL-23645": "[田原香] Creative studio button will always shows an unexpected gray area",
