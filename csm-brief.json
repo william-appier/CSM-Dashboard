@@ -1,13 +1,22 @@
 {
-  "generatedAt": "2026-09-01T09:00:27.673+08:00",
+  "generatedAt": "2026-09-02T09:00:26.164+08:00",
   "accounts": [
     {
       "id": "mannings",
       "name": "Mannings",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "ETS-5992 open 5d · +11 more · Appier x Mannings Bi-weekly Meeting Sep 3 · renewal due 2026-09-30 (29d).",
-      "diffs": [],
+      "insight": "PROJ-33713 backlog 7d · +11 more · Appier x Mannings Bi-weekly Meeting Sep 3 · renewal due 2026-09-30 (28d).",
+      "diffs": [
+        {
+          "type": "new",
+          "text": "QGWL-21234 [Mannings] Creative Studio in app banner action is not stabl"
+        },
+        {
+          "type": "close",
+          "text": "ETS-5992 closed"
+        }
+      ],
       "riskTags": [
         "ticket",
         "renewal",
@@ -30,13 +39,6 @@
         }
       ],
       "tickets": [
-        {
-          "key": "ETS-5992",
-          "title": "[Mannings] Request data for checkout_complated event by OS by date",
-          "status": "open",
-          "assignee": "David Li",
-          "pinned": false
-        },
         {
           "key": "PROJ-33713",
           "title": "[Demo HK] Offboard Mannings data for demo account",
@@ -113,13 +115,20 @@
           "status": "in-progress",
           "assignee": "jason.sutanto",
           "pinned": false
+        },
+        {
+          "key": "QGWL-21234",
+          "title": "[Mannings] Creative Studio in app banner action is not stable",
+          "status": "open",
+          "assignee": "vivian.yang",
+          "pinned": false
         }
       ],
       "suggestions": [
         {
           "priority": "high",
           "label": "Renewal · High",
-          "text": "Mannings contract due 2026-09-30 (29d left) — confirm status now"
+          "text": "Mannings contract due 2026-09-30 (28d left) — confirm status now"
         },
         {
           "priority": "medium",
@@ -133,7 +142,7 @@
       "name": "SCMP",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "PROJ-33694 backlog 20d.",
+      "insight": "PROJ-33694 backlog 21d.",
       "diffs": [],
       "riskTags": [
         "ticket",
@@ -198,7 +207,7 @@
       "name": "Luxgen",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "BBT-5953 backlog 448d · +5 more.",
+      "insight": "BBT-5953 backlog 449d · +5 more.",
       "diffs": [],
       "riskTags": [
         "ticket",
@@ -259,21 +268,28 @@
       "name": "55688",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "red",
-      "insight": "QGWL-19924 blocked 434d · +3 more.",
+      "insight": "QGWL-19924 blocked 435d · +3 more · 55688 北區 EC 綁定討論 Sep 3.",
       "diffs": [],
       "riskTags": [
         "ticket",
-        "stale"
+        "stale",
+        "mtg"
       ],
       "ticketCount": 4,
-      "mtgCount": 0,
+      "mtgCount": 1,
       "projects": [
         {
           "name": "Service Agent RFQ",
           "status": "progress"
         }
       ],
-      "meetings": [],
+      "meetings": [
+        {
+          "date": "Sep 3",
+          "title": "55688 北區 EC 綁定討論",
+          "meta": "16:00–16:30 HKT · william.wt.lin@appier.com"
+        }
+      ],
       "tickets": [
         {
           "key": "QGWL-19924",
@@ -304,20 +320,31 @@
           "pinned": false
         }
       ],
-      "suggestions": []
+      "suggestions": [
+        {
+          "priority": "medium",
+          "label": "Meeting · Medium",
+          "text": "Prep for 55688 北區 EC 綁定討論 on Sep 3 (16:00–16:30 HKT · william.wt.lin@appier.com)"
+        }
+      ]
     },
     {
       "id": "tiangyuanxiang",
       "name": "田原香",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "ETS-6074 in-progress 3d · +6 more.",
-      "diffs": [],
+      "insight": "ETS-6074 open 0d · +5 more.",
+      "diffs": [
+        {
+          "type": "close",
+          "text": "ETS-5507 closed"
+        }
+      ],
       "riskTags": [
         "ticket",
         "stale"
       ],
-      "ticketCount": 7,
+      "ticketCount": 6,
       "mtgCount": 0,
       "projects": [
         {
@@ -330,15 +357,8 @@
         {
           "key": "ETS-6074",
           "title": "[田原香] Agent re-asks the user to choose a channel when invoked from an OJM SMS campaign node (trace e5245f657670a7f4c2772dceadd35a35)",
-          "status": "in-progress",
-          "assignee": "mia.chu",
-          "pinned": false
-        },
-        {
-          "key": "ETS-5507",
-          "title": "[田原香] Onboard Dummy AIRIS & Segment hub",
           "status": "open",
-          "assignee": "vivian.yang",
+          "assignee": "mia.chu",
           "pinned": false
         },
         {
@@ -426,7 +446,7 @@
       "name": "行動力國際",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "BBT-7270 open 174d · +3 more.",
+      "insight": "BBT-7270 open 175d · +3 more.",
       "diffs": [],
       "riskTags": [
         "ticket",
