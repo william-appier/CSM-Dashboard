@@ -6,8 +6,21 @@
       "name": "Mannings",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "PROJ-33713 backlog 7d · +11 more · Appier x Mannings Bi-weekly Meeting Sep 3 · renewal due 2026-09-30 (28d).",
-      "diffs": [],
+      "insight": "⚠️ Renewal due in 28 days (2026-09-30, AQ & AX). New ticket: Creative Studio in-app banner action unstable (QGWL-21234); checkout-event data request (ETS-5992) closed. Bi-weekly meeting Sep 3, 11:00 HKT with Rola Chung.",
+      "diffs": [
+        {
+          "type": "new",
+          "key": "QGWL-21234",
+          "title": "Creative Studio in app banner action is not stable",
+          "text": "Creative Studio in app banner action is not stable"
+        },
+        {
+          "type": "removed",
+          "key": "ETS-5992",
+          "title": "Request data for checkout_complated event by OS by date",
+          "text": "Request data for checkout_complated event by OS by date"
+        }
+      ],
       "riskTags": [
         "ticket",
         "renewal",
@@ -117,23 +130,29 @@
       ],
       "suggestions": [
         {
-          "priority": "high",
-          "label": "Renewal · High",
-          "text": "Mannings contract due 2026-09-30 (28d left) — confirm status now"
+          "priority": "High",
+          "label": "Renewal",
+          "text": "Renewal · High — AQ & AX contract expires 2026-09-30 (28 days). Confirm scope/pricing with Karen Fu / Rola Chung and get the extension signed."
         },
         {
-          "priority": "medium",
-          "label": "Meeting · Medium",
-          "text": "Prep for Appier x Mannings Bi-weekly Meeting on Sep 3 (11:00–12:00 HKT · Rola Chung)"
+          "priority": "Medium",
+          "label": "Ticket",
+          "text": "Ticket · Medium — Investigate new Creative Studio in-app banner instability (QGWL-21234) before it surfaces at the Sep 3 meeting."
+        },
+        {
+          "priority": "Low",
+          "label": "Meeting",
+          "text": "Meeting · Low — Prep bi-weekly agenda for Sep 3 11:00 HKT sync with DFI team (Rola Chung, Karen Fu, Sandy Lau, Cherie Ng, Janice Tsui)."
         }
-      ]
+      ],
+      "commitments": []
     },
     {
       "id": "scmp",
       "name": "SCMP",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "PROJ-33694 backlog 21d.",
+      "insight": "AIRIS renewal already signed to 2027-07-24 — no near-term renewal risk. AIXON offboard tracking commitment (for Michael Palmer / AEP team) expired unconfirmed after 30 days with no update — verify onboarding status and file the offboard if still pending. PROJ-33694 (keyword dashboard request) open 21d.",
       "diffs": [],
       "riskTags": [
         "ticket",
@@ -161,14 +180,26 @@
           "pinned": false
         }
       ],
-      "suggestions": []
+      "suggestions": [
+        {
+          "priority": "High",
+          "label": "Follow-up",
+          "text": "High — Re-confirm AIXON offboard status with Michael Palmer / AEP team: the tracking commitment (opened 2026-07-31) expired unconfirmed after 30 days — check whether AIRIS onboarding is complete and file the offboard if not already done."
+        },
+        {
+          "priority": "Medium",
+          "label": "Ticket",
+          "text": "Medium — Follow up on PROJ-33694 (keyword dashboard feature request) with Michael Palmer, open 21 days."
+        }
+      ],
+      "commitments": []
     },
     {
       "id": "1010hope",
       "name": "10/10Hope",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "green",
-      "insight": "No active tickets — all clear.",
+      "insight": "No active tickets — all clear. Active integration work: klickngo API + AIQUA onboarding (Mark Liu). No contract end date on record, so renewal alerts can't fire for this account — confirm and add the date.",
       "diffs": [],
       "riskTags": [],
       "ticketCount": 0,
@@ -187,18 +218,24 @@
       "tickets": [],
       "suggestions": [
         {
-          "priority": "low",
-          "label": "Check-in · Low",
-          "text": "No active tickets — send a check-in to 10/10Hope"
+          "priority": "Medium",
+          "label": "Data",
+          "text": "Medium — Confirm 10/10Hope's contract end date with sales ops and add it to the tracked contract dates so renewal alerts can activate."
+        },
+        {
+          "priority": "Low",
+          "label": "Check-in",
+          "text": "Low — Check progress on klickngo API integration and AIQUA onboarding with Mark Liu."
         }
-      ]
+      ],
+      "commitments": []
     },
     {
       "id": "luxgen",
       "name": "Luxgen",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "BBT-5953 backlog 449d · +5 more.",
+      "insight": "No meetings on calendar — risk signal for a quiet account. PROJ-21319 (AX segment anonymous-user count looks suspicious) is open and unaddressed; BBT-5953 (BB share-to-LINE block bug) has sat backlog for 449 days. BB contract active through 2026-11-22.",
       "diffs": [],
       "riskTags": [
         "ticket",
@@ -252,19 +289,37 @@
           "pinned": false
         }
       ],
-      "suggestions": []
+      "suggestions": [
+        {
+          "priority": "High",
+          "label": "Data quality",
+          "text": "High — Investigate PROJ-21319 (AX segment anonymous-user count looks suspicious) with I-Ting Fang — could be skewing campaign targeting."
+        },
+        {
+          "priority": "Medium",
+          "label": "Ticket",
+          "text": "Medium — Chase BBT-5953 (LINE share-block bug), open 449 days under vivian.yang — near a year old."
+        },
+        {
+          "priority": "Low",
+          "label": "Engagement",
+          "text": "Low — No meetings scheduled; consider a check-in given the account has gone quiet."
+        }
+      ],
+      "commitments": []
     },
     {
       "id": "55688",
       "name": "55688",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "red",
-      "insight": "QGWL-19924 blocked 435d · +3 more · 55688 北區 EC 綁定討論 Sep 3.",
+      "insight": "⚠️ CONTRACT EXPIRED 2026-07-31 for both 代駕 and 招募 bots — ownership of the churn is unconfirmed, verify with client before assuming loss. 北區 renewal is signed (2026-08-25 to 2027-08-24) and the BotBonnie platform-extension filing is done. QGWL-19924 (AQ JM timeout limitation) blocked 435 days — duplicate PHXX-3312 also open. Meeting Sep 3, 16:00 HKT (北區 EC binding discussion).",
       "diffs": [],
       "riskTags": [
         "ticket",
         "stale",
-        "mtg"
+        "mtg",
+        "renewal"
       ],
       "ticketCount": 4,
       "mtgCount": 1,
@@ -313,19 +368,37 @@
       ],
       "suggestions": [
         {
-          "priority": "medium",
-          "label": "Meeting · Medium",
-          "text": "Prep for 55688 北區 EC 綁定討論 on Sep 3 (16:00–16:30 HKT · william.wt.lin@appier.com)"
+          "priority": "High",
+          "label": "Renewal",
+          "text": "Renewal · High — 代駕 and 招募 bots both lapsed 2026-07-31. Confirm with Robetta Chu which one actually churned before writing either off, and renew the other if still wanted."
+        },
+        {
+          "priority": "High",
+          "label": "Ticket",
+          "text": "High — Escalate QGWL-19924 (AQ JM timeout limitation), blocked 435 days with duplicate ticket PHXX-3312 also open — get Shiv Raj to prioritize or close if resolved elsewhere."
+        },
+        {
+          "priority": "Medium",
+          "label": "Meeting",
+          "text": "Meeting · Medium — Prep for Sep 3 16:00 HKT 北區 EC 綁定 discussion with Robetta Chu and Jimmy Lin."
         }
-      ]
+      ],
+      "commitments": []
     },
     {
       "id": "tiangyuanxiang",
       "name": "田原香",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "ETS-6074 open 1d · +5 more.",
-      "diffs": [],
+      "insight": "Commitment to check segmented-campaign numbers for Ted Wu is overdue (due Aug 7, still open 30 days) — close it out before it auto-expires next run. ETS-6074 (OJM agent re-asks channel) open. Dummy AIRIS onboarding ticket closed — EUU onboarding work continues via new use cases.",
+      "diffs": [
+        {
+          "type": "removed",
+          "key": "ETS-5507",
+          "title": "Onboard Dummy AIRIS & Segment hub",
+          "text": "Onboard Dummy AIRIS & Segment hub"
+        }
+      ],
       "riskTags": [
         "ticket",
         "stale"
@@ -383,26 +456,38 @@
           "pinned": false
         }
       ],
-      "suggestions": []
-    },
-    {
-      "id": "momax",
-      "name": "Momax",
-      "csmOwner": "william.wt.lin@appier.com",
-      "health": "green",
-      "insight": "No active tickets — all clear.",
-      "diffs": [],
-      "riskTags": [],
-      "ticketCount": 0,
-      "mtgCount": 0,
-      "projects": [],
-      "meetings": [],
-      "tickets": [],
       "suggestions": [
         {
-          "priority": "low",
-          "label": "Check-in · Low",
-          "text": "No active tickets — send a check-in to Momax"
+          "priority": "High",
+          "label": "Commitment",
+          "text": "Commitment · High — Promised to check segmented-campaign numbers for anomalies to Ted Wu (created 2026-08-03), still open 30 days — send findings today or reset expectations.",
+          "commitmentId": "cmt-tiangyuanxiang-check-segmentedcampaign-numbers"
+        },
+        {
+          "priority": "Medium",
+          "label": "Ticket",
+          "text": "Medium — Follow up on ETS-6074 (agent re-asks channel selection in OJM SMS campaign)."
+        },
+        {
+          "priority": "Low",
+          "label": "Roadmap",
+          "text": "Low — Continue exploring new use cases; confirm priorities at the weekly Tuesday 09:30 HKT sync."
+        }
+      ],
+      "commitments": [
+        {
+          "id": "cmt-tiangyuanxiang-check-segmentedcampaign-numbers",
+          "account": "tiangyuanxiang",
+          "text": "Check segmented-campaign numbers post-migration for anomalies (per Ted)",
+          "owner": "me",
+          "counterpart": "Ted Wu",
+          "due": "2026-08-07",
+          "source": "slack",
+          "sourceUrl": "https://appier.slack.com/archives/G01137M30B1/p1785743294120839",
+          "created": "2026-08-03",
+          "lastSeen": "2026-08-28",
+          "status": "open",
+          "snoozedUntil": null
         }
       ]
     },
@@ -411,7 +496,7 @@
       "name": "City Super",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "green",
-      "insight": "No active tickets — all clear.",
+      "insight": "No open tickets or meetings currently. Account context is still incomplete — no contract end date or current active project on record. Confirm both so this section stops showing blank.",
       "diffs": [],
       "riskTags": [],
       "ticketCount": 0,
@@ -421,18 +506,24 @@
       "tickets": [],
       "suggestions": [
         {
-          "priority": "low",
-          "label": "Check-in · Low",
-          "text": "No active tickets — send a check-in to City Super"
+          "priority": "Medium",
+          "label": "Data",
+          "text": "Medium — Confirm City Super's contract end date and current active project, then add to tracked contract dates for renewal alerting."
+        },
+        {
+          "priority": "Low",
+          "label": "Monitor",
+          "text": "Low — No open tickets right now; monitor for re-engagement."
         }
-      ]
+      ],
+      "commitments": []
     },
     {
       "id": "xindongli",
       "name": "行動力國際",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "BBT-7270 open 175d · +3 more.",
+      "insight": "New account (added 2026-06-09) — 4 open BotBonnie tickets, including a stale custom-answer issue (BBT-7270, open 175d) and the pending Phoenix migration / Knowledge Bot activation (BBT-4660). No meetings on record yet.",
       "diffs": [],
       "riskTags": [
         "ticket",
@@ -477,7 +568,24 @@
           "pinned": false
         }
       ],
-      "suggestions": []
+      "suggestions": [
+        {
+          "priority": "High",
+          "label": "Migration",
+          "text": "High — Chase BBT-4660 (BotBonnie → Phoenix migration / Knowledge Bot activation) with Salem Chen — foundational item for a new account."
+        },
+        {
+          "priority": "Medium",
+          "label": "Ticket",
+          "text": "Medium — Review BBT-7270 (custom answers not working) with vivian.yang; 175 days open is unusually long this early in the relationship."
+        },
+        {
+          "priority": "Low",
+          "label": "Engagement",
+          "text": "Low — Schedule an introductory check-in call since no meetings are on record yet."
+        }
+      ],
+      "commitments": []
     }
   ]
 }
