@@ -1,13 +1,22 @@
 {
-  "generatedAt": "2026-09-04T09:00:42.055+08:00",
+  "generatedAt": "2026-09-04T15:09:18.918+08:00",
   "accounts": [
     {
       "id": "mannings",
       "name": "Mannings",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "ETS-6180 open 1d · +11 more · Appier x Mannings Bi-weekly Meeting Sep 17 · renewal due 2026-09-30 (26d).",
-      "diffs": [],
+      "insight": "PROJ-33713 backlog 9d · +11 more · Appier x Mannings Bi-weekly Meeting Sep 17 · renewal due 2026-09-30 (26d).",
+      "diffs": [
+        {
+          "type": "new",
+          "text": "QGWL-20932 [Mannings] React Native iOS Universal Link is Not Working"
+        },
+        {
+          "type": "close",
+          "text": "ETS-6180 closed"
+        }
+      ],
       "riskTags": [
         "ticket",
         "renewal",
@@ -30,13 +39,6 @@
         }
       ],
       "tickets": [
-        {
-          "key": "ETS-6180",
-          "title": "[Mannings] Request to share CSP domain to client",
-          "status": "open",
-          "assignee": "David Li",
-          "pinned": false
-        },
         {
           "key": "PROJ-33713",
           "title": "[Demo HK] Offboard Mannings data for demo account",
@@ -113,6 +115,13 @@
           "status": "open",
           "assignee": "vivian.yang",
           "pinned": false
+        },
+        {
+          "key": "QGWL-20932",
+          "title": "[Mannings] React Native iOS Universal Link is Not Working",
+          "status": "backlog",
+          "assignee": "jh.lin",
+          "pinned": false
         }
       ],
       "suggestions": [
@@ -133,7 +142,7 @@
       "name": "SCMP",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "PROJ-33694 backlog 23d.",
+      "insight": "PROJ-33694 backlog 24d.",
       "diffs": [],
       "riskTags": [
         "ticket",
@@ -311,13 +320,18 @@
       "name": "田原香",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "ETS-6074 open 2d · +5 more.",
-      "diffs": [],
+      "insight": "ETS-6237 open 0d · +6 more.",
+      "diffs": [
+        {
+          "type": "new",
+          "text": "ETS-6237 [田原香] sftp sync pipiline update"
+        }
+      ],
       "riskTags": [
         "ticket",
         "stale"
       ],
-      "ticketCount": 6,
+      "ticketCount": 7,
       "mtgCount": 0,
       "projects": [
         {
@@ -327,6 +341,13 @@
       ],
       "meetings": [],
       "tickets": [
+        {
+          "key": "ETS-6237",
+          "title": "[田原香] sftp sync pipiline update",
+          "status": "open",
+          "assignee": "vivian.yang",
+          "pinned": false
+        },
         {
           "key": "ETS-6074",
           "title": "[田原香] Agent re-asks the user to choose a channel when invoked from an OJM SMS campaign node (trace e5245f657670a7f4c2772dceadd35a35)",
@@ -419,7 +440,7 @@
       "name": "行動力國際",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "BBT-7270 open 177d · +3 more.",
+      "insight": "BBT-7270 open 178d · +3 more.",
       "diffs": [],
       "riskTags": [
         "ticket",
