@@ -1,22 +1,13 @@
 {
-  "generatedAt": "2026-09-03T09:00:32.033+08:00",
+  "generatedAt": "2026-09-04T09:00:42.055+08:00",
   "accounts": [
     {
       "id": "mannings",
       "name": "Mannings",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "ETS-6180 open 0d · +11 more · Appier x Mannings Bi-weekly Meeting Sep 3 · renewal due 2026-09-30 (27d).",
-      "diffs": [
-        {
-          "type": "new",
-          "text": "ETS-6180 [Mannings] Request to share CSP domain to client"
-        },
-        {
-          "type": "close",
-          "text": "QGWL-24671 closed"
-        }
-      ],
+      "insight": "ETS-6180 open 1d · +11 more · Appier x Mannings Bi-weekly Meeting Sep 17 · renewal due 2026-09-30 (26d).",
+      "diffs": [],
       "riskTags": [
         "ticket",
         "renewal",
@@ -33,7 +24,7 @@
       ],
       "meetings": [
         {
-          "date": "Sep 3",
+          "date": "Sep 17",
           "title": "Appier x Mannings Bi-weekly Meeting",
           "meta": "11:00–12:00 HKT · Rola Chung"
         }
@@ -128,12 +119,12 @@
         {
           "priority": "high",
           "label": "Renewal · High",
-          "text": "Mannings contract due 2026-09-30 (27d left) — confirm status now"
+          "text": "Mannings contract due 2026-09-30 (26d left) — confirm status now"
         },
         {
           "priority": "medium",
           "label": "Meeting · Medium",
-          "text": "Prep for Appier x Mannings Bi-weekly Meeting on Sep 3 (11:00–12:00 HKT · Rola Chung)"
+          "text": "Prep for Appier x Mannings Bi-weekly Meeting on Sep 17 (11:00–12:00 HKT · Rola Chung)"
         }
       ]
     },
@@ -142,7 +133,7 @@
       "name": "SCMP",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "PROJ-33694 backlog 22d.",
+      "insight": "PROJ-33694 backlog 23d.",
       "diffs": [],
       "riskTags": [
         "ticket",
@@ -207,7 +198,7 @@
       "name": "Luxgen",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "BBT-5953 backlog 450d · +5 more.",
+      "insight": "BBT-5953 backlog 451d · +5 more.",
       "diffs": [],
       "riskTags": [
         "ticket",
@@ -268,28 +259,21 @@
       "name": "55688",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "red",
-      "insight": "QGWL-19924 blocked 436d · +3 more · 55688 北區 EC 綁定討論 Sep 3.",
+      "insight": "QGWL-19924 blocked 437d · +3 more.",
       "diffs": [],
       "riskTags": [
         "ticket",
-        "stale",
-        "mtg"
+        "stale"
       ],
       "ticketCount": 4,
-      "mtgCount": 1,
+      "mtgCount": 0,
       "projects": [
         {
           "name": "Service Agent RFQ",
           "status": "progress"
         }
       ],
-      "meetings": [
-        {
-          "date": "Sep 3",
-          "title": "55688 北區 EC 綁定討論",
-          "meta": "16:00–16:30 HKT · william.wt.lin@appier.com"
-        }
-      ],
+      "meetings": [],
       "tickets": [
         {
           "key": "QGWL-19924",
@@ -320,20 +304,14 @@
           "pinned": false
         }
       ],
-      "suggestions": [
-        {
-          "priority": "medium",
-          "label": "Meeting · Medium",
-          "text": "Prep for 55688 北區 EC 綁定討論 on Sep 3 (16:00–16:30 HKT · william.wt.lin@appier.com)"
-        }
-      ]
+      "suggestions": []
     },
     {
       "id": "tiangyuanxiang",
       "name": "田原香",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "ETS-6074 open 1d · +5 more.",
+      "insight": "ETS-6074 open 2d · +5 more.",
       "diffs": [],
       "riskTags": [
         "ticket",
@@ -441,7 +419,7 @@
       "name": "行動力國際",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "BBT-7270 open 176d · +3 more.",
+      "insight": "BBT-7270 open 177d · +3 more.",
       "diffs": [],
       "riskTags": [
         "ticket",
