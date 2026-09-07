@@ -1,24 +1,48 @@
 {
-  "generatedAt": "2026-09-04T15:09:18.918+08:00",
+  "generatedAt": "2026-09-07T14:13:52.581+08:00",
   "accounts": [
     {
       "id": "mannings",
       "name": "Mannings",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "⚠️ CONTRACT EXPIRES in 26 days (2026-09-30). New ticket: React Native iOS Universal Link Not Working (QGWL-20932); next Bi-weekly Meeting Sep 17, 11:00 HKT with Rola Chung.",
+      "insight": "ETS-6268 open 0d · +4 more · Appier x Mannings Bi-weekly Meeting Sep 17 · renewal due 2026-09-30 (23d).",
       "diffs": [
         {
           "type": "new",
-          "key": "QGWL-20932",
-          "title": "React Native iOS Universal Link is Not Working",
-          "text": "React Native iOS Universal Link is Not Working"
+          "text": "ETS-6268 [Mannings] 0907 Help to move \"Mannings-stg\" to enterprise co"
         },
         {
-          "type": "removed",
-          "key": "QGWL-24671",
-          "title": "Resolving Content Security Privacy(CSP) limitation",
-          "text": "Resolving Content Security Privacy(CSP) limitation"
+          "type": "close",
+          "text": "QGWL-21825 closed"
+        },
+        {
+          "type": "close",
+          "text": "QGWL-21895 closed"
+        },
+        {
+          "type": "close",
+          "text": "PROJ-31215 closed"
+        },
+        {
+          "type": "close",
+          "text": "QGWL-16671 closed"
+        },
+        {
+          "type": "close",
+          "text": "QGWL-21706 closed"
+        },
+        {
+          "type": "close",
+          "text": "QGWL-21578 closed"
+        },
+        {
+          "type": "close",
+          "text": "QGWL-21234 closed"
+        },
+        {
+          "type": "close",
+          "text": "QGWL-20932 closed"
         }
       ],
       "riskTags": [
@@ -27,7 +51,7 @@
         "stale",
         "mtg"
       ],
-      "ticketCount": 12,
+      "ticketCount": 5,
       "mtgCount": 1,
       "projects": [
         {
@@ -43,6 +67,13 @@
         }
       ],
       "tickets": [
+        {
+          "key": "ETS-6268",
+          "title": "[Mannings] 0907 Help to move \"Mannings-stg\" to enterprise console",
+          "status": "open",
+          "assignee": "hazel.wang",
+          "pinned": false
+        },
         {
           "key": "PROJ-33713",
           "title": "[Demo HK] Offboard Mannings data for demo account",
@@ -70,98 +101,46 @@
           "status": "backlog",
           "assignee": "Mei-Cih Yeh",
           "pinned": false
-        },
-        {
-          "key": "QGWL-21825",
-          "title": "[Mannings] Check App events implementation status round 2",
-          "status": "open",
-          "assignee": "vivian.yang",
-          "pinned": false
-        },
-        {
-          "key": "QGWL-21895",
-          "title": "[Mannings] S2S event investigation",
-          "status": "backlog",
-          "assignee": "jason.sutanto",
-          "pinned": false
-        },
-        {
-          "key": "PROJ-31215",
-          "title": "[Mannings] Multi Segment Model Experiment Request",
-          "status": "backlog",
-          "assignee": "pinghan.chiang",
-          "pinned": false
-        },
-        {
-          "key": "QGWL-16671",
-          "title": "[Mannings] S2S modification check",
-          "status": "backlog",
-          "assignee": "william.wt.lin",
-          "pinned": false
-        },
-        {
-          "key": "QGWL-21706",
-          "title": "[Mannings] Request to re-enable analytics studio",
-          "status": "open",
-          "assignee": "Sora Kuo",
-          "pinned": false
-        },
-        {
-          "key": "QGWL-21578",
-          "title": "[Mannings] Investigate APP page type",
-          "status": "in-progress",
-          "assignee": "jason.sutanto",
-          "pinned": false
-        },
-        {
-          "key": "QGWL-21234",
-          "title": "[Mannings] Creative Studio in app banner action is not stable",
-          "status": "open",
-          "assignee": "vivian.yang",
-          "pinned": false
-        },
-        {
-          "key": "QGWL-20932",
-          "title": "[Mannings] React Native iOS Universal Link is Not Working",
-          "status": "backlog",
-          "assignee": "jh.lin",
-          "pinned": false
         }
       ],
       "suggestions": [
         {
-          "priority": "High",
-          "label": "Renewal",
-          "text": "AQ & AX contract expires 2026-09-30 (26 days). Confirm the renewed terms are fully executed ahead of the Sep 17 bi-weekly meeting.",
-          "commitmentId": null
+          "priority": "high",
+          "label": "Renewal · High",
+          "text": "Mannings contract due 2026-09-30 (23d left) — confirm status now"
         },
         {
-          "priority": "Medium",
-          "label": "Meeting",
-          "text": "Appier x Mannings Bi-weekly Meeting Sep 17, 11:00 HKT with Rola Chung. Prepare status on the React Native iOS Universal Link issue (QGWL-20932) and the AIXON→AIRIS Q4 upgrade.",
-          "commitmentId": null
-        },
-        {
-          "priority": "Low",
-          "label": "Ticket",
-          "text": "12 open tickets on Mannings, including QGWL-21234 (Creative Studio in-app banner action unstable, open). Review with luke.chien / vivian.yang for prioritization.",
-          "commitmentId": null
+          "priority": "medium",
+          "label": "Meeting · Medium",
+          "text": "Prep for Appier x Mannings Bi-weekly Meeting on Sep 17 (11:00–12:00 HKT · Rola Chung)"
         }
-      ],
-      "commitments": []
+      ]
     },
     {
       "id": "scmp",
       "name": "SCMP",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "AIRIS renewed through 2027-07-24; keyword dashboard feature request (PROJ-33694) still in backlog after 24 days — no blocking issues otherwise.",
-      "diffs": [],
+      "insight": "PROJ-33876 backlog 2d · +3 more.",
+      "diffs": [
+        {
+          "type": "new",
+          "text": "PROJ-33876 [SCMP] Feature request on insight agent"
+        },
+        {
+          "type": "new",
+          "text": "PROJ-33875 [SCMP] Feature request on external keyword filtering"
+        },
+        {
+          "type": "new",
+          "text": "PROJ-33874 [SCMP] Feature request on keyword intensity support"
+        }
+      ],
       "riskTags": [
         "ticket",
         "stale"
       ],
-      "ticketCount": 1,
+      "ticketCount": 4,
       "mtgCount": 0,
       "projects": [
         {
@@ -176,6 +155,27 @@
       "meetings": [],
       "tickets": [
         {
+          "key": "PROJ-33876",
+          "title": "[SCMP] Feature request on insight agent",
+          "status": "backlog",
+          "assignee": "Michael Palmer",
+          "pinned": false
+        },
+        {
+          "key": "PROJ-33875",
+          "title": "[SCMP] Feature request on external keyword filtering",
+          "status": "backlog",
+          "assignee": "Michael Palmer",
+          "pinned": false
+        },
+        {
+          "key": "PROJ-33874",
+          "title": "[SCMP] Feature request on keyword intensity support",
+          "status": "backlog",
+          "assignee": "Michael Palmer",
+          "pinned": false
+        },
+        {
           "key": "PROJ-33694",
           "title": "[SCMP] Feature request on keyword dashboard",
           "status": "backlog",
@@ -183,28 +183,14 @@
           "pinned": false
         }
       ],
-      "suggestions": [
-        {
-          "priority": "Medium",
-          "label": "Ticket",
-          "text": "PROJ-33694 (keyword dashboard feature request) stuck in backlog 24d with Michael Palmer. Push for prioritization or set client expectations.",
-          "commitmentId": null
-        },
-        {
-          "priority": "Low",
-          "label": "Renewal",
-          "text": "The AIXON-offboard commitment was previously dropped from tracking. Confirm with the client whether AX offboarding is still pending and re-open tracking if so.",
-          "commitmentId": null
-        }
-      ],
-      "commitments": []
+      "suggestions": []
     },
     {
       "id": "1010hope",
       "name": "10/10Hope",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "green",
-      "insight": "Silent — no tickets or meetings this week; klickngo API + AIQUA onboarding in progress with Mark Liu. No contract end date on record.",
+      "insight": "No active tickets — all clear.",
       "diffs": [],
       "riskTags": [],
       "ticketCount": 0,
@@ -223,114 +209,84 @@
       "tickets": [],
       "suggestions": [
         {
-          "priority": "Medium",
-          "label": "Renewal",
-          "text": "No contract end date is on file for 10/10Hope. Confirm the term with the client or Finance so renewal alerts can track it.",
-          "commitmentId": null
-        },
-        {
-          "priority": "Low",
-          "label": "Check-in",
-          "text": "No tickets or meetings logged this week; ping Mark Liu for a status update on klickngo API + AIQUA onboarding.",
-          "commitmentId": null
+          "priority": "low",
+          "label": "Check-in · Low",
+          "text": "No active tickets — send a check-in to 10/10Hope"
         }
-      ],
-      "commitments": []
+      ]
     },
     {
       "id": "luxgen",
       "name": "Luxgen",
       "csmOwner": "william.wt.lin@appier.com",
-      "health": "yellow",
-      "insight": "No meetings on calendar — engagement risk. LINE share-block bug (BBT-5953) still backlogged after 451 days; 6 open tickets total, no changes this week.",
-      "diffs": [],
-      "riskTags": [
-        "ticket",
-        "stale"
+      "health": "green",
+      "insight": "No active tickets — all clear.",
+      "diffs": [
+        {
+          "type": "close",
+          "text": "BBT-5953 closed"
+        },
+        {
+          "type": "close",
+          "text": "PROJ-22175 closed"
+        },
+        {
+          "type": "close",
+          "text": "PROJ-22178 closed"
+        },
+        {
+          "type": "close",
+          "text": "QGWL-11820 closed"
+        },
+        {
+          "type": "close",
+          "text": "PROJ-21319 closed"
+        },
+        {
+          "type": "close",
+          "text": "QGWL-10821 closed"
+        }
       ],
-      "ticketCount": 6,
+      "riskTags": [],
+      "ticketCount": 0,
       "mtgCount": 0,
       "projects": [],
       "meetings": [],
-      "tickets": [
-        {
-          "key": "BBT-5953",
-          "title": "[Luxgen] BB didn't block share to LINE friends even though module contains \"share\" action",
-          "status": "backlog",
-          "assignee": "vivian.yang",
-          "pinned": false
-        },
-        {
-          "key": "PROJ-22175",
-          "title": "[Luxgen]  Data Column of Customer360 - Location / Language",
-          "status": "in-progress",
-          "assignee": "Mark Liu",
-          "pinned": false
-        },
-        {
-          "key": "PROJ-22178",
-          "title": "[CW][Senheng][Luxgen] export BB tags import to AIXON ",
-          "status": "backlog",
-          "assignee": "Ben (Teng-Yuan) Chang",
-          "pinned": false
-        },
-        {
-          "key": "QGWL-11820",
-          "title": "[Luxgen] Please help to check online/offline table name of Luxgen ",
-          "status": "backlog",
-          "assignee": "Mark Liu",
-          "pinned": false
-        },
-        {
-          "key": "PROJ-21319",
-          "title": "[Luxgen] AX segment anonymous user number looks suspicious",
-          "status": "open",
-          "assignee": "I-Ting Fang",
-          "pinned": false
-        },
-        {
-          "key": "QGWL-10821",
-          "title": "[Luxgen]Luxgen AIQUA Web SDK embedded BB Web Chat SDK",
-          "status": "in-progress",
-          "assignee": "Mark Liu",
-          "pinned": false
-        }
-      ],
+      "tickets": [],
       "suggestions": [
         {
-          "priority": "High",
-          "label": "Engagement",
-          "text": "No client meetings on calendar for Luxgen. Schedule a check-in with Kevin Hsu to re-establish cadence.",
-          "commitmentId": null
-        },
-        {
-          "priority": "Medium",
-          "label": "Ticket",
-          "text": "BBT-5953 (BB didn't block share-to-LINE) open 451d, owned by vivian.yang. Escalate for resolution or explain status to the client.",
-          "commitmentId": null
-        },
-        {
-          "priority": "Low",
-          "label": "Reporting",
-          "text": "Confirm the monthly 服務交付報告 to Kevin Hsu is on track (tracked via Finance tickets, e.g. FIN-2672).",
-          "commitmentId": null
+          "priority": "low",
+          "label": "Check-in · Low",
+          "text": "No active tickets — send a check-in to Luxgen"
         }
-      ],
-      "commitments": []
+      ]
     },
     {
       "id": "55688",
       "name": "55688",
       "csmOwner": "william.wt.lin@appier.com",
-      "health": "red",
-      "insight": "⚠️ CONTRACT EXPIRED 35 days ago (2026-07-31, bot ownership unconfirmed — 代駕 or 招募). 北區 renewed to 2027-08-24 and the platform extension has been filed; Emoji-search bug (BBT-5275) still open.",
-      "diffs": [],
-      "riskTags": [
-        "ticket",
-        "stale",
-        "renewal"
+      "health": "green",
+      "insight": "No active tickets — all clear.",
+      "diffs": [
+        {
+          "type": "close",
+          "text": "QGWL-19924 closed"
+        },
+        {
+          "type": "close",
+          "text": "BBT-4854 closed"
+        },
+        {
+          "type": "close",
+          "text": "BBT-5275 closed"
+        },
+        {
+          "type": "close",
+          "text": "PHXX-3312 closed"
+        }
       ],
-      "ticketCount": 4,
+      "riskTags": [],
+      "ticketCount": 0,
       "mtgCount": 0,
       "projects": [
         {
@@ -339,77 +295,51 @@
         }
       ],
       "meetings": [],
-      "tickets": [
-        {
-          "key": "QGWL-19924",
-          "title": "【55688】Timeout limitation in AQ JM should be shorten.",
-          "status": "blocked",
-          "assignee": "Shiv Raj",
-          "pinned": false
-        },
-        {
-          "key": "BBT-4854",
-          "title": "[55688-潔衣家] 在 Line 中完成會員綁定及訂單查詢",
-          "status": "backlog",
-          "assignee": "Brian Tsai",
-          "pinned": false
-        },
-        {
-          "key": "BBT-5275",
-          "title": "[55688] Emoji cannot be searched",
-          "status": "open",
-          "assignee": "willy.liao",
-          "pinned": false
-        },
-        {
-          "key": "PHXX-3312",
-          "title": "【55688】Timeout limitation in AQ JM should be shorten.",
-          "status": "backlog",
-          "assignee": "cifong.kang",
-          "pinned": false
-        }
-      ],
+      "tickets": [],
       "suggestions": [
         {
-          "priority": "High",
-          "label": "Renewal",
-          "text": "代駕/招募 bot(s) expired 2026-07-31 (35 days overdue); which one actually churned is still unconfirmed. Confirm with the client and either file the outstanding renewal or formally close the churned bot.",
-          "commitmentId": null
-        },
-        {
-          "priority": "Medium",
-          "label": "Ticket",
-          "text": "BBT-5275 (Emoji cannot be searched) open, owned by willy.liao. Check status and give the client an ETA.",
-          "commitmentId": null
-        },
-        {
-          "priority": "Low",
-          "label": "Ticket",
-          "text": "QGWL-19924 (AQ JM timeout limitation, duplicated in PHXX-3312) still shows as blocked though notes say it was closed — verify the actual ticket status.",
-          "commitmentId": null
+          "priority": "low",
+          "label": "Check-in · Low",
+          "text": "No active tickets — send a check-in to 55688"
         }
-      ],
-      "commitments": []
+      ]
     },
     {
       "id": "tiangyuanxiang",
       "name": "田原香",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "New: sftp sync pipeline update (ETS-6237, open). 7 tickets in flight incl. agent channel-choice bug (ETS-6074); no meeting logged this week despite the usual Tuesday 09:30 HKT cadence.",
+      "insight": "ETS-6074 open 6d.",
       "diffs": [
         {
-          "type": "new",
-          "key": "ETS-6237",
-          "title": "sftp sync pipiline update",
-          "text": "sftp sync pipiline update"
+          "type": "close",
+          "text": "ETS-6237 closed"
+        },
+        {
+          "type": "close",
+          "text": "QGWL-25930 closed"
+        },
+        {
+          "type": "close",
+          "text": "QGWL-25627 closed"
+        },
+        {
+          "type": "close",
+          "text": "QGWL-23645 closed"
+        },
+        {
+          "type": "close",
+          "text": "QGWL-22084 closed"
+        },
+        {
+          "type": "close",
+          "text": "QGWL-21289 closed"
         }
       ],
       "riskTags": [
-        "ticket",
-        "stale"
+        "ticket"
       ],
-      "ticketCount": 7,
+      "ticketCount": 1,
       "mtgCount": 0,
       "projects": [
         {
@@ -420,83 +350,21 @@
       "meetings": [],
       "tickets": [
         {
-          "key": "ETS-6237",
-          "title": "[田原香] sftp sync pipiline update",
-          "status": "open",
-          "assignee": "vivian.yang",
-          "pinned": false
-        },
-        {
           "key": "ETS-6074",
           "title": "[田原香] Agent re-asks the user to choose a channel when invoked from an OJM SMS campaign node (trace e5245f657670a7f4c2772dceadd35a35)",
           "status": "open",
           "assignee": "mia.chu",
           "pinned": false
-        },
-        {
-          "key": "QGWL-25930",
-          "title": "[田原香] Request to allow to save template for on-site editor",
-          "status": "backlog",
-          "assignee": "luke.chien",
-          "pinned": false
-        },
-        {
-          "key": "QGWL-25627",
-          "title": "[田原香] Enable send time optimization",
-          "status": "backlog",
-          "assignee": "vivian.yang",
-          "pinned": false
-        },
-        {
-          "key": "QGWL-23645",
-          "title": "[田原香] Creative studio button will always shows an unexpected gray area",
-          "status": "backlog",
-          "assignee": "vivian.yang",
-          "pinned": false
-        },
-        {
-          "key": "QGWL-22084",
-          "title": "[田原香] Wishlist for segmentation request",
-          "status": "backlog",
-          "assignee": "luke.chien",
-          "pinned": false
-        },
-        {
-          "key": "QGWL-21289",
-          "title": "[田原香] Onboard Product Feed",
-          "status": "backlog",
-          "assignee": "vivian.yang",
-          "pinned": false
         }
       ],
-      "suggestions": [
-        {
-          "priority": "Medium",
-          "label": "Ticket",
-          "text": "ETS-6074 (agent re-asks channel choice from an OJM SMS node) open, owned by mia.chu. Confirm root cause and timeline.",
-          "commitmentId": null
-        },
-        {
-          "priority": "Medium",
-          "label": "Meeting",
-          "text": "No Tuesday 09:30 HKT tracking meeting found on calendar this week. Confirm the recurring sync is still active or reschedule.",
-          "commitmentId": null
-        },
-        {
-          "priority": "Low",
-          "label": "Use Cases",
-          "text": "Continue new use-case development; sync on QGWL-22084 (segmentation wishlist) as a candidate.",
-          "commitmentId": null
-        }
-      ],
-      "commitments": []
+      "suggestions": []
     },
     {
-      "id": "citysuper",
-      "name": "City Super",
+      "id": "momax",
+      "name": "Momax",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "green",
-      "insight": "No tickets, meetings, or contract date on record — CSM context is missing for this account.",
+      "insight": "No active tickets — all clear.",
       "diffs": [],
       "riskTags": [],
       "ticketCount": 0,
@@ -506,32 +374,59 @@
       "tickets": [],
       "suggestions": [
         {
-          "priority": "Medium",
-          "label": "Context",
-          "text": "City Super has no contract end date and no background notes on file. Confirm the current project and renewal term.",
-          "commitmentId": null
-        },
-        {
-          "priority": "Low",
-          "label": "Monitoring",
-          "text": "No open tickets or meetings this week; keep on watch in case activity resumes.",
-          "commitmentId": null
+          "priority": "low",
+          "label": "Check-in · Low",
+          "text": "No active tickets — send a check-in to Momax"
         }
-      ],
-      "commitments": []
+      ]
+    },
+    {
+      "id": "citysuper",
+      "name": "City Super",
+      "csmOwner": "william.wt.lin@appier.com",
+      "health": "green",
+      "insight": "No active tickets — all clear.",
+      "diffs": [],
+      "riskTags": [],
+      "ticketCount": 0,
+      "mtgCount": 0,
+      "projects": [],
+      "meetings": [],
+      "tickets": [],
+      "suggestions": [
+        {
+          "priority": "low",
+          "label": "Check-in · Low",
+          "text": "No active tickets — send a check-in to City Super"
+        }
+      ]
     },
     {
       "id": "xindongli",
       "name": "行動力國際",
       "csmOwner": "william.wt.lin@appier.com",
-      "health": "yellow",
-      "insight": "New account (added Jun 9), still awaiting handover meeting. 178-day-old custom-answer bug (BBT-7270) remains open; BotBonnie→Phoenix migration (BBT-4660) in progress.",
-      "diffs": [],
-      "riskTags": [
-        "ticket",
-        "stale"
+      "health": "green",
+      "insight": "No active tickets — all clear.",
+      "diffs": [
+        {
+          "type": "close",
+          "text": "BBT-7270 closed"
+        },
+        {
+          "type": "close",
+          "text": "BBT-7024 closed"
+        },
+        {
+          "type": "close",
+          "text": "BBT-5599 closed"
+        },
+        {
+          "type": "close",
+          "text": "BBT-4660 closed"
+        }
       ],
-      "ticketCount": 4,
+      "riskTags": [],
+      "ticketCount": 0,
       "mtgCount": 0,
       "projects": [
         {
@@ -540,57 +435,14 @@
         }
       ],
       "meetings": [],
-      "tickets": [
-        {
-          "key": "BBT-7270",
-          "title": "[行動力國際 - Service Agent] Can't get the right custom answers",
-          "status": "open",
-          "assignee": "vivian.yang",
-          "pinned": false
-        },
-        {
-          "key": "BBT-7024",
-          "title": "[行動力國際 ACT Power] triggered wrong reply module when keyword wasn't included",
-          "status": "backlog",
-          "assignee": "Guiguan",
-          "pinned": false
-        },
-        {
-          "key": "BBT-5599",
-          "title": "[行動力國際 ACT POWER] Enable sales bot feature for 行動力國際",
-          "status": "open",
-          "assignee": "kyle.kc.wang",
-          "pinned": false
-        },
-        {
-          "key": "BBT-4660",
-          "title": "[行動力國際] BotBonnie to Phoenix Account Migration / Knowledge Bot Feature Activation",
-          "status": "open",
-          "assignee": "Salem Chen",
-          "pinned": false
-        }
-      ],
+      "tickets": [],
       "suggestions": [
         {
-          "priority": "High",
-          "label": "Handover",
-          "text": "行動力國際 was added 2026-06-09 and is still awaiting a handover meeting. Schedule it to establish ownership and cadence.",
-          "commitmentId": null
-        },
-        {
-          "priority": "Medium",
-          "label": "Ticket",
-          "text": "BBT-7270 (custom answers not returning correctly) open 178d, owned by vivian.yang. Escalate given the age.",
-          "commitmentId": null
-        },
-        {
-          "priority": "Low",
-          "label": "Migration",
-          "text": "Track BBT-4660 (BotBonnie→Phoenix migration / knowledge bot activation, Salem Chen) to completion.",
-          "commitmentId": null
+          "priority": "low",
+          "label": "Check-in · Low",
+          "text": "No active tickets — send a check-in to 行動力國際"
         }
-      ],
-      "commitments": []
+      ]
     }
   ]
 }
