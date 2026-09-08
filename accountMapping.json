@@ -2200,6 +2200,21 @@
     ]
   },
   {
+    "id": "怡心工業",
+    "account": "怡心工業",
+    "csmOwner": "mmtw.csmca@appier.com",
+    "endDate": "2027-08-19",
+    "keywords": [
+      "怡心工業"
+    ],
+    "opportunities": [
+      {
+        "name": "BB - 怡心工業股份有限公司 - 2026",
+        "endDate": "2027-08-19"
+      }
+    ]
+  },
+  {
     "id": "悅己情趣",
     "account": "悅己情趣",
     "csmOwner": "mmtw.csmca@appier.com",
@@ -3333,6 +3348,10 @@
       {
         "name": "BB - Wenk - Essilor",
         "endDate": "2026-09-11"
+      },
+      {
+        "name": "BB - Wenk - Essilor - Upsell - PS星趣控保固 - 2026",
+        "endDate": "2026-10-30"
       },
       {
         "name": "BB - Wenk - Essilor 專案服務費 Upsell 2026",
