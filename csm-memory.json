@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-04T15:17:20.859+08:00",
+  "lastUpdated": "2026-09-08T11:15:08.070+08:00",
   "rules": [
     {
       "id": "okr-consolidate",
@@ -678,93 +678,40 @@
     }
   ],
   "ticketSnapshot": {
-    "generatedAt": "2026-09-04T07:17:20.365Z",
+    "generatedAt": "2026-09-08T03:15:07.664Z",
     "keys": {
-      "55688": [
-        "QGWL-19924",
-        "BBT-4854",
-        "BBT-5275",
-        "PHXX-3312"
-      ],
+      "55688": [],
       "mannings": [
         "PROJ-33713",
         "QGWL-26114",
         "PROJ-25973",
-        "PROJ-33682",
-        "QGWL-21825",
-        "QGWL-21895",
-        "PROJ-31215",
-        "QGWL-16671",
-        "QGWL-21706",
-        "QGWL-21578",
-        "QGWL-21234",
-        "QGWL-20932"
+        "PROJ-33682"
       ],
       "scmp": [
+        "PROJ-33876",
+        "PROJ-33875",
+        "PROJ-33874",
         "PROJ-33694"
       ],
       "1010hope": [],
-      "luxgen": [
-        "BBT-5953",
-        "PROJ-22175",
-        "PROJ-22178",
-        "QGWL-11820",
-        "PROJ-21319",
-        "QGWL-10821"
-      ],
+      "luxgen": [],
       "tiangyuanxiang": [
-        "ETS-6237",
-        "ETS-6074",
-        "QGWL-25930",
-        "QGWL-25627",
-        "QGWL-23645",
-        "QGWL-22084",
-        "QGWL-21289"
+        "ETS-6074"
       ],
       "momax": [],
       "citysuper": [],
-      "xindongli": [
-        "BBT-7270",
-        "BBT-7024",
-        "BBT-5599",
-        "BBT-4660"
-      ]
+      "xindongli": []
     },
     "titles": {
-      "QGWL-19924": "【55688】Timeout limitation in AQ JM should be shorten.",
-      "BBT-4854": "[55688-潔衣家] 在 Line 中完成會員綁定及訂單查詢",
-      "BBT-5275": "[55688] Emoji cannot be searched",
-      "PHXX-3312": "【55688】Timeout limitation in AQ JM should be shorten.",
       "PROJ-33713": "[Demo HK] Offboard Mannings data for demo account",
       "QGWL-26114": "[Mannings] OJM node will gone after adding wait for condition node at the front",
       "PROJ-25973": "[Mannings] Request for the product category ",
       "PROJ-33682": "[Mannings] Facebook V2 upload failure for Output node 698dadb35c1bfec4b40bef08",
-      "QGWL-21825": "[Mannings] Check App events implementation status round 2",
-      "QGWL-21895": "[Mannings] S2S event investigation",
-      "PROJ-31215": "[Mannings] Multi Segment Model Experiment Request",
-      "QGWL-16671": "[Mannings] S2S modification check",
-      "QGWL-21706": "[Mannings] Request to re-enable analytics studio",
-      "QGWL-21578": "[Mannings] Investigate APP page type",
-      "QGWL-21234": "[Mannings] Creative Studio in app banner action is not stable",
-      "QGWL-20932": "[Mannings] React Native iOS Universal Link is Not Working",
+      "PROJ-33876": "[SCMP] Feature request on insight agent",
+      "PROJ-33875": "[SCMP] Feature request on external keyword filtering",
+      "PROJ-33874": "[SCMP] Feature request on keyword intensity support",
       "PROJ-33694": "[SCMP] Feature request on keyword dashboard",
-      "BBT-5953": "[Luxgen] BB didn't block share to LINE friends even though module contains \"share\" action",
-      "PROJ-22175": "[Luxgen]  Data Column of Customer360 - Location / Language",
-      "PROJ-22178": "[CW][Senheng][Luxgen] export BB tags import to AIXON ",
-      "QGWL-11820": "[Luxgen] Please help to check online/offline table name of Luxgen ",
-      "PROJ-21319": "[Luxgen] AX segment anonymous user number looks suspicious",
-      "QGWL-10821": "[Luxgen]Luxgen AIQUA Web SDK embedded BB Web Chat SDK",
-      "ETS-6237": "[田原香] sftp sync pipiline update",
-      "ETS-6074": "[田原香] Agent re-asks the user to choose a channel when invoked from an OJM SMS campaign node (trace e5245f657670a7f4c2772dceadd35a35)",
-      "QGWL-25930": "[田原香] Request to allow to save template for on-site editor",
-      "QGWL-25627": "[田原香] Enable send time optimization",
-      "QGWL-23645": "[田原香] Creative studio button will always shows an unexpected gray area",
-      "QGWL-22084": "[田原香] Wishlist for segmentation request",
-      "QGWL-21289": "[田原香] Onboard Product Feed",
-      "BBT-7270": "[行動力國際 - Service Agent] Can't get the right custom answers",
-      "BBT-7024": "[行動力國際 ACT Power] triggered wrong reply module when keyword wasn't included",
-      "BBT-5599": "[行動力國際 ACT POWER] Enable sales bot feature for 行動力國際",
-      "BBT-4660": "[行動力國際] BotBonnie to Phoenix Account Migration / Knowledge Bot Feature Activation"
+      "ETS-6074": "[田原香] Agent re-asks the user to choose a channel when invoked from an OJM SMS campaign node (trace e5245f657670a7f4c2772dceadd35a35)"
     }
   },
   "projectOverrides": {
