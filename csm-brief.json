@@ -6,8 +6,57 @@
       "name": "Mannings",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "PROJ-33713 backlog 3d · +3 more · Appier x Mannings Bi-weekly Meeting Sep 17 · renewal due 2026-09-30 (22d).",
-      "diffs": [],
+      "insight": "⚠️ CONTRACT EXPIRES in 22 days (2026-09-30, AQ & AX — already signed). Facebook V2 upload failure (PROJ-33682) still open; 8 other tickets untouched 60+ days ahead of the Sep 17 bi-weekly meeting.",
+      "diffs": [
+        {
+          "type": "aged-out",
+          "key": "QGWL-21825",
+          "title": "Check App events implementation status round 2",
+          "text": "Check App events implementation status round 2 — no longer shown, aged out (>60d, still open)"
+        },
+        {
+          "type": "aged-out",
+          "key": "QGWL-21895",
+          "title": "S2S event investigation",
+          "text": "S2S event investigation — no longer shown, aged out (>60d, still open)"
+        },
+        {
+          "type": "aged-out",
+          "key": "PROJ-31215",
+          "title": "Multi Segment Model Experiment Request",
+          "text": "Multi Segment Model Experiment Request — no longer shown, aged out (>60d, still open)"
+        },
+        {
+          "type": "aged-out",
+          "key": "QGWL-16671",
+          "title": "S2S modification check",
+          "text": "S2S modification check — no longer shown, aged out (>60d, still open)"
+        },
+        {
+          "type": "aged-out",
+          "key": "QGWL-21706",
+          "title": "Request to re-enable analytics studio",
+          "text": "Request to re-enable analytics studio — no longer shown, aged out (>60d, still open)"
+        },
+        {
+          "type": "aged-out",
+          "key": "QGWL-21578",
+          "title": "Investigate APP page type",
+          "text": "Investigate APP page type — no longer shown, aged out (>60d, still open)"
+        },
+        {
+          "type": "aged-out",
+          "key": "QGWL-21234",
+          "title": "Creative Studio in app banner action is not stable",
+          "text": "Creative Studio in app banner action is not stable — no longer shown, aged out (>60d, still open)"
+        },
+        {
+          "type": "aged-out",
+          "key": "QGWL-20932",
+          "title": "React Native iOS Universal Link is Not Working",
+          "text": "React Native iOS Universal Link is Not Working — no longer shown, aged out (>60d, still open)"
+        }
+      ],
       "riskTags": [
         "ticket",
         "renewal",
@@ -63,22 +112,50 @@
         {
           "priority": "high",
           "label": "Renewal · High",
-          "text": "Mannings contract due 2026-09-30 (22d left) — confirm status now"
+          "text": "AQ & AX renewal already signed, extended to 2026-09-30 (22 days left) — confirm paperwork/PO fully executed with Rola Chung before expiry.",
+          "commitmentId": null
+        },
+        {
+          "priority": "high",
+          "label": "Ticket · High",
+          "text": "Facebook V2 upload failure (PROJ-33682) blocking Output node — escalate to eng for ETA ahead of Sep 17 meeting.",
+          "commitmentId": null
         },
         {
           "priority": "medium",
-          "label": "Meeting · Medium",
-          "text": "Prep for Appier x Mannings Bi-weekly Meeting on Sep 17 (11:00–12:00 HKT · Rola Chung)"
+          "label": "Tickets · Medium",
+          "text": "8 tickets (OJM node, product category request, app events, etc.) untouched 60+ days — review backlog with Karen Fu / Rola Chung before renewal date.",
+          "commitmentId": null
         }
-      ]
+      ],
+      "commitments": []
     },
     {
       "id": "scmp",
       "name": "SCMP",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "PROJ-33876 backlog 3d · +3 more.",
-      "diffs": [],
+      "insight": "4 new feature-request tickets (insight agent, keyword filtering/intensity/dashboard) — all backlog, no meeting scheduled. AIXON offboard request per account note still unfiled; its tracking commitment lapsed unresolved.",
+      "diffs": [
+        {
+          "type": "new",
+          "key": "PROJ-33876",
+          "title": "Feature request on insight agent",
+          "text": "Feature request on insight agent"
+        },
+        {
+          "type": "new",
+          "key": "PROJ-33875",
+          "title": "Feature request on external keyword filtering",
+          "text": "Feature request on external keyword filtering"
+        },
+        {
+          "type": "new",
+          "key": "PROJ-33874",
+          "title": "Feature request on keyword intensity support",
+          "text": "Feature request on keyword intensity support"
+        }
+      ],
       "riskTags": [
         "ticket",
         "stale"
@@ -126,14 +203,28 @@
           "pinned": false
         }
       ],
-      "suggestions": []
+      "suggestions": [
+        {
+          "priority": "high",
+          "label": "Feature Requests · High",
+          "text": "4 SCMP feature requests (insight agent, keyword filtering, keyword intensity, keyword dashboard) all backlog — confirm ownership with PM and give client an ETA.",
+          "commitmentId": null
+        },
+        {
+          "priority": "medium",
+          "label": "Commitment · Medium",
+          "text": "Confirm with SCMP whether AIRIS onboarding is fully complete, then file the AIXON offboard request — the tracking note lapsed unresolved (stale 30d).",
+          "commitmentId": null
+        }
+      ],
+      "commitments": []
     },
     {
       "id": "1010hope",
       "name": "10/10Hope",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "green",
-      "insight": "No active tickets — all clear.",
+      "insight": "No tickets or meetings — AIQUA onboarding and klickngo API integration (Mark Liu) in progress. No contract end date on record; confirm so renewal alerts can fire.",
       "diffs": [],
       "riskTags": [],
       "ticketCount": 0,
@@ -152,19 +243,64 @@
       "tickets": [],
       "suggestions": [
         {
+          "priority": "medium",
+          "label": "Renewal · Medium",
+          "text": "No contract end date on record for 10/10Hope — confirm with Mark Liu / finance so renewal alerts can fire.",
+          "commitmentId": null
+        },
+        {
           "priority": "low",
           "label": "Check-in · Low",
-          "text": "No active tickets — send a check-in to 10/10Hope"
+          "text": "AIQUA onboarding and klickngo API integration in progress with Mark Liu — confirm status and blockers.",
+          "commitmentId": null
         }
-      ]
+      ],
+      "commitments": []
     },
     {
       "id": "luxgen",
       "name": "Luxgen",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "green",
-      "insight": "No active tickets — all clear.",
-      "diffs": [],
+      "insight": "No active tickets and no meetings on calendar — per account note, this silence is itself a risk signal. 6 previously tracked tickets (LINE share-block bug, Customer360 columns, etc.) quiet 60+ days but still open.",
+      "diffs": [
+        {
+          "type": "aged-out",
+          "key": "BBT-5953",
+          "title": "BB didn't block share to LINE friends even though module contains \"share\" action",
+          "text": "BB didn't block share to LINE friends even though module contains \"share\" action — no longer shown, aged out (>60d, still open)"
+        },
+        {
+          "type": "aged-out",
+          "key": "PROJ-22175",
+          "title": "Data Column of Customer360 - Location / Language",
+          "text": "Data Column of Customer360 - Location / Language — no longer shown, aged out (>60d, still open)"
+        },
+        {
+          "type": "aged-out",
+          "key": "PROJ-22178",
+          "title": "[Senheng][Luxgen] export BB tags import to AIXON",
+          "text": "[Senheng][Luxgen] export BB tags import to AIXON — no longer shown, aged out (>60d, still open)"
+        },
+        {
+          "type": "aged-out",
+          "key": "QGWL-11820",
+          "title": "Please help to check online/offline table name of Luxgen",
+          "text": "Please help to check online/offline table name of Luxgen — no longer shown, aged out (>60d, still open)"
+        },
+        {
+          "type": "aged-out",
+          "key": "PROJ-21319",
+          "title": "AX segment anonymous user number looks suspicious",
+          "text": "AX segment anonymous user number looks suspicious — no longer shown, aged out (>60d, still open)"
+        },
+        {
+          "type": "aged-out",
+          "key": "QGWL-10821",
+          "title": "Luxgen AIQUA Web SDK embedded BB Web Chat SDK",
+          "text": "Luxgen AIQUA Web SDK embedded BB Web Chat SDK — no longer shown, aged out (>60d, still open)"
+        }
+      ],
       "riskTags": [],
       "ticketCount": 0,
       "mtgCount": 0,
@@ -173,20 +309,61 @@
       "tickets": [],
       "suggestions": [
         {
+          "priority": "medium",
+          "label": "Check-in · Medium",
+          "text": "No meetings scheduled and no active tickets — per account note, this silence itself is a risk signal; reach out proactively.",
+          "commitmentId": null
+        },
+        {
+          "priority": "medium",
+          "label": "Tickets · Medium",
+          "text": "6 tickets (LINE share-block bug BBT-5953, Customer360 location/language columns, etc.) quiet 60+ days but still open — confirm status with owners.",
+          "commitmentId": null
+        },
+        {
           "priority": "low",
-          "label": "Check-in · Low",
-          "text": "No active tickets — send a check-in to Luxgen"
+          "label": "Reporting · Low",
+          "text": "Confirm monthly 服務交付報告 to Kevin Hsu is on track (tracked via Finance tickets e.g. FIN-2672).",
+          "commitmentId": null
         }
-      ]
+      ],
+      "commitments": []
     },
     {
       "id": "55688",
       "name": "55688",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "green",
-      "insight": "No active tickets — all clear.",
-      "diffs": [],
-      "riskTags": [],
+      "insight": "⚠️ CONTRACT EXPIRED for 代駕/招募 (2026-07-31) — unconfirmed which bot actually churned. Service Agent RFQ (BBT-5428) already closed; 4 other tickets quiet 60+ days but still open.",
+      "diffs": [
+        {
+          "type": "aged-out",
+          "key": "QGWL-19924",
+          "title": "【55688】Timeout limitation in AQ JM should be shorten.",
+          "text": "【55688】Timeout limitation in AQ JM should be shorten. — no longer shown, aged out (>60d, still open)"
+        },
+        {
+          "type": "aged-out",
+          "key": "BBT-4854",
+          "title": "在 Line 中完成會員綁定及訂單查詢",
+          "text": "在 Line 中完成會員綁定及訂單查詢 — no longer shown, aged out (>60d, still open)"
+        },
+        {
+          "type": "aged-out",
+          "key": "BBT-5275",
+          "title": "Emoji cannot be searched",
+          "text": "Emoji cannot be searched — no longer shown, aged out (>60d, still open)"
+        },
+        {
+          "type": "aged-out",
+          "key": "PHXX-3312",
+          "title": "【55688】Timeout limitation in AQ JM should be shorten.",
+          "text": "【55688】Timeout limitation in AQ JM should be shorten. — no longer shown, aged out (>60d, still open)"
+        }
+      ],
+      "riskTags": [
+        "renewal"
+      ],
       "ticketCount": 0,
       "mtgCount": 0,
       "projects": [
@@ -199,19 +376,70 @@
       "tickets": [],
       "suggestions": [
         {
+          "priority": "high",
+          "label": "Renewal · High",
+          "text": "代駕 / 招募 bots expired 2026-07-31 — confirm with client which bot actually churned before treating either as lost.",
+          "commitmentId": null
+        },
+        {
+          "priority": "medium",
+          "label": "Tickets · Medium",
+          "text": "4 tickets (AQ JM timeout, LINE member binding, emoji search, timeout limitation) quiet 60+ days but still open — QGWL-19924 in particular is still 'Blocked' in Jira though account notes call it closed.",
+          "commitmentId": null
+        },
+        {
           "priority": "low",
           "label": "Check-in · Low",
-          "text": "No active tickets — send a check-in to 55688"
+          "text": "Follow up on the 55688 北區 EC binding discussion with Robetta Chu (Sep 3) for next steps.",
+          "commitmentId": null
         }
-      ]
+      ],
+      "commitments": []
     },
     {
       "id": "tiangyuanxiang",
       "name": "田原香",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "ETS-6074 open 7d.",
-      "diffs": [],
+      "insight": "ETS-6074 (agent re-asks channel on OJM SMS campaign) still open; sftp sync pipeline ticket (ETS-6237) just closed. 5 other tickets quiet 60+ days but still open — no new use-case work since onboarding completion.",
+      "diffs": [
+        {
+          "type": "close",
+          "key": "ETS-6237",
+          "title": "sftp sync pipiline update",
+          "text": "sftp sync pipiline update"
+        },
+        {
+          "type": "aged-out",
+          "key": "QGWL-25930",
+          "title": "Request to allow to save template for on-site editor",
+          "text": "Request to allow to save template for on-site editor — no longer shown, aged out (>60d, still open)"
+        },
+        {
+          "type": "aged-out",
+          "key": "QGWL-25627",
+          "title": "Enable send time optimization",
+          "text": "Enable send time optimization — no longer shown, aged out (>60d, still open)"
+        },
+        {
+          "type": "aged-out",
+          "key": "QGWL-23645",
+          "title": "Creative studio button will always shows an unexpected gray area",
+          "text": "Creative studio button will always shows an unexpected gray area — no longer shown, aged out (>60d, still open)"
+        },
+        {
+          "type": "aged-out",
+          "key": "QGWL-22084",
+          "title": "Wishlist for segmentation request",
+          "text": "Wishlist for segmentation request — no longer shown, aged out (>60d, still open)"
+        },
+        {
+          "type": "aged-out",
+          "key": "QGWL-21289",
+          "title": "Onboard Product Feed",
+          "text": "Onboard Product Feed — no longer shown, aged out (>60d, still open)"
+        }
+      ],
       "riskTags": [
         "ticket"
       ],
@@ -233,35 +461,34 @@
           "pinned": false
         }
       ],
-      "suggestions": []
-    },
-    {
-      "id": "momax",
-      "name": "Momax",
-      "csmOwner": "william.wt.lin@appier.com",
-      "health": "green",
-      "insight": "No active tickets — all clear.",
-      "diffs": [],
-      "riskTags": [],
-      "ticketCount": 0,
-      "mtgCount": 0,
-      "projects": [],
-      "meetings": [],
-      "tickets": [],
       "suggestions": [
         {
+          "priority": "high",
+          "label": "Ticket · High",
+          "text": "ETS-6074 (agent re-asks channel on OJM SMS campaign) open — confirm owner and reproduction status.",
+          "commitmentId": null
+        },
+        {
+          "priority": "medium",
+          "label": "Tickets · Medium",
+          "text": "5 tickets (send-time optimization, product feed onboarding, segmentation wishlist, etc.) quiet 60+ days but still open — review alongside use-case development.",
+          "commitmentId": null
+        },
+        {
           "priority": "low",
-          "label": "Check-in · Low",
-          "text": "No active tickets — send a check-in to Momax"
+          "label": "Meeting · Low",
+          "text": "Confirm the weekly Tuesday 09:30 HKT tracking sync is still active — it didn't appear on calendar this week.",
+          "commitmentId": null
         }
-      ]
+      ],
+      "commitments": []
     },
     {
       "id": "citysuper",
       "name": "City Super",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "green",
-      "insight": "No active tickets — all clear.",
+      "insight": "Silent — no tickets, meetings, or contract/background on record. Confirm end date and current project scope to properly track this account.",
       "diffs": [],
       "riskTags": [],
       "ticketCount": 0,
@@ -271,19 +498,52 @@
       "tickets": [],
       "suggestions": [
         {
+          "priority": "medium",
+          "label": "Context · Medium",
+          "text": "No contract end date or project background on record for City Super — confirm with account owner so this section can be tracked properly.",
+          "commitmentId": null
+        },
+        {
           "priority": "low",
           "label": "Check-in · Low",
-          "text": "No active tickets — send a check-in to City Super"
+          "text": "Send a proactive check-in — account has been silent across tickets and meetings.",
+          "commitmentId": null
         }
-      ]
+      ],
+      "commitments": []
     },
     {
       "id": "xindongli",
       "name": "行動力國際",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "green",
-      "insight": "No active tickets — all clear.",
-      "diffs": [],
+      "insight": "Account Handover in progress with no active tickets or meetings. 4 previously tracked tickets (custom answers, reply module, sales bot, BB→Phoenix migration) quiet 60+ days but still open.",
+      "diffs": [
+        {
+          "type": "aged-out",
+          "key": "BBT-7270",
+          "title": "Can't get the right custom answers",
+          "text": "Can't get the right custom answers — no longer shown, aged out (>60d, still open)"
+        },
+        {
+          "type": "aged-out",
+          "key": "BBT-7024",
+          "title": "triggered wrong reply module when keyword wasn't included",
+          "text": "triggered wrong reply module when keyword wasn't included — no longer shown, aged out (>60d, still open)"
+        },
+        {
+          "type": "aged-out",
+          "key": "BBT-5599",
+          "title": "Enable sales bot feature for 行動力國際",
+          "text": "Enable sales bot feature for 行動力國際 — no longer shown, aged out (>60d, still open)"
+        },
+        {
+          "type": "aged-out",
+          "key": "BBT-4660",
+          "title": "BotBonnie to Phoenix Account Migration / Knowledge Bot Feature Activation",
+          "text": "BotBonnie to Phoenix Account Migration / Knowledge Bot Feature Activation — no longer shown, aged out (>60d, still open)"
+        }
+      ],
       "riskTags": [],
       "ticketCount": 0,
       "mtgCount": 0,
@@ -297,11 +557,19 @@
       "tickets": [],
       "suggestions": [
         {
-          "priority": "low",
-          "label": "Check-in · Low",
-          "text": "No active tickets — send a check-in to 行動力國際"
+          "priority": "medium",
+          "label": "Handover · Medium",
+          "text": "Confirm Account Handover status and next owner — no activity recorded since the account was added 2026-06-09.",
+          "commitmentId": null
+        },
+        {
+          "priority": "medium",
+          "label": "Tickets · Medium",
+          "text": "4 tickets (custom answers accuracy, wrong reply module, sales bot enablement, BB→Phoenix migration) quiet 60+ days but still open — confirm status before handover completes.",
+          "commitmentId": null
         }
-      ]
+      ],
+      "commitments": []
     }
   ]
 }
