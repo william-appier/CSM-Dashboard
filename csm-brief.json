@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-08T09:01:07.258+08:00",
+  "generatedAt": "2026-09-08T11:06:36.328+08:00",
   "accounts": [
     {
       "id": "mannings",
@@ -7,12 +7,7 @@
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
       "insight": "PROJ-33713 backlog 3d · +3 more · Appier x Mannings Bi-weekly Meeting Sep 17 · renewal due 2026-09-30 (22d).",
-      "diffs": [
-        {
-          "type": "close",
-          "text": "ETS-6268 closed"
-        }
-      ],
+      "diffs": [],
       "riskTags": [
         "ticket",
         "renewal",
@@ -215,7 +210,7 @@
       "name": "田原香",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "ETS-6074 open 6d.",
+      "insight": "ETS-6074 open 7d.",
       "diffs": [],
       "riskTags": [
         "ticket"
