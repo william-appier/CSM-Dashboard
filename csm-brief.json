@@ -1,48 +1,16 @@
 {
-  "generatedAt": "2026-09-07T14:13:52.581+08:00",
+  "generatedAt": "2026-09-08T09:01:07.258+08:00",
   "accounts": [
     {
       "id": "mannings",
       "name": "Mannings",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "ETS-6268 open 0d · +4 more · Appier x Mannings Bi-weekly Meeting Sep 17 · renewal due 2026-09-30 (23d).",
+      "insight": "PROJ-33713 backlog 3d · +3 more · Appier x Mannings Bi-weekly Meeting Sep 17 · renewal due 2026-09-30 (22d).",
       "diffs": [
         {
-          "type": "new",
-          "text": "ETS-6268 [Mannings] 0907 Help to move \"Mannings-stg\" to enterprise co"
-        },
-        {
           "type": "close",
-          "text": "QGWL-21825 closed"
-        },
-        {
-          "type": "close",
-          "text": "QGWL-21895 closed"
-        },
-        {
-          "type": "close",
-          "text": "PROJ-31215 closed"
-        },
-        {
-          "type": "close",
-          "text": "QGWL-16671 closed"
-        },
-        {
-          "type": "close",
-          "text": "QGWL-21706 closed"
-        },
-        {
-          "type": "close",
-          "text": "QGWL-21578 closed"
-        },
-        {
-          "type": "close",
-          "text": "QGWL-21234 closed"
-        },
-        {
-          "type": "close",
-          "text": "QGWL-20932 closed"
+          "text": "ETS-6268 closed"
         }
       ],
       "riskTags": [
@@ -51,7 +19,7 @@
         "stale",
         "mtg"
       ],
-      "ticketCount": 5,
+      "ticketCount": 4,
       "mtgCount": 1,
       "projects": [
         {
@@ -67,13 +35,6 @@
         }
       ],
       "tickets": [
-        {
-          "key": "ETS-6268",
-          "title": "[Mannings] 0907 Help to move \"Mannings-stg\" to enterprise console",
-          "status": "open",
-          "assignee": "hazel.wang",
-          "pinned": false
-        },
         {
           "key": "PROJ-33713",
           "title": "[Demo HK] Offboard Mannings data for demo account",
@@ -107,7 +68,7 @@
         {
           "priority": "high",
           "label": "Renewal · High",
-          "text": "Mannings contract due 2026-09-30 (23d left) — confirm status now"
+          "text": "Mannings contract due 2026-09-30 (22d left) — confirm status now"
         },
         {
           "priority": "medium",
@@ -121,21 +82,8 @@
       "name": "SCMP",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "PROJ-33876 backlog 2d · +3 more.",
-      "diffs": [
-        {
-          "type": "new",
-          "text": "PROJ-33876 [SCMP] Feature request on insight agent"
-        },
-        {
-          "type": "new",
-          "text": "PROJ-33875 [SCMP] Feature request on external keyword filtering"
-        },
-        {
-          "type": "new",
-          "text": "PROJ-33874 [SCMP] Feature request on keyword intensity support"
-        }
-      ],
+      "insight": "PROJ-33876 backlog 3d · +3 more.",
+      "diffs": [],
       "riskTags": [
         "ticket",
         "stale"
@@ -221,32 +169,7 @@
       "csmOwner": "william.wt.lin@appier.com",
       "health": "green",
       "insight": "No active tickets — all clear.",
-      "diffs": [
-        {
-          "type": "close",
-          "text": "BBT-5953 closed"
-        },
-        {
-          "type": "close",
-          "text": "PROJ-22175 closed"
-        },
-        {
-          "type": "close",
-          "text": "PROJ-22178 closed"
-        },
-        {
-          "type": "close",
-          "text": "QGWL-11820 closed"
-        },
-        {
-          "type": "close",
-          "text": "PROJ-21319 closed"
-        },
-        {
-          "type": "close",
-          "text": "QGWL-10821 closed"
-        }
-      ],
+      "diffs": [],
       "riskTags": [],
       "ticketCount": 0,
       "mtgCount": 0,
@@ -267,24 +190,7 @@
       "csmOwner": "william.wt.lin@appier.com",
       "health": "green",
       "insight": "No active tickets — all clear.",
-      "diffs": [
-        {
-          "type": "close",
-          "text": "QGWL-19924 closed"
-        },
-        {
-          "type": "close",
-          "text": "BBT-4854 closed"
-        },
-        {
-          "type": "close",
-          "text": "BBT-5275 closed"
-        },
-        {
-          "type": "close",
-          "text": "PHXX-3312 closed"
-        }
-      ],
+      "diffs": [],
       "riskTags": [],
       "ticketCount": 0,
       "mtgCount": 0,
@@ -310,32 +216,7 @@
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
       "insight": "ETS-6074 open 6d.",
-      "diffs": [
-        {
-          "type": "close",
-          "text": "ETS-6237 closed"
-        },
-        {
-          "type": "close",
-          "text": "QGWL-25930 closed"
-        },
-        {
-          "type": "close",
-          "text": "QGWL-25627 closed"
-        },
-        {
-          "type": "close",
-          "text": "QGWL-23645 closed"
-        },
-        {
-          "type": "close",
-          "text": "QGWL-22084 closed"
-        },
-        {
-          "type": "close",
-          "text": "QGWL-21289 closed"
-        }
-      ],
+      "diffs": [],
       "riskTags": [
         "ticket"
       ],
@@ -407,24 +288,7 @@
       "csmOwner": "william.wt.lin@appier.com",
       "health": "green",
       "insight": "No active tickets — all clear.",
-      "diffs": [
-        {
-          "type": "close",
-          "text": "BBT-7270 closed"
-        },
-        {
-          "type": "close",
-          "text": "BBT-7024 closed"
-        },
-        {
-          "type": "close",
-          "text": "BBT-5599 closed"
-        },
-        {
-          "type": "close",
-          "text": "BBT-4660 closed"
-        }
-      ],
+      "diffs": [],
       "riskTags": [],
       "ticketCount": 0,
       "mtgCount": 0,
