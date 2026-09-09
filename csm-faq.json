@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "updated": "2026-09-02",
+    "updated": "2026-09-09",
     "source": "Confluence CSM FAQ (AI 維護)",
     "indexUrl": "https://appier.atlassian.net/wiki/spaces/~712020045fe11d77e649819f2b2a67a185fdf0/pages/5232100110",
     "note": "由排程從 Confluence 五個分類頁自動重新生成之快取。urgency 未標者預設 medium。",
@@ -383,7 +383,7 @@
       "product": "AIRIS",
       "last_verified": "2026-06-04",
       "source": "https://appier.slack.com/archives/G01137M30B1/p1780538363113779",
-      "status": "active",
+      "status": "stale",
       "urgency": "medium",
       "a": "不建議(意義不大、比對率低)。不同 line_uid 收同一欄位會把同一人拆成兩個 profile。不同 provider 的 LINE OA,merge scope 不能放一起(line_uid 視為不同 email 理解)。另「Fake BB」概念:未購 BB 的客戶用 OJM 發 LINE/WhatsApp,背後仍接一個 BB 站台當發送 channel,不開 BB console 給客戶;注意權限設定,避免客戶意外拿到 BB 後台完整使用權。"
     },
@@ -394,7 +394,7 @@
       "product": "AIRIS",
       "last_verified": "2026-06-04",
       "source": "https://appier.slack.com/archives/G01137M30B1/p1780538931211529",
-      "status": "active",
+      "status": "stale",
       "urgency": "medium",
       "a": "social_id 作用是 user merge,不是給人查看。建議:各社群 ID 整併成一個多值 social_id 欄位(對到上層 user_id 即可 merge),同時把 fb_id、instagram_id 各自攤平成 profile_attribute 供 C360 查看。social_id 暫時對不到 user_id 會先獨立成 profile,找到 user_id/email/phone 才 merge。"
     },
@@ -536,7 +536,7 @@
       "q": "如何幫客戶開通 Unified Segment 的預設 segment 條件(default segment conditions)safeguard?",
       "product": "AIRIS",
       "last_verified": "2026-08-31",
-      "source": "[\\[Handbook\\] Unified Segment - Onboarding default segment conditions](https://appier.atlassian.net/wiki/pages/viewpage.action?pageId=5283250299)",
+      "source": "https://appier.atlassian.net/wiki/pages/viewpage.action?pageId=5283250299",
       "status": "active",
       "urgency": "medium",
       "a": "適用於同一 merge scope 下有多個 project、想避免不小心建出「全域」範圍 segment 的客戶(這些預設條件是安全防護,使用者仍可自行編輯或移除)。前置:客戶已有 AIRIS project、EAM project ID,且已啟用 Unified Segment Hub。CSM 負責向客戶收集預設條件需求規格;實際設定為 TS 執行面:(1) 在 AIRIS project 用「Create Segment > Dynamic Conditions」依需求建一個 segment 存檔,用右上角「⋯」選單的「Copy to JSON」複製 JSON(存完可刪除該 segment);(2) 到 EAM dashboard 找到該客戶 project,在 Configurations 新增設定,Function Name 填 `ec_segment_hub`,Configuration JSON 填 `{\"segment_scope_preset\": [貼上剛複製的JSON]}`。stage:導入/需求異動。"
@@ -547,7 +547,7 @@
       "q": "AQ segment 遷移到 AR(AIRIS)Unified Segment 有自動化工具嗎?CSM 在流程中要做什麼?",
       "product": "AIRIS",
       "last_verified": "2026-08-31",
-      "source": "[\\[Handbook\\] AQ to AR Segment Migration Workflow](https://appier.atlassian.net/wiki/pages/viewpage.action?pageId=5268668433)",
+      "source": "https://appier.atlassian.net/wiki/pages/viewpage.action?pageId=5268668433",
       "status": "active",
       "urgency": "medium",
       "a": "有,「AQ to AR Segment Migration Workflow」透過 Argo Workflow API 分三步執行:Step1 由 TS/RD 呼叫 API(phase=BUILD_REVIEW_SHEET)產生 Google Sheet 審核清單;Step2 CSM 開啟該 Sheet,對每一個要遷移的 segment 在 `confirmed_migrate` 欄位填 TRUE(其餘欄位不動),完成後通知 TS/RD;Step3 由 TS/RD 呼叫 API(phase=MIGRATE_FROM_SHEET)實際建立遷移後的 segment。前置:該 project 已完成 RTDM backfill 且已設好 `ar_project`。CSM 在此流程中只負責 Step2 的審核勾選,不需執行 API 呼叫。⚠️ 此頁與 AQ-015/AR 提到的「[Handbook] AQ to Unified Segment Migration Tool」(pageId 5256872022)可能是相關但不同版本的機制,兩者關係建議請 TS 進一步確認,避免 CSM 誤用舊版流程。"
@@ -558,7 +558,7 @@
       "q": "2025/10/31 之後的新客戶要啟用 Segment Hub(Enterprise Segment),流程與需設哪些 toggle?",
       "product": "AIRIS",
       "last_verified": "2026-07-22",
-      "source": "[\\[Handbook\\] Enable Enterprise Segment - Segment Hub (After 2025/10/31)](https://appier.atlassian.net/wiki/pages/viewpage.action?pageId=4762665079)",
+      "source": "https://appier.atlassian.net/wiki/pages/viewpage.action?pageId=4762665079",
       "status": "active",
       "urgency": "medium",
       "a": "步驟:(1) 於 Enterprise Console 用 EAM 設 toggle — AIQUA only 客戶在 top level 設 `\"airisEnabled\": false`,featureToggles 下設 `\"enable-segment-hub-airis-5723-20251027-dev\": true`;AIRIS Backend 設 `\"essegment.enabled\": true` 與 `timestamps-date-condition=1`。(2) 從 AIRIS segment service 建 test segment 並用 API 標記為 test。(3) AIQUA Internal Dashboard → Edit Accounts (raw) 加 `\"enterpriseSegmentSettings\": {\"airisProjectName\": \"{AIRIS_PROJECT_NAME}\"}`。(4) 重要:到 AIQUA Internal Dashboard 同步並 override default test segment。注意:AIQUA only 客戶目前仍需建 AIRIS project。不知如何登入 EAM 聯繫 Gene Chu。"
@@ -569,7 +569,7 @@
       "q": "Segment Hub (V3) 相較舊的 Enterprise Segment (V2) 多了哪些功能?",
       "product": "AIRIS",
       "last_verified": "2026-07-22",
-      "source": "[\\[Handbook\\] Enable Enterprise Segment - Segment Hub (After 2025/10/31)](https://appier.atlassian.net/wiki/pages/viewpage.action?pageId=4762665079)",
+      "source": "https://appier.atlassian.net/wiki/pages/viewpage.action?pageId=4762665079",
       "status": "active",
       "urgency": "medium",
       "a": "V3 在 V2 基礎上新增:上傳 user list 建 segment、Split users、Export to CSV、Keyword-based segment 條件、顯示 Legacy AIQUA segment。V2/V3 都支援條件建 segment、daily refresh、campaign execution、export。使用 V3 前需先完成 EUU onboarding,進入點 console.appier.com › AIQUA/AIRIS › Create segment condition。"
