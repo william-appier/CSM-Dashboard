@@ -6,7 +6,7 @@
       "name": "Mannings",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "PROJ-33713 backlog 4d · +3 more · Appier x Mannings Bi-weekly Meeting Sep 17 · renewal due 2026-09-30 (21d).",
+      "insight": "⚠️ CONTRACT EXPIRES in 21 days (2026-09-30, AQ & AX renewal). OJM workflow bug (QGWL-26114) still open; bi-weekly meeting Sep 17.",
       "diffs": [],
       "riskTags": [
         "ticket",
@@ -63,21 +63,30 @@
         {
           "priority": "high",
           "label": "Renewal · High",
-          "text": "Mannings contract due 2026-09-30 (21d left) — confirm status now"
+          "text": "AQ & AX contract expires 2026-09-30 (21 days) — confirm renewal paperwork/PO fully executed with Rola Chung / Karen Fu (DFI); signed July 17 but verify closeout.",
+          "commitmentId": null
         },
         {
           "priority": "medium",
           "label": "Meeting · Medium",
-          "text": "Prep for Appier x Mannings Bi-weekly Meeting on Sep 17 (11:00–12:00 HKT · Rola Chung)"
+          "text": "Prep for Appier x Mannings Bi-weekly Meeting Sep 17 (11:00–12:00 HKT, Rola Chung) — cover AIXON→AIRIS Q4 upgrade status and QGWL-26114.",
+          "commitmentId": null
+        },
+        {
+          "priority": "medium",
+          "label": "Ticket · Medium",
+          "text": "QGWL-26114 (OJM node disappears after adding wait-for-condition) owned by luke.chien — chase ETA before Sep 17 meeting.",
+          "commitmentId": null
         }
-      ]
+      ],
+      "commitments": []
     },
     {
       "id": "scmp",
       "name": "SCMP",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "PROJ-33876 backlog 4d · +3 more.",
+      "insight": "4 feature-request tickets aging with Michael Palmer (insight agent, keyword filtering, intensity, dashboard) — no meeting scheduled this week.",
       "diffs": [],
       "riskTags": [
         "ticket",
@@ -126,14 +135,28 @@
           "pinned": false
         }
       ],
-      "suggestions": []
+      "suggestions": [
+        {
+          "priority": "high",
+          "label": "Ticket · High",
+          "text": "4 backlog feature requests with Michael Palmer (PROJ-33876/33875/33874/33694) — none touched recently, check status.",
+          "commitmentId": null
+        },
+        {
+          "priority": "medium",
+          "label": "Check-in · Medium",
+          "text": "No meeting scheduled this week — send a check-in given the ticket backlog.",
+          "commitmentId": null
+        }
+      ],
+      "commitments": []
     },
     {
       "id": "1010hope",
       "name": "10/10Hope",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "green",
-      "insight": "No active tickets — all clear.",
+      "insight": "Silent — no open tickets or meetings; AIQUA onboarding and klickngo API integration (both Mark Liu) still in progress. No contract end date on record.",
       "diffs": [],
       "riskTags": [],
       "ticketCount": 0,
@@ -152,18 +175,26 @@
       "tickets": [],
       "suggestions": [
         {
+          "priority": "medium",
+          "label": "Admin · Medium",
+          "text": "Confirm 10/10Hope contract end date with Finance/Sales — none on record, so renewal alerts can't fire for this account.",
+          "commitmentId": null
+        },
+        {
           "priority": "low",
           "label": "Check-in · Low",
-          "text": "No active tickets — send a check-in to 10/10Hope"
+          "text": "No active tickets — check in with Mark Liu on AIQUA onboarding / klickngo API integration progress.",
+          "commitmentId": null
         }
-      ]
+      ],
+      "commitments": []
     },
     {
       "id": "luxgen",
       "name": "Luxgen",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "green",
-      "insight": "No active tickets — all clear.",
+      "insight": "Silent — no open tickets and no meetings scheduled, itself a risk signal for this account. BB contract (LEG-16090) runs to 2026-11-22.",
       "diffs": [],
       "riskTags": [],
       "ticketCount": 0,
@@ -173,21 +204,30 @@
       "tickets": [],
       "suggestions": [
         {
+          "priority": "medium",
+          "label": "Check-in · Medium",
+          "text": "No meetings on calendar — proactively reach out; this pattern has preceded risk for Luxgen before.",
+          "commitmentId": null
+        },
+        {
           "priority": "low",
-          "label": "Check-in · Low",
-          "text": "No active tickets — send a check-in to Luxgen"
+          "label": "Admin · Low",
+          "text": "Confirm monthly 服務交付報告 (e.g. FIN-2672) has been delivered to Kevin Hsu.",
+          "commitmentId": null
         }
-      ]
+      ],
+      "commitments": []
     },
     {
       "id": "55688",
       "name": "55688",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "55688商城 x Appier 討論 Sep 15.",
+      "insight": "⚠️ CONTRACT EXPIRED 2026-07-31 (代駕/招募 bots) — ownership of which bot actually churned is unconfirmed. 55688商城 x Appier 討論 scheduled Sep 15.",
       "diffs": [],
       "riskTags": [
-        "mtg"
+        "mtg",
+        "renewal"
       ],
       "ticketCount": 0,
       "mtgCount": 1,
@@ -207,18 +247,26 @@
       "tickets": [],
       "suggestions": [
         {
+          "priority": "high",
+          "label": "Renewal · High",
+          "text": "代駕/招募 bots expired 2026-07-31 (40 days ago) — confirm with client which bot(s) actually churned vs. still active, then update contract records.",
+          "commitmentId": null
+        },
+        {
           "priority": "medium",
           "label": "Meeting · Medium",
-          "text": "Prep for 55688商城 x Appier 討論 on Sep 15 (16:00–16:30 HKT · william.wt.lin@appier.com)"
+          "text": "Prep for 55688商城 x Appier 討論 Sep 15 (16:00–16:30 HKT) — status check on Service Agent RFQ (BBT-5428, Brian Tsai).",
+          "commitmentId": null
         }
-      ]
+      ],
+      "commitments": []
     },
     {
       "id": "tiangyuanxiang",
       "name": "田原香",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "ETS-6074 open 8d.",
+      "insight": "ETS-6074 (agent re-asks channel choice on OJM SMS campaign) open 8 days with mia.chu — otherwise quiet; EUU Onboarding and Campaign Agent Feature already complete.",
       "diffs": [],
       "riskTags": [
         "ticket"
@@ -241,35 +289,28 @@
           "pinned": false
         }
       ],
-      "suggestions": []
-    },
-    {
-      "id": "momax",
-      "name": "Momax",
-      "csmOwner": "william.wt.lin@appier.com",
-      "health": "green",
-      "insight": "No active tickets — all clear.",
-      "diffs": [],
-      "riskTags": [],
-      "ticketCount": 0,
-      "mtgCount": 0,
-      "projects": [],
-      "meetings": [],
-      "tickets": [],
       "suggestions": [
+        {
+          "priority": "medium",
+          "label": "Ticket · Medium",
+          "text": "Follow up with mia.chu on ETS-6074 (agent channel-choice bug) — open 8 days, confirm fix timeline before next Tuesday tracking meeting.",
+          "commitmentId": null
+        },
         {
           "priority": "low",
           "label": "Check-in · Low",
-          "text": "No active tickets — send a check-in to Momax"
+          "text": "Weekly Tuesday 09:30 HKT tracking meeting — confirm new-use-case pipeline for next session.",
+          "commitmentId": null
         }
-      ]
+      ],
+      "commitments": []
     },
     {
       "id": "citysuper",
       "name": "City Super",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "green",
-      "insight": "No active tickets — all clear.",
+      "insight": "Context still missing — no contract end date or project background on record for City Super; confirm before the next brief so this account can be tracked properly.",
       "diffs": [],
       "riskTags": [],
       "ticketCount": 0,
@@ -279,18 +320,26 @@
       "tickets": [],
       "suggestions": [
         {
+          "priority": "medium",
+          "label": "Admin · Medium",
+          "text": "Log City Super's contract end date and current project scope — currently blank, so renewal/risk tracking can't work for this account.",
+          "commitmentId": null
+        },
+        {
           "priority": "low",
           "label": "Check-in · Low",
-          "text": "No active tickets — send a check-in to City Super"
+          "text": "No active tickets — send a routine check-in.",
+          "commitmentId": null
         }
-      ]
+      ],
+      "commitments": []
     },
     {
       "id": "xindongli",
       "name": "行動力國際",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "green",
-      "insight": "No active tickets — all clear.",
+      "insight": "Silent — no open tickets or meetings; Account Handover project still in progress since being added Jun 9.",
       "diffs": [],
       "riskTags": [],
       "ticketCount": 0,
@@ -305,11 +354,19 @@
       "tickets": [],
       "suggestions": [
         {
+          "priority": "medium",
+          "label": "Check-in · Medium",
+          "text": "Confirm Account Handover project status/owner — added Jun 9, no tickets logged since.",
+          "commitmentId": null
+        },
+        {
           "priority": "low",
           "label": "Check-in · Low",
-          "text": "No active tickets — send a check-in to 行動力國際"
+          "text": "No active tickets — routine check-in with 行動力國際.",
+          "commitmentId": null
         }
-      ]
+      ],
+      "commitments": []
     }
   ]
 }
