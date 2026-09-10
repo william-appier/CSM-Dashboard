@@ -282,7 +282,13 @@
       alert('Please fill in Client Name and App ID.');
       return;
     }
-    if (feW.step === 2 && !getSelected(feW.platform).length) {
+    // BotBonnie's Feature Enable step is always optional -- it's most often
+    // chained right after the one-click BotBonnie Onboarding modal just in
+    // case the CSM wants to add something else, so requiring a selection
+    // here would force a ticket the CSM didn't ask for. Other platforms
+    // still require at least one feature, since opening this wizard IS the
+    // point for them.
+    if (feW.step === 2 && feW.platform !== 'BB' && !getSelected(feW.platform).length) {
       alert('Please select at least one feature.');
       return;
     }
@@ -334,7 +340,19 @@
 
   window.feCreate = function () {
     var selected = getSelected(feW.platform);
-    if (!selected.length) { alert('No features selected.'); return; }
+    if (!selected.length) {
+      // BB's feature step is optional (see feNext) -- nothing selected just
+      // means the CSM has nothing else to add right now. Close cleanly
+      // instead of blocking with an alert meant for the other platforms.
+      if (feW.platform === 'BB') {
+        closeFeWizard();
+        if (window.switchTab) window.switchTab('tracking');
+        if (window.renderOnboardingProgress) window.renderOnboardingProgress();
+        return;
+      }
+      alert('No features selected.');
+      return;
+    }
     var btn = document.getElementById('feCreateBtn');
     if (btn) { btn.disabled = true; btn.textContent = '\u23f3 Creating...'; }
     var created = [], failed = [];
@@ -649,8 +667,9 @@
       + '<p style="color:var(--muted);font-size:.76rem;margin-top:12px">One Jira ticket per feature. Track in the Issue Tracking tab.</p>';
     document.getElementById('feFooter').innerHTML =
       '<button class="wiz-btn-sec" onclick="feBack()">\u2190 Back</button>'
-      + '<button class="wiz-btn-pri" id="feCreateBtn" onclick="feCreate()">\u{1f3ab} Create '
-      + selected.length + ' Ticket' + (selected.length !== 1 ? 's' : '') + '</button>';
+      + '<button class="wiz-btn-pri" id="feCreateBtn" onclick="feCreate()">'
+      + (selected.length ? ('\u{1f3ab} Create ' + selected.length + ' Ticket' + (selected.length !== 1 ? 's' : '')) : 'Finish')
+      + '</button>';
   }
 
   function feShowResult(created, failed) {
