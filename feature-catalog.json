@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "updated": "2026-07-17",
+    "updated": "2026-09-10",
     "source": "ESS Feature Maturity List 2.0 + Feature onboarding (with Jira) + real ETS tickets",
     "products": [
       "AIQUA",
@@ -577,6 +577,30 @@
   ],
   "BB": [
     {
+      "cat": "Compulsory",
+      "items": [
+        {
+          "id": "bb_onboard",
+          "name": "BotBonnie Onboard Ticket",
+          "mode": "manual_clone",
+          "sample": "ETS-5156",
+          "maturity": "Production",
+          "extra": [
+            {
+              "id": "organizationId",
+              "label": "Organization ID",
+              "placeholder": "e.g. org-xxx"
+            },
+            {
+              "id": "botId",
+              "label": "Bot ID",
+              "placeholder": "e.g. bot-xxx"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "cat": "Conversation",
       "items": [
         {
@@ -946,7 +970,7 @@
         },
         {
           "id": "ar_data_analytics_profiles_report",
-          "name": "Data Analytics - Profiles  Report",
+          "name": "Data Analytics - Profiles Report",
           "mode": "manual",
           "maturity": "Production",
           "pmApproval": false,
@@ -954,7 +978,7 @@
         },
         {
           "id": "ar_data_analytics_journey_report",
-          "name": "Data Analytics - Journey  Report",
+          "name": "Data Analytics - Journey Report",
           "mode": "manual",
           "maturity": "Production",
           "pmApproval": false,
@@ -962,7 +986,7 @@
         },
         {
           "id": "ar_data_analytics_trends_report",
-          "name": "Data Analytics - Trends  Report",
+          "name": "Data Analytics - Trends Report",
           "mode": "manual",
           "maturity": "Production",
           "pmApproval": false,
@@ -970,7 +994,7 @@
         },
         {
           "id": "ar_data_analytics_retention_report",
-          "name": "Data Analytics - Retention  Report",
+          "name": "Data Analytics - Retention Report",
           "mode": "manual",
           "maturity": "Production",
           "pmApproval": false,
@@ -978,7 +1002,7 @@
         },
         {
           "id": "ar_data_analytics_cohort_report",
-          "name": "Data Analytics - Cohort  Report",
+          "name": "Data Analytics - Cohort Report",
           "mode": "manual",
           "maturity": "Production",
           "pmApproval": false,
@@ -986,7 +1010,7 @@
         },
         {
           "id": "ar_data_analytics_attribution_report",
-          "name": "Data Analytics - Attribution  Report",
+          "name": "Data Analytics - Attribution Report",
           "mode": "manual",
           "maturity": "Production",
           "pmApproval": false,
@@ -1082,7 +1106,7 @@
         },
         {
           "id": "ar_reporting_sync_bulk_webhooks",
-          "name": "Reporting - Sync -  Bulk Webhooks",
+          "name": "Reporting - Sync - Bulk Webhooks",
           "mode": "manual",
           "maturity": "Production",
           "pmApproval": false,
@@ -1090,7 +1114,7 @@
         },
         {
           "id": "ar_reporting_sync_bulk_update_properties",
-          "name": "Reporting - Sync -  Bulk update properties",
+          "name": "Reporting - Sync - Bulk update properties",
           "mode": "manual",
           "maturity": "Production",
           "pmApproval": false,
@@ -1098,7 +1122,7 @@
         },
         {
           "id": "ar_reporting_sync_aiqua_create_segment",
-          "name": "Reporting - Sync -  AIQUA Create Segment",
+          "name": "Reporting - Sync - AIQUA Create Segment",
           "mode": "manual",
           "maturity": "Production",
           "pmApproval": false,
@@ -1106,7 +1130,7 @@
         },
         {
           "id": "ar_reporting_sync_botbonnie_create_segment",
-          "name": "Reporting - Sync -  BotBonnie Create Segment",
+          "name": "Reporting - Sync - BotBonnie Create Segment",
           "mode": "manual",
           "maturity": "Production",
           "pmApproval": false,
@@ -1460,7 +1484,7 @@
       "items": [
         {
           "id": "ar_segmentation_unified_segments_aka_enterp",
-          "name": "Segmentation - Unified Segments (aka \"Enterprise Segments\")",
+          "name": "Segmentation - Unified Segments (aka Enterprise Segments)",
           "mode": "manual",
           "maturity": "Closed Beta",
           "pmApproval": false,
