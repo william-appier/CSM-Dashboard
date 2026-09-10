@@ -570,10 +570,12 @@ async function createBotBonnieTicket(){
       id:obId, platform:'BotBonnie', clientName,
       onboardTicketKey:created.key, createdAt:new Date().toISOString().slice(0,10),
       appId:'', projectId:'', organizationId:'',
-      // board = where the ticket WAS CREATED (now always ETS), not where its
-      // sample template lives. ETS-5156 stays the clone source.
-      features:[{ name:'BotBonnie Onboard', featureId:'bb_onboard', ticketKey:created.key,
-                  board:'ETS', sampleBoard:'ETS', mode:'manual_clone', manual:true, status:'Backlog' }],
+      // Tracking table always renders a fixed "Onboard Ticket" row from
+      // onboardTicketKey above, in addition to whatever's in `features` --
+      // seeding features with an entry that points at the SAME ticket key
+      // used to double-list the one ticket that was actually created.
+      // Additional tickets get appended here later via finalizeAddObFeatures.
+      features:[],
     });
     document.getElementById('bbModal')?.remove();
     switchTab('tracking');
