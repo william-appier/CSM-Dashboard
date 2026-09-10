@@ -1881,6 +1881,29 @@ function addObFeatures(obId){
   const ob = loadOnboardings().find(o=>o.id===obId);
   if(!ob){ toast('error','Onboarding record not found'); return; }
 
+  // BotBonnie doesn't use the generic multi-step wizard / CATALOGS system --
+  // CATALOGS.BotBonnie.features only has the single stale 'bb_onboard'
+  // placeholder item. Its real "add more features" catalog (Service Agent,
+  // EC Integration, Open API, Usage dashboard, ...) lives in
+  // feature-catalog.json and is served by the dedicated Feature Enable
+  // wizard (feature-enable.js) -- the same one createBotBonnieTicket()
+  // auto-chains into right after creating the onboard ticket. Route "+ Add
+  // Features" there too instead of opening the generic wizard with the
+  // wrong catalog.
+  if(ob.platform === 'BotBonnie' || ob.platform === 'BB'){
+    if(!(window.openFeatureEnableWizard && window.fePickPlatform)){
+      toast('error','Feature Enable wizard is not available on this page');
+      return;
+    }
+    wiz._addToObId = obId; // tells feature-enable.js's feCreate() to attach here
+    window.openFeatureEnableWizard();
+    window.fePickPlatform('BB');
+    if(window.feSetClientName) window.feSetClientName(ob.clientName);
+    if(window.feNext){ window.feNext(); window.feNext(); } // Platform -> Details -> Features
+    toast('info',`Adding BotBonnie features to ${ob.clientName} \u2014 select below`);
+    return;
+  }
+
   // Pre-fill wizard with existing onboarding data
   wiz.platform          = ob.platform;
   wiz.clientName        = ob.clientName;
