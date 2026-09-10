@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-10T11:14:47.567+08:00",
+  "lastUpdated": "2026-09-10T15:07:43.981+08:00",
   "rules": [
     {
       "id": "okr-consolidate",
@@ -731,7 +731,7 @@
     }
   },
   "trackedTickets": {
-    "generatedAt": "2026-07-21T03:37:24.188Z",
+    "generatedAt": "2026-09-10T07:07:43.593Z",
     "source": "CSM Dashboard tracked list minus done/ignored/tbd-ignored",
     "byAccount": {
       "mannings": [
@@ -753,7 +753,8 @@
       "ETS-5057",
       "ETS-5056",
       "ETS-5049",
-      "ETS-5048"
+      "ETS-5048",
+      "ETS-5156"
     ],
     "detail": {
       "mannings": [
@@ -842,6 +843,12 @@
           "summary": "[Feature Enable] test · AIQUA · Campaign Calendar",
           "status": "To Do",
           "created": "2026-07-17"
+        },
+        {
+          "key": "ETS-5156",
+          "summary": "[Template] BB_New Client Configuration Request",
+          "status": "Sample ticket",
+          "created": "2024-12-27"
         }
       ]
     }
