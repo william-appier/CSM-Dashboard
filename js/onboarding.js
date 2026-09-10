@@ -68,15 +68,15 @@ const CATALOGS = {
 
   // BotBonnie: one-click clone, no wizard needed after platform selection
   BotBonnie: {
-    board: 'BBT',
+    board: 'ETS',
     noWizard: true,           // skips full wizard \u2014 just clones the onboard ticket directly
     guideline: null,
     onboardTicket: {
-      sampleKey: 'BBT-7539',
+      sampleKey: 'ETS-5156',
       summaryTpl: '[{clientName}] BotBonnie Onboarding',
     },
     features: [
-      { id:'bb_onboard', category:'Compulsory', name:'BotBonnie Onboard', sample:'BBT-7539', mode:'manual_clone', board:'BBT', manual:true, extra:[]},
+      { id:'bb_onboard', category:'Compulsory', name:'BotBonnie Onboard', sample:'ETS-5156', mode:'manual_clone', board:'ETS', manual:true, extra:[]},
     ]
   },
 
@@ -480,7 +480,7 @@ function openBotBonnieModal(){
   div.innerHTML=`
     <div style="background:var(--surface2);border:1px solid var(--border);border-radius:12px;padding:28px;min-width:340px;max-width:420px">
       <h3 style="font-family:'Inter',system-ui,sans-serif;font-size:18px;margin:0 0 6px">\u{1f916} BotBonnie Onboarding</h3>
-      <p style="font-size:12px;color:var(--muted);margin:0 0 18px">Clones BBT-7539 with client info and adds it to your tracking board.</p>
+      <p style="font-size:12px;color:var(--muted);margin:0 0 18px">Clones ETS-5156 with client info and adds it to your tracking board.</p>
       <div class="wiz-field">
         <label class="wiz-label">Client Name <span class="wiz-req">*</span></label>
         <input class="wiz-input" id="bbClientName" placeholder="e.g. Mannings" autofocus/>
@@ -510,7 +510,7 @@ async function createBotBonnieTicket(){
   try{
     const user = getUser();
     const base = `${CONFIG.API_BASE}/ex/jira/${user.cloudId}`;
-    const sf   = await apiFetch(`${base}/rest/api/3/issue/BBT-7539?fields=issuetype,description,summary,labels,priority`);
+    const sf   = await apiFetch(`${base}/rest/api/3/issue/ETS-5156?fields=issuetype,description,summary,labels,priority`);
     wiz.clientName = clientName;
     wiz.platform   = 'BotBonnie';
     wiz.extraFields= {};
@@ -555,7 +555,7 @@ async function createBotBonnieTicket(){
 
     const bbDesc = sf.fields?.description
       ? { type:'doc', version:1, content:(sf.fields.description.content||[]).map(sanitizeAdf).filter(Boolean) }
-      : { type:'doc', version:1, content:[{ type:'paragraph', content:[{ type:'text', text:'BotBonnie onboarding for '+clientName+'. Please refer to BBT-7539 for the full configuration template.' }] }] };
+      : { type:'doc', version:1, content:[{ type:'paragraph', content:[{ type:'text', text:'BotBonnie onboarding for '+clientName+'. Please refer to ETS-5156 for the full configuration template.' }] }] };
     if (botId && bbDesc && bbDesc.content) { bbDesc.content.unshift({ type: 'paragraph', content: [{ type: 'text', text: 'Bot ID: ' + botId }] }); }
     const payload = {
       fields:{
@@ -576,9 +576,9 @@ async function createBotBonnieTicket(){
       onboardTicketKey:created.key, createdAt:new Date().toISOString().slice(0,10),
       appId:'', projectId:'', organizationId:'',
       // board = where the ticket WAS CREATED (now always ETS), not where its
-      // sample template lives. BBT-7539 stays the clone source.
+      // sample template lives. ETS-5156 stays the clone source.
       features:[{ name:'BotBonnie Onboard', featureId:'bb_onboard', ticketKey:created.key,
-                  board:'ETS', sampleBoard:'BBT', mode:'manual_clone', manual:true, status:'Backlog' }],
+                  board:'ETS', sampleBoard:'ETS', mode:'manual_clone', manual:true, status:'Backlog' }],
     });
     document.getElementById('bbModal')?.remove();
     switchTab('tracking');
