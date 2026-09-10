@@ -577,30 +577,6 @@
   ],
   "BB": [
     {
-      "cat": "Compulsory",
-      "items": [
-        {
-          "id": "bb_onboard",
-          "name": "BotBonnie Onboard Ticket",
-          "mode": "manual_clone",
-          "sample": "ETS-5156",
-          "maturity": "Production",
-          "extra": [
-            {
-              "id": "organizationId",
-              "label": "Organization ID",
-              "placeholder": "e.g. org-xxx"
-            },
-            {
-              "id": "botId",
-              "label": "Bot ID",
-              "placeholder": "e.g. bot-xxx"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "cat": "Conversation",
       "items": [
         {
