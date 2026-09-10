@@ -480,19 +480,15 @@ function openBotBonnieModal(){
   div.innerHTML=`
     <div style="background:var(--surface2);border:1px solid var(--border);border-radius:12px;padding:28px;min-width:340px;max-width:420px">
       <h3 style="font-family:'Inter',system-ui,sans-serif;font-size:18px;margin:0 0 6px">\u{1f916} BotBonnie Onboarding</h3>
-      <p style="font-size:12px;color:var(--muted);margin:0 0 18px">Clones ETS-5156 with client info and adds it to your tracking board.</p>
+      <p style="font-size:12px;color:var(--muted);margin:0 0 18px">\u{1f4cb} Clones <a href="https://appier.atlassian.net/browse/ETS-5156" target="_blank" style="color:var(--accent)">ETS-5156</a> and adds it to your tracking board. No extra info needed here — fill in Organization ID, Bot ID, and the rest of the template directly on the ticket once it's created.</p>
       <div class="wiz-field">
         <label class="wiz-label">Client Name <span class="wiz-req">*</span></label>
         <input class="wiz-input" id="bbClientName" placeholder="e.g. Mannings" autofocus/>
       </div>
-      <div class="wiz-field">
-        <label class="wiz-label">Bot ID</label>
-        <input class="wiz-input" id="bbBotId" placeholder="e.g. bot-xxx"/>
-      </div>
       <div class="wiz-err" id="bbErr" style="display:none;margin-bottom:10px"></div>
       <div style="display:flex;gap:10px;margin-top:18px;justify-content:flex-end">
         <button class="btn-wiz-back" onclick="document.getElementById('bbModal').remove()">Cancel</button>
-        <button class="btn-wiz-next" id="bbCreateBtn" onclick="createBotBonnieTicket()">Create Onboard Ticket \u2192</button>
+        <button class="btn-wiz-next" id="bbCreateBtn" onclick="createBotBonnieTicket()">Create Onboard Ticket →</button>
       </div>
     </div>`;
   document.body.appendChild(div);
@@ -501,12 +497,11 @@ function openBotBonnieModal(){
 
 async function createBotBonnieTicket(){
   const clientName = document.getElementById('bbClientName')?.value?.trim();
-  const botId = (document.getElementById('bbBotId')?.value || '').trim();
   const err = document.getElementById('bbErr');
   if(!clientName){ err.textContent='Client name is required'; err.style.display='block'; return; }
   err.style.display='none';
   const btn = document.getElementById('bbCreateBtn');
-  if(btn){ btn.disabled=true; btn.textContent='Creating\u2026'; }
+  if(btn){ btn.disabled=true; btn.textContent='Creating…'; }
   try{
     const user = getUser();
     const base = `${CONFIG.API_BASE}/ex/jira/${user.cloudId}`;
@@ -523,7 +518,7 @@ async function createBotBonnieTicket(){
       if(cleaned.content) cleaned.content = cleaned.content.map(stripLocalIds);
       return cleaned;
     }
-    // Sanitize the cloned ADF \u2014 convert taskList/taskItem (checkboxes) to bulletList/listItem
+    // Sanitize the cloned ADF — convert taskList/taskItem (checkboxes) to bulletList/listItem
     // since BBT's create API rejects taskList nodes. Also strip localIds and unsupported blocks.
     function sanitizeAdf(node){
       if(!node||typeof node!=='object') return node;
@@ -556,7 +551,6 @@ async function createBotBonnieTicket(){
     const bbDesc = sf.fields?.description
       ? { type:'doc', version:1, content:(sf.fields.description.content||[]).map(sanitizeAdf).filter(Boolean) }
       : { type:'doc', version:1, content:[{ type:'paragraph', content:[{ type:'text', text:'BotBonnie onboarding for '+clientName+'. Please refer to ETS-5156 for the full configuration template.' }] }] };
-    if (botId && bbDesc && bbDesc.content) { bbDesc.content.unshift({ type: 'paragraph', content: [{ type: 'text', text: 'Bot ID: ' + botId }] }); }
     const payload = {
       fields:{
         project:    { key: ETS.PROJECT_KEY },
@@ -571,8 +565,9 @@ async function createBotBonnieTicket(){
       }
     };
     const created = await apiFetch(`${base}/rest/api/3/issue`,{method:'POST',body:JSON.stringify(payload)});
+    const obId = 'ob_bb_'+Date.now();
     addOnboarding({
-      id:'ob_bb_'+Date.now(), platform:'BotBonnie', clientName, botId: botId,
+      id:obId, platform:'BotBonnie', clientName,
       onboardTicketKey:created.key, createdAt:new Date().toISOString().slice(0,10),
       appId:'', projectId:'', organizationId:'',
       // board = where the ticket WAS CREATED (now always ETS), not where its
@@ -583,19 +578,26 @@ async function createBotBonnieTicket(){
     document.getElementById('bbModal')?.remove();
     switchTab('tracking');
     renderOnboardingProgress();
-    toast('success',`\u2713 Created ${created.key} \u2014 BotBonnie onboarding started`);
-      setTimeout(function () {
-        if (window.openFeatureEnableWizard && window.fePickPlatform) {
-          window.openFeatureEnableWizard();
-          window.fePickPlatform('BB');
-          if (window.feSetClientName) window.feSetClientName(clientName);
-          if (window.feNext) { window.feNext(); window.feNext(); }
-          if (typeof toast === 'function') toast('info', 'Pick BotBonnie features to enable \u2014 or close if not needed');
-        }
-      }, 700);
+    toast('success',`✓ Created ${created.key} — BotBonnie onboarding started`);
+    // Chain straight into the Feature Enable wizard's BB feature picker so the CSM
+    // can add any other BotBonnie features (Shopify, Knowledge Bot, etc.) in the
+    // same flow. wiz._addToObId tells feature-enable.js's feCreate() to append the
+    // tickets it creates to THIS onboarding record (via finalizeAddObFeatures)
+    // instead of starting a second, disconnected tracking entry -- see
+    // feature-enable.js and closeFeWizard() for the other half of this wiring.
+    wiz._addToObId = obId;
+    setTimeout(function () {
+      if (window.openFeatureEnableWizard && window.fePickPlatform) {
+        window.openFeatureEnableWizard();
+        window.fePickPlatform('BB');
+        if (window.feSetClientName) window.feSetClientName(clientName);
+        if (window.feNext) { window.feNext(); window.feNext(); }
+        if (typeof toast === 'function') toast('info', 'Add any other BotBonnie features here, or close if not needed');
+      }
+    }, 700);
   }catch(e){
     if(err){ err.textContent='Failed: '+e.message; err.style.display='block'; }
-    if(btn){ btn.disabled=false; btn.textContent='Create Onboard Ticket \u2192'; }
+    if(btn){ btn.disabled=false; btn.textContent='Create Onboard Ticket →'; }
   }
 }
 
