@@ -240,6 +240,10 @@
 
   window.closeFeWizard = function () {
     document.getElementById('feOverlay').style.display = 'none';
+    // If this run was chained from an onboarding record (see js/onboarding.js
+    // createBotBonnieTicket) and closed without creating anything, clear the flag
+    // so it doesn't wrongly attach to a future, unrelated wizard run.
+    if (window.wiz && window.wiz._addToObId) window.wiz._addToObId = null;
   };
   window.closeFEWizard = window.closeFeWizard; // alias — some markup used the FE casing
 
@@ -408,20 +412,32 @@
         return chain;
       })
       .then(function () {
-        if (created.length && window.addOnboarding) {
+        if (created.length) {
+          var newFeatures = selected.filter(function (f) { return f._ticketKey; }).map(function (f) {
+            return { name: f.name, featureId: f.id, ticketKey: f._ticketKey, board: 'ETS', mode: f.mode || 'clone', manual: (f.mode === 'manual' || f.mode === 'manual_clone'), status: 'Backlog' };
+          });
           try {
-            window.addOnboarding({
-              id: 'fe_' + Date.now(),
-              platform: feW.platform,
-              clientName: feW.clientName,
-              type: 'feature-enable',
-              onboardTicketKey: created[0],
-              createdAt: new Date().toISOString().slice(0, 10),
-              appId: feW.appId,
-              features: selected.filter(function (f) { return f._ticketKey; }).map(function (f) {
-                return { name: f.name, featureId: f.id, ticketKey: f._ticketKey, board: 'ETS', mode: f.mode || 'clone', manual: (f.mode === 'manual' || f.mode === 'manual_clone'), status: 'Backlog' };
-              })
-            });
+            // If this wizard run was chained from an existing onboarding record
+            // (e.g. the BotBonnie one-click onboarding modal opens this wizard
+            // right after creating its own ticket), attach the new tickets to
+            // THAT record instead of starting a second, disconnected tracking
+            // entry -- keeps one unified tracking block per onboarding session.
+            // See js/onboarding.js: wiz._addToObId / finalizeAddObFeatures.
+            var attached = (window.wiz && window.wiz._addToObId && window.finalizeAddObFeatures)
+              ? window.finalizeAddObFeatures(newFeatures)
+              : false;
+            if (!attached && window.addOnboarding) {
+              window.addOnboarding({
+                id: 'fe_' + Date.now(),
+                platform: feW.platform,
+                clientName: feW.clientName,
+                type: 'feature-enable',
+                onboardTicketKey: created[0],
+                createdAt: new Date().toISOString().slice(0, 10),
+                appId: feW.appId,
+                features: newFeatures
+              });
+            }
             if (window.renderOnboardingProgress) window.renderOnboardingProgress();
             feRefreshTickets();
           } catch (e) { console.warn('[feature-enable] tracking record failed:', e.message); }
