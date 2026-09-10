@@ -243,7 +243,13 @@
     // If this run was chained from an onboarding record (see js/onboarding.js
     // createBotBonnieTicket) and closed without creating anything, clear the flag
     // so it doesn't wrongly attach to a future, unrelated wizard run.
-    if (window.wiz && window.wiz._addToObId) window.wiz._addToObId = null;
+    // NOTE: `wiz` is declared with `let` at the top level of js/onboarding.js,
+    // which is loaded as a classic <script> before this one -- that makes it
+    // a shared *lexical* global, but `let` (unlike `var`) never attaches to
+    // `window`, so `window.wiz` is always undefined. Reference the bare
+    // identifier instead; guard with typeof in case this file is ever used
+    // without onboarding.js loaded.
+    if (typeof wiz !== 'undefined' && wiz && wiz._addToObId) wiz._addToObId = null;
   };
   window.closeFEWizard = window.closeFeWizard; // alias — some markup used the FE casing
 
@@ -338,6 +344,103 @@
   // "use the automatic mapping" (see etsRelatedProduct in js/config.js).
   window.feSetRelatedProduct = function (id) { feW.relatedProduct = id || null; };
 
+  // BB features are meant to be real Jira clones of their `sample` ticket --
+  // same idea as js/onboarding.js's createBotBonnieTicket() -- not the
+  // generic templated-description ticket every other platform gets here.
+  // AIQUA/AIRIS keep the original generic body untouched (separate on
+  // purpose: BotBonnie follows its own clone flow, the rest don't clone).
+  function feSanitizeAdf(node) {
+    if (!node || typeof node !== 'object') return node;
+    if (node.type === 'taskList') {
+      return { type: 'bulletList', content: (node.content || []).map(feSanitizeAdf).filter(Boolean) };
+    }
+    if (node.type === 'taskItem') {
+      var checked = node.attrs && node.attrs.state === 'DONE';
+      var prefix = { type: 'text', text: (checked ? '[x] ' : '[ ] ') };
+      var kids = (node.content || []).reduce(function (a, c) { return a.concat(c.content || [c]); }, []);
+      return { type: 'listItem', content: [{ type: 'paragraph', content: [prefix].concat(kids.map(feSanitizeAdf)) }] };
+    }
+    if (['inlineCard', 'blockCard', 'embedCard'].indexOf(node.type) !== -1) {
+      var url = (node.attrs && node.attrs.url) || '';
+      return url ? { type: 'text', text: url } : null;
+    }
+    var attrs = node.attrs, rest = {};
+    for (var k in node) { if (k !== 'attrs' && Object.prototype.hasOwnProperty.call(node, k)) rest[k] = node[k]; }
+    var cleanAttrs;
+    if (attrs) {
+      cleanAttrs = {};
+      for (var ak in attrs) {
+        if (Object.prototype.hasOwnProperty.call(attrs, ak) && ak !== 'localId' && ak !== 'timestamp') cleanAttrs[ak] = attrs[ak];
+      }
+    }
+    var cleaned = (cleanAttrs && Object.keys(cleanAttrs).length) ? Object.assign({}, rest, { attrs: cleanAttrs }) : rest;
+    if (cleaned.content) cleaned.content = cleaned.content.map(feSanitizeAdf).filter(Boolean);
+    return cleaned;
+  }
+
+  function feBuildGenericBody(f) {
+    var extras = feW.extraFields[f.id] || {};
+    var extraLines = (f.extra || []).map(function(ex){
+      return ex.label + ': ' + (extras[ex.id] || '\u2014');
+    }).join('\n');
+    var summary = '[' + feW.clientName + '] ' + feW.platform + ' \u00b7 ' + f.name;
+    var body = {
+      fields: {
+        // Single source of truth is js/config.js; the literals are a fallback
+        // in case config.js failed to load, so creation still targets ETS.
+        project: { key: (window.ETS && window.ETS.PROJECT_KEY) || 'ETS' },
+        summary: summary,
+        description: {
+          type: 'doc', version: 1,
+          content: [{ type: 'paragraph', content: [{ type: 'text',
+            text: 'Feature enable request.\n\nClient: ' + feW.clientName
+                + '\nApp ID: ' + feW.appId
+                + '\nPlatform: ' + feW.platform
+                + '\nFeature: ' + f.name
+                + (f.sample ? '\nSample ticket: ' + f.sample : '')
+                +
+          (f.maturity ? '\nMaturity: ' + f.maturity : '') +
+          (f.pmApproval ? '\nPM approval: required (get PM sign-off)' : '') +
+          (f.paid ? '\nPaid module: confirm contract scope' : '') + (extraLines ? '\n\n' + extraLines : '')
+                + '\n\nRequested via CSM Dashboard.'
+          }] }]
+        },
+        issuetype: { name: (window.ETS && window.ETS.ISSUE_TYPE) || 'Service Request' }
+      }
+    };
+    return Promise.resolve(body);
+  }
+
+  function feBuildBBCloneBody(f, tok, cloudId) {
+    var base = 'https://api.atlassian.com/ex/jira/' + cloudId;
+    return fetch(base + '/rest/api/3/issue/' + f.sample + '?fields=issuetype,description,summary,labels,priority', {
+      headers: { Authorization: 'Bearer ' + tok, Accept: 'application/json' }
+    })
+      .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status + ' fetching sample ' + f.sample); return r.json(); })
+      .then(function (sf) {
+        var summary = '[' + feW.clientName + '] ' + feW.platform + ' \u00b7 ' + f.name;
+        var desc = (sf.fields && sf.fields.description)
+          ? { type: 'doc', version: 1, content: (sf.fields.description.content || []).map(feSanitizeAdf).filter(Boolean) }
+          : { type: 'doc', version: 1, content: [{ type: 'paragraph', content: [{ type: 'text',
+              text: f.name + ' for ' + feW.clientName + '. Please refer to ' + f.sample + ' for the full configuration template.' }] }] };
+        var labels = ((sf.fields && sf.fields.labels) || []).filter(function (l) { return typeof l === 'string'; });
+        labels = labels.concat(['onboarding-dashboard', 'fe-' + f.id]);
+        return {
+          fields: {
+            project: { key: (window.ETS && window.ETS.PROJECT_KEY) || 'ETS' },
+            summary: summary,
+            description: desc,
+            labels: labels,
+            issuetype: { name: (window.ETS && window.ETS.ISSUE_TYPE) || 'Service Request' }
+          }
+        };
+      })
+      .catch(function (e) {
+        console.warn('[feature-enable] BB clone of ' + f.sample + ' failed, falling back to generic body:', e.message);
+        return feBuildGenericBody(f);
+      });
+  }
+
   window.feCreate = function () {
     var selected = getSelected(feW.platform);
     if (!selected.length) {
@@ -368,47 +471,23 @@
         var chain = Promise.resolve();
         selected.forEach(function (f) {
           chain = chain.then(function () {
-            var extras = feW.extraFields[f.id] || {};
-            var extraLines = (f.extra || []).map(function(ex){
-              return ex.label + ': ' + (extras[ex.id] || '\u2014');
-            }).join('\n');
-            var summary = '[' + feW.clientName + '] ' + feW.platform + ' \u00b7 ' + f.name;
-            var body = {
-              fields: {
-                // Single source of truth is js/config.js; the literals are a fallback
-                // in case config.js failed to load, so creation still targets ETS.
-                project: { key: (window.ETS && window.ETS.PROJECT_KEY) || 'ETS' },
-                summary: summary,
-                description: {
-                  type: 'doc', version: 1,
-                  content: [{ type: 'paragraph', content: [{ type: 'text',
-                    text: 'Feature enable request.\n\nClient: ' + feW.clientName
-                        + '\nApp ID: ' + feW.appId
-                        + '\nPlatform: ' + feW.platform
-                        + '\nFeature: ' + f.name
-                        + (f.sample ? '\nSample ticket: ' + f.sample : '')
-                        +
-                  (f.maturity ? '\nMaturity: ' + f.maturity : '') +
-                  (f.pmApproval ? '\nPM approval: required (get PM sign-off)' : '') +
-                  (f.paid ? '\nPaid module: confirm contract scope' : '') + (extraLines ? '\n\n' + extraLines : '')
-                        + '\n\nRequested via CSM Dashboard.'
-                  }] }]
-                },
-                issuetype: { name: (window.ETS && window.ETS.ISSUE_TYPE) || 'Service Request' }
+            var bodyPromise = (feW.platform === 'BB' && f.sample)
+              ? feBuildBBCloneBody(f, tok, cloudId)
+              : feBuildGenericBody(f);
+            return bodyPromise.then(function (body) {
+              if (feW.assignee) { body.fields.assignee = { accountId: feW.assignee.accountId }; }
+              // ETS requires "Related Product" (customfield_23811). Without it Jira
+              // rejects the create with 400 and the wizard reports a bare "failed".
+              // Auto-mapped from platform + feature, overridable on the Review step.
+              if (window.etsRpField) {
+                var rp = window.etsRpField(feW.platform, f, feW.relatedProduct);
+                for (var rk in rp) { if (Object.prototype.hasOwnProperty.call(rp, rk)) body.fields[rk] = rp[rk]; }
               }
-            };
-            if (feW.assignee) { body.fields.assignee = { accountId: feW.assignee.accountId }; }
-            // ETS requires "Related Product" (customfield_23811). Without it Jira
-            // rejects the create with 400 and the wizard reports a bare "failed".
-            // Auto-mapped from platform + feature, overridable on the Review step.
-            if (window.etsRpField) {
-              var rp = window.etsRpField(feW.platform, f, feW.relatedProduct);
-              for (var rk in rp) { if (Object.prototype.hasOwnProperty.call(rp, rk)) body.fields[rk] = rp[rk]; }
-            }
-            return fetch('https://api.atlassian.com/ex/jira/' + cloudId + '/rest/api/3/issue', {
-              method: 'POST',
-              headers: { Authorization: 'Bearer ' + tok, 'Content-Type': 'application/json', Accept: 'application/json' },
-              body: JSON.stringify(body)
+              return fetch('https://api.atlassian.com/ex/jira/' + cloudId + '/rest/api/3/issue', {
+                method: 'POST',
+                headers: { Authorization: 'Bearer ' + tok, 'Content-Type': 'application/json', Accept: 'application/json' },
+                body: JSON.stringify(body)
+              });
             })
             .then(function(r){ return r.json().then(function(d){ return { status: r.status, data: d }; }); })
             .then(function(res){
@@ -441,7 +520,8 @@
             // THAT record instead of starting a second, disconnected tracking
             // entry -- keeps one unified tracking block per onboarding session.
             // See js/onboarding.js: wiz._addToObId / finalizeAddObFeatures.
-            var attached = (window.wiz && window.wiz._addToObId && window.finalizeAddObFeatures)
+            // `wiz` is a bare identifier, not window.wiz -- see closeFeWizard above.
+            var attached = (typeof wiz !== 'undefined' && wiz && wiz._addToObId && window.finalizeAddObFeatures)
               ? window.finalizeAddObFeatures(newFeatures)
               : false;
             if (!attached && window.addOnboarding) {
