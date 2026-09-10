@@ -580,12 +580,12 @@
       "cat": "Conversation",
       "items": [
         {
-          "id": "bb_knowledge_bot",
-          "name": "Knowledge Bot",
+          "id": "bb_service_agent",
+          "name": "Service Agent",
           "mode": "clone",
-          "sample": "BBT-5176",
+          "sample": "ETS-4964",
           "maturity": "Production",
-          "pmApproval": false,
+          "pmApproval": true,
           "paid": true
         }
       ]
@@ -594,46 +594,10 @@
       "cat": "EC-Platform",
       "items": [
         {
-          "id": "bb_shopify_restock",
-          "name": "Shopify Restock Notification",
+          "id": "bb_ec_integration",
+          "name": "EC Integration",
           "mode": "clone",
-          "sample": "BBT-5176",
-          "maturity": "Production",
-          "pmApproval": false,
-          "paid": true
-        },
-        {
-          "id": "bb_shopify",
-          "name": "Shopify Integration",
-          "mode": "clone",
-          "sample": "BBT-5176",
-          "maturity": "Production",
-          "pmApproval": false,
-          "paid": true
-        },
-        {
-          "id": "bb_shopline",
-          "name": "Shopline Integration",
-          "mode": "clone",
-          "sample": "BBT-5176",
-          "maturity": "Production",
-          "pmApproval": false,
-          "paid": true
-        },
-        {
-          "id": "bb_91app",
-          "name": "91App Integration",
-          "mode": "clone",
-          "sample": "BBT-5176",
-          "maturity": "Production",
-          "pmApproval": false,
-          "paid": true
-        },
-        {
-          "id": "bb_cyberbiz",
-          "name": "Cyberbiz Integration",
-          "mode": "clone",
-          "sample": "BBT-5176",
+          "sample": "ETS-6088",
           "maturity": "Production",
           "pmApproval": false,
           "paid": true
@@ -650,6 +614,20 @@
           "sample": "BBT-5364",
           "maturity": "Production",
           "pmApproval": false,
+          "paid": false
+        }
+      ]
+    },
+    {
+      "cat": "Usage dashboard",
+      "items": [
+        {
+          "id": "bb_usage_dashboard",
+          "name": "Usage dashboard",
+          "mode": "clone",
+          "sample": "ETS-3359",
+          "maturity": "Production",
+          "pmApproval": true,
           "paid": false
         }
       ]
