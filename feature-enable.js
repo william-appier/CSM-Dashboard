@@ -96,14 +96,13 @@
         { id: 'ojm_feat',   name: 'OJM Feature Enablement', mode: 'clone',  sample: 'PHXX-6252', board: 'PHXX', extra: [] }
       ]}
     ],
-    BB: [
-      { cat: 'Compulsory', items: [
-        { id: 'bb_onboard', name: 'BotBonnie Onboard Ticket', mode: 'manual_clone', sample: 'BBT-7539', extra: [
-          { id: 'organizationId', label: 'Organization ID', placeholder: 'e.g. org-xxx' },
-          { id: 'botId', label: 'Bot ID', placeholder: 'e.g. bot-xxx' }
-        ] }
-      ] }
-    ],
+    // BB: no built-in fallback categories. The BotBonnie onboarding ticket is
+    // created by the dedicated one-click BotBonnie Onboarding modal in
+    // js/onboarding.js, not by this wizard feature checklist -- listing it
+    // again here would let a CSM enable a ticket that was already created in
+    // the onboarding step. Real BB categories (Conversation / EC-Platform /
+    // API) come entirely from feature-catalog.json.
+    BB: [],
     AIRIS: [
       { cat: 'Compulsory', items: [
         { id: 'airis_onboard', name: 'Onboard AIRIS', mode: 'manual', sample: 'AR-1000', extra: [] }
