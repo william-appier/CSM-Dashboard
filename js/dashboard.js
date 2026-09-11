@@ -33,7 +33,7 @@ function extractClient(s){
   const m=normU(s).match(/\[([^\]]+)\]/);
   return m ? normClient(m[1].trim())||'Others' : 'Others';
 }
-function isDone(s){const l=(s||'').toLowerCase();return['done','duplicate','archive','closed','resolved'].includes(l)||l.includes("won't fix")||l.includes('wontfix')||l.includes('invalid');}
+function isDone(s){const l=(s||'').toLowerCase();return['done','duplicate','archive','closed','resolved'].includes(l)||l.includes("won't fix")||l.includes('wontfix')||l.includes("won't do")||l.includes('wontdo')||l.includes('invalid');}
 function isBacklog(s){const l=(s||'').toLowerCase();return l==='backlog'||l==='csm backlog'||l==='issue backlog';}
 function isActive(s){return !isDone(s)&&!isBacklog(s);}
 function statusPriority(s){
