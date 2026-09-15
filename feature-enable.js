@@ -360,6 +360,12 @@
       var kids = (node.content || []).reduce(function (a, c) { return a.concat(c.content || [c]); }, []);
       return { type: 'listItem', content: [{ type: 'paragraph', content: [prefix].concat(kids.map(feSanitizeAdf)) }] };
     }
+    if (['media', 'mediaSingle', 'mediaGroup'].indexOf(node.type) !== -1) {
+      return { type: 'paragraph', content: [{ type: 'text', text: '[image omitted \u2014 see the sample ticket for the original attachment]' }] };
+    }
+    if (node.type === 'mediaInline') {
+      return { type: 'text', text: '[image omitted \u2014 see the sample ticket]' };
+    }
     if (['inlineCard', 'blockCard', 'embedCard'].indexOf(node.type) !== -1) {
       var url = (node.attrs && node.attrs.url) || '';
       return url ? { type: 'text', text: url } : null;
@@ -378,37 +384,76 @@
     return cleaned;
   }
 
-  function feBuildGenericBody(f) {
+  function feBuildGenericBody(f, tok, cloudId) {
     var extras = feW.extraFields[f.id] || {};
     var extraLines = (f.extra || []).map(function(ex){
-      return ex.label + ': ' + (extras[ex.id] || '\u2014');
+      return ex.label + ': ' + (extras[ex.id] || '—');
     }).join('\n');
-    var summary = '[' + feW.clientName + '] ' + feW.platform + ' \u00b7 ' + f.name;
-    var body = {
-      fields: {
-        // Single source of truth is js/config.js; the literals are a fallback
-        // in case config.js failed to load, so creation still targets ETS.
-        project: { key: (window.ETS && window.ETS.PROJECT_KEY) || 'ETS' },
-        summary: summary,
-        description: {
+    var featureOverrides = { enableFeature: f.name };
+    Object.keys(extras).forEach(function (k) { if (!(k in featureOverrides)) featureOverrides[k] = extras[k]; });
+
+    function genericFallbackBody(){
+      var summary = buildClonedSummary(feW.clientName, null, f.name, featureOverrides);
+      return {
+        fields: {
+          project: { key: (window.ETS && window.ETS.PROJECT_KEY) || 'ETS' },
+          summary: summary,
+          description: {
+            type: 'doc', version: 1,
+            content: [{ type: 'paragraph', content: [{ type: 'text',
+              text: 'Feature enable request.\n\nClient: ' + feW.clientName
+                  + '\nApp ID: ' + feW.appId
+                  + '\nPlatform: ' + feW.platform
+                  + '\nFeature: ' + f.name
+                  + (f.sample ? '\nSample ticket: ' + f.sample : '')
+                  + (f.maturity ? '\nMaturity: ' + f.maturity : '')
+                  + (f.pmApproval ? '\nPM approval: required (get PM sign-off)' : '')
+                  + (f.paid ? '\nPaid module: confirm contract scope' : '')
+                  + (extraLines ? '\n\n' + extraLines : '')
+                  + '\n\nRequested via CSM Dashboard.'
+            }] }]
+          },
+          issuetype: { name: (window.ETS && window.ETS.ISSUE_TYPE) || 'Service Request' }
+        }
+      };
+    }
+
+    if (!f.sample || !tok || !cloudId) return Promise.resolve(genericFallbackBody());
+
+    var base = 'https://api.atlassian.com/ex/jira/' + cloudId;
+    return fetch(base + '/rest/api/3/issue/' + f.sample + '?fields=issuetype,description,summary,labels,priority', {
+      headers: { Authorization: 'Bearer ' + tok, Accept: 'application/json' }
+    })
+      .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status + ' fetching sample ' + f.sample); return r.json(); })
+      .then(function (sf) {
+        var sfFields = sf.fields || {};
+        var summary = buildClonedSummary(feW.clientName, sfFields.summary, f.name, featureOverrides);
+        var clonedContent = (sfFields.description && sfFields.description.content)
+          ? sfFields.description.content.map(function (n) { return resolveAdfTemplates(n, featureOverrides); })
+          : [];
+        var sanitized = clonedContent.map(feSanitizeAdf).filter(Boolean);
+        var appendText = (extraLines ? extraLines + '\n' : '') + 'App ID: ' + feW.appId
+          + (f.sample ? '\nCloned from: ' + f.sample : '') + '\n\nRequested via CSM Dashboard.';
+        var desc = {
           type: 'doc', version: 1,
-          content: [{ type: 'paragraph', content: [{ type: 'text',
-            text: 'Feature enable request.\n\nClient: ' + feW.clientName
-                + '\nApp ID: ' + feW.appId
-                + '\nPlatform: ' + feW.platform
-                + '\nFeature: ' + f.name
-                + (f.sample ? '\nSample ticket: ' + f.sample : '')
-                +
-          (f.maturity ? '\nMaturity: ' + f.maturity : '') +
-          (f.pmApproval ? '\nPM approval: required (get PM sign-off)' : '') +
-          (f.paid ? '\nPaid module: confirm contract scope' : '') + (extraLines ? '\n\n' + extraLines : '')
-                + '\n\nRequested via CSM Dashboard.'
-          }] }]
-        },
-        issuetype: { name: (window.ETS && window.ETS.ISSUE_TYPE) || 'Service Request' }
-      }
-    };
-    return Promise.resolve(body);
+          content: sanitized.concat([{ type: 'paragraph', content: [{ type: 'text', text: '\n---\n' + appendText }] }])
+        };
+        var labels = ((sfFields.labels || []).filter(function (l) { return typeof l === 'string'; }))
+          .concat(['onboarding-dashboard', 'fe-' + f.id]);
+        return {
+          fields: {
+            project: { key: (window.ETS && window.ETS.PROJECT_KEY) || 'ETS' },
+            summary: summary,
+            description: desc,
+            labels: labels,
+            issuetype: { name: (window.ETS && window.ETS.ISSUE_TYPE) || 'Service Request' }
+          }
+        };
+      })
+      .catch(function (e) {
+        console.warn('[feature-enable] clone of ' + f.sample + ' failed, falling back to generic body:', e.message);
+        return genericFallbackBody();
+      });
   }
 
   function feBuildBBCloneBody(f, tok, cloudId) {
@@ -418,12 +463,16 @@
     })
       .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status + ' fetching sample ' + f.sample); return r.json(); })
       .then(function (sf) {
-        var summary = '[' + feW.clientName + '] ' + feW.platform + ' \u00b7 ' + f.name;
-        var desc = (sf.fields && sf.fields.description)
-          ? { type: 'doc', version: 1, content: (sf.fields.description.content || []).map(feSanitizeAdf).filter(Boolean) }
+        var sfFields = sf.fields || {};
+        var extras = feW.extraFields[f.id] || {};
+        var featureOverrides = { enableFeature: f.name };
+        Object.keys(extras).forEach(function (k) { if (!(k in featureOverrides)) featureOverrides[k] = extras[k]; });
+        var summary = buildClonedSummary(feW.clientName, sfFields.summary, f.name, featureOverrides);
+        var desc = (sfFields.description)
+          ? { type: 'doc', version: 1, content: (sfFields.description.content || []).map(function (n) { return resolveAdfTemplates(n, featureOverrides); }).map(feSanitizeAdf).filter(Boolean) }
           : { type: 'doc', version: 1, content: [{ type: 'paragraph', content: [{ type: 'text',
               text: f.name + ' for ' + feW.clientName + '. Please refer to ' + f.sample + ' for the full configuration template.' }] }] };
-        var labels = ((sf.fields && sf.fields.labels) || []).filter(function (l) { return typeof l === 'string'; });
+        var labels = ((sfFields.labels) || []).filter(function (l) { return typeof l === 'string'; });
         labels = labels.concat(['onboarding-dashboard', 'fe-' + f.id]);
         return {
           fields: {
@@ -472,8 +521,7 @@
         selected.forEach(function (f) {
           chain = chain.then(function () {
             var bodyPromise = (feW.platform === 'BB' && f.sample)
-              ? feBuildBBCloneBody(f, tok, cloudId)
-              : feBuildGenericBody(f);
+              ? feBuildBBCloneBody(f, tok, cloudId)              : feBuildGenericBody(f, tok, cloudId);
             return bodyPromise.then(function (body) {
               if (feW.assignee) { body.fields.assignee = { accountId: feW.assignee.accountId }; }
               // ETS requires "Related Product" (customfield_23811). Without it Jira
