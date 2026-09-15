@@ -468,6 +468,22 @@ function resolveAdfTemplates(node, featureOverrides){
   }
   return node;
 }
+// ---- Shared summary rule for EVERY ticket-creation path ----------------
+// Onboarding wizard, standalone Feature Enable wizard, and the BB one-click
+// modal all funnel through this so "[ClientName] ..." at the very front is
+// guaranteed no matter which entry point created the ticket, and never
+// depends on the sample ticket happening to already have a bracket group
+// in the right place (it may have a stale "[Sample Corp]" of its own).
+function buildClonedSummary(clientName, sampleSummary, fallbackLabel, featureOverrides){
+  const name = (clientName || '').trim();
+  if(!name) throw new Error('Client name is required before a ticket can be created (cannot leave "[ ]" blank).');
+  let label = (sampleSummary && typeof sampleSummary === 'string' && sampleSummary.trim())
+    ? resolveTemplate(sampleSummary, featureOverrides)
+    : fallbackLabel;
+  label = label.replace(/^\s*\[[^\]]*\]\s*/, '');
+  return `[${name}] ${label}`;
+}
+
 let wizAssigneeTimer = null;
 
 const WIZ_STEPS = 6;  // 0=platform 1=account 2=TS assignee 3=IDs 4=features 5=review
@@ -1353,11 +1369,8 @@ async function wizCreateAllTickets(){
       const appendContent = [{type:'paragraph',content:[{type:'text',
         text:'\n---\n'+resolveTemplate(descText)}]}];
 
-      // Apply resolveTemplate to summary (handles {clientName} etc in sample ticket)
-      const resolvedSummary = resolveTemplate(
-        sf.summary?.includes('{') ? sf.summary : `[${wiz.clientName}] ${feat.name}`,
-        featureOverrides
-      ).replace(/\[.*?\]\s*/, `[${wiz.clientName}] `); // ensure [ClientName] is correct
+      // Single shared rule for every ticket-creation path -- see buildClonedSummary above.
+      const resolvedSummary = buildClonedSummary(wiz.clientName, sf.summary, feat.name, featureOverrides);
 
       // Strip localId attrs from cloned ADF (they must be unique per document)
       const stripLocalIds = node => {
