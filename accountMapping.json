@@ -1035,6 +1035,21 @@
     ]
   },
   {
+    "id": "凱基投信",
+    "account": "凱基投信",
+    "csmOwner": "yvonne.yf.lee@appier.com",
+    "endDate": "2028-07-23",
+    "keywords": [
+      "凱基投信"
+    ],
+    "opportunities": [
+      {
+        "name": "BB-凱基投信",
+        "endDate": "2028-07-23"
+      }
+    ]
+  },
+  {
     "id": "匯姿",
     "account": "匯姿",
     "csmOwner": "joe.ko@appier.com",
@@ -3562,22 +3577,6 @@
       {
         "name": "BB - 至晟貿易",
         "endDate": "2027-02-01"
-      }
-    ]
-  },
-  {
-    "id": "臺理實業股份有限公司",
-    "account": "臺理實業股份有限公司",
-    "csmOwner": "jill.chang@appier.com",
-    "endDate": "2027-03-01",
-    "keywords": [
-      "臺理實業股份有限公司",
-      "臺理實業"
-    ],
-    "opportunities": [
-      {
-        "name": "BB-景揚企業有限公司-new-2026",
-        "endDate": "2027-03-01"
       }
     ]
   },
