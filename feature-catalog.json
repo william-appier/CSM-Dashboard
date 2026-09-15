@@ -1,13 +1,13 @@
 {
   "_meta": {
-    "updated": "2026-09-10",
+    "updated": "2026-09-15",
     "source": "ESS Feature Maturity List 2.0 + Feature onboarding (with Jira) + real ETS tickets",
     "products": [
       "AIQUA",
       "BB",
       "AIRIS"
     ],
-    "note": "AIQUA includes OJM category. AIRIS features from ESS Maturity List (AIRIS & AIXON tab) - no sample tickets in source, mode=manual; Deprecated/Roadmap/DEV excluded. Segment Agent still built-in."
+    "note": "AIQUA includes OJM category. AIRIS features from ESS Maturity List (AIRIS & AIXON tab) - no sample tickets in source, mode=manual; Deprecated/Roadmap/DEV excluded. Segment Agent still built-in. 2026-09-15: 46 AIQUA/BB clone-mode items reclassified to manual_clone after auditing their sample tickets found no {placeholder} tokens (real historical tickets with hardcoded other-client data, or blank forms); ojm_webhook's sample swapped ETS-2011 -> PHXX-5960 (per CSM) though still manual_clone (also blank)."
   },
   "AIQUA": [
     {
@@ -72,7 +72,7 @@
         {
           "id": "multi_email_sender",
           "name": "Multiple Email Sender Domain",
-          "mode": "clone",
+          "mode": "manual_clone",
           "sample": "QGWL-13420",
           "maturity": "Production",
           "pmApproval": false,
@@ -109,7 +109,7 @@
         {
           "id": "event_count_cond",
           "name": "Event Count Condition",
-          "mode": "clone",
+          "mode": "manual_clone",
           "sample": "ETS-2926",
           "maturity": "Production",
           "pmApproval": false,
@@ -118,7 +118,7 @@
         {
           "id": "datetime_seg",
           "name": "Datetime Segmentation",
-          "mode": "clone",
+          "mode": "manual_clone",
           "sample": "QGWL-17237",
           "maturity": "Closed Beta",
           "pmApproval": true,
@@ -127,7 +127,7 @@
         {
           "id": "cross_device",
           "name": "Include Cross-device Users (Push)",
-          "mode": "clone",
+          "mode": "manual_clone",
           "sample": "QGWL-11579",
           "maturity": "Closed Beta",
           "pmApproval": true,
@@ -173,7 +173,7 @@
         {
           "id": "sto",
           "name": "Send Time Optimization (STO)",
-          "mode": "clone",
+          "mode": "manual_clone",
           "sample": "QGWL-12795",
           "maturity": "Closed Beta",
           "pmApproval": true,
@@ -182,7 +182,7 @@
         {
           "id": "merge_push",
           "name": "Merge Push Campaign",
-          "mode": "clone",
+          "mode": "manual_clone",
           "sample": "QGWL-18743",
           "maturity": "Open Beta",
           "pmApproval": false,
@@ -191,7 +191,7 @@
         {
           "id": "sending_cap",
           "name": "Sending Cap (Email/SMS)",
-          "mode": "clone",
+          "mode": "manual_clone",
           "sample": "QGWL-22220",
           "maturity": "Closed Beta",
           "pmApproval": true,
@@ -200,7 +200,7 @@
         {
           "id": "inapp_priority",
           "name": "In-app Campaign Priority",
-          "mode": "clone",
+          "mode": "manual_clone",
           "sample": "QGWL-12114",
           "maturity": "Closed Beta",
           "pmApproval": true,
@@ -209,7 +209,7 @@
         {
           "id": "inapp_addl_cond",
           "name": "In-app Additional Audience Conditions",
-          "mode": "clone",
+          "mode": "manual_clone",
           "sample": "QGWL-14047",
           "maturity": "Production",
           "pmApproval": false,
@@ -218,7 +218,7 @@
         {
           "id": "control_group",
           "name": "Control Group Testing",
-          "mode": "clone",
+          "mode": "manual_clone",
           "sample": "QGWL-17738",
           "maturity": "Closed Beta",
           "pmApproval": true,
@@ -227,7 +227,7 @@
         {
           "id": "est_reach",
           "name": "Estimated Reachable Users",
-          "mode": "clone",
+          "mode": "manual_clone",
           "sample": "QGWL-12796",
           "maturity": "Open Beta",
           "pmApproval": false,
@@ -241,7 +241,7 @@
         {
           "id": "analytics_studio",
           "name": "Analytics Studio",
-          "mode": "clone",
+          "mode": "manual_clone",
           "sample": "QGWL-12950",
           "maturity": "Open Beta",
           "pmApproval": false,
@@ -250,7 +250,7 @@
         {
           "id": "omo_conversion",
           "name": "Online Merge Offline Conversion",
-          "mode": "clone",
+          "mode": "manual_clone",
           "sample": "QGRAPH-24772",
           "maturity": "Closed Beta",
           "pmApproval": true,
@@ -259,7 +259,7 @@
         {
           "id": "analytics_reco",
           "name": "Recommendation (Analytics)",
-          "mode": "clone",
+          "mode": "manual_clone",
           "sample": "QGWL-21442",
           "maturity": "Closed Beta",
           "pmApproval": true,
@@ -273,7 +273,7 @@
         {
           "id": "reco_purchased_filter",
           "name": "Purchased Product Filtering",
-          "mode": "clone",
+          "mode": "manual_clone",
           "sample": "QGWL-10340",
           "maturity": "Production",
           "pmApproval": false,
@@ -282,7 +282,7 @@
         {
           "id": "reco_purchased_lifetime",
           "name": "Purchased Product Filtering (Lifetime)",
-          "mode": "clone",
+          "mode": "manual_clone",
           "sample": "QGWL-10340",
           "maturity": "Closed Beta",
           "pmApproval": true,
@@ -291,7 +291,7 @@
         {
           "id": "reco_filter_training",
           "name": "Filter in Training",
-          "mode": "clone",
+          "mode": "manual_clone",
           "sample": "QGWL-18443",
           "maturity": "Closed Beta",
           "pmApproval": true,
@@ -300,7 +300,7 @@
         {
           "id": "reco_omo",
           "name": "OMO Mode",
-          "mode": "clone",
+          "mode": "manual_clone",
           "sample": "QGWL-20408",
           "maturity": "Closed Beta",
           "pmApproval": true,
@@ -314,7 +314,7 @@
         {
           "id": "usage_info",
           "name": "Usage Information (Email/SMS)",
-          "mode": "clone",
+          "mode": "manual_clone",
           "sample": "QGWL-14936",
           "maturity": "Production",
           "pmApproval": false,
@@ -323,7 +323,7 @@
         {
           "id": "blackout",
           "name": "Blackout Window",
-          "mode": "clone",
+          "mode": "manual_clone",
           "sample": "QGWL-11925",
           "maturity": "Closed Beta",
           "pmApproval": true,
@@ -332,7 +332,7 @@
         {
           "id": "night_push",
           "name": "Night Push (Bypass Blackout)",
-          "mode": "clone",
+          "mode": "manual_clone",
           "sample": "QGWL-14667",
           "maturity": "Closed Beta",
           "pmApproval": true,
@@ -341,7 +341,7 @@
         {
           "id": "datetime_conv",
           "name": "Datetime Converter",
-          "mode": "clone",
+          "mode": "manual_clone",
           "sample": "QGWL-6605",
           "maturity": "Closed Beta",
           "pmApproval": true,
@@ -350,7 +350,7 @@
         {
           "id": "data_retention",
           "name": "Longer Data Retention",
-          "mode": "clone",
+          "mode": "manual_clone",
           "sample": "QGWL-16103",
           "maturity": "Closed Beta",
           "pmApproval": true,
@@ -359,7 +359,7 @@
         {
           "id": "short_url_domain",
           "name": "Short URL with Custom Brand Domain",
-          "mode": "clone",
+          "mode": "manual_clone",
           "sample": "QGWL-15677",
           "maturity": "Closed Beta",
           "pmApproval": true,
@@ -373,7 +373,7 @@
         {
           "id": "pii_disable",
           "name": "Disable PII Columns in Segment",
-          "mode": "clone",
+          "mode": "manual_clone",
           "sample": "QGWL-17651",
           "maturity": "Closed Beta",
           "pmApproval": true,
@@ -382,7 +382,7 @@
         {
           "id": "twofa",
           "name": "2FA",
-          "mode": "clone",
+          "mode": "manual_clone",
           "sample": "QGWL-11389",
           "maturity": "Closed Beta",
           "pmApproval": true,
@@ -396,7 +396,7 @@
         {
           "id": "edp_ki",
           "name": "EDP K/I for Accounts",
-          "mode": "clone",
+          "mode": "manual_clone",
           "sample": "QGWL-12143",
           "maturity": "Closed Beta",
           "pmApproval": true,
@@ -405,7 +405,7 @@
         {
           "id": "edp_count",
           "name": "EDP Count / Lifetime Count",
-          "mode": "clone",
+          "mode": "manual_clone",
           "sample": "QGWL-20530",
           "maturity": "Closed Beta",
           "pmApproval": true,
@@ -414,7 +414,7 @@
         {
           "id": "event_param_sum",
           "name": "Event Parameter Summation",
-          "mode": "clone",
+          "mode": "manual_clone",
           "sample": "QGWL-13155",
           "maturity": "Closed Beta",
           "pmApproval": true,
@@ -428,7 +428,7 @@
         {
           "id": "campaign_calendar",
           "name": "Campaign Calendar",
-          "mode": "clone",
+          "mode": "manual_clone",
           "sample": "QGWL-16787",
           "maturity": "Alpha",
           "pmApproval": true,
@@ -437,7 +437,7 @@
         {
           "id": "geofence",
           "name": "Geofence",
-          "mode": "clone",
+          "mode": "manual_clone",
           "sample": "QGWL-16198",
           "maturity": "Closed Beta",
           "pmApproval": true,
@@ -446,7 +446,7 @@
         {
           "id": "dnd_custom_font",
           "name": "Drag & Drop Editor - Custom Font",
-          "mode": "clone",
+          "mode": "manual_clone",
           "sample": "QGWL-12336",
           "maturity": "Closed Beta",
           "pmApproval": true,
@@ -485,7 +485,7 @@
         {
           "id": "ojm_ch_line",
           "name": "Channel - LINE",
-          "mode": "clone",
+          "mode": "manual_clone",
           "sample": "PHXX-4079",
           "maturity": "Production",
           "pmApproval": true,
@@ -494,7 +494,7 @@
         {
           "id": "ojm_ch_fbm",
           "name": "Channel - Facebook Messenger",
-          "mode": "clone",
+          "mode": "manual_clone",
           "sample": "PHXX-4079",
           "maturity": "Production",
           "pmApproval": true,
@@ -503,7 +503,7 @@
         {
           "id": "ojm_ch_ig",
           "name": "Channel - Instagram",
-          "mode": "clone",
+          "mode": "manual_clone",
           "sample": "PHXX-4079",
           "maturity": "Production",
           "pmApproval": true,
@@ -512,7 +512,7 @@
         {
           "id": "ojm_ch_webchat",
           "name": "Channel - WebChat",
-          "mode": "clone",
+          "mode": "manual_clone",
           "sample": "PHXX-4079",
           "maturity": "Production",
           "pmApproval": true,
@@ -521,7 +521,7 @@
         {
           "id": "ojm_ch_whatsapp",
           "name": "Channel - WhatsApp",
-          "mode": "clone",
+          "mode": "manual_clone",
           "sample": "PHXX-4079",
           "maturity": "Production",
           "pmApproval": true,
@@ -530,7 +530,7 @@
         {
           "id": "ojm_ch_zalo",
           "name": "Channel - Zalo",
-          "mode": "clone",
+          "mode": "manual_clone",
           "sample": "PHXX-4079",
           "maturity": "Production",
           "pmApproval": true,
@@ -539,7 +539,7 @@
         {
           "id": "ojm_ch_viber",
           "name": "Channel - Viber",
-          "mode": "clone",
+          "mode": "manual_clone",
           "sample": "PHXX-4079",
           "maturity": "Production",
           "pmApproval": true,
@@ -548,7 +548,7 @@
         {
           "id": "ojm_integration_check",
           "name": "Integration Check",
-          "mode": "clone",
+          "mode": "manual_clone",
           "sample": "PHXX-3337",
           "maturity": "Production",
           "pmApproval": false,
@@ -557,7 +557,7 @@
         {
           "id": "ojm_aq_line_click",
           "name": "Enable Bind to AQ for qg_line_click",
-          "mode": "clone",
+          "mode": "manual_clone",
           "sample": "BBT-5009",
           "maturity": "Production",
           "pmApproval": false,
@@ -566,8 +566,8 @@
         {
           "id": "ojm_webhook",
           "name": "Enable Webhook for OJM",
-          "mode": "clone",
-          "sample": "ETS-2011",
+          "mode": "manual_clone",
+          "sample": "PHXX-5960",
           "maturity": "Production",
           "pmApproval": false,
           "paid": false
@@ -582,7 +582,7 @@
         {
           "id": "bb_service_agent",
           "name": "Service Agent",
-          "mode": "clone",
+          "mode": "manual_clone",
           "sample": "ETS-4964",
           "maturity": "Production",
           "pmApproval": true,
@@ -596,7 +596,7 @@
         {
           "id": "bb_ec_integration",
           "name": "EC Integration",
-          "mode": "clone",
+          "mode": "manual_clone",
           "sample": "ETS-6088",
           "maturity": "Production",
           "pmApproval": false,
@@ -610,7 +610,7 @@
         {
           "id": "bb_open_api",
           "name": "Open API",
-          "mode": "clone",
+          "mode": "manual_clone",
           "sample": "BBT-5364",
           "maturity": "Production",
           "pmApproval": false,
@@ -624,7 +624,7 @@
         {
           "id": "bb_usage_dashboard",
           "name": "Usage dashboard",
-          "mode": "clone",
+          "mode": "manual_clone",
           "sample": "ETS-3359",
           "maturity": "Production",
           "pmApproval": true,
