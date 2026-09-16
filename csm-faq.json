@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "updated": "2026-09-09",
+    "updated": "2026-09-16",
     "source": "Confluence CSM FAQ (AI 維護)",
     "indexUrl": "https://appier.atlassian.net/wiki/spaces/~712020045fe11d77e649819f2b2a67a185fdf0/pages/5232100110",
     "note": "由排程從 Confluence 五個分類頁自動重新生成之快取。urgency 未標者預設 medium。",
@@ -223,6 +223,83 @@
       "a": "若同一時間多個不相干客戶帳號都無法載入(案例:Mannings、Guardian SG/MY、eMart24),通常是第三方套件商 giosg 服務異常導致的暫時性問題,約 1 小時內會自行恢復,非單一帳號設定錯誤。channel:web;處理方:CSM 先觀察是否多帳號同時發生,再判斷是否為個案問題。"
     },
     {
+      "id": "AQ-033",
+      "category": "AIQUA",
+      "q": "企業客戶因自身網站 CSP(Content Security Policy)限制,要求提供 Appier 完整網域白名單才能放行 In-Web/Creative Studio 等功能,該提供哪份文件?",
+      "product": "AIQUA",
+      "last_verified": "2026-09-07",
+      "source": "https://appier.atlassian.net/browse/ETS-6180",
+      "status": "active",
+      "urgency": "medium",
+      "a": "統一提供內部維護的「Appier_Domain_Whitelist_Consolidated」Google Sheet(向 Shivi 或 RD leads 索取或確認最新版),不要再用舊版 Confluence CSP 頁面(pageId 2343567503,更新狀態未知)。若客戶只需要 AIQUA 相關網域,目前確認至少需要:`*.qgr.ph`(script-src,Appier SDK)、`*.qgraph.io`(script-src/style-src,SDK/in-web)、`*.rollbar.com`(connect-src,錯誤紀錄)、`*.appier.net`(connect-src+script-src,後端/cookie sync)、`*.quantumgraph.com`與`*.gocm.c.appier.net`(connect-src,cookie sync)、`*.aiqua.io`(frame-src/script-src/style-src/connect-src,in-web、Web push、Campaign Live Preview)、`*.aiqua.in`與`*.giosg.com`/`*.giosgusercontent.com`(Creative Studio)。若客戶同時使用 AIRIS/BB,需額外向 RD(David Li)確認是否要加對應網域。此類需求本質是「客戶端高資安標準」造成的重複性問題(已有 Nanshan Life、Mannings、Eslite 等多個案例),建議直接請客戶採用書面 CSP 白名單,而非個別調整程式(如避免使用 `new Function()`,目前無安全替代方案)。channel:web;處理方:CSM 可先提供白名單文件,個案缺漏網域需開票或詢問 RD;stage:上線前測試/需求異動。"
+    },
+    {
+      "id": "AQ-034",
+      "category": "AIQUA",
+      "q": "AIQUA 的 lifetime count(不限時間區間的累計次數)為何顯示 0?可以修嗎?",
+      "product": "AIQUA",
+      "last_verified": "2026-09-07",
+      "source": "https://appier.slack.com/archives/CD9TVAWPL/p1788405108434889",
+      "status": "active",
+      "urgency": "medium",
+      "a": "不是 bug,是產品行為變更——lifetime count 已對外宣布不再支援,將由 AIRIS(AR)的 count feature(限定時間區間的計數)取代,個別帳號目前顯示 0 通常是底層資料表尚未 onboard,不建議臨時修復(會在後續 segment migration 時製造更多問題)。建議:(1) 與客戶溝通改用 time-bound count(限定時間區間的計數);(2) 若 UI 上仍看得到 lifetime count 選項造成困惑,請 RD 從 UI 隱藏該 toggle。channel:web;處理方:需 RD 確認/隱藏,CSM 負責與客戶溝通替代方案;stage:上線後/需求異動。"
+    },
+    {
+      "id": "AQ-037",
+      "category": "AIQUA",
+      "q": "客戶反映 campaign performance report(sent/delivered/displayed)數字比實際低,是重複計算的已知 bug 嗎?",
+      "product": "AIQUA",
+      "last_verified": "2026-09-14",
+      "source": "https://appier.slack.com/archives/CD9TVAWPL/p1788923625137479",
+      "status": "active",
+      "urgency": "medium",
+      "a": "2026/8/4~9/8 曾發生已知案例,影響 SKM、Baskin Robbins Korea PRD、Guardian Singapore、Howtelevision、寶島眼鏡共 5 個帳號、84 檔活動(約 0.8% campaign)。根因是 QGWL-26102(8/4 上線,原本要防止同一則訊息事件被重複計算)在兩種情境下反而造成低估:(1) HQ/分店訊息被系統誤判為同一事件而扣掉一則;(2) 系統重啟/部署期間,尚未寫入統計的事件被誤判為已處理而漏算。已於 2026-09-09 完成 hotfix 與資料 backfill。若日後再遇到「數字明顯偏低、非單純 UI 顯示問題」的類似回報(與 AQ-005 的『UI 顯示 vs 實際已發送』情境不同),可先詢問 PM 是否為同一機制的新 regression。channel:web;處理方:已修復,CSM 可引用此根因說明客戶,新案例建議開票確認是否 regression。"
+    },
+    {
+      "id": "AQ-038",
+      "category": "AIQUA",
+      "q": "LINE campaign 在深色模式(dark mode)下,carousel demo 畫面說明文字看不到(白字疊白底),是 bug 嗎?",
+      "product": "AIQUA",
+      "last_verified": "2026-09-14",
+      "source": "https://appier.atlassian.net/browse/ETS-6289",
+      "status": "active",
+      "urgency": "low",
+      "a": "是已知 UI bug——dark mode 下 carousel demo 畫面的描述文字顯示為白色導致看不到,已回報 RD(ETS-6289),目前仍在修復中。暫時 workaround:請客戶改用「Test your creative」預覽功能確認實際畫面(而非 demo 畫面本身),不影響實際發送效果。channel:LINE;處理方:CSM 可先請客戶用預覽驗證,同時追蹤 bug 修復進度。"
+    },
+    {
+      "id": "AQ-039",
+      "category": "AIQUA",
+      "q": "複製(duplicate)一個由 Agent 建立的 Journey Map 後,新 Journey 發布(publish)時噴錯 \"Cannot read properties of undefined (reading 'type')\",怎麼處理?",
+      "product": "AIQUA",
+      "last_verified": "2026-09-14",
+      "source": "https://appier.atlassian.net/browse/PHXX-6785",
+      "status": "active",
+      "urgency": "medium",
+      "a": "是已知 bug——複製 Journey Map 的邏輯只換掉 trigger node ID 裡的 map ID 部分,新節點會變成 `journeymap-yyy-start`,但 `JourneyMap.triggerNodeId` 仍指向舊的 `journeyNode-<random>`,兩者對不上導致發布失敗;此問題只發生在複製「Agent 建立的 Journey」時,複製一般人工建立的 Journey 不受影響。CSM 無法自解,需開票請 RD 手動修正該 Journey 的 trigger node id 對應(已排入下個 sprint,PHXX-6785,目前仍需個案手動修)。短期建議:提醒客戶盡量避免複製 Agent 建立的 Journey 來改設定;若已複製卡住,開票請 RD 手動修正即可正常發布。channel:web;處理方:CSM 可先勸阻客戶複製 Agent Journey,已卡住的需開票請 RD 修正;stage:上線前測試/需求異動。"
+    },
+    {
+      "id": "AQ-040",
+      "category": "AIQUA",
+      "q": "想請 Agent 修改創意素材裡的某個區塊(例如把促銷圖從 A 商品換成 B 商品),怎麼下 prompt 效果最好?",
+      "product": "AIQUA",
+      "last_verified": "2026-09-14",
+      "source": "https://appier.slack.com/archives/C0A40AXAAP8/p1789035215911479",
+      "status": "active",
+      "urgency": "low",
+      "a": "上傳想修改的活動素材截圖,並在 prompt 裡具體指出要換的區塊與新內容,例如:「將此 email 模板的橘框處,換成 iPhone17 抽獎的圖片」,Agent 會依截圖辨識對應區塊直接生成新素材套用,不需額外設定,比純文字描述更準確、更快。channel:web/email;處理方:CSM 自解(操作技巧);stage:上線前測試。"
+    },
+    {
+      "id": "AQ-041",
+      "category": "AIQUA",
+      "q": "客戶用 Send Push API 大量發送(如活動中獎通知),API 回 200 accepted 但長時間卡在 Pending、實際沒送達,怎麼排查?",
+      "product": "AIQUA",
+      "last_verified": "2026-09-14",
+      "source": "https://appier.slack.com/archives/CE8N2P78S/p1788943002980329",
+      "status": "active",
+      "urgency": "medium",
+      "a": "200 accepted 只代表「已受理進非同步處理佇列」,不代表已送達。本次案例(NSMall,KRDC)排查出兩種根因:(1) request payload 缺必填欄位(如 title)會直接失敗,需請客戶對照 API 文件檢查每個必填欄位;(2) 短時間大量高流量(案例單日 40 萬+ requests)超出當地(如 KRDC)處理容量造成佇列 lag。若客戶預期常態性大量發送,建議提前請客戶告知發送排程與規模,以便 RD 提前 scale up、避免臨時佇列堆積。channel:app push(Android/iOS);處理方:CSM 先確認 payload 完整性,大量流量需求需提前知會 RD 準備;stage:上線後/日常維運。"
+    },
+    {
       "id": "AQ-011",
       "category": "AIQUA",
       "q": "AIQUA 的 Campaign Frequency Capping toggle 還需要手動開嗎?",
@@ -342,6 +419,17 @@
       "status": "active",
       "urgency": "medium",
       "a": "OJM 非嚴格 real-time,end-to-end 有多段延遲、非零秒觸發。以 OJM In-Web/In-App with AiDeal 為例,流程為 SDK 收集資料傳 server → data pipeline 過濾/轉換/forward → OJM 收 event 做 condition check → 發 campaign request 給 AIQUA → AIQUA 從 queue 取出並啟動 campaign → 製作 creative → 送 AiDeal → AiDeal 從 queue 取出顯示,每段都有 queue/處理延遲。與 AQ-009(OJM 後台操作卡頓)不同,此題是端到端投遞延遲。給客戶精確延遲數字前請以來源文件為準。"
+    },
+    {
+      "id": "AQ-035",
+      "category": "AIQUA",
+      "q": "客戶想開通 Kakao Moment(AIQUA 或 BB),CSM 要準備什麼、找哪個 team?",
+      "product": "AIQUA/BotBonnie",
+      "last_verified": "2026-09-07",
+      "source": "https://appier.atlassian.net/wiki/pages/viewpage.action?pageId=3761799377",
+      "status": "active",
+      "urgency": "low",
+      "a": "開通需由 AEP team 後台執行 Kakao Developer Console 串接與 OAuth 設定,CSM 不需自己呼叫 API,但開票前建議先準備:客戶的 Kakao Business AdAccount ID、Business official Channel ID,以及 AQ 的 account id 或 BB 的 bot id(可用 internal dashboard 由 appId 查 accountId)。Gotcha:認證務必用 Chrome 或 Safari 登入 Kakao,Arc 瀏覽器無法通過 Kakao 的授權 webhook。若只是要幫既有測試帳號加新的 app IDs(非全新開通),流程更簡單,走另一份文件(pageId 3830972442)即可,不需整套重新走 OAuth。channel:Kakao;處理方:開票給 AEP team;stage:售前/導入。"
     },
     {
       "id": "AR-001",
@@ -573,6 +661,17 @@
       "status": "active",
       "urgency": "medium",
       "a": "V3 在 V2 基礎上新增:上傳 user list 建 segment、Split users、Export to CSV、Keyword-based segment 條件、顯示 Legacy AIQUA segment。V2/V3 都支援條件建 segment、daily refresh、campaign execution、export。使用 V3 前需先完成 EUU onboarding,進入點 console.appier.com › AIQUA/AIRIS › Create segment condition。"
+    },
+    {
+      "id": "AR-022",
+      "category": "AIRIS",
+      "q": "幫客戶做 Kakao CAPI(Conversion API)串接,CSM 要準備哪些資訊?流程重點與常見雷?",
+      "product": "AIRIS",
+      "last_verified": "2026-09-14",
+      "source": "https://appier.atlassian.net/wiki/pages/viewpage.action?pageId=5291475609",
+      "status": "active",
+      "urgency": "low",
+      "a": "需要客戶親自在 Kakao Business 後台(business.kakao.com/pixel)手動核發兩個值——Track ID(Pixel & SDK ID,非機密)與 API Token(機密,只在核發當下顯示一次、之後系統只顯示遮罩無法再看,遺失只能刪除重發、每個 pixel 最多 5 組);核發者必須是該 pixel 的 Master 身分,一般 Member 看不到 Settings 頁籤,若客戶找不到核發入口先確認其權限。務必提醒客戶三件事:(1) Expiry Date 建議留 Unspecified(預設 100 年有效),Kakao 無 API 可重發 token,設短效期形同排定一次未來停機;(2) token 內含 `+` 與 `=` 字元,不可重新編碼或 URL-encode,否則會驗證失敗;(3) 交接給 AEP 前,先用 `debug: \"Y\"` 呼叫一次驗證憑證有效。channel:Kakao;處理方:CSM 向客戶收集 Track ID/Token 等資訊後交給 AEP team 執行串接;stage:售前/導入。"
     },
     {
       "id": "BB-001",
@@ -1070,6 +1169,61 @@
       "a": "WhatsApp 已有現成 test account 可直接申請使用(見內部 Social Channels test accounts 文件);Zalo 2-way demo 帳號目前仍由 VN team 準備中(找 Zebbie/Zalo team),客戶若已有自己的 Zalo OA 與 Service Agent,也可依 RC 文件 自行設定串接。提醒:Zalo 官方帳號(OA)申請需要合法商業執照,一般個人帳號無法建立,必要時可能需透過 Appier 當地(越南)法人協助申請。channel:WhatsApp/Zalo;stage:售前/需求評估。(註:demo 帳號準備進度可能已變動,寫入前建議跟 Zebbie 確認最新狀態。)"
     },
     {
+      "id": "BB-046",
+      "category": "BotBonnie",
+      "q": "客戶在 LINE 帳號綁定時不小心把大量使用者的 User Alias 蓋成同一值(如「LINE會員」),有 API 能復原嗎?",
+      "product": "BotBonnie",
+      "last_verified": "2026-09-07",
+      "source": "https://appier.slack.com/archives/C078AMBHEAV/p1788236854918129",
+      "status": "active",
+      "urgency": "medium",
+      "a": "沒有 API 能復原——`GET /user/attributes` 只回傳目前值(已被覆蓋、無歷史紀錄),`PUT /customer/demographics/{platform}/{pageId}` 也不支援寫入 name/alias 欄位,原始值無法從既有 API 救回。實務解法:開票請工程師直接清除該 bot 上這批使用者的 User Alias 欄位;清除後系統會 fallback 顯示使用者的 LINE User Name(原始 LINE 暱稱),即可間接「復原」。提醒:透過複製現在的 User Name 貼回 User Alias 也是一個方法,但缺點是往後若使用者更換 LINE 暱稱,BB 後台仍會顯示這次覆蓋當下的值(不會再跟著 LINE 端更新),所以優先建議清除 alias 而非重新貼值。channel:LINE;處理方:開票請工程師清欄位;stage:上線後/資料修正。"
+    },
+    {
+      "id": "BB-047",
+      "category": "BotBonnie",
+      "q": "設定「Pause bot(轉真人客服)」後,原本排定的 LINE 推播/自動化訊息還會發給該使用者嗎?",
+      "product": "BotBonnie",
+      "last_verified": "2026-09-07",
+      "source": "https://appier.slack.com/archives/C078AMBHEAV/p1788330685175119",
+      "status": "active",
+      "urgency": "low",
+      "a": "會照常發送——Pause bot 目前只會停用「自動回覆」機制,避免打斷真人客服對話,不會攔截 AIQUA 排程/觸發式 campaign,也不會攔截 BB 群發(broadcast)/分眾(narrow-cast)推播或 LINE developer console 直接發送的訊息。若客戶想在轉真人客服期間完全暫停對該使用者的行銷推播(常見於精品/美妝品牌避免過度發送),目前產品不支援,需另外提 CSM 需求票由產品評估優先序。channel:LINE;處理方:產品不支援,需開需求票;stage:上線後/日常維運。"
+    },
+    {
+      "id": "BB-048",
+      "category": "BotBonnie",
+      "q": "BB 會員卡(Point Card)Terms & Conditions 欄位文字過長時排版跑掉(超出卡片邊界),有沒有單行字數上限可以抓?",
+      "product": "BotBonnie",
+      "last_verified": "2026-09-07",
+      "source": "https://appier.slack.com/archives/C078AMBHEAV/p1788326168416229",
+      "status": "active",
+      "urgency": "low",
+      "a": "目前沒有官方單行字數上限,建議用「預覽」功能反覆測試,或以系統預設文案的長度當參考基準。若確認排版異常且懷疑是渲染判斷有誤,請走一般 bug ticket SOP 回報(已有類似案例在追蹤,Sony TW 案例為 BBT-7938,狀態:調查中,尚無結論,引用前建議先確認最新進度)。channel:LINE;處理方:CSM 可先請客戶用預覽測試字數,懷疑是 bug 再開票;stage:上線前測試。"
+    },
+    {
+      "id": "BB-049",
+      "category": "BotBonnie",
+      "q": "Service Agent 的「對話自動貼標(Conversation Auto Tagging)」規則怎麼運作?可以直接拿來當分眾條件嗎?",
+      "product": "BotBonnie",
+      "last_verified": "2026-09-14",
+      "source": "https://appier.slack.com/archives/C078AMBHEAV/p1789022379116769",
+      "status": "active",
+      "urgency": "low",
+      "a": "目前為 Beta 功能。運作原則:(1) 標籤庫(tag pool)由 AI 讀客戶知識庫+商品資料 feed(若有)產生候選詞,同義詞會合併成一種寫法,對話中出現知識庫沒涵蓋的新主題時也能自動新增詞;(2) 貼標時機為對話被標記「已解決」後約 5 分鐘執行一次;(3) 貼標需同時滿足三條件——只看使用者自己說的話(不看 AI/客服說的)、訊號需明確(明確表態的身份/興趣/需求,模糊帶過或純訂單物流對話不算)、且對話已解決;(4) 同一標籤不會對同一人重複疊加,多次談同類主題只產生一個標籤。標籤可作為分眾依據,但目前仍是 Beta,建議先跟客戶對齊「標籤產生邏輯是機率性、非人工規則制定」的預期,大量正式應用前建議先小規模驗證。channel:LINE/WebChat;stage:售前/需求評估。"
+    },
+    {
+      "id": "BB-050",
+      "category": "BotBonnie",
+      "q": "客戶想讓 BB 短連結(short link)在 LINE 對話裡也顯示預覽圖與標題(像客戶自己網站的短連結一樣),做得到嗎?",
+      "product": "BotBonnie",
+      "last_verified": "2026-09-14",
+      "source": "https://appier.slack.com/archives/C078AMBHEAV/p1789006959626849",
+      "status": "active",
+      "urgency": "low",
+      "a": "目前做不到——BB 短連結(r.botbonnie.com)未帶 Open Graph 類 meta data,LINE 端不會顯示預覽圖/標題,這點與客戶自架的短連結服務不同;初步判斷需走 feature request 流程評估,非快速可解的 task。目前三種替代方案各有取捨:(1) 文字訊息+客戶自己的短連結——有預覽圖但點擊後無法貼標;(2) 文字訊息+BB 智能連結——可貼標但無預覽圖;(3) 用 carousel 訊息——有圖但實測點擊率明顯偏低。需依客戶最在意的目標(貼標 vs. 預覽美觀 vs. 點擊率)協助選擇;若客戶仍堅持要三者兼具,需開 feature request 請產品評估。channel:LINE;處理方:開票(feature request)。"
+    },
+    {
       "id": "AA-001",
       "category": "AdCreative",
       "q": "Enterprise 客戶每月補點日被鎖付款頁(paywall)、credit 數字錯誤,怎麼處理?",
@@ -1087,7 +1241,7 @@
       "product": "AdCreative",
       "last_verified": "2026-06-16",
       "source": "https://appier.slack.com/archives/C08RGLRNX3R/p1781590235399219",
-      "status": "active",
+      "status": "stale",
       "urgency": "medium",
       "a": "通常是帳單/付款頁問題非系統故障。先到 AA support channel 找人;緊急找不到人可找 David Li(有 AA 後台權限)。"
     },
@@ -1131,7 +1285,7 @@
       "product": "AdCreative",
       "last_verified": "2026-06-16",
       "source": "https://appier.slack.com/archives/C08RGLRNX3R/p1781581621200649",
-      "status": "active",
+      "status": "stale",
       "urgency": "medium",
       "a": "AA Telegram Bot 已知限制:email 不能有特殊符號。Telegram 無法處理,須由 Steven 找工程師後台處理(Pazzo 前例)。註:+ 是 AA 為同一使用者在不同帳戶有權限的特別設計。"
     },
@@ -1219,7 +1373,7 @@
       "product": "AdCreative",
       "last_verified": "2026-06-16",
       "source": "https://appier.slack.com/archives/C08RGLRNX3R/p1781591485115919",
-      "status": "active",
+      "status": "stale",
       "urgency": "medium",
       "a": "顯示版本因客戶而異(「還有多久補點」vs「還有多久到期」)。實際啟動日改過會使天數一直不準,可請 AA 調整成另一種顯示版本。"
     },
@@ -1266,6 +1420,17 @@
       "status": "active",
       "urgency": "medium",
       "a": "遷移由客戶點「Try New Version」觸發,單向 V1→V2、不會持續自動同步(只在點按當下跑一次)。會轉:企業帳號的 brand-projects-library。延後轉:Template Builder 模板(預計本月開發完再轉)。不轉:SVG-based 功能(ad creatives、instant ads、ad videos、ads package)與舊技術功能(CTV、Blog、Storytelling Videos),要保留須手動從 V1 下載。遷移後在 V1 新增子帳號、或在 Settings 團隊管理改設定,不會反映到 V2,須手動在 V2 重做;已遷移內容與 V1 共用同一資料庫,在 V1 刪除、V2 也會同步消失。與 AA-013(migrate 按鈕位置與不可逆)互補。"
+    },
+    {
+      "id": "AA-019",
+      "category": "AdCreative",
+      "q": "客戶(尤其歐盟/韓國企業)要求證明 AdCreative 產出符合 AI 生成內容標示法規(EU AI Act / 韓國人工智慧基本法),要怎麼回?",
+      "product": "AdCreative",
+      "last_verified": "2026-09-07",
+      "source": "https://appier.slack.com/archives/C08RGLRNX3R/p1788330431416379",
+      "status": "active",
+      "urgency": "low",
+      "a": "可以回覆已符合——AdCreative 產出素材已內嵌 metadata 浮水印,標示該內容由人工智慧產生,滿足歐盟《人工智慧法》第50條第1、2款透明度義務;機器可讀浮水印的實用化方法預計 2026/9/24 上線。針對韓國《人工智慧基本法》要求「每次輸出至少提供一次文字或語音提示,告知用戶該輸出由生成式AI產生」,工程團隊正在研究實作方式,同樣預計 2026/9/24 隨上述功能一併上線。目前尚未開放使用者自行加註額外的視覺標記(產品評估中)。channel:web;處理方:CSM 可直接引用此說明回覆,細節法遵問題可再轉 legal(Jimmy Hsiao);stage:售前/需求評估。"
     },
     {
       "id": "OPS-001",
