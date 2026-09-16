@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-16T09:00:52.614+08:00",
+  "generatedAt": "2026-09-16T11:06:44.635+08:00",
   "accounts": [
     {
       "id": "mannings",
@@ -218,10 +218,11 @@
       "name": "田原香",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "ETS-6074 open 14d.",
+      "insight": "ETS-6074 open 15d.",
       "diffs": [],
       "riskTags": [
-        "ticket"
+        "ticket",
+        "stale"
       ],
       "ticketCount": 1,
       "mtgCount": 0,
