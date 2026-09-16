@@ -630,11 +630,8 @@
       var sel = feW.platform === p[0] ? ' fe-selected' : '';
       return '<div class="fe-platform-card' + sel + (dis ? ' fe-disabled' : '') + '" data-p="' + p[0] + '"'
         + (dis ? '' : ' onclick="window.fePickPlatform(\'' + p[0] + '\')"') + '>'
-        + '<div style="font-size:1.8rem;margin-bottom:8px">' + p[2] + '</div>'
-        + '<div style="font-weight:700">' + p[0] + '</div>'
-        + '<div style="font-size:.75rem;color:var(--muted);margin-top:4px">' + p[1] + '</div>'
-        + (dis ? '<div style="font-size:.7rem;color:var(--muted);margin-top:6px;font-weight:600">Coming soon</div>' : '')
-        + '</div>';
+                + (dis ? '<div class="fe-pc-soon">Coming soon</div>' : '')
+              + '</div>';
     }).join('');
     document.getElementById('feBody').innerHTML =
       '<p style="color:var(--muted);font-size:.87rem;margin-bottom:16px">Select the platform to enable features for.</p>'
