@@ -42,11 +42,24 @@
   #pc-AIQUA::after{content:"AIQUA";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:#fff;font-size:1.5rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;}
   #pc-BotBonnie::after{content:"BotBonnie";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:#fff;font-size:1.1rem;font-weight:700;letter-spacing:.03em;white-space:nowrap;}
   #pc-AIRIS::after{content:"AIRIS";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:#fff;font-size:1.5rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;}
-  #pc-AIXON::after{content:"AIXON";position:absolute;top:40%;left:50%;transform:translate(-50%,-50%);color:rgba(255,255,255,.8);font-size:1.3rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;}
+  #pc-AIXON::after{content:"AIXON";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:#fff;font-size:1.3rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;}
   #pc-AIXON .pc-name{display:none!important;}
   #pc-AIXON .pc-soon{color:rgba(255,255,255,.5)!important;position:relative;z-index:1;margin-top:38px;}
-  #pc-AIQUA:hover:not(.disabled),#pc-BotBonnie:hover:not(.disabled),#pc-AIRIS:hover:not(.disabled){filter:brightness(1.12);}
-  #pc-AIQUA.selected,#pc-BotBonnie.selected,#pc-AIRIS.selected{box-shadow:0 0 0 3px rgba(255,255,255,.45);}
+  #pc-AIQUA:hover:not(.disabled),#pc-BotBonnie:hover:not(.disabled),#pc-AIRIS:hover:not(.disabled),#pc-AIXON:hover:not(.disabled){filter:brightness(1.12);}
+  #pc-AIQUA.selected,#pc-BotBonnie.selected,#pc-AIRIS.selected,#pc-AIXON.selected{box-shadow:0 0 0 3px rgba(255,255,255,.45);}
+/* -- FEATURE-ENABLE PLATFORM CARDS (reuse onboarding wizard's coloured-card style) -- */
+.fe-platform-card[data-p="AIQUA"],.fe-platform-card[data-p="BB"],.fe-platform-card[data-p="AIRIS"],.fe-platform-card[data-p="AIXON"]{display:flex;align-items:center;justify-content:center;min-height:70px;position:relative;}
+.fe-platform-card[data-p="AIQUA"]{background:#185FA5!important;border-color:#185FA5!important;}
+.fe-platform-card[data-p="BB"]{background:#534AB7!important;border-color:#534AB7!important;}
+.fe-platform-card[data-p="AIRIS"]{background:#0B5E4A!important;border-color:#0B5E4A!important;}
+.fe-platform-card[data-p="AIXON"]{background:#2D1B6E!important;border-color:#2D1B6E!important;}
+.fe-platform-card[data-p="AIQUA"]::after{content:"AIQUA";color:#fff;font-size:1.15rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;}
+.fe-platform-card[data-p="BB"]::after{content:"BotBonnie";color:#fff;font-size:1rem;font-weight:700;letter-spacing:.03em;}
+.fe-platform-card[data-p="AIRIS"]::after{content:"AIRIS";color:#fff;font-size:1.15rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;}
+.fe-platform-card[data-p="AIXON"]::after{content:"AIXON";color:#fff;font-size:1.05rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;}
+.fe-platform-card[data-p="AIQUA"]:hover:not(.fe-disabled),.fe-platform-card[data-p="BB"]:hover:not(.fe-disabled),.fe-platform-card[data-p="AIRIS"]:hover:not(.fe-disabled),.fe-platform-card[data-p="AIXON"]:hover:not(.fe-disabled){filter:brightness(1.12);}
+.fe-platform-card[data-p="AIQUA"].fe-selected,.fe-platform-card[data-p="BB"].fe-selected,.fe-platform-card[data-p="AIRIS"].fe-selected,.fe-platform-card[data-p="AIXON"].fe-selected{box-shadow:0 0 0 3px rgba(255,255,255,.45)!important;}
+.fe-pc-soon{font-family:'DM Mono',monospace;font-size:10px;color:rgba(255,255,255,.6);position:absolute;bottom:12px;left:50%;transform:translateX(-50%);}
   .btn-theme{background:transparent;border:1px solid var(--border);color:var(--muted2);padding:5px 11px;border-radius:6px;font-family:'DM Mono',monospace;font-size:12px;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:6px;white-space:nowrap;}
   .btn-theme:hover{border-color:var(--accent);color:var(--accent);}
   /* ── SYNC BAR ── */
