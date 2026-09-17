@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-17T09:00:53.937+08:00",
+  "generatedAt": "2026-09-17T11:06:32.692+08:00",
   "accounts": [
     {
       "id": "mannings",
@@ -199,12 +199,7 @@
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
       "insight": "ETS-6513 open 0d · +1 more.",
-      "diffs": [
-        {
-          "type": "new",
-          "text": "ETS-6513 [田原香]Add SMS Credit"
-        }
-      ],
+      "diffs": [],
       "riskTags": [
         "ticket",
         "stale"
