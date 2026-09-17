@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-16T11:15:31.453+08:00",
+  "lastUpdated": "2026-09-17T11:15:08.230+08:00",
   "rules": [
     {
       "id": "okr-consolidate",
@@ -678,7 +678,7 @@
     }
   ],
   "ticketSnapshot": {
-    "generatedAt": "2026-09-16T03:15:30.650Z",
+    "generatedAt": "2026-09-17T03:15:07.507Z",
     "keys": {
       "55688": [],
       "mannings": [
@@ -696,6 +696,7 @@
       "1010hope": [],
       "luxgen": [],
       "tiangyuanxiang": [
+        "ETS-6513",
         "ETS-6074"
       ],
       "momax": [],
@@ -711,6 +712,7 @@
       "PROJ-33875": "[SCMP] Feature request on external keyword filtering",
       "PROJ-33874": "[SCMP] Feature request on keyword intensity support",
       "PROJ-33694": "[SCMP] Feature request on keyword dashboard",
+      "ETS-6513": "[田原香]Add SMS Credit",
       "ETS-6074": "[田原香] Agent re-asks the user to choose a channel when invoked from an OJM SMS campaign node (trace e5245f657670a7f4c2772dceadd35a35)"
     }
   },
