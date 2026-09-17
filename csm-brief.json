@@ -6,7 +6,7 @@
       "name": "Mannings",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "red",
-      "insight": "PROJ-33713 backlog 12d · +3 more · renewal due 2026-09-30 (13d).",
+      "insight": "⚠️ CONTRACT EXPIRES in 13 days (2026-09-30, AQ & AX). 4 tickets in backlog, oldest 'Offboard Mannings data for demo account' (PROJ-33713) open 12d — no meetings on calendar this week.",
       "diffs": [],
       "riskTags": [
         "ticket",
@@ -56,16 +56,27 @@
         {
           "priority": "high",
           "label": "Renewal · High",
-          "text": "Mannings contract due 2026-09-30 (13d left) — confirm status now"
+          "text": "AQ & AX contract expires 2026-09-30 (13 days). Confirm next-term scope with Karen Fu / Rola Chung (DFI) and get renewal paperwork moving before lapse."
+        },
+        {
+          "priority": "medium",
+          "label": "Ticket · Medium",
+          "text": "Chase 'Facebook V2 upload failure for Output node' (PROJ-33682, Mei-Cih Yeh) — client-facing delivery bug, still backlog."
+        },
+        {
+          "priority": "low",
+          "label": "Project · Low",
+          "text": "Check in on AIXON → AIRIS Upgrade (Q4) status — no recent ticket activity tied to the migration."
         }
-      ]
+      ],
+      "commitments": []
     },
     {
       "id": "scmp",
       "name": "SCMP",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "PROJ-33876 backlog 12d · +3 more.",
+      "insight": "4 feature-request tickets in backlog for Michael Palmer, oldest 'Feature request on insight agent' 12d. AIRIS contract healthy through 2027-07-24 — no renewal risk. AIXON offboard request (pending since AIRIS onboarding) has had no activity since 8/28 and auto-expired from tracking.",
       "diffs": [],
       "riskTags": [
         "ticket",
@@ -114,14 +125,26 @@
           "pinned": false
         }
       ],
-      "suggestions": []
+      "suggestions": [
+        {
+          "priority": "high",
+          "label": "Ticket · High",
+          "text": "Push Michael Palmer for prioritization on the 4 backlog feature requests (insight agent, keyword filtering, keyword intensity, keyword dashboard) — oldest is 12d old."
+        },
+        {
+          "priority": "medium",
+          "label": "Commitment · Medium",
+          "text": "Confirm whether AIRIS onboarding is now complete, then file the AIXON offboard request per account note — tracking on this went stale 2026-08-28 with no resolution."
+        }
+      ],
+      "commitments": []
     },
     {
       "id": "1010hope",
       "name": "10/10Hope",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "green",
-      "insight": "No active tickets — all clear.",
+      "insight": "No active tickets. AIQUA onboarding and klickngo API integration progressing with Mark Liu. No contract end date on file — renewal alerts cannot fire until this is confirmed.",
       "diffs": [],
       "riskTags": [],
       "ticketCount": 0,
@@ -140,18 +163,24 @@
       "tickets": [],
       "suggestions": [
         {
+          "priority": "medium",
+          "label": "Data · Medium",
+          "text": "Confirm 10/10Hope's contract end date with ops/finance and add it to the tracker — currently null, so no renewal alert will ever fire for this account."
+        },
+        {
           "priority": "low",
           "label": "Check-in · Low",
-          "text": "No active tickets — send a check-in to 10/10Hope"
+          "text": "Check in with Mark Liu on AIQUA onboarding and klickngo API integration progress."
         }
-      ]
+      ],
+      "commitments": []
     },
     {
       "id": "luxgen",
       "name": "Luxgen",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "green",
-      "insight": "No active tickets — all clear.",
+      "insight": "No active tickets or meetings — BB contract healthy through 2026-11-22 (66d), but zero calendar touchpoints is itself a risk signal per account history.",
       "diffs": [],
       "riskTags": [],
       "ticketCount": 0,
@@ -161,20 +190,28 @@
       "tickets": [],
       "suggestions": [
         {
+          "priority": "medium",
+          "label": "Meeting · Medium",
+          "text": "Schedule a Luxgen check-in — no meetings on calendar is a known risk signal for this account; confirm the monthly 服務交付報告 to Kevin Hsu is still flowing."
+        },
+        {
           "priority": "low",
           "label": "Check-in · Low",
-          "text": "No active tickets — send a check-in to Luxgen"
+          "text": "Verify the Finance ticket for this month's service delivery report (successor to FIN-2672) has been filed."
         }
-      ]
+      ],
+      "commitments": []
     },
     {
       "id": "55688",
       "name": "55688",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "green",
-      "insight": "No active tickets — all clear.",
+      "insight": "⚠️ CONTRACT EXPIRED 48 days ago (2026-07-31, 代駕 or 招募 bot — ownership of which one actually churned still unconfirmed, do not mark either as closed). 北區 renewed through 2027-08-24 with the platform-extension commitment already filed. Met with 商城 contact yesterday (9/16); no ticket activity logged from that discussion yet.",
       "diffs": [],
-      "riskTags": [],
+      "riskTags": [
+        "renewal"
+      ],
       "ticketCount": 0,
       "mtgCount": 0,
       "projects": [
@@ -187,19 +224,37 @@
       "tickets": [],
       "suggestions": [
         {
+          "priority": "high",
+          "label": "Renewal · High",
+          "text": "代駕/招募 bot contract expired 2026-07-31 (48 days overdue). Confirm with client which bot actually churned before writing either off; renew or formally close out the lapsed one."
+        },
+        {
+          "priority": "medium",
+          "label": "Project · Medium",
+          "text": "Service Agent RFQ (BBT-5428, Brian Tsai) has aged out of the 60-day ticket view — confirm current status directly with Brian."
+        },
+        {
           "priority": "low",
-          "label": "Check-in · Low",
-          "text": "No active tickets — send a check-in to 55688"
+          "label": "Meeting · Low",
+          "text": "Capture next steps (if any) from the 9/16 商城 x Appier discussion with youngbin.lin."
         }
-      ]
+      ],
+      "commitments": []
     },
     {
       "id": "tiangyuanxiang",
       "name": "田原香",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "ETS-6513 open 0d · +1 more.",
-      "diffs": [],
+      "insight": "New ticket 'Add SMS Credit' (ETS-6513) opened today. 'Agent re-asks user to choose channel' (ETS-6074) still open. Use-case development ongoing — the segmented-campaign anomaly check for Ted Wu (per account note) went stale with no update since 8/28.",
+      "diffs": [
+        {
+          "type": "new",
+          "key": "ETS-6513",
+          "title": "Add SMS Credit",
+          "text": "Add SMS Credit"
+        }
+      ],
       "riskTags": [
         "ticket",
         "stale"
@@ -229,35 +284,31 @@
           "pinned": false
         }
       ],
-      "suggestions": []
-    },
-    {
-      "id": "momax",
-      "name": "Momax",
-      "csmOwner": "william.wt.lin@appier.com",
-      "health": "green",
-      "insight": "No active tickets — all clear.",
-      "diffs": [],
-      "riskTags": [],
-      "ticketCount": 0,
-      "mtgCount": 0,
-      "projects": [],
-      "meetings": [],
-      "tickets": [],
       "suggestions": [
         {
+          "priority": "high",
+          "label": "Ticket · High",
+          "text": "Review the new 'Add SMS Credit' request (ETS-6513) — confirm scope/pricing with client since it just came in today."
+        },
+        {
+          "priority": "medium",
+          "label": "Ticket · Medium",
+          "text": "Follow up on 'Agent re-asks user to choose channel' (ETS-6074) with RD — check current status."
+        },
+        {
           "priority": "low",
-          "label": "Check-in · Low",
-          "text": "No active tickets — send a check-in to Momax"
+          "label": "Follow-up · Low",
+          "text": "Revisit the segmented-campaign anomaly check with Ted Wu — thread went quiet after 8/28."
         }
-      ]
+      ],
+      "commitments": []
     },
     {
       "id": "citysuper",
       "name": "City Super",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "green",
-      "insight": "No active tickets — all clear.",
+      "insight": "No tickets or meetings — no contract end date or current project on record. Confirm scope and renewal date with William before this section can be tracked properly.",
       "diffs": [],
       "riskTags": [],
       "ticketCount": 0,
@@ -267,18 +318,19 @@
       "tickets": [],
       "suggestions": [
         {
-          "priority": "low",
-          "label": "Check-in · Low",
-          "text": "No active tickets — send a check-in to City Super"
+          "priority": "medium",
+          "label": "Data · Medium",
+          "text": "Confirm CitySuper's contract end date and current project scope — untracked today, which blocks renewal alerts and insight quality."
         }
-      ]
+      ],
+      "commitments": []
     },
     {
       "id": "xindongli",
       "name": "行動力國際",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "green",
-      "insight": "No active tickets — all clear.",
+      "insight": "No tickets yet — account still in handover per tracker note (added 2026-06-09, now over 3 months with no handover meeting logged).",
       "diffs": [],
       "riskTags": [],
       "ticketCount": 0,
@@ -293,11 +345,12 @@
       "tickets": [],
       "suggestions": [
         {
-          "priority": "low",
-          "label": "Check-in · Low",
-          "text": "No active tickets — send a check-in to 行動力國際"
+          "priority": "medium",
+          "label": "Handover · Medium",
+          "text": "Follow up on scheduling the 行動力國際 handover meeting — added 2026-06-09, still no meetings or tickets 3+ months later."
         }
-      ]
+      ],
+      "commitments": []
     }
   ]
 }
