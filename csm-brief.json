@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-09-19T09:00:32.406+08:00",
+  "generatedAt": "2026-09-20T09:00:25.115+08:00",
   "accounts": [
     {
       "id": "mannings",
       "name": "Mannings",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "red",
-      "insight": "PROJ-33713 backlog 0d · +3 more · renewal due 2026-09-30 (11d).",
+      "insight": "PROJ-33713 backlog 1d · +3 more · renewal due 2026-09-30 (10d).",
       "diffs": [],
       "riskTags": [
         "ticket",
@@ -56,7 +56,7 @@
         {
           "priority": "high",
           "label": "Renewal · High",
-          "text": "Mannings contract due 2026-09-30 (11d left) — confirm status now"
+          "text": "Mannings contract due 2026-09-30 (10d left) — confirm status now"
         }
       ]
     },
@@ -65,7 +65,7 @@
       "name": "SCMP",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "PROJ-33876 backlog 14d · +3 more.",
+      "insight": "PROJ-33876 backlog 15d · +3 more.",
       "diffs": [],
       "riskTags": [
         "ticket",
@@ -198,7 +198,7 @@
       "name": "田原香",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "ETS-6513 in-progress 0d · +1 more.",
+      "insight": "ETS-6513 in-progress 1d · +1 more.",
       "diffs": [],
       "riskTags": [
         "ticket",
