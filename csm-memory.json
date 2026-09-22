@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-21T11:14:48.054+08:00",
+  "lastUpdated": "2026-09-22T13:55:55.969+08:00",
   "rules": [
     {
       "id": "okr-consolidate",
@@ -210,17 +210,17 @@
       "account": "55688",
       "bot": "代駕",
       "platform": "BotBonnie",
-      "startDate": null,
-      "endDate": "2026-07-31",
-      "note": "EXPIRED 2026-07-31. William 2026-08-06: 代駕 and 招募 both ended 7/31, only ONE churned — which one is unconfirmed. Source: https://appier.slack.com/archives/C0B1W677KGU (William 2026-08-06 bot End date list, per SF IR)"
+      "startDate": "2026-07-31",
+      "endDate": "2027-07-31",
+      "note": "RENEWED (confirmed by William 2026-09-22) — 1 year, 2026-07-31 to 2027-07-31. Resolves prior \"which one churned\" ambiguity: 代駕 renewed, 招募 churned. Source: William chat confirmation 2026-09-22."
     },
     {
       "account": "55688",
       "bot": "招募",
       "platform": "BotBonnie",
       "startDate": null,
-      "endDate": "2026-07-31",
-      "note": "EXPIRED 2026-07-31. See 代駕 note — one of the two churned, unconfirmed which. Source: https://appier.slack.com/archives/C0B1W677KGU (William 2026-08-06 bot End date list, per SF IR)"
+      "endDate": null,
+      "note": "CHURNED (confirmed by William 2026-09-22) — lapsed 2026-07-31, not renewed. No longer needs renewal tracking/follow-up. Resolves prior \"which one churned\" ambiguity: 代駕 renewed, 招募 churned. Source: William chat confirmation 2026-09-22."
     }
   ],
   "okrLog": [
