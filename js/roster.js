@@ -79,6 +79,49 @@
     try { if (typeof getUser === 'function') { var u = getUser(); if (u && u.email) return String(u.email).toLowerCase(); } } catch (_) {}
     return '';
   }
+  // ── 2026-09-22 fix (per William): "My Accounts" ticket counts were driven by
+  // the Worker's /tickets?csm= endpoint, which pulls a different (broader/staler)
+  // set than what "Issue tracking" shows. My Accounts should only reflect the
+  // exact same reporter=me, not-done ticket set Issue tracking already fetched
+  // (dashboard.js's `allData`, populated via fetchAllIssues()) — same tickets,
+  // same "17 active" count, just re-grouped by account instead of by tab.
+  // Local alias fallback for cases where a ticket's [Bracket] client tag doesn't
+  // literally match the roster's account display name (dashboard.js's own
+  // ALIASES table has one such case: 田原香 tickets are tagged "[Qchicken]").
+  var CLIENT_ALIASES = { '田原香': ['qchicken'], 'qchicken': ['田原香'] };
+  function normKey(s) { return String(s || '').toLowerCase().replace(/[^a-z0-9一-鿿]/g, ''); }
+  function sameClient(ticketClient, accountName) {
+    var a = normKey(ticketClient), b = normKey(accountName);
+    if (!a || !b) return false;
+    if (a === b) return true;
+    var alt = CLIENT_ALIASES[String(accountName || '').toLowerCase()] || CLIENT_ALIASES[accountName] || [];
+    return alt.some(function (x) { return normKey(x) === a; });
+  }
+  // Reads dashboard.js's shared `allData`/`extractClient`/`isDone` bare globals
+  // (classic <script> tags share one top-level scope — same page, loaded earlier).
+  // Returns null (not []) when Issue tracking's data isn't available yet, so the
+  // caller knows to fall back rather than showing a false "0 tickets".
+  function ticketsFromIssueTracking(accountName) {
+    try {
+      if (typeof allData === 'undefined' || !allData || !allData.length) return null;
+      if (typeof extractClient !== 'function' || typeof isDone !== 'function') return null;
+    } catch (_) { return null; }
+    var out = [];
+    allData.forEach(function (issue) {
+      var f = issue.fields || {};
+      var status = (f.status && f.status.name) || '';
+      if (isDone(status)) return; // matches Issue tracking's "17 active" (not-done) count
+      var client = extractClient(f.summary || '');
+      if (!client || !sameClient(client, accountName)) return;
+      out.push({
+        key: issue.key,
+        title: String(f.summary || '').replace(/^\s*\[[^\]]*\]\s*/, '').trim() || issue.key,
+        status: status,
+        assignee: (f.assignee && f.assignee.displayName) || ''
+      });
+    });
+    return out;
+  }
   function product(o) { var m = String(o).match(/^[ (（]*([A-Za-z]{2,4})/); return m ? m[1].toUpperCase() : '?'; }
   function daysTo(iso) { if (!iso) return null; var t = new Date(iso); if (isNaN(t)) return null; var today = new Date(); today.setHours(0, 0, 0, 0); return Math.round((t - today) / 86400000); }
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
@@ -99,11 +142,17 @@
         '<span style="color:#94a3b8">Accounts flow from the OP-summary sheet (CSM Owner column). Once yours are in the sheet, they appear here automatically.</span>'));
       return;
     }
-    // live Jira tickets for this CSM's accounts (best-effort — cards still render without)
-    try {
-      var tr = await fetch(WORKER + '/tickets?csm=' + encodeURIComponent(email) + '&t=' + Date.now());
-      if (tr.ok) tix = await tr.json();
-    } catch (_) { tix = {}; }
+    // Ticket source of truth is now Issue tracking's own fetched set (see
+    // ticketsFromIssueTracking above). The Worker's /tickets?csm= call is kept
+    // ONLY as a fallback for the (rare) case Issue tracking hasn't loaded yet —
+    // e.g. My Accounts opened before the app's initial refresh() finished.
+    var useLocal = mine.some(function (a) { return ticketsFromIssueTracking(a.account) !== null; });
+    if (!useLocal) {
+      try {
+        var tr = await fetch(WORKER + '/tickets?csm=' + encodeURIComponent(email) + '&t=' + Date.now());
+        if (tr.ok) tix = await tr.json();
+      } catch (_) { tix = {}; }
+    }
     // AI summaries from the daily sync (best-effort — cards render without them)
     try {
       var sr = await fetch('accountSummaries.json?t=' + Date.now());
@@ -113,7 +162,7 @@
       var d = daysTo(a.endDate);
       var opps = a.opportunities || [];
       var prods = {}; opps.forEach(function (o) { prods[product(o && o.name ? o.name : o)] = 1; });
-      var tickets = tix[a.id] || [];
+      var tickets = useLocal ? (ticketsFromIssueTracking(a.account) || []) : (tix[a.id] || []);
       return {
         id: a.id, name: a.account, endDate: a.endDate || '', days: d, upcoming: (d != null && d >= 0),
         products: Object.keys(prods).sort(), opps: opps, tickets: tickets
