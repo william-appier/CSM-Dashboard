@@ -172,7 +172,7 @@
       "name": "55688",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "green",
-      "insight": "No active tickets — all clear.",
+      "insight": "代駕 renewed (2026-07-31→2027-07-31); 招募 confirmed churned, no longer tracked. 北區 renewal signed and platform extension filed. No other activity this week.",
       "diffs": [],
       "riskTags": [],
       "ticketCount": 0,
@@ -189,7 +189,8 @@
         {
           "priority": "low",
           "label": "Check-in · Low",
-          "text": "No active tickets — send a check-in to 55688"
+          "text": "No active tickets — send a check-in to 55688.",
+          "commitmentId": null
         }
       ]
     },
