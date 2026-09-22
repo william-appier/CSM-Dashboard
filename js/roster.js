@@ -64,6 +64,13 @@
     document.querySelectorAll('.csm-nav-btn').forEach(function (e) { e.classList.remove('active'); });
     var p = document.getElementById('pane-roster'); if (p) p.classList.add('active');
     var b = document.getElementById('snav-roster'); if (b) b.classList.add('active');
+    // Bug fix (2026-09-22, reported by William): rosterShow() switched the pane/nav
+    // highlight but never touched the top breadcrumb, so it kept showing whichever
+    // tab you'd been on before — e.g. "Issues > Issue tracking" while My Accounts
+    // was the active pane. snavSwitch() sets this for the native tabs; we do it
+    // manually here since My Accounts is wired to its own onclick, not snavSwitch.
+    var top = document.getElementById('crumbTop'); if (top) top.textContent = 'Accounts';
+    var cur = document.getElementById('crumbCur'); if (cur) cur.textContent = 'My Accounts';
     var sub = document.getElementById('headerSub'); if (sub) sub.textContent = 'Your accounts, live from Jira + the Salesforce mapping';
     render();
   };

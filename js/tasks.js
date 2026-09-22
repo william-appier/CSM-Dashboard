@@ -149,6 +149,10 @@
     if (pane) pane.classList.add("active");
     if (nav) nav.classList.add("active");
     // 更新上方麵包屑（原生 snavSwitch 會設，但我們是自己切，所以手動設）
+    // 2026-09-22 修正：只設了 crumbCur，crumbTop 沒跟著更新，所以切過來時
+    // 上一層路徑會停在前一個 tab（同一類問題後來在 roster.js 的 My Accounts 上也發現過）。
+    var crumbTop = document.getElementById("crumbTop");
+    if (crumbTop) crumbTop.textContent = "Workspace";
     var crumb = document.getElementById("crumbCur");
     if (crumb) crumb.textContent = "任務管理";
     fetchTasks();
