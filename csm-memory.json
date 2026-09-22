@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-22T13:55:55.969+08:00",
+  "lastUpdated": "2026-09-22T14:03:36.278+08:00",
   "rules": [
     {
       "id": "okr-consolidate",
@@ -678,7 +678,7 @@
     }
   ],
   "ticketSnapshot": {
-    "generatedAt": "2026-09-21T03:14:39.691Z",
+    "generatedAt": "2026-09-22T06:03:36.233Z",
     "keys": {
       "55688": [],
       "mannings": [
@@ -696,7 +696,6 @@
       "1010hope": [],
       "luxgen": [],
       "tiangyuanxiang": [
-        "ETS-6513",
         "ETS-6074"
       ],
       "momax": [],
@@ -712,7 +711,6 @@
       "PROJ-33875": "[SCMP] Feature request on external keyword filtering",
       "PROJ-33874": "[SCMP] Feature request on keyword intensity support",
       "PROJ-33694": "[SCMP] Feature request on keyword dashboard",
-      "ETS-6513": "[田原香]Add SMS Credit",
       "ETS-6074": "[田原香] Agent re-asks the user to choose a channel when invoked from an OJM SMS campaign node (trace e5245f657670a7f4c2772dceadd35a35)"
     }
   },
@@ -938,6 +936,20 @@
       "status": "done",
       "snoozedUntil": null,
       "closedAt": "2026-08-13"
+    },
+    {
+      "id": "cmt-mannings-prepare-staging-edm",
+      "account": "mannings",
+      "text": "Prepare staging EDM opt-in status update",
+      "owner": "me",
+      "counterpart": "Rola Chung",
+      "due": "2026-09-22",
+      "source": "calendar",
+      "sourceUrl": "https://www.google.com/calendar/event?eid=XzYwcTMwYzFnNjBvMzBlMWk2MG80YWMxZzYwcmo4Z3BsODhyajJjMWg4NHMzNGg5ZzYwczMwYzFnNjBvMzBjMWc4a28zZWMyNjc0cmpjZHBwNmgwazhoMWc2NG8zMGMxZzYwbzMwYzFnNjBvMzBjMWc2MG8zMmMxZzYwbzMwYzFnNmNvazhoMWs2a3BqOGdpNTY5MWo0ZDFrOGwxNDJlMjY4NTBqNGgxbjcxMjM2ZDFoNjhwZyB3aWxsaWFtLnd0LmxpbkBhcHBpZXIuY29t&ctz=Asia/Hong_Kong",
+      "created": "2026-09-22",
+      "lastSeen": "2026-09-22",
+      "status": "open",
+      "snoozedUntil": null
     }
   ]
 }
