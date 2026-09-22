@@ -1,0 +1,112 @@
+{
+  "_meta": {
+    "updated": "2026-09-22",
+    "window": "2026-08-01 → 2026-09-22",
+    "cadence": "monthly",
+    "note": "只收「跟你帳號／商機有關」的訊號；外部動態只做輕量背景摘要。跟公司層級的 #proj-ai-sota 競品監控機器人（雙週、掃 50 家競品）分開維護，避免重複——那邊做宏觀產品策略掃描，這邊只做帳號層級的競品雷達。",
+    "sourceChannels": ["#ask-product-aiqua", "#ess-jp", "#ask-product-aep", "#ask-product-bb-service-agent", "#bb-l2", "#ask-product-airis", "#ask-agent-l2", "#csm_support_tw", "#proj-mcp-enterprise", "#ojm_l2", "#proj-cjoliveyoung"]
+  },
+  "cards": [
+    {
+      "id": "braze",
+      "name": "Braze",
+      "threat": "high",
+      "threatLabel": "高關注",
+      "oneLiner": "最常被點名的正面對手，這季同時在打 AI 自動化牌，財報卻偏弱——續約與升級對話都可能碰到它。",
+      "external": [
+        { "date": "2026-09-09", "text": "財報公布後股價下跌 12%（財測疲弱蓋過本季優於預期表現），同日 Klaviyo 股價上漲 3%。客戶若關心供應商穩定性，這是可以留意的背景。", "url": "https://247wallst.com/investing/2026/09/09/braze-sinks-12-as-soft-earnings-guide-overshadows-beat-and-raise-klaviyo-advances-3/" },
+        { "date": "2026-08-20", "text": "BrazeAI Operator 擴充：可用單一 prompt 建立/編輯完整 Canvas journey，並操作報表、範本等多步驟後台工作流。", "url": null },
+        { "date": "2026-08-20", "text": "Cloud Data Ingestion 的 SQL Editor 轉為 GA，可直接用 SQL query 建立資料同步；Visual Mapper 進 beta。", "url": null }
+      ],
+      "signals": [
+        { "date": "2026-09-11", "account": "Letao（KCC Group，既有 BotBonnie 客戶）", "tag": "competitive", "text": "評估升級 AIQUA，已知對手為 Salesforce 與 Braze，詢問 AIQUA 使用公司數與日本市佔率，需要官方數字背書。", "sourceLabel": "Slack #ess-jp · 2026-09-11", "sourceUrl": null },
+        { "date": "2026-08-24", "account": "Eastar Jet（韓國 LCC）", "tag": "competitive", "text": "AIQUA 提案正面對決 Braze 與在地商 Notifly，焦點是跨境（大中華區）通路覆蓋度，而非功能多寡。", "sourceLabel": "Slack #ask-product-aiqua · 2026-08-24", "sourceUrl": null },
+        { "date": "2026-08-14", "account": "CJ oliveYoung", "tag": "watch", "text": "CTO 提到現用 Braze + Amplitude，下一步想擴展到更多國家——前期線索，尚未進入正式商機。", "sourceLabel": "Slack #proj-cjoliveyoung · 2026-08-14", "sourceUrl": null },
+        { "date": "2026-08-25", "account": "OJM 既有客戶", "tag": "win", "text": "客戶正把 campaign 從 Braze migrate 到 Appier，官方上線日 2026-09-02。", "sourceLabel": "Slack #ojm_l2 · 2026-08-25", "sourceUrl": null },
+        { "date": "2026-09-16", "account": "Genie Music（新商機）", "tag": "competitive", "text": "5.5M 會員的韓國音樂串流新商機，已知對手為 Flareline 與 Braze，討論重點是每日 150 萬則推播的量能。", "sourceLabel": "Slack #ask-product-aiqua · 2026-09-16", "sourceUrl": null }
+      ],
+      "talkingPoints": [
+        "客戶提到 Braze 財報疲弱（9/9 股價跌 12%）時，可委婉點出供應商規模與長期投入的重要性——但避免顯得落井下石。",
+        "Braze 在 AI Operator／Canvas 自動化動作積極；若客戶關心「能不能用自然語言操作行銷自動化」，先準備 Appier 對應功能的對比，不要迴避。",
+        "遇到「要跨境通路（大中華區）」的比較，強調 Appier 在 LINE／在地通路的深耕，這是 Braze 的相對弱項。",
+        "已有真實 migration 成功案例（9/2 上線）可引用，證明從 Braze 轉換是可行的——跟產品/PM team 要細節，別空口說白話。"
+      ]
+    },
+    {
+      "id": "klaviyo",
+      "name": "Klaviyo",
+      "threat": "high",
+      "threatLabel": "高關注",
+      "oneLiner": "MCP／agent 整合走得最前面，也把資料刪除等合規功能當標配免費送——兩者都可能變成續約桌上的比較點。",
+      "external": [
+        { "date": "2026-08-11", "text": "MCP server 新增 260+ 個工具並收購一個 agent 團隊，外部 agent（Claude、OpenAI）現在可直接讀資料、建 segment、跑 campaign、寫 flow。", "url": null },
+        { "date": "2026-08-05", "text": "Elias Torres 出任 Chief Product Officer，透過 Agency 收購案掌管 agent 產品線，Q3 完成交割。", "url": null }
+      ],
+      "signals": [
+        { "date": "2026-08-28", "account": "RhinoShield（BotBonnie／Service Agent）", "tag": "gap", "text": "需要全球隱私合規用的資料刪除 API，拒絕了 Appier 的客製收費提案，強調「Klaviyo、Omnichat、Zendesk 都把這個當標準功能」，認為為基本合規功能收費會讓 Appier 顯得沒有競爭力。", "sourceLabel": "Slack #ask-product-bb-service-agent · 2026-08-28", "sourceUrl": null },
+        { "date": "2026-08-18", "account": "（內部：設計團隊競品研究）", "tag": "watch", "text": "設計團隊筆記：Klaviyo／Iterable 在「依 campaign 狀態導向對應頁面」的 UX 上已有明確模式，可作為產品體驗參考。", "sourceLabel": "Slack #group-design-pm · 2026-08-18", "sourceUrl": null }
+      ],
+      "talkingPoints": [
+        "客戶談「想用 Claude 直接操作」時，先確認我們自己的 MCP 進度（#proj-mcp-enterprise）再回應，不要空手應戰。",
+        "客戶談隱私／GDPR／資料刪除相關需求，先假設 Klaviyo 已把這個當免費標配——收費提案前務必確認這不會變成續約阻力。",
+        "Klaviyo 定位偏電商／DTC 起家；客戶若是傳統零售或跨境品牌，可強調 Appier 在多通路（LINE／BotBonnie）整合的完整度。"
+      ]
+    },
+    {
+      "id": "insider",
+      "name": "Insider",
+      "threat": "high",
+      "threatLabel": "高關注 · 已有真實續約風險",
+      "oneLiner": "SEA 市場最常見的對手，現在又多了 Anthropic 官方夥伴關係當賣點；MCP 支援已經直接導致一筆真實解約需求。",
+      "external": [
+        { "date": "2026-08-25", "text": "官宣與 Anthropic 的合作夥伴關係，主打「更方便整合 Claude workflow」。", "url": "https://insiderone.com/news/anthropic-partners-with-insider-one/" },
+        { "date": "2026-05-13", "text": "收購 Bluecore，擴充其電商個人化能力。", "url": "https://insiderone.com/news/bluecore-acquisition/" }
+      ],
+      "signals": [
+        { "date": "2026-07-22", "account": "GCR 某客戶（renewal 原訂 7 月底）", "tag": "risk", "text": "客戶提出解約需求，經 CSM 與業務判斷，主因是「Insider 有提供 MCP，更方便整合 workflow（Claude）」。團隊備註：如果第一家 GCR 客戶真的因 MCP 掉單，競品會拿這個當 pitching point，時間會更緊迫。", "sourceLabel": "Slack #proj-mcp-enterprise · 2026-07-22", "sourceUrl": "https://appier.slack.com/archives/C0BDU2C43JR/p1784708191186839" },
+        { "date": "2026-07-22", "account": "（區域評估／未指定單一客戶）", "tag": "watch", "text": "SEA 團隊備註：在 SEA 市場「85% 的時間」對手是 Insider 與 MoEngage，這兩家是必須認真對待的兩個。", "sourceLabel": "Slack #ask-product-airis（2024 對話，仍具參考性）", "sourceUrl": null }
+      ],
+      "talkingPoints": [
+        "Insider 與 Anthropic 的官方夥伴關係是他們現在主打的故事；客戶提到 MCP／agent workflow 時要預期會被拿來比較。",
+        "已有真實續約案例是因為 Insider 提供 MCP 才觸發解約——這代表 MCP 會是接下來這一季反覆出現的話題，提前跟產品團隊要清楚的 timeline，不要臨場才想辦法。",
+        "SEA 市場遇到客戶時，預設對手就是 Insider（覆蓋率高達 85%），提案前先假設對方已經在比較。"
+      ]
+    },
+    {
+      "id": "moengage_clevertap",
+      "name": "MoEngage / CleverTap",
+      "threat": "medium",
+      "threatLabel": "中度關注",
+      "oneLiner": "公開資訊少，但在 SEA／越南現場對話中出現頻率不低，常被當成報價比較對象。",
+      "external": [
+        { "date": "常態", "text": "兩家的官方公開資訊（功能細節、規模數字）都偏少，過去多次內部請求「幫忙補齊 MoEngage/CleverTap 情報」都因公開資料不足而卡住——這本身就是值得留意的競爭優勢：客戶不容易查證他們的說法。", "url": null }
+      ],
+      "signals": [
+        { "date": "2026-07-31", "account": "（客戶反饋，未指定單一帳號）", "tag": "watch", "text": "客戶提到目前使用 MoEngage，且對方支援 MCP，正透過 Claude 執行操作，覺得速度快又方便；CSM 回應「我方 agent 運作方式相同，且資料留在平台內更安全」。", "sourceLabel": "Slack #ask-product-airis · 2026-07-31", "sourceUrl": null },
+        { "date": "常態", "account": "（越南／SEA 區域）", "tag": "watch", "text": "越南市場常把 Insider／MoEngage／CleverTap 三家一起做 SMS 報價比較；CleverTap 也常在事件計費機制（如 app_launched 20 分鐘去重窗口）上被拿來對標。", "sourceLabel": "Slack #group-pm-enable-pmm-enterprise / #ess-hub-user", "sourceUrl": null }
+      ],
+      "talkingPoints": [
+        "這兩家公開資訊少，客戶自己也常搞不清楚定位（CDP vs. 行銷自動化 vs. CEP）——可以主動幫客戶釐清分類，建立專業形象，而不是被動接受比較。",
+        "客戶殺價時，先確認是不是真的在比這兩家的報價，而不是預設自己吃虧。",
+        "MoEngage 也開始支援 MCP；被問到「能不能像 MoEngage 一樣接 Claude」時，回應方式可比照 Insider／Klaviyo 那條——先確認我方進度，強調資料留在平台內更安全。"
+      ]
+    },
+    {
+      "id": "regional",
+      "name": "區域型／在地供應商（Flareline、Notifly、SFDC 等）",
+      "threat": "low",
+      "threatLabel": "觀察",
+      "oneLiner": "國際能見度低但在地優勢強，遇到對應市場的客戶才需要準備。",
+      "external": [],
+      "signals": [
+        { "date": "2026-09-16", "account": "Genie Music（新商機）", "tag": "watch", "text": "Flareline 是韓國在地行銷自動化廠商，與 Braze 一起被列為此商機的已知對手，公開資訊很少。", "sourceLabel": "Slack #ask-product-aiqua · 2026-09-16", "sourceUrl": null },
+        { "date": "2026-08-24", "account": "Eastar Jet", "tag": "watch", "text": "Notifly 是另一家韓國在地供應商，與 Braze 一起被列為對手。", "sourceLabel": "Slack #ask-product-aiqua · 2026-08-24", "sourceUrl": null },
+        { "date": "2026-09-11", "account": "Letao", "tag": "watch", "text": "Salesforce（SFDC）與 Braze 一起被列為對手，通常出現在已經是 Salesforce 生態系客戶的升級評估中。", "sourceLabel": "Slack #ess-jp · 2026-09-11", "sourceUrl": null }
+      ],
+      "talkingPoints": [
+        "Flareline、Notifly 等韓國在地供應商國際能見度低——遇到韓國客戶提到時，先假設對方主打價格與在地客服支援，而非功能廣度。",
+        "SFDC（Salesforce Marketing Cloud）通常出現在既有 Salesforce 生態系的客戶身上，比較點常是「同一套系統」的整合便利性，而非功能本身——談話重點應放在遷移成本 vs. 長期彈性，而不是逐項功能對比。"
+      ]
+    }
+  ]
+}
