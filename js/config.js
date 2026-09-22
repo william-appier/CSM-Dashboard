@@ -29,6 +29,12 @@ const SK = {
 // \u2500\u2500 RUNTIME STATE \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
 const COLORS=['#4f8ef7','#7c5cfa','#34d399','#fbbf24','#f87171','#22d3ee','#fb923c','#a78bfa','#38bdf8','#e879f9'];
 let allData=[], selAsn=null;
+// filteredData mirrors renderDashboard()'s `filtered` (allData minus onboarding-
+// wizard tickets and ignored tickets) — this is what Issue tracking actually
+// displays and counts. Exposed globally (2026-09-22) so other modules — My
+// Accounts (roster.js), Competitive intel — can match Issue tracking's real
+// numbers instead of the raw, unfiltered allData.
+let filteredData=[];
 
 // == ETS BOARD (single create target, 2026-08-26) =============================
 // Every ticket the dashboard CREATES goes to the ETS board as a Service Request.

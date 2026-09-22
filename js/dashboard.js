@@ -1274,6 +1274,7 @@ function renderDashboard(issues){
   const obKeys  = getOnboardingTicketKeys();
   const ignored = loadIgnored();
   const filtered = issues.filter(i=>!obKeys.has(i.key) && !ignored.has(i.key));
+  filteredData = filtered; // expose the real displayed/counted set (see config.js)
 
   // Build client\u2192issues map using filtered set
   const map={};
@@ -1305,7 +1306,20 @@ function renderDashboard(issues){
   document.getElementById('sDone').textContent=doneCt;
   document.getElementById('sNS').textContent=filtered.filter(i=>isBacklog(i.status)).length;
   document.getElementById('sActive').textContent=filtered.filter(i=>isActive(i.status)).length;
-  document.getElementById('tc-tracking').textContent=issues.length - doneCt;
+  // 2026-09-22 fix (reported by William): this used `issues.length` (the RAW
+  // fetch, before onboarding-wizard tickets and ignored tickets are excluded)
+  // minus `doneCt` (which IS computed from the filtered set) — an
+  // apples-to-oranges subtraction that over-counted the badge by exactly the
+  // number of excluded-but-not-done tickets (17 shown vs 13 actually on
+  // screen, a 4-ticket gap from filtered-out onboarding/ignored tickets).
+  // Badge should equal what's actually visible: the filtered board's open
+  // count, plus any pinned tickets not already in that set (pinned tickets
+  // live in their own list and are tracked regardless of onboarding/ignore
+  // status) that aren't Done.
+  const filteredKeys = new Set(filtered.map(i=>i.key));
+  const pinnedActive = (typeof loadPinned === 'function' ? loadPinned() : [])
+    .filter(p=>!filteredKeys.has(p.key) && !isDone(p.status));
+  document.getElementById('tc-tracking').textContent=(filtered.length - doneCt) + pinnedActive.length;
   const now=new Date();
   document.getElementById('lu').textContent='Updated: '+now.toLocaleDateString('en-GB')+' '+now.toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'});
 

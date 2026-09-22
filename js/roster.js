@@ -82,9 +82,13 @@
   // ── 2026-09-22 fix (per William): "My Accounts" ticket counts were driven by
   // the Worker's /tickets?csm= endpoint, which pulls a different (broader/staler)
   // set than what "Issue tracking" shows. My Accounts should only reflect the
-  // exact same reporter=me, not-done ticket set Issue tracking already fetched
-  // (dashboard.js's `allData`, populated via fetchAllIssues()) — same tickets,
-  // same "17 active" count, just re-grouped by account instead of by tab.
+  // exact same set Issue tracking actually displays and counts —
+  // `filteredData` (config.js), i.e. reporter=me tickets MINUS onboarding-wizard
+  // tickets and ignored tickets, which is what the sidebar badge itself was
+  // fixed to use in this same round of fixes (was wrongly counting those
+  // excluded tickets too, e.g. showing 17 when only 13 were really tracked).
+  // Using the raw, unfiltered `allData` here would have reproduced that same
+  // over-count per account, so this reads `filteredData`, not `allData`.
   // Local alias fallback for cases where a ticket's [Bracket] client tag doesn't
   // literally match the roster's account display name (dashboard.js's own
   // ALIASES table has one such case: 田原香 tickets are tagged "[Qchicken]").
@@ -97,20 +101,21 @@
     var alt = CLIENT_ALIASES[String(accountName || '').toLowerCase()] || CLIENT_ALIASES[accountName] || [];
     return alt.some(function (x) { return normKey(x) === a; });
   }
-  // Reads dashboard.js's shared `allData`/`extractClient`/`isDone` bare globals
-  // (classic <script> tags share one top-level scope — same page, loaded earlier).
-  // Returns null (not []) when Issue tracking's data isn't available yet, so the
-  // caller knows to fall back rather than showing a false "0 tickets".
+  // Reads dashboard.js/config.js's shared `filteredData`/`extractClient`/`isDone`
+  // bare globals (classic <script> tags share one top-level scope — same page,
+  // loaded earlier). Returns null (not []) when Issue tracking's data isn't
+  // available yet, so the caller knows to fall back rather than showing a
+  // false "0 tickets".
   function ticketsFromIssueTracking(accountName) {
     try {
-      if (typeof allData === 'undefined' || !allData || !allData.length) return null;
+      if (typeof filteredData === 'undefined' || !filteredData || !filteredData.length) return null;
       if (typeof extractClient !== 'function' || typeof isDone !== 'function') return null;
     } catch (_) { return null; }
     var out = [];
-    allData.forEach(function (issue) {
+    filteredData.forEach(function (issue) {
       var f = issue.fields || {};
       var status = (f.status && f.status.name) || '';
-      if (isDone(status)) return; // matches Issue tracking's "17 active" (not-done) count
+      if (isDone(status)) return; // matches Issue tracking's fixed "13 active" (not-done) count
       var client = extractClient(f.summary || '');
       if (!client || !sameClient(client, accountName)) return;
       out.push({
