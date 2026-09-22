@@ -35,6 +35,13 @@ let allData=[], selAsn=null;
 // Accounts (roster.js), Competitive intel — can match Issue tracking's real
 // numbers instead of the raw, unfiltered allData.
 let filteredData=[];
+// filteredTbdData mirrors renderTbd()'s `active` (tbdData minus ignored
+// tickets) — the "To be done" tab's own real, displayed/counted set (assignee
+// = me, not done). Exposed the same way and for the same reason (2026-09-22):
+// My Accounts should reflect BOTH Issue tracking (reported by me) AND To be
+// done (assigned to me) — a CSM's account work isn't only the tickets they
+// personally opened.
+let filteredTbdData=[];
 
 // == ETS BOARD (single create target, 2026-08-26) =============================
 // Every ticket the dashboard CREATES goes to the ETS board as a Service Request.

@@ -1014,6 +1014,7 @@ function renderTbd(issues){
   // Separate ignored from active
   const active  = issues.filter(i=>!ign.has(i.key));
   const ignored = issues.filter(i=> ign.has(i.key));
+  filteredTbdData = active; // expose the real displayed/counted set (see config.js)
 
   // Sort active by lead time DESC
   const sorted = [...active].sort((a,b)=>calcLT(a.created)-calcLT(b.created)).reverse();

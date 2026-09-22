@@ -81,14 +81,23 @@
   }
   // ── 2026-09-22 fix (per William): "My Accounts" ticket counts were driven by
   // the Worker's /tickets?csm= endpoint, which pulls a different (broader/staler)
-  // set than what "Issue tracking" shows. My Accounts should only reflect the
-  // exact same set Issue tracking actually displays and counts —
-  // `filteredData` (config.js), i.e. reporter=me tickets MINUS onboarding-wizard
-  // tickets and ignored tickets, which is what the sidebar badge itself was
-  // fixed to use in this same round of fixes (was wrongly counting those
-  // excluded tickets too, e.g. showing 17 when only 13 were really tracked).
-  // Using the raw, unfiltered `allData` here would have reproduced that same
-  // over-count per account, so this reads `filteredData`, not `allData`.
+  // set than what "Issue tracking" (and "To be done") show. My Accounts should
+  // reflect the exact same sets those two tabs actually display and count:
+  //   - `filteredData` (config.js) — Issue tracking: reporter=me, minus
+  //     onboarding-wizard tickets and ignored tickets (the sidebar badge itself
+  //     was fixed in this same round — it was wrongly counting those excluded
+  //     tickets too, e.g. showing 17 when only 13 were really tracked).
+  //   - `filteredTbdData` (config.js) — To be done: assignee=me, statusCategory
+  //     != Done, minus ignored tickets. A CSM's account work isn't only what
+  //     they personally reported; tickets assigned to them belong too.
+  // Using the raw, unfiltered `allData`/`tbdData` here would reproduce the same
+  // kind of over/under-count per account, so this reads the filtered globals.
+  //
+  // Data-shape note: fetchAllIssues()/fetchAssignedIssues() (js/api.js) already
+  // flatten each Jira issue to {key, summary, status, assignee, reporter,
+  // created, resolutiondate} — NOT the raw {fields:{...}} shape. Read the flat
+  // properties directly (issue.summary, issue.status, issue.assignee).
+  //
   // Local alias fallback for cases where a ticket's [Bracket] client tag doesn't
   // literally match the roster's account display name (dashboard.js's own
   // ALIASES table has one such case: 田原香 tickets are tagged "[Qchicken]").
@@ -101,30 +110,37 @@
     var alt = CLIENT_ALIASES[String(accountName || '').toLowerCase()] || CLIENT_ALIASES[accountName] || [];
     return alt.some(function (x) { return normKey(x) === a; });
   }
-  // Reads dashboard.js/config.js's shared `filteredData`/`extractClient`/`isDone`
-  // bare globals (classic <script> tags share one top-level scope — same page,
-  // loaded earlier). Returns null (not []) when Issue tracking's data isn't
-  // available yet, so the caller knows to fall back rather than showing a
-  // false "0 tickets".
-  function ticketsFromIssueTracking(accountName) {
+  // Reads dashboard.js/config.js's shared `filteredData`/`filteredTbdData`/
+  // `extractClient`/`isDone` bare globals (classic <script> tags share one
+  // top-level scope — same page, loaded earlier). Returns null (not []) when
+  // neither Issue tracking nor To be done has loaded yet, so the caller knows
+  // to fall back rather than showing a false "0 tickets".
+  function myTicketsForAccount(accountName) {
     try {
-      if (typeof filteredData === 'undefined' || !filteredData || !filteredData.length) return null;
+      if (typeof filteredData === 'undefined' || typeof filteredTbdData === 'undefined') return null;
+      if ((!filteredData || !filteredData.length) && (!filteredTbdData || !filteredTbdData.length)) return null;
       if (typeof extractClient !== 'function' || typeof isDone !== 'function') return null;
     } catch (_) { return null; }
+    var seenKeys = {};
     var out = [];
-    filteredData.forEach(function (issue) {
-      var f = issue.fields || {};
-      var status = (f.status && f.status.name) || '';
-      if (isDone(status)) return; // matches Issue tracking's fixed "13 active" (not-done) count
-      var client = extractClient(f.summary || '');
-      if (!client || !sameClient(client, accountName)) return;
-      out.push({
-        key: issue.key,
-        title: String(f.summary || '').replace(/^\s*\[[^\]]*\]\s*/, '').trim() || issue.key,
-        status: status,
-        assignee: (f.assignee && f.assignee.displayName) || ''
+    function collect(list) {
+      (list || []).forEach(function (issue) {
+        if (seenKeys[issue.key]) return; // dedupe — same ticket could be both reported AND assigned to me
+        var status = issue.status || '';
+        if (isDone(status)) return;
+        var client = extractClient(issue.summary || '');
+        if (!client || !sameClient(client, accountName)) return;
+        seenKeys[issue.key] = true;
+        out.push({
+          key: issue.key,
+          title: String(issue.summary || '').replace(/^\s*\[[^\]]*\]\s*/, '').trim() || issue.key,
+          status: status,
+          assignee: issue.assignee || ''
+        });
       });
-    });
+    }
+    collect(filteredData);     // Issue tracking (reported by me)
+    collect(filteredTbdData);  // To be done (assigned to me)
     return out;
   }
   function product(o) { var m = String(o).match(/^[ (（]*([A-Za-z]{2,4})/); return m ? m[1].toUpperCase() : '?'; }
@@ -147,11 +163,11 @@
         '<span style="color:#94a3b8">Accounts flow from the OP-summary sheet (CSM Owner column). Once yours are in the sheet, they appear here automatically.</span>'));
       return;
     }
-    // Ticket source of truth is now Issue tracking's own fetched set (see
-    // ticketsFromIssueTracking above). The Worker's /tickets?csm= call is kept
-    // ONLY as a fallback for the (rare) case Issue tracking hasn't loaded yet —
+    // Ticket source of truth is now Issue tracking's + To be done's own fetched
+    // sets (see myTicketsForAccount above). The Worker's /tickets?csm= call is
+    // kept ONLY as a fallback for the (rare) case neither tab has loaded yet —
     // e.g. My Accounts opened before the app's initial refresh() finished.
-    var useLocal = mine.some(function (a) { return ticketsFromIssueTracking(a.account) !== null; });
+    var useLocal = mine.some(function (a) { return myTicketsForAccount(a.account) !== null; });
     if (!useLocal) {
       try {
         var tr = await fetch(WORKER + '/tickets?csm=' + encodeURIComponent(email) + '&t=' + Date.now());
@@ -167,7 +183,7 @@
       var d = daysTo(a.endDate);
       var opps = a.opportunities || [];
       var prods = {}; opps.forEach(function (o) { prods[product(o && o.name ? o.name : o)] = 1; });
-      var tickets = useLocal ? (ticketsFromIssueTracking(a.account) || []) : (tix[a.id] || []);
+      var tickets = useLocal ? (myTicketsForAccount(a.account) || []) : (tix[a.id] || []);
       return {
         id: a.id, name: a.account, endDate: a.endDate || '', days: d, upcoming: (d != null && d >= 0),
         products: Object.keys(prods).sort(), opps: opps, tickets: tickets
