@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-22T09:00:25.634+08:00",
+  "generatedAt": "2026-09-22T13:53:40.791+08:00",
   "accounts": [
     {
       "id": "mannings",
@@ -198,13 +198,8 @@
       "name": "田原香",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "ETS-6074 open 20d.",
-      "diffs": [
-        {
-          "type": "close",
-          "text": "ETS-6513 closed"
-        }
-      ],
+      "insight": "ETS-6074 open 21d.",
+      "diffs": [],
       "riskTags": [
         "ticket",
         "stale"
