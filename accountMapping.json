@@ -18,7 +18,7 @@
   {
     "id": "achilles-sorbo",
     "account": "achilles sorbo",
-    "csmOwner": "jill.chang@appier.com",
+    "csmOwner": "mmtw.csmca@appier.com",
     "endDate": "2027-06-07",
     "keywords": [
       "achilles sorbo",
@@ -1187,6 +1187,23 @@
     ]
   },
   {
+    "id": "台灣博報堂",
+    "account": "台灣博報堂",
+    "csmOwner": "david.tai@appier.com",
+    "endDate": "2026-09-30",
+    "keywords": [
+      "台灣博報堂",
+      "樂天製菓",
+      "Hakuhodo"
+    ],
+    "opportunities": [
+      {
+        "name": "BB - Hakuhodo（樂天製菓）2026延展",
+        "endDate": "2026-09-30"
+      }
+    ]
+  },
+  {
     "id": "台灣小米通訊",
     "account": "台灣小米通訊",
     "csmOwner": "tasmine.tsai@appier.com",
@@ -2338,6 +2355,10 @@
       {
         "name": "BB-cofit 群健科技 (Renew)",
         "endDate": "2027-11-13"
+      },
+      {
+        "name": "BB-cofit 群健科技 (upsell)-WA訊息費",
+        "endDate": "2027-02-24"
       },
       {
         "name": "BB-初日診所-OJM 加購",
