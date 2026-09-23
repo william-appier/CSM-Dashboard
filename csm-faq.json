@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "updated": "2026-09-16",
+    "updated": "2026-09-23",
     "source": "Confluence CSM FAQ (AI 維護)",
     "indexUrl": "https://appier.atlassian.net/wiki/spaces/~712020045fe11d77e649819f2b2a67a185fdf0/pages/5232100110",
     "note": "由排程從 Confluence 五個分類頁自動重新生成之快取。urgency 未標者預設 medium。",
@@ -300,6 +300,28 @@
       "a": "200 accepted 只代表「已受理進非同步處理佇列」,不代表已送達。本次案例(NSMall,KRDC)排查出兩種根因:(1) request payload 缺必填欄位(如 title)會直接失敗,需請客戶對照 API 文件檢查每個必填欄位;(2) 短時間大量高流量(案例單日 40 萬+ requests)超出當地(如 KRDC)處理容量造成佇列 lag。若客戶預期常態性大量發送,建議提前請客戶告知發送排程與規模,以便 RD 提前 scale up、避免臨時佇列堆積。channel:app push(Android/iOS);處理方:CSM 先確認 payload 完整性,大量流量需求需提前知會 RD 準備;stage:上線後/日常維運。"
     },
     {
+      "id": "AQ-043",
+      "category": "AIQUA",
+      "q": "AIQUA Segment 條件(如 email contains XXX)的「值」欄位貼上大量清單(如 2000+ 筆),有字數或筆數限制嗎?",
+      "product": "AIQUA",
+      "last_verified": "2026-09-21",
+      "source": "https://appier.slack.com/archives/CBNCZT3LJ/p1789446104643139",
+      "status": "active",
+      "urgency": "low",
+      "a": "系統面沒有硬性字數或筆數限制,但官方建議安全範圍是不超過 100 筆——貼入過多值雖不會直接出錯,但會增加系統負荷、拖慢 UI 渲染。若客戶需要篩選的清單超過這個量,建議改用「上傳 Segment」(email 欄位 CSV 上傳)取代直接貼在條件值欄位裡,效能與可維護性都較好。channel:web;處理方:CSM 自解;stage:上線前測試/需求異動。"
+    },
+    {
+      "id": "AQ-044",
+      "category": "AIQUA",
+      "q": "Regular Campaign 排程寄送 EDM 時,Segment 名單是何時刷新的?有沒有 Experiment(A/B 測試)會影響?",
+      "product": "AIQUA",
+      "last_verified": "2026-09-21",
+      "source": "https://appier.slack.com/archives/CBNCZT3LJ/p1789381093071989",
+      "status": "active",
+      "urgency": "low",
+      "a": "有差——沒有設定 Experiment 的排程活動,系統會在排程時間「前 1 小時」用快取的 Segment 名單刷新後準備發送,這 1 小時是為了讓大型活動有時間備稿與準備大量發送;若活動有設定 Experiment,則是在排程時間「當下」才刷新 Segment。這代表無 Experiment 的活動,實際圈入名單是以排程前 1 小時的狀態為準,若客群變動快、又需要精準即時名單(例如小型 segment),可請 RD/PM 評估針對該帳號移除這 1 小時快取機制(需個案評估,曾有 Eslite 案例討論)。channel:EDM;處理方:CSM 可先說明規則,如需調整快取邏輯需 RD/PM 評估;stage:上線前測試/需求異動。"
+    },
+    {
       "id": "AQ-011",
       "category": "AIQUA",
       "q": "AIQUA 的 Campaign Frequency Capping toggle 還需要手動開嗎?",
@@ -315,11 +337,11 @@
       "category": "AIQUA",
       "q": "要對特定帳號開啟 Send Time Optimization (STO),CSM 要注意什麼?",
       "product": "AIQUA",
-      "last_verified": "2026-07-22",
+      "last_verified": "2026-09-21",
       "source": "https://appier.atlassian.net/wiki/pages/viewpage.action?pageId=510362064",
       "status": "active",
       "urgency": "medium",
-      "a": "開啟前須先取得 luke.chien 或 Shiv Raj 核准。前置:完成 EDP onboarding(setting app_id → EDP namespace id)。Push channel STO 開啟後需等 30 小時才能送;Cross-platform/Email STO 需等 24 小時。未追蹤到行為的 user 預設 UTC+0 10:00 送出,可用 `sto_optimal_hour_for_untracked_users`(0~23)調整。"
+      "a": "開啟前須先取得 luke.chien 或 Shiv Raj 核准。前置:完成 EDP onboarding(setting app_id → EDP namespace id)。Push channel STO 開啟後需等 30 小時才能送;Cross-platform/Email STO 需等 24 小時。未追蹤到行為的 user 預設 UTC+0 10:00 送出,可用 `sto_optimal_hour_for_untracked_users`(0~23)調整。提醒(2026-09 eMart24 案例,ETS-6035):onboard STO 時若漏掉某一項 training setting,Campaign 會靜默失敗、且無明顯錯誤告警。建議開通 STO 後除確認 30/24 小時前置等待時間,也應與 RD 一起檢查 training 相關設定是否完整,避免上線後才發現 campaign 失敗。"
     },
     {
       "id": "AQ-013",
@@ -430,6 +452,17 @@
       "status": "active",
       "urgency": "low",
       "a": "開通需由 AEP team 後台執行 Kakao Developer Console 串接與 OAuth 設定,CSM 不需自己呼叫 API,但開票前建議先準備:客戶的 Kakao Business AdAccount ID、Business official Channel ID,以及 AQ 的 account id 或 BB 的 bot id(可用 internal dashboard 由 appId 查 accountId)。Gotcha:認證務必用 Chrome 或 Safari 登入 Kakao,Arc 瀏覽器無法通過 Kakao 的授權 webhook。若只是要幫既有測試帳號加新的 app IDs(非全新開通),流程更簡單,走另一份文件(pageId 3830972442)即可,不需整套重新走 OAuth。channel:Kakao;處理方:開票給 AEP team;stage:售前/導入。"
+    },
+    {
+      "id": "AQ-045",
+      "category": "AIQUA",
+      "q": "幫 BB 客戶開通 OJM,若要用「動態內容(dynamic content)」一定要一併開通 AIRIS 嗎?",
+      "product": "AIQUA/BotBonnie",
+      "last_verified": "2026-09-21",
+      "source": "https://appier.atlassian.net/wiki/pages/viewpage.action?pageId=3988553748",
+      "status": "active",
+      "urgency": "low",
+      "a": "是的——OJM 的動態內容目前是透過 C360 API 產生,而 C360 需要一個 AIRIS(AR)project 才能運作,所以 BB+OJM 客戶若要在 OJM 用動態內容,必須一併 onboard AIRIS,不能只開 OJM。若客戶當下不需要動態內容,可以先只開 OJM,之後有需求再補開 AIRIS。實際開通(EAM feature toggle、Journey Map 設定等)為 TS/RD 執行面,CSM 面向重點是先確認客戶是否需要動態內容以判斷要不要同步安排 AIRIS onboarding,有疑問可找 vivian.yang。channel:LINE/OJM;處理方:CSM 確認需求後轉開票給 TS/RD;stage:售前/導入。"
     },
     {
       "id": "AR-001",
@@ -1224,6 +1257,61 @@
       "a": "目前做不到——BB 短連結(r.botbonnie.com)未帶 Open Graph 類 meta data,LINE 端不會顯示預覽圖/標題,這點與客戶自架的短連結服務不同;初步判斷需走 feature request 流程評估,非快速可解的 task。目前三種替代方案各有取捨:(1) 文字訊息+客戶自己的短連結——有預覽圖但點擊後無法貼標;(2) 文字訊息+BB 智能連結——可貼標但無預覽圖;(3) 用 carousel 訊息——有圖但實測點擊率明顯偏低。需依客戶最在意的目標(貼標 vs. 預覽美觀 vs. 點擊率)協助選擇;若客戶仍堅持要三者兼具,需開 feature request 請產品評估。channel:LINE;處理方:開票(feature request)。"
     },
     {
+      "id": "BB-052",
+      "category": "BotBonnie",
+      "q": "LiveChat 依 assignee 篩選對話,同一人在「Agent groups」與「Customer service」下篩出的對話數量不同,是 bug 嗎?",
+      "product": "BotBonnie",
+      "last_verified": "2026-09-21",
+      "source": "https://appier.slack.com/archives/C07UFHK788Z/p1789541161161509",
+      "status": "active",
+      "urgency": "low",
+      "a": "不是 bug,是現行設計行為——透過 agent group 規則指派給某人的對話,和直接指派給該人(不經過 group)的對話,在篩選條件上被系統視為兩個不同的篩選值,因為 agent group 功能是後期才加入,尚未與既有指派邏輯整合。要看某位客服的全部對話,需要在下拉選單中把該客服在「Agent groups」與「Customer service」下的兩個項目都勾選,兩者篩選結果不會自動合併。channel:LiveChat;處理方:CSM 自解(操作說明);stage:上線後/日常維運。"
+    },
+    {
+      "id": "BB-053",
+      "category": "BotBonnie",
+      "q": "LiveChat UI 看到 LINE Rich Menu 按鈕文字在 emoji 字元後被截斷,但客戶在 LINE 裝置上看到的文字是完整的,是哪邊的問題?",
+      "product": "BotBonnie",
+      "last_verified": "2026-09-21",
+      "source": "https://appier.slack.com/archives/C07UFHK788Z/p1789451229217119",
+      "status": "active",
+      "urgency": "low",
+      "a": "是 BotBonnie 後端顯示邏輯的已知限制,LINE 裝置端顯示是正確的——LINE postback 資料(data)本身有 300 字元的官方限制,但 BB 後端為了替其他欄位保留空間、且讓按鈕文字在各處顯示一致,固定把 postback 的 title 只取前 10 個字元(`title.slice(0,10)`),這個截斷只影響 LiveChat 後台顯示用的displayText,不影響 LINE 裝置上實際收到的完整選單文字。這是很早期就存在的內部安全機制設計,並非本次才發生的 bug;若客戶希望 LiveChat 後台顯示也完整呈現,需要走 feature request 請 RD 評估修改邏輯,短期可請客戶盡量把 rich menu 按鈕文字精簡在 10 字元內以避免顯示不一致。channel:LINE;處理方:可先解釋原因,如需修改需開 feature request 由 RD 評估;stage:上線前測試。"
+    },
+    {
+      "id": "BB-054",
+      "category": "BotBonnie",
+      "q": "客戶在 LiveChat 對話中看不到某使用者的 EC(第三方電商如 Cyberbiz)綁定帳號資訊,但訂單資料卻正常顯示,為什麼?",
+      "product": "BotBonnie",
+      "last_verified": "2026-09-21",
+      "source": "https://appier.slack.com/archives/C07UFHK788Z/p1789548836470909",
+      "status": "active",
+      "urgency": "medium",
+      "a": "是兩套資料來源不同步造成的——LiveChat UI 顯示的 EC 綁定資訊讀自 ES(`ecAccountLinked` 欄位),但訂單資料是讀 DynamoDB 的 `EcCustomer` 表,某些較早期綁定的使用者這兩邊的資料沒有同步寫入,導致 ES 端顯示為 null、UI 因此看不到綁定圖示,但 DynamoDB 端(訂單依據)資料仍是正確的。目前需由 RD 手動幫該使用者重新綁定修復個案;RD 已開追蹤票排查 `EcCustomer crmId` 與 `Customer EcAccountLinking` 兩邊資料的一致性,未來會建立定期檢查機制。CSM 無法自解,需開票請 RD 協助確認與修復。channel:LiveChat;處理方:開票請 RD;stage:上線後/日常維運。"
+    },
+    {
+      "id": "BB-055",
+      "category": "BotBonnie",
+      "q": "客戶的 BotBonnie console 在編輯畫面(尤其新增規則式回覆)時瀏覽器當機、出現記憶體不足(OOM)訊息,怎麼排查?",
+      "product": "BotBonnie",
+      "last_verified": "2026-09-21",
+      "source": "https://appier.slack.com/archives/C07UFHK788Z/p1789467614037039",
+      "status": "active",
+      "urgency": "medium",
+      "a": "常見根因是帳號內 module/kit/tag 數量過多——console 需要把該帳號全部的 module 資料載入瀏覽器記憶體才能驗證流程正確性,當 module 數量(本案例超過 3000 個 module、1900 個 tag)過多時容易導致瀏覽器記憶體不足而當機。建議客戶控制 module 數量在 1000 個以下以確保效能;若客戶已有大量閒置 module 想清理,目前沒有自助批次刪除功能(也無法自動判斷「未使用」module,只能看最後更新時間),需開票請工程協助匯出清單供客戶勾選、再批次刪除(刪除後開放 1 週內申請復原,超過需另外評估收費復原)。同時提醒清空「垃圾桶」內的 module 也有幫助。若懷疑是效能 bug 而非單純數量問題,可留意是否已有針對特定操作(如新增規則式回覆)的效能修復上線。channel:BotBonnie console;處理方:CSM 可先建議客戶清理/控制 module 數量,批次刪除需開票請 RD 協助;stage:上線後/日常維運。"
+    },
+    {
+      "id": "BB-056",
+      "category": "BotBonnie",
+      "q": "幫客戶開通 BotBonnie Service Agent(AI Agent),前置條件有哪些?加購 Product Advisor 又不一樣嗎?",
+      "product": "BotBonnie",
+      "last_verified": "2026-09-21",
+      "source": "https://appier.atlassian.net/wiki/pages/viewpage.action?pageId=5043454205",
+      "status": "active",
+      "urgency": "low",
+      "a": "依方案而不同——純 Service Agent 方案需客戶合約期內同時有 BotBonnie 與 EAM 有效帳號;「Service Agent + Product Advisor」方案則額外需要 AIQUA 帳號並完成 Datafeed(商品資料)onboarding。開通由 TSTC 執行(在 EAM 開 feature toggle + 在 Phoenix CST Tool 設定 Service Agent 方案與合約起訖日),CSM 主要負責先確認客戶簽的是哪個方案、對應帳號是否都已備齊,再提交給 TSTC/RD 執行;若客戶要用 Product Advisor 且商品資料有基本欄位以外的自訂欄位,需額外收費走 TSTC 協助上傳(非自助)。channel:LINE/WebChat;處理方:CSM 確認前置條件後開票給 TSTC;stage:售前/導入。"
+    },
+    {
       "id": "AA-001",
       "category": "AdCreative",
       "q": "Enterprise 客戶每月補點日被鎖付款頁(paywall)、credit 數字錯誤,怎麼處理?",
@@ -1252,7 +1340,7 @@
       "product": "AdCreative",
       "last_verified": "2026-06-18",
       "source": "https://appier.slack.com/archives/C08RGLRNX3R/p1781782794926209",
-      "status": "active",
+      "status": "stale",
       "urgency": "medium",
       "a": "不會,無 rollover 機制。帳上出現 rollover 點數屬系統錯誤,需回報。"
     },
@@ -1329,7 +1417,7 @@
       "product": "Process/內部流程",
       "last_verified": "2026-06-18",
       "source": "https://appier.slack.com/archives/C08RGLRNX3R/p1781776433865549",
-      "status": "active",
+      "status": "stale",
       "urgency": "medium",
       "a": "統一找 Steven Chen(David Li 確認)。他 OOO 期間先確認代理窗口。"
     },
@@ -1461,7 +1549,7 @@
       "product": "Billing",
       "last_verified": "2026-06-21",
       "source": "https://appier.slack.com/archives/G01137M30B1/p1782024270357249",
-      "status": "active",
+      "status": "stale",
       "urgency": "medium",
       "a": "在 #csm_support_tw 附 ticket 連結直接 tag TSTC(hazel.wang、vivian.yang、gordon.sung),TSTC 可直接加值(前例加 100 萬封)。判斷急迫性:若擋到的只是 recurring 信件非活動檔期,可不當急件。"
     },
