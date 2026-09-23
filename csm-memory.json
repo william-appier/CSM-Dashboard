@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-22T14:03:36.278+08:00",
+  "lastUpdated": "2026-09-23T11:16:17.554+08:00",
   "rules": [
     {
       "id": "okr-consolidate",
@@ -678,12 +678,12 @@
     }
   ],
   "ticketSnapshot": {
-    "generatedAt": "2026-09-22T06:03:36.233Z",
+    "generatedAt": "2026-09-23T03:16:16.986Z",
     "keys": {
       "55688": [],
       "mannings": [
-        "PROJ-33713",
         "QGWL-26114",
+        "PROJ-33713",
         "PROJ-25973",
         "PROJ-33682"
       ],
@@ -703,8 +703,8 @@
       "xindongli": []
     },
     "titles": {
-      "PROJ-33713": "[Demo HK] Offboard Mannings data for demo account",
       "QGWL-26114": "[Mannings] OJM node will gone after adding wait for condition node at the front",
+      "PROJ-33713": "[Demo HK] Offboard Mannings data for demo account",
       "PROJ-25973": "[Mannings] Request for the product category ",
       "PROJ-33682": "[Mannings] Facebook V2 upload failure for Output node 698dadb35c1bfec4b40bef08",
       "PROJ-33876": "[SCMP] Feature request on insight agent",
@@ -947,7 +947,35 @@
       "source": "calendar",
       "sourceUrl": "https://www.google.com/calendar/event?eid=XzYwcTMwYzFnNjBvMzBlMWk2MG80YWMxZzYwcmo4Z3BsODhyajJjMWg4NHMzNGg5ZzYwczMwYzFnNjBvMzBjMWc4a28zZWMyNjc0cmpjZHBwNmgwazhoMWc2NG8zMGMxZzYwbzMwYzFnNjBvMzBjMWc2MG8zMmMxZzYwbzMwYzFnNmNvazhoMWs2a3BqOGdpNTY5MWo0ZDFrOGwxNDJlMjY4NTBqNGgxbjcxMjM2ZDFoNjhwZyB3aWxsaWFtLnd0LmxpbkBhcHBpZXIuY29t&ctz=Asia/Hong_Kong",
       "created": "2026-09-22",
-      "lastSeen": "2026-09-22",
+      "lastSeen": "2026-09-23",
+      "status": "open",
+      "snoozedUntil": null
+    },
+    {
+      "id": "cmt-55688-arrange-followup-meeting",
+      "account": "55688",
+      "text": "Arrange follow-up meeting regarding 商城 renewal",
+      "owner": "me",
+      "counterpart": "Youngbin Lin (55688 商城)",
+      "due": "2026-10-07",
+      "source": "calendar",
+      "sourceUrl": "https://www.google.com/calendar/event?eid=MG9uODJwMjgycHQwb3FraHZsaGQ2OWRhdDkgd2lsbGlhbS53dC5saW5AYXBwaWVyLmNvbQ",
+      "created": "2026-09-22",
+      "lastSeen": "2026-09-23",
+      "status": "open",
+      "snoozedUntil": null
+    },
+    {
+      "id": "cmt-55688-follow-up-contract",
+      "account": "55688",
+      "text": "Follow up contract renewal for 潔衣家",
+      "owner": "me",
+      "counterpart": "55688 潔衣家 contact (unconfirmed)",
+      "due": "2026-10-07",
+      "source": "calendar",
+      "sourceUrl": "https://www.google.com/calendar/event?eid=MG9uODJwMjgycHQwb3FraHZsaGQ2OWRhdDkgd2lsbGlhbS53dC5saW5AYXBwaWVyLmNvbQ",
+      "created": "2026-09-22",
+      "lastSeen": "2026-09-23",
       "status": "open",
       "snoozedUntil": null
     }
