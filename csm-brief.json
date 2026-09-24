@@ -6,7 +6,7 @@
       "name": "Mannings",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "red",
-      "insight": "QGWL-26114 backlog 1d · +3 more · renewal due 2026-09-30 (6d).",
+      "insight": "⚠️ CONTRACT EXPIRES in 6 days (2026-09-30). Facebook V2 upload failure (Output node) open among 4 backlog tickets; staging EDM update to Rola Chung 2 days overdue.",
       "diffs": [],
       "riskTags": [
         "ticket",
@@ -56,7 +56,34 @@
         {
           "priority": "high",
           "label": "Renewal · High",
-          "text": "Mannings contract due 2026-09-30 (6d left) — confirm status now"
+          "text": "Mannings contract expires 2026-09-30 (6 days). Draft renewal proposal / confirm scope / schedule renewal meeting with client."
+        },
+        {
+          "priority": "high",
+          "label": "Commitment · High",
+          "text": "Send overdue staging EDM opt-in status update to Rola Chung (promised 2026-09-22, now 2 days overdue).",
+          "commitmentId": "cmt-mannings-prepare-staging-edm"
+        },
+        {
+          "priority": "medium",
+          "label": "Ticket · Medium",
+          "text": "Facebook V2 upload failure (Output node) still backlog — confirm priority with Mei-Cih Yeh before the renewal call."
+        }
+      ],
+      "commitments": [
+        {
+          "id": "cmt-mannings-prepare-staging-edm",
+          "account": "mannings",
+          "text": "Prepare staging EDM opt-in status update",
+          "owner": "me",
+          "counterpart": "Rola Chung",
+          "due": "2026-09-22",
+          "source": "calendar",
+          "sourceUrl": "https://www.google.com/calendar/event?eid=XzYwcTMwYzFnNjBvMzBlMWk2MG80YWMxZzYwcmo4Z3BsODhyajJjMWg4NHMzNGg5ZzYwczMwYzFnNjBvMzBjMWc4a28zZWMyNjc0cmpjZHBwNmgwazhoMWc2NG8zMGMxZzYwbzMwYzFnNjBvMzBjMWc2MG8zMmMxZzYwbzMwYzFnNmNvazhoMWs2a3BqOGdpNTY5MWo0ZDFrOGwxNDJlMjY4NTBqNGgxbjcxMjM2ZDFoNjhwZyB3aWxsaWFtLnd0LmxpbkBhcHBpZXIuY29t&ctz=Asia/Hong_Kong",
+          "created": "2026-09-22",
+          "lastSeen": "2026-09-24",
+          "status": "open",
+          "snoozedUntil": null
         }
       ]
     },
@@ -65,7 +92,7 @@
       "name": "SCMP",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "PROJ-33876 backlog 19d · +3 more.",
+      "insight": "4 feature-request tickets open with Michael Palmer (insight agent, keyword filtering/intensity/dashboard), all backlog. AIXON offboard request still not filed pending AIRIS onboarding confirmation.",
       "diffs": [],
       "riskTags": [
         "ticket",
@@ -114,14 +141,26 @@
           "pinned": false
         }
       ],
-      "suggestions": []
+      "suggestions": [
+        {
+          "priority": "high",
+          "label": "Feature requests · High",
+          "text": "Confirm prioritization of 4 backlog feature requests (insight agent, keyword filtering/intensity/dashboard) with Michael Palmer."
+        },
+        {
+          "priority": "medium",
+          "label": "AIXON offboard · Medium",
+          "text": "Confirm AIRIS onboarding is fully complete, then file the AIXON offboard request (pending since July)."
+        }
+      ],
+      "commitments": []
     },
     {
       "id": "1010hope",
       "name": "10/10Hope",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "green",
-      "insight": "No active tickets — all clear.",
+      "insight": "Silent — no tickets or meetings. AIQUA onboarding and klickngo API integration in progress with Mark Liu. No contract end date on file, so renewal alerts can't fire for this account.",
       "diffs": [],
       "riskTags": [],
       "ticketCount": 0,
@@ -140,22 +179,26 @@
       "tickets": [],
       "suggestions": [
         {
+          "priority": "medium",
+          "label": "Contract date · Medium",
+          "text": "10/10Hope has no renewal date on file — confirm the end date with Mark Liu so renewal alerts can track it."
+        },
+        {
           "priority": "low",
           "label": "Check-in · Low",
-          "text": "No active tickets — send a check-in to 10/10Hope"
+          "text": "Send a status check-in on AIQUA onboarding / klickngo API integration progress."
         }
-      ]
+      ],
+      "commitments": []
     },
     {
       "id": "luxgen",
       "name": "Luxgen",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "renewal due 2026-11-22 (59d).",
+      "insight": "No tickets, no meetings — quiet account, which is itself a risk signal for Luxgen. BB contract runs through 2026-11-22 (59 days out, no alert yet).",
       "diffs": [],
-      "riskTags": [
-        "renewal"
-      ],
+      "riskTags": [],
       "ticketCount": 0,
       "mtgCount": 0,
       "projects": [],
@@ -163,18 +206,24 @@
       "tickets": [],
       "suggestions": [
         {
-          "priority": "high",
-          "label": "Renewal · High",
-          "text": "Luxgen contract due 2026-11-22 (59d left) — confirm status now"
+          "priority": "medium",
+          "label": "Silence · Medium",
+          "text": "No client meetings or tickets recently — schedule a check-in; quiet is historically a risk signal for Luxgen."
+        },
+        {
+          "priority": "low",
+          "label": "Monthly report · Low",
+          "text": "Confirm the September 服務交付報告 (delivery report) was sent to Kevin Hsu on schedule."
         }
-      ]
+      ],
+      "commitments": []
     },
     {
       "id": "55688",
       "name": "55688",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "green",
-      "insight": "No active tickets — all clear.",
+      "insight": "Meeting TODAY 10:00 HKT — 568合約 contract discussion with Jimmy Lin. Two follow-ups due 2026-10-07: 商城 renewal meeting and 潔衣家 contract follow-up. No bots currently inside the 35-day renewal window.",
       "diffs": [],
       "riskTags": [],
       "ticketCount": 0,
@@ -189,9 +238,51 @@
       "tickets": [],
       "suggestions": [
         {
-          "priority": "low",
-          "label": "Check-in · Low",
-          "text": "No active tickets — send a check-in to 55688"
+          "priority": "high",
+          "label": "Meeting · High",
+          "text": "568合約 meeting TODAY 10:00 HKT with Jimmy Lin — bring bot-by-bot contract status (北區 renewed to 2027-08-24; 代駕 renewed to 2027-07-31; 招募 end date still unconfirmed)."
+        },
+        {
+          "priority": "medium",
+          "label": "Commitment · Medium",
+          "text": "Arrange 商城 renewal follow-up meeting with Youngbin Lin (due 2026-10-07).",
+          "commitmentId": "cmt-55688-arrange-followup-meeting"
+        },
+        {
+          "priority": "medium",
+          "label": "Commitment · Medium",
+          "text": "Follow up on 潔衣家 contract renewal — client contact still unconfirmed (due 2026-10-07).",
+          "commitmentId": "cmt-55688-follow-up-contract"
+        }
+      ],
+      "commitments": [
+        {
+          "id": "cmt-55688-arrange-followup-meeting",
+          "account": "55688",
+          "text": "Arrange follow-up meeting regarding 商城 renewal",
+          "owner": "me",
+          "counterpart": "Youngbin Lin (55688 商城)",
+          "due": "2026-10-07",
+          "source": "calendar",
+          "sourceUrl": "https://www.google.com/calendar/event?eid=MG9uODJwMjgycHQwb3FraHZsaGQ2OWRhdDkgd2lsbGlhbS53dC5saW5AYXBwaWVyLmNvbQ",
+          "created": "2026-09-22",
+          "lastSeen": "2026-09-24",
+          "status": "open",
+          "snoozedUntil": null
+        },
+        {
+          "id": "cmt-55688-follow-up-contract",
+          "account": "55688",
+          "text": "Follow up contract renewal for 潔衣家",
+          "owner": "me",
+          "counterpart": "55688 潔衣家 contact (unconfirmed)",
+          "due": "2026-10-07",
+          "source": "calendar",
+          "sourceUrl": "https://www.google.com/calendar/event?eid=MG9uODJwMjgycHQwb3FraHZsaGQ2OWRhdDkgd2lsbGlhbS53dC5saW5AYXBwaWVyLmNvbQ",
+          "created": "2026-09-22",
+          "lastSeen": "2026-09-24",
+          "status": "open",
+          "snoozedUntil": null
         }
       ]
     },
@@ -200,8 +291,15 @@
       "name": "田原香",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "ETS-6646 in-progress 0d · +1 more.",
-      "diffs": [],
+      "insight": "New ticket: web experiment not displaying correctly (ETS-6646, in-progress with vivian.yang). Also open: Agent re-asks channel choice on OJM SMS campaign node (ETS-6074, mia.chu).",
+      "diffs": [
+        {
+          "type": "new",
+          "key": "ETS-6646",
+          "title": "Investigate in web experiment not successfully displayed",
+          "text": "Investigate in web experiment not successfully displayed"
+        }
+      ],
       "riskTags": [
         "ticket",
         "stale"
@@ -231,35 +329,26 @@
           "pinned": false
         }
       ],
-      "suggestions": []
-    },
-    {
-      "id": "momax",
-      "name": "Momax",
-      "csmOwner": "william.wt.lin@appier.com",
-      "health": "green",
-      "insight": "No active tickets — all clear.",
-      "diffs": [],
-      "riskTags": [],
-      "ticketCount": 0,
-      "mtgCount": 0,
-      "projects": [],
-      "meetings": [],
-      "tickets": [],
       "suggestions": [
         {
-          "priority": "low",
-          "label": "Check-in · Low",
-          "text": "No active tickets — send a check-in to Momax"
+          "priority": "high",
+          "label": "New ticket · High",
+          "text": "ETS-6646 (web experiment not displaying) just opened, in-progress with vivian.yang — confirm timeline before Tuesday’s weekly sync."
+        },
+        {
+          "priority": "medium",
+          "label": "Ticket · Medium",
+          "text": "ETS-6074 (Agent re-asks channel on OJM SMS node) still open with mia.chu — check status."
         }
-      ]
+      ],
+      "commitments": []
     },
     {
       "id": "citysuper",
       "name": "City Super",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "green",
-      "insight": "No active tickets — all clear.",
+      "insight": "No contract date or background on record for City Super. Context is missing — nothing invented here.",
       "diffs": [],
       "riskTags": [],
       "ticketCount": 0,
@@ -269,18 +358,19 @@
       "tickets": [],
       "suggestions": [
         {
-          "priority": "low",
-          "label": "Check-in · Low",
-          "text": "No active tickets — send a check-in to City Super"
+          "priority": "medium",
+          "label": "Missing context · Medium",
+          "text": "Confirm City Super's contract end date and current project focus so this account can be tracked properly."
         }
-      ]
+      ],
+      "commitments": []
     },
     {
       "id": "xindongli",
       "name": "行動力國際",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "green",
-      "insight": "No active tickets — all clear.",
+      "insight": "Silent — no tickets or meetings yet. Account handover has been in progress since 2026-06-09.",
       "diffs": [],
       "riskTags": [],
       "ticketCount": 0,
@@ -295,11 +385,17 @@
       "tickets": [],
       "suggestions": [
         {
+          "priority": "medium",
+          "label": "Handover · Medium",
+          "text": "Confirm the handover meeting date for 行動力國際 (added 2026-06-09, still pending)."
+        },
+        {
           "priority": "low",
           "label": "Check-in · Low",
-          "text": "No active tickets — send a check-in to 行動力國際"
+          "text": "Send a check-in once handover is complete."
         }
-      ]
+      ],
+      "commitments": []
     }
   ]
 }
