@@ -3964,12 +3964,21 @@
     "endDate": "2026-10-26",
     "keywords": [
       "達特聖克國際股份有限公司",
-      "達特聖克"
+      "達特聖克",
+      "DR.CINK"
     ],
     "opportunities": [
       {
         "name": "AA-達特聖克-2025-New",
         "endDate": "2026-10-26"
+      },
+      {
+        "name": "AQ - 達特聖克國際股份有限公司 (DR.CINK International Co., Ltd.) - New - 2026",
+        "endDate": "2027-08-31"
+      },
+      {
+        "name": "AQ - 達特聖克國際股份有限公司 (DR.CINK International Co., Ltd.) - New - 2026 - Data Core",
+        "endDate": "2027-08-31"
       }
     ]
   },
