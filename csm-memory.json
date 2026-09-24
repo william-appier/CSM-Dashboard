@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-23T11:16:17.554+08:00",
+  "lastUpdated": "2026-09-24T11:11:51.676+08:00",
   "rules": [
     {
       "id": "okr-consolidate",
@@ -678,7 +678,7 @@
     }
   ],
   "ticketSnapshot": {
-    "generatedAt": "2026-09-23T03:16:16.986Z",
+    "generatedAt": "2026-09-24T03:11:51.397Z",
     "keys": {
       "55688": [],
       "mannings": [
@@ -696,6 +696,7 @@
       "1010hope": [],
       "luxgen": [],
       "tiangyuanxiang": [
+        "ETS-6646",
         "ETS-6074"
       ],
       "momax": [],
@@ -711,6 +712,7 @@
       "PROJ-33875": "[SCMP] Feature request on external keyword filtering",
       "PROJ-33874": "[SCMP] Feature request on keyword intensity support",
       "PROJ-33694": "[SCMP] Feature request on keyword dashboard",
+      "ETS-6646": "[田原香]Investigate in web experiment not successfully displayed",
       "ETS-6074": "[田原香] Agent re-asks the user to choose a channel when invoked from an OJM SMS campaign node (trace e5245f657670a7f4c2772dceadd35a35)"
     }
   },
@@ -947,7 +949,7 @@
       "source": "calendar",
       "sourceUrl": "https://www.google.com/calendar/event?eid=XzYwcTMwYzFnNjBvMzBlMWk2MG80YWMxZzYwcmo4Z3BsODhyajJjMWg4NHMzNGg5ZzYwczMwYzFnNjBvMzBjMWc4a28zZWMyNjc0cmpjZHBwNmgwazhoMWc2NG8zMGMxZzYwbzMwYzFnNjBvMzBjMWc2MG8zMmMxZzYwbzMwYzFnNmNvazhoMWs2a3BqOGdpNTY5MWo0ZDFrOGwxNDJlMjY4NTBqNGgxbjcxMjM2ZDFoNjhwZyB3aWxsaWFtLnd0LmxpbkBhcHBpZXIuY29t&ctz=Asia/Hong_Kong",
       "created": "2026-09-22",
-      "lastSeen": "2026-09-23",
+      "lastSeen": "2026-09-24",
       "status": "open",
       "snoozedUntil": null
     },
@@ -961,7 +963,7 @@
       "source": "calendar",
       "sourceUrl": "https://www.google.com/calendar/event?eid=MG9uODJwMjgycHQwb3FraHZsaGQ2OWRhdDkgd2lsbGlhbS53dC5saW5AYXBwaWVyLmNvbQ",
       "created": "2026-09-22",
-      "lastSeen": "2026-09-23",
+      "lastSeen": "2026-09-24",
       "status": "open",
       "snoozedUntil": null
     },
@@ -975,7 +977,7 @@
       "source": "calendar",
       "sourceUrl": "https://www.google.com/calendar/event?eid=MG9uODJwMjgycHQwb3FraHZsaGQ2OWRhdDkgd2lsbGlhbS53dC5saW5AYXBwaWVyLmNvbQ",
       "created": "2026-09-22",
-      "lastSeen": "2026-09-23",
+      "lastSeen": "2026-09-24",
       "status": "open",
       "snoozedUntil": null
     }
