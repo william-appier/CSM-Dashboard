@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-24T09:00:26.401+08:00",
+  "generatedAt": "2026-09-24T11:03:12.636+08:00",
   "accounts": [
     {
       "id": "mannings",
@@ -201,12 +201,7 @@
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
       "insight": "ETS-6646 in-progress 0d · +1 more.",
-      "diffs": [
-        {
-          "type": "new",
-          "text": "ETS-6646 [田原香]Investigate in web experiment not successfully displaye"
-        }
-      ],
+      "diffs": [],
       "riskTags": [
         "ticket",
         "stale"
