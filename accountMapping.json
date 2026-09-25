@@ -2934,6 +2934,23 @@
     ]
   },
   {
+    "id": "永澐科技",
+    "account": "永澐科技",
+    "csmOwner": "mmtw.csmca@appier.com",
+    "endDate": "2027-09-15",
+    "keywords": [
+      "永澐科技",
+      "永澐",
+      "打里摺建築"
+    ],
+    "opportunities": [
+      {
+        "name": "BB - 永澐科技（打里摺建築）_標準版_2026 年約_Renewal",
+        "endDate": "2027-09-15"
+      }
+    ]
+  },
+  {
     "id": "永豐商業銀行",
     "account": "永豐商業銀行",
     "csmOwner": "yvonne.yf.lee@appier.com",
@@ -3376,6 +3393,10 @@
       {
         "name": "BB - Club Med TW - Renewal - 2025",
         "endDate": "2026-08-14"
+      },
+      {
+        "name": "BB - Club Med TW - Renewal - 2026",
+        "endDate": "2027-08-14"
       },
       {
         "name": "BB PS-台灣愛麗斯和奧莉維亞有限公司-客製化第2階段 New 2026Q2",
