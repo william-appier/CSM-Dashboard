@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-09-28T09:01:00.138+08:00",
+  "generatedAt": "2026-09-29T09:00:57.014+08:00",
   "accounts": [
     {
       "id": "mannings",
       "name": "Mannings",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "red",
-      "insight": "ETS-6669 open 3d · +4 more · renewal due 2026-09-30 (2d).",
+      "insight": "ETS-6669 open 4d · +4 more · renewal due 2026-09-30 (1d).",
       "diffs": [],
       "riskTags": [
         "ticket",
@@ -63,7 +63,7 @@
         {
           "priority": "high",
           "label": "Renewal · High",
-          "text": "Mannings contract due 2026-09-30 (2d left) — confirm status now"
+          "text": "Mannings contract due 2026-09-30 (1d left) — confirm status now"
         }
       ]
     },
@@ -72,7 +72,7 @@
       "name": "SCMP",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "PROJ-33876 backlog 23d · +3 more.",
+      "insight": "PROJ-33876 backlog 24d · +3 more.",
       "diffs": [],
       "riskTags": [
         "ticket",
@@ -158,7 +158,7 @@
       "name": "Luxgen",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "renewal due 2026-11-22 (55d).",
+      "insight": "renewal due 2026-11-22 (54d).",
       "diffs": [],
       "riskTags": [
         "renewal"
@@ -172,7 +172,7 @@
         {
           "priority": "high",
           "label": "Renewal · High",
-          "text": "Luxgen contract due 2026-11-22 (55d left) — confirm status now"
+          "text": "Luxgen contract due 2026-11-22 (54d left) — confirm status now"
         }
       ]
     },
@@ -207,7 +207,7 @@
       "name": "田原香",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "ETS-6646 in-progress 3d · +1 more.",
+      "insight": "ETS-6646 in-progress 4d · +1 more.",
       "diffs": [],
       "riskTags": [
         "ticket",
