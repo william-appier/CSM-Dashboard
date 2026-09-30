@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T05:13:03.628+08:00",
+  "generatedAt": "2026-09-30T09:01:30.744+08:00",
   "accounts": [
     {
       "id": "mannings",
@@ -7,12 +7,7 @@
       "csmOwner": "william.wt.lin@appier.com",
       "health": "red",
       "insight": "ETS-6783 open 0d · +5 more · renewal due 2026-09-30 (0d).",
-      "diffs": [
-        {
-          "type": "new",
-          "text": "ETS-6783 [Mannings] Verify zero EDM conversions since 9/23 under 24h "
-        }
-      ],
+      "diffs": [],
       "riskTags": [
         "ticket",
         "renewal",
