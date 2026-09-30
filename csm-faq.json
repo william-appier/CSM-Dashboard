@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "updated": "2026-09-23",
+    "updated": "2026-09-30",
     "source": "Confluence CSM FAQ (AI 維護)",
     "indexUrl": "https://appier.atlassian.net/wiki/spaces/~712020045fe11d77e649819f2b2a67a185fdf0/pages/5232100110",
     "note": "由排程從 Confluence 五個分類頁自動重新生成之快取。urgency 未標者預設 medium。",
@@ -53,7 +53,7 @@
       "product": "AIQUA",
       "last_verified": "2026-07-01",
       "source": "https://appier.slack.com/archives/G01137M30B1/p1782914779494129",
-      "status": "active",
+      "status": "stale",
       "urgency": "medium",
       "a": "無現成 profile 屬性可排除。Workaround:用 event 圈受眾,排除「只有 notification_sent 而無 notification_display」的用戶(token 已失效)。注意計費鎖 send 非 received。"
     },
@@ -1276,7 +1276,7 @@
       "source": "https://appier.slack.com/archives/C07UFHK788Z/p1789451229217119",
       "status": "active",
       "urgency": "low",
-      "a": "是 BotBonnie 後端顯示邏輯的已知限制,LINE 裝置端顯示是正確的——LINE postback 資料(data)本身有 300 字元的官方限制,但 BB 後端為了替其他欄位保留空間、且讓按鈕文字在各處顯示一致,固定把 postback 的 title 只取前 10 個字元(`title.slice(0,10)`),這個截斷只影響 LiveChat 後台顯示用的displayText,不影響 LINE 裝置上實際收到的完整選單文字。這是很早期就存在的內部安全機制設計,並非本次才發生的 bug;若客戶希望 LiveChat 後台顯示也完整呈現,需要走 feature request 請 RD 評估修改邏輯,短期可請客戶盡量把 rich menu 按鈕文字精簡在 10 字元內以避免顯示不一致。channel:LINE;處理方:可先解釋原因,如需修改需開 feature request 由 RD 評估;stage:上線前測試。"
+      "a": "是 BotBonnie 後端顯示邏輯的已知限制,LINE 裝置端顯示是正確的——LINE postback 資料(data)本身有 300 字元的官方限制,但 BB 後端為了替其他欄位保留空間、且讓按鈕文字在各處顯示一致,固定把 postback 的 title 只取前 10 個字元(`title.slice(0,10)`),這個截斷只影響 LiveChat 後台顯示用的 displayText,不影響 LINE 裝置上實際收到的完整選單文字。這是很早期就存在的內部安全機制設計,並非本次才發生的 bug;若客戶希望 LiveChat 後台顯示也完整呈現,需要走 feature request 請 RD 評估修改邏輯,短期可請客戶盡量把 rich menu 按鈕文字精簡在 10 字元內以避免顯示不一致。channel:LINE;處理方:可先解釋原因,如需修改需開 feature request 由 RD 評估;stage:上線前測試。"
     },
     {
       "id": "BB-054",
@@ -1351,7 +1351,7 @@
       "product": "AdCreative",
       "last_verified": "2026-07-01",
       "source": "https://appier.slack.com/archives/C08RGLRNX3R/p1782890361614379",
-      "status": "active",
+      "status": "stale",
       "urgency": "medium",
       "a": "有前例(CACO),改用「季點數」由 CSM 手動處理、不走系統自動發放,彈性較大。需 approval(當時與 Ted 討論核准)。"
     },
@@ -1428,7 +1428,7 @@
       "product": "AdCreative",
       "last_verified": "2026-06-30",
       "source": "https://appier.slack.com/archives/C08RGLRNX3R/p1782787156531259",
-      "status": "active",
+      "status": "stale",
       "urgency": "medium",
       "a": "提供 AdCreative.ai 企業版服務條款(www.adcreative.ai/legal/zh/terms-and-service-for-enterprises-zh),含 IP 條款且已附在合約中。客戶不接受再開 ticket 問 Jimmy Hsiao(legal)。"
     },
@@ -1483,7 +1483,7 @@
       "product": "AdCreative",
       "last_verified": "2026-06-29",
       "source": "https://appier.slack.com/archives/C08RGLRNX3R/p1782702921589449",
-      "status": "active",
+      "status": "stale",
       "urgency": "medium",
       "a": "內部 prompt 收集網站 aaprompt-site.netlify.app(後台密碼 AAprompt),可新增情境指令或 AI 生成;建議實測成功後再放入,圖片需先上傳取得網址。僅內部使用、勿給客戶。prompt 用中文寫、體驗較好。"
     },
@@ -1538,7 +1538,7 @@
       "product": "Billing",
       "last_verified": "2026-07-01",
       "source": "https://appier.slack.com/archives/G01137M30B1/p1782897408751969",
-      "status": "active",
+      "status": "stale",
       "urgency": "medium",
       "a": "緊急可先請 TSTC 手動加 credit、事後補開 ETS ticket(前例:先加 50 萬封、後補 ETS-4578)。注意台灣簡訊實名制:只有送審過的 sender name 能正常發送,客戶反映發不出去先確認發送名稱是否在核可清單。"
     },
@@ -1560,7 +1560,7 @@
       "product": "Billing",
       "last_verified": "2026-06-26",
       "source": "https://appier.slack.com/archives/G01137M30B1/p1782475587797599",
-      "status": "active",
+      "status": "stale",
       "urgency": "medium",
       "a": "「campaign 預估額度 × notification_sent」只是預估,dynamic content 拉長簡訊會使實際 credit 異動。正解:請 TSTC 從後台撈實際 credit count(可撈 by campaign),用於與客戶核對。"
     },
