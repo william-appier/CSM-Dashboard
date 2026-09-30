@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-09-30T09:01:30.744+08:00",
+  "generatedAt": "2026-10-01T06:44:03.992+08:00",
   "accounts": [
     {
       "id": "mannings",
       "name": "Mannings",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "red",
-      "insight": "ETS-6783 open 0d · +5 more · renewal due 2026-09-30 (0d).",
+      "insight": "⚠️ contract EXPIRED 2026-09-30 · ETS-6669 open 0d · +5 more.",
       "diffs": [],
       "riskTags": [
         "ticket",
@@ -24,17 +24,17 @@
       "meetings": [],
       "tickets": [
         {
-          "key": "ETS-6783",
-          "title": "[Mannings] Verify zero EDM conversions since 9/23 under 24h last-click attribution",
-          "status": "open",
-          "assignee": "jason.wu",
-          "pinned": false
-        },
-        {
           "key": "ETS-6669",
           "title": "[Mannings] Appier error message from Mannings website",
           "status": "open",
           "assignee": "David Li",
+          "pinned": false
+        },
+        {
+          "key": "ETS-6783",
+          "title": "[Mannings] Verify zero EDM conversions since 9/23 under 24h last-click attribution",
+          "status": "open",
+          "assignee": "jason.wu",
           "pinned": false
         },
         {
@@ -70,7 +70,7 @@
         {
           "priority": "high",
           "label": "Renewal · High",
-          "text": "Mannings contract due 2026-09-30 (0d left) — confirm status now"
+          "text": "Mannings contract EXPIRED 1d ago (2026-09-30) — confirm status now"
         }
       ]
     },
@@ -79,7 +79,7 @@
       "name": "SCMP",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "PROJ-33876 backlog 25d · +3 more.",
+      "insight": "PROJ-33876 backlog 26d · +3 more.",
       "diffs": [],
       "riskTags": [
         "ticket",
@@ -165,7 +165,7 @@
       "name": "Luxgen",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "renewal due 2026-11-22 (53d).",
+      "insight": "renewal due 2026-11-22 (52d).",
       "diffs": [],
       "riskTags": [
         "renewal"
@@ -179,7 +179,7 @@
         {
           "priority": "high",
           "label": "Renewal · High",
-          "text": "Luxgen contract due 2026-11-22 (53d left) — confirm status now"
+          "text": "Luxgen contract due 2026-11-22 (52d left) — confirm status now"
         }
       ]
     },
@@ -214,13 +214,17 @@
       "name": "田原香",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "ETS-6646 in-progress 0d · +1 more.",
-      "diffs": [],
-      "riskTags": [
-        "ticket",
-        "stale"
+      "insight": "ETS-6646 in-progress 1d.",
+      "diffs": [
+        {
+          "type": "close",
+          "text": "ETS-6074 closed"
+        }
       ],
-      "ticketCount": 2,
+      "riskTags": [
+        "ticket"
+      ],
+      "ticketCount": 1,
       "mtgCount": 0,
       "projects": [
         {
@@ -235,13 +239,6 @@
           "title": "[田原香]Investigate in web experiment not successfully displayed",
           "status": "in-progress",
           "assignee": "vivian.yang",
-          "pinned": false
-        },
-        {
-          "key": "ETS-6074",
-          "title": "[田原香] Agent re-asks the user to choose a channel when invoked from an OJM SMS campaign node (trace e5245f657670a7f4c2772dceadd35a35)",
-          "status": "open",
-          "assignee": "mia.chu",
           "pinned": false
         }
       ],
