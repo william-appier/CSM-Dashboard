@@ -143,6 +143,21 @@
     ]
   },
   {
+    "id": "codepro",
+    "account": "CodePro",
+    "csmOwner": "mmtw.csmca@appier.com",
+    "endDate": "2027-09-30",
+    "keywords": [
+      "CodePro"
+    ],
+    "opportunities": [
+      {
+        "name": "BB - CodePro_標準版_2026 年約_Renewal",
+        "endDate": "2027-09-30"
+      }
+    ]
+  },
+  {
     "id": "cold-stone",
     "account": "Cold Stone",
     "csmOwner": "jill.chang@appier.com",
@@ -1578,6 +1593,23 @@
     ]
   },
   {
+    "id": "夢云行銷有限公司",
+    "account": "夢云行銷有限公司",
+    "csmOwner": "tina.hsu@appier.com",
+    "endDate": "2027-09-06",
+    "keywords": [
+      "夢云行銷有限公司",
+      "夢云行銷",
+      "科沃斯"
+    ],
+    "opportunities": [
+      {
+        "name": "BB-夢云行銷有限公司(科沃斯）- New - 1Y - 2026",
+        "endDate": "2027-09-06"
+      }
+    ]
+  },
+  {
     "id": "大學入學考試中心",
     "account": "大學入學考試中心",
     "csmOwner": "mmtw.csmca@appier.com",
@@ -2192,6 +2224,24 @@
       {
         "name": "MM-幸衍醫美診所",
         "endDate": "2026-08-11"
+      }
+    ]
+  },
+  {
+    "id": "底波拉國際精品股份有限公司",
+    "account": "底波拉國際精品股份有限公司",
+    "csmOwner": "eric.ouyang@appier.com",
+    "endDate": "2027-09-30",
+    "keywords": [
+      "底波拉國際精品股份有限公司",
+      "底波拉國際精品",
+      "FASHION FOR YES",
+      "FASHION"
+    ],
+    "opportunities": [
+      {
+        "name": "BB - 底波拉國際精品 (FASHION FOR YES) - New - 2026",
+        "endDate": "2027-09-30"
       }
     ]
   },
@@ -3054,6 +3104,24 @@
     ]
   },
   {
+    "id": "漢神百貨",
+    "account": "漢神百貨",
+    "csmOwner": "alvin.yh.wu@appier.com",
+    "endDate": "2027-12-31",
+    "keywords": [
+      "漢神百貨",
+      "漢神",
+      "HANSHIN",
+      "DEPARTMENT"
+    ],
+    "opportunities": [
+      {
+        "name": "BB - HANSHIN DEPARTMENT STORE - Upsell - 2026",
+        "endDate": "2027-12-31"
+      }
+    ]
+  },
+  {
     "id": "灝翔有限公司",
     "account": "灝翔有限公司",
     "csmOwner": "mmtw.csmca@appier.com",
@@ -3659,6 +3727,23 @@
     ]
   },
   {
+    "id": "華南銀行",
+    "account": "華南銀行",
+    "csmOwner": "ted.wu@appier.com",
+    "endDate": "2027-08-31",
+    "keywords": [
+      "華南銀行",
+      "華南",
+      "HNCB"
+    ],
+    "opportunities": [
+      {
+        "name": "AX - 華南銀行 (HNCB) - New - 2026",
+        "endDate": "2027-08-31"
+      }
+    ]
+  },
+  {
     "id": "華泰開發投資有限公司",
     "account": "華泰開發投資有限公司",
     "csmOwner": "mmtw.csmca@appier.com",
@@ -3805,6 +3890,10 @@
       {
         "name": "AQ - 誠品生活 (The Eslite Spectrum) - New - 2025",
         "endDate": "2029-03-31"
+      },
+      {
+        "name": "AQ - 誠品生活 (The Eslite Spectrum) - Upsell - 2026",
+        "endDate": "2026-10-31"
       },
       {
         "name": "AR - 誠品生活 (The Eslite Spectrum) - New - 2024",
