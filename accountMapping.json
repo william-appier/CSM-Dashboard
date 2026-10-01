@@ -1809,6 +1809,10 @@
       {
         "name": "BB - Ogilvy - GSK",
         "endDate": "2026-12-23"
+      },
+      {
+        "name": "BB - Ogilvy - Place",
+        "endDate": "2026-07-04"
       }
     ]
   },
@@ -2333,6 +2337,18 @@
       {
         "name": "AQ - 悠勢科技 (USPACE) - EDM_Upsell_2026_1~7",
         "endDate": "2026-08-06"
+      },
+      {
+        "name": "AQ - 悠勢科技 (USPACE) - Renewal - 2026",
+        "endDate": "2027-12-31"
+      },
+      {
+        "name": "AR - 悠勢科技 (USPACE) - Renewal - 2026",
+        "endDate": "2027-12-31"
+      },
+      {
+        "name": "Data Core - 悠勢科技 (USPACE) - Renewal - 2026",
+        "endDate": "2027-12-31"
       }
     ]
   },
