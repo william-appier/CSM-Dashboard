@@ -1,19 +1,24 @@
 {
-  "generatedAt": "2026-10-01T09:01:30.079+08:00",
+  "generatedAt": "2026-10-02T09:01:28.574+08:00",
   "accounts": [
     {
       "id": "mannings",
       "name": "Mannings",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "red",
-      "insight": "⚠️ contract EXPIRED 2026-09-30 · ETS-6669 open 0d · +5 more.",
-      "diffs": [],
+      "insight": "⚠️ contract EXPIRED 2026-09-30 · ETS-6846 open 0d · +6 more.",
+      "diffs": [
+        {
+          "type": "new",
+          "text": "ETS-6846 [Mannings] Extent AIXON services to 2026/12/31"
+        }
+      ],
       "riskTags": [
         "ticket",
         "renewal",
         "stale"
       ],
-      "ticketCount": 6,
+      "ticketCount": 7,
       "mtgCount": 0,
       "projects": [
         {
@@ -23,6 +28,13 @@
       ],
       "meetings": [],
       "tickets": [
+        {
+          "key": "ETS-6846",
+          "title": "[Mannings] Extent AIXON services to 2026/12/31",
+          "status": "open",
+          "assignee": "jason.wu",
+          "pinned": false
+        },
         {
           "key": "ETS-6669",
           "title": "[Mannings] Appier error message from Mannings website",
@@ -70,7 +82,7 @@
         {
           "priority": "high",
           "label": "Renewal · High",
-          "text": "Mannings contract EXPIRED 1d ago (2026-09-30) — confirm status now"
+          "text": "Mannings contract EXPIRED 2d ago (2026-09-30) — confirm status now"
         }
       ]
     },
@@ -79,7 +91,7 @@
       "name": "SCMP",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "PROJ-33876 backlog 26d · +3 more.",
+      "insight": "PROJ-33876 backlog 27d · +3 more.",
       "diffs": [],
       "riskTags": [
         "ticket",
@@ -165,7 +177,7 @@
       "name": "Luxgen",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "renewal due 2026-11-22 (52d).",
+      "insight": "renewal due 2026-11-22 (51d).",
       "diffs": [],
       "riskTags": [
         "renewal"
@@ -179,7 +191,7 @@
         {
           "priority": "high",
           "label": "Renewal · High",
-          "text": "Luxgen contract due 2026-11-22 (52d left) — confirm status now"
+          "text": "Luxgen contract due 2026-11-22 (51d left) — confirm status now"
         }
       ]
     },
@@ -187,25 +199,33 @@
       "id": "55688",
       "name": "55688",
       "csmOwner": "william.wt.lin@appier.com",
-      "health": "green",
-      "insight": "No active tickets — all clear.",
+      "health": "yellow",
+      "insight": "55688 潔衣家 LON 三月一次 Oct 16.",
       "diffs": [],
-      "riskTags": [],
+      "riskTags": [
+        "mtg"
+      ],
       "ticketCount": 0,
-      "mtgCount": 0,
+      "mtgCount": 1,
       "projects": [
         {
           "name": "Service Agent RFQ",
           "status": "progress"
         }
       ],
-      "meetings": [],
+      "meetings": [
+        {
+          "date": "Oct 16",
+          "title": "55688 潔衣家 LON 三月一次",
+          "meta": "09:00–10:00 HKT · william.wt.lin@appier.com"
+        }
+      ],
       "tickets": [],
       "suggestions": [
         {
-          "priority": "low",
-          "label": "Check-in · Low",
-          "text": "No active tickets — send a check-in to 55688"
+          "priority": "medium",
+          "label": "Meeting · Medium",
+          "text": "Prep for 55688 潔衣家 LON 三月一次 on Oct 16 (09:00–10:00 HKT · william.wt.lin@appier.com)"
         }
       ]
     },
@@ -214,7 +234,7 @@
       "name": "田原香",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "ETS-6646 in-progress 1d.",
+      "insight": "ETS-6646 in-progress 2d.",
       "diffs": [],
       "riskTags": [
         "ticket"
