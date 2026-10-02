@@ -423,14 +423,18 @@
       "JGB SMART PROPERTY",
       "含Whatsapp",
       "JGB",
+      "大橙拓展",
       "好家來",
-      "富喬物業",
-      "芃博顧問"
+      "富喬物業"
     ],
     "opportunities": [
       {
         "name": "BB-JGB/Throne Property_Upsell 2026 碩盛國際 (含Whatsapp）",
         "endDate": "2027-03-08"
+      },
+      {
+        "name": "BB - JGB Service_標準版_2026 年約_Renewal",
+        "endDate": "2027-10-24"
       },
       {
         "name": "BB - JGB - 大恆國際開發有限公司 New 26Q1",
@@ -439,6 +443,10 @@
       {
         "name": "BB - JGB - 泰萬通國際地產股份有限公司_New 2026",
         "endDate": "2027-03-08"
+      },
+      {
+        "name": "BB - JGB（大橙拓展）_標準版_2026 年約_Renewal",
+        "endDate": "2027-09-12"
       },
       {
         "name": "BB - JGB（好家來）_標準版_2026 年約_Renewal",
@@ -1308,6 +1316,10 @@
       {
         "name": "AQ - 台灣彪馬股份有限公司 (PUMA TAIWAN) - Renew - 2024",
         "endDate": "2026-12-28"
+      },
+      {
+        "name": "AQ - 台灣彪馬股份有限公司 (PUMA TAIWAN)  - Upsell - SMS - 2026 Q3",
+        "endDate": "2027-09-10"
       },
       {
         "name": "BB - 台灣彪馬股份有限公司 (PUMA TAIWAN) - Renew - 2025",
