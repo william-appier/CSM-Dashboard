@@ -2531,7 +2531,7 @@
     "id": "新光三越百貨",
     "account": "新光三越百貨",
     "csmOwner": "shiyee.tan@appier.com",
-    "endDate": "2026-12-31",
+    "endDate": "2025-08-31",
     "keywords": [
       "新光三越百貨",
       "新光三越",
@@ -2540,6 +2540,10 @@
       "BotBonnie"
     ],
     "opportunities": [
+      {
+        "name": "AQ - 新光三越百貨 (SKM) - eDM/SMS upsell - 2024",
+        "endDate": "2025-08-31"
+      },
       {
         "name": "AQ - 新光三越百貨 (SKM) - Renewal - 2026",
         "endDate": "2026-12-31"
@@ -2974,6 +2978,23 @@
       {
         "name": "BB-蘋果芽數位科技股份有限公司-1Y",
         "endDate": "2027-01-12"
+      }
+    ]
+  },
+  {
+    "id": "欣葉國際餐飲",
+    "account": "欣葉國際餐飲",
+    "csmOwner": "tina.hsu@appier.com",
+    "endDate": "2027-09-07",
+    "keywords": [
+      "欣葉國際餐飲",
+      "Shin Yeh",
+      "Shin"
+    ],
+    "opportunities": [
+      {
+        "name": "BB - 欣葉國際餐飲 (Shin Yeh) - New - 2026",
+        "endDate": "2027-09-07"
       }
     ]
   },
@@ -3719,6 +3740,10 @@
       {
         "name": "BB - 至晟貿易",
         "endDate": "2027-02-01"
+      },
+      {
+        "name": "BB - 至晟貿易 - LINE 貨號查詢機制客製化",
+        "endDate": "2026-12-05"
       }
     ]
   },
@@ -4018,6 +4043,22 @@
       {
         "name": "BBB - 福容大飯店_標準版_2026 年約_Renewal",
         "endDate": "2027-04-21"
+      }
+    ]
+  },
+  {
+    "id": "財團法人伊甸社會福利基金會",
+    "account": "財團法人伊甸社會福利基金會",
+    "csmOwner": "jill.chang@appier.com",
+    "endDate": "2027-10-06",
+    "keywords": [
+      "財團法人伊甸社會福利基金會",
+      "伊甸基金會"
+    ],
+    "opportunities": [
+      {
+        "name": "BB - 伊甸基金會 - 2027 Renew",
+        "endDate": "2027-10-06"
       }
     ]
   },
