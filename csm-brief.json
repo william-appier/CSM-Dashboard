@@ -1,38 +1,60 @@
 {
-  "generatedAt": "2026-10-02T09:01:28.574+08:00",
+  "generatedAt": "2026-10-03T09:01:12.274+08:00",
   "accounts": [
     {
       "id": "mannings",
       "name": "Mannings",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "red",
-      "insight": "⚠️ contract EXPIRED 2026-09-30 · ETS-6846 open 0d · +6 more.",
+      "insight": "⚠️ contract EXPIRED 2026-09-30 · PROJ-34047 backlog 0d · +5 more · Mannings invoice Oct 6.",
       "diffs": [
         {
           "type": "new",
-          "text": "ETS-6846 [Mannings] Extent AIXON services to 2026/12/31"
+          "text": "PROJ-34047 [AI Prediction] Ask Mannings to fix conditions of 5 predicti"
+        },
+        {
+          "type": "close",
+          "text": "ETS-6846 closed"
+        },
+        {
+          "type": "close",
+          "text": "ETS-6783 closed"
         }
       ],
       "riskTags": [
         "ticket",
         "renewal",
-        "stale"
+        "stale",
+        "mtg"
       ],
-      "ticketCount": 7,
-      "mtgCount": 0,
+      "ticketCount": 6,
+      "mtgCount": 1,
       "projects": [
         {
           "name": "AIXON → AIRIS Upgrade (Q4)",
           "status": "progress"
         }
       ],
-      "meetings": [],
+      "meetings": [
+        {
+          "date": "Oct 6",
+          "title": "Mannings invoice",
+          "meta": "19:00–20:00 HKT · william.wt.lin@appier.com"
+        }
+      ],
       "tickets": [
         {
-          "key": "ETS-6846",
-          "title": "[Mannings] Extent AIXON services to 2026/12/31",
-          "status": "open",
+          "key": "PROJ-34047",
+          "title": "[AI Prediction] Ask Mannings to fix conditions of 5 predictions failing training",
+          "status": "backlog",
           "assignee": "jason.wu",
+          "pinned": false
+        },
+        {
+          "key": "PROJ-33713",
+          "title": "[Demo HK] Offboard Mannings data for demo account",
+          "status": "backlog",
+          "assignee": "mike.chen",
           "pinned": false
         },
         {
@@ -43,24 +65,10 @@
           "pinned": false
         },
         {
-          "key": "ETS-6783",
-          "title": "[Mannings] Verify zero EDM conversions since 9/23 under 24h last-click attribution",
-          "status": "open",
-          "assignee": "jason.wu",
-          "pinned": false
-        },
-        {
           "key": "QGWL-26114",
           "title": "[Mannings] OJM node will gone after adding wait for condition node at the front",
           "status": "backlog",
           "assignee": "luke.chien",
-          "pinned": false
-        },
-        {
-          "key": "PROJ-33713",
-          "title": "[Demo HK] Offboard Mannings data for demo account",
-          "status": "backlog",
-          "assignee": "mike.chen",
           "pinned": false
         },
         {
@@ -82,7 +90,12 @@
         {
           "priority": "high",
           "label": "Renewal · High",
-          "text": "Mannings contract EXPIRED 2d ago (2026-09-30) — confirm status now"
+          "text": "Mannings contract EXPIRED 3d ago (2026-09-30) — confirm status now"
+        },
+        {
+          "priority": "medium",
+          "label": "Meeting · Medium",
+          "text": "Prep for Mannings invoice on Oct 6 (19:00–20:00 HKT · william.wt.lin@appier.com)"
         }
       ]
     },
@@ -91,7 +104,7 @@
       "name": "SCMP",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "PROJ-33876 backlog 27d · +3 more.",
+      "insight": "PROJ-33876 backlog 28d · +3 more.",
       "diffs": [],
       "riskTags": [
         "ticket",
@@ -177,7 +190,7 @@
       "name": "Luxgen",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "renewal due 2026-11-22 (51d).",
+      "insight": "renewal due 2026-11-22 (50d).",
       "diffs": [],
       "riskTags": [
         "renewal"
@@ -191,7 +204,7 @@
         {
           "priority": "high",
           "label": "Renewal · High",
-          "text": "Luxgen contract due 2026-11-22 (51d left) — confirm status now"
+          "text": "Luxgen contract due 2026-11-22 (50d left) — confirm status now"
         }
       ]
     },
@@ -233,13 +246,16 @@
       "id": "tiangyuanxiang",
       "name": "田原香",
       "csmOwner": "william.wt.lin@appier.com",
-      "health": "yellow",
-      "insight": "ETS-6646 in-progress 2d.",
-      "diffs": [],
-      "riskTags": [
-        "ticket"
+      "health": "green",
+      "insight": "No active tickets — all clear.",
+      "diffs": [
+        {
+          "type": "close",
+          "text": "ETS-6646 closed"
+        }
       ],
-      "ticketCount": 1,
+      "riskTags": [],
+      "ticketCount": 0,
       "mtgCount": 0,
       "projects": [
         {
@@ -248,16 +264,14 @@
         }
       ],
       "meetings": [],
-      "tickets": [
+      "tickets": [],
+      "suggestions": [
         {
-          "key": "ETS-6646",
-          "title": "[田原香]Investigate in web experiment not successfully displayed",
-          "status": "in-progress",
-          "assignee": "vivian.yang",
-          "pinned": false
+          "priority": "low",
+          "label": "Check-in · Low",
+          "text": "No active tickets — send a check-in to 田原香"
         }
-      ],
-      "suggestions": []
+      ]
     },
     {
       "id": "momax",
