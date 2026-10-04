@@ -1,26 +1,13 @@
 {
-  "generatedAt": "2026-10-03T09:01:12.274+08:00",
+  "generatedAt": "2026-10-04T09:01:25.865+08:00",
   "accounts": [
     {
       "id": "mannings",
       "name": "Mannings",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "red",
-      "insight": "⚠️ contract EXPIRED 2026-09-30 · PROJ-34047 backlog 0d · +5 more · Mannings invoice Oct 6.",
-      "diffs": [
-        {
-          "type": "new",
-          "text": "PROJ-34047 [AI Prediction] Ask Mannings to fix conditions of 5 predicti"
-        },
-        {
-          "type": "close",
-          "text": "ETS-6846 closed"
-        },
-        {
-          "type": "close",
-          "text": "ETS-6783 closed"
-        }
-      ],
+      "insight": "⚠️ contract EXPIRED 2026-09-30 · PROJ-34047 backlog 1d · +5 more · Mannings invoice Oct 6.",
+      "diffs": [],
       "riskTags": [
         "ticket",
         "renewal",
@@ -90,7 +77,7 @@
         {
           "priority": "high",
           "label": "Renewal · High",
-          "text": "Mannings contract EXPIRED 3d ago (2026-09-30) — confirm status now"
+          "text": "Mannings contract EXPIRED 4d ago (2026-09-30) — confirm status now"
         },
         {
           "priority": "medium",
@@ -104,7 +91,7 @@
       "name": "SCMP",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "PROJ-33876 backlog 28d · +3 more.",
+      "insight": "PROJ-33876 backlog 29d · +3 more.",
       "diffs": [],
       "riskTags": [
         "ticket",
@@ -190,7 +177,7 @@
       "name": "Luxgen",
       "csmOwner": "william.wt.lin@appier.com",
       "health": "yellow",
-      "insight": "renewal due 2026-11-22 (50d).",
+      "insight": "renewal due 2026-11-22 (49d).",
       "diffs": [],
       "riskTags": [
         "renewal"
@@ -204,7 +191,7 @@
         {
           "priority": "high",
           "label": "Renewal · High",
-          "text": "Luxgen contract due 2026-11-22 (50d left) — confirm status now"
+          "text": "Luxgen contract due 2026-11-22 (49d left) — confirm status now"
         }
       ]
     },
@@ -248,12 +235,7 @@
       "csmOwner": "william.wt.lin@appier.com",
       "health": "green",
       "insight": "No active tickets — all clear.",
-      "diffs": [
-        {
-          "type": "close",
-          "text": "ETS-6646 closed"
-        }
-      ],
+      "diffs": [],
       "riskTags": [],
       "ticketCount": 0,
       "mtgCount": 0,
